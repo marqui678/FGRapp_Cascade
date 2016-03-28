@@ -1,5 +1,11 @@
 <Alloy>
-	<Window class="container">
-		<Label id="label" onClick="doClick">Hello, World</Label>
-	</Window>
+	
+	<!-- iPhone: Use Ti.UI.iOS.NavigationWindow -->
+	<NavigationWindow platform="ios" formFactor="handheld" id="navWin">
+		<Require src="list" onSelect="onSelect" />
+	</NavigationWindow>
+	
+	<!-- Android: Use list  as root window -->
+	<Require platform="android" src="list" onSelect="onSelect" id="listCtrl" />
+	
 </Alloy>

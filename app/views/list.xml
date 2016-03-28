@@ -1,4 +1,34 @@
 <Alloy>
-	<View class="container">
-	</View>
+	
+	<!-- create global instance of collection we'll bind -->
+	<Collection src="feed" />
+	
+	<Window title="RSS Reader">
+
+		<!-- Android: Add MenuItem for refresh -->		
+		<Menu platform="android">
+			<MenuItem icon="images/ic_action_action_autorenew.png" onClick="refresh" showAsAction="Ti.Android.SHOW_AS_ACTION_ALWAYS" />
+		</Menu>
+		
+		<ListView platform="ios,android" defaultItemTemplate="template" onItemclick="select">	
+			<!-- iOS RefreshControl -->
+			<RefreshControl platform="ios" id="refreshControl" onRefreshstart="refresh" />
+			
+			<Templates>
+				<ItemTemplate name="template" class="item">
+					<Label bindId="title" class="text title" />
+					<Label bindId="subtitle" class="text subtitle" />
+				</ItemTemplate>
+			</Templates>
+			
+			<!-- Alloy data-binding -->
+
+			<ListSection dataCollection="feed">
+				<ListItem itemId="{link}" image:image="{image}" title:text="{title}" subtitle:text="{fgrrss:startDateTime}" />
+			</ListSection>
+			
+		</ListView>
+		
+	</Window>
+	
 </Alloy>

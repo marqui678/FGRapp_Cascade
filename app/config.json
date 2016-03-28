@@ -1,5 +1,7 @@
 {
-	"global": {},
+	"global": {
+	"url": "https://www.cascade.org/DailyRides/rss.xml"
+	},
 	"env:development": {},
 	"env:test": {},
 	"env:production": {},
