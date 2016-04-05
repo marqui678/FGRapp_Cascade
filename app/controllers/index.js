@@ -2,11 +2,11 @@
  * self-executing function to organize otherwise inline constructor code
  * @param  {Object} args arguments passed to the controller
  */
-(function constructor(args) {
 
+(function constructor(args) {
 	// use strict mode for this function scope
 	'use strict';
-
+	
 	if (OS_IOS) {
 
 		// open SplitWindow for iPad

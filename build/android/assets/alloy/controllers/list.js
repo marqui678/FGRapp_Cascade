@@ -34,19 +34,28 @@ function Controller() {
         var __alloyId16 = [];
         for (var i = 0; len > i; i++) {
             var __alloyId17 = models[i];
-            __alloyId17.__transform = {};
+            __alloyId17.__transform = transform(__alloyId17);
             var __alloyId19 = {
                 properties: {
-                    itemId: "undefined" != typeof __alloyId17.__transform["link"] ? __alloyId17.__transform["link"] : __alloyId17.get("link")
-                },
-                image: {
-                    image: "undefined" != typeof __alloyId17.__transform["image"] ? __alloyId17.__transform["image"] : __alloyId17.get("image")
+                    itemId: _.template("{m.link}", {
+                        m: __alloyId17.__transform
+                    }, {
+                        interpolate: /\{([\s\S]+?)\}/g
+                    })
                 },
                 title: {
-                    text: "undefined" != typeof __alloyId17.__transform["title"] ? __alloyId17.__transform["title"] : __alloyId17.get("title")
+                    text: _.template("{m.title}", {
+                        m: __alloyId17.__transform
+                    }, {
+                        interpolate: /\{([\s\S]+?)\}/g
+                    })
                 },
                 subtitle: {
-                    text: "{fgrrss:startDateTime}"
+                    text: _.template("{m.startDateTime}", {
+                        m: __alloyId17.__transform
+                    }, {
+                        interpolate: /\{([\s\S]+?)\}/g
+                    })
                 }
             };
             __alloyId16.push(__alloyId19);
@@ -62,6 +71,14 @@ function Controller() {
             success: afterFetch,
             error: afterFetch
         });
+    }
+    function transform(model) {
+        "use strict";
+        return {
+            title: model.get("title"),
+            startDateTime: model.get("fgrrss:startDateTime"),
+            link: model.get("link")
+        };
     }
     function select(e) {
         "use strict";
@@ -91,7 +108,7 @@ function Controller() {
     Alloy.Collections.instance("feed");
     $.__views.list = Ti.UI.createWindow({
         backgroundColor: "#FFF",
-        title: "RSS Reader",
+        title: "Free Group Rides",
         id: "list"
     });
     $.__views.list && $.addTopLevelView($.__views.list);
@@ -156,7 +173,7 @@ function Controller() {
     $.__views.list.add($.__views.__alloyId6);
     select ? $.addListener($.__views.__alloyId6, "itemclick", select) : __defers["$.__views.__alloyId6!itemclick!select"] = true;
     exports.destroy = function() {
-        __alloyId20.off("fetch destroy change add remove reset", __alloyId21);
+        __alloyId20 && __alloyId20.off("fetch destroy change add remove reset", __alloyId21);
     };
     _.extend($, $.__views);
     require("alloy/moment");

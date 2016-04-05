@@ -56,16 +56,18 @@ function refresh(e) {
  * @param  {Object} model BackBone model
  * @return {Object}       Transformed properties
  */
-/**
+
 function transform(model) {
 	'use strict';
 
 	// return a formatted version of pubDate
 	return {
-		fgrrss\\:startDateTime: moment(model.get('fgrrss\\:startDateTime'), 'DD MMM YYYY HH:mm:ss ZZ').format('LLL')
+		title: model.get('title'),
+		startDateTime: model.get('fgrrss:startDateTime'),
+		link:model.get('link')
 	};
 }
-*/
+
 /**
  * event listener set via view for when the user selects a ListView item
  * @param  {Object} e Event

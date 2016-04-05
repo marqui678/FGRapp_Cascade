@@ -3,7 +3,7 @@
 	<!-- create global instance of collection we'll bind -->
 	<Collection src="feed" />
 	
-	<Window title="RSS Reader">
+	<Window title="Free Group Rides">
 
 		<!-- Android: Add MenuItem for refresh -->		
 		<Menu platform="android">
@@ -23,8 +23,8 @@
 			
 			<!-- Alloy data-binding -->
 
-			<ListSection dataCollection="feed">
-				<ListItem itemId="{link}" image:image="{image}" title:text="{title}" subtitle:text="{description}" />
+			<ListSection dataCollection="feed" dataTransform="transform">
+				<ListItem itemId="{link}" title:text="{title}" subtitle:text="{startDateTime}" />
 			</ListSection>
 			
 		</ListView>
