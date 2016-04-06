@@ -24,7 +24,7 @@
 
 		// open master controller's Window view for Android (and other platforms)
 	} else {
-		$.listCtrl.getView().open();
+		$.mapCtrl.getView().open();
 	}
 
 	// execute constructor with optional arguments passed to controller

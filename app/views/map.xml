@@ -1,4 +1,8 @@
 <Alloy>
-	<View class="container">
-	</View>
+    <Window>
+        <View id="mapView" module="ti.map" onClick="report">
+            <!-- Starting with Alloy 1.4.0, use the Annotation tag to define an annotation -->
+            <Annotation id='appcHQ' myid='1' />
+        </View>
+    </Window>
 </Alloy>

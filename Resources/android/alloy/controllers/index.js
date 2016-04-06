@@ -33,18 +33,18 @@ function Controller() {
     var $ = this;
     var exports = {};
     var __defers = {};
-    $.__views.listCtrl = Alloy.createController("list", {
-        id: "listCtrl"
+    $.__views.mapCtrl = Alloy.createController("map", {
+        id: "mapCtrl"
     });
-    $.__views.listCtrl && $.addTopLevelView($.__views.listCtrl);
-    onSelect ? $.__views.listCtrl.on("select", onSelect) : __defers["$.__views.listCtrl!select!onSelect"] = true;
+    $.__views.mapCtrl && $.addTopLevelView($.__views.mapCtrl);
+    onSelect ? $.__views.mapCtrl.on("select", onSelect) : __defers["$.__views.mapCtrl!select!onSelect"] = true;
     exports.destroy = function() {};
     _.extend($, $.__views);
     !function() {
         "use strict";
-        $.listCtrl.getView().open();
+        $.mapCtrl.getView().open();
     }(arguments[0] || {});
-    __defers["$.__views.listCtrl!select!onSelect"] && $.__views.listCtrl.on("select", onSelect);
+    __defers["$.__views.mapCtrl!select!onSelect"] && $.__views.mapCtrl.on("select", onSelect);
     _.extend($, exports);
 }
 

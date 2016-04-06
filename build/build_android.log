@@ -1,12 +1,12 @@
 
-2016-04-04 17:17:55
+2016-04-05 23:42:21
 
 Operating System
-  Name                        = Microsoft Windows 10 ��ͥ���İ�
-  Version                     = 10.0.10586
+  Name                        = Microsoft Windows 8.1
+  Version                     = 6.3.9600
   Architecture                = 32bit
   # CPUs                      = 4
-  Memory                      = 8534650880
+  Memory                      = 8490418176
 
 Node.js
   Node.js Version             = 0.12.7
@@ -21,38 +21,31 @@ Titanium SDK
   Target Platform             = android
 
 Command
-  C:\Program Files (x86)\nodejs\node.exe C:\Users\Nancy\.appcelerator\install\5.2.2\package\node_modules\titanium\lib\titanium.js build run --platform android --log-level trace --sdk 5.2.1.GA --project-dir D:\Titanium2\FGRapp --target emulator --android-sdk C:\android-sdk-win --device-id Google Nexus 5X - 6.0.0 - API 23 - 1080x1920 --skip-js-minify --no-colors --no-progress-bars --no-prompt --prompt-type socket-bundle --prompt-port 65527 --config-file C:\Users\Nancy\AppData\Local\Temp\build-1459815468009.json --no-banner --project-dir D:\Titanium2\FGRapp
+  C:\Program Files (x86)\nodejs\node.exe C:\Users\Lijuan\.appcelerator\install\5.2.2\package\node_modules\titanium\lib\titanium.js build run --platform android --log-level trace --sdk 5.2.1.GA --project-dir D:\appceleratorWorkspace\FGRapp --target emulator --android-sdk D:\android\android-sdk --device-id Custom Phone - 5.1.0 - API 22 - 768x1280 --skip-js-minify --no-colors --no-progress-bars --no-prompt --prompt-type socket-bundle --prompt-port 57945 --config-file C:\Users\Lijuan\AppData\Local\Temp\build-1459924929752.json --no-banner --project-dir D:\appceleratorWorkspace\FGRapp
 
 [DEBUG]  Detecting modules in C:\ProgramData\Application Data\Titanium\modules
-[DEBUG]  Detected android module: facebook 4.0.5 @ C:\ProgramData\Application Data\Titanium\modules\android\facebook\4.0.5
 [DEBUG]  Detected android module: facebook 5.0.0 @ C:\ProgramData\Application Data\Titanium\modules\android\facebook\5.0.0
-[DEBUG]  Detected android module: ti.cloudpush 3.4.0 @ C:\ProgramData\Application Data\Titanium\modules\android\ti.cloudpush\3.4.0
 [DEBUG]  Detected android module: ti.cloudpush 3.4.1 @ C:\ProgramData\Application Data\Titanium\modules\android\ti.cloudpush\3.4.1
-[DEBUG]  Detected android module: ti.map 2.3.4 @ C:\ProgramData\Application Data\Titanium\modules\android\ti.map\2.3.4
 [DEBUG]  Detected android module: ti.map 2.3.6 @ C:\ProgramData\Application Data\Titanium\modules\android\ti.map\2.3.6
 [DEBUG]  Detected commonjs module: ti.cloud 3.2.10 @ C:\ProgramData\Application Data\Titanium\modules\commonjs\ti.cloud\3.2.10
-[DEBUG]  Detected commonjs module: ti.cloud 3.2.9 @ C:\ProgramData\Application Data\Titanium\modules\commonjs\ti.cloud\3.2.9
 [DEBUG]  Detecting modules in C:\ProgramData\Titanium\modules
-[DEBUG]  Detected android module: facebook 4.0.5 @ C:\ProgramData\Titanium\modules\android\facebook\4.0.5
 [DEBUG]  Detected android module: facebook 5.0.0 @ C:\ProgramData\Titanium\modules\android\facebook\5.0.0
-[DEBUG]  Detected android module: ti.cloudpush 3.4.0 @ C:\ProgramData\Titanium\modules\android\ti.cloudpush\3.4.0
 [DEBUG]  Detected android module: ti.cloudpush 3.4.1 @ C:\ProgramData\Titanium\modules\android\ti.cloudpush\3.4.1
-[DEBUG]  Detected android module: ti.map 2.3.4 @ C:\ProgramData\Titanium\modules\android\ti.map\2.3.4
 [DEBUG]  Detected android module: ti.map 2.3.6 @ C:\ProgramData\Titanium\modules\android\ti.map\2.3.6
 [DEBUG]  Detected commonjs module: ti.cloud 3.2.10 @ C:\ProgramData\Titanium\modules\commonjs\ti.cloud\3.2.10
-[DEBUG]  Detected commonjs module: ti.cloud 3.2.9 @ C:\ProgramData\Titanium\modules\commonjs\ti.cloud\3.2.9
 [DEBUG]  Looking for Titanium module id=ti.cloud version=latest platform=commonjs deploy-type=development
-[INFO]   Found Titanium module id=ti.cloud version=3.2.9 platform=commonjs deploy-type=development path=C:\ProgramData\Application Data\Titanium\modules\commonjs\ti.cloud\3.2.9
-[INFO]   Found better matching module id=ti.cloud version=latest platform=commonjs deploy-type=development path=C:\ProgramData\Application Data\Titanium\modules\commonjs\ti.cloud\3.2.10
-[DEBUG]  Detecting plugins in D:\Titanium2\FGRapp\plugins
-[DEBUG]  Detected plugin: ti.alloy @ D:\Titanium2\FGRapp\plugins\ti.alloy
+[INFO]   Found Titanium module id=ti.cloud version=3.2.10 platform=commonjs deploy-type=development path=C:\ProgramData\Application Data\Titanium\modules\commonjs\ti.cloud\3.2.10
+[DEBUG]  Looking for Titanium module id=ti.map version=latest platform=android deploy-type=development
+[INFO]   Found Titanium module id=ti.map version=2.3.6 platform=android deploy-type=development path=C:\ProgramData\Application Data\Titanium\modules\android\ti.map\2.3.6
+[DEBUG]  Detecting plugins in D:\appceleratorWorkspace\FGRapp\plugins
+[DEBUG]  Detected plugin: ti.alloy @ D:\appceleratorWorkspace\FGRapp\plugins\ti.alloy
 [DEBUG]  Looking for Titanium plugin id=ti.alloy version=1.0
 [INFO]   Found Titanium plugin id=ti.alloy version=1.0 
 [TRACE]  Snapshotting build directory
 [DEBUG]  Titanium SDK Android directory: C:\ProgramData\Titanium\mobilesdk\win32\5.2.1.GA\android
 [INFO]   Deploy type: development
 [INFO]   Building for target: emulator
-[INFO]   Building for emulator: Google Nexus 5X - 6.0.0 - API 23 - 1080x1920
+[INFO]   Building for emulator: Custom Phone - 5.1.0 - API 22 - 768x1280
 [INFO]   Targeting Android SDK API: 23
 [INFO]   Building for the following architectures: armeabi, armeabi-v7a, x86
 [INFO]   Signing with keystore: C:\ProgramData\Titanium\mobilesdk\win32\5.2.1.GA\android\dev_keystore (tidev)
@@ -63,8 +56,8 @@ Command
 [INFO]   Forcing rebuild: JavaScript encryption flag changed
 [INFO]     Was: true
 [INFO]     Now: false
-[INFO]   Found Alloy app in D:\Titanium2\FGRapp\app
-[INFO]   Executing Alloy compile: C:\Program Files (x86)\nodejs\node.exe C:\Users\Nancy\.appcelerator\install\5.2.2\package\node_modules\alloy\bin\alloy compile D:\Titanium2\FGRapp\app --config platform=android,version=0,simtype=none,devicefamily=none,deploytype=development,target=emulator --no-colors
+[INFO]   Found Alloy app in D:\appceleratorWorkspace\FGRapp\app
+[INFO]   Executing Alloy compile: C:\Program Files (x86)\nodejs\node.exe C:\Users\Lijuan\.appcelerator\install\5.2.2\package\node_modules\alloy\bin\alloy compile D:\appceleratorWorkspace\FGRapp\app --config platform=android,version=0,simtype=none,devicefamily=none,deploytype=development,target=emulator --no-colors
 [DEBUG]         .__  .__                
 [DEBUG]  _____  |  | |  |   ____ ___.__.
 [DEBUG]  \__  \ |  | |  |  /  _ <   |  |
@@ -80,8 +73,8 @@ Command
 [DEBUG]  devicefamily = none
 [DEBUG]  deploytype = development
 [DEBUG]  target = emulator
-[DEBUG]  project path = D:\Titanium2\FGRapp
-[DEBUG]  app path = D:\Titanium2\FGRapp\app
+[DEBUG]  project path = D:\appceleratorWorkspace\FGRapp
+[DEBUG]  app path = D:\appceleratorWorkspace\FGRapp\app
 [DEBUG]  
 [DEBUG]  ----- CONFIG.JSON -----
 [DEBUG]  dependencies = {}
@@ -107,7 +100,7 @@ Command
 [DEBUG]  Removing orphaned assets and libs...
 [DEBUG]  
 [DEBUG]  ----- BASE RUNTIME FILES -----
-[TRACE]  SRC_DIR=C:\Users\Nancy\.appcelerator\install\5.2.2\package\node_modules\alloy\Alloy\lib
+[TRACE]  SRC_DIR=C:\Users\Lijuan\.appcelerator\install\5.2.2\package\node_modules\alloy\Alloy\lib
 [TRACE]  Copying SRC_DIR\alloy\sync\sql.js --> Resources\android\alloy\sync\sql.js
 [TRACE]  Copying SRC_DIR\alloy\sync\properties.js --> Resources\android\alloy\sync\properties.js
 [TRACE]  Copying SRC_DIR\alloy\sync\localStorage.js --> Resources\android\alloy\sync\localStorage.js
@@ -115,22 +108,21 @@ Command
 [TRACE]  Copying SRC_DIR\alloy\widget.js --> Resources\android\alloy\widget.js
 [TRACE]  Copying SRC_DIR\alloy\underscore.js --> Resources\android\alloy\underscore.js
 [TRACE]  
-[TRACE]  Generating D:\Titanium2\FGRapp\Resources\android\alloy.js
-[TRACE]  SRC_DIR=C:\Users\Nancy\.appcelerator\install\5.2.2\package\node_modules\alloy\Alloy\common
+[TRACE]  Generating D:\appceleratorWorkspace\FGRapp\Resources\android\alloy.js
+[TRACE]  SRC_DIR=C:\Users\Lijuan\.appcelerator\install\5.2.2\package\node_modules\alloy\Alloy\common
 [TRACE]  Copying SRC_DIR\constants.js --> Resources\android\alloy\constants.js
 [TRACE]  
-[TRACE]  SRC_DIR=D:\Titanium2\FGRapp\app\assets
+[TRACE]  SRC_DIR=D:\appceleratorWorkspace\FGRapp\app\assets
 [TRACE]  
-[TRACE]  SRC_DIR=D:\Titanium2\FGRapp\app\lib
+[TRACE]  SRC_DIR=D:\appceleratorWorkspace\FGRapp\app\lib
 [TRACE]  Copying SRC_DIR\alloy\sync\rss.js --> Resources\android\alloy\sync\rss.js
 [TRACE]  
-[DEBUG]  Resetting D:\Titanium2\FGRapp\platform\android
+[DEBUG]  Resetting D:\appceleratorWorkspace\FGRapp\platform\android
 [DEBUG]  
-[DEBUG]  Resetting D:\Titanium2\FGRapp\i18n
+[DEBUG]  Resetting D:\appceleratorWorkspace\FGRapp\i18n
 [DEBUG]  
 [INFO]   ----- MVC GENERATION -----
-[INFO]   [app.tss] global style processing...
-[INFO]   [global style] writing to cache...
+[INFO]   [global style] loading from cache...
 [INFO]   [models/feed.js] model processing...
 [INFO]   [about.xml] view processing...
 [INFO]   style:      "about.tss"
@@ -241,107 +233,318 @@ Command
 [TRACE]  
 [TRACE]  Benchmarking
 [TRACE]  ------------
-[TRACE]  [3.11932s] TOTAL
+[TRACE]  [1.67305s] TOTAL
 [INFO]   
-[INFO]   Alloy compiled in 3.11932s
+[INFO]   Alloy compiled in 1.67305s
 [INFO]   Alloy compiler completed successfully
-[INFO]   Launching emulator: Google Nexus 5X - 6.0.0 - API 23 - 1080x1920
-[TRACE]  Starting emulator: Google Nexus 5X - 6.0.0 - API 23 - 1080x1920
-[TRACE]  Checking if emulator Google Nexus 5X - 6.0.0 - API 23 - 1080x1920 is running...
-[TRACE]  Detecting if Google Nexus 5X - 6.0.0 - API 23 - 1080x1920 exists...
-[TRACE]  Found 4 emulators
+[INFO]   Launching emulator: Custom Phone - 5.1.0 - API 22 - 768x1280
+[TRACE]  Starting emulator: Custom Phone - 5.1.0 - API 22 - 768x1280
+[TRACE]  Checking if emulator Custom Phone - 5.1.0 - API 22 - 768x1280 is running...
+[TRACE]  Detecting if Custom Phone - 5.1.0 - API 22 - 768x1280 exists...
+[TRACE]  Found 6 emulators
 [TRACE]  Emulator exists, detecting all running emulators and connected devices...
-[TRACE]  Detected 0 running emulators and connected devices
-[TRACE]  Emulator not running, detecting running emulators
-[TRACE]  Found 4 emulators
-[TRACE]  Starting the emulator...
-[INFO]   Running: D:\Program Files\Genymobile\Genymotion\player.exe --vm-name "Google Nexus 5X - 6.0.0 - API 23 - 1080x1920"
-[TRACE]  Emulator is starting, monitoring boot state...
+[TRACE]  Detected 1 running emulators and connected devices
+[TRACE]  Checking 1 devices to see if it's the emulator we want
+[TRACE]  The emulator is running
+[INFO]   Emulator already running
 [TRACE]  Checking the boot state for the next 240000 ms
 [TRACE]  Waiting for emulator to register with ADB
 [TRACE]  Emulator process started
-[TRACE]  offline build file C:\Users\Nancy\AppData\Local\Temp\build-d94907d50c8fb2064100351259cfd9094ceee367.json
+[TRACE]  offline build file C:\Users\Lijuan\AppData\Local\Temp\build-2af3f560e8cba48084258fc8a34ce83fb15a02a2.json
 [TRACE]  online 1
-[TRACE]  optimizing build, last build was 11406.14 sec ago
-[DEBUG]  Copying D:\Titanium2\FGRapp\Resources
-[DEBUG]  Ignoring D:\Titanium2\FGRapp\Resources\android
-[WARN]   Overwriting file D:\Titanium2\FGRapp\build\android\bin\assets\Resources\iphone\Default-568h@2x.png
-[DEBUG]  Copying D:\Titanium2\FGRapp\Resources\iphone\Default-568h@2x.png => D:\Titanium2\FGRapp\build\android\bin\assets\Resources\iphone\Default-568h@2x.png
-[WARN]   Overwriting file D:\Titanium2\FGRapp\build\android\bin\assets\Resources\iphone\Default-667h@2x.png
-[DEBUG]  Copying D:\Titanium2\FGRapp\Resources\iphone\Default-667h@2x.png => D:\Titanium2\FGRapp\build\android\bin\assets\Resources\iphone\Default-667h@2x.png
-[WARN]   Overwriting file D:\Titanium2\FGRapp\build\android\bin\assets\Resources\iphone\Default-Landscape-736h@3x.png
-[DEBUG]  Copying D:\Titanium2\FGRapp\Resources\iphone\Default-Landscape-736h@3x.png => D:\Titanium2\FGRapp\build\android\bin\assets\Resources\iphone\Default-Landscape-736h@3x.png
-[WARN]   Overwriting file D:\Titanium2\FGRapp\build\android\bin\assets\Resources\iphone\Default-Landscape.png
-[DEBUG]  Copying D:\Titanium2\FGRapp\Resources\iphone\Default-Landscape.png => D:\Titanium2\FGRapp\build\android\bin\assets\Resources\iphone\Default-Landscape.png
-[WARN]   Overwriting file D:\Titanium2\FGRapp\build\android\bin\assets\Resources\iphone\Default-Landscape@2x.png
-[DEBUG]  Copying D:\Titanium2\FGRapp\Resources\iphone\Default-Landscape@2x.png => D:\Titanium2\FGRapp\build\android\bin\assets\Resources\iphone\Default-Landscape@2x.png
-[WARN]   Overwriting file D:\Titanium2\FGRapp\build\android\bin\assets\Resources\iphone\Default-Portrait-736h@3x.png
-[DEBUG]  Copying D:\Titanium2\FGRapp\Resources\iphone\Default-Portrait-736h@3x.png => D:\Titanium2\FGRapp\build\android\bin\assets\Resources\iphone\Default-Portrait-736h@3x.png
-[WARN]   Overwriting file D:\Titanium2\FGRapp\build\android\bin\assets\Resources\iphone\Default-Portrait.png
-[DEBUG]  Copying D:\Titanium2\FGRapp\Resources\iphone\Default-Portrait.png => D:\Titanium2\FGRapp\build\android\bin\assets\Resources\iphone\Default-Portrait.png
-[WARN]   Overwriting file D:\Titanium2\FGRapp\build\android\bin\assets\Resources\iphone\Default-Portrait@2x.png
-[DEBUG]  Copying D:\Titanium2\FGRapp\Resources\iphone\Default-Portrait@2x.png => D:\Titanium2\FGRapp\build\android\bin\assets\Resources\iphone\Default-Portrait@2x.png
-[WARN]   Overwriting file D:\Titanium2\FGRapp\build\android\bin\assets\Resources\iphone\Default.png
-[DEBUG]  Copying D:\Titanium2\FGRapp\Resources\iphone\Default.png => D:\Titanium2\FGRapp\build\android\bin\assets\Resources\iphone\Default.png
-[WARN]   Overwriting file D:\Titanium2\FGRapp\build\android\bin\assets\Resources\iphone\Default@2x.png
-[DEBUG]  Copying D:\Titanium2\FGRapp\Resources\iphone\Default@2x.png => D:\Titanium2\FGRapp\build\android\bin\assets\Resources\iphone\Default@2x.png
-[DEBUG]  Copying D:\Titanium2\FGRapp\Resources\android
-[WARN]   Overwriting file D:\Titanium2\FGRapp\build\android\bin\assets\Resources\appicon.png
-[DEBUG]  Copying D:\Titanium2\FGRapp\Resources\android\appicon.png => D:\Titanium2\FGRapp\build\android\bin\assets\Resources\appicon.png
-[DEBUG]  Copying D:\Titanium2\FGRapp\Resources\android\default.png => D:\Titanium2\FGRapp\build\android\res\drawable\background.png
-[DEBUG]  Copying D:\Titanium2\FGRapp\Resources\android\images\res-long-land-hdpi\default.png => D:\Titanium2\FGRapp\build\android\res\drawable-long-land-hdpi\background.png
-[DEBUG]  Copying D:\Titanium2\FGRapp\Resources\android\images\res-long-land-ldpi\default.png => D:\Titanium2\FGRapp\build\android\res\drawable-long-land-ldpi\background.png
-[DEBUG]  Copying D:\Titanium2\FGRapp\Resources\android\images\res-long-land-mdpi\default.png => D:\Titanium2\FGRapp\build\android\res\drawable-long-land-mdpi\background.png
-[DEBUG]  Copying D:\Titanium2\FGRapp\Resources\android\images\res-long-port-hdpi\default.png => D:\Titanium2\FGRapp\build\android\res\drawable-long-port-hdpi\background.png
-[DEBUG]  Copying D:\Titanium2\FGRapp\Resources\android\images\res-long-port-ldpi\default.png => D:\Titanium2\FGRapp\build\android\res\drawable-long-port-ldpi\background.png
-[DEBUG]  Copying D:\Titanium2\FGRapp\Resources\android\images\res-notlong-land-hdpi\default.png => D:\Titanium2\FGRapp\build\android\res\drawable-notlong-land-hdpi\background.png
-[DEBUG]  Copying D:\Titanium2\FGRapp\Resources\android\images\res-notlong-land-ldpi\default.png => D:\Titanium2\FGRapp\build\android\res\drawable-notlong-land-ldpi\background.png
-[DEBUG]  Copying D:\Titanium2\FGRapp\Resources\android\images\res-notlong-land-mdpi\default.png => D:\Titanium2\FGRapp\build\android\res\drawable-notlong-land-mdpi\background.png
-[DEBUG]  Copying D:\Titanium2\FGRapp\Resources\android\images\res-notlong-port-hdpi\default.png => D:\Titanium2\FGRapp\build\android\res\drawable-notlong-port-hdpi\background.png
-[DEBUG]  Copying D:\Titanium2\FGRapp\Resources\android\images\res-notlong-port-ldpi\default.png => D:\Titanium2\FGRapp\build\android\res\drawable-notlong-port-ldpi\background.png
-[DEBUG]  Copying D:\Titanium2\FGRapp\Resources\android\images\res-notlong-port-mdpi\default.png => D:\Titanium2\FGRapp\build\android\res\drawable-notlong-port-mdpi\background.png
+[TRACE]  optimizing build, last build was 5628.653 sec ago
+[DEBUG]  Copying D:\appceleratorWorkspace\FGRapp\Resources
+[DEBUG]  Ignoring D:\appceleratorWorkspace\FGRapp\Resources\android
+[DEBUG]  Copying D:\appceleratorWorkspace\FGRapp\Resources\android
+[WARN]   Overwriting file D:\appceleratorWorkspace\FGRapp\build\android\bin\assets\Resources\appicon.png
+[DEBUG]  Copying D:\appceleratorWorkspace\FGRapp\Resources\android\appicon.png => D:\appceleratorWorkspace\FGRapp\build\android\bin\assets\Resources\appicon.png
+[DEBUG]  Copying D:\appceleratorWorkspace\FGRapp\Resources\android\default.png => D:\appceleratorWorkspace\FGRapp\build\android\res\drawable\background.png
+[DEBUG]  Copying D:\appceleratorWorkspace\FGRapp\Resources\android\images\res-long-land-hdpi\default.png => D:\appceleratorWorkspace\FGRapp\build\android\res\drawable-long-land-hdpi\background.png
+[DEBUG]  Copying D:\appceleratorWorkspace\FGRapp\Resources\android\images\res-long-land-ldpi\default.png => D:\appceleratorWorkspace\FGRapp\build\android\res\drawable-long-land-ldpi\background.png
+[DEBUG]  Copying D:\appceleratorWorkspace\FGRapp\Resources\android\images\res-long-land-mdpi\default.png => D:\appceleratorWorkspace\FGRapp\build\android\res\drawable-long-land-mdpi\background.png
+[DEBUG]  Copying D:\appceleratorWorkspace\FGRapp\Resources\android\images\res-long-port-hdpi\default.png => D:\appceleratorWorkspace\FGRapp\build\android\res\drawable-long-port-hdpi\background.png
+[DEBUG]  Copying D:\appceleratorWorkspace\FGRapp\Resources\android\images\res-long-port-ldpi\default.png => D:\appceleratorWorkspace\FGRapp\build\android\res\drawable-long-port-ldpi\background.png
+[DEBUG]  Copying D:\appceleratorWorkspace\FGRapp\Resources\android\images\res-notlong-land-hdpi\default.png => D:\appceleratorWorkspace\FGRapp\build\android\res\drawable-notlong-land-hdpi\background.png
+[DEBUG]  Copying D:\appceleratorWorkspace\FGRapp\Resources\android\images\res-notlong-land-ldpi\default.png => D:\appceleratorWorkspace\FGRapp\build\android\res\drawable-notlong-land-ldpi\background.png
+[DEBUG]  Copying D:\appceleratorWorkspace\FGRapp\Resources\android\images\res-notlong-land-mdpi\default.png => D:\appceleratorWorkspace\FGRapp\build\android\res\drawable-notlong-land-mdpi\background.png
+[DEBUG]  Copying D:\appceleratorWorkspace\FGRapp\Resources\android\images\res-notlong-port-hdpi\default.png => D:\appceleratorWorkspace\FGRapp\build\android\res\drawable-notlong-port-hdpi\background.png
+[DEBUG]  Copying D:\appceleratorWorkspace\FGRapp\Resources\android\images\res-notlong-port-ldpi\default.png => D:\appceleratorWorkspace\FGRapp\build\android\res\drawable-notlong-port-ldpi\background.png
+[DEBUG]  Copying D:\appceleratorWorkspace\FGRapp\Resources\android\images\res-notlong-port-mdpi\default.png => D:\appceleratorWorkspace\FGRapp\build\android\res\drawable-notlong-port-mdpi\background.png
 [DEBUG]  Copying C:\ProgramData\Application Data\Titanium\modules\commonjs\ti.cloud\3.2.10\ti.cloud.js
 [DEBUG]  Copying C:\ProgramData\Application Data\Titanium\modules\commonjs\ti.cloud\3.2.10\assets
-[DEBUG]  Copying D:\Titanium2\FGRapp\platform\android\alloy_generated => D:\Titanium2\FGRapp\build\android\alloy_generated
-[DEBUG]  Copying D:\Titanium2\FGRapp\build\android\bin\assets\Resources\appicon.png => D:\Titanium2\FGRapp\build\android\res\drawable\appicon.png
-[INFO]   Processing JavaScript files
-[DEBUG]  Copying D:\Titanium2\FGRapp\Resources\android\alloy\CFG.js => D:\Titanium2\FGRapp\build\android\assets\alloy\CFG.js
-[DEBUG]  Copying D:\Titanium2\FGRapp\Resources\alloy\moment.js => D:\Titanium2\FGRapp\build\android\assets\alloy\moment.js
-[DEBUG]  Copying D:\Titanium2\FGRapp\Resources\android\app.js => D:\Titanium2\FGRapp\build\android\assets\app.js
+[DEBUG]  Copying C:\ProgramData\Application Data\Titanium\modules\android\ti.map\2.3.6\platform\android\res\color\common_signin_btn_text_dark.xml => D:\appceleratorWorkspace\FGRapp\build\android\res\color\common_signin_btn_text_dark.xml
+[DEBUG]  Copying C:\ProgramData\Application Data\Titanium\modules\android\ti.map\2.3.6\platform\android\res\color\common_signin_btn_text_light.xml => D:\appceleratorWorkspace\FGRapp\build\android\res\color\common_signin_btn_text_light.xml
+[DEBUG]  Copying C:\ProgramData\Application Data\Titanium\modules\android\ti.map\2.3.6\platform\android\res\color\wallet_primary_text_holo_light.xml => D:\appceleratorWorkspace\FGRapp\build\android\res\color\wallet_primary_text_holo_light.xml
+[DEBUG]  Copying C:\ProgramData\Application Data\Titanium\modules\android\ti.map\2.3.6\platform\android\res\color\wallet_secondary_text_holo_dark.xml => D:\appceleratorWorkspace\FGRapp\build\android\res\color\wallet_secondary_text_holo_dark.xml
+[DEBUG]  Copying C:\ProgramData\Application Data\Titanium\modules\android\ti.map\2.3.6\platform\android\res\drawable\cast_ic_notification_connecting.xml => D:\appceleratorWorkspace\FGRapp\build\android\res\drawable\cast_ic_notification_connecting.xml
 [TRACE]  Found 1 devices, checking if any of them are the emulator...
 [TRACE]  Emulator is running!
 [TRACE]  Checking if boot animation has finished...
-[DEBUG]  Copying D:\Titanium2\FGRapp\Resources\android\alloy\backbone.js => D:\Titanium2\FGRapp\build\android\assets\alloy\backbone.js
+[DEBUG]  Copying C:\ProgramData\Application Data\Titanium\modules\android\ti.map\2.3.6\platform\android\res\drawable\common_signin_btn_icon_dark.xml => D:\appceleratorWorkspace\FGRapp\build\android\res\drawable\common_signin_btn_icon_dark.xml
 [TRACE]  Emulator is booted, emitting booted event
 [INFO]   Emulator is booted
 [INFO]   SD card not required, skipping mount check
 [INFO]   Emulator ready!
-[DEBUG]  Copying D:\Titanium2\FGRapp\Resources\android\alloy\constants.js => D:\Titanium2\FGRapp\build\android\assets\alloy\constants.js
-[DEBUG]  Copying D:\Titanium2\FGRapp\Resources\android\alloy\controllers\about.js => D:\Titanium2\FGRapp\build\android\assets\alloy\controllers\about.js
-[DEBUG]  Copying D:\Titanium2\FGRapp\Resources\android\alloy\controllers\BaseController.js => D:\Titanium2\FGRapp\build\android\assets\alloy\controllers\BaseController.js
-[DEBUG]  Copying D:\Titanium2\FGRapp\Resources\android\alloy\controllers\detail.js => D:\Titanium2\FGRapp\build\android\assets\alloy\controllers\detail.js
-[DEBUG]  Copying D:\Titanium2\FGRapp\Resources\android\alloy\controllers\filter.js => D:\Titanium2\FGRapp\build\android\assets\alloy\controllers\filter.js
-[DEBUG]  Copying D:\Titanium2\FGRapp\Resources\android\alloy\controllers\index.js => D:\Titanium2\FGRapp\build\android\assets\alloy\controllers\index.js
-[DEBUG]  Copying D:\Titanium2\FGRapp\Resources\android\alloy\controllers\list.js => D:\Titanium2\FGRapp\build\android\assets\alloy\controllers\list.js
-[DEBUG]  Copying D:\Titanium2\FGRapp\Resources\android\alloy\controllers\map.js => D:\Titanium2\FGRapp\build\android\assets\alloy\controllers\map.js
-[DEBUG]  Copying D:\Titanium2\FGRapp\Resources\android\alloy\controllers\sort.js => D:\Titanium2\FGRapp\build\android\assets\alloy\controllers\sort.js
-[DEBUG]  Copying D:\Titanium2\FGRapp\Resources\android\alloy\models\Feed.js => D:\Titanium2\FGRapp\build\android\assets\alloy\models\Feed.js
-[DEBUG]  Copying D:\Titanium2\FGRapp\Resources\android\alloy\styles\about.js => D:\Titanium2\FGRapp\build\android\assets\alloy\styles\about.js
-[DEBUG]  Copying D:\Titanium2\FGRapp\Resources\android\alloy\styles\detail.js => D:\Titanium2\FGRapp\build\android\assets\alloy\styles\detail.js
-[DEBUG]  Copying D:\Titanium2\FGRapp\Resources\android\alloy\styles\filter.js => D:\Titanium2\FGRapp\build\android\assets\alloy\styles\filter.js
-[DEBUG]  Copying D:\Titanium2\FGRapp\Resources\android\alloy\styles\index.js => D:\Titanium2\FGRapp\build\android\assets\alloy\styles\index.js
-[DEBUG]  Copying D:\Titanium2\FGRapp\Resources\android\alloy\styles\list.js => D:\Titanium2\FGRapp\build\android\assets\alloy\styles\list.js
-[DEBUG]  Copying D:\Titanium2\FGRapp\Resources\android\alloy\styles\map.js => D:\Titanium2\FGRapp\build\android\assets\alloy\styles\map.js
-[DEBUG]  Copying D:\Titanium2\FGRapp\Resources\android\alloy\styles\sort.js => D:\Titanium2\FGRapp\build\android\assets\alloy\styles\sort.js
-[DEBUG]  Copying D:\Titanium2\FGRapp\Resources\android\alloy\sync\localStorage.js => D:\Titanium2\FGRapp\build\android\assets\alloy\sync\localStorage.js
-[DEBUG]  Copying D:\Titanium2\FGRapp\Resources\android\alloy\sync\properties.js => D:\Titanium2\FGRapp\build\android\assets\alloy\sync\properties.js
-[DEBUG]  Copying D:\Titanium2\FGRapp\Resources\android\alloy\sync\rss.js => D:\Titanium2\FGRapp\build\android\assets\alloy\sync\rss.js
-[DEBUG]  Copying D:\Titanium2\FGRapp\Resources\android\alloy\sync\sql.js => D:\Titanium2\FGRapp\build\android\assets\alloy\sync\sql.js
-[DEBUG]  Copying D:\Titanium2\FGRapp\Resources\android\alloy\underscore.js => D:\Titanium2\FGRapp\build\android\assets\alloy\underscore.js
-[DEBUG]  Copying D:\Titanium2\FGRapp\Resources\android\alloy\widget.js => D:\Titanium2\FGRapp\build\android\assets\alloy\widget.js
-[DEBUG]  Copying D:\Titanium2\FGRapp\Resources\android\alloy.js => D:\Titanium2\FGRapp\build\android\assets\alloy.js
-[DEBUG]  Copying C:\ProgramData\Application Data\Titanium\modules\commonjs\ti.cloud\3.2.10\ti.cloud.js => D:\Titanium2\FGRapp\build\android\assets\ti.cloud.js
-[INFO]   Encrypting JavaScript files: C:\ProgramData\Titanium\mobilesdk\win32\5.2.1.GA\android\titanium_prep.win32.exe "edu.uw.titaniumpanda.FGRCascade" "D:\Titanium2\FGRapp\build\android\assets" "alloy/CFG.js" "alloy/moment.js" "app.js" "alloy/backbone.js" "alloy/constants.js" "alloy/controllers/about.js" "alloy/controllers/BaseController.js" "alloy/controllers/detail.js" "alloy/controllers/filter.js" "alloy/controllers/index.js" "alloy/controllers/list.js" "alloy/controllers/map.js" "alloy/controllers/sort.js" "alloy/models/Feed.js" "alloy/styles/about.js" "alloy/styles/detail.js" "alloy/styles/filter.js" "alloy/styles/index.js" "alloy/styles/list.js" "alloy/styles/map.js" "alloy/styles/sort.js" "alloy/sync/localStorage.js" "alloy/sync/properties.js" "alloy/sync/rss.js" "alloy/sync/sql.js" "alloy/underscore.js" "alloy/widget.js" "alloy.js" "ti.cloud.js" "_app_props_.json"
+[DEBUG]  Copying C:\ProgramData\Application Data\Titanium\modules\android\ti.map\2.3.6\platform\android\res\drawable\common_signin_btn_icon_light.xml => D:\appceleratorWorkspace\FGRapp\build\android\res\drawable\common_signin_btn_icon_light.xml
+[DEBUG]  Copying C:\ProgramData\Application Data\Titanium\modules\android\ti.map\2.3.6\platform\android\res\drawable\common_signin_btn_text_dark.xml => D:\appceleratorWorkspace\FGRapp\build\android\res\drawable\common_signin_btn_text_dark.xml
+[DEBUG]  Copying C:\ProgramData\Application Data\Titanium\modules\android\ti.map\2.3.6\platform\android\res\drawable\common_signin_btn_text_light.xml => D:\appceleratorWorkspace\FGRapp\build\android\res\drawable\common_signin_btn_text_light.xml
+[DEBUG]  Copying C:\ProgramData\Application Data\Titanium\modules\android\ti.map\2.3.6\platform\android\res\drawable-hdpi\cast_ic_notification_0.png => D:\appceleratorWorkspace\FGRapp\build\android\res\drawable-hdpi\cast_ic_notification_0.png
+[DEBUG]  Copying C:\ProgramData\Application Data\Titanium\modules\android\ti.map\2.3.6\platform\android\res\drawable-hdpi\cast_ic_notification_1.png => D:\appceleratorWorkspace\FGRapp\build\android\res\drawable-hdpi\cast_ic_notification_1.png
+[DEBUG]  Copying C:\ProgramData\Application Data\Titanium\modules\android\ti.map\2.3.6\platform\android\res\drawable-hdpi\cast_ic_notification_2.png => D:\appceleratorWorkspace\FGRapp\build\android\res\drawable-hdpi\cast_ic_notification_2.png
+[DEBUG]  Copying C:\ProgramData\Application Data\Titanium\modules\android\ti.map\2.3.6\platform\android\res\drawable-hdpi\cast_ic_notification_on.png => D:\appceleratorWorkspace\FGRapp\build\android\res\drawable-hdpi\cast_ic_notification_on.png
+[DEBUG]  Copying C:\ProgramData\Application Data\Titanium\modules\android\ti.map\2.3.6\platform\android\res\drawable-hdpi\common_full_open_on_phone.png => D:\appceleratorWorkspace\FGRapp\build\android\res\drawable-hdpi\common_full_open_on_phone.png
+[DEBUG]  Copying C:\ProgramData\Application Data\Titanium\modules\android\ti.map\2.3.6\platform\android\res\drawable-hdpi\common_ic_googleplayservices.png => D:\appceleratorWorkspace\FGRapp\build\android\res\drawable-hdpi\common_ic_googleplayservices.png
+[DEBUG]  Copying C:\ProgramData\Application Data\Titanium\modules\android\ti.map\2.3.6\platform\android\res\drawable-hdpi\common_signin_btn_icon_disabled_dark.9.png => D:\appceleratorWorkspace\FGRapp\build\android\res\drawable-hdpi\common_signin_btn_icon_disabled_dark.9.png
+[DEBUG]  Copying C:\ProgramData\Application Data\Titanium\modules\android\ti.map\2.3.6\platform\android\res\drawable-hdpi\common_signin_btn_icon_disabled_focus_dark.9.png => D:\appceleratorWorkspace\FGRapp\build\android\res\drawable-hdpi\common_signin_btn_icon_disabled_focus_dark.9.png
+[DEBUG]  Copying C:\ProgramData\Application Data\Titanium\modules\android\ti.map\2.3.6\platform\android\res\drawable-hdpi\common_signin_btn_icon_disabled_focus_light.9.png => D:\appceleratorWorkspace\FGRapp\build\android\res\drawable-hdpi\common_signin_btn_icon_disabled_focus_light.9.png
+[DEBUG]  Copying C:\ProgramData\Application Data\Titanium\modules\android\ti.map\2.3.6\platform\android\res\drawable-hdpi\common_signin_btn_icon_disabled_light.9.png => D:\appceleratorWorkspace\FGRapp\build\android\res\drawable-hdpi\common_signin_btn_icon_disabled_light.9.png
+[DEBUG]  Copying C:\ProgramData\Application Data\Titanium\modules\android\ti.map\2.3.6\platform\android\res\drawable-hdpi\common_signin_btn_icon_focus_dark.9.png => D:\appceleratorWorkspace\FGRapp\build\android\res\drawable-hdpi\common_signin_btn_icon_focus_dark.9.png
+[DEBUG]  Copying C:\ProgramData\Application Data\Titanium\modules\android\ti.map\2.3.6\platform\android\res\drawable-hdpi\common_signin_btn_icon_focus_light.9.png => D:\appceleratorWorkspace\FGRapp\build\android\res\drawable-hdpi\common_signin_btn_icon_focus_light.9.png
+[DEBUG]  Copying C:\ProgramData\Application Data\Titanium\modules\android\ti.map\2.3.6\platform\android\res\drawable-hdpi\common_signin_btn_icon_normal_dark.9.png => D:\appceleratorWorkspace\FGRapp\build\android\res\drawable-hdpi\common_signin_btn_icon_normal_dark.9.png
+[DEBUG]  Copying C:\ProgramData\Application Data\Titanium\modules\android\ti.map\2.3.6\platform\android\res\drawable-hdpi\common_signin_btn_icon_normal_light.9.png => D:\appceleratorWorkspace\FGRapp\build\android\res\drawable-hdpi\common_signin_btn_icon_normal_light.9.png
+[DEBUG]  Copying C:\ProgramData\Application Data\Titanium\modules\android\ti.map\2.3.6\platform\android\res\drawable-hdpi\common_signin_btn_icon_pressed_dark.9.png => D:\appceleratorWorkspace\FGRapp\build\android\res\drawable-hdpi\common_signin_btn_icon_pressed_dark.9.png
+[DEBUG]  Copying C:\ProgramData\Application Data\Titanium\modules\android\ti.map\2.3.6\platform\android\res\drawable-hdpi\common_signin_btn_icon_pressed_light.9.png => D:\appceleratorWorkspace\FGRapp\build\android\res\drawable-hdpi\common_signin_btn_icon_pressed_light.9.png
+[DEBUG]  Copying C:\ProgramData\Application Data\Titanium\modules\android\ti.map\2.3.6\platform\android\res\drawable-hdpi\common_signin_btn_text_disabled_dark.9.png => D:\appceleratorWorkspace\FGRapp\build\android\res\drawable-hdpi\common_signin_btn_text_disabled_dark.9.png
+[DEBUG]  Copying C:\ProgramData\Application Data\Titanium\modules\android\ti.map\2.3.6\platform\android\res\drawable-hdpi\common_signin_btn_text_disabled_focus_dark.9.png => D:\appceleratorWorkspace\FGRapp\build\android\res\drawable-hdpi\common_signin_btn_text_disabled_focus_dark.9.png
+[DEBUG]  Copying C:\ProgramData\Application Data\Titanium\modules\android\ti.map\2.3.6\platform\android\res\drawable-hdpi\common_signin_btn_text_disabled_focus_light.9.png => D:\appceleratorWorkspace\FGRapp\build\android\res\drawable-hdpi\common_signin_btn_text_disabled_focus_light.9.png
+[DEBUG]  Copying C:\ProgramData\Application Data\Titanium\modules\android\ti.map\2.3.6\platform\android\res\drawable-hdpi\common_signin_btn_text_disabled_light.9.png => D:\appceleratorWorkspace\FGRapp\build\android\res\drawable-hdpi\common_signin_btn_text_disabled_light.9.png
+[DEBUG]  Copying C:\ProgramData\Application Data\Titanium\modules\android\ti.map\2.3.6\platform\android\res\drawable-hdpi\common_signin_btn_text_focus_dark.9.png => D:\appceleratorWorkspace\FGRapp\build\android\res\drawable-hdpi\common_signin_btn_text_focus_dark.9.png
+[DEBUG]  Copying C:\ProgramData\Application Data\Titanium\modules\android\ti.map\2.3.6\platform\android\res\drawable-hdpi\common_signin_btn_text_focus_light.9.png => D:\appceleratorWorkspace\FGRapp\build\android\res\drawable-hdpi\common_signin_btn_text_focus_light.9.png
+[DEBUG]  Copying C:\ProgramData\Application Data\Titanium\modules\android\ti.map\2.3.6\platform\android\res\drawable-hdpi\common_signin_btn_text_normal_dark.9.png => D:\appceleratorWorkspace\FGRapp\build\android\res\drawable-hdpi\common_signin_btn_text_normal_dark.9.png
+[DEBUG]  Copying C:\ProgramData\Application Data\Titanium\modules\android\ti.map\2.3.6\platform\android\res\drawable-hdpi\common_signin_btn_text_normal_light.9.png => D:\appceleratorWorkspace\FGRapp\build\android\res\drawable-hdpi\common_signin_btn_text_normal_light.9.png
+[DEBUG]  Copying C:\ProgramData\Application Data\Titanium\modules\android\ti.map\2.3.6\platform\android\res\drawable-hdpi\common_signin_btn_text_pressed_dark.9.png => D:\appceleratorWorkspace\FGRapp\build\android\res\drawable-hdpi\common_signin_btn_text_pressed_dark.9.png
+[DEBUG]  Copying C:\ProgramData\Application Data\Titanium\modules\android\ti.map\2.3.6\platform\android\res\drawable-hdpi\common_signin_btn_text_pressed_light.9.png => D:\appceleratorWorkspace\FGRapp\build\android\res\drawable-hdpi\common_signin_btn_text_pressed_light.9.png
+[DEBUG]  Copying C:\ProgramData\Application Data\Titanium\modules\android\ti.map\2.3.6\platform\android\res\drawable-hdpi\ic_plusone_medium_off_client.png => D:\appceleratorWorkspace\FGRapp\build\android\res\drawable-hdpi\ic_plusone_medium_off_client.png
+[DEBUG]  Copying C:\ProgramData\Application Data\Titanium\modules\android\ti.map\2.3.6\platform\android\res\drawable-hdpi\ic_plusone_small_off_client.png => D:\appceleratorWorkspace\FGRapp\build\android\res\drawable-hdpi\ic_plusone_small_off_client.png
+[DEBUG]  Copying C:\ProgramData\Application Data\Titanium\modules\android\ti.map\2.3.6\platform\android\res\drawable-hdpi\ic_plusone_standard_off_client.png => D:\appceleratorWorkspace\FGRapp\build\android\res\drawable-hdpi\ic_plusone_standard_off_client.png
+[DEBUG]  Copying C:\ProgramData\Application Data\Titanium\modules\android\ti.map\2.3.6\platform\android\res\drawable-hdpi\ic_plusone_tall_off_client.png => D:\appceleratorWorkspace\FGRapp\build\android\res\drawable-hdpi\ic_plusone_tall_off_client.png
+[DEBUG]  Copying C:\ProgramData\Application Data\Titanium\modules\android\ti.map\2.3.6\platform\android\res\drawable-hdpi\powered_by_google_dark.png => D:\appceleratorWorkspace\FGRapp\build\android\res\drawable-hdpi\powered_by_google_dark.png
+[DEBUG]  Copying C:\ProgramData\Application Data\Titanium\modules\android\ti.map\2.3.6\platform\android\res\drawable-hdpi\powered_by_google_light.png => D:\appceleratorWorkspace\FGRapp\build\android\res\drawable-hdpi\powered_by_google_light.png
+[DEBUG]  Copying C:\ProgramData\Application Data\Titanium\modules\android\ti.map\2.3.6\platform\android\res\drawable-mdpi\cast_ic_notification_0.png => D:\appceleratorWorkspace\FGRapp\build\android\res\drawable-mdpi\cast_ic_notification_0.png
+[DEBUG]  Copying C:\ProgramData\Application Data\Titanium\modules\android\ti.map\2.3.6\platform\android\res\drawable-mdpi\cast_ic_notification_1.png => D:\appceleratorWorkspace\FGRapp\build\android\res\drawable-mdpi\cast_ic_notification_1.png
+[DEBUG]  Copying C:\ProgramData\Application Data\Titanium\modules\android\ti.map\2.3.6\platform\android\res\drawable-mdpi\cast_ic_notification_2.png => D:\appceleratorWorkspace\FGRapp\build\android\res\drawable-mdpi\cast_ic_notification_2.png
+[DEBUG]  Copying C:\ProgramData\Application Data\Titanium\modules\android\ti.map\2.3.6\platform\android\res\drawable-mdpi\cast_ic_notification_on.png => D:\appceleratorWorkspace\FGRapp\build\android\res\drawable-mdpi\cast_ic_notification_on.png
+[DEBUG]  Copying C:\ProgramData\Application Data\Titanium\modules\android\ti.map\2.3.6\platform\android\res\drawable-mdpi\common_full_open_on_phone.png => D:\appceleratorWorkspace\FGRapp\build\android\res\drawable-mdpi\common_full_open_on_phone.png
+[DEBUG]  Copying C:\ProgramData\Application Data\Titanium\modules\android\ti.map\2.3.6\platform\android\res\drawable-mdpi\common_signin_btn_icon_disabled_dark.9.png => D:\appceleratorWorkspace\FGRapp\build\android\res\drawable-mdpi\common_signin_btn_icon_disabled_dark.9.png
+[DEBUG]  Copying C:\ProgramData\Application Data\Titanium\modules\android\ti.map\2.3.6\platform\android\res\drawable-mdpi\common_signin_btn_icon_disabled_focus_dark.9.png => D:\appceleratorWorkspace\FGRapp\build\android\res\drawable-mdpi\common_signin_btn_icon_disabled_focus_dark.9.png
+[DEBUG]  Copying C:\ProgramData\Application Data\Titanium\modules\android\ti.map\2.3.6\platform\android\res\drawable-mdpi\common_signin_btn_icon_disabled_focus_light.9.png => D:\appceleratorWorkspace\FGRapp\build\android\res\drawable-mdpi\common_signin_btn_icon_disabled_focus_light.9.png
+[DEBUG]  Copying C:\ProgramData\Application Data\Titanium\modules\android\ti.map\2.3.6\platform\android\res\drawable-mdpi\common_signin_btn_icon_disabled_light.9.png => D:\appceleratorWorkspace\FGRapp\build\android\res\drawable-mdpi\common_signin_btn_icon_disabled_light.9.png
+[DEBUG]  Copying C:\ProgramData\Application Data\Titanium\modules\android\ti.map\2.3.6\platform\android\res\drawable-mdpi\common_signin_btn_icon_focus_dark.9.png => D:\appceleratorWorkspace\FGRapp\build\android\res\drawable-mdpi\common_signin_btn_icon_focus_dark.9.png
+[DEBUG]  Copying C:\ProgramData\Application Data\Titanium\modules\android\ti.map\2.3.6\platform\android\res\drawable-mdpi\common_signin_btn_icon_focus_light.9.png => D:\appceleratorWorkspace\FGRapp\build\android\res\drawable-mdpi\common_signin_btn_icon_focus_light.9.png
+[DEBUG]  Copying C:\ProgramData\Application Data\Titanium\modules\android\ti.map\2.3.6\platform\android\res\drawable-mdpi\common_signin_btn_icon_normal_dark.9.png => D:\appceleratorWorkspace\FGRapp\build\android\res\drawable-mdpi\common_signin_btn_icon_normal_dark.9.png
+[DEBUG]  Copying C:\ProgramData\Application Data\Titanium\modules\android\ti.map\2.3.6\platform\android\res\drawable-mdpi\common_signin_btn_icon_normal_light.9.png => D:\appceleratorWorkspace\FGRapp\build\android\res\drawable-mdpi\common_signin_btn_icon_normal_light.9.png
+[DEBUG]  Copying C:\ProgramData\Application Data\Titanium\modules\android\ti.map\2.3.6\platform\android\res\drawable-mdpi\common_signin_btn_icon_pressed_dark.9.png => D:\appceleratorWorkspace\FGRapp\build\android\res\drawable-mdpi\common_signin_btn_icon_pressed_dark.9.png
+[DEBUG]  Copying C:\ProgramData\Application Data\Titanium\modules\android\ti.map\2.3.6\platform\android\res\drawable-mdpi\common_signin_btn_icon_pressed_light.9.png => D:\appceleratorWorkspace\FGRapp\build\android\res\drawable-mdpi\common_signin_btn_icon_pressed_light.9.png
+[DEBUG]  Copying C:\ProgramData\Application Data\Titanium\modules\android\ti.map\2.3.6\platform\android\res\drawable-mdpi\common_signin_btn_text_disabled_dark.9.png => D:\appceleratorWorkspace\FGRapp\build\android\res\drawable-mdpi\common_signin_btn_text_disabled_dark.9.png
+[DEBUG]  Copying C:\ProgramData\Application Data\Titanium\modules\android\ti.map\2.3.6\platform\android\res\drawable-mdpi\common_signin_btn_text_disabled_focus_dark.9.png => D:\appceleratorWorkspace\FGRapp\build\android\res\drawable-mdpi\common_signin_btn_text_disabled_focus_dark.9.png
+[DEBUG]  Copying C:\ProgramData\Application Data\Titanium\modules\android\ti.map\2.3.6\platform\android\res\drawable-mdpi\common_signin_btn_text_disabled_focus_light.9.png => D:\appceleratorWorkspace\FGRapp\build\android\res\drawable-mdpi\common_signin_btn_text_disabled_focus_light.9.png
+[DEBUG]  Copying C:\ProgramData\Application Data\Titanium\modules\android\ti.map\2.3.6\platform\android\res\drawable-mdpi\common_signin_btn_text_disabled_light.9.png => D:\appceleratorWorkspace\FGRapp\build\android\res\drawable-mdpi\common_signin_btn_text_disabled_light.9.png
+[DEBUG]  Copying C:\ProgramData\Application Data\Titanium\modules\android\ti.map\2.3.6\platform\android\res\drawable-mdpi\common_signin_btn_text_focus_dark.9.png => D:\appceleratorWorkspace\FGRapp\build\android\res\drawable-mdpi\common_signin_btn_text_focus_dark.9.png
+[DEBUG]  Copying C:\ProgramData\Application Data\Titanium\modules\android\ti.map\2.3.6\platform\android\res\drawable-mdpi\common_signin_btn_text_focus_light.9.png => D:\appceleratorWorkspace\FGRapp\build\android\res\drawable-mdpi\common_signin_btn_text_focus_light.9.png
+[DEBUG]  Copying C:\ProgramData\Application Data\Titanium\modules\android\ti.map\2.3.6\platform\android\res\drawable-mdpi\common_signin_btn_text_normal_dark.9.png => D:\appceleratorWorkspace\FGRapp\build\android\res\drawable-mdpi\common_signin_btn_text_normal_dark.9.png
+[DEBUG]  Copying C:\ProgramData\Application Data\Titanium\modules\android\ti.map\2.3.6\platform\android\res\drawable-mdpi\common_signin_btn_text_normal_light.9.png => D:\appceleratorWorkspace\FGRapp\build\android\res\drawable-mdpi\common_signin_btn_text_normal_light.9.png
+[DEBUG]  Copying C:\ProgramData\Application Data\Titanium\modules\android\ti.map\2.3.6\platform\android\res\drawable-mdpi\common_signin_btn_text_pressed_dark.9.png => D:\appceleratorWorkspace\FGRapp\build\android\res\drawable-mdpi\common_signin_btn_text_pressed_dark.9.png
+[DEBUG]  Copying C:\ProgramData\Application Data\Titanium\modules\android\ti.map\2.3.6\platform\android\res\drawable-mdpi\common_signin_btn_text_pressed_light.9.png => D:\appceleratorWorkspace\FGRapp\build\android\res\drawable-mdpi\common_signin_btn_text_pressed_light.9.png
+[DEBUG]  Copying C:\ProgramData\Application Data\Titanium\modules\android\ti.map\2.3.6\platform\android\res\drawable-mdpi\ic_plusone_medium_off_client.png => D:\appceleratorWorkspace\FGRapp\build\android\res\drawable-mdpi\ic_plusone_medium_off_client.png
+[DEBUG]  Copying C:\ProgramData\Application Data\Titanium\modules\android\ti.map\2.3.6\platform\android\res\drawable-mdpi\ic_plusone_small_off_client.png => D:\appceleratorWorkspace\FGRapp\build\android\res\drawable-mdpi\ic_plusone_small_off_client.png
+[DEBUG]  Copying C:\ProgramData\Application Data\Titanium\modules\android\ti.map\2.3.6\platform\android\res\drawable-mdpi\ic_plusone_standard_off_client.png => D:\appceleratorWorkspace\FGRapp\build\android\res\drawable-mdpi\ic_plusone_standard_off_client.png
+[DEBUG]  Copying C:\ProgramData\Application Data\Titanium\modules\android\ti.map\2.3.6\platform\android\res\drawable-mdpi\ic_plusone_tall_off_client.png => D:\appceleratorWorkspace\FGRapp\build\android\res\drawable-mdpi\ic_plusone_tall_off_client.png
+[DEBUG]  Copying C:\ProgramData\Application Data\Titanium\modules\android\ti.map\2.3.6\platform\android\res\drawable-mdpi\powered_by_google_dark.png => D:\appceleratorWorkspace\FGRapp\build\android\res\drawable-mdpi\powered_by_google_dark.png
+[DEBUG]  Copying C:\ProgramData\Application Data\Titanium\modules\android\ti.map\2.3.6\platform\android\res\drawable-mdpi\powered_by_google_light.png => D:\appceleratorWorkspace\FGRapp\build\android\res\drawable-mdpi\powered_by_google_light.png
+[DEBUG]  Copying C:\ProgramData\Application Data\Titanium\modules\android\ti.map\2.3.6\platform\android\res\drawable-tvdpi\common_full_open_on_phone.png => D:\appceleratorWorkspace\FGRapp\build\android\res\drawable-tvdpi\common_full_open_on_phone.png
+[DEBUG]  Copying C:\ProgramData\Application Data\Titanium\modules\android\ti.map\2.3.6\platform\android\res\drawable-tvdpi\ic_plusone_medium_off_client.png => D:\appceleratorWorkspace\FGRapp\build\android\res\drawable-tvdpi\ic_plusone_medium_off_client.png
+[DEBUG]  Copying C:\ProgramData\Application Data\Titanium\modules\android\ti.map\2.3.6\platform\android\res\drawable-tvdpi\ic_plusone_small_off_client.png => D:\appceleratorWorkspace\FGRapp\build\android\res\drawable-tvdpi\ic_plusone_small_off_client.png
+[DEBUG]  Copying C:\ProgramData\Application Data\Titanium\modules\android\ti.map\2.3.6\platform\android\res\drawable-tvdpi\ic_plusone_standard_off_client.png => D:\appceleratorWorkspace\FGRapp\build\android\res\drawable-tvdpi\ic_plusone_standard_off_client.png
+[DEBUG]  Copying C:\ProgramData\Application Data\Titanium\modules\android\ti.map\2.3.6\platform\android\res\drawable-tvdpi\ic_plusone_tall_off_client.png => D:\appceleratorWorkspace\FGRapp\build\android\res\drawable-tvdpi\ic_plusone_tall_off_client.png
+[DEBUG]  Copying C:\ProgramData\Application Data\Titanium\modules\android\ti.map\2.3.6\platform\android\res\drawable-xhdpi\cast_ic_notification_0.png => D:\appceleratorWorkspace\FGRapp\build\android\res\drawable-xhdpi\cast_ic_notification_0.png
+[DEBUG]  Copying C:\ProgramData\Application Data\Titanium\modules\android\ti.map\2.3.6\platform\android\res\drawable-xhdpi\cast_ic_notification_1.png => D:\appceleratorWorkspace\FGRapp\build\android\res\drawable-xhdpi\cast_ic_notification_1.png
+[DEBUG]  Copying C:\ProgramData\Application Data\Titanium\modules\android\ti.map\2.3.6\platform\android\res\drawable-xhdpi\cast_ic_notification_2.png => D:\appceleratorWorkspace\FGRapp\build\android\res\drawable-xhdpi\cast_ic_notification_2.png
+[DEBUG]  Copying C:\ProgramData\Application Data\Titanium\modules\android\ti.map\2.3.6\platform\android\res\drawable-xhdpi\cast_ic_notification_on.png => D:\appceleratorWorkspace\FGRapp\build\android\res\drawable-xhdpi\cast_ic_notification_on.png
+[DEBUG]  Copying C:\ProgramData\Application Data\Titanium\modules\android\ti.map\2.3.6\platform\android\res\drawable-xhdpi\common_full_open_on_phone.png => D:\appceleratorWorkspace\FGRapp\build\android\res\drawable-xhdpi\common_full_open_on_phone.png
+[DEBUG]  Copying C:\ProgramData\Application Data\Titanium\modules\android\ti.map\2.3.6\platform\android\res\drawable-xhdpi\common_signin_btn_icon_disabled_dark.9.png => D:\appceleratorWorkspace\FGRapp\build\android\res\drawable-xhdpi\common_signin_btn_icon_disabled_dark.9.png
+[DEBUG]  Copying C:\ProgramData\Application Data\Titanium\modules\android\ti.map\2.3.6\platform\android\res\drawable-xhdpi\common_signin_btn_icon_disabled_focus_dark.9.png => D:\appceleratorWorkspace\FGRapp\build\android\res\drawable-xhdpi\common_signin_btn_icon_disabled_focus_dark.9.png
+[DEBUG]  Copying C:\ProgramData\Application Data\Titanium\modules\android\ti.map\2.3.6\platform\android\res\drawable-xhdpi\common_signin_btn_icon_disabled_focus_light.9.png => D:\appceleratorWorkspace\FGRapp\build\android\res\drawable-xhdpi\common_signin_btn_icon_disabled_focus_light.9.png
+[DEBUG]  Copying C:\ProgramData\Application Data\Titanium\modules\android\ti.map\2.3.6\platform\android\res\drawable-xhdpi\common_signin_btn_icon_disabled_light.9.png => D:\appceleratorWorkspace\FGRapp\build\android\res\drawable-xhdpi\common_signin_btn_icon_disabled_light.9.png
+[DEBUG]  Copying C:\ProgramData\Application Data\Titanium\modules\android\ti.map\2.3.6\platform\android\res\drawable-xhdpi\common_signin_btn_icon_focus_dark.9.png => D:\appceleratorWorkspace\FGRapp\build\android\res\drawable-xhdpi\common_signin_btn_icon_focus_dark.9.png
+[DEBUG]  Copying C:\ProgramData\Application Data\Titanium\modules\android\ti.map\2.3.6\platform\android\res\drawable-xhdpi\common_signin_btn_icon_focus_light.9.png => D:\appceleratorWorkspace\FGRapp\build\android\res\drawable-xhdpi\common_signin_btn_icon_focus_light.9.png
+[DEBUG]  Copying C:\ProgramData\Application Data\Titanium\modules\android\ti.map\2.3.6\platform\android\res\drawable-xhdpi\common_signin_btn_icon_normal_dark.9.png => D:\appceleratorWorkspace\FGRapp\build\android\res\drawable-xhdpi\common_signin_btn_icon_normal_dark.9.png
+[DEBUG]  Copying C:\ProgramData\Application Data\Titanium\modules\android\ti.map\2.3.6\platform\android\res\drawable-xhdpi\common_signin_btn_icon_normal_light.9.png => D:\appceleratorWorkspace\FGRapp\build\android\res\drawable-xhdpi\common_signin_btn_icon_normal_light.9.png
+[DEBUG]  Copying C:\ProgramData\Application Data\Titanium\modules\android\ti.map\2.3.6\platform\android\res\drawable-xhdpi\common_signin_btn_icon_pressed_dark.9.png => D:\appceleratorWorkspace\FGRapp\build\android\res\drawable-xhdpi\common_signin_btn_icon_pressed_dark.9.png
+[DEBUG]  Copying C:\ProgramData\Application Data\Titanium\modules\android\ti.map\2.3.6\platform\android\res\drawable-xhdpi\common_signin_btn_icon_pressed_light.9.png => D:\appceleratorWorkspace\FGRapp\build\android\res\drawable-xhdpi\common_signin_btn_icon_pressed_light.9.png
+[DEBUG]  Copying C:\ProgramData\Application Data\Titanium\modules\android\ti.map\2.3.6\platform\android\res\drawable-xhdpi\common_signin_btn_text_disabled_dark.9.png => D:\appceleratorWorkspace\FGRapp\build\android\res\drawable-xhdpi\common_signin_btn_text_disabled_dark.9.png
+[DEBUG]  Copying C:\ProgramData\Application Data\Titanium\modules\android\ti.map\2.3.6\platform\android\res\drawable-xhdpi\common_signin_btn_text_disabled_focus_dark.9.png => D:\appceleratorWorkspace\FGRapp\build\android\res\drawable-xhdpi\common_signin_btn_text_disabled_focus_dark.9.png
+[DEBUG]  Copying C:\ProgramData\Application Data\Titanium\modules\android\ti.map\2.3.6\platform\android\res\drawable-xhdpi\common_signin_btn_text_disabled_focus_light.9.png => D:\appceleratorWorkspace\FGRapp\build\android\res\drawable-xhdpi\common_signin_btn_text_disabled_focus_light.9.png
+[DEBUG]  Copying C:\ProgramData\Application Data\Titanium\modules\android\ti.map\2.3.6\platform\android\res\drawable-xhdpi\common_signin_btn_text_disabled_light.9.png => D:\appceleratorWorkspace\FGRapp\build\android\res\drawable-xhdpi\common_signin_btn_text_disabled_light.9.png
+[DEBUG]  Copying C:\ProgramData\Application Data\Titanium\modules\android\ti.map\2.3.6\platform\android\res\drawable-xhdpi\common_signin_btn_text_focus_dark.9.png => D:\appceleratorWorkspace\FGRapp\build\android\res\drawable-xhdpi\common_signin_btn_text_focus_dark.9.png
+[DEBUG]  Copying C:\ProgramData\Application Data\Titanium\modules\android\ti.map\2.3.6\platform\android\res\drawable-xhdpi\common_signin_btn_text_focus_light.9.png => D:\appceleratorWorkspace\FGRapp\build\android\res\drawable-xhdpi\common_signin_btn_text_focus_light.9.png
+[DEBUG]  Copying C:\ProgramData\Application Data\Titanium\modules\android\ti.map\2.3.6\platform\android\res\drawable-xhdpi\common_signin_btn_text_normal_dark.9.png => D:\appceleratorWorkspace\FGRapp\build\android\res\drawable-xhdpi\common_signin_btn_text_normal_dark.9.png
+[DEBUG]  Copying C:\ProgramData\Application Data\Titanium\modules\android\ti.map\2.3.6\platform\android\res\drawable-xhdpi\common_signin_btn_text_normal_light.9.png => D:\appceleratorWorkspace\FGRapp\build\android\res\drawable-xhdpi\common_signin_btn_text_normal_light.9.png
+[DEBUG]  Copying C:\ProgramData\Application Data\Titanium\modules\android\ti.map\2.3.6\platform\android\res\drawable-xhdpi\common_signin_btn_text_pressed_dark.9.png => D:\appceleratorWorkspace\FGRapp\build\android\res\drawable-xhdpi\common_signin_btn_text_pressed_dark.9.png
+[DEBUG]  Copying C:\ProgramData\Application Data\Titanium\modules\android\ti.map\2.3.6\platform\android\res\drawable-xhdpi\common_signin_btn_text_pressed_light.9.png => D:\appceleratorWorkspace\FGRapp\build\android\res\drawable-xhdpi\common_signin_btn_text_pressed_light.9.png
+[DEBUG]  Copying C:\ProgramData\Application Data\Titanium\modules\android\ti.map\2.3.6\platform\android\res\drawable-xhdpi\ic_plusone_medium_off_client.png => D:\appceleratorWorkspace\FGRapp\build\android\res\drawable-xhdpi\ic_plusone_medium_off_client.png
+[DEBUG]  Copying C:\ProgramData\Application Data\Titanium\modules\android\ti.map\2.3.6\platform\android\res\drawable-xhdpi\ic_plusone_small_off_client.png => D:\appceleratorWorkspace\FGRapp\build\android\res\drawable-xhdpi\ic_plusone_small_off_client.png
+[DEBUG]  Copying C:\ProgramData\Application Data\Titanium\modules\android\ti.map\2.3.6\platform\android\res\drawable-xhdpi\ic_plusone_standard_off_client.png => D:\appceleratorWorkspace\FGRapp\build\android\res\drawable-xhdpi\ic_plusone_standard_off_client.png
+[DEBUG]  Copying C:\ProgramData\Application Data\Titanium\modules\android\ti.map\2.3.6\platform\android\res\drawable-xhdpi\ic_plusone_tall_off_client.png => D:\appceleratorWorkspace\FGRapp\build\android\res\drawable-xhdpi\ic_plusone_tall_off_client.png
+[DEBUG]  Copying C:\ProgramData\Application Data\Titanium\modules\android\ti.map\2.3.6\platform\android\res\drawable-xhdpi\powered_by_google_dark.png => D:\appceleratorWorkspace\FGRapp\build\android\res\drawable-xhdpi\powered_by_google_dark.png
+[DEBUG]  Copying C:\ProgramData\Application Data\Titanium\modules\android\ti.map\2.3.6\platform\android\res\drawable-xhdpi\powered_by_google_light.png => D:\appceleratorWorkspace\FGRapp\build\android\res\drawable-xhdpi\powered_by_google_light.png
+[DEBUG]  Copying C:\ProgramData\Application Data\Titanium\modules\android\ti.map\2.3.6\platform\android\res\drawable-xxhdpi\cast_ic_notification_0.png => D:\appceleratorWorkspace\FGRapp\build\android\res\drawable-xxhdpi\cast_ic_notification_0.png
+[DEBUG]  Copying C:\ProgramData\Application Data\Titanium\modules\android\ti.map\2.3.6\platform\android\res\drawable-xxhdpi\cast_ic_notification_1.png => D:\appceleratorWorkspace\FGRapp\build\android\res\drawable-xxhdpi\cast_ic_notification_1.png
+[DEBUG]  Copying C:\ProgramData\Application Data\Titanium\modules\android\ti.map\2.3.6\platform\android\res\drawable-xxhdpi\cast_ic_notification_2.png => D:\appceleratorWorkspace\FGRapp\build\android\res\drawable-xxhdpi\cast_ic_notification_2.png
+[DEBUG]  Copying C:\ProgramData\Application Data\Titanium\modules\android\ti.map\2.3.6\platform\android\res\drawable-xxhdpi\cast_ic_notification_on.png => D:\appceleratorWorkspace\FGRapp\build\android\res\drawable-xxhdpi\cast_ic_notification_on.png
+[DEBUG]  Copying C:\ProgramData\Application Data\Titanium\modules\android\ti.map\2.3.6\platform\android\res\drawable-xxhdpi\common_full_open_on_phone.png => D:\appceleratorWorkspace\FGRapp\build\android\res\drawable-xxhdpi\common_full_open_on_phone.png
+[DEBUG]  Copying C:\ProgramData\Application Data\Titanium\modules\android\ti.map\2.3.6\platform\android\res\drawable-xxhdpi\common_signin_btn_icon_disabled_dark.9.png => D:\appceleratorWorkspace\FGRapp\build\android\res\drawable-xxhdpi\common_signin_btn_icon_disabled_dark.9.png
+[DEBUG]  Copying C:\ProgramData\Application Data\Titanium\modules\android\ti.map\2.3.6\platform\android\res\drawable-xxhdpi\common_signin_btn_icon_disabled_focus_dark.9.png => D:\appceleratorWorkspace\FGRapp\build\android\res\drawable-xxhdpi\common_signin_btn_icon_disabled_focus_dark.9.png
+[DEBUG]  Copying C:\ProgramData\Application Data\Titanium\modules\android\ti.map\2.3.6\platform\android\res\drawable-xxhdpi\common_signin_btn_icon_disabled_focus_light.9.png => D:\appceleratorWorkspace\FGRapp\build\android\res\drawable-xxhdpi\common_signin_btn_icon_disabled_focus_light.9.png
+[DEBUG]  Copying C:\ProgramData\Application Data\Titanium\modules\android\ti.map\2.3.6\platform\android\res\drawable-xxhdpi\common_signin_btn_icon_disabled_light.9.png => D:\appceleratorWorkspace\FGRapp\build\android\res\drawable-xxhdpi\common_signin_btn_icon_disabled_light.9.png
+[DEBUG]  Copying C:\ProgramData\Application Data\Titanium\modules\android\ti.map\2.3.6\platform\android\res\drawable-xxhdpi\common_signin_btn_icon_focus_dark.9.png => D:\appceleratorWorkspace\FGRapp\build\android\res\drawable-xxhdpi\common_signin_btn_icon_focus_dark.9.png
+[DEBUG]  Copying C:\ProgramData\Application Data\Titanium\modules\android\ti.map\2.3.6\platform\android\res\drawable-xxhdpi\common_signin_btn_icon_focus_light.9.png => D:\appceleratorWorkspace\FGRapp\build\android\res\drawable-xxhdpi\common_signin_btn_icon_focus_light.9.png
+[DEBUG]  Copying C:\ProgramData\Application Data\Titanium\modules\android\ti.map\2.3.6\platform\android\res\drawable-xxhdpi\common_signin_btn_icon_normal_dark.9.png => D:\appceleratorWorkspace\FGRapp\build\android\res\drawable-xxhdpi\common_signin_btn_icon_normal_dark.9.png
+[DEBUG]  Copying C:\ProgramData\Application Data\Titanium\modules\android\ti.map\2.3.6\platform\android\res\drawable-xxhdpi\common_signin_btn_icon_normal_light.9.png => D:\appceleratorWorkspace\FGRapp\build\android\res\drawable-xxhdpi\common_signin_btn_icon_normal_light.9.png
+[DEBUG]  Copying C:\ProgramData\Application Data\Titanium\modules\android\ti.map\2.3.6\platform\android\res\drawable-xxhdpi\common_signin_btn_icon_pressed_dark.9.png => D:\appceleratorWorkspace\FGRapp\build\android\res\drawable-xxhdpi\common_signin_btn_icon_pressed_dark.9.png
+[DEBUG]  Copying C:\ProgramData\Application Data\Titanium\modules\android\ti.map\2.3.6\platform\android\res\drawable-xxhdpi\common_signin_btn_icon_pressed_light.9.png => D:\appceleratorWorkspace\FGRapp\build\android\res\drawable-xxhdpi\common_signin_btn_icon_pressed_light.9.png
+[DEBUG]  Copying C:\ProgramData\Application Data\Titanium\modules\android\ti.map\2.3.6\platform\android\res\drawable-xxhdpi\common_signin_btn_text_disabled_dark.9.png => D:\appceleratorWorkspace\FGRapp\build\android\res\drawable-xxhdpi\common_signin_btn_text_disabled_dark.9.png
+[DEBUG]  Copying C:\ProgramData\Application Data\Titanium\modules\android\ti.map\2.3.6\platform\android\res\drawable-xxhdpi\common_signin_btn_text_disabled_focus_dark.9.png => D:\appceleratorWorkspace\FGRapp\build\android\res\drawable-xxhdpi\common_signin_btn_text_disabled_focus_dark.9.png
+[DEBUG]  Copying C:\ProgramData\Application Data\Titanium\modules\android\ti.map\2.3.6\platform\android\res\drawable-xxhdpi\common_signin_btn_text_disabled_focus_light.9.png => D:\appceleratorWorkspace\FGRapp\build\android\res\drawable-xxhdpi\common_signin_btn_text_disabled_focus_light.9.png
+[DEBUG]  Copying C:\ProgramData\Application Data\Titanium\modules\android\ti.map\2.3.6\platform\android\res\drawable-xxhdpi\common_signin_btn_text_disabled_light.9.png => D:\appceleratorWorkspace\FGRapp\build\android\res\drawable-xxhdpi\common_signin_btn_text_disabled_light.9.png
+[DEBUG]  Copying C:\ProgramData\Application Data\Titanium\modules\android\ti.map\2.3.6\platform\android\res\drawable-xxhdpi\common_signin_btn_text_focus_dark.9.png => D:\appceleratorWorkspace\FGRapp\build\android\res\drawable-xxhdpi\common_signin_btn_text_focus_dark.9.png
+[DEBUG]  Copying C:\ProgramData\Application Data\Titanium\modules\android\ti.map\2.3.6\platform\android\res\drawable-xxhdpi\common_signin_btn_text_focus_light.9.png => D:\appceleratorWorkspace\FGRapp\build\android\res\drawable-xxhdpi\common_signin_btn_text_focus_light.9.png
+[DEBUG]  Copying C:\ProgramData\Application Data\Titanium\modules\android\ti.map\2.3.6\platform\android\res\drawable-xxhdpi\common_signin_btn_text_normal_dark.9.png => D:\appceleratorWorkspace\FGRapp\build\android\res\drawable-xxhdpi\common_signin_btn_text_normal_dark.9.png
+[DEBUG]  Copying C:\ProgramData\Application Data\Titanium\modules\android\ti.map\2.3.6\platform\android\res\drawable-xxhdpi\common_signin_btn_text_normal_light.9.png => D:\appceleratorWorkspace\FGRapp\build\android\res\drawable-xxhdpi\common_signin_btn_text_normal_light.9.png
+[DEBUG]  Copying C:\ProgramData\Application Data\Titanium\modules\android\ti.map\2.3.6\platform\android\res\drawable-xxhdpi\common_signin_btn_text_pressed_dark.9.png => D:\appceleratorWorkspace\FGRapp\build\android\res\drawable-xxhdpi\common_signin_btn_text_pressed_dark.9.png
+[DEBUG]  Copying C:\ProgramData\Application Data\Titanium\modules\android\ti.map\2.3.6\platform\android\res\drawable-xxhdpi\common_signin_btn_text_pressed_light.9.png => D:\appceleratorWorkspace\FGRapp\build\android\res\drawable-xxhdpi\common_signin_btn_text_pressed_light.9.png
+[DEBUG]  Copying C:\ProgramData\Application Data\Titanium\modules\android\ti.map\2.3.6\platform\android\res\drawable-xxhdpi\ic_plusone_medium_off_client.png => D:\appceleratorWorkspace\FGRapp\build\android\res\drawable-xxhdpi\ic_plusone_medium_off_client.png
+[DEBUG]  Copying C:\ProgramData\Application Data\Titanium\modules\android\ti.map\2.3.6\platform\android\res\drawable-xxhdpi\ic_plusone_small_off_client.png => D:\appceleratorWorkspace\FGRapp\build\android\res\drawable-xxhdpi\ic_plusone_small_off_client.png
+[DEBUG]  Copying C:\ProgramData\Application Data\Titanium\modules\android\ti.map\2.3.6\platform\android\res\drawable-xxhdpi\ic_plusone_standard_off_client.png => D:\appceleratorWorkspace\FGRapp\build\android\res\drawable-xxhdpi\ic_plusone_standard_off_client.png
+[DEBUG]  Copying C:\ProgramData\Application Data\Titanium\modules\android\ti.map\2.3.6\platform\android\res\drawable-xxhdpi\ic_plusone_tall_off_client.png => D:\appceleratorWorkspace\FGRapp\build\android\res\drawable-xxhdpi\ic_plusone_tall_off_client.png
+[DEBUG]  Copying C:\ProgramData\Application Data\Titanium\modules\android\ti.map\2.3.6\platform\android\res\drawable-xxhdpi\powered_by_google_dark.png => D:\appceleratorWorkspace\FGRapp\build\android\res\drawable-xxhdpi\powered_by_google_dark.png
+[DEBUG]  Copying C:\ProgramData\Application Data\Titanium\modules\android\ti.map\2.3.6\platform\android\res\drawable-xxhdpi\powered_by_google_light.png => D:\appceleratorWorkspace\FGRapp\build\android\res\drawable-xxhdpi\powered_by_google_light.png
+[DEBUG]  Copying C:\ProgramData\Application Data\Titanium\modules\android\ti.map\2.3.6\platform\android\res\raw\gtm_analytics => D:\appceleratorWorkspace\FGRapp\build\android\res\raw\gtm_analytics
+[DEBUG]  Copying C:\ProgramData\Application Data\Titanium\modules\android\ti.map\2.3.6\platform\android\res\values\admob_ads_attrs.xml => D:\appceleratorWorkspace\FGRapp\build\android\res\values\admob_ads_attrs.xml
+[DEBUG]  Copying C:\ProgramData\Application Data\Titanium\modules\android\ti.map\2.3.6\platform\android\res\values\admob_iap_style.xml => D:\appceleratorWorkspace\FGRapp\build\android\res\values\admob_iap_style.xml
+[DEBUG]  Copying C:\ProgramData\Application Data\Titanium\modules\android\ti.map\2.3.6\platform\android\res\values\admob_strings.xml => D:\appceleratorWorkspace\FGRapp\build\android\res\values\admob_strings.xml
+[DEBUG]  Copying C:\ProgramData\Application Data\Titanium\modules\android\ti.map\2.3.6\platform\android\res\values\auth_strings.xml => D:\appceleratorWorkspace\FGRapp\build\android\res\values\auth_strings.xml
+[DEBUG]  Copying C:\ProgramData\Application Data\Titanium\modules\android\ti.map\2.3.6\platform\android\res\values\cast_ids.xml => D:\appceleratorWorkspace\FGRapp\build\android\res\values\cast_ids.xml
+[DEBUG]  Copying C:\ProgramData\Application Data\Titanium\modules\android\ti.map\2.3.6\platform\android\res\values\cast_strings.xml => D:\appceleratorWorkspace\FGRapp\build\android\res\values\cast_strings.xml
+[DEBUG]  Copying C:\ProgramData\Application Data\Titanium\modules\android\ti.map\2.3.6\platform\android\res\values\common_attrs.xml => D:\appceleratorWorkspace\FGRapp\build\android\res\values\common_attrs.xml
+[DEBUG]  Copying C:\ProgramData\Application Data\Titanium\modules\android\ti.map\2.3.6\platform\android\res\values\common_colors.xml => D:\appceleratorWorkspace\FGRapp\build\android\res\values\common_colors.xml
+[DEBUG]  Copying C:\ProgramData\Application Data\Titanium\modules\android\ti.map\2.3.6\platform\android\res\values\common_strings.xml => D:\appceleratorWorkspace\FGRapp\build\android\res\values\common_strings.xml
+[DEBUG]  Copying C:\ProgramData\Application Data\Titanium\modules\android\ti.map\2.3.6\platform\android\res\values\maps_attrs.xml => D:\appceleratorWorkspace\FGRapp\build\android\res\values\maps_attrs.xml
+[DEBUG]  Copying C:\ProgramData\Application Data\Titanium\modules\android\ti.map\2.3.6\platform\android\res\values\version.xml => D:\appceleratorWorkspace\FGRapp\build\android\res\values\version.xml
+[DEBUG]  Copying C:\ProgramData\Application Data\Titanium\modules\android\ti.map\2.3.6\platform\android\res\values\wallet_attrs.xml => D:\appceleratorWorkspace\FGRapp\build\android\res\values\wallet_attrs.xml
+[DEBUG]  Copying C:\ProgramData\Application Data\Titanium\modules\android\ti.map\2.3.6\platform\android\res\values\wallet_colors.xml => D:\appceleratorWorkspace\FGRapp\build\android\res\values\wallet_colors.xml
+[DEBUG]  Copying C:\ProgramData\Application Data\Titanium\modules\android\ti.map\2.3.6\platform\android\res\values\wallet_strings.xml => D:\appceleratorWorkspace\FGRapp\build\android\res\values\wallet_strings.xml
+[DEBUG]  Copying C:\ProgramData\Application Data\Titanium\modules\android\ti.map\2.3.6\platform\android\res\values\wallet_styles.xml => D:\appceleratorWorkspace\FGRapp\build\android\res\values\wallet_styles.xml
+[DEBUG]  Copying C:\ProgramData\Application Data\Titanium\modules\android\ti.map\2.3.6\platform\android\res\values-af\common_strings.xml => D:\appceleratorWorkspace\FGRapp\build\android\res\values-af\common_strings.xml
+[DEBUG]  Copying C:\ProgramData\Application Data\Titanium\modules\android\ti.map\2.3.6\platform\android\res\values-am\common_strings.xml => D:\appceleratorWorkspace\FGRapp\build\android\res\values-am\common_strings.xml
+[DEBUG]  Copying C:\ProgramData\Application Data\Titanium\modules\android\ti.map\2.3.6\platform\android\res\values-ar\common_strings.xml => D:\appceleratorWorkspace\FGRapp\build\android\res\values-ar\common_strings.xml
+[DEBUG]  Copying C:\ProgramData\Application Data\Titanium\modules\android\ti.map\2.3.6\platform\android\res\values-bg\common_strings.xml => D:\appceleratorWorkspace\FGRapp\build\android\res\values-bg\common_strings.xml
+[DEBUG]  Copying C:\ProgramData\Application Data\Titanium\modules\android\ti.map\2.3.6\platform\android\res\values-bn-rBD\common_strings.xml => D:\appceleratorWorkspace\FGRapp\build\android\res\values-bn-rBD\common_strings.xml
+[DEBUG]  Copying C:\ProgramData\Application Data\Titanium\modules\android\ti.map\2.3.6\platform\android\res\values-ca\common_strings.xml => D:\appceleratorWorkspace\FGRapp\build\android\res\values-ca\common_strings.xml
+[DEBUG]  Copying C:\ProgramData\Application Data\Titanium\modules\android\ti.map\2.3.6\platform\android\res\values-cs\common_strings.xml => D:\appceleratorWorkspace\FGRapp\build\android\res\values-cs\common_strings.xml
+[DEBUG]  Copying C:\ProgramData\Application Data\Titanium\modules\android\ti.map\2.3.6\platform\android\res\values-da\common_strings.xml => D:\appceleratorWorkspace\FGRapp\build\android\res\values-da\common_strings.xml
+[DEBUG]  Copying C:\ProgramData\Application Data\Titanium\modules\android\ti.map\2.3.6\platform\android\res\values-de\common_strings.xml => D:\appceleratorWorkspace\FGRapp\build\android\res\values-de\common_strings.xml
+[DEBUG]  Copying C:\ProgramData\Application Data\Titanium\modules\android\ti.map\2.3.6\platform\android\res\values-el\common_strings.xml => D:\appceleratorWorkspace\FGRapp\build\android\res\values-el\common_strings.xml
+[DEBUG]  Copying C:\ProgramData\Application Data\Titanium\modules\android\ti.map\2.3.6\platform\android\res\values-en-rAU\common_strings.xml => D:\appceleratorWorkspace\FGRapp\build\android\res\values-en-rAU\common_strings.xml
+[DEBUG]  Copying C:\ProgramData\Application Data\Titanium\modules\android\ti.map\2.3.6\platform\android\res\values-en-rGB\common_strings.xml => D:\appceleratorWorkspace\FGRapp\build\android\res\values-en-rGB\common_strings.xml
+[DEBUG]  Copying C:\ProgramData\Application Data\Titanium\modules\android\ti.map\2.3.6\platform\android\res\values-en-rIN\common_strings.xml => D:\appceleratorWorkspace\FGRapp\build\android\res\values-en-rIN\common_strings.xml
+[DEBUG]  Copying C:\ProgramData\Application Data\Titanium\modules\android\ti.map\2.3.6\platform\android\res\values-es\common_strings.xml => D:\appceleratorWorkspace\FGRapp\build\android\res\values-es\common_strings.xml
+[DEBUG]  Copying C:\ProgramData\Application Data\Titanium\modules\android\ti.map\2.3.6\platform\android\res\values-es\wallet_strings.xml => D:\appceleratorWorkspace\FGRapp\build\android\res\values-es\wallet_strings.xml
+[DEBUG]  Copying C:\ProgramData\Application Data\Titanium\modules\android\ti.map\2.3.6\platform\android\res\values-es-rUS\common_strings.xml => D:\appceleratorWorkspace\FGRapp\build\android\res\values-es-rUS\common_strings.xml
+[DEBUG]  Copying C:\ProgramData\Application Data\Titanium\modules\android\ti.map\2.3.6\platform\android\res\values-et-rEE\common_strings.xml => D:\appceleratorWorkspace\FGRapp\build\android\res\values-et-rEE\common_strings.xml
+[DEBUG]  Copying C:\ProgramData\Application Data\Titanium\modules\android\ti.map\2.3.6\platform\android\res\values-eu-rES\common_strings.xml => D:\appceleratorWorkspace\FGRapp\build\android\res\values-eu-rES\common_strings.xml
+[DEBUG]  Copying C:\ProgramData\Application Data\Titanium\modules\android\ti.map\2.3.6\platform\android\res\values-fa\common_strings.xml => D:\appceleratorWorkspace\FGRapp\build\android\res\values-fa\common_strings.xml
+[DEBUG]  Copying C:\ProgramData\Application Data\Titanium\modules\android\ti.map\2.3.6\platform\android\res\values-fi\common_strings.xml => D:\appceleratorWorkspace\FGRapp\build\android\res\values-fi\common_strings.xml
+[DEBUG]  Copying C:\ProgramData\Application Data\Titanium\modules\android\ti.map\2.3.6\platform\android\res\values-fr\common_strings.xml => D:\appceleratorWorkspace\FGRapp\build\android\res\values-fr\common_strings.xml
+[DEBUG]  Copying C:\ProgramData\Application Data\Titanium\modules\android\ti.map\2.3.6\platform\android\res\values-fr-rCA\common_strings.xml => D:\appceleratorWorkspace\FGRapp\build\android\res\values-fr-rCA\common_strings.xml
+[DEBUG]  Copying C:\ProgramData\Application Data\Titanium\modules\android\ti.map\2.3.6\platform\android\res\values-gl-rES\common_strings.xml => D:\appceleratorWorkspace\FGRapp\build\android\res\values-gl-rES\common_strings.xml
+[DEBUG]  Copying C:\ProgramData\Application Data\Titanium\modules\android\ti.map\2.3.6\platform\android\res\values-hi\common_strings.xml => D:\appceleratorWorkspace\FGRapp\build\android\res\values-hi\common_strings.xml
+[DEBUG]  Copying C:\ProgramData\Application Data\Titanium\modules\android\ti.map\2.3.6\platform\android\res\values-hr\common_strings.xml => D:\appceleratorWorkspace\FGRapp\build\android\res\values-hr\common_strings.xml
+[DEBUG]  Copying C:\ProgramData\Application Data\Titanium\modules\android\ti.map\2.3.6\platform\android\res\values-hu\common_strings.xml => D:\appceleratorWorkspace\FGRapp\build\android\res\values-hu\common_strings.xml
+[DEBUG]  Copying C:\ProgramData\Application Data\Titanium\modules\android\ti.map\2.3.6\platform\android\res\values-hy-rAM\common_strings.xml => D:\appceleratorWorkspace\FGRapp\build\android\res\values-hy-rAM\common_strings.xml
+[DEBUG]  Copying C:\ProgramData\Application Data\Titanium\modules\android\ti.map\2.3.6\platform\android\res\values-in\common_strings.xml => D:\appceleratorWorkspace\FGRapp\build\android\res\values-in\common_strings.xml
+[DEBUG]  Copying C:\ProgramData\Application Data\Titanium\modules\android\ti.map\2.3.6\platform\android\res\values-is-rIS\common_strings.xml => D:\appceleratorWorkspace\FGRapp\build\android\res\values-is-rIS\common_strings.xml
+[DEBUG]  Copying C:\ProgramData\Application Data\Titanium\modules\android\ti.map\2.3.6\platform\android\res\values-it\common_strings.xml => D:\appceleratorWorkspace\FGRapp\build\android\res\values-it\common_strings.xml
+[DEBUG]  Copying C:\ProgramData\Application Data\Titanium\modules\android\ti.map\2.3.6\platform\android\res\values-iw\common_strings.xml => D:\appceleratorWorkspace\FGRapp\build\android\res\values-iw\common_strings.xml
+[DEBUG]  Copying C:\ProgramData\Application Data\Titanium\modules\android\ti.map\2.3.6\platform\android\res\values-ja\common_strings.xml => D:\appceleratorWorkspace\FGRapp\build\android\res\values-ja\common_strings.xml
+[DEBUG]  Copying C:\ProgramData\Application Data\Titanium\modules\android\ti.map\2.3.6\platform\android\res\values-ka-rGE\common_strings.xml => D:\appceleratorWorkspace\FGRapp\build\android\res\values-ka-rGE\common_strings.xml
+[DEBUG]  Copying C:\ProgramData\Application Data\Titanium\modules\android\ti.map\2.3.6\platform\android\res\values-kk-rKZ\common_strings.xml => D:\appceleratorWorkspace\FGRapp\build\android\res\values-kk-rKZ\common_strings.xml
+[DEBUG]  Copying C:\ProgramData\Application Data\Titanium\modules\android\ti.map\2.3.6\platform\android\res\values-km-rKH\common_strings.xml => D:\appceleratorWorkspace\FGRapp\build\android\res\values-km-rKH\common_strings.xml
+[DEBUG]  Copying C:\ProgramData\Application Data\Titanium\modules\android\ti.map\2.3.6\platform\android\res\values-kn-rIN\common_strings.xml => D:\appceleratorWorkspace\FGRapp\build\android\res\values-kn-rIN\common_strings.xml
+[DEBUG]  Copying C:\ProgramData\Application Data\Titanium\modules\android\ti.map\2.3.6\platform\android\res\values-ko\common_strings.xml => D:\appceleratorWorkspace\FGRapp\build\android\res\values-ko\common_strings.xml
+[DEBUG]  Copying C:\ProgramData\Application Data\Titanium\modules\android\ti.map\2.3.6\platform\android\res\values-ky-rKG\common_strings.xml => D:\appceleratorWorkspace\FGRapp\build\android\res\values-ky-rKG\common_strings.xml
+[DEBUG]  Copying C:\ProgramData\Application Data\Titanium\modules\android\ti.map\2.3.6\platform\android\res\values-lo-rLA\common_strings.xml => D:\appceleratorWorkspace\FGRapp\build\android\res\values-lo-rLA\common_strings.xml
+[DEBUG]  Copying C:\ProgramData\Application Data\Titanium\modules\android\ti.map\2.3.6\platform\android\res\values-lt\common_strings.xml => D:\appceleratorWorkspace\FGRapp\build\android\res\values-lt\common_strings.xml
+[DEBUG]  Copying C:\ProgramData\Application Data\Titanium\modules\android\ti.map\2.3.6\platform\android\res\values-lv\common_strings.xml => D:\appceleratorWorkspace\FGRapp\build\android\res\values-lv\common_strings.xml
+[DEBUG]  Copying C:\ProgramData\Application Data\Titanium\modules\android\ti.map\2.3.6\platform\android\res\values-mk-rMK\common_strings.xml => D:\appceleratorWorkspace\FGRapp\build\android\res\values-mk-rMK\common_strings.xml
+[DEBUG]  Copying C:\ProgramData\Application Data\Titanium\modules\android\ti.map\2.3.6\platform\android\res\values-ml-rIN\common_strings.xml => D:\appceleratorWorkspace\FGRapp\build\android\res\values-ml-rIN\common_strings.xml
+[DEBUG]  Copying C:\ProgramData\Application Data\Titanium\modules\android\ti.map\2.3.6\platform\android\res\values-mn-rMN\common_strings.xml => D:\appceleratorWorkspace\FGRapp\build\android\res\values-mn-rMN\common_strings.xml
+[DEBUG]  Copying C:\ProgramData\Application Data\Titanium\modules\android\ti.map\2.3.6\platform\android\res\values-mr-rIN\common_strings.xml => D:\appceleratorWorkspace\FGRapp\build\android\res\values-mr-rIN\common_strings.xml
+[DEBUG]  Copying C:\ProgramData\Application Data\Titanium\modules\android\ti.map\2.3.6\platform\android\res\values-ms-rMY\common_strings.xml => D:\appceleratorWorkspace\FGRapp\build\android\res\values-ms-rMY\common_strings.xml
+[DEBUG]  Copying C:\ProgramData\Application Data\Titanium\modules\android\ti.map\2.3.6\platform\android\res\values-my-rMM\common_strings.xml => D:\appceleratorWorkspace\FGRapp\build\android\res\values-my-rMM\common_strings.xml
+[DEBUG]  Copying C:\ProgramData\Application Data\Titanium\modules\android\ti.map\2.3.6\platform\android\res\values-nb\common_strings.xml => D:\appceleratorWorkspace\FGRapp\build\android\res\values-nb\common_strings.xml
+[DEBUG]  Copying C:\ProgramData\Application Data\Titanium\modules\android\ti.map\2.3.6\platform\android\res\values-ne-rNP\common_strings.xml => D:\appceleratorWorkspace\FGRapp\build\android\res\values-ne-rNP\common_strings.xml
+[DEBUG]  Copying C:\ProgramData\Application Data\Titanium\modules\android\ti.map\2.3.6\platform\android\res\values-nl\common_strings.xml => D:\appceleratorWorkspace\FGRapp\build\android\res\values-nl\common_strings.xml
+[DEBUG]  Copying C:\ProgramData\Application Data\Titanium\modules\android\ti.map\2.3.6\platform\android\res\values-pl\common_strings.xml => D:\appceleratorWorkspace\FGRapp\build\android\res\values-pl\common_strings.xml
+[DEBUG]  Copying C:\ProgramData\Application Data\Titanium\modules\android\ti.map\2.3.6\platform\android\res\values-pt\common_strings.xml => D:\appceleratorWorkspace\FGRapp\build\android\res\values-pt\common_strings.xml
+[DEBUG]  Copying C:\ProgramData\Application Data\Titanium\modules\android\ti.map\2.3.6\platform\android\res\values-pt-rBR\common_strings.xml => D:\appceleratorWorkspace\FGRapp\build\android\res\values-pt-rBR\common_strings.xml
+[DEBUG]  Copying C:\ProgramData\Application Data\Titanium\modules\android\ti.map\2.3.6\platform\android\res\values-pt-rPT\common_strings.xml => D:\appceleratorWorkspace\FGRapp\build\android\res\values-pt-rPT\common_strings.xml
+[DEBUG]  Copying C:\ProgramData\Application Data\Titanium\modules\android\ti.map\2.3.6\platform\android\res\values-ro\common_strings.xml => D:\appceleratorWorkspace\FGRapp\build\android\res\values-ro\common_strings.xml
+[DEBUG]  Copying C:\ProgramData\Application Data\Titanium\modules\android\ti.map\2.3.6\platform\android\res\values-ru\common_strings.xml => D:\appceleratorWorkspace\FGRapp\build\android\res\values-ru\common_strings.xml
+[DEBUG]  Copying C:\ProgramData\Application Data\Titanium\modules\android\ti.map\2.3.6\platform\android\res\values-si-rLK\common_strings.xml => D:\appceleratorWorkspace\FGRapp\build\android\res\values-si-rLK\common_strings.xml
+[DEBUG]  Copying C:\ProgramData\Application Data\Titanium\modules\android\ti.map\2.3.6\platform\android\res\values-sk\common_strings.xml => D:\appceleratorWorkspace\FGRapp\build\android\res\values-sk\common_strings.xml
+[DEBUG]  Copying C:\ProgramData\Application Data\Titanium\modules\android\ti.map\2.3.6\platform\android\res\values-sl\common_strings.xml => D:\appceleratorWorkspace\FGRapp\build\android\res\values-sl\common_strings.xml
+[DEBUG]  Copying C:\ProgramData\Application Data\Titanium\modules\android\ti.map\2.3.6\platform\android\res\values-sr\common_strings.xml => D:\appceleratorWorkspace\FGRapp\build\android\res\values-sr\common_strings.xml
+[DEBUG]  Copying C:\ProgramData\Application Data\Titanium\modules\android\ti.map\2.3.6\platform\android\res\values-sv\common_strings.xml => D:\appceleratorWorkspace\FGRapp\build\android\res\values-sv\common_strings.xml
+[DEBUG]  Copying C:\ProgramData\Application Data\Titanium\modules\android\ti.map\2.3.6\platform\android\res\values-sw\common_strings.xml => D:\appceleratorWorkspace\FGRapp\build\android\res\values-sw\common_strings.xml
+[DEBUG]  Copying C:\ProgramData\Application Data\Titanium\modules\android\ti.map\2.3.6\platform\android\res\values-ta-rIN\common_strings.xml => D:\appceleratorWorkspace\FGRapp\build\android\res\values-ta-rIN\common_strings.xml
+[DEBUG]  Copying C:\ProgramData\Application Data\Titanium\modules\android\ti.map\2.3.6\platform\android\res\values-te-rIN\common_strings.xml => D:\appceleratorWorkspace\FGRapp\build\android\res\values-te-rIN\common_strings.xml
+[DEBUG]  Copying C:\ProgramData\Application Data\Titanium\modules\android\ti.map\2.3.6\platform\android\res\values-th\common_strings.xml => D:\appceleratorWorkspace\FGRapp\build\android\res\values-th\common_strings.xml
+[DEBUG]  Copying C:\ProgramData\Application Data\Titanium\modules\android\ti.map\2.3.6\platform\android\res\values-tl\common_strings.xml => D:\appceleratorWorkspace\FGRapp\build\android\res\values-tl\common_strings.xml
+[DEBUG]  Copying C:\ProgramData\Application Data\Titanium\modules\android\ti.map\2.3.6\platform\android\res\values-tr\common_strings.xml => D:\appceleratorWorkspace\FGRapp\build\android\res\values-tr\common_strings.xml
+[DEBUG]  Copying C:\ProgramData\Application Data\Titanium\modules\android\ti.map\2.3.6\platform\android\res\values-uk\common_strings.xml => D:\appceleratorWorkspace\FGRapp\build\android\res\values-uk\common_strings.xml
+[DEBUG]  Copying C:\ProgramData\Application Data\Titanium\modules\android\ti.map\2.3.6\platform\android\res\values-ur-rPK\common_strings.xml => D:\appceleratorWorkspace\FGRapp\build\android\res\values-ur-rPK\common_strings.xml
+[DEBUG]  Copying C:\ProgramData\Application Data\Titanium\modules\android\ti.map\2.3.6\platform\android\res\values-uz-rUZ\common_strings.xml => D:\appceleratorWorkspace\FGRapp\build\android\res\values-uz-rUZ\common_strings.xml
+[DEBUG]  Copying C:\ProgramData\Application Data\Titanium\modules\android\ti.map\2.3.6\platform\android\res\values-vi\common_strings.xml => D:\appceleratorWorkspace\FGRapp\build\android\res\values-vi\common_strings.xml
+[DEBUG]  Copying C:\ProgramData\Application Data\Titanium\modules\android\ti.map\2.3.6\platform\android\res\values-zh-rCN\common_strings.xml => D:\appceleratorWorkspace\FGRapp\build\android\res\values-zh-rCN\common_strings.xml
+[DEBUG]  Copying C:\ProgramData\Application Data\Titanium\modules\android\ti.map\2.3.6\platform\android\res\values-zh-rHK\common_strings.xml => D:\appceleratorWorkspace\FGRapp\build\android\res\values-zh-rHK\common_strings.xml
+[DEBUG]  Copying C:\ProgramData\Application Data\Titanium\modules\android\ti.map\2.3.6\platform\android\res\values-zh-rTW\common_strings.xml => D:\appceleratorWorkspace\FGRapp\build\android\res\values-zh-rTW\common_strings.xml
+[DEBUG]  Copying C:\ProgramData\Application Data\Titanium\modules\android\ti.map\2.3.6\platform\android\res\values-zu\common_strings.xml => D:\appceleratorWorkspace\FGRapp\build\android\res\values-zu\common_strings.xml
+[WARN]   Overwriting file D:\appceleratorWorkspace\FGRapp\build\android\alloy_generated
+[DEBUG]  Copying D:\appceleratorWorkspace\FGRapp\platform\android\alloy_generated => D:\appceleratorWorkspace\FGRapp\build\android\alloy_generated
+[DEBUG]  Copying D:\appceleratorWorkspace\FGRapp\build\android\bin\assets\Resources\appicon.png => D:\appceleratorWorkspace\FGRapp\build\android\res\drawable\appicon.png
+[INFO]   Processing JavaScript files
+[DEBUG]  Copying D:\appceleratorWorkspace\FGRapp\Resources\android\alloy\CFG.js => D:\appceleratorWorkspace\FGRapp\build\android\assets\alloy\CFG.js
+[DEBUG]  Copying D:\appceleratorWorkspace\FGRapp\Resources\alloy\moment.js => D:\appceleratorWorkspace\FGRapp\build\android\assets\alloy\moment.js
+[DEBUG]  Copying D:\appceleratorWorkspace\FGRapp\Resources\android\app.js => D:\appceleratorWorkspace\FGRapp\build\android\assets\app.js
+[DEBUG]  Copying D:\appceleratorWorkspace\FGRapp\Resources\android\alloy\backbone.js => D:\appceleratorWorkspace\FGRapp\build\android\assets\alloy\backbone.js
+[DEBUG]  Copying D:\appceleratorWorkspace\FGRapp\Resources\android\alloy\constants.js => D:\appceleratorWorkspace\FGRapp\build\android\assets\alloy\constants.js
+[DEBUG]  Copying D:\appceleratorWorkspace\FGRapp\Resources\android\alloy\controllers\about.js => D:\appceleratorWorkspace\FGRapp\build\android\assets\alloy\controllers\about.js
+[DEBUG]  Copying D:\appceleratorWorkspace\FGRapp\Resources\android\alloy\controllers\BaseController.js => D:\appceleratorWorkspace\FGRapp\build\android\assets\alloy\controllers\BaseController.js
+[DEBUG]  Copying D:\appceleratorWorkspace\FGRapp\Resources\android\alloy\controllers\detail.js => D:\appceleratorWorkspace\FGRapp\build\android\assets\alloy\controllers\detail.js
+[DEBUG]  Copying D:\appceleratorWorkspace\FGRapp\Resources\android\alloy\controllers\filter.js => D:\appceleratorWorkspace\FGRapp\build\android\assets\alloy\controllers\filter.js
+[DEBUG]  Copying D:\appceleratorWorkspace\FGRapp\Resources\android\alloy\controllers\index.js => D:\appceleratorWorkspace\FGRapp\build\android\assets\alloy\controllers\index.js
+[DEBUG]  Copying D:\appceleratorWorkspace\FGRapp\Resources\android\alloy\controllers\list.js => D:\appceleratorWorkspace\FGRapp\build\android\assets\alloy\controllers\list.js
+[DEBUG]  Copying D:\appceleratorWorkspace\FGRapp\Resources\android\alloy\controllers\map.js => D:\appceleratorWorkspace\FGRapp\build\android\assets\alloy\controllers\map.js
+[DEBUG]  Copying D:\appceleratorWorkspace\FGRapp\Resources\android\alloy\controllers\sort.js => D:\appceleratorWorkspace\FGRapp\build\android\assets\alloy\controllers\sort.js
+[DEBUG]  Copying D:\appceleratorWorkspace\FGRapp\Resources\android\alloy\models\Feed.js => D:\appceleratorWorkspace\FGRapp\build\android\assets\alloy\models\Feed.js
+[DEBUG]  Copying D:\appceleratorWorkspace\FGRapp\Resources\android\alloy\styles\about.js => D:\appceleratorWorkspace\FGRapp\build\android\assets\alloy\styles\about.js
+[DEBUG]  Copying D:\appceleratorWorkspace\FGRapp\Resources\android\alloy\styles\detail.js => D:\appceleratorWorkspace\FGRapp\build\android\assets\alloy\styles\detail.js
+[DEBUG]  Copying D:\appceleratorWorkspace\FGRapp\Resources\android\alloy\styles\filter.js => D:\appceleratorWorkspace\FGRapp\build\android\assets\alloy\styles\filter.js
+[DEBUG]  Copying D:\appceleratorWorkspace\FGRapp\Resources\android\alloy\styles\index.js => D:\appceleratorWorkspace\FGRapp\build\android\assets\alloy\styles\index.js
+[DEBUG]  Copying D:\appceleratorWorkspace\FGRapp\Resources\android\alloy\styles\list.js => D:\appceleratorWorkspace\FGRapp\build\android\assets\alloy\styles\list.js
+[DEBUG]  Copying D:\appceleratorWorkspace\FGRapp\Resources\android\alloy\styles\map.js => D:\appceleratorWorkspace\FGRapp\build\android\assets\alloy\styles\map.js
+[DEBUG]  Copying D:\appceleratorWorkspace\FGRapp\Resources\android\alloy\styles\sort.js => D:\appceleratorWorkspace\FGRapp\build\android\assets\alloy\styles\sort.js
+[DEBUG]  Copying D:\appceleratorWorkspace\FGRapp\Resources\android\alloy\sync\localStorage.js => D:\appceleratorWorkspace\FGRapp\build\android\assets\alloy\sync\localStorage.js
+[DEBUG]  Copying D:\appceleratorWorkspace\FGRapp\Resources\android\alloy\sync\properties.js => D:\appceleratorWorkspace\FGRapp\build\android\assets\alloy\sync\properties.js
+[DEBUG]  Copying D:\appceleratorWorkspace\FGRapp\Resources\android\alloy\sync\rss.js => D:\appceleratorWorkspace\FGRapp\build\android\assets\alloy\sync\rss.js
+[DEBUG]  Copying D:\appceleratorWorkspace\FGRapp\Resources\android\alloy\sync\sql.js => D:\appceleratorWorkspace\FGRapp\build\android\assets\alloy\sync\sql.js
+[DEBUG]  Copying D:\appceleratorWorkspace\FGRapp\Resources\android\alloy\underscore.js => D:\appceleratorWorkspace\FGRapp\build\android\assets\alloy\underscore.js
+[DEBUG]  Copying D:\appceleratorWorkspace\FGRapp\Resources\android\alloy\widget.js => D:\appceleratorWorkspace\FGRapp\build\android\assets\alloy\widget.js
+[DEBUG]  Copying D:\appceleratorWorkspace\FGRapp\Resources\android\alloy.js => D:\appceleratorWorkspace\FGRapp\build\android\assets\alloy.js
+[DEBUG]  Copying C:\ProgramData\Application Data\Titanium\modules\commonjs\ti.cloud\3.2.10\ti.cloud.js => D:\appceleratorWorkspace\FGRapp\build\android\assets\ti.cloud.js
+[INFO]   Encrypting JavaScript files: C:\ProgramData\Titanium\mobilesdk\win32\5.2.1.GA\android\titanium_prep.win32.exe "edu.uw.titaniumpanda.FGRCascade" "D:\appceleratorWorkspace\FGRapp\build\android\assets" "alloy/CFG.js" "alloy/moment.js" "app.js" "alloy/backbone.js" "alloy/constants.js" "alloy/controllers/about.js" "alloy/controllers/BaseController.js" "alloy/controllers/detail.js" "alloy/controllers/filter.js" "alloy/controllers/index.js" "alloy/controllers/list.js" "alloy/controllers/map.js" "alloy/controllers/sort.js" "alloy/models/Feed.js" "alloy/styles/about.js" "alloy/styles/detail.js" "alloy/styles/filter.js" "alloy/styles/index.js" "alloy/styles/list.js" "alloy/styles/map.js" "alloy/styles/sort.js" "alloy/sync/localStorage.js" "alloy/sync/properties.js" "alloy/sync/rss.js" "alloy/sync/sql.js" "alloy/underscore.js" "alloy/widget.js" "alloy.js" "ti.cloud.js" "_app_props_.json"
+[DEBUG]  32-bit titanium prep failed, trying again using 64-bit
+[INFO]   Encrypting JavaScript files: C:\ProgramData\Titanium\mobilesdk\win32\5.2.1.GA\android\titanium_prep.win64.exe "edu.uw.titaniumpanda.FGRCascade" "D:\appceleratorWorkspace\FGRapp\build\android\assets" "alloy/CFG.js" "alloy/moment.js" "app.js" "alloy/backbone.js" "alloy/constants.js" "alloy/controllers/about.js" "alloy/controllers/BaseController.js" "alloy/controllers/detail.js" "alloy/controllers/filter.js" "alloy/controllers/index.js" "alloy/controllers/list.js" "alloy/controllers/map.js" "alloy/controllers/sort.js" "alloy/models/Feed.js" "alloy/styles/about.js" "alloy/styles/detail.js" "alloy/styles/filter.js" "alloy/styles/index.js" "alloy/styles/list.js" "alloy/styles/map.js" "alloy/styles/sort.js" "alloy/sync/localStorage.js" "alloy/sync/properties.js" "alloy/sync/rss.js" "alloy/sync/sql.js" "alloy/underscore.js" "alloy/widget.js" "alloy.js" "ti.cloud.js" "_app_props_.json"
 [DEBUG]  Adding library C:\ProgramData\Titanium\mobilesdk\win32\5.2.1.GA\android\kroll-v8.jar
 [DEBUG]  Adding library C:\ProgramData\Titanium\mobilesdk\win32\5.2.1.GA\android\modules\titanium-analytics.jar
 [DEBUG]  Adding dependency library C:\ProgramData\Titanium\mobilesdk\win32\5.2.1.GA\android\aps-analytics.jar
@@ -376,76 +579,68 @@ Command
 [DEBUG]  Unknown namespace api, skipping
 [DEBUG]  Unknown namespace platform.displaycaps, skipping
 [DEBUG]  Unknown namespace ui.ios, skipping
-[INFO]   Writing D:\Titanium2\FGRapp\build\android\bin\assets\app.json
+[INFO]   Writing D:\appceleratorWorkspace\FGRapp\build\android\bin\assets\app.json
 [INFO]   Extracting module resources: C:\ProgramData\Titanium\mobilesdk\win32\5.2.1.GA\android\modules\titanium-analytics.res.zip
-[DEBUG]  Copying C:\Users\Nancy\AppData\Local\Temp\11634-12684-1l5lgja\res\values\strings.xml => D:\Titanium2\FGRapp\build\android\res\values\strings.xml
+[DEBUG]  Copying C:\Users\Lijuan\AppData\Local\Temp\11635-10068-1l2kg63\res\values\strings.xml => D:\appceleratorWorkspace\FGRapp\build\android\res\values\strings.xml
 [INFO]   Extracting module resources: C:\ProgramData\Titanium\mobilesdk\win32\5.2.1.GA\android\modules\titanium-android.res.zip
-[DEBUG]  Merging C:\Users\Nancy\AppData\Local\Temp\11634-12684-sld3bf\res\values\strings.xml => D:\Titanium2\FGRapp\build\android\res\values\strings.xml
+[DEBUG]  Merging C:\Users\Lijuan\AppData\Local\Temp\11635-10068-1tmegjm\res\values\strings.xml => D:\appceleratorWorkspace\FGRapp\build\android\res\values\strings.xml
 [INFO]   Extracting module resources: C:\ProgramData\Titanium\mobilesdk\win32\5.2.1.GA\android\modules\titanium-app.res.zip
-[DEBUG]  Merging C:\Users\Nancy\AppData\Local\Temp\11634-12684-1q93ng7\res\values\strings.xml => D:\Titanium2\FGRapp\build\android\res\values\strings.xml
+[DEBUG]  Merging C:\Users\Lijuan\AppData\Local\Temp\11635-10068-17min47\res\values\strings.xml => D:\appceleratorWorkspace\FGRapp\build\android\res\values\strings.xml
 [INFO]   Extracting module resources: C:\ProgramData\Titanium\mobilesdk\win32\5.2.1.GA\android\modules\titanium-filesystem.res.zip
-[DEBUG]  Merging C:\Users\Nancy\AppData\Local\Temp\11634-12684-19e2fm5\res\values\strings.xml => D:\Titanium2\FGRapp\build\android\res\values\strings.xml
+[DEBUG]  Merging C:\Users\Lijuan\AppData\Local\Temp\11635-10068-1t6jtbw\res\values\strings.xml => D:\appceleratorWorkspace\FGRapp\build\android\res\values\strings.xml
 [INFO]   Extracting module resources: C:\ProgramData\Titanium\mobilesdk\win32\5.2.1.GA\android\modules\titanium-media.res.zip
-[DEBUG]  Merging C:\Users\Nancy\AppData\Local\Temp\11634-12684-7pep4m\res\values\strings.xml => D:\Titanium2\FGRapp\build\android\res\values\strings.xml
+[DEBUG]  Merging C:\Users\Lijuan\AppData\Local\Temp\11635-10068-phrdtg\res\values\strings.xml => D:\appceleratorWorkspace\FGRapp\build\android\res\values\strings.xml
 [INFO]   Extracting module resources: C:\ProgramData\Titanium\mobilesdk\win32\5.2.1.GA\android\modules\titanium-locale.res.zip
-[DEBUG]  Merging C:\Users\Nancy\AppData\Local\Temp\11634-12684-nxmewz\res\values\strings.xml => D:\Titanium2\FGRapp\build\android\res\values\strings.xml
+[DEBUG]  Merging C:\Users\Lijuan\AppData\Local\Temp\11635-10068-xi6mxg\res\values\strings.xml => D:\appceleratorWorkspace\FGRapp\build\android\res\values\strings.xml
 [INFO]   Extracting module resources: C:\ProgramData\Titanium\mobilesdk\win32\5.2.1.GA\android\modules\titanium-network.res.zip
-[DEBUG]  Merging C:\Users\Nancy\AppData\Local\Temp\11634-12684-1bgfxr\res\values\strings.xml => D:\Titanium2\FGRapp\build\android\res\values\strings.xml
+[DEBUG]  Merging C:\Users\Lijuan\AppData\Local\Temp\11635-10068-r4dchi\res\values\strings.xml => D:\appceleratorWorkspace\FGRapp\build\android\res\values\strings.xml
 [INFO]   Extracting module resources: C:\ProgramData\Titanium\mobilesdk\win32\5.2.1.GA\android\modules\titanium-xml.res.zip
-[DEBUG]  Merging C:\Users\Nancy\AppData\Local\Temp\11634-12684-a7mkz3\res\values\strings.xml => D:\Titanium2\FGRapp\build\android\res\values\strings.xml
+[DEBUG]  Merging C:\Users\Lijuan\AppData\Local\Temp\11635-10068-a00puc\res\values\strings.xml => D:\appceleratorWorkspace\FGRapp\build\android\res\values\strings.xml
 [INFO]   Extracting module resources: C:\ProgramData\Titanium\mobilesdk\win32\5.2.1.GA\android\modules\titanium-utils.res.zip
-[DEBUG]  Merging C:\Users\Nancy\AppData\Local\Temp\11634-12684-1l5prbg\res\values\strings.xml => D:\Titanium2\FGRapp\build\android\res\values\strings.xml
+[DEBUG]  Merging C:\Users\Lijuan\AppData\Local\Temp\11635-10068-120w2r2\res\values\strings.xml => D:\appceleratorWorkspace\FGRapp\build\android\res\values\strings.xml
 [INFO]   Extracting module resources: C:\ProgramData\Titanium\mobilesdk\win32\5.2.1.GA\android\modules\titanium-geolocation.res.zip
-[DEBUG]  Merging C:\Users\Nancy\AppData\Local\Temp\11634-12684-6qbnxe\res\values\strings.xml => D:\Titanium2\FGRapp\build\android\res\values\strings.xml
+[DEBUG]  Merging C:\Users\Lijuan\AppData\Local\Temp\11635-10068-164kh9\res\values\strings.xml => D:\appceleratorWorkspace\FGRapp\build\android\res\values\strings.xml
 [INFO]   Extracting module resources: C:\ProgramData\Titanium\mobilesdk\win32\5.2.1.GA\android\modules\titanium-accelerometer.res.zip
-[DEBUG]  Merging C:\Users\Nancy\AppData\Local\Temp\11634-12684-1f6e8a9\res\values\strings.xml => D:\Titanium2\FGRapp\build\android\res\values\strings.xml
+[DEBUG]  Merging C:\Users\Lijuan\AppData\Local\Temp\11635-10068-jgj9\res\values\strings.xml => D:\appceleratorWorkspace\FGRapp\build\android\res\values\strings.xml
 [INFO]   Extracting module resources: C:\ProgramData\Titanium\mobilesdk\win32\5.2.1.GA\android\modules\titanium-contacts.res.zip
-[DEBUG]  Merging C:\Users\Nancy\AppData\Local\Temp\11634-12684-11q2dxw\res\values\strings.xml => D:\Titanium2\FGRapp\build\android\res\values\strings.xml
+[DEBUG]  Merging C:\Users\Lijuan\AppData\Local\Temp\11635-10068-18p7gt7\res\values\strings.xml => D:\appceleratorWorkspace\FGRapp\build\android\res\values\strings.xml
 [INFO]   Extracting module resources: C:\ProgramData\Titanium\mobilesdk\win32\5.2.1.GA\android\modules\titanium-map.res.zip
-[DEBUG]  Merging C:\Users\Nancy\AppData\Local\Temp\11634-12684-1b8nyt3\res\values\strings.xml => D:\Titanium2\FGRapp\build\android\res\values\strings.xml
+[DEBUG]  Merging C:\Users\Lijuan\AppData\Local\Temp\11635-10068-hzxm7a\res\values\strings.xml => D:\appceleratorWorkspace\FGRapp\build\android\res\values\strings.xml
 [INFO]   Extracting module resources: C:\ProgramData\Titanium\mobilesdk\win32\5.2.1.GA\android\modules\titanium-gesture.res.zip
-[DEBUG]  Merging C:\Users\Nancy\AppData\Local\Temp\11634-12684-1wicyq9\res\values\strings.xml => D:\Titanium2\FGRapp\build\android\res\values\strings.xml
+[DEBUG]  Merging C:\Users\Lijuan\AppData\Local\Temp\11635-10068-38gbbk\res\values\strings.xml => D:\appceleratorWorkspace\FGRapp\build\android\res\values\strings.xml
 [INFO]   Extracting module resources: C:\ProgramData\Titanium\mobilesdk\win32\5.2.1.GA\android\modules\titanium-calendar.res.zip
-[DEBUG]  Merging C:\Users\Nancy\AppData\Local\Temp\11634-12684-19jih7l\res\values\strings.xml => D:\Titanium2\FGRapp\build\android\res\values\strings.xml
+[DEBUG]  Merging C:\Users\Lijuan\AppData\Local\Temp\11635-10068-5r7h7w\res\values\strings.xml => D:\appceleratorWorkspace\FGRapp\build\android\res\values\strings.xml
 [INFO]   Extracting module resources: C:\ProgramData\Titanium\mobilesdk\win32\5.2.1.GA\android\modules\titanium-platform.res.zip
-[DEBUG]  Merging C:\Users\Nancy\AppData\Local\Temp\11634-12684-1r6qew1\res\values\strings.xml => D:\Titanium2\FGRapp\build\android\res\values\strings.xml
+[DEBUG]  Merging C:\Users\Lijuan\AppData\Local\Temp\11635-10068-14atbvg\res\values\strings.xml => D:\appceleratorWorkspace\FGRapp\build\android\res\values\strings.xml
 [INFO]   Extracting module resources: C:\ProgramData\Titanium\mobilesdk\win32\5.2.1.GA\android\modules\titanium-database.res.zip
-[DEBUG]  Merging C:\Users\Nancy\AppData\Local\Temp\11634-12684-3o9oqk\res\values\strings.xml => D:\Titanium2\FGRapp\build\android\res\values\strings.xml
-[DEBUG]  Removing old file: D:\Titanium2\FGRapp\build\android\.classpath
-[DEBUG]  Removing old file: D:\Titanium2\FGRapp\build\android\.gitignore
-[DEBUG]  Removing old file: D:\Titanium2\FGRapp\build\android\.project
-[DEBUG]  Removing old file: D:\Titanium2\FGRapp\build\android\AndroidManifest.xml
-[DEBUG]  Removing old file: D:\Titanium2\FGRapp\build\android\default.properties
-[DEBUG]  Removing old file: D:\Titanium2\FGRapp\build\android\java-sources.txt
-[DEBUG]  Copying template C:\ProgramData\Titanium\mobilesdk\win32\5.2.1.GA\android\templates\build\AppInfo.java => D:\Titanium2\FGRapp\build\android\gen\edu\uw\titaniumpanda\FGRCascade\Fgr_cascadeAppInfo.java
-[DEBUG]  Copying template C:\ProgramData\Titanium\mobilesdk\win32\5.2.1.GA\android\templates\build\App.java => D:\Titanium2\FGRapp\build\android\gen\edu\uw\titaniumpanda\FGRCascade\Fgr_cascadeApplication.java
-[DEBUG]  Copying template C:\ProgramData\Titanium\mobilesdk\win32\5.2.1.GA\android\templates\build\Activity.java => D:\Titanium2\FGRapp\build\android\gen\edu\uw\titaniumpanda\FGRCascade\Fgr_cascadeActivity.java
-[DEBUG]  Copying template C:\ProgramData\Titanium\mobilesdk\win32\5.2.1.GA\android\templates\build\project => D:\Titanium2\FGRapp\build\android\.project
-[DEBUG]  Copying template C:\ProgramData\Titanium\mobilesdk\win32\5.2.1.GA\android\templates\build\default.properties => D:\Titanium2\FGRapp\build\android\default.properties
-[DEBUG]  Copying C:\ProgramData\Titanium\mobilesdk\win32\5.2.1.GA\android\templates\build\gitignore => D:\Titanium2\FGRapp\build\android\.gitignore
-[DEBUG]  Copying C:\ProgramData\Titanium\mobilesdk\win32\5.2.1.GA\android\templates\build\classpath => D:\Titanium2\FGRapp\build\android\.classpath
+[DEBUG]  Merging C:\Users\Lijuan\AppData\Local\Temp\11635-10068-hu1kt9\res\values\strings.xml => D:\appceleratorWorkspace\FGRapp\build\android\res\values\strings.xml
+[DEBUG]  Removing old file: D:\appceleratorWorkspace\FGRapp\build\android\.classpath
+[DEBUG]  Removing old file: D:\appceleratorWorkspace\FGRapp\build\android\.gitignore
+[DEBUG]  Removing old file: D:\appceleratorWorkspace\FGRapp\build\android\.project
+[DEBUG]  Removing old file: D:\appceleratorWorkspace\FGRapp\build\android\alloy_generated
+[DEBUG]  Removing old file: D:\appceleratorWorkspace\FGRapp\build\android\AndroidManifest.xml
+[DEBUG]  Removing old file: D:\appceleratorWorkspace\FGRapp\build\android\default.properties
+[DEBUG]  Removing old file: D:\appceleratorWorkspace\FGRapp\build\android\java-sources.txt
+[DEBUG]  Removing old file: D:\appceleratorWorkspace\FGRapp\build\android\res\raw\gtm_analytics
+[DEBUG]  Copying template C:\ProgramData\Titanium\mobilesdk\win32\5.2.1.GA\android\templates\build\AppInfo.java => D:\appceleratorWorkspace\FGRapp\build\android\gen\edu\uw\titaniumpanda\FGRCascade\Fgr_cascadeAppInfo.java
+[DEBUG]  Copying template C:\ProgramData\Titanium\mobilesdk\win32\5.2.1.GA\android\templates\build\App.java => D:\appceleratorWorkspace\FGRapp\build\android\gen\edu\uw\titaniumpanda\FGRCascade\Fgr_cascadeApplication.java
+[DEBUG]  Copying template C:\ProgramData\Titanium\mobilesdk\win32\5.2.1.GA\android\templates\build\Activity.java => D:\appceleratorWorkspace\FGRapp\build\android\gen\edu\uw\titaniumpanda\FGRCascade\Fgr_cascadeActivity.java
+[DEBUG]  Copying template C:\ProgramData\Titanium\mobilesdk\win32\5.2.1.GA\android\templates\build\project => D:\appceleratorWorkspace\FGRapp\build\android\.project
+[DEBUG]  Copying template C:\ProgramData\Titanium\mobilesdk\win32\5.2.1.GA\android\templates\build\default.properties => D:\appceleratorWorkspace\FGRapp\build\android\default.properties
+[DEBUG]  Copying C:\ProgramData\Titanium\mobilesdk\win32\5.2.1.GA\android\templates\build\gitignore => D:\appceleratorWorkspace\FGRapp\build\android\.gitignore
+[DEBUG]  Copying C:\ProgramData\Titanium\mobilesdk\win32\5.2.1.GA\android\templates\build\classpath => D:\appceleratorWorkspace\FGRapp\build\android\.classpath
 [INFO]   No aidl files to compile, continuing
 [INFO]   Generating i18n files
 [DEBUG]  Compiling localization files
-[DEBUG]  Merging en strings => D:\Titanium2\FGRapp\build\android\res\values\strings.xml
-[INFO]   Generating D:\Titanium2\FGRapp\build\android\res\values\theme.xml
-[INFO]   Packaging application: C:\android-sdk-win\build-tools\23.0.1\aapt.exe "package" "-f" "-m" "-J" "D:\Titanium2\FGRapp\build\android\gen" "-M" "D:\Titanium2\FGRapp\build\android\AndroidManifest.xml" "-A" "D:\Titanium2\FGRapp\build\android\bin\assets" "-S" "D:\Titanium2\FGRapp\build\android\res" "-I" "C:\android-sdk-win\platforms\android-23\android.jar" "-F" "D:\Titanium2\FGRapp\build\android\bin\app.ap_" "--auto-add-overlay" "--extra-packages" "ti.modules.titanium.ui:android.support.v7.appcompat:android.support.v7.cardview" "-S" "C:\Users\Nancy\AppData\Local\Temp\11634-12684-cxl4g4/res" "-S" "C:\Users\Nancy\AppData\Local\Temp\11634-12684-1utba9d/res" "-S" "C:\Users\Nancy\AppData\Local\Temp\11634-12684-ag9ppt/res"
-[INFO]   Building Java source files: C:\Program Files (x86)\Java\jdk1.7.0_80\bin\javac.exe "-J-Xmx1024M" "-encoding" "utf8" "-bootclasspath" "C:\android-sdk-win\platforms\android-23\android.jar;C:\ProgramData\Titanium\mobilesdk\win32\5.2.1.GA\android\kroll-v8.jar;C:\ProgramData\Titanium\mobilesdk\win32\5.2.1.GA\android\modules\titanium-analytics.jar;C:\ProgramData\Titanium\mobilesdk\win32\5.2.1.GA\android\aps-analytics.jar;C:\ProgramData\Titanium\mobilesdk\win32\5.2.1.GA\android\modules\titanium-android.jar;C:\ProgramData\Titanium\mobilesdk\win32\5.2.1.GA\android\jaxen-1.1.1.jar;C:\ProgramData\Titanium\mobilesdk\win32\5.2.1.GA\android\ti-commons-codec-1.3.jar;C:\ProgramData\Titanium\mobilesdk\win32\5.2.1.GA\android\kroll-common.jar;C:\ProgramData\Titanium\mobilesdk\win32\5.2.1.GA\android\titanium.jar;C:\ProgramData\Titanium\mobilesdk\win32\5.2.1.GA\android\modules\titanium-app.jar;C:\ProgramData\Titanium\mobilesdk\win32\5.2.1.GA\android\modules\titanium-ui.jar;C:\ProgramData\Titanium\mobilesdk\win32\5.2.1.GA\android\nineoldandroids-appc-2.4.0.jar;C:\ProgramData\Titanium\mobilesdk\win32\5.2.1.GA\android\modules\titanium-filesystem.jar;C:\ProgramData\Titanium\mobilesdk\win32\5.2.1.GA\android\modules\titanium-media.jar;C:\ProgramData\Titanium\mobilesdk\win32\5.2.1.GA\android\modules\titanium-appcompat.jar;C:\ProgramData\Titanium\mobilesdk\win32\5.2.1.GA\android\android-support-v4.jar;C:\ProgramData\Titanium\mobilesdk\win32\5.2.1.GA\android\android-support-v7-appcompat.jar;C:\ProgramData\Titanium\mobilesdk\win32\5.2.1.GA\android\modules\titanium-cardview.jar;C:\ProgramData\Titanium\mobilesdk\win32\5.2.1.GA\android\cardview-v7-23.0.1.jar;C:\ProgramData\Titanium\mobilesdk\win32\5.2.1.GA\android\modules\titanium-locale.jar;C:\ProgramData\Titanium\mobilesdk\win32\5.2.1.GA\android\modules\titanium-network.jar;C:\ProgramData\Titanium\mobilesdk\win32\5.2.1.GA\android\modules\titanium-xml.jar;C:\ProgramData\Titanium\mobilesdk\win32\5.2.1.GA\android\modules\titanium-utils.jar;C:\ProgramData\Titanium\mobilesdk\win32\5.2.1.GA\android\modules\titanium-geolocation.jar;C:\ProgramData\Titanium\mobilesdk\win32\5.2.1.GA\android\modules\titanium-accelerometer.jar;C:\ProgramData\Titanium\mobilesdk\win32\5.2.1.GA\android\modules\titanium-contacts.jar;C:\ProgramData\Titanium\mobilesdk\win32\5.2.1.GA\android\modules\titanium-map.jar;C:\ProgramData\Titanium\mobilesdk\win32\5.2.1.GA\android\modules\titanium-gesture.jar;C:\ProgramData\Titanium\mobilesdk\win32\5.2.1.GA\android\modules\titanium-calendar.jar;C:\ProgramData\Titanium\mobilesdk\win32\5.2.1.GA\android\modules\titanium-platform.jar;C:\ProgramData\Titanium\mobilesdk\win32\5.2.1.GA\android\modules\titanium-database.jar;C:\ProgramData\Titanium\mobilesdk\win32\5.2.1.GA\android\lib\titanium-verify.jar;R.class;AssetCryptImpl.class;Fgr_cascadeActivity.class;Fgr_cascadeAppInfo.class;Fgr_cascadeApplication.class" "-d" "D:\Titanium2\FGRapp\build\android\bin\classes" "-proc:none" "-target" "1.6" "-source" "1.6" "@D:\Titanium2\FGRapp\build\android\java-sources.txt"
-[INFO]   Running dexer: C:\Program Files (x86)\Java\jdk1.7.0_80\bin\java.exe "-Xmx1024M" "-XX:-UseGCOverheadLimit" "-Djava.ext.dirs=C:\android-sdk-win\platform-tools" "-jar" "C:\android-sdk-win\build-tools\23.0.1\lib\dx.jar" "--dex" "--output=D:\Titanium2\FGRapp\build\android\bin\classes.dex" "D:\Titanium2\FGRapp\build\android\bin\classes" "C:\ProgramData\Titanium\mobilesdk\win32\5.2.1.GA\android\lib\titanium-verify.jar" "C:\ProgramData\Titanium\mobilesdk\win32\5.2.1.GA\android\kroll-v8.jar" "C:\ProgramData\Titanium\mobilesdk\win32\5.2.1.GA\android\modules\titanium-analytics.jar" "C:\ProgramData\Titanium\mobilesdk\win32\5.2.1.GA\android\aps-analytics.jar" "C:\ProgramData\Titanium\mobilesdk\win32\5.2.1.GA\android\modules\titanium-android.jar" "C:\ProgramData\Titanium\mobilesdk\win32\5.2.1.GA\android\jaxen-1.1.1.jar" "C:\ProgramData\Titanium\mobilesdk\win32\5.2.1.GA\android\ti-commons-codec-1.3.jar" "C:\ProgramData\Titanium\mobilesdk\win32\5.2.1.GA\android\kroll-common.jar" "C:\ProgramData\Titanium\mobilesdk\win32\5.2.1.GA\android\titanium.jar" "C:\ProgramData\Titanium\mobilesdk\win32\5.2.1.GA\android\modules\titanium-app.jar" "C:\ProgramData\Titanium\mobilesdk\win32\5.2.1.GA\android\modules\titanium-ui.jar" "C:\ProgramData\Titanium\mobilesdk\win32\5.2.1.GA\android\nineoldandroids-appc-2.4.0.jar" "C:\ProgramData\Titanium\mobilesdk\win32\5.2.1.GA\android\modules\titanium-filesystem.jar" "C:\ProgramData\Titanium\mobilesdk\win32\5.2.1.GA\android\modules\titanium-media.jar" "C:\ProgramData\Titanium\mobilesdk\win32\5.2.1.GA\android\modules\titanium-appcompat.jar" "C:\ProgramData\Titanium\mobilesdk\win32\5.2.1.GA\android\android-support-v4.jar" "C:\ProgramData\Titanium\mobilesdk\win32\5.2.1.GA\android\android-support-v7-appcompat.jar" "C:\ProgramData\Titanium\mobilesdk\win32\5.2.1.GA\android\modules\titanium-cardview.jar" "C:\ProgramData\Titanium\mobilesdk\win32\5.2.1.GA\android\cardview-v7-23.0.1.jar" "C:\ProgramData\Titanium\mobilesdk\win32\5.2.1.GA\android\modules\titanium-locale.jar" "C:\ProgramData\Titanium\mobilesdk\win32\5.2.1.GA\android\modules\titanium-network.jar" "C:\ProgramData\Titanium\mobilesdk\win32\5.2.1.GA\android\modules\titanium-xml.jar" "C:\ProgramData\Titanium\mobilesdk\win32\5.2.1.GA\android\modules\titanium-utils.jar" "C:\ProgramData\Titanium\mobilesdk\win32\5.2.1.GA\android\modules\titanium-geolocation.jar" "C:\ProgramData\Titanium\mobilesdk\win32\5.2.1.GA\android\modules\titanium-accelerometer.jar" "C:\ProgramData\Titanium\mobilesdk\win32\5.2.1.GA\android\modules\titanium-contacts.jar" "C:\ProgramData\Titanium\mobilesdk\win32\5.2.1.GA\android\modules\titanium-map.jar" "C:\ProgramData\Titanium\mobilesdk\win32\5.2.1.GA\android\modules\titanium-gesture.jar" "C:\ProgramData\Titanium\mobilesdk\win32\5.2.1.GA\android\modules\titanium-calendar.jar" "C:\ProgramData\Titanium\mobilesdk\win32\5.2.1.GA\android\modules\titanium-platform.jar" "C:\ProgramData\Titanium\mobilesdk\win32\5.2.1.GA\android\modules\titanium-database.jar"
+[DEBUG]  Merging en strings => D:\appceleratorWorkspace\FGRapp\build\android\res\values\strings.xml
+[INFO]   Generating D:\appceleratorWorkspace\FGRapp\build\android\res\values\theme.xml
+[INFO]   Packaging application: D:\android\android-sdk\build-tools\23.0.2\aapt.exe "package" "-f" "-m" "-J" "D:\appceleratorWorkspace\FGRapp\build\android\gen" "-M" "D:\appceleratorWorkspace\FGRapp\build\android\AndroidManifest.xml" "-A" "D:\appceleratorWorkspace\FGRapp\build\android\bin\assets" "-S" "D:\appceleratorWorkspace\FGRapp\build\android\res" "-I" "D:\android\android-sdk\platforms\android-23\android.jar" "-F" "D:\appceleratorWorkspace\FGRapp\build\android\bin\app.ap_" "--auto-add-overlay" "--extra-packages" "ti.modules.titanium.ui:android.support.v7.appcompat:android.support.v7.cardview:com.google.android.gms" "-S" "C:\Users\Lijuan\AppData\Local\Temp\11635-10068-1trjtmb/res" "-S" "C:\Users\Lijuan\AppData\Local\Temp\11635-10068-itdtfr/res" "-S" "C:\Users\Lijuan\AppData\Local\Temp\11635-10068-19h5k0o/res"
+[INFO]   Building Java source files: C:\Program Files\Java\jdk1.7.0_75\bin\javac.exe "-J-Xmx1024M" "-encoding" "utf8" "-bootclasspath" "D:\android\android-sdk\platforms\android-23\android.jar;C:\ProgramData\Titanium\mobilesdk\win32\5.2.1.GA\android\kroll-v8.jar;C:\ProgramData\Titanium\mobilesdk\win32\5.2.1.GA\android\modules\titanium-analytics.jar;C:\ProgramData\Titanium\mobilesdk\win32\5.2.1.GA\android\aps-analytics.jar;C:\ProgramData\Titanium\mobilesdk\win32\5.2.1.GA\android\modules\titanium-android.jar;C:\ProgramData\Titanium\mobilesdk\win32\5.2.1.GA\android\jaxen-1.1.1.jar;C:\ProgramData\Titanium\mobilesdk\win32\5.2.1.GA\android\ti-commons-codec-1.3.jar;C:\ProgramData\Titanium\mobilesdk\win32\5.2.1.GA\android\kroll-common.jar;C:\ProgramData\Titanium\mobilesdk\win32\5.2.1.GA\android\titanium.jar;C:\ProgramData\Titanium\mobilesdk\win32\5.2.1.GA\android\modules\titanium-app.jar;C:\ProgramData\Titanium\mobilesdk\win32\5.2.1.GA\android\modules\titanium-ui.jar;C:\ProgramData\Titanium\mobilesdk\win32\5.2.1.GA\android\nineoldandroids-appc-2.4.0.jar;C:\ProgramData\Titanium\mobilesdk\win32\5.2.1.GA\android\modules\titanium-filesystem.jar;C:\ProgramData\Titanium\mobilesdk\win32\5.2.1.GA\android\modules\titanium-media.jar;C:\ProgramData\Titanium\mobilesdk\win32\5.2.1.GA\android\modules\titanium-appcompat.jar;C:\ProgramData\Titanium\mobilesdk\win32\5.2.1.GA\android\android-support-v4.jar;C:\ProgramData\Titanium\mobilesdk\win32\5.2.1.GA\android\android-support-v7-appcompat.jar;C:\ProgramData\Titanium\mobilesdk\win32\5.2.1.GA\android\modules\titanium-cardview.jar;C:\ProgramData\Titanium\mobilesdk\win32\5.2.1.GA\android\cardview-v7-23.0.1.jar;C:\ProgramData\Titanium\mobilesdk\win32\5.2.1.GA\android\modules\titanium-locale.jar;C:\ProgramData\Titanium\mobilesdk\win32\5.2.1.GA\android\modules\titanium-network.jar;C:\ProgramData\Titanium\mobilesdk\win32\5.2.1.GA\android\modules\titanium-xml.jar;C:\ProgramData\Titanium\mobilesdk\win32\5.2.1.GA\android\modules\titanium-utils.jar;C:\ProgramData\Titanium\mobilesdk\win32\5.2.1.GA\android\modules\titanium-geolocation.jar;C:\ProgramData\Titanium\mobilesdk\win32\5.2.1.GA\android\modules\titanium-accelerometer.jar;C:\ProgramData\Titanium\mobilesdk\win32\5.2.1.GA\android\modules\titanium-contacts.jar;C:\ProgramData\Titanium\mobilesdk\win32\5.2.1.GA\android\modules\titanium-map.jar;C:\ProgramData\Titanium\mobilesdk\win32\5.2.1.GA\android\modules\titanium-gesture.jar;C:\ProgramData\Titanium\mobilesdk\win32\5.2.1.GA\android\modules\titanium-calendar.jar;C:\ProgramData\Titanium\mobilesdk\win32\5.2.1.GA\android\modules\titanium-platform.jar;C:\ProgramData\Titanium\mobilesdk\win32\5.2.1.GA\android\modules\titanium-database.jar;C:\ProgramData\Application Data\Titanium\modules\android\ti.map\2.3.6\map.jar;C:\ProgramData\Application Data\Titanium\modules\android\ti.map\2.3.6\lib\google-play-services-base.jar;C:\ProgramData\Application Data\Titanium\modules\android\ti.map\2.3.6\lib\google-play-services-map.jar;C:\ProgramData\Titanium\mobilesdk\win32\5.2.1.GA\android\kroll-apt.jar;C:\ProgramData\Titanium\mobilesdk\win32\5.2.1.GA\android\lib\titanium-verify.jar;Manifest.class;R.class;AssetCryptImpl.class;Fgr_cascadeActivity.class;Fgr_cascadeAppInfo.class;Fgr_cascadeApplication.class" "-d" "D:\appceleratorWorkspace\FGRapp\build\android\bin\classes" "-proc:none" "-target" "1.6" "-source" "1.6" "@D:\appceleratorWorkspace\FGRapp\build\android\java-sources.txt"
+[INFO]   Running dexer: C:\Program Files\Java\jdk1.7.0_75\bin\java.exe "-Xmx1024M" "-XX:-UseGCOverheadLimit" "-Djava.ext.dirs=D:\android\android-sdk\platform-tools" "-jar" "D:\android\android-sdk\build-tools\23.0.2\lib\dx.jar" "--dex" "--output=D:\appceleratorWorkspace\FGRapp\build\android\bin\classes.dex" "D:\appceleratorWorkspace\FGRapp\build\android\bin\classes" "C:\ProgramData\Titanium\mobilesdk\win32\5.2.1.GA\android\lib\titanium-verify.jar" "C:\ProgramData\Application Data\Titanium\modules\android\ti.map\2.3.6\map.jar" "C:\ProgramData\Application Data\Titanium\modules\android\ti.map\2.3.6\lib\google-play-services-base.jar" "C:\ProgramData\Application Data\Titanium\modules\android\ti.map\2.3.6\lib\google-play-services-map.jar" "C:\ProgramData\Titanium\mobilesdk\win32\5.2.1.GA\android\kroll-v8.jar" "C:\ProgramData\Titanium\mobilesdk\win32\5.2.1.GA\android\modules\titanium-analytics.jar" "C:\ProgramData\Titanium\mobilesdk\win32\5.2.1.GA\android\aps-analytics.jar" "C:\ProgramData\Titanium\mobilesdk\win32\5.2.1.GA\android\modules\titanium-android.jar" "C:\ProgramData\Titanium\mobilesdk\win32\5.2.1.GA\android\jaxen-1.1.1.jar" "C:\ProgramData\Titanium\mobilesdk\win32\5.2.1.GA\android\ti-commons-codec-1.3.jar" "C:\ProgramData\Titanium\mobilesdk\win32\5.2.1.GA\android\kroll-common.jar" "C:\ProgramData\Titanium\mobilesdk\win32\5.2.1.GA\android\titanium.jar" "C:\ProgramData\Titanium\mobilesdk\win32\5.2.1.GA\android\modules\titanium-app.jar" "C:\ProgramData\Titanium\mobilesdk\win32\5.2.1.GA\android\modules\titanium-ui.jar" "C:\ProgramData\Titanium\mobilesdk\win32\5.2.1.GA\android\nineoldandroids-appc-2.4.0.jar" "C:\ProgramData\Titanium\mobilesdk\win32\5.2.1.GA\android\modules\titanium-filesystem.jar" "C:\ProgramData\Titanium\mobilesdk\win32\5.2.1.GA\android\modules\titanium-media.jar" "C:\ProgramData\Titanium\mobilesdk\win32\5.2.1.GA\android\modules\titanium-appcompat.jar" "C:\ProgramData\Titanium\mobilesdk\win32\5.2.1.GA\android\android-support-v4.jar" "C:\ProgramData\Titanium\mobilesdk\win32\5.2.1.GA\android\android-support-v7-appcompat.jar" "C:\ProgramData\Titanium\mobilesdk\win32\5.2.1.GA\android\modules\titanium-cardview.jar" "C:\ProgramData\Titanium\mobilesdk\win32\5.2.1.GA\android\cardview-v7-23.0.1.jar" "C:\ProgramData\Titanium\mobilesdk\win32\5.2.1.GA\android\modules\titanium-locale.jar" "C:\ProgramData\Titanium\mobilesdk\win32\5.2.1.GA\android\modules\titanium-network.jar" "C:\ProgramData\Titanium\mobilesdk\win32\5.2.1.GA\android\modules\titanium-xml.jar" "C:\ProgramData\Titanium\mobilesdk\win32\5.2.1.GA\android\modules\titanium-utils.jar" "C:\ProgramData\Titanium\mobilesdk\win32\5.2.1.GA\android\modules\titanium-geolocation.jar" "C:\ProgramData\Titanium\mobilesdk\win32\5.2.1.GA\android\modules\titanium-accelerometer.jar" "C:\ProgramData\Titanium\mobilesdk\win32\5.2.1.GA\android\modules\titanium-contacts.jar" "C:\ProgramData\Titanium\mobilesdk\win32\5.2.1.GA\android\modules\titanium-map.jar" "C:\ProgramData\Titanium\mobilesdk\win32\5.2.1.GA\android\modules\titanium-gesture.jar" "C:\ProgramData\Titanium\mobilesdk\win32\5.2.1.GA\android\modules\titanium-calendar.jar" "C:\ProgramData\Titanium\mobilesdk\win32\5.2.1.GA\android\modules\titanium-platform.jar" "C:\ProgramData\Titanium\mobilesdk\win32\5.2.1.GA\android\modules\titanium-database.jar"
 [INFO]   Creating unsigned apk
-[DEBUG]  Processing D:\Titanium2\FGRapp\build\android\bin\app.ap_
+[DEBUG]  Processing D:\appceleratorWorkspace\FGRapp\build\android\bin\app.ap_
 [DEBUG]  Deflating AndroidManifest.xml
 [DEBUG]  Adding assets/Resources/appicon.png
-[DEBUG]  Adding assets/Resources/iphone/Default-568h@2x.png
-[DEBUG]  Adding assets/Resources/iphone/Default-667h@2x.png
-[DEBUG]  Adding assets/Resources/iphone/Default-Landscape-736h@3x.png
-[DEBUG]  Adding assets/Resources/iphone/Default-Landscape.png
-[DEBUG]  Adding assets/Resources/iphone/Default-Landscape@2x.png
-[DEBUG]  Adding assets/Resources/iphone/Default-Portrait-736h@3x.png
-[DEBUG]  Adding assets/Resources/iphone/Default-Portrait.png
-[DEBUG]  Adding assets/Resources/iphone/Default-Portrait@2x.png
-[DEBUG]  Adding assets/Resources/iphone/Default.png
-[DEBUG]  Adding assets/Resources/iphone/Default@2x.png
 [DEBUG]  Deflating assets/app.json
 [DEBUG]  Deflating assets/index.json
 [DEBUG]  Deflating res/anim/abc_fade_in.xml
@@ -470,8 +665,12 @@ Command
 [DEBUG]  Deflating res/color/abc_search_url_text.xml
 [DEBUG]  Deflating res/color/abc_secondary_text_material_dark.xml
 [DEBUG]  Deflating res/color/abc_secondary_text_material_light.xml
+[DEBUG]  Deflating res/color/common_signin_btn_text_dark.xml
+[DEBUG]  Deflating res/color/common_signin_btn_text_light.xml
 [DEBUG]  Deflating res/color/switch_thumb_material_dark.xml
 [DEBUG]  Deflating res/color/switch_thumb_material_light.xml
+[DEBUG]  Deflating res/color/wallet_primary_text_holo_light.xml
+[DEBUG]  Deflating res/color/wallet_secondary_text_holo_dark.xml
 [DEBUG]  Adding res/drawable-hdpi-v4/abc_ab_share_pack_mtrl_alpha.9.png
 [DEBUG]  Adding res/drawable-hdpi-v4/abc_btn_check_to_on_mtrl_000.png
 [DEBUG]  Adding res/drawable-hdpi-v4/abc_btn_check_to_on_mtrl_015.png
@@ -510,6 +709,38 @@ Command
 [DEBUG]  Adding res/drawable-hdpi-v4/abc_textfield_default_mtrl_alpha.9.png
 [DEBUG]  Adding res/drawable-hdpi-v4/abc_textfield_search_activated_mtrl_alpha.9.png
 [DEBUG]  Adding res/drawable-hdpi-v4/abc_textfield_search_default_mtrl_alpha.9.png
+[DEBUG]  Adding res/drawable-hdpi-v4/cast_ic_notification_0.png
+[DEBUG]  Adding res/drawable-hdpi-v4/cast_ic_notification_1.png
+[DEBUG]  Adding res/drawable-hdpi-v4/cast_ic_notification_2.png
+[DEBUG]  Adding res/drawable-hdpi-v4/cast_ic_notification_on.png
+[DEBUG]  Adding res/drawable-hdpi-v4/common_full_open_on_phone.png
+[DEBUG]  Adding res/drawable-hdpi-v4/common_ic_googleplayservices.png
+[DEBUG]  Adding res/drawable-hdpi-v4/common_signin_btn_icon_disabled_dark.9.png
+[DEBUG]  Adding res/drawable-hdpi-v4/common_signin_btn_icon_disabled_focus_dark.9.png
+[DEBUG]  Adding res/drawable-hdpi-v4/common_signin_btn_icon_disabled_focus_light.9.png
+[DEBUG]  Adding res/drawable-hdpi-v4/common_signin_btn_icon_disabled_light.9.png
+[DEBUG]  Adding res/drawable-hdpi-v4/common_signin_btn_icon_focus_dark.9.png
+[DEBUG]  Adding res/drawable-hdpi-v4/common_signin_btn_icon_focus_light.9.png
+[DEBUG]  Adding res/drawable-hdpi-v4/common_signin_btn_icon_normal_dark.9.png
+[DEBUG]  Adding res/drawable-hdpi-v4/common_signin_btn_icon_normal_light.9.png
+[DEBUG]  Adding res/drawable-hdpi-v4/common_signin_btn_icon_pressed_dark.9.png
+[DEBUG]  Adding res/drawable-hdpi-v4/common_signin_btn_icon_pressed_light.9.png
+[DEBUG]  Adding res/drawable-hdpi-v4/common_signin_btn_text_disabled_dark.9.png
+[DEBUG]  Adding res/drawable-hdpi-v4/common_signin_btn_text_disabled_focus_dark.9.png
+[DEBUG]  Adding res/drawable-hdpi-v4/common_signin_btn_text_disabled_focus_light.9.png
+[DEBUG]  Adding res/drawable-hdpi-v4/common_signin_btn_text_disabled_light.9.png
+[DEBUG]  Adding res/drawable-hdpi-v4/common_signin_btn_text_focus_dark.9.png
+[DEBUG]  Adding res/drawable-hdpi-v4/common_signin_btn_text_focus_light.9.png
+[DEBUG]  Adding res/drawable-hdpi-v4/common_signin_btn_text_normal_dark.9.png
+[DEBUG]  Adding res/drawable-hdpi-v4/common_signin_btn_text_normal_light.9.png
+[DEBUG]  Adding res/drawable-hdpi-v4/common_signin_btn_text_pressed_dark.9.png
+[DEBUG]  Adding res/drawable-hdpi-v4/common_signin_btn_text_pressed_light.9.png
+[DEBUG]  Adding res/drawable-hdpi-v4/ic_plusone_medium_off_client.png
+[DEBUG]  Adding res/drawable-hdpi-v4/ic_plusone_small_off_client.png
+[DEBUG]  Adding res/drawable-hdpi-v4/ic_plusone_standard_off_client.png
+[DEBUG]  Adding res/drawable-hdpi-v4/ic_plusone_tall_off_client.png
+[DEBUG]  Adding res/drawable-hdpi-v4/powered_by_google_dark.png
+[DEBUG]  Adding res/drawable-hdpi-v4/powered_by_google_light.png
 [DEBUG]  Adding res/drawable-ldrtl-hdpi-v4/abc_ic_ab_back_mtrl_am_alpha.png
 [DEBUG]  Adding res/drawable-ldrtl-hdpi-v4/abc_ic_menu_copy_mtrl_am_alpha.png
 [DEBUG]  Adding res/drawable-ldrtl-hdpi-v4/abc_ic_menu_cut_mtrl_alpha.png
@@ -573,12 +804,48 @@ Command
 [DEBUG]  Adding res/drawable-mdpi-v4/abc_textfield_default_mtrl_alpha.9.png
 [DEBUG]  Adding res/drawable-mdpi-v4/abc_textfield_search_activated_mtrl_alpha.9.png
 [DEBUG]  Adding res/drawable-mdpi-v4/abc_textfield_search_default_mtrl_alpha.9.png
+[DEBUG]  Adding res/drawable-mdpi-v4/cast_ic_notification_0.png
+[DEBUG]  Adding res/drawable-mdpi-v4/cast_ic_notification_1.png
+[DEBUG]  Adding res/drawable-mdpi-v4/cast_ic_notification_2.png
+[DEBUG]  Adding res/drawable-mdpi-v4/cast_ic_notification_on.png
+[DEBUG]  Adding res/drawable-mdpi-v4/common_full_open_on_phone.png
+[DEBUG]  Adding res/drawable-mdpi-v4/common_signin_btn_icon_disabled_dark.9.png
+[DEBUG]  Adding res/drawable-mdpi-v4/common_signin_btn_icon_disabled_focus_dark.9.png
+[DEBUG]  Adding res/drawable-mdpi-v4/common_signin_btn_icon_disabled_focus_light.9.png
+[DEBUG]  Adding res/drawable-mdpi-v4/common_signin_btn_icon_disabled_light.9.png
+[DEBUG]  Adding res/drawable-mdpi-v4/common_signin_btn_icon_focus_dark.9.png
+[DEBUG]  Adding res/drawable-mdpi-v4/common_signin_btn_icon_focus_light.9.png
+[DEBUG]  Adding res/drawable-mdpi-v4/common_signin_btn_icon_normal_dark.9.png
+[DEBUG]  Adding res/drawable-mdpi-v4/common_signin_btn_icon_normal_light.9.png
+[DEBUG]  Adding res/drawable-mdpi-v4/common_signin_btn_icon_pressed_dark.9.png
+[DEBUG]  Adding res/drawable-mdpi-v4/common_signin_btn_icon_pressed_light.9.png
+[DEBUG]  Adding res/drawable-mdpi-v4/common_signin_btn_text_disabled_dark.9.png
+[DEBUG]  Adding res/drawable-mdpi-v4/common_signin_btn_text_disabled_focus_dark.9.png
+[DEBUG]  Adding res/drawable-mdpi-v4/common_signin_btn_text_disabled_focus_light.9.png
+[DEBUG]  Adding res/drawable-mdpi-v4/common_signin_btn_text_disabled_light.9.png
+[DEBUG]  Adding res/drawable-mdpi-v4/common_signin_btn_text_focus_dark.9.png
+[DEBUG]  Adding res/drawable-mdpi-v4/common_signin_btn_text_focus_light.9.png
+[DEBUG]  Adding res/drawable-mdpi-v4/common_signin_btn_text_normal_dark.9.png
+[DEBUG]  Adding res/drawable-mdpi-v4/common_signin_btn_text_normal_light.9.png
+[DEBUG]  Adding res/drawable-mdpi-v4/common_signin_btn_text_pressed_dark.9.png
+[DEBUG]  Adding res/drawable-mdpi-v4/common_signin_btn_text_pressed_light.9.png
+[DEBUG]  Adding res/drawable-mdpi-v4/ic_plusone_medium_off_client.png
+[DEBUG]  Adding res/drawable-mdpi-v4/ic_plusone_small_off_client.png
+[DEBUG]  Adding res/drawable-mdpi-v4/ic_plusone_standard_off_client.png
+[DEBUG]  Adding res/drawable-mdpi-v4/ic_plusone_tall_off_client.png
+[DEBUG]  Adding res/drawable-mdpi-v4/powered_by_google_dark.png
+[DEBUG]  Adding res/drawable-mdpi-v4/powered_by_google_light.png
 [DEBUG]  Adding res/drawable-notlong-land-hdpi-v4/background.png
 [DEBUG]  Adding res/drawable-notlong-land-ldpi-v4/background.png
 [DEBUG]  Adding res/drawable-notlong-land-mdpi-v4/background.png
 [DEBUG]  Adding res/drawable-notlong-port-hdpi-v4/background.png
 [DEBUG]  Adding res/drawable-notlong-port-ldpi-v4/background.png
 [DEBUG]  Adding res/drawable-notlong-port-mdpi-v4/background.png
+[DEBUG]  Adding res/drawable-tvdpi-v4/common_full_open_on_phone.png
+[DEBUG]  Adding res/drawable-tvdpi-v4/ic_plusone_medium_off_client.png
+[DEBUG]  Adding res/drawable-tvdpi-v4/ic_plusone_small_off_client.png
+[DEBUG]  Adding res/drawable-tvdpi-v4/ic_plusone_standard_off_client.png
+[DEBUG]  Adding res/drawable-tvdpi-v4/ic_plusone_tall_off_client.png
 [DEBUG]  Deflating res/drawable-v21/abc_action_bar_item_background_material.xml
 [DEBUG]  Deflating res/drawable-v21/abc_btn_colored_material.xml
 [DEBUG]  Deflating res/drawable-v23/abc_control_background_material.xml
@@ -620,6 +887,37 @@ Command
 [DEBUG]  Adding res/drawable-xhdpi-v4/abc_textfield_default_mtrl_alpha.9.png
 [DEBUG]  Adding res/drawable-xhdpi-v4/abc_textfield_search_activated_mtrl_alpha.9.png
 [DEBUG]  Adding res/drawable-xhdpi-v4/abc_textfield_search_default_mtrl_alpha.9.png
+[DEBUG]  Adding res/drawable-xhdpi-v4/cast_ic_notification_0.png
+[DEBUG]  Adding res/drawable-xhdpi-v4/cast_ic_notification_1.png
+[DEBUG]  Adding res/drawable-xhdpi-v4/cast_ic_notification_2.png
+[DEBUG]  Adding res/drawable-xhdpi-v4/cast_ic_notification_on.png
+[DEBUG]  Adding res/drawable-xhdpi-v4/common_full_open_on_phone.png
+[DEBUG]  Adding res/drawable-xhdpi-v4/common_signin_btn_icon_disabled_dark.9.png
+[DEBUG]  Adding res/drawable-xhdpi-v4/common_signin_btn_icon_disabled_focus_dark.9.png
+[DEBUG]  Adding res/drawable-xhdpi-v4/common_signin_btn_icon_disabled_focus_light.9.png
+[DEBUG]  Adding res/drawable-xhdpi-v4/common_signin_btn_icon_disabled_light.9.png
+[DEBUG]  Adding res/drawable-xhdpi-v4/common_signin_btn_icon_focus_dark.9.png
+[DEBUG]  Adding res/drawable-xhdpi-v4/common_signin_btn_icon_focus_light.9.png
+[DEBUG]  Adding res/drawable-xhdpi-v4/common_signin_btn_icon_normal_dark.9.png
+[DEBUG]  Adding res/drawable-xhdpi-v4/common_signin_btn_icon_normal_light.9.png
+[DEBUG]  Adding res/drawable-xhdpi-v4/common_signin_btn_icon_pressed_dark.9.png
+[DEBUG]  Adding res/drawable-xhdpi-v4/common_signin_btn_icon_pressed_light.9.png
+[DEBUG]  Adding res/drawable-xhdpi-v4/common_signin_btn_text_disabled_dark.9.png
+[DEBUG]  Adding res/drawable-xhdpi-v4/common_signin_btn_text_disabled_focus_dark.9.png
+[DEBUG]  Adding res/drawable-xhdpi-v4/common_signin_btn_text_disabled_focus_light.9.png
+[DEBUG]  Adding res/drawable-xhdpi-v4/common_signin_btn_text_disabled_light.9.png
+[DEBUG]  Adding res/drawable-xhdpi-v4/common_signin_btn_text_focus_dark.9.png
+[DEBUG]  Adding res/drawable-xhdpi-v4/common_signin_btn_text_focus_light.9.png
+[DEBUG]  Adding res/drawable-xhdpi-v4/common_signin_btn_text_normal_dark.9.png
+[DEBUG]  Adding res/drawable-xhdpi-v4/common_signin_btn_text_normal_light.9.png
+[DEBUG]  Adding res/drawable-xhdpi-v4/common_signin_btn_text_pressed_dark.9.png
+[DEBUG]  Adding res/drawable-xhdpi-v4/common_signin_btn_text_pressed_light.9.png
+[DEBUG]  Adding res/drawable-xhdpi-v4/ic_plusone_medium_off_client.png
+[DEBUG]  Adding res/drawable-xhdpi-v4/ic_plusone_small_off_client.png
+[DEBUG]  Adding res/drawable-xhdpi-v4/ic_plusone_standard_off_client.png
+[DEBUG]  Adding res/drawable-xhdpi-v4/ic_plusone_tall_off_client.png
+[DEBUG]  Adding res/drawable-xhdpi-v4/powered_by_google_dark.png
+[DEBUG]  Adding res/drawable-xhdpi-v4/powered_by_google_light.png
 [DEBUG]  Adding res/drawable-xxhdpi-v4/abc_ab_share_pack_mtrl_alpha.9.png
 [DEBUG]  Adding res/drawable-xxhdpi-v4/abc_btn_check_to_on_mtrl_000.png
 [DEBUG]  Adding res/drawable-xxhdpi-v4/abc_btn_check_to_on_mtrl_015.png
@@ -658,6 +956,37 @@ Command
 [DEBUG]  Adding res/drawable-xxhdpi-v4/abc_textfield_default_mtrl_alpha.9.png
 [DEBUG]  Adding res/drawable-xxhdpi-v4/abc_textfield_search_activated_mtrl_alpha.9.png
 [DEBUG]  Adding res/drawable-xxhdpi-v4/abc_textfield_search_default_mtrl_alpha.9.png
+[DEBUG]  Adding res/drawable-xxhdpi-v4/cast_ic_notification_0.png
+[DEBUG]  Adding res/drawable-xxhdpi-v4/cast_ic_notification_1.png
+[DEBUG]  Adding res/drawable-xxhdpi-v4/cast_ic_notification_2.png
+[DEBUG]  Adding res/drawable-xxhdpi-v4/cast_ic_notification_on.png
+[DEBUG]  Adding res/drawable-xxhdpi-v4/common_full_open_on_phone.png
+[DEBUG]  Adding res/drawable-xxhdpi-v4/common_signin_btn_icon_disabled_dark.9.png
+[DEBUG]  Adding res/drawable-xxhdpi-v4/common_signin_btn_icon_disabled_focus_dark.9.png
+[DEBUG]  Adding res/drawable-xxhdpi-v4/common_signin_btn_icon_disabled_focus_light.9.png
+[DEBUG]  Adding res/drawable-xxhdpi-v4/common_signin_btn_icon_disabled_light.9.png
+[DEBUG]  Adding res/drawable-xxhdpi-v4/common_signin_btn_icon_focus_dark.9.png
+[DEBUG]  Adding res/drawable-xxhdpi-v4/common_signin_btn_icon_focus_light.9.png
+[DEBUG]  Adding res/drawable-xxhdpi-v4/common_signin_btn_icon_normal_dark.9.png
+[DEBUG]  Adding res/drawable-xxhdpi-v4/common_signin_btn_icon_normal_light.9.png
+[DEBUG]  Adding res/drawable-xxhdpi-v4/common_signin_btn_icon_pressed_dark.9.png
+[DEBUG]  Adding res/drawable-xxhdpi-v4/common_signin_btn_icon_pressed_light.9.png
+[DEBUG]  Adding res/drawable-xxhdpi-v4/common_signin_btn_text_disabled_dark.9.png
+[DEBUG]  Adding res/drawable-xxhdpi-v4/common_signin_btn_text_disabled_focus_dark.9.png
+[DEBUG]  Adding res/drawable-xxhdpi-v4/common_signin_btn_text_disabled_focus_light.9.png
+[DEBUG]  Adding res/drawable-xxhdpi-v4/common_signin_btn_text_disabled_light.9.png
+[DEBUG]  Adding res/drawable-xxhdpi-v4/common_signin_btn_text_focus_dark.9.png
+[DEBUG]  Adding res/drawable-xxhdpi-v4/common_signin_btn_text_focus_light.9.png
+[DEBUG]  Adding res/drawable-xxhdpi-v4/common_signin_btn_text_normal_dark.9.png
+[DEBUG]  Adding res/drawable-xxhdpi-v4/common_signin_btn_text_normal_light.9.png
+[DEBUG]  Adding res/drawable-xxhdpi-v4/common_signin_btn_text_pressed_dark.9.png
+[DEBUG]  Adding res/drawable-xxhdpi-v4/common_signin_btn_text_pressed_light.9.png
+[DEBUG]  Adding res/drawable-xxhdpi-v4/ic_plusone_medium_off_client.png
+[DEBUG]  Adding res/drawable-xxhdpi-v4/ic_plusone_small_off_client.png
+[DEBUG]  Adding res/drawable-xxhdpi-v4/ic_plusone_standard_off_client.png
+[DEBUG]  Adding res/drawable-xxhdpi-v4/ic_plusone_tall_off_client.png
+[DEBUG]  Adding res/drawable-xxhdpi-v4/powered_by_google_dark.png
+[DEBUG]  Adding res/drawable-xxhdpi-v4/powered_by_google_light.png
 [DEBUG]  Adding res/drawable-xxxhdpi-v4/abc_btn_check_to_on_mtrl_000.png
 [DEBUG]  Adding res/drawable-xxxhdpi-v4/abc_btn_check_to_on_mtrl_015.png
 [DEBUG]  Adding res/drawable-xxxhdpi-v4/abc_btn_radio_to_on_mtrl_000.png
@@ -703,6 +1032,11 @@ Command
 [DEBUG]  Adding res/drawable/background.png
 [DEBUG]  Adding res/drawable/btn_check_buttonless_on_64.png
 [DEBUG]  Adding res/drawable/btn_more_64.png
+[DEBUG]  Deflating res/drawable/cast_ic_notification_connecting.xml
+[DEBUG]  Deflating res/drawable/common_signin_btn_icon_dark.xml
+[DEBUG]  Deflating res/drawable/common_signin_btn_icon_light.xml
+[DEBUG]  Deflating res/drawable/common_signin_btn_text_dark.xml
+[DEBUG]  Deflating res/drawable/common_signin_btn_text_light.xml
 [DEBUG]  Adding res/drawable/disclosure_64.png
 [DEBUG]  Deflating res/layout-v17/abc_alert_dialog_material.xml
 [DEBUG]  Deflating res/layout-v17/abc_dialog_title_material.xml
@@ -762,6 +1096,9 @@ Command
 [DEBUG]  Deflating res/layout/titanium_ui_switchcompat.xml
 [DEBUG]  Deflating res/layout/titanium_ui_time_picker_spinner.xml
 [DEBUG]  Deflating resources.arsc
+[DEBUG]  Processing C:\ProgramData\Application Data\Titanium\modules\android\ti.map\2.3.6\map.jar
+[DEBUG]  Processing C:\ProgramData\Application Data\Titanium\modules\android\ti.map\2.3.6\lib\google-play-services-base.jar
+[DEBUG]  Processing C:\ProgramData\Application Data\Titanium\modules\android\ti.map\2.3.6\lib\google-play-services-map.jar
 [DEBUG]  Processing C:\ProgramData\Titanium\mobilesdk\win32\5.2.1.GA\android\kroll-v8.jar
 [DEBUG]  Processing C:\ProgramData\Titanium\mobilesdk\win32\5.2.1.GA\android\modules\titanium-analytics.jar
 [DEBUG]  Processing C:\ProgramData\Titanium\mobilesdk\win32\5.2.1.GA\android\aps-analytics.jar
@@ -815,7 +1152,7 @@ Command
 [DEBUG]  Processing C:\ProgramData\Titanium\mobilesdk\win32\5.2.1.GA\android\modules\titanium-platform.jar
 [DEBUG]  Processing C:\ProgramData\Titanium\mobilesdk\win32\5.2.1.GA\android\modules\titanium-database.jar
 [DEBUG]  Adding classes.dex
-[INFO]   Processing D:\Titanium2\FGRapp\build\android\src
+[INFO]   Processing D:\appceleratorWorkspace\FGRapp\build\android\src
 [DEBUG]  Adding lib/armeabi/libkroll-v8.so
 [DEBUG]  Adding lib/armeabi/libstlport_shared.so
 [DEBUG]  Adding lib/armeabi/libtiverify.so
@@ -825,18 +1162,21 @@ Command
 [DEBUG]  Adding lib/x86/libkroll-v8.so
 [DEBUG]  Adding lib/x86/libstlport_shared.so
 [DEBUG]  Adding lib/x86/libtiverify.so
-[INFO]   Writing unsigned apk: D:\Titanium2\FGRapp\build\android\bin\app-unsigned.apk
+[DEBUG]  Adding lib/armeabi/libti.map.so
+[DEBUG]  Adding lib/armeabi-v7a/libti.map.so
+[DEBUG]  Adding lib/x86/libti.map.so
+[INFO]   Writing unsigned apk: D:\appceleratorWorkspace\FGRapp\build\android\bin\app-unsigned.apk
 [INFO]   Using MD5withRSA signature algorithm
-[INFO]   Signing apk: C:\Program Files (x86)\Java\jdk1.7.0_80\bin\jarsigner.exe "-sigalg" "MD5withRSA" "-digestalg" "SHA1" "-keystore" "C:\ProgramData\Titanium\mobilesdk\win32\5.2.1.GA\android\dev_keystore" "-storepass" "*******" "-signedjar" "D:\Titanium2\FGRapp\build\android\bin\FGR_Cascade.apk" "D:\Titanium2\FGRapp\build\android\bin\app-unsigned.apk" "tidev"
-[INFO]   Aligning zip file: C:\android-sdk-win\build-tools\23.0.1\zipalign.exe "-v" "4" "D:\Titanium2\FGRapp\build\android\bin\FGR_Cascade.apk" "D:\Titanium2\FGRapp\build\android\bin\FGR_Cascade.apkz"
-[INFO]   Writing build manifest: D:\Titanium2\FGRapp\build\android\build-manifest.json
+[INFO]   Signing apk: C:\Program Files\Java\jdk1.7.0_75\bin\jarsigner.exe "-sigalg" "MD5withRSA" "-digestalg" "SHA1" "-keystore" "C:\ProgramData\Titanium\mobilesdk\win32\5.2.1.GA\android\dev_keystore" "-storepass" "*******" "-signedjar" "D:\appceleratorWorkspace\FGRapp\build\android\bin\FGR_Cascade.apk" "D:\appceleratorWorkspace\FGRapp\build\android\bin\app-unsigned.apk" "tidev"
+[INFO]   Aligning zip file: D:\android\android-sdk\build-tools\23.0.2\zipalign.exe "-v" "4" "D:\appceleratorWorkspace\FGRapp\build\android\bin\FGR_Cascade.apk" "D:\appceleratorWorkspace\FGRapp\build\android\bin\FGR_Cascade.apkz"
+[INFO]   Writing build manifest: D:\appceleratorWorkspace\FGRapp\build\android\build-manifest.json
 [INFO]   Making sure the adb server is running
-[INFO]   Installing apk: D:\Titanium2\FGRapp\build\android\bin\FGR_Cascade.apk
+[INFO]   Installing apk: D:\appceleratorWorkspace\FGRapp\build\android\bin\FGR_Cascade.apk
 [TRACE]  Checking if package manager service is started
 [TRACE]  Package manager has started
-[TRACE]  Executing: C:\android-sdk-win\platform-tools\adb.exe -s 192.168.56.101:5555 install -r D:\Titanium2\FGRapp\build\android\bin\FGR_Cascade.apk
+[TRACE]  Executing: D:\android\android-sdk\platform-tools\adb.exe -s 192.168.56.101:5555 install -r D:\appceleratorWorkspace\FGRapp\build\android\bin\FGR_Cascade.apk
 [INFO]   App successfully installed
 [INFO]   Starting app: edu.uw.titaniumpanda.FGRCascade/.Fgr_cascadeActivity
 [DEBUG]  Trying to start the app...
-[INFO]   Application pid: 3543
-[INFO]   Project built successfully in 1m 40s 158ms
+[INFO]   Application pid: 5090
+[INFO]   Project built successfully in 52s 119ms
