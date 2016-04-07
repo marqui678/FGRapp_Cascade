@@ -1,28 +1,47 @@
-'.item': {
-	height: 60
-}
+".item":{
+	left:0, right:0
+},
 
-'.text': {
-	left: 10,
-	height: 25,
+"#firstLine": {
+	left: 0, right: 0, top:5,
+	layout: "horizontal"
+},
 
-	wordWrap: false,
-	ellipsize: true
-}
+".line1": {
+	font: { fontSize: 16 }
+},
 
-'.title': {
-	top: 5,
+"#title": {
+	color: "black",
+},
 
-	font: {
-		fontSize: 18
-	}
-}
+'#secondLine': {
+	left: 0, right: 0,
+	layout: "horizontal"
+},
 
-'.subtitle': {
-	top: 30,
+".line2": {
+	font: { fontSize: 13 }
+},
+"#pace": {
+	color: 'red'
+},
 
-	font: {
-		fontSize: 18
-	},
-	color: '#999'
+'#thirdLine': {
+	left: 0, right: 0,
+	layout: "horizontal"
+},
+
+".line3": {
+	font: { fontSize: 13 }
+},
+
+"#startDateTime": {
+	color: "blue"
+},
+
+"#distance":{
+	right:0,
+	textAlign: Ti.UI.TEXT_ALIGNMENT_RIGHT,
+	color:"green"
 }

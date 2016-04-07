@@ -16,15 +16,25 @@
 			
 			<Templates>
 				<ItemTemplate name="template" class="item">
-					<Label bindId="title" class="text title" />
-					<Label bindId="subtitle" class="text subtitle" />
+					<View id="firstLine">
+	                    <Label class="line1" bindId="title" id="title" />
+                	
+						<View id="secondLine">
+		                    <Label class="line2" bindId="pace" id="pace" />
+	                	
+							<View id="thirdLine">
+			                    <Label class="line3" bindId="startDateTime" id="startDateTime" />
+			                    <Label class="line3" bindId="distance" id="distance"/>
+			                </View>
+			           </View>
+                	</View>
 				</ItemTemplate>
 			</Templates>
 			
 			<!-- Alloy data-binding -->
 
 			<ListSection dataCollection="feed" dataTransform="transform">
-				<ListItem itemId="{link}" title:text="{title}" subtitle:text="{startDateTime}" />
+				<ListItem itemId="{link}" title:text="{title}" pace:text="{pace}" startDateTime:text="{startDateTime}" distance:text="{distance}" />
 			</ListSection>
 			
 		</ListView>

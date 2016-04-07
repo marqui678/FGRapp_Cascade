@@ -63,8 +63,10 @@ function transform(model) {
 	// return a formatted version of pubDate
 	return {
 		title: model.get('title'),
-		startDateTime: model.get('fgrrss:startDateTime'),
-		link:model.get('link')
+		startDateTime: moment(model.get('fgrrss:startDateTime'),moment.ISO_8601).format('LLLL'),
+		link:model.get('link'),
+		pace:model.get('fgrrss:pace'),
+		distance:model.get('fgrrss:distance')
 	};
 }
 
