@@ -1,4 +1,8 @@
 <Alloy>
-	<View class="container">
-	</View>
+	<Window id="fwin" title='Filter'>
+		<Button id="test" class="testButton" onClick="testFilter">Test</Button>
+		<Picker id="picker" top="50" selectionIndicator="true" useSpinner="true">
+            
+        </Picker>
+	</Window>
 </Alloy>

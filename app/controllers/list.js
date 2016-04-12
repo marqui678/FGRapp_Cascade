@@ -1,6 +1,7 @@
 // require the built-in MomentJS library
 var moment = require('alloy/moment');
-
+var flag = [];
+flag = arguments[0] || {};
 /**
  * self-executing function to organize otherwise inline constructor code
  * @param  {Object} args arguments passed to the controller
@@ -44,11 +45,17 @@ function refresh(e) {
 	var url = OS_MOBILEWEB ? Ti.Filesystem.resourcesDirectory + 'feed.xml' : Alloy.CFG.url;
 
 	// let the collection fetch data from it's data source
-	Alloy.Collections.feed.fetch({
+	if (flag.length > 0){
+		Alloy.Collections.feed.fetch(Alloy.Collections.feed.models[0].get('link'));
+		var f = Alloy.Collections.feed;
+		console.log(f);
+	} else{
+		Alloy.Collections.feed.fetch({
 		url: url,
 		success: afterFetch,
 		error: afterFetch
-	});
+		});
+	}
 }
 
 /**
@@ -59,8 +66,6 @@ function refresh(e) {
 
 function transform(model) {
 	'use strict';
-
-	// return a formatted version of pubDate
 	return {
 		title: model.get('title'),
 		startDateTime: moment(model.get('fgrrss:startDateTime'),moment.ISO_8601).format('LLLL'),
@@ -81,11 +86,16 @@ function select(e) {
 	var link = OS_MOBILEWEB ? e.row.itemId : e.itemId;
 
 	// lookup the model
-	var model = Alloy.Collections.feed.get(link);
+	var model = Alloy.Collections.feed.get('link');
 
 	// trigger the select event on this controller, passing the model with it
 	// the index controller has an event listener for this event
 	$.trigger('select', {
 		model: model
 	});
+}
+
+function filter(){
+	a = Alloy.Collections.feed;
+	Alloy.Globals.Navigator.open("filter",Alloy.Globals.feeds);
 }

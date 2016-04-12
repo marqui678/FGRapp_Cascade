@@ -40,6 +40,21 @@ function Controller() {
     onSelect ? $.__views.listCtrl.on("select", onSelect) : __defers["$.__views.listCtrl!select!onSelect"] = true;
     exports.destroy = function() {};
     _.extend($, $.__views);
+    Alloy.Globals.feeds = [];
+    Alloy.Globals.Navigator = {
+        navGroup: $.nav,
+        open: function(controller, payload) {
+            var win = Alloy.createController(controller, payload || {}).getView();
+            payload.displayHomeAsUp && win.addEventListener("open", function(evt) {
+                var activity = win.activity;
+                activity.actionBar.displayHomeAsUp = payload.displayHomeAsUp;
+                activity.actionBar.onHomeIconItemSelected = function() {
+                    evt.source.close();
+                };
+            });
+            win.open();
+        }
+    };
     !function() {
         "use strict";
         $.listCtrl.getView().open();
