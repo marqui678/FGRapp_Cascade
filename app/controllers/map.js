@@ -103,7 +103,7 @@ function createAnnotationsWithModels(models) {
 
 function report(evt) {
     Ti.API.info("Annotation " + evt.title + " clicked, id: " + evt.annotation.myid);
-    var offset = evt.annotation.getCenterOffset();
+    
     
 }
 

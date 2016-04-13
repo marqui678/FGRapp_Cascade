@@ -71,7 +71,6 @@ function Controller() {
     }
     function report(evt) {
         Ti.API.info("Annotation " + evt.title + " clicked, id: " + evt.annotation.myid);
-        evt.annotation.getCenterOffset();
     }
     function searchLocation() {
         alert("Search button clicked.");
