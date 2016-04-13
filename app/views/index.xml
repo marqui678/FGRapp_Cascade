@@ -8,4 +8,8 @@
 	<!-- Android: Use list  as root window -->
 	<Require platform="android" src="list" onSelect="onSelect" id="listCtrl" />
 	
+	<!-- Note: For building map feature -->
+	<!-- Android: Use list  as root window -->
+	<!-- <Require platform="android" src="map" onSelect="onSelect" id="mapCtrl" /> -->
+	
 </Alloy>

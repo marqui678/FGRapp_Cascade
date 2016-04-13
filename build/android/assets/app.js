@@ -1,5 +1,7 @@
 var Alloy = require("alloy"), _ = Alloy._, Backbone = Alloy.Backbone;
 
+Alloy.Globals.Map = require("ti.map");
+
 !function() {
     var ACS = require("ti.cloud"), env = "production" === Ti.App.deployType.toLowerCase() ? "production" : "development", username = Ti.App.Properties.getString("acs-username-" + env), password = Ti.App.Properties.getString("acs-password-" + env);
     if (!env || !username || !password) return;

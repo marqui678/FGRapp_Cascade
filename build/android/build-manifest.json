@@ -2,12 +2,12 @@
 	"target": "emulator",
 	"deployType": "development",
 	"classname": "Fgr_cascade",
-	"platformPath": "C:\\ProgramData\\Titanium\\mobilesdk\\win32\\5.2.1.GA\\android",
-	"modulesHash": "7fb655db1d51a26b74a2778ab4a02a6b",
-	"modulesManifestHash": "64c984da93b9ea7b82c8b86cb7341d7f",
-	"modulesNativeHash": "d41d8cd98f00b204e9800998ecf8427e",
-	"modulesBindingsHash": "d41d8cd98f00b204e9800998ecf8427e",
-	"gitHash": "23e1c7d",
+	"platformPath": "C:\\ProgramData\\Titanium\\mobilesdk\\win32\\5.2.2.GA\\android",
+	"modulesHash": "99a74b0c3ff7121a0c0cc47bd4776414",
+	"modulesManifestHash": "22b302573ff560221cfccd54bb071df6",
+	"modulesNativeHash": "a91d89e58dbae509e2d39e9abfacd90e",
+	"modulesBindingsHash": "85ee7fef0c4b0cc0fffacd2f35501279",
+	"gitHash": "b685ddb",
 	"name": "FGR_Cascade",
 	"id": "edu.uw.titaniumpanda.FGRCascade",
 	"analytics": true,
@@ -28,5 +28,5 @@
 	"propertiesHash": "23488f830ee943b2843df87c25c8e961",
 	"activitiesHash": "d41d8cd98f00b204e9800998ecf8427e",
 	"servicesHash": "d41d8cd98f00b204e9800998ecf8427e",
-	"jarLibHash": "79979a843b08c5c0da71efc3e7493ee7"
+	"jarLibHash": "dd1215c0c3dd7cc0d97b9465d928c594"
 }

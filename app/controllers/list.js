@@ -91,3 +91,25 @@ function filter(){
 	a = Alloy.Collections.feed;
 	Alloy.Globals.Navigator.open("filter",a);
 }
+
+/**
+ *Open mapview 
+ */
+function openMapview() {
+	Ti.API.log("Click on list");
+	//Open a map controller with annotation
+	var mapWin = Alloy.createController('map').mainWindow;
+	
+	// open the window in the NavigationWindow for iOS
+	if (OS_IOS) {
+		$.navWin.openWindow(mapWin);
+
+		// open the window in the NavigationGroup for MobileWeb
+	} else if (OS_MOBILEWEB) {
+		$.navWin.open(mapWin);
+
+		// simply open the window on top for Android (and other platforms)
+	} else {
+		mapWin.open();
+	}
+}

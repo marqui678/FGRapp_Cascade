@@ -108,6 +108,7 @@ function Controller() {
         a = Alloy.Collections.feed;
         Alloy.Globals.Navigator.open("filter", a);
     }
+    }
     require("alloy/controllers/BaseController").apply(this, Array.prototype.slice.call(arguments));
     this.__controllerPath = "list";
     this.args = arguments[0] || {};
@@ -127,6 +128,7 @@ function Controller() {
     var __defers = {};
     Alloy.Collections.instance("feed");
     $.__views.list = Ti.UI.createWindow({
+        barColor: "#CD1625",
         backgroundColor: "#FFF",
         title: "Free Group Rides",
         id: "list"
@@ -257,6 +259,14 @@ function Controller() {
     });
     $.__views.list.add($.__views.__alloyId8);
     select ? $.addListener($.__views.__alloyId8, "itemclick", select) : __defers["$.__views.__alloyId8!itemclick!select"] = true;
+    $.__views.__alloyId23 = Ti.UI.createButton({
+        title: "To map",
+        bottom: 0,
+        right: 0,
+        id: "__alloyId23"
+    });
+    $.__views.list.add($.__views.__alloyId23);
+    openMapview ? $.addListener($.__views.__alloyId23, "click", openMapview) : __defers["$.__views.__alloyId23!click!openMapview"] = true;
     exports.destroy = function() {
         __alloyId28 && __alloyId28.off("fetch destroy change add remove reset", __alloyId29);
     };
