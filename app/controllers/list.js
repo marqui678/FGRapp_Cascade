@@ -48,12 +48,7 @@ function refresh(e) {
 		success: afterFetch,
 		error: afterFetch
 		});
-	Alloy.Collections.feed.comparator = function(foo) {
-  		return -foo.get('fgrrss:startDateTime');
-	};
-	Alloy.Collections.feed.setSortField("fgrrss:startDateTime", "DESC");
-	Alloy.Collections.feed.sort();
-}
+	}
 
 /**
  * set via view to be applied on each model before it renders

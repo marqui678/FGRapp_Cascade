@@ -12,8 +12,6 @@ function parseXML(xml) {
             child = childNodes.item(j);
             child.nodeType === child.ELEMENT_NODE && 1 === child.childNodes.length && -1 !== [ child.TEXT_NODE, child.CDATA_SECTION_NODE ].indexOf(child.childNodes.item(0).nodeType) && (model[child.nodeName] = model[child.nodeName] ? (_.isArray(model[child.nodeName]) ? model[child.nodeName] : [ model[child.nodeName] ]).concat(child.textContent) : child.textContent);
         }
-        var s = model["fgrrss:pace"];
-        console.log(s);
         ("" == Alloy.Globals.pace || -1 != model["fgrrss:pace"].indexOf(Alloy.Globals.pace)) && models.push(model);
     }
     return models;

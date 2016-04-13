@@ -90,9 +90,6 @@ function parseXML(xml) {
 				model[child.nodeName] = model[child.nodeName] ? (_.isArray(model[child.nodeName]) ? model[child.nodeName] : [model[child.nodeName]]).concat(child.textContent) : child.textContent;
 			}
 		}
-		
-		var s = model['fgrrss:pace'];
-		console.log(s);
 		if (Alloy.Globals.pace == "" || model['fgrrss:pace'].indexOf(Alloy.Globals.pace) != -1){
 			models.push(model);
 		}

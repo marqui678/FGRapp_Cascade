@@ -85,11 +85,6 @@ function Controller() {
             success: afterFetch,
             error: afterFetch
         });
-        Alloy.Collections.feed.comparator = function(foo) {
-            return -foo.get("fgrrss:startDateTime");
-        };
-        Alloy.Collections.feed.setSortField("fgrrss:startDateTime", "DESC");
-        Alloy.Collections.feed.sort();
     }
     function transform(model) {
         "use strict";
