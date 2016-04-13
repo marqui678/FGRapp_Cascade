@@ -1,4 +1,5 @@
 'Window': {
+	barColor: '#CD1625',
 	backgroundColor: '#FFF'
 }
 

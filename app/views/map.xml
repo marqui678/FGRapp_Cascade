@@ -1,4 +1,29 @@
+
 <Alloy>
-	<View class="container">
-	</View>
+    <Window id="mainWindow" title="map">
+    	<Menu platform="android">
+			<MenuItem title="Search" onClick="searchLocation" showAsAction="Ti.Android.SHOW_AS_ACTION_ALWAYS" />
+		</Menu>
+    	<!--
+		<TextField id="textField" borderStyle="Ti.UI.INPUT_BORDERSTYLE_ROUNDED"/>
+				<Button id="btnSearch" onClick="searchLocation" right="0">Search</Button>-->
+		
+        <View ns="Alloy.Globals.Map" id="mapview" module="ti.map" onClick="report">
+            <!-- Starting with Alloy 1.4.0, use the Annotation tag to define an annotation -->
+            <!-- <Annotation id='appcHQ' myid='1' /> -->
+        </View>
+    </Window>
 </Alloy>
+
+
+
+
+
+<!--
+<Alloy>
+	<Window id="mainWindow" title="map" class='container'>
+		<Module id="map" module="ti.map" method="createView" platform="ios,android">
+			<Annotation title="Palo Alto" latitude="37.47" longitude="-122.12"/>
+		</Module>
+	</Window>
+</Alloy>-->

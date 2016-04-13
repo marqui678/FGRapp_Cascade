@@ -1,4 +1,25 @@
 
-".container" : {
-  
-}
+"#mapview" : {
+    region : {
+        latitude:37.6697242,
+        longitude:-122.1820661,
+        latitudeDelta:0.01,
+        longitudeDelta:0.01
+    },
+    animate : true,
+    userLocation:true
+    //mapType: Alloy.globals.Map.NORMAL_TYPE
+    //top: '70dp'
+},
+
+/*
+"#textField": {
+	color: "#336699",
+	top: 10,
+	left: 10,
+	width: 250,
+	height: 60,
+	value: 'Enter an address',
+	borderStyle: "Ti.UI.INPUT_BORDERSTYLE_BEZEL"
+}*/
+
