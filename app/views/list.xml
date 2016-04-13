@@ -28,6 +28,7 @@
 			</ListSection>
 			
 		</ListView>
+		<Button onClick="openMapview" bottom="0" right="0">To map</Button>
 		
 	</Window>
 	

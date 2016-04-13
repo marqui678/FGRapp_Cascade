@@ -87,6 +87,15 @@ function parseXML(xml) {
 				// set or append if model already has a property with the same name
 				model[child.nodeName] = model[child.nodeName] ? (_.isArray(model[child.nodeName]) ? model[child.nodeName] : [model[child.nodeName]]).concat(child.textContent) : child.textContent;
 			}
+			
+		}
+		
+		//Parse <georss:point> to latitude and longitude
+		if (model["georss:point"] !== undefined) {
+			var pos = model["georss:point"];
+			var location = pos.substring(pos.indexOf("(") + 1, pos.indexOf(")")).split(" ");
+			model["longitude"] = parseFloat(location[0]);
+			model["latitude"] = parseFloat(location[1]);
 		}
 
 		models.push(model);

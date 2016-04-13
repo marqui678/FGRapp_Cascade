@@ -69,9 +69,9 @@
         <target device="mobileweb">false</target>
         <target device="windows">false</target>
     </deployment-targets>
-    <sdk-version>5.2.1.GA</sdk-version>
+    <sdk-version>5.2.2.GA</sdk-version>
     <plugins>
-        <plugin version="1.0">ti.alloy</plugin>
+        <plugin version="1.8.5">ti.alloy</plugin>
     </plugins>
     <property name="appc-app-id" type="string">56f5b38b06b12f9e4317ffa6</property>
     <property name="acs-authbase-url-development" type="string">https://secure-identity.cloud.appcelerator.com</property>
