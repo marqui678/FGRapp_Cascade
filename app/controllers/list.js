@@ -1,7 +1,5 @@
 // require the built-in MomentJS library
 var moment = require('alloy/moment');
-var flag = [];
-flag = arguments[0] || {};
 /**
  * self-executing function to organize otherwise inline constructor code
  * @param  {Object} args arguments passed to the controller
@@ -45,17 +43,16 @@ function refresh(e) {
 	var url = OS_MOBILEWEB ? Ti.Filesystem.resourcesDirectory + 'feed.xml' : Alloy.CFG.url;
 
 	// let the collection fetch data from it's data source
-	if (flag.length > 0){
-		Alloy.Collections.feed.fetch(Alloy.Collections.feed.models[0].get('link'));
-		var f = Alloy.Collections.feed;
-		console.log(f);
-	} else{
 		Alloy.Collections.feed.fetch({
 		url: url,
 		success: afterFetch,
 		error: afterFetch
 		});
-	}
+	Alloy.Collections.feed.comparator = function(foo) {
+  		return -foo.get('fgrrss:startDateTime');
+	};
+	Alloy.Collections.feed.setSortField("fgrrss:startDateTime", "DESC");
+	Alloy.Collections.feed.sort();
 }
 
 /**
@@ -97,5 +94,5 @@ function select(e) {
 
 function filter(){
 	a = Alloy.Collections.feed;
-	Alloy.Globals.Navigator.open("filter",Alloy.Globals.feeds);
+	Alloy.Globals.Navigator.open("filter",a);
 }

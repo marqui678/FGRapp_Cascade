@@ -32,8 +32,10 @@ module.exports.sync = function Sync(method, model, opts) {
 				var data = parseXML(xml);
 
 				opts.success && opts.success(data.length === 1 ? data[0] : data);
+			
+					model.trigger('fetch');
 
-				model.trigger('fetch');
+				
 
 				// catch any exceptions thrown
 			} catch (e) {
@@ -88,10 +90,13 @@ function parseXML(xml) {
 				model[child.nodeName] = model[child.nodeName] ? (_.isArray(model[child.nodeName]) ? model[child.nodeName] : [model[child.nodeName]]).concat(child.textContent) : child.textContent;
 			}
 		}
-
-		models.push(model);
+		
+		var s = model['fgrrss:pace'];
+		console.log(s);
+		if (Alloy.Globals.pace == "" || model['fgrrss:pace'].indexOf(Alloy.Globals.pace) != -1){
+			models.push(model);
+		}
 	}
-	 
 	return models;
 }
 
@@ -161,4 +166,6 @@ function loadUrl(url, callback) {
 
 	xhr.open('GET', url);
 	xhr.send();
+	
+	
 }

@@ -80,15 +80,16 @@ function Controller() {
         "use strict";
         function afterFetch() {}
         var url = Alloy.CFG.url;
-        if (flag.length > 0) {
-            Alloy.Collections.feed.fetch(Alloy.Collections.feed.models[0].get("link"));
-            var f = Alloy.Collections.feed;
-            console.log(f);
-        } else Alloy.Collections.feed.fetch({
+        Alloy.Collections.feed.fetch({
             url: url,
             success: afterFetch,
             error: afterFetch
         });
+        Alloy.Collections.feed.comparator = function(foo) {
+            return -foo.get("fgrrss:startDateTime");
+        };
+        Alloy.Collections.feed.setSortField("fgrrss:startDateTime", "DESC");
+        Alloy.Collections.feed.sort();
     }
     function transform(model) {
         "use strict";
@@ -110,7 +111,7 @@ function Controller() {
     }
     function filter() {
         a = Alloy.Collections.feed;
-        Alloy.Globals.Navigator.open("filter", Alloy.Globals.feeds);
+        Alloy.Globals.Navigator.open("filter", a);
     }
     require("alloy/controllers/BaseController").apply(this, Array.prototype.slice.call(arguments));
     this.__controllerPath = "list";
@@ -138,6 +139,8 @@ function Controller() {
     $.__views.list && $.addTopLevelView($.__views.list);
     $.__views.list.addEventListener("open", __alloyId7);
     $.__views.filter = Ti.UI.createButton({
+        left: 0,
+        bottom: 0,
         title: "Filter",
         id: "filter"
     });
@@ -264,8 +267,6 @@ function Controller() {
     };
     _.extend($, $.__views);
     var moment = require("alloy/moment");
-    var flag = [];
-    flag = arguments[0] || {};
     !function() {
         "use strict";
         refresh();

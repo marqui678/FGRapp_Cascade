@@ -40,7 +40,7 @@ function Controller() {
     onSelect ? $.__views.listCtrl.on("select", onSelect) : __defers["$.__views.listCtrl!select!onSelect"] = true;
     exports.destroy = function() {};
     _.extend($, $.__views);
-    Alloy.Globals.feeds = [];
+    Alloy.Globals.pace = "";
     Alloy.Globals.Navigator = {
         navGroup: $.nav,
         open: function(controller, payload) {

@@ -1,28 +1,23 @@
 
-var data = [];
-data[0]=Ti.UI.createPickerRow({title:'Self Paced'});
-data[1]=Ti.UI.createPickerRow({title:'Easy'});
-data[2]=Ti.UI.createPickerRow({title:'Leisurely'});
-data[3]=Ti.UI.createPickerRow({title:'Steady'});
-data[4]=Ti.UI.createPickerRow({title:'Moderate'});
-data[5]=Ti.UI.createPickerRow({title:'Brisk'});
-data[6]=Ti.UI.createPickerRow({title:'Vigorous'});
-data[7]=Ti.UI.createPickerRow({title:'Strenuous'});
-data[8]=Ti.UI.createPickerRow({title:'Super Strenuous'});
+var paceData = [];
+paceData[0]=Ti.UI.createPickerRow({title:'Self Paced'});
+paceData[1]=Ti.UI.createPickerRow({title:'Easy'});
+paceData[2]=Ti.UI.createPickerRow({title:'Leisurely'});
+paceData[3]=Ti.UI.createPickerRow({title:'Steady'});
+paceData[4]=Ti.UI.createPickerRow({title:'Moderate'});
+paceData[5]=Ti.UI.createPickerRow({title:'Brisk'});
+paceData[6]=Ti.UI.createPickerRow({title:'Vigorous'});
+paceData[7]=Ti.UI.createPickerRow({title:'Strenuous'});
+paceData[8]=Ti.UI.createPickerRow({title:'Super Strenuous'});
 
-$.picker.add(data);
-$.picker.setSelectedRow(0, 4, false);
-$.picker.addEventListener('change',function(e){
-  for (var i=0; i < Alloy.Collections.feed.length; i++) {
-	  if (Alloy.Collections.feed.models[i].get('fgrrss:pace').indexOf(e.row.title) == 0) {
-	  	Alloy.Collections.feed.remove(Alloy.Collections.feed.models[i].get('link'));
-	  };
-	};
+$.pacePicker.add(paceData);
+$.pacePicker.setSelectedRow(0, 4, false);
+$.pacePicker.addEventListener('change',function(e){
+  Alloy.Globals.pace = e.row.title;
 });
-c=Alloy.Collections.feed;
+
 function testFilter(){
-	d = Alloy.Collections.feed;
-	Alloy.Globals.Navigator.open("list",Alloy.Collections.feed);
+	Alloy.Globals.Navigator.open("list",Alloy.Globals.pace);
 	
 }
  

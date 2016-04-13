@@ -2,6 +2,10 @@
 	left:0, right:0
 },
 
+"#filter": {
+	left: 0, bottom:0,
+},
+
 "#firstLine": {
 	left: 0, right: 0, top:5,
 	layout: "horizontal"
