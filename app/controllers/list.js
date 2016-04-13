@@ -78,7 +78,7 @@ function select(e) {
 	var link = OS_MOBILEWEB ? e.row.itemId : e.itemId;
 
 	// lookup the model
-	var model = Alloy.Collections.feed.get('link');
+	var model = Alloy.Collections.feed.get(link);
 
 	// trigger the select event on this controller, passing the model with it
 	// the index controller has an event listener for this event

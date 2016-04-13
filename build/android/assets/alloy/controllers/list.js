@@ -98,8 +98,8 @@ function Controller() {
     }
     function select(e) {
         "use strict";
-        e.itemId;
-        var model = Alloy.Collections.feed.get("link");
+        var link = e.itemId;
+        var model = Alloy.Collections.feed.get(link);
         $.trigger("select", {
             model: model
         });
