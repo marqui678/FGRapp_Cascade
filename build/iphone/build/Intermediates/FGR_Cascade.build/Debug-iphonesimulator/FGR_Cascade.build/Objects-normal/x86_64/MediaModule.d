@@ -1,0 +1,51 @@
+dependencies: \
+  /Users/jia/Documents/Appcelerator_Studio_Workspace/FGRapp1/build/iphone/Classes/MediaModule.m \
+  /Users/jia/Documents/Appcelerator_Studio_Workspace/FGRapp1/build/iphone/Classes/MediaModule.h \
+  /Users/jia/Documents/Appcelerator_Studio_Workspace/FGRapp1/build/iphone/Classes/TiModule.h \
+  /Users/jia/Documents/Appcelerator_Studio_Workspace/FGRapp1/build/iphone/Classes/TiProxy.h \
+  /Users/jia/Documents/Appcelerator_Studio_Workspace/FGRapp1/build/iphone/Classes/TiEvaluator.h \
+  /Users/jia/Documents/Appcelerator_Studio_Workspace/FGRapp1/build/iphone/Classes/KrollContext.h \
+  /Users/jia/Documents/Appcelerator_Studio_Workspace/FGRapp1/build/iphone/Classes/TiToJS.h \
+  headers/JavaScriptCore/TiCore.h headers/JavaScriptCore/Ti.h \
+  headers/JavaScriptCore/TiBase.h headers/JavaScriptCore/TiContextRef.h \
+  headers/JavaScriptCore/TiObjectRef.h \
+  headers/JavaScriptCore/TiValueRef.h \
+  headers/JavaScriptCore/WebKitAvailability.h \
+  headers/JavaScriptCore/TiStringRef.h \
+  headers/JavaScriptCore/TiStringRefCF.h \
+  /Users/jia/Documents/Appcelerator_Studio_Workspace/FGRapp1/build/iphone/Classes/KrollCallback.h \
+  /Users/jia/Documents/Appcelerator_Studio_Workspace/FGRapp1/build/iphone/Classes/KrollObject.h \
+  /Users/jia/Documents/Appcelerator_Studio_Workspace/FGRapp1/build/iphone/Classes/TiBindingRunLoop.h \
+  /Users/jia/Documents/Appcelerator_Studio_Workspace/FGRapp1/build/iphone/Classes/TiBase.h \
+  /Users/jia/Documents/Appcelerator_Studio_Workspace/FGRapp1/build/iphone/Classes/TiThreading.h \
+  /Users/jia/Documents/Appcelerator_Studio_Workspace/FGRapp1/build/iphone/Classes/TiPublicAPI.h \
+  /Users/jia/Documents/Appcelerator_Studio_Workspace/FGRapp1/build/iphone/Classes/TiUtils.h \
+  /Users/jia/Documents/Appcelerator_Studio_Workspace/FGRapp1/build/iphone/Classes/TiDimension.h \
+  /Users/jia/Documents/Appcelerator_Studio_Workspace/FGRapp1/build/iphone/Classes/TiColor.h \
+  /Users/jia/Documents/Appcelerator_Studio_Workspace/FGRapp1/build/iphone/Classes/WebFont.h \
+  /Users/jia/Documents/Appcelerator_Studio_Workspace/FGRapp1/build/iphone/Classes/TiFile.h \
+  /Users/jia/Documents/Appcelerator_Studio_Workspace/FGRapp1/build/iphone/Classes/TiBuffer.h \
+  /Users/jia/Documents/Appcelerator_Studio_Workspace/FGRapp1/build/iphone/Classes/TiBlob.h \
+  /Users/jia/Documents/Appcelerator_Studio_Workspace/FGRapp1/build/iphone/Classes/TiMediaAudioSession.h \
+  /Users/jia/Documents/Appcelerator_Studio_Workspace/FGRapp1/build/iphone/Classes/TiMediaMusicPlayer.h \
+  /Users/jia/Documents/Appcelerator_Studio_Workspace/FGRapp1/build/iphone/Classes/TiMediaItem.h \
+  /Users/jia/Documents/Appcelerator_Studio_Workspace/FGRapp1/build/iphone/Classes/TiViewProxy.h \
+  /Users/jia/Documents/Appcelerator_Studio_Workspace/FGRapp1/build/iphone/Classes/TiUIView.h \
+  /Users/jia/Documents/Appcelerator_Studio_Workspace/FGRapp1/build/iphone/Classes/TiAnimation.h \
+  /Users/jia/Documents/Appcelerator_Studio_Workspace/FGRapp1/build/iphone/Classes/TiPoint.h \
+  /Users/jia/Documents/Appcelerator_Studio_Workspace/FGRapp1/build/iphone/Classes/ListenerEntry.h \
+  /Users/jia/Documents/Appcelerator_Studio_Workspace/FGRapp1/build/iphone/Classes/LayoutConstraint.h \
+  /Users/jia/Documents/Appcelerator_Studio_Workspace/FGRapp1/build/iphone/Classes/TiGradient.h \
+  /Users/jia/Documents/Appcelerator_Studio_Workspace/FGRapp1/build/iphone/Classes/TiRect.h \
+  /Users/jia/Documents/Appcelerator_Studio_Workspace/FGRapp1/build/iphone/Classes/TiViewTemplate.h \
+  /Users/jia/Documents/Appcelerator_Studio_Workspace/FGRapp1/build/iphone/Classes/TiApp.h \
+  /Users/jia/Documents/Appcelerator_Studio_Workspace/FGRapp1/build/iphone/Classes/TiHost.h \
+  /Users/jia/Documents/Appcelerator_Studio_Workspace/FGRapp1/build/iphone/Classes/Bridge.h \
+  /Users/jia/Documents/Appcelerator_Studio_Workspace/FGRapp1/build/iphone/Classes/TiStylesheet.h \
+  /Users/jia/Documents/Appcelerator_Studio_Workspace/FGRapp1/build/iphone/Classes/KrollBridge.h \
+  /Users/jia/Documents/Appcelerator_Studio_Workspace/FGRapp1/build/iphone/Classes/XHRBridge.h \
+  /Users/jia/Documents/Appcelerator_Studio_Workspace/FGRapp1/build/iphone/Classes/TiRootViewController.h \
+  /Users/jia/Documents/Appcelerator_Studio_Workspace/FGRapp1/build/iphone/Classes/TiControllerProtocols.h \
+  /Users/jia/Documents/Appcelerator_Studio_Workspace/FGRapp1/build/iphone/Classes/Mimetypes.h \
+  /Users/jia/Documents/Appcelerator_Studio_Workspace/FGRapp1/build/iphone/Classes/Ti2DMatrix.h \
+  /Users/jia/Documents/Appcelerator_Studio_Workspace/FGRapp1/build/iphone/Classes/SCListener.h

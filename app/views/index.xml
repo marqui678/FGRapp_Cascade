@@ -2,11 +2,11 @@
 	
 	<!-- iPhone: Use Ti.UI.iOS.NavigationWindow -->
 	<NavigationWindow platform="ios" formFactor="handheld" id="navWin">
-		<Require src="list" onSelect="onSelect" />
+		<Require src="list"/>
 	</NavigationWindow>
 	
 	<!-- Android: Use list  as root window -->
-	<Require platform="android" src="list" onSelect="onSelect" id="listCtrl" />
+	<Require platform="android" src="list" id="listCtrl" />
 	
 	<!-- Note: For building map feature -->
 	<!-- Android: Use list  as root window -->

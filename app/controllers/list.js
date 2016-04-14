@@ -82,9 +82,7 @@ function select(e) {
 
 	// trigger the select event on this controller, passing the model with it
 	// the index controller has an event listener for this event
-	$.trigger('select', {
-		model: model
-	});
+	Alloy.Globals.Navigator.open("detail",model);
 }
 
 function filter(){
@@ -98,7 +96,7 @@ function filter(){
 function openMapview() {
 	Ti.API.log("Click on list");
 	//Open a map controller with annotation
-	var mapWin = Alloy.createController('map').mainWindow;
+	/**var mapWin = Alloy.createController('map').getView();
 	
 	// open the window in the NavigationWindow for iOS
 	if (OS_IOS) {
@@ -111,5 +109,6 @@ function openMapview() {
 		// simply open the window on top for Android (and other platforms)
 	} else {
 		mapWin.open();
-	}
+	}**/
+	Alloy.Globals.Navigator.open("map",{});
 }

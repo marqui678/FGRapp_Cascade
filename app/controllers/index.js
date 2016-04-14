@@ -17,10 +17,10 @@ Alloy.Globals.Navigator = {
 		var win = Alloy.createController(controller, payload || {}).getView();
 
 		if(OS_IOS){
-			$.nav.openWindow(win);
+			$.navWin.openWindow(win);
 		}
 		else if(OS_MOBILEWEB){
-			$.nav.open(win);
+			$.navWin.open(win);
 		}
 		else {
 
@@ -67,31 +67,5 @@ Alloy.Globals.Navigator = {
 	// execute constructor with optional arguments passed to controller
 })(arguments[0] || {});
 
-/**
- * event listener set via view for the select-event of the master controller
- * @param  {Object} e Event
- */
-function onSelect(e) {
-	'use strict';
 
-	// selected model passed with the event
-	var model = e.model;
 
-	// create the detail controller with the model and get its view
-	var win = Alloy.createController('detail', {
-		model: model
-	}).getView();
-
-	// open the window in the NavigationWindow for iOS
-	if (OS_IOS) {
-		$.navWin.openWindow(win);
-
-		// open the window in the NavigationGroup for MobileWeb
-	} else if (OS_MOBILEWEB) {
-		$.navWin.open(win);
-
-		// simply open the window on top for Android (and other platforms)
-	} else {
-		win.open();
-	}
-}

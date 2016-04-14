@@ -1,9 +1,5 @@
 ".item":{
-	left:0, right:0
-},
-
-"#filter": {
-	left: 0, bottom:0,
+	left:0, right:0, height: 80
 },
 
 "#firstLine": {
@@ -12,7 +8,7 @@
 },
 
 ".line1": {
-	font: { fontSize: 16 }
+	left: 0, right: 0, font: { fontSize: 16 }
 },
 
 "#title": {
@@ -25,7 +21,7 @@
 },
 
 ".line2": {
-	font: { fontSize: 13 }
+	left: 0, right: 0, font: { fontSize: 13 }
 },
 "#pace": {
 	color: 'red'
@@ -37,7 +33,7 @@
 },
 
 ".line3": {
-	font: { fontSize: 13 }
+	left: 0, right: 0, font: { fontSize: 13 }
 },
 
 "#startDateTime": {
@@ -45,7 +41,6 @@
 },
 
 "#distance":{
-	right:0,
 	textAlign: Ti.UI.TEXT_ALIGNMENT_RIGHT,
 	color:"green"
 }

@@ -2,13 +2,12 @@
  * self-executing function to organize otherwise inline constructor code
  * @param  {Object} args arguments passed to the controller
  */
+var model = arguments[0] || {};
+
 (function constructor(args) {
 
 	// use strict mode for this function scope
-	'use strict';
-
-	// model passed to the controller
-	var model = args.model;
+	'use strict';	
 
 	// set the Window title and WebView URL
 	$.win.title = model.get('title');

@@ -3,12 +3,10 @@
 	<!-- create global instance of collection we'll bind -->	
 	<Collection src="feed"/>
 	<Window title="Free Group Rides">
-
 		<!-- Android: Add MenuItem for refresh -->		
 		<Menu platform="android">
 			<MenuItem icon="images/ic_action_action_autorenew.png" onClick="refresh" showAsAction="Ti.Android.SHOW_AS_ACTION_ALWAYS" />
 		</Menu>
-		<Button id="filter" onClick="filter">Filter</Button>
 		<ListView platform="ios,android" defaultItemTemplate="template" onItemclick="select">	
 			<!-- iOS RefreshControl -->
 			<RefreshControl platform="ios" id="refreshControl" onRefreshstart="refresh" />
@@ -37,7 +35,8 @@
 			</ListSection>
 			
 		</ListView>
-		<Button onClick="openMapview" bottom="0" right="0">To map</Button>
+		<Button onClick="openMapview" top="0" right="0">To map</Button>
+		<Button onClick="filter" bottom="0" right="0">Filter</Button>
 		
 	</Window>
 	
