@@ -6,12 +6,34 @@
         latitudeDelta:0.01,
         longitudeDelta:0.01
     },
-    animate : true,
+    animate : false,
     userLocation:true
     //mapType: Alloy.globals.Map.NORMAL_TYPE
     //top: '70dp'
 },
 
+".rideInfoCallout": {
+	height: "70",
+	bottom: "0",
+	font: { fontSize: 13 },
+	backgroundColor: "#FFFFFF"
+},
+
+".rideTitle": {
+	top: "0"
+},
+
+".rideDate": {
+	top: "15"
+},
+
+".ridePace": {
+	top: "30"
+},
+
+".rideDistance": {
+	top: "45"
+},
 /*
 "#textField": {
 	color: "#336699",

@@ -67,6 +67,9 @@ function transform(model) {
 	};
 }
 
+//Make transform accessible for other controllers
+Alloy.Globals.transform = transform;
+
 /**
  * event listener set via view for when the user selects a ListView item
  * @param  {Object} e Event
@@ -94,21 +97,6 @@ function filter(){
  *Open mapview 
  */
 function openMapview() {
-	Ti.API.log("Click on list");
-	//Open a map controller with annotation
-	/**var mapWin = Alloy.createController('map').getView();
-	
-	// open the window in the NavigationWindow for iOS
-	if (OS_IOS) {
-		$.navWin.openWindow(mapWin);
+	Alloy.Globals.Navigator.open('map', {});
 
-		// open the window in the NavigationGroup for MobileWeb
-	} else if (OS_MOBILEWEB) {
-		$.navWin.open(mapWin);
-
-		// simply open the window on top for Android (and other platforms)
-	} else {
-		mapWin.open();
-	}**/
-	Alloy.Globals.Navigator.open("map",{});
 }

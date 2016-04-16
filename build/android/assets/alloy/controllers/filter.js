@@ -29,6 +29,7 @@ function Controller() {
     var exports = {};
     var __defers = {};
     $.__views.fwin = Ti.UI.createWindow({
+        barColor: "#CD1625",
         backgroundColor: "#FFF",
         id: "fwin",
         title: "Filter"

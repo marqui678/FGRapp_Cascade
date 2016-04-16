@@ -40,6 +40,7 @@ function Controller() {
     var $ = this;
     var exports = {};
     $.__views.win = Ti.UI.createWindow({
+        barColor: "#CD1625",
         backgroundColor: "#FFF",
         id: "win"
     });

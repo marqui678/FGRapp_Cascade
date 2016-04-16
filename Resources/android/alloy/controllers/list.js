@@ -108,6 +108,8 @@ function Controller() {
         a = Alloy.Collections.feed;
         Alloy.Globals.Navigator.open("filter", a);
     }
+    function openMapview() {
+        Alloy.Globals.Navigator.open("map", {});
     }
     require("alloy/controllers/BaseController").apply(this, Array.prototype.slice.call(arguments));
     this.__controllerPath = "list";
@@ -259,14 +261,14 @@ function Controller() {
     });
     $.__views.list.add($.__views.__alloyId8);
     select ? $.addListener($.__views.__alloyId8, "itemclick", select) : __defers["$.__views.__alloyId8!itemclick!select"] = true;
-    $.__views.__alloyId23 = Ti.UI.createButton({
+    $.__views.__alloyId31 = Ti.UI.createButton({
         title: "To map",
         bottom: 0,
         right: 0,
-        id: "__alloyId23"
+        id: "__alloyId31"
     });
-    $.__views.list.add($.__views.__alloyId23);
-    openMapview ? $.addListener($.__views.__alloyId23, "click", openMapview) : __defers["$.__views.__alloyId23!click!openMapview"] = true;
+    $.__views.list.add($.__views.__alloyId31);
+    openMapview ? $.addListener($.__views.__alloyId31, "click", openMapview) : __defers["$.__views.__alloyId31!click!openMapview"] = true;
     exports.destroy = function() {
         __alloyId28 && __alloyId28.off("fetch destroy change add remove reset", __alloyId29);
     };
@@ -276,9 +278,11 @@ function Controller() {
         "use strict";
         refresh();
     }(arguments[0] || {});
+    Alloy.Globals.transform = transform;
     __defers["$.__views.__alloyId5!click!refresh"] && $.addListener($.__views.__alloyId5, "click", refresh);
     __defers["$.__views.filter!click!filter"] && $.addListener($.__views.filter, "click", filter);
     __defers["$.__views.__alloyId8!itemclick!select"] && $.addListener($.__views.__alloyId8, "itemclick", select);
+    __defers["$.__views.__alloyId31!click!openMapview"] && $.addListener($.__views.__alloyId31, "click", openMapview);
     _.extend($, exports);
 }
 
