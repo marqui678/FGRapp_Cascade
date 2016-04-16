@@ -98,5 +98,4 @@ function filter(){
  */
 function openMapview() {
 	Alloy.Globals.Navigator.open('map', {});
-
 }

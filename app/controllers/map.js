@@ -142,5 +142,5 @@ function searchLocation(e) {
 
 function showDetail(e) {
 	var selectedModel = Alloy.Collections.feed.get(lastClickedAnnotationId);
-	Alloy.Globals.Navigator.open("detail",{model: selectedModel});
+	Alloy.Globals.Navigator.open("detail", selectedModel);
 }

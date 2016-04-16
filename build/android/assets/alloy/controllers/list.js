@@ -100,9 +100,7 @@ function Controller() {
         "use strict";
         var link = e.itemId;
         var model = Alloy.Collections.feed.get(link);
-        $.trigger("select", {
-            model: model
-        });
+        Alloy.Globals.Navigator.open("detail", model);
     }
     function filter() {
         a = Alloy.Collections.feed;
@@ -137,14 +135,6 @@ function Controller() {
     });
     $.__views.list && $.addTopLevelView($.__views.list);
     $.__views.list.addEventListener("open", __alloyId7);
-    $.__views.filter = Ti.UI.createButton({
-        left: 0,
-        bottom: 0,
-        title: "Filter",
-        id: "filter"
-    });
-    $.__views.list.add($.__views.filter);
-    filter ? $.addListener($.__views.filter, "click", filter) : __defers["$.__views.filter!click!filter"] = true;
     var __alloyId9 = {};
     var __alloyId12 = [];
     var __alloyId13 = {
@@ -156,6 +146,8 @@ function Controller() {
                 bindId: "title",
                 properties: {
                     color: "black",
+                    left: 0,
+                    right: 0,
                     font: {
                         fontSize: 16
                     },
@@ -172,6 +164,8 @@ function Controller() {
                         bindId: "pace",
                         properties: {
                             color: "red",
+                            left: 0,
+                            right: 0,
                             font: {
                                 fontSize: 13
                             },
@@ -188,6 +182,8 @@ function Controller() {
                                 bindId: "startDateTime",
                                 properties: {
                                     color: "blue",
+                                    left: 0,
+                                    right: 0,
                                     font: {
                                         fontSize: 13
                                     },
@@ -200,10 +196,11 @@ function Controller() {
                                 bindId: "distance",
                                 properties: {
                                     color: "green",
+                                    left: 0,
+                                    right: 0,
                                     font: {
                                         fontSize: 13
                                     },
-                                    right: 0,
                                     textAlign: Ti.UI.TEXT_ALIGNMENT_RIGHT,
                                     bindId: "distance"
                                 }
@@ -241,6 +238,7 @@ function Controller() {
         properties: {
             left: 0,
             right: 0,
+            height: 80,
             name: "template"
         },
         childTemplates: __alloyId12
@@ -263,12 +261,20 @@ function Controller() {
     select ? $.addListener($.__views.__alloyId8, "itemclick", select) : __defers["$.__views.__alloyId8!itemclick!select"] = true;
     $.__views.__alloyId31 = Ti.UI.createButton({
         title: "To map",
-        bottom: 0,
+        top: 0,
         right: 0,
         id: "__alloyId31"
     });
     $.__views.list.add($.__views.__alloyId31);
     openMapview ? $.addListener($.__views.__alloyId31, "click", openMapview) : __defers["$.__views.__alloyId31!click!openMapview"] = true;
+    $.__views.__alloyId32 = Ti.UI.createButton({
+        title: "Filter",
+        bottom: 0,
+        right: 0,
+        id: "__alloyId32"
+    });
+    $.__views.list.add($.__views.__alloyId32);
+    filter ? $.addListener($.__views.__alloyId32, "click", filter) : __defers["$.__views.__alloyId32!click!filter"] = true;
     exports.destroy = function() {
         __alloyId28 && __alloyId28.off("fetch destroy change add remove reset", __alloyId29);
     };
@@ -280,9 +286,9 @@ function Controller() {
     }(arguments[0] || {});
     Alloy.Globals.transform = transform;
     __defers["$.__views.__alloyId5!click!refresh"] && $.addListener($.__views.__alloyId5, "click", refresh);
-    __defers["$.__views.filter!click!filter"] && $.addListener($.__views.filter, "click", filter);
     __defers["$.__views.__alloyId8!itemclick!select"] && $.addListener($.__views.__alloyId8, "itemclick", select);
     __defers["$.__views.__alloyId31!click!openMapview"] && $.addListener($.__views.__alloyId31, "click", openMapview);
+    __defers["$.__views.__alloyId32!click!filter"] && $.addListener($.__views.__alloyId32, "click", filter);
     _.extend($, exports);
 }
 

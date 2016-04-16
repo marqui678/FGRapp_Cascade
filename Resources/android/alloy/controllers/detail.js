@@ -52,9 +52,9 @@ function Controller() {
     $.__views.win.add($.__views.webView);
     exports.destroy = function() {};
     _.extend($, $.__views);
-    !function(args) {
+    var model = arguments[0] || {};
+    !function() {
         "use strict";
-        var model = args.model;
         $.win.title = model.get("title");
         $.webView.url = model.get("link");
     }(arguments[0] || {});
