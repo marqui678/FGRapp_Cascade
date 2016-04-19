@@ -18,7 +18,13 @@ function parseXML(xml) {
             model["longitude"] = parseFloat(location[0]);
             model["latitude"] = parseFloat(location[1]);
         }
-        ("" == Alloy.Globals.pace || -1 != model["fgrrss:pace"].indexOf(Alloy.Globals.pace)) && models.push(model);
+        {
+            Alloy.Globals.pace.length;
+        }
+        if (0 == Alloy.Globals.pace.length) models.push(model); else {
+            for (var i = 0; 1 > i; i++) console.log(i);
+            models.push(model);
+        }
     }
     return models;
 }

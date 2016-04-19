@@ -1,1 +1,1 @@
-module.exports={"dependencies":{},"url":"https://www.cascade.org/DailyRides/rss.xml"};
+/Users/jia/Documents/Appcelerator_Studio_Workspace/FGRapp1/Resources/android/alloy/CFG.js

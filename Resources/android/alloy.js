@@ -22,7 +22,7 @@ function isTabletFallback() {
 
 var _ = require("alloy/underscore")._, Backbone = require("alloy/backbone"), CONST = require("alloy/constants");
 
-exports.version = "1.8.5";
+exports.version = "1.7.33";
 
 exports._ = _;
 

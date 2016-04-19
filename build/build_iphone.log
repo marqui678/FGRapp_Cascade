@@ -1,5 +1,5 @@
 
-4/14/2016, 10:50:53 AM
+4/18/2016, 8:25:36 PM
 
 Operating System
   Name                        = Mac OS X
@@ -21,12 +21,12 @@ Titanium SDK
   Target Platform             = iphone
 
 Command
-  /usr/local/bin/node /Users/jia/.appcelerator/install/5.2.0/package/node_modules/titanium/lib/titanium.js build run --platform ios --log-level trace --sdk 5.2.0.GA --project-dir /Users/jia/Documents/Appcelerator_Studio_Workspace/FGRapp1 --target simulator --ios-version 8.4 --device-family iphone --deploy-type development --sim-type iphone --sim-version 8.4 --device-id A70756FB-C2DE-4452-BF1F-01778F726A5C --skip-js-minify --no-colors --no-progress-bars --no-prompt --prompt-type socket-bundle --prompt-port 49190 --config-file /var/folders/85/rj0yf4g145g8qzpp_9mgwkwr0000gq/T/build-1460656249893.json --no-banner --project-dir /Users/jia/Documents/Appcelerator_Studio_Workspace/FGRapp1
+  /usr/local/bin/node /Users/jia/.appcelerator/install/5.2.0/package/node_modules/titanium/lib/titanium.js build run --platform ios --log-level trace --sdk 5.2.0.GA --project-dir /Users/jia/Documents/Appcelerator_Studio_Workspace/FGRapp1 --target simulator --ios-version 8.4 --device-family iphone --deploy-type development --sim-type ipad --sim-version 8.4 --device-id F489039B-8EE7-4F1F-A130-642E6AE1851B --debug-host localhost:56176 --skip-js-minify --no-colors --no-progress-bars --no-prompt --prompt-type socket-bundle --prompt-port 49179 --config-file /var/folders/85/rj0yf4g145g8qzpp_9mgwkwr0000gq/T/build-1461036313098.json --no-banner --project-dir /Users/jia/Documents/Appcelerator_Studio_Workspace/FGRapp1
 
-[TRACE]  [ioslib] Validating iOS Simulator UDID A70756FB-C2DE-4452-BF1F-01778F726A5C
-[TRACE]  [ioslib] Found iOS Simulator UDID A70756FB-C2DE-4452-BF1F-01778F726A5C
-[TRACE]  [ioslib] Selected iOS Simulator: iPhone 6
-[TRACE]  [ioslib]   UDID    = A70756FB-C2DE-4452-BF1F-01778F726A5C
+[TRACE]  [ioslib] Validating iOS Simulator UDID F489039B-8EE7-4F1F-A130-642E6AE1851B
+[TRACE]  [ioslib] Found iOS Simulator UDID F489039B-8EE7-4F1F-A130-642E6AE1851B
+[TRACE]  [ioslib] Selected iOS Simulator: iPad 2
+[TRACE]  [ioslib]   UDID    = F489039B-8EE7-4F1F-A130-642E6AE1851B
 [TRACE]  [ioslib]   iOS     = 8.4
 [TRACE]  [ioslib] Autoselected Xcode: 6.4
 [DEBUG]  Detecting modules in /Users/jia/Library/Application Support/Titanium/modules
@@ -53,9 +53,9 @@ Command
 [INFO]   Deploy type: development
 [INFO]   Building for target: simulator
 [INFO]   Building using iOS SDK: 8.4
-[INFO]   Building for iOS Simulator: iPhone 6
-[DEBUG]  UDID: A70756FB-C2DE-4452-BF1F-01778F726A5C
-[DEBUG]  Simulator type: iphone
+[INFO]   Building for iOS Simulator: iPad 2
+[DEBUG]  UDID: F489039B-8EE7-4F1F-A130-642E6AE1851B
+[DEBUG]  Simulator type: ipad
 [DEBUG]  Simulator version: 8.4
 [INFO]   Building for device family: iphone
 [DEBUG]  Setting Xcode target to Debug
@@ -63,7 +63,7 @@ Command
 [DEBUG]  Xcode installation: /Applications/Xcode.app/Contents/Developer
 [DEBUG]  iOS WWDR certificate: not found
 [INFO]   Minimum iOS version: 7.1
-[INFO]   Debugging disabled
+[INFO]   Debugging enabled via debug host: localhost:56176
 [INFO]   Profiler disabled
 [INFO]   Set to copy files instead of symlinking
 [INFO]   Initializing the build directory
@@ -155,6 +155,61 @@ Command
 [INFO]   [filter.xml] view processing...
 [INFO]   style:      "filter.tss"
 [INFO]   view:       "filter.xml"
+[WARN]   ing: moment construction falls back to js Date. This is discouraged and will be removed in upcoming major release. Please refer to https://github.com/moment/moment/issues/1407 for more info.
+[ERROR]  
+[DEBUG]      at Function.<anonymous> (/Users/jia/.appcelerator/install/5.2.0/package/node_modules/alloy/node_modules/moment/moment.js:746:36)
+[DEBUG]      at configFromString (/Users/jia/.appcelerator/install/5.2.0/package/node_modules/alloy/node_modules/moment/moment.js:826:32)
+[DEBUG]      at configFromInput (/Users/jia/.appcelerator/install/5.2.0/package/node_modules/alloy/node_modules/moment/moment.js:1353:13)
+[DEBUG]      at prepareConfig (/Users/jia/.appcelerator/install/5.2.0/package/node_modules/alloy/node_modules/moment/moment.js:1340:13)
+[DEBUG]      at createFromConfig (/Users/jia/.appcelerator/install/5.2.0/package/node_modules/alloy/node_modules/moment/moment.js:1307:44)
+[DEBUG]      at createLocalOrUTC (/Users/jia/.appcelerator/install/5.2.0/package/node_modules/alloy/node_modules/moment/moment.js:1385:16)
+[DEBUG]      at local__createLocal (/Users/jia/.appcelerator/install/5.2.0/package/node_modules/alloy/node_modules/moment/moment.js:1389:16)
+[DEBUG]      at utils_hooks__hooks (/Users/jia/.appcelerator/install/5.2.0/package/node_modules/alloy/node_modules/moment/moment.js:16:29)
+[DEBUG]      at Object.exports.createDate (/Users/jia/.appcelerator/install/5.2.0/package/node_modules/alloy/Alloy/utils.js:572:26)
+[DEBUG]      at processStyle (/Users/jia/.appcelerator/install/5.2.0/package/node_modules/alloy/Alloy/commands/compile/styler.js:364:17)
+[DEBUG]      at Object.exports.processStyle (/Users/jia/.appcelerator/install/5.2.0/package/node_modules/alloy/Alloy/commands/compile/styler.js:420:2)
+[DEBUG]      at Object.exports.generateStyleParams (/Users/jia/.appcelerator/install/5.2.0/package/node_modules/alloy/Alloy/commands/compile/styler.js:600:20)
+[DEBUG]      at parse (/Users/jia/.appcelerator/install/5.2.0/package/node_modules/alloy/Alloy/commands/compile/parsers/default.js:132:19)
+[DEBUG]      at Object.exports.parse (/Users/jia/.appcelerator/install/5.2.0/package/node_modules/alloy/Alloy/commands/compile/parsers/base.js:11:17)
+[DEBUG]      at Object.exports.parse (/Users/jia/.appcelerator/install/5.2.0/package/node_modules/alloy/Alloy/commands/compile/parsers/default.js:10:27)
+[DEBUG]      at parse (/Users/jia/.appcelerator/install/5.2.0/package/node_modules/alloy/Alloy/commands/compile/parsers/Ti.UI.Picker.js:72:31)
+[DEBUG]      at Object.exports.parse (/Users/jia/.appcelerator/install/5.2.0/package/node_modules/alloy/Alloy/commands/compile/parsers/base.js:11:17)
+[DEBUG]      at Object.exports.parse (/Users/jia/.appcelerator/install/5.2.0/package/node_modules/alloy/Alloy/commands/compile/parsers/Ti.UI.Picker.js:29:27)
+[DEBUG]      at Object.exports.generateNode (/Users/jia/.appcelerator/install/5.2.0/package/node_modules/alloy/Alloy/commands/compile/compilerUtils.js:317:48)
+[DEBUG]      at /Users/jia/.appcelerator/install/5.2.0/package/node_modules/alloy/Alloy/commands/compile/compilerUtils.js:401:29
+[DEBUG]      at Array.forEach (native)
+[DEBUG]      at Function._.each._.forEach (/Users/jia/.appcelerator/install/5.2.0/package/node_modules/alloy/Alloy/lib/alloy/underscore.js:79:11)
+[DEBUG]      at Object.exports.generateNode (/Users/jia/.appcelerator/install/5.2.0/package/node_modules/alloy/Alloy/commands/compile/compilerUtils.js:392:5)
+[DEBUG]      at /Users/jia/.appcelerator/install/5.2.0/package/node_modules/alloy/Alloy/commands/compile/compilerUtils.js:401:29
+[DEBUG]      at Array.forEach (native)
+[DEBUG]      at Function._.each._.forEach (/Users/jia/.appcelerator/install/5.2.0/package/node_modules/alloy/Alloy/lib/alloy/underscore.js:79:11)
+[DEBUG]      at Object.exports.generateNode (/Users/jia/.appcelerator/install/5.2.0/package/node_modules/alloy/Alloy/commands/compile/compilerUtils.js:392:5)
+[DEBUG]      at /Users/jia/.appcelerator/install/5.2.0/package/node_modules/alloy/Alloy/commands/compile/index.js:693:28
+[DEBUG]      at Array.forEach (native)
+[DEBUG]      at Function._.each._.forEach (/Users/jia/.appcelerator/install/5.2.0/package/node_modules/alloy/Alloy/lib/alloy/underscore.js:79:11)
+[DEBUG]      at parseAlloyComponent (/Users/jia/.appcelerator/install/5.2.0/package/node_modules/alloy/Alloy/commands/compile/index.js:687:5)
+[DEBUG]      at /Users/jia/.appcelerator/install/5.2.0/package/node_modules/alloy/Alloy/commands/compile/index.js:304:6
+[DEBUG]      at Array.forEach (native)
+[DEBUG]      at Function._.each._.forEach (/Users/jia/.appcelerator/install/5.2.0/package/node_modules/alloy/Alloy/lib/alloy/underscore.js:79:11)
+[DEBUG]      at /Users/jia/.appcelerator/install/5.2.0/package/node_modules/alloy/Alloy/commands/compile/index.js:293:6
+[DEBUG]      at Array.forEach (native)
+[DEBUG]      at Function._.each._.forEach (/Users/jia/.appcelerator/install/5.2.0/package/node_modules/alloy/Alloy/lib/alloy/underscore.js:79:11)
+[DEBUG]      at module.exports (/Users/jia/.appcelerator/install/5.2.0/package/node_modules/alloy/Alloy/commands/compile/index.js:289:4)
+[DEBUG]      at Object.<anonymous> (/Users/jia/.appcelerator/install/5.2.0/package/node_modules/alloy/Alloy/alloy.js:113:46)
+[DEBUG]      at Module._compile (module.js:460:26)
+[DEBUG]      at Object.Module._extensions..js (module.js:478:10)
+[DEBUG]      at Module.load (module.js:355:32)
+[DEBUG]      at Function.Module._load (module.js:310:12)
+[DEBUG]      at Module.require (module.js:365:17)
+[DEBUG]      at require (module.js:384:17)
+[DEBUG]      at Object.<anonymous> (/Users/jia/.appcelerator/install/5.2.0/package/node_modules/alloy/bin/alloy:3:1)
+[DEBUG]      at Module._compile (module.js:460:26)
+[DEBUG]      at Object.Module._extensions..js (module.js:478:10)
+[DEBUG]      at Module.load (module.js:355:32)
+[DEBUG]      at Function.Module._load (module.js:310:12)
+[DEBUG]      at Function.Module.runMain (module.js:501:10)
+[DEBUG]      at startup (node.js:129:16)
+[DEBUG]      at node.js:814:3
 [INFO]   controller: "filter.js"
 [TRACE]  - Processing "builtins" module...
 [TRACE]  - Processing "optimizer" module...
@@ -238,13 +293,13 @@ Command
 [TRACE]  
 [TRACE]  Benchmarking
 [TRACE]  ------------
-[TRACE]  [3.55624s] TOTAL
+[TRACE]  [5.88043s] TOTAL
 [INFO]   
-[INFO]   Alloy compiled in 3.55624s
+[INFO]   Alloy compiled in 5.88043s
 [INFO]   Alloy compiler completed successfully
 [TRACE]  offline build file /var/folders/85/rj0yf4g145g8qzpp_9mgwkwr0000gq/T/build-e35c0cecf46bed57b51d47c862eeda8cbe4560ac.json
 [TRACE]  online 1
-[TRACE]  optimizing build, last build was 1727.41 sec ago
+[TRACE]  optimizing build, last build was 7521.341 sec ago
 [INFO]   Creating Xcode project
 [INFO]   LaunchScreen.storyboard is not supported with Xcode 6.4, removing from Xcode project
 [TRACE]  Removing pre-compile phase
@@ -272,7 +327,7 @@ Command
 [TRACE]  No change, skipping /Users/jia/Documents/Appcelerator_Studio_Workspace/FGRapp1/build/iphone/FGR_Cascade_Prefix.pch
 [TRACE]  No change, skipping /Users/jia/Documents/Appcelerator_Studio_Workspace/FGRapp1/build/iphone/FGR_Cascade.xcodeproj/xcshareddata/xcschemes/FGR_Cascade.xcscheme
 [INFO]   Creating debugger and profiler plists
-[DEBUG]  Skipping /Users/jia/Documents/Appcelerator_Studio_Workspace/FGRapp1/build/iphone/build/Products/Debug-iphonesimulator/FGR_Cascade.app/debugger.plist
+[DEBUG]  Writing /Users/jia/Documents/Appcelerator_Studio_Workspace/FGRapp1/build/iphone/build/Products/Debug-iphonesimulator/FGR_Cascade.app/debugger.plist
 [DEBUG]  Skipping /Users/jia/Documents/Appcelerator_Studio_Workspace/FGRapp1/build/iphone/build/Products/Debug-iphonesimulator/FGR_Cascade.app/profiler.plist
 [INFO]   Analyzing Resources directory
 [INFO]   Analyzing platform files
@@ -355,20 +410,22 @@ Command
 [INFO]   Removing files
 [DEBUG]  Removing empty directories
 [INFO]   Skipping xcodebuild
-[INFO]   Finished building the application in 6s 837ms
+[INFO]   Finished building the application in 29s 203ms
 [INFO]   Launching iOS Simulator
-[TRACE]  [ioslib] Selected iOS Simulator: iPhone 6
-[TRACE]  [ioslib]   UDID    = A70756FB-C2DE-4452-BF1F-01778F726A5C
+[TRACE]  [ioslib] Selected iOS Simulator: iPad 2
+[TRACE]  [ioslib]   UDID    = F489039B-8EE7-4F1F-A130-642E6AE1851B
 [TRACE]  [ioslib]   iOS     = 8.4
 [TRACE]  [ioslib] Autoselected Xcode: 6.4
-[TRACE]  [ioslib] Removing old log file: /Users/jia/Library/Developer/CoreSimulator/Devices/A70756FB-C2DE-4452-BF1F-01778F726A5C/data/Containers/Data/Application/9B86B192-C1FC-45EB-B287-BA0FF77CE1BD/Documents/0b49a6c2-1ae9-421b-9555-00cc7177e83c.log
-[TRACE]  [ioslib] iPhone 6 Simulator already running with the correct udid
-[TRACE]  [ioslib] Tailing iPhone 6 Simulator system log: /Users/jia/Library/Logs/CoreSimulator/A70756FB-C2DE-4452-BF1F-01778F726A5C/system.log
+[TRACE]  [ioslib] iPad 2 Simulator is running, but not in a booted state, stopping simulator
+[TRACE]  [ioslib] Tailing iPad 2 Simulator system log: /Users/jia/Library/Logs/CoreSimulator/F489039B-8EE7-4F1F-A130-642E6AE1851B/system.log
+[TRACE]  [ioslib] Running: /Applications/Xcode.app/Contents/Developer/usr/bin/simctl shutdown F489039B-8EE7-4F1F-A130-642E6AE1851B
+[TRACE]  [ioslib] iPad 2 Simulator was already shutdown
+[TRACE]  [ioslib] Running: /Applications/Xcode.app/Contents/Developer/Applications/iOS Simulator.app/Contents/MacOS/iOS Simulator -CurrentDeviceUDID F489039B-8EE7-4F1F-A130-642E6AE1851B
+[TRACE]  [ioslib] iPad 2 Simulator started
 [TRACE]  [ioslib] Running: osascript "/Users/jia/Library/Application Support/Titanium/mobilesdk/osx/5.2.0.GA/node_modules/ioslib/lib/sim_focus.scpt" "iOS Simulator" "Disabled"
-[TRACE]  [ioslib] iPhone 6 Simulator successfully focused
-[TRACE]  [ioslib] Running: /Applications/Xcode.app/Contents/Developer/usr/bin/simctl install A70756FB-C2DE-4452-BF1F-01778F726A5C /Users/jia/Documents/Appcelerator_Studio_Workspace/FGRapp1/build/iphone/build/Products/Debug-iphonesimulator/FGR_Cascade.app
+[TRACE]  [ioslib] iPad 2 Simulator successfully focused
+[TRACE]  [ioslib] Running: /Applications/Xcode.app/Contents/Developer/usr/bin/simctl install F489039B-8EE7-4F1F-A130-642E6AE1851B /Users/jia/Documents/Appcelerator_Studio_Workspace/FGRapp1/build/iphone/build/Products/Debug-iphonesimulator/FGR_Cascade.app
 [TRACE]  [ioslib] App installed
-[TRACE]  [ioslib] Running: /Applications/Xcode.app/Contents/Developer/usr/bin/simctl launch A70756FB-C2DE-4452-BF1F-01778F726A5C edu.uw.titaniumpanda.FGRCascade
+[TRACE]  [ioslib] Running: /Applications/Xcode.app/Contents/Developer/usr/bin/simctl launch F489039B-8EE7-4F1F-A130-642E6AE1851B edu.uw.titaniumpanda.FGRCascade
 [TRACE]  [ioslib] App launched
-[TRACE]  [FGR_Cascade] assertion failed: 14F1713 12H141: libxpc.dylib + 59338 [AF8FA08F-353B-303B-A08E-AEBB3C60A640]: 0x7d
-[TRACE]  [ioslib] Found application log file: /Users/jia/Library/Developer/CoreSimulator/Devices/A70756FB-C2DE-4452-BF1F-01778F726A5C/data/Containers/Data/Application/8A595897-9EF0-4B24-A036-0FE516A345B6/Documents/0b49a6c2-1ae9-421b-9555-00cc7177e83c.log
+[TRACE]  [ioslib] Detected crash file: /Users/jia/Library/Logs/DiagnosticReports/FGR_Cascade_2016-04-13-212850_Kendra-Gritschs-MacBook.crash

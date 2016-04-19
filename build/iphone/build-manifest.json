@@ -3095,6 +3095,11 @@
 			"mtime": "2016-02-20T16:09:30.000Z",
 			"size": 3284
 		},
+		"debugger.plist": {
+			"hash": "0818d55eb1480d4eff4873caa6b7ba3e",
+			"mtime": 0,
+			"size": 349
+		},
 		"DefaultIcon.png": {
 			"hash": "da3034516d8912bb020bea497577f0d7",
 			"mtime": "2016-04-14T03:48:36.000Z",

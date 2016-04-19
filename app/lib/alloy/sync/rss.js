@@ -99,8 +99,22 @@ function parseXML(xml) {
 			model["longitude"] = parseFloat(location[0]);
 			model["latitude"] = parseFloat(location[1]);
 		}
-		if (Alloy.Globals.pace == "" || model['fgrrss:pace'].indexOf(Alloy.Globals.pace) != -1){
+		var paceLen = Alloy.Globals.pace.length;
+		if (Alloy.Globals.pace.length == 0){
 			models.push(model);
+		} else{
+			for (var i = 0; i < 1; i++){
+			console.log(i);
+			}
+			models.push(model);
+			/*for (var i = 0; i < 1; i++){
+				if (model['fgrrss:pace'].indexOf(Alloy.Globals.pace[0]) != -1){
+					models.push(model);
+					
+					//break;
+				};
+			}*/
+			    
 		}
 	}
 	return models;

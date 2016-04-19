@@ -2,3 +2,17 @@
 ".testButton":{
 	left:0
 }
+"Picker":{
+	width:Titanium.UI.FILL,
+	height:Titanium.UI.SIZE,
+	selectionIndicator:"true",
+	useSpinner:"true",
+}
+".datePicker":{
+	minDate:Alloy.CFG.minDate,
+	maxDate:Alloy.CFG.maxDate,
+}
+".datePicker1":{
+	minDate:Alloy.CFG.minDate,
+	maxDate:Alloy.CFG.maxDate,
+}

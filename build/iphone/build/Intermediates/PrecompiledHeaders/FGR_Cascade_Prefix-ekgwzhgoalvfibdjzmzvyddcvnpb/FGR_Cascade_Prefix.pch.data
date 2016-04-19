@@ -7,12 +7,12 @@ BuilderIdent ProcessPCH\ /Users/jia/Documents/Appcelerator_Studio_Workspace/FGRa
 InputFile    /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.4.sdk/SDKSettings.plist 0 1432931914 964 33204
 InputFile    /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.4.sdk/System/Library/CoreServices/SystemVersion.plist 0 1434779380 414 33188
 InputFile    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/6.1.0/include/module.map 2 0 0 0
-InputFile    /Users/jia/Documents/Appcelerator_Studio_Workspace/FGRapp1/build/iphone/FGR_Cascade_Prefix.pch 0 1460611542 441 33188
+InputFile    /Users/jia/Documents/Appcelerator_Studio_Workspace/FGRapp1/build/iphone/FGR_Cascade_Prefix.pch 0 1461028831 441 33188
 InputFile    /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.4.sdk/SDKSettings.plist 0 1432931914 964 33204
-InputFile    /Users/jia/Documents/Appcelerator_Studio_Workspace/FGRapp1/build/iphone/FGR_Cascade_Prefix.pch 0 1460611542 441 33188
-InputFile    /Users/jia/Documents/Appcelerator_Studio_Workspace/FGRapp1/build/iphone/Classes/defines.h 0 1460611569 3700 33188
-InputFile    /Users/jia/Documents/Appcelerator_Studio_Workspace/FGRapp1/build/iphone/Classes/ThirdpartyNS.h 0 1460611540 7885 33188
-InputFile    /Users/jia/Documents/Appcelerator_Studio_Workspace/FGRapp1/build/iphone/ModuleCache/1F872SGX1SCST/Darwin-N0EKDJGHFAYB.pcm 0 1460611580 3826128 33188
+InputFile    /Users/jia/Documents/Appcelerator_Studio_Workspace/FGRapp1/build/iphone/FGR_Cascade_Prefix.pch 0 1461028831 441 33188
+InputFile    /Users/jia/Documents/Appcelerator_Studio_Workspace/FGRapp1/build/iphone/Classes/defines.h 0 1461028843 3700 33188
+InputFile    /Users/jia/Documents/Appcelerator_Studio_Workspace/FGRapp1/build/iphone/Classes/ThirdpartyNS.h 0 1461028830 7885 33188
+InputFile    /Users/jia/Documents/Appcelerator_Studio_Workspace/FGRapp1/build/iphone/ModuleCache/1F872SGX1SCST/Darwin-N0EKDJGHFAYB.pcm 0 1461028854 3826128 33188
 InputFile    /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.4.sdk/usr/include/module.map 0 1432935935 22467 33204
 InputFile    /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.4.sdk/usr/include/sys/cdefs.h 0 1434769969 26037 33204
 InputFile    /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.4.sdk/usr/include/sys/_symbol_aliasing.h 0 1434769975 9133 33204

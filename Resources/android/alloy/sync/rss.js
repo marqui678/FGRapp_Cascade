@@ -12,7 +12,19 @@ function parseXML(xml) {
             child = childNodes.item(j);
             child.nodeType === child.ELEMENT_NODE && 1 === child.childNodes.length && -1 !== [ child.TEXT_NODE, child.CDATA_SECTION_NODE ].indexOf(child.childNodes.item(0).nodeType) && (model[child.nodeName] = model[child.nodeName] ? (_.isArray(model[child.nodeName]) ? model[child.nodeName] : [ model[child.nodeName] ]).concat(child.textContent) : child.textContent);
         }
-        ("" == Alloy.Globals.pace || -1 != model["fgrrss:pace"].indexOf(Alloy.Globals.pace)) && models.push(model);
+        if (void 0 !== model["georss:point"]) {
+            var pos = model["georss:point"];
+            var location = pos.substring(pos.indexOf("(") + 1, pos.indexOf(")")).split(" ");
+            model["longitude"] = parseFloat(location[0]);
+            model["latitude"] = parseFloat(location[1]);
+        }
+        {
+            Alloy.Globals.pace.length;
+        }
+        if (0 == Alloy.Globals.pace.length) models.push(model); else {
+            for (var i = 0; 1 > i; i++) console.log(i);
+            models.push(model);
+        }
     }
     return models;
 }

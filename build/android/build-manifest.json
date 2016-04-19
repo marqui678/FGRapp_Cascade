@@ -2,12 +2,12 @@
 	"target": "emulator",
 	"deployType": "development",
 	"classname": "Fgr_cascade",
-	"platformPath": "C:\\ProgramData\\Titanium\\mobilesdk\\win32\\5.2.2.GA\\android",
+	"platformPath": "/Users/jia/Library/Application Support/Titanium/mobilesdk/osx/5.2.0.GA/android",
 	"modulesHash": "99a74b0c3ff7121a0c0cc47bd4776414",
 	"modulesManifestHash": "22b302573ff560221cfccd54bb071df6",
 	"modulesNativeHash": "a91d89e58dbae509e2d39e9abfacd90e",
 	"modulesBindingsHash": "85ee7fef0c4b0cc0fffacd2f35501279",
-	"gitHash": "b685ddb",
+	"gitHash": "384775e",
 	"name": "FGR_Cascade",
 	"id": "edu.uw.titaniumpanda.FGRCascade",
 	"analytics": true,
@@ -28,5 +28,5 @@
 	"propertiesHash": "23488f830ee943b2843df87c25c8e961",
 	"activitiesHash": "d41d8cd98f00b204e9800998ecf8427e",
 	"servicesHash": "d41d8cd98f00b204e9800998ecf8427e",
-	"jarLibHash": "dd1215c0c3dd7cc0d97b9465d928c594"
+	"jarLibHash": "61e6eea78339c8a05c0dd18b18efd4d0"
 }

@@ -28,8 +28,6 @@ exports.ALLOY_RUNTIME_DIR = 'alloy';
 exports.RESOURCES_DIR = 'Resources';
 exports.NAME_DEFAULT = 'index';
 exports.NAME_WIDGET_DEFAULT = 'widget';
-exports.NPM_WIDGET_PREFIX = 'alloy-widget-';
-exports.NPM_WIDGET_KEYWORDS = ['appcelerator', 'titanium', 'alloy', 'widget'];
 exports.GLOBAL_STYLE = 'app.tss';
 exports.ROOT_NODE = 'Alloy';
 exports.NAMESPACE_DEFAULT = 'Ti.UI';
@@ -54,7 +52,6 @@ exports.CLASS_PROPERTY = 'classes';
 exports.APINAME_PROPERTY = 'apiName';
 exports.AUTOSTYLE_PROPERTY = 'autoStyle';
 exports.DOCROOT_MODULE_PROPERTY = "module";
-exports.DOCROOT_BASECONTROLLER_PROPERTY = "baseController";
 
 // Constants related to model-view binding
 exports.BIND_PROPERTIES = ['dataCollection','dataFilter','dataTransform','dataFunction'];
@@ -64,7 +61,6 @@ exports.BIND_TRANSFORM = 'dataTransform';
 exports.BIND_FUNCTION = 'dataFunction';
 exports.BIND_TRANSFORM_VAR = '__transform';
 exports.BIND_MODEL_VAR = '$model';
-exports.BIND_INTERPOLATE = '/\\{([\\s\\S]+?)\\}/g';
 exports.MODEL_ELEMENTS = ['Alloy.Collection','Alloy.Model'];
 exports.MODEL_BINDING_EVENTS = 'fetch change destroy';
 exports.COLLECTION_BINDING_EVENTS = 'fetch destroy change add remove reset';
@@ -115,7 +111,9 @@ exports.DIR = {
 	THEME: 'themes',
 	BUILD: 'build/alloy',
 	I18N: 'i18n',
-	PLATFORM: 'platform'
+	PLATFORM: 'platform',
+	BUILD_I18N: 'build/i18n',
+	BUILD_PLATFORM: 'build/platform'
 };
 // folders/files to exclude when copying and processing files
 // RegEx format: must escape special chars - so use \.svn not .svn
@@ -176,8 +174,6 @@ exports.IMPLICIT_NAMESPACES = {
 	Templates: NS_ALLOY_ABSTRACT,
 	Preview: NS_ALLOY_ABSTRACT,
 	Actions: NS_ALLOY_ABSTRACT,
-	Item: NS_ALLOY_ABSTRACT,
-
 
 	// Ti.Android
 	Menu: NS_TI_ANDROID,
@@ -196,10 +192,8 @@ exports.IMPLICIT_NAMESPACES = {
 
 	// Ti.UI.iOS
 	AdView: NS_TI_UI_IOS,
-	BlurView: NS_TI_UI_IOS,
 	CoverFlowView: NS_TI_UI_IOS,
 	DocumentViewer: NS_TI_UI_IOS,
-	LivePhotoView: NS_TI_UI_IOS,
 	NavigationWindow: NS_TI_UI_IOS,
 	SplitWindow: NS_TI_UI_IOS,
 	TabbedBar: NS_TI_UI_IOS,
@@ -207,7 +201,6 @@ exports.IMPLICIT_NAMESPACES = {
 	PreviewContext: NS_TI_UI_IOS,
 	PreviewAction: NS_TI_UI_IOS,
 	PreviewActionGroup: NS_TI_UI_IOS,
-	MenuPopup: NS_TI_UI_IOS,
 
 	// Ti.UI.iPad
 	Popover: NS_TI_UI_IPAD,

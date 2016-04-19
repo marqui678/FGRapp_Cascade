@@ -2,7 +2,7 @@
  * self-executing function to organize otherwise inline constructor code
  * @param  {Object} args arguments passed to the controller
  */
-Alloy.Globals.pace = "";
+Alloy.Globals.pace = [];
 /**
  * Global Navigation Handler
  */

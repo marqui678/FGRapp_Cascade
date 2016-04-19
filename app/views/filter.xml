@@ -1,8 +1,30 @@
 <Alloy>
-	<Window id="fwin" title='Filter'>
-		<Button id="test" class="testButton" onClick="testFilter">Test</Button>
-		<Picker id="pacePicker" top="50" selectionIndicator="true" useSpinner="true">
-            
-        </Picker>
+	<Window id="fwin" title='Filter' layout="vertical">
+		<Button top="0" id="test" class="testButton" onClick="testFilter">Test</Button>
+		<Button top="0" id="pace" class="testButton" onClick="hidePaceView">Pace</Button>
+		<Label top="0" id="paceLabel"></Label>
+		<View id="paceView" layout="vertical" visible="false">
+			<View id="firstRow" layout="horizontal">
+				<Button top="0" left="15" onClick="selfPaced">Self Paced</Button>
+				<Button top="0" left="15" onClick="easy">Easy</Button>
+				<Button top="0" left="15" onClick="leisurely">Leisurely</Button>
+			</View>
+			<View top="0" id="secondRow" layout="horizontal">
+				<Button top="0" left="15" onClick="steady">Steady</Button>
+				<Button top="0" left="15" onClick="moderate">Moderate</Button>
+				<Button top="0" left="15" onClick="brisk">Moderate</Button>
+			</View>
+			<View top="0" id="thirdRow" layout="horizontal">
+				<Button top="0" left="15" onClick="vigorous">Vigorous</Button>
+				<Button top="0" left="15" onClick="strenuous">Strenuous</Button>
+				<Button top="0" left="15" onClick="superStrenuous">Super Strenuous</Button>
+			</View>
+        </View>    
+        <Button top="0" id="date" class="testButton" onClick="hideDateView">DateTime</Button>
+        <View id="dateView" layout="vertical" visible="false">
+        <Picker top="0" class="datePicker" id="observation_date_picker" type="Titanium.UI.PICKER_TYPE_DATE"></Picker>
+        <Label top="0">To</Label>
+        <Picker top="0" class="datePicker1" id="observation_date_picker1" type="Titanium.UI.PICKER_TYPE_DATE"></Picker>
+        </View>
 	</Window>
 </Alloy>
