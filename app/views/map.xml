@@ -2,12 +2,8 @@
 <Alloy>
     <Window id="mainWindow" title="map">
     	<Menu platform="android">
-			<MenuItem title="Search" onClick="searchLocation" showAsAction="Ti.Android.SHOW_AS_ACTION_ALWAYS" />
-		</Menu>
-    	<!--
-		<TextField id="textField" borderStyle="Ti.UI.INPUT_BORDERSTYLE_ROUNDED"/>
-				<Button id="btnSearch" onClick="searchLocation" right="0">Search</Button>-->
-		
+			<MenuItem title="Search" onClick="toSearch" showAsAction="Ti.Android.SHOW_AS_ACTION_ALWAYS" />
+		</Menu>		
         <View ns="Alloy.Globals.Map" id="mapview" module="ti.map" onClick="report">
             <!-- Starting with Alloy 1.4.0, use the Annotation tag to define an annotation -->
             <!-- <Annotation id='appcHQ' myid='1' /> -->

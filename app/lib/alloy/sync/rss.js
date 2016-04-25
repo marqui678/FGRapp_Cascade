@@ -99,6 +99,22 @@ function parseXML(xml) {
 			model["longitude"] = parseFloat(location[0]);
 			model["latitude"] = parseFloat(location[1]);
 		}
+		
+		//Generate lowestPace element which would be used for pace sorting.
+		//Will be null for Self Paced
+		if (model["fgrrss:pace"] !== undefined) {
+			var paceNum = model["fgrrss:pace"].match(/\d+/g);			
+			model["lowestPace"] = paceNum == null ? paceNum: Number(paceNum[0]);
+		}
+		
+		//Convert distance to number so that it would be easy for sort and filter by distance
+		if (model["fgrrss:distance"] !== undefined) {
+			var distance = model["fgrrss:distance"].match(/\d+./g);	
+			if (distance !== null && distance.length >= 0) {
+				model["fgrrss:distance"] = Number(distance.join(""));//.toFixed(2)
+			}
+		}
+		
 		if (Alloy.Globals.pace == "" || model['fgrrss:pace'].indexOf(Alloy.Globals.pace) != -1){
 			models.push(model);
 		}

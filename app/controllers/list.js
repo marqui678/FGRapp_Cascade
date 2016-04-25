@@ -63,7 +63,7 @@ function transform(model) {
 		startDateTime: moment(model.get('fgrrss:startDateTime'),moment.ISO_8601).format('LLLL'),
 		link:model.get('link'),
 		pace:model.get('fgrrss:pace'),
-		distance:model.get('fgrrss:distance')
+		distance:model.get('fgrrss:distance').toFixed(2) + " miles"
 	};
 }
 
@@ -98,4 +98,11 @@ function filter(){
  */
 function openMapview() {
 	Alloy.Globals.Navigator.open('map', {});
+}
+
+/**
+ *Open sort view 
+ */
+function openSortView() {
+	Alloy.Globals.Navigator.open('sort', {});
 }

@@ -1,0 +1,9 @@
+<Alloy>
+	<Window id="searchWindow" backgroundColor="white">
+		<View>
+			<TextField id="searchField"/>
+			<Button id="btnSearch" onClick="searchLocation" top="0" right="0">Search</Button>
+			<Label onClick="useCurrentLoc" id="curLocLabel">Current location</Label>
+		</View>
+	</Window>
+</Alloy>
