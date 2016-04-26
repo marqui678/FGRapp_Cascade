@@ -25,11 +25,11 @@ function Controller() {
     var $ = this;
     var exports = {};
     if (true && !Alloy.isTablet) {
-        $.__views.__alloyId10 = Alloy.createController("list", {
-            id: "__alloyId10"
+        $.__views.__alloyId11 = Alloy.createController("list", {
+            id: "__alloyId11"
         });
         $.__views.navWin = Ti.UI.iOS.createNavigationWindow({
-            window: $.__views.__alloyId10.getViewEx({
+            window: $.__views.__alloyId11.getViewEx({
                 recurse: true
             }),
             id: "navWin"
@@ -39,6 +39,10 @@ function Controller() {
     exports.destroy = function() {};
     _.extend($, $.__views);
     Alloy.Globals.pace = [];
+    Alloy.Globals.startDateTime = new Date(1980, 1, 1);
+    Alloy.Globals.endDateTime = new Date(2080, 1, 1);
+    Alloy.Globals.sDistance = 0;
+    Alloy.Globals.eDistance = 100;
     Alloy.Globals.Navigator = {
         navGroup: $.nav,
         open: function(controller, payload) {

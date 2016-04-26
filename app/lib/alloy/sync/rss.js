@@ -99,22 +99,29 @@ function parseXML(xml) {
 			model["longitude"] = parseFloat(location[0]);
 			model["latitude"] = parseFloat(location[1]);
 		}
-		var paceLen = Alloy.Globals.pace.length;
-		if (Alloy.Globals.pace.length == 0){
-			models.push(model);
-		} else{
-			for (var i = 0; i < 1; i++){
-			console.log(i);
+		if (model["fgrrss:distance"] !== undefined) {
+			var distance = model["fgrrss:distance"].match(/\d+./g);	
+			if (distance !== null && distance.length >= 0) {
+				model["fgrrss:distance"] = Number(distance.join(""));//.toFixed(2)
 			}
-			models.push(model);
-			/*for (var i = 0; i < 1; i++){
-				if (model['fgrrss:pace'].indexOf(Alloy.Globals.pace[0]) != -1){
+		}
+		model['startDateTime'] = model['fgrrss:startDateTime'];
+		var s = model['fgrrss:startDateTime'].substring(0,19);
+		model['fgrrss:startDateTime'] = new Date(s);
+		if ((Alloy.Globals.sDistance <= model['fgrrss:distance']) && (Alloy.Globals.eDistance >= model['fgrrss:distance'])){
+			if ((Alloy.Globals.startDateTime <= model['fgrrss:startDateTime']) && (Alloy.Globals.endDateTime >= model['fgrrss:startDateTime'])){
+				if (Alloy.Globals.pace.length == 0){
 					models.push(model);
-					
-					//break;
-				};
-			}*/
-			    
+				} else{
+					for (var k = 0; k < Alloy.Globals.pace.length; k++){
+						if (model['fgrrss:pace'].indexOf(Alloy.Globals.pace[k]) != -1){
+							models.push(model);
+							break;
+						};
+					}
+					    
+				}
+			}
 		}
 	}
 	return models;

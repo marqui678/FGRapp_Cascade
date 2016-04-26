@@ -30,14 +30,10 @@ function Controller() {
         false === Ti.Geolocation.locationServicesEnabled && alert("our device has geo turned off - turn it on.");
         Titanium.Geolocation.getCurrentPosition(function(e) {
             Ti.Geolocation.accuracy = Ti.Geolocation.ACCURACY_HIGH;
-            if (e.error) {
-                alert("Current location not found.");
-                return;
+            if (e.error) alert("Current location not found. Use default location"); else {
+                regionCenter.latitude = e.coords.latitude;
+                regionCenter.longitude = e.coords.longitude;
             }
-            latitude = e.coords.latitude;
-            longitude = e.coords.longitude;
-            regionCenter.latitude = latitude;
-            regionCenter.longitude = longitude;
             createAnnotationsForMap(rideData);
         });
     }
@@ -61,9 +57,7 @@ function Controller() {
                 latitude: model.get("latitude"),
                 longitude: model.get("longitude"),
                 title: model.get("title"),
-                subtitle: model.get("fgrrss:pace"),
-                pincolor: Ti.Map.ANNOTATION_GREEN,
-                myid: i
+                myid: model.get("link")
             });
             annotations.push(annotation);
         }
@@ -71,9 +65,28 @@ function Controller() {
     }
     function report(evt) {
         Ti.API.info("Annotation " + evt.title + " clicked, id: " + evt.annotation.myid);
+        if (null === evt.clicksource || "pin" === evt.clicksource && evt.annotation.myid === lastClickedAnnotationId) $.rideInfoCallout.visible = false; else {
+            evt.annotation.image = "pin.png";
+            setCalloutInfo(evt.annotation.myid);
+            $.rideInfoCallout.visible = true;
+        }
+        lastClickedAnnotationId = null === evt.clicksource ? null : evt.annotation.myid;
+    }
+    function setCalloutInfo(link) {
+        var model = Alloy.Collections.feed.get(link);
+        var data = Alloy.Globals.transform(model);
+        $.selectedModel = data;
+        $.rideTitle.text = data.title;
+        $.rideDate.text = data.startDateTime;
+        $.ridePace.text = data.pace;
+        $.rideDistance.text = data.distance;
     }
     function searchLocation() {
         alert("Search button clicked.");
+    }
+    function showDetail() {
+        var selectedModel = Alloy.Collections.feed.get(lastClickedAnnotationId);
+        Alloy.Globals.Navigator.open("detail", selectedModel);
     }
     require("alloy/controllers/BaseController").apply(this, Array.prototype.slice.call(arguments));
     this.__controllerPath = "map";
@@ -107,12 +120,48 @@ function Controller() {
             latitudeDelta: .01,
             longitudeDelta: .01
         },
-        animate: true,
+        animate: false,
         userLocation: true,
         id: "mapview"
     });
     $.__views.mainWindow.add($.__views.mapview);
     report ? $.addListener($.__views.mapview, "click", report) : __defers["$.__views.mapview!click!report"] = true;
+    $.__views.rideInfoCallout = Ti.UI.createView({
+        height: "70",
+        bottom: "0",
+        font: {
+            fontSize: 13
+        },
+        backgroundColor: "#FFFFFF",
+        id: "rideInfoCallout",
+        visible: "false"
+    });
+    $.__views.mainWindow.add($.__views.rideInfoCallout);
+    showDetail ? $.addListener($.__views.rideInfoCallout, "click", showDetail) : __defers["$.__views.rideInfoCallout!click!showDetail"] = true;
+    $.__views.rideTitle = Ti.UI.createLabel({
+        color: "#000",
+        top: "0",
+        id: "rideTitle"
+    });
+    $.__views.rideInfoCallout.add($.__views.rideTitle);
+    $.__views.rideDate = Ti.UI.createLabel({
+        color: "#000",
+        top: "15",
+        id: "rideDate"
+    });
+    $.__views.rideInfoCallout.add($.__views.rideDate);
+    $.__views.ridePace = Ti.UI.createLabel({
+        color: "#000",
+        top: "30",
+        id: "ridePace"
+    });
+    $.__views.rideInfoCallout.add($.__views.ridePace);
+    $.__views.rideDistance = Ti.UI.createLabel({
+        color: "#000",
+        top: "45",
+        id: "rideDistance"
+    });
+    $.__views.rideInfoCallout.add($.__views.rideDistance);
     exports.destroy = function() {};
     _.extend($, $.__views);
     $.args;
@@ -122,8 +171,10 @@ function Controller() {
     };
     var rideData = Alloy.Collections.feed.models;
     centeredByCurrentLocation();
+    var lastClickedAnnotationId = null;
     __defers["$.__views.__alloyId44!click!searchLocation"] && $.addListener($.__views.__alloyId44, "click", searchLocation);
     __defers["$.__views.mapview!click!report"] && $.addListener($.__views.mapview, "click", report);
+    __defers["$.__views.rideInfoCallout!click!showDetail"] && $.addListener($.__views.rideInfoCallout, "click", showDetail);
     _.extend($, exports);
 }
 

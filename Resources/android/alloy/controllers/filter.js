@@ -8,6 +8,14 @@ function __processArg(obj, key) {
 }
 
 function Controller() {
+    function updateView() {
+        var models = Alloy.Collections.feed;
+        models.reset();
+        models.add(models.where({
+            "fgrrss:pace": Alloy.Globals.pace
+        }));
+        models.fetch();
+    }
     function selfPaced() {
         if (selfPaced) {
             Alloy.Globals.pace.splice(Alloy.Globals.pace.indexOf("self paced"), 1);
@@ -45,7 +53,8 @@ function Controller() {
         Alloy.Globals.pace.push("super strenuous");
     }
     function testFilter() {
-        Alloy.Globals.Navigator.open("list", Alloy.Globals.pace);
+        updateView();
+        $.fwin.close();
     }
     function hidePaceView() {
         paceView ? hideVertical($.paceView) : showVertical($.paceView);

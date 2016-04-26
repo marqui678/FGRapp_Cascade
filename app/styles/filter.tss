@@ -8,11 +8,3 @@
 	selectionIndicator:"true",
 	useSpinner:"true",
 }
-".datePicker":{
-	minDate:Alloy.CFG.minDate,
-	maxDate:Alloy.CFG.maxDate,
-}
-".datePicker1":{
-	minDate:Alloy.CFG.minDate,
-	maxDate:Alloy.CFG.maxDate,
-}

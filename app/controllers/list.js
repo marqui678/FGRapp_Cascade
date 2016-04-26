@@ -60,14 +60,18 @@ function refresh(e) {
 
 function transform(model) {
 	'use strict';
+		
 	return {
 		title: model.get('title'),
-		startDateTime: moment(model.get('fgrrss:startDateTime'),moment.ISO_8601).format('LLLL'),
+		startDateTime: moment(model.get('startDateTime'),moment.ISO_8601).format('LLLL'),
 		link:model.get('link'),
 		pace:model.get('fgrrss:pace'),
 		distance:model.get('fgrrss:distance')
 	};
 }
+
+//Make transform accessible for other controllers
+Alloy.Globals.transform = transform;
 
 /**
  * event listener set via view for when the user selects a ListView item
@@ -96,21 +100,5 @@ function filter(){
  *Open mapview 
  */
 function openMapview() {
-	Ti.API.log("Click on list");
-	//Open a map controller with annotation
-	/**var mapWin = Alloy.createController('map').getView();
-	
-	// open the window in the NavigationWindow for iOS
-	if (OS_IOS) {
-		$.navWin.openWindow(mapWin);
-
-		// open the window in the NavigationGroup for MobileWeb
-	} else if (OS_MOBILEWEB) {
-		$.navWin.open(mapWin);
-
-		// simply open the window on top for Android (and other platforms)
-	} else {
-		mapWin.open();
-	}**/
-	Alloy.Globals.Navigator.open("map",{});
+	Alloy.Globals.Navigator.open('map', {});
 }

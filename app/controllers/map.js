@@ -34,17 +34,14 @@ function centeredByCurrentLocation() {
 	    Ti.Geolocation.accuracy = Ti.Geolocation.ACCURACY_HIGH;
 	    if (e.error)
 	    {
-	        alert('Current location not found.');
-	        return;
+	        alert('Current location not found. Use default location');	       
 	    }
-	    else 
-	    {
-	        latitude = e.coords.latitude;
-	        longitude = e.coords.longitude;
-	        regionCenter.latitude = latitude;
-	        regionCenter.longitude = longitude;
-	        createAnnotationsForMap(rideData);
-	    }
+	    else {
+	    	//Set current location as center
+	        regionCenter.latitude = e.coords.latitude;
+	        regionCenter.longitude = e.coords.longitude;
+        }
+        createAnnotationsForMap(rideData);
 	});
 };
 
@@ -87,10 +84,9 @@ function createAnnotationsWithModels(models) {
 			latitude: model.get("latitude"),
 	    	longitude: model.get("longitude"),
 	    	title: model.get("title"),
-	    	subtitle: model.get("fgrrss:pace"),
-    		pincolor:Ti.Map.ANNOTATION_GREEN,
-    		// image:'pin.png',
-    		myid:i
+    		//pincolor:Ti.Map.ANNOTATION_GREEN,
+    		 // image:'pin.png',
+    		myid:model.get("link")
 		});
 		annotations.push(annotation);
 	}
@@ -98,15 +94,53 @@ function createAnnotationsWithModels(models) {
 	return annotations;
 }
 
-
-
-
+var lastClickedAnnotationId = null;
+/**
+ *Show callout info at the bottom 
+ * @param {Object} evt
+ */
 function report(evt) {
     Ti.API.info("Annotation " + evt.title + " clicked, id: " + evt.annotation.myid);
+    //Deselect
+    if (evt.clicksource === null || (evt.clicksource === "pin" && evt.annotation.myid === lastClickedAnnotationId)) {
+    	$.rideInfoCallout.visible = false;
+    } 
+    //Select
+    else {
+    	//Need to change pin for selected annotation
+    	evt.annotation.image = 'pin.png';
+    // evt.annotation.setImage('pin.png');
+    // $.mapview.addAnnotation(evt.annotation);
     
-    
+    	//Set info in callout box    	
+    	setCalloutInfo(evt.annotation.myid);
+    	
+    	//Show callout box
+    	$.rideInfoCallout.visible = true;
+    }
+    //Update lastClickedAnnotationId which is link of selected model
+    lastClickedAnnotationId = evt.clicksource === null ? null: evt.annotation.myid;
+}
+
+/**
+ *Set callout info with model data 
+ * @param {Object} modelId
+ */
+function setCalloutInfo(link) {
+	var model = Alloy.Collections.feed.get(link);
+	var data = Alloy.Globals.transform(model);
+	$.selectedModel = data;
+	$.rideTitle.text = data.title;
+	$.rideDate.text = data.startDateTime;
+	$.ridePace.text = data.pace;
+	$.rideDistance.text = data.distance;
 }
 
 function searchLocation(e) {
 	alert("Search button clicked.");
+}
+
+function showDetail(e) {
+	var selectedModel = Alloy.Collections.feed.get(lastClickedAnnotationId);
+	Alloy.Globals.Navigator.open("detail", selectedModel);
 }

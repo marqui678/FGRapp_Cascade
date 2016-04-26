@@ -3,6 +3,10 @@
  * @param  {Object} args arguments passed to the controller
  */
 Alloy.Globals.pace = [];
+Alloy.Globals.startDateTime = new Date(1980,1,1);
+Alloy.Globals.endDateTime = new Date(2080,1,1);
+Alloy.Globals.sDistance = 0;
+Alloy.Globals.eDistance = 100;
 /**
  * Global Navigation Handler
  */

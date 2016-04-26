@@ -88,7 +88,6 @@ function Controller() {
         Alloy.Globals.Navigator.open("filter", a);
     }
     function openMapview() {
-        Ti.API.log("Click on list");
         Alloy.Globals.Navigator.open("map", {});
     }
     require("alloy/controllers/BaseController").apply(this, Array.prototype.slice.call(arguments));
@@ -266,6 +265,7 @@ function Controller() {
         "use strict";
         refresh();
     }(arguments[0] || {});
+    Alloy.Globals.transform = transform;
     __defers["$.__views.__alloyId15!click!refresh"] && $.addListener($.__views.__alloyId15, "click", refresh);
     __defers["$.__views.__alloyId18!itemclick!select"] && $.addListener($.__views.__alloyId18, "itemclick", select);
     __defers["$.__views.__alloyId41!click!openMapview"] && $.addListener($.__views.__alloyId41, "click", openMapview);

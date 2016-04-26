@@ -1,4 +1,1 @@
-module.exports = {
-    dependencies: {},
-    url: "https://www.cascade.org/DailyRides/rss.xml"
-};
+module.exports={"dependencies":{},"url":"https://www.cascade.org/DailyRides/rss.xml"};

@@ -12,6 +12,12 @@
             <!-- Starting with Alloy 1.4.0, use the Annotation tag to define an annotation -->
             <!-- <Annotation id='appcHQ' myid='1' /> -->
         </View>
+        <View id="rideInfoCallout" class="rideInfoCallout" visible="false" onClick="showDetail">
+        	<Label id="rideTitle" class="rideTitle"></Label>
+        	<Label id="rideDate" class="rideDate"></Label>
+        	<Label id="ridePace" class="ridePace"></Label>
+        	<Label id="rideDistance" class="rideDistance"></Label>
+        </View>
     </Window>
 </Alloy>
 
