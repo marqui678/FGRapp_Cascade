@@ -1,12 +1,14 @@
 // Arguments passed into this controller can be accessed via the `$.args` object directly or:
 var args = $.args;
 
-var radioBtn = "pin.png";
-var selectedRadioBtn = "";
-var arrowBtn = "pin.png";
-var downArrowBtn = "pin.png";
+var radioBtn = "images/checkbox.png";
+var selectedRadioBtn = "images/checkboxSelected.png";
+var arrowBtn = "images/sortIncrease.png";
+var downArrowBtn = "images/sortDecrease.png";
 
-var selectedSort = {};
+var prevSelectedSortBackup = JSON.stringify(Alloy.Globals.selectedSort);
+
+var selectedSort = Alloy.Globals.selectedSort;
 
 var sortOptions = [
 	    {
@@ -27,7 +29,7 @@ var sortOptions = [
 	        ascDir: {text: "sooner to later", dir: "ASC"},
 	        desDir: {text: "later to sooner", dir: "DES"},
 	        arrowBtn : {image: arrowBtn},
-	        field: "fgrrss:startDateTime"
+	        field: "startDateTime"
 	    },
 	    {
 	        radioBtn : {image: radioBtn}, 
@@ -54,6 +56,7 @@ var sortOptions = [
 //Check if there is selectedSort item
 if (selectedSort.id !== undefined) {
 	sortOptions[selectedSort.id].radioBtn.image = selectedRadioBtn;
+	$.sortByResult.text = selectedSort.item.title.text + ": " + selectedSort.item.direction.text;
 }
 	
 //Add sortOptions to list view
@@ -85,6 +88,8 @@ function selectSort(e) {
 		//Update selectedSort
 		selectedSort.id = e.itemIndex;
 		selectedSort.item = currentItem;
+		
+		//Update SORTBY label
 		$.sortByResult.text = selectedSort.item.title.text + ": " + selectedSort.item.direction.text;
 	}
 
@@ -118,5 +123,10 @@ function applySort() {
 	Alloy.Collections.feed.setSortField(selectedSort.item.field, selectedSort.item.direction.dir);
 	Alloy.Collections.feed.sort();
 	//TODO show sort item as text in sort btn
+	$.sortWindow.close();
+}
+
+function cancel() {
+	Alloy.Globals.selectedSort = JSON.parse(prevSelectedSortBackup);
 	$.sortWindow.close();
 }

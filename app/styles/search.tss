@@ -11,8 +11,20 @@
 	keyboardType: "Ti.UI.KEYBOARD_DEFAULT"
 },
 
-"#curLocLabel": {
+"#curLoc": {
 	top: "70",
+	height: "60",
+	backgroundColor: "#cccccc"
+},
+
+"#curLocImage": {
+	width: "20",
+	height: "20",
+	left: "20"
+},
+
+"#curLocLabel": {
+	//top: "70",
 	left: "10",
 	height: "60"
 }

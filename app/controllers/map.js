@@ -102,7 +102,7 @@ function createAnnotationsWithModels(models) {
 	    	longitude: model.get("longitude"),
 	    	title: model.get("title"),
     		//pincolor:Ti.Map.ANNOTATION_GREEN,
-    		 // image:'pin.png',
+    		image:'images/pin.png',
     		myid:model.get("link"),
     		id: "anno_" + i,
 		});

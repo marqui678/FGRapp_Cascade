@@ -16,6 +16,14 @@ Alloy.Globals.Map = require('ti.map');
 
 Alloy.Globals.defaultLocation = {latitude: 47.6466, longitude: -122.335}; 
 
+//Use distanceToLocation as default sorting
+Alloy.Globals.selectedSort = {id: 2, item: {	    
+    title : {text: "Location"},
+    isAscDir: true,
+    direction : {text: "near to far", dir: "ASC"},
+    field: "distanceToLocation"    
+}};
+
 Number.prototype.toDeg = function() {
     return this * 180 / Math.PI;
 };

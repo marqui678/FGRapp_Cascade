@@ -10,6 +10,7 @@ function searchLocation() {
 			//Update regionCenter
 			args.regionCenter.latitude = Number(_resp.latitude);
 			args.regionCenter.longitude = Number(_resp.longitude);
+			//TODO Add annotation for search location
 			args.prevWindow.fireEvent('loc_updated');
 			$.searchWindow.close();			
 		}

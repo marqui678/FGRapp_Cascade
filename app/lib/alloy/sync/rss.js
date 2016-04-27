@@ -115,6 +115,11 @@ function parseXML(xml) {
 			}
 		}
 		
+		//Convert fgrrss:startDateTime string to date
+		if (model['fgrrss:startDateTime'] !== undefined) {
+			model['startDateTime'] = new Date(model['fgrrss:startDateTime'].substring(0,19));
+		}
+		
 		if (Alloy.Globals.pace == "" || model['fgrrss:pace'].indexOf(Alloy.Globals.pace) != -1){
 			models.push(model);
 		}

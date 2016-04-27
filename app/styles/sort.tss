@@ -22,13 +22,17 @@
 "#sortOptions": {
 	left: "0",
 	right: "0"
-}
+},
 
 "#arrowBtn": {
 	right: "0",
 	width: "15"
-}
+},
 
 "#direction": {
 	right: "15"
+},
+
+"#cancelSortBtn": {
+	color: "#FFFFFF"
 }

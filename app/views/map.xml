@@ -2,7 +2,7 @@
 <Alloy>
     <Window id="mainWindow" title="map">
     	<Menu platform="android">
-			<MenuItem title="Search" onClick="toSearch" showAsAction="Ti.Android.SHOW_AS_ACTION_ALWAYS" />
+			<MenuItem title="Search" icon="images/searchLight.png" onClick="toSearch" showAsAction="Ti.Android.SHOW_AS_ACTION_ALWAYS" />
 		</Menu>		
         <View ns="Alloy.Globals.Map" id="mapview" module="ti.map" onClick="report">
             <!-- Starting with Alloy 1.4.0, use the Annotation tag to define an annotation -->
