@@ -25,11 +25,11 @@ function Controller() {
     var $ = this;
     var exports = {};
     if (true && !Alloy.isTablet) {
-        $.__views.__alloyId11 = Alloy.createController("list", {
-            id: "__alloyId11"
+        $.__views.__alloyId12 = Alloy.createController("list", {
+            id: "__alloyId12"
         });
         $.__views.navWin = Ti.UI.iOS.createNavigationWindow({
-            window: $.__views.__alloyId11.getViewEx({
+            window: $.__views.__alloyId12.getViewEx({
                 recurse: true
             }),
             id: "navWin"

@@ -3095,44 +3095,49 @@
 			"mtime": "2016-03-28T21:16:54.000Z",
 			"size": 3284
 		},
-		"debugger.plist": {
-			"hash": "6e04e19fcffe886119dfbb3c31284a7f",
-			"mtime": 0,
-			"size": 349
-		},
 		"DefaultIcon.png": {
 			"hash": "da3034516d8912bb020bea497577f0d7",
-			"mtime": "2016-04-14T03:48:36.000Z",
+			"mtime": "2016-04-26T18:57:51.000Z",
 			"size": 175297
+		},
+		"Filter open.png": {
+			"hash": "a132d41ac2ba4bcd01744c3c003faaa1",
+			"mtime": "2016-04-26T21:05:47.000Z",
+			"size": 232
+		},
+		"Filter opened.png": {
+			"hash": "f7915858cc1543d2f062b67482f29f8a",
+			"mtime": "2016-04-26T21:05:47.000Z",
+			"size": 212
 		},
 		"alloy_generated": {
 			"hash": "b9b62e3e10ab98f03010e1fe8362c390",
-			"mtime": "2016-04-26T01:19:12.000Z",
+			"mtime": "2016-04-27T22:37:33.000Z",
 			"size": 279
 		},
 		"Default-568h@2x.png": {
 			"hash": "7c162b498ea9255488db3baf191d55fc",
-			"mtime": "2016-04-21T22:13:14.000Z",
+			"mtime": "2016-04-26T19:00:31.000Z",
 			"size": 502634
 		},
 		"Default-667h@2x.png": {
 			"hash": "cdba9c1dc1d00bb40c107970ab1ed5f1",
-			"mtime": "2016-04-21T22:13:14.000Z",
+			"mtime": "2016-04-26T19:00:31.000Z",
 			"size": 773314
 		},
 		"Default-Landscape-736h@3x.png": {
 			"hash": "d98f5e158810775461d402c54baf1c94",
-			"mtime": "2016-04-21T22:13:14.000Z",
+			"mtime": "2016-04-26T19:00:31.000Z",
 			"size": 1863539
 		},
 		"Default-Portrait-736h@3x.png": {
 			"hash": "8f37e1fb95f588d3e81cdfb244730b84",
-			"mtime": "2016-04-21T22:13:14.000Z",
+			"mtime": "2016-04-26T19:00:31.000Z",
 			"size": 1734238
 		},
 		"Default@2x.png": {
 			"hash": "a9de39ae235125f5d00fe33052767898",
-			"mtime": "2016-04-21T22:13:14.000Z",
+			"mtime": "2016-04-26T19:00:31.000Z",
 			"size": 343708
 		},
 		"Classes/ApplicationRouting.m": {
