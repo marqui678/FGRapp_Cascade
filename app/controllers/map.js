@@ -1,23 +1,29 @@
 // Arguments passed into this controller can be accessed via the `$.args` object directly or:
 var args = $.args;
 
-//Location input by search
-var searchLoc = args.searchLoc;
+//Keep the following code, might be useful for search
+/*
+var currentUser = args.currentUser;
 
-//Init region center
-var regionCenter = {};
+var userLocation = currentUser.location.street + " " + currentUser.location.city 
++ " " + currentUser.location.state + " " + currentUser.location.zip;*/
+
+/* get longitude and latitude by address
+	Ti.Geolocation.forwardGeocoder(userLocation, function(_resp){
+		if (_resp.success) {
+			console.log("coords: " + _resp.latitude + " " + _resp.lontitude);
+			
+			_callback(_resp);
+		}
+		else {
+			console.log("ERROR: " + JSON.stringify(_resp));
+			alert("ERROR");
+			_callback(null);
+		}
+	});*/
+
+var regionCenter = {latitude: 47.6466, longitude: -122.335};
 var rideData = Alloy.Collections.feed.models;
-
-if (searchLoc === undefined) {
-	//Show map with current location pin in the center
-	centeredByCurrentLocation();
-}
-else {
-	//Show map with searchLoc in the center
-	centeredBySearchLocation();
-}
-
-createAnnotationsForMap(rideData);
 
 function centeredByCurrentLocation() {
 	if (Ti.Geolocation.locationServicesEnabled === false) {
@@ -28,61 +34,38 @@ function centeredByCurrentLocation() {
 	    Ti.Geolocation.accuracy = Ti.Geolocation.ACCURACY_HIGH;
 	    if (e.error)
 	    {
-	        alert('Current location not found. Use default location');	
-	    	regionCenter.latitude = Alloy.Globals.defaultLocation.latitude;
-	    	regionCenter.longitude = Alloy.Globals.defaultLocation.longitude;	
+	        alert('Current location not found. Use default location');	       
 	    }
 	    else {
-	    	//Set regionCenter with current location
-	    	regionCenter.latitude = e.coords.latitude;
-	    	regionCenter.longitude = e.coords.longitude;	       
+	    	//Set current location as center
+	        regionCenter.latitude = e.coords.latitude;
+	        regionCenter.longitude = e.coords.longitude;
         }
-        
-        //Set map region by region center
-        setMapRegion(regionCenter);
-        
-        //TODO If have combined view, only set distance when loading combined view or after search
-        //Set distance to region center for each model
-        setDistanceToLocation(rideData, regionCenter);
-        //Sort models by distanceToLoc
-        Alloy.Collections.feed.setSortField("distanceToLocation", "ASC");
-		Alloy.Collections.feed.sort();
+        createAnnotationsForMap(rideData);
 	});
 };
 
-function centeredBySearchLocation() {
-	setMapRegion(regionCenter);
-	setDistanceToLocation(rideData, regionCenter);
-	Alloy.Collections.feed.setSortField("distanceToLocation", "ASC");
-	Alloy.Collections.feed.sort();
-}
+//Show map with current location pin in the center
+centeredByCurrentLocation();
 
-/**
- *For each model, set value for field distanceToLoc based on given target location
- */
-function setDistanceToLocation(models, targetLoc) {
-	for (var i = 0; i < models.length; i++) {
-		var model = models[i];
-		model.setDistanceToLoc(targetLoc);
-	}
-}
-
-function setMapRegion(regionCenter) {
-	//Set map region to zoom into point
-	$.mapview.setRegion({
-		latitude: regionCenter.latitude,
-		longitude: regionCenter.longitude,
-		latitudeDelta: 0.040,
-		longitudeDelta: 0.040
-	});
-}
-		
 function createAnnotationsForMap(models){
 	if (models == null || models.length < 1) {
 		return;
 	}
 	//Make annotation
 	var annotations = createAnnotationsWithModels(models);
+	
+	//Set map region to zoom into point
+
+	$.mapview.setRegion({
+		latitude: regionCenter.latitude,
+		longitude: regionCenter.longitude,
+		latitudeDelta: 0.040,
+		longitudeDelta: 0.040
+	});
+
+	
+	$.mapview.setUserLocation = true;
 	
 	//Add annotation
 	$.mapview.setAnnotations(annotations);
@@ -103,8 +86,7 @@ function createAnnotationsWithModels(models) {
 	    	title: model.get("title"),
     		//pincolor:Ti.Map.ANNOTATION_GREEN,
     		 // image:'pin.png',
-    		myid:model.get("link"),
-    		id: "anno_" + i,
+    		myid:model.get("link")
 		});
 		annotations.push(annotation);
 	}
@@ -154,18 +136,11 @@ function setCalloutInfo(link) {
 	$.rideDistance.text = data.distance;
 }
 
-function toSearch(e) {
-	//Pass $.mainWindow as SearchView will fire event for it.
-	//Pass regionCenter so it can be updated by search
-	Alloy.Globals.Navigator.open("search", {prevWindow: $.mainWindow, regionCenter: regionCenter});
+function searchLocation(e) {
+	alert("Search button clicked.");
 }
 
 function showDetail(e) {
 	var selectedModel = Alloy.Collections.feed.get(lastClickedAnnotationId);
 	Alloy.Globals.Navigator.open("detail", selectedModel);
 }
-
-$.mainWindow.addEventListener('loc_updated', function(e){
-	centeredBySearchLocation();
-});
-

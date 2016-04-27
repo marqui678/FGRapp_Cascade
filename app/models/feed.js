@@ -8,43 +8,11 @@ exports.definition = {
 			idAttribute: 'link'
 		}
 	},
-	
-    extendModel: function(Model) {
-        _.extend(Model.prototype, {
-        	
-        	//Add "distanceToLocation" to model with given target location
-            setDistanceToLoc: function(targetLoc) {
-            	this.attributes.distanceToLocation = this.calculateDistanceToLoc(targetLoc);
-            },
-            
-            // Calculate distance between model and targetLoc
-            calculateDistanceToLoc: function(targetLoc) {
-        		var lat1 = this.get('latitude');
-				var lon1 = this.get('longitude');
-				var lat2 = targetLoc.latitude;
-				var lon2 = targetLoc.longitude;
-				
-				var R = 6371; // km
-				var dLat = (lat2-lat1).toRad();
-				var dLon = (lon2-lon1).toRad();
-				var a = Math.sin(dLat/2) * Math.sin(dLat/2) +
-				Math.cos(lat1.toRad()) * Math.cos(lat2.toRad()) *
-				Math.sin(dLon/2) * Math.sin(dLon/2);
-				var c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1-a));
-				var d = R * c;
-				return d;
-            }
-           
-        });
- 
-        return Model;
-    },
-    
 	extendCollection : function(Collection) {
         _.extend(Collection.prototype, {
             initialize: function () {
-                //*** Default sort field.
-                this.sortField = "distanceToLocation";
+                //*** Default sort field.  Replace with your own default.
+                this.sortField = "fgrrss:startDateTime";
                 //*** Default sort direction
                 this.sortDirection = "ASC";
             },

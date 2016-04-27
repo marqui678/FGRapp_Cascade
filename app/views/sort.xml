@@ -1,24 +1,4 @@
 <Alloy>
-	<Window id="sortWindow" title="Sort">
-		<View id="sortByInfo">
-			<Label id="sortBy">SORT BY</Label>
-			<Label id="sortByResult">Distance: short to long</Label>		
-		</View>
-		<ListView id="sortOptionsList" defaultItemTemplate="elementTemplate" onItemclick="selectSort">
-		    <Templates>
-		        <ItemTemplate name="elementTemplate" height="50">		            
-		            <View id="sortOptions" layout="horizontal">
-		            	<ImageView bindId="radioBtn" id="radioBtn" />
-		                <Label bindId="title" id="title" />
-		                <Label bindId="direction" id="direction" />
-		                <ImageView bindId="arrowBtn" id="arrowBtn" onClick="setSortDirection"/>
-		            </View>
-		        </ItemTemplate>
-		    </Templates>
-			<ListSection>
-			</ListSection>
-		</ListView>
-		<Button onClick="applySort">Apply</Button>
-
-	</Window>
+	<View class="container">
+	</View>
 </Alloy>
