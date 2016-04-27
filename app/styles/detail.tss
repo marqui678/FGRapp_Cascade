@@ -2,3 +2,53 @@
 ".container" : {
   
 }
+
+"#mapview":{
+	top:0,
+	enableZoomControls: false,
+	compassEnabled: false,
+	height: "30%",
+},
+'#startDateTime':{
+	top:180,
+	height:50,
+	color: 'red'
+}
+'#pace':{
+	top:200,
+	height:50
+}
+'#distance':{
+	top:220,
+	height:50,
+	color: 'red'
+}
+'#address':{
+	top:250,
+}
+'#directions':{
+	top:320,
+	color:'green'
+}
+'#leader':{
+	top:330,,
+	color: 'red'
+}
+'#description':{
+	top:340,
+	height:100
+}
+'#readMore':{
+	top:420,
+}
+'#phone':{
+	top:440,
+	color: 'red'
+}
+'#email':{
+	top:460,
+	color: 'red'
+}
+'tab':{
+	top:0
+}

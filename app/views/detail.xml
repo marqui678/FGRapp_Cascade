@@ -1,10 +1,20 @@
 <Alloy>	
-	<Window id="win">
-		
-		<!-- Android: Set ActionBar 'back button' to show and use close() callback -->
-		<ActionBar platform="android" displayHomeAsUp="true" onHomeIconItemSelected="close" />
-		
-		<WebView id="webView" />
-		
-	</Window>
+			<Window class="container">
+				<!-- Android: Set ActionBar 'back button' to show and use close() callback -->
+				<ActionBar platform="android" displayHomeAsUp="true" onHomeIconItemSelected="close" />
+				<Module id="mapview" module="ti.map" method="createView" platform="android,ios,windows" />
+				<View ns="Ti.Map" id="mapview" platform="mobileweb" />
+				<Label id = 'startDateTime'/>
+				<Label id="pace"/>
+				<Label id="distance"/>
+				<Label id = 'address'/>
+				<Label id = 'leader'/>
+				<Label id = 'description'/>
+				<Button onClick="select" id = 'readMore'>Read full descriptions on ride registation page</Button>
+				<Label id = 'directions' onClick="openMap">Get directions</Label>
+				<Label id = 'email' onClick="emailContact"/>
+				<Label id = 'phone' onClick="callContact"/>
+				<Button onClick="select" bottom="0">Register for free on cascade.org</Button>
+			</Window>
+	
 </Alloy>
