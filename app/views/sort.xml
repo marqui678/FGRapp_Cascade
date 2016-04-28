@@ -1,4 +1,27 @@
 <Alloy>
-	<View class="container">
-	</View>
+	<Window id="sortWindow" title="Sort">
+		<Menu platform="android">
+			<MenuItem onClick="cancel" title="Cancel" id="cancelSortBtn" showAsAction="Ti.Android.SHOW_AS_ACTION_ALWAYS" />
+		</Menu>
+		<View id="sortByInfo">
+			<Label id="sortBy">SORT BY</Label>
+			<Label id="sortByResult">Distance: short to long</Label>		
+		</View>
+		<ListView id="sortOptionsList" defaultItemTemplate="elementTemplate" onItemclick="selectSort">
+		    <Templates>
+		        <ItemTemplate name="elementTemplate" height="50">		            
+		            <View id="sortOptions" layout="horizontal">
+		            	<ImageView bindId="radioBtn" id="radioBtn" />
+		                <Label bindId="title" id="title" />
+		                <Label bindId="direction" id="direction" color="blue" />
+		                <ImageView bindId="arrowBtn" id="arrowBtn" onClick="setSortDirection"/>
+		            </View>
+		        </ItemTemplate>
+		    </Templates>
+			<ListSection>
+			</ListSection>
+		</ListView>
+		<Button onClick="applySort">Apply</Button>
+
+	</Window>
 </Alloy>

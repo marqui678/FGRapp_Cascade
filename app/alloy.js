@@ -14,6 +14,24 @@
 // Loads the map module, which can be referenced by Alloy.Globals.Map
 Alloy.Globals.Map = require('ti.map');
 
+Alloy.Globals.defaultLocation = {latitude: 47.6466, longitude: -122.335}; 
+
+//Use distanceToLocation as default sorting
+Alloy.Globals.selectedSort = {id: 2, item: {	    
+    title : {text: "Location"},
+    isAscDir: true,
+    direction : {text: "near to far", dir: "ASC"},
+    field: "distanceToLocation"    
+}};
+
+Number.prototype.toDeg = function() {
+    return this * 180 / Math.PI;
+};
+
+Number.prototype.toRad = function() {
+    return this * Math.PI / 180;
+};
+
 // added during app creation. this will automatically login to
 // ACS for your application and then fire an event (see below)
 // when connected or errored. if you do not use ACS in your
