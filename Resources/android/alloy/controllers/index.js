@@ -31,6 +31,10 @@ function Controller() {
     exports.destroy = function() {};
     _.extend($, $.__views);
     Alloy.Globals.pace = [];
+    Alloy.Globals.startDateTime = new Date(1980, 1, 1);
+    Alloy.Globals.endDateTime = new Date(2080, 1, 1);
+    Alloy.Globals.sDistance = 0;
+    Alloy.Globals.eDistance = 100;
     Alloy.Globals.Navigator = {
         navGroup: $.nav,
         open: function(controller, payload) {

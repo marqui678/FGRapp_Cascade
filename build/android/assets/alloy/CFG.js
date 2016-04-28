@@ -1,1 +1,4 @@
-/Users/jia/Documents/Appcelerator_Studio_Workspace/FGRapp1/Resources/alloy/CFG.js
+module.exports = {
+    dependencies: {},
+    url: "https://www.cascade.org/DailyRides/rss.xml"
+};

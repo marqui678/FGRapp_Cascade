@@ -8,18 +8,19 @@ function __processArg(obj, key) {
 }
 
 function Controller() {
-    function __alloyId46() {
-        $.__views.mainWindow.removeEventListener("open", __alloyId46);
+    function __alloyId51() {
+        $.__views.mainWindow.removeEventListener("open", __alloyId51);
         if ($.__views.mainWindow.activity) $.__views.mainWindow.activity.onCreateOptionsMenu = function(e) {
-            var __alloyId45 = {
+            var __alloyId50 = {
                 title: "Search",
+                icon: "images/searchLight.png",
                 showAsAction: Ti.Android.SHOW_AS_ACTION_ALWAYS,
-                id: "__alloyId44"
+                id: "__alloyId49"
             };
-            $.__views.__alloyId44 = e.menu.add(_.pick(__alloyId45, Alloy.Android.menuItemCreateArgs));
-            $.__views.__alloyId44.applyProperties(_.omit(__alloyId45, Alloy.Android.menuItemCreateArgs));
-            $.__alloyId44 = $.__views.__alloyId44;
-            searchLocation ? $.addListener($.__views.__alloyId44, "click", searchLocation) : __defers["$.__views.__alloyId44!click!searchLocation"] = true;
+            $.__views.__alloyId49 = e.menu.add(_.pick(__alloyId50, Alloy.Android.menuItemCreateArgs));
+            $.__views.__alloyId49.applyProperties(_.omit(__alloyId50, Alloy.Android.menuItemCreateArgs));
+            $.__alloyId49 = $.__views.__alloyId49;
+            toSearch ? $.addListener($.__views.__alloyId49, "click", toSearch) : __defers["$.__views.__alloyId49!click!toSearch"] = true;
         }; else {
             Ti.API.warn("You attempted to attach an Android Menu to a lightweight Window");
             Ti.API.warn("or other UI component which does not have an Android activity.");
@@ -30,23 +31,43 @@ function Controller() {
         false === Ti.Geolocation.locationServicesEnabled && alert("our device has geo turned off - turn it on.");
         Titanium.Geolocation.getCurrentPosition(function(e) {
             Ti.Geolocation.accuracy = Ti.Geolocation.ACCURACY_HIGH;
-            if (e.error) alert("Current location not found. Use default location"); else {
+            if (e.error) {
+                alert("Current location not found. Use default location");
+                regionCenter.latitude = Alloy.Globals.defaultLocation.latitude;
+                regionCenter.longitude = Alloy.Globals.defaultLocation.longitude;
+            } else {
                 regionCenter.latitude = e.coords.latitude;
                 regionCenter.longitude = e.coords.longitude;
             }
-            createAnnotationsForMap(rideData);
+            setMapRegion(regionCenter);
+            setDistanceToLocation(rideData, regionCenter);
+            Alloy.Collections.feed.setSortField("distanceToLocation", "ASC");
+            Alloy.Collections.feed.sort();
         });
     }
-    function createAnnotationsForMap(models) {
-        if (null == models || models.length < 1) return;
-        var annotations = createAnnotationsWithModels(models);
+    function centeredBySearchLocation() {
+        setMapRegion(regionCenter);
+        setDistanceToLocation(rideData, regionCenter);
+        Alloy.Collections.feed.setSortField("distanceToLocation", "ASC");
+        Alloy.Collections.feed.sort();
+    }
+    function setDistanceToLocation(models, targetLoc) {
+        for (var i = 0; i < models.length; i++) {
+            var model = models[i];
+            model.setDistanceToLoc(targetLoc);
+        }
+    }
+    function setMapRegion(regionCenter) {
         $.mapview.setRegion({
             latitude: regionCenter.latitude,
             longitude: regionCenter.longitude,
             latitudeDelta: .04,
             longitudeDelta: .04
         });
-        $.mapview.setUserLocation = true;
+    }
+    function createAnnotationsForMap(models) {
+        if (null == models || models.length < 1) return;
+        var annotations = createAnnotationsWithModels(models);
         $.mapview.setAnnotations(annotations);
     }
     function createAnnotationsWithModels(models) {
@@ -57,7 +78,9 @@ function Controller() {
                 latitude: model.get("latitude"),
                 longitude: model.get("longitude"),
                 title: model.get("title"),
-                myid: model.get("link")
+                image: "images/pin.png",
+                myid: model.get("link"),
+                id: "anno_" + i
             });
             annotations.push(annotation);
         }
@@ -81,8 +104,11 @@ function Controller() {
         $.ridePace.text = data.pace;
         $.rideDistance.text = data.distance;
     }
-    function searchLocation() {
-        alert("Search button clicked.");
+    function toSearch() {
+        Alloy.Globals.Navigator.open("search", {
+            prevWindow: $.mainWindow,
+            regionCenter: regionCenter
+        });
     }
     function showDetail() {
         var selectedModel = Alloy.Collections.feed.get(lastClickedAnnotationId);
@@ -112,14 +138,8 @@ function Controller() {
         title: "map"
     });
     $.__views.mainWindow && $.addTopLevelView($.__views.mainWindow);
-    $.__views.mainWindow.addEventListener("open", __alloyId46);
+    $.__views.mainWindow.addEventListener("open", __alloyId51);
     $.__views.mapview = (require("ti.map").createView || Alloy.Globals.Map.createView)({
-        region: {
-            latitude: 37.6697242,
-            longitude: -122.1820661,
-            latitudeDelta: .01,
-            longitudeDelta: .01
-        },
         animate: false,
         userLocation: true,
         id: "mapview"
@@ -134,7 +154,7 @@ function Controller() {
         },
         backgroundColor: "#FFFFFF",
         id: "rideInfoCallout",
-        visible: "false"
+        visible: false
     });
     $.__views.mainWindow.add($.__views.rideInfoCallout);
     showDetail ? $.addListener($.__views.rideInfoCallout, "click", showDetail) : __defers["$.__views.rideInfoCallout!click!showDetail"] = true;
@@ -164,15 +184,17 @@ function Controller() {
     $.__views.rideInfoCallout.add($.__views.rideDistance);
     exports.destroy = function() {};
     _.extend($, $.__views);
-    $.args;
-    var regionCenter = {
-        latitude: 47.6466,
-        longitude: -122.335
-    };
+    var args = $.args;
+    var searchLoc = args.searchLoc;
+    var regionCenter = {};
     var rideData = Alloy.Collections.feed.models;
-    centeredByCurrentLocation();
+    void 0 === searchLoc ? centeredByCurrentLocation() : centeredBySearchLocation();
+    createAnnotationsForMap(rideData);
     var lastClickedAnnotationId = null;
-    __defers["$.__views.__alloyId44!click!searchLocation"] && $.addListener($.__views.__alloyId44, "click", searchLocation);
+    $.mainWindow.addEventListener("loc_updated", function() {
+        centeredBySearchLocation();
+    });
+    __defers["$.__views.__alloyId49!click!toSearch"] && $.addListener($.__views.__alloyId49, "click", toSearch);
     __defers["$.__views.mapview!click!report"] && $.addListener($.__views.mapview, "click", report);
     __defers["$.__views.rideInfoCallout!click!showDetail"] && $.addListener($.__views.rideInfoCallout, "click", showDetail);
     _.extend($, exports);
