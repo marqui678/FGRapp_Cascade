@@ -25,7 +25,7 @@ function parseXML(xml) {
         model["startDateTime"] = model["fgrrss:startDateTime"];
         var s = model["fgrrss:startDateTime"].substring(0, 19);
         model["fgrrss:startDateTime"] = new Date(s);
-        if (Alloy.Globals.sDistance <= model["fgrrss:distance"] && Alloy.Globals.eDistance >= model["fgrrss:distance"] && Alloy.Globals.startDateTime <= model["fgrrss:startDateTime"] && Alloy.Globals.endDateTime >= model["fgrrss:startDateTime"]) if (0 == Alloy.Globals.pace.length) models.push(model); else for (var k = 0; k < Alloy.Globals.pace.length; k++) if (-1 != model["fgrrss:pace"].indexOf(Alloy.Globals.pace[k])) {
+        if (Alloy.Globals.distance[0] <= model["fgrrss:distance"] && Alloy.Globals.distance[1] >= model["fgrrss:distance"] && Alloy.Globals.startDateTime <= model["fgrrss:startDateTime"] && Alloy.Globals.endDateTime >= model["fgrrss:startDateTime"]) if (0 == Alloy.Globals.pace.length) models.push(model); else for (var k = 0; k < Alloy.Globals.pace.length; k++) if (-1 != model["fgrrss:pace"].indexOf(Alloy.Globals.pace[k])) {
             models.push(model);
             break;
         }

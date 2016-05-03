@@ -3,10 +3,20 @@
  * @param  {Object} args arguments passed to the controller
  */
 Alloy.Globals.pace = [];
-Alloy.Globals.startDateTime = new Date(1980,1,1);
-Alloy.Globals.endDateTime = new Date(2080,1,1);
-Alloy.Globals.sDistance = 0;
-Alloy.Globals.eDistance = 100;
+Alloy.Globals.startDateTime = new Date();
+Alloy.Globals.endDateTime = new Date();
+Alloy.Globals.startDateTime.setUTCHours(0);
+Alloy.Globals.endDateTime.setMonth(Alloy.Globals.startDateTime.getMonth() + 6);
+Alloy.Globals.distance = [0,100];
+Alloy.Globals.selfPaced = false;
+Alloy.Globals.easy = false;
+Alloy.Globals.brisk = false;
+Alloy.Globals.leisurely = false;
+Alloy.Globals.steady = false;
+Alloy.Globals.vigorous = false;
+Alloy.Globals.moderate = false;
+Alloy.Globals.strenuous = false;
+Alloy.Globals.superStrenuous = false;
 /**
  * Global Navigation Handler
  */

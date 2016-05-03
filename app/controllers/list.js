@@ -41,9 +41,7 @@ function refresh(e) {
 
 	// MobileWeb can't load the remote file because we don't have access control set-up
 	var url = OS_MOBILEWEB ? Ti.Filesystem.resourcesDirectory + 'feed.xml' : Alloy.CFG.url;
-	for (var i = 0; i < 2; i++){
-			console.log(i);
-			}
+
 	// let the collection fetch data from it's data source
 		Alloy.Collections.feed.fetch({
 		url: url,

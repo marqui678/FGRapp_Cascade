@@ -18,7 +18,17 @@ function parseXML(xml) {
             model["longitude"] = parseFloat(location[0]);
             model["latitude"] = parseFloat(location[1]);
         }
-        models.push(model);
+        if (void 0 !== model["fgrrss:distance"]) {
+            var distance = model["fgrrss:distance"].match(/\d+./g);
+            null !== distance && distance.length >= 0 && (model["fgrrss:distance"] = Number(distance.join("")));
+        }
+        model["startDateTime"] = model["fgrrss:startDateTime"];
+        var s = model["fgrrss:startDateTime"].substring(0, 19);
+        model["fgrrss:startDateTime"] = new Date(s);
+        if (Alloy.Globals.distance[0] <= model["fgrrss:distance"] && Alloy.Globals.distance[1] >= model["fgrrss:distance"] && Alloy.Globals.startDateTime <= model["fgrrss:startDateTime"] && Alloy.Globals.endDateTime >= model["fgrrss:startDateTime"]) if (0 == Alloy.Globals.pace.length) models.push(model); else for (var k = 0; k < Alloy.Globals.pace.length; k++) if (-1 != model["fgrrss:pace"].indexOf(Alloy.Globals.pace[k])) {
+            models.push(model);
+            break;
+        }
     }
     return models;
 }

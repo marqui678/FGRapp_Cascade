@@ -8,18 +8,18 @@ function __processArg(obj, key) {
 }
 
 function Controller() {
-    function __alloyId46() {
-        $.__views.mainWindow.removeEventListener("open", __alloyId46);
+    function __alloyId56() {
+        $.__views.mainWindow.removeEventListener("open", __alloyId56);
         if ($.__views.mainWindow.activity) $.__views.mainWindow.activity.onCreateOptionsMenu = function(e) {
-            var __alloyId45 = {
+            var __alloyId55 = {
                 title: "Search",
                 showAsAction: Ti.Android.SHOW_AS_ACTION_ALWAYS,
-                id: "__alloyId44"
+                id: "__alloyId54"
             };
-            $.__views.__alloyId44 = e.menu.add(_.pick(__alloyId45, Alloy.Android.menuItemCreateArgs));
-            $.__views.__alloyId44.applyProperties(_.omit(__alloyId45, Alloy.Android.menuItemCreateArgs));
-            $.__alloyId44 = $.__views.__alloyId44;
-            searchLocation ? $.addListener($.__views.__alloyId44, "click", searchLocation) : __defers["$.__views.__alloyId44!click!searchLocation"] = true;
+            $.__views.__alloyId54 = e.menu.add(_.pick(__alloyId55, Alloy.Android.menuItemCreateArgs));
+            $.__views.__alloyId54.applyProperties(_.omit(__alloyId55, Alloy.Android.menuItemCreateArgs));
+            $.__alloyId54 = $.__views.__alloyId54;
+            searchLocation ? $.addListener($.__views.__alloyId54, "click", searchLocation) : __defers["$.__views.__alloyId54!click!searchLocation"] = true;
         }; else {
             Ti.API.warn("You attempted to attach an Android Menu to a lightweight Window");
             Ti.API.warn("or other UI component which does not have an Android activity.");
@@ -112,7 +112,7 @@ function Controller() {
         title: "map"
     });
     $.__views.mainWindow && $.addTopLevelView($.__views.mainWindow);
-    $.__views.mainWindow.addEventListener("open", __alloyId46);
+    $.__views.mainWindow.addEventListener("open", __alloyId56);
     $.__views.mapview = (require("ti.map").createView || Alloy.Globals.Map.createView)({
         region: {
             latitude: 37.6697242,
@@ -134,7 +134,7 @@ function Controller() {
         },
         backgroundColor: "#FFFFFF",
         id: "rideInfoCallout",
-        visible: "false"
+        visible: false
     });
     $.__views.mainWindow.add($.__views.rideInfoCallout);
     showDetail ? $.addListener($.__views.rideInfoCallout, "click", showDetail) : __defers["$.__views.rideInfoCallout!click!showDetail"] = true;
@@ -172,7 +172,7 @@ function Controller() {
     var rideData = Alloy.Collections.feed.models;
     centeredByCurrentLocation();
     var lastClickedAnnotationId = null;
-    __defers["$.__views.__alloyId44!click!searchLocation"] && $.addListener($.__views.__alloyId44, "click", searchLocation);
+    __defers["$.__views.__alloyId54!click!searchLocation"] && $.addListener($.__views.__alloyId54, "click", searchLocation);
     __defers["$.__views.mapview!click!report"] && $.addListener($.__views.mapview, "click", report);
     __defers["$.__views.rideInfoCallout!click!showDetail"] && $.addListener($.__views.rideInfoCallout, "click", showDetail);
     _.extend($, exports);

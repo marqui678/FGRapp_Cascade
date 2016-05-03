@@ -108,7 +108,7 @@ function parseXML(xml) {
 		model['startDateTime'] = model['fgrrss:startDateTime'];
 		var s = model['fgrrss:startDateTime'].substring(0,19);
 		model['fgrrss:startDateTime'] = new Date(s);
-		if ((Alloy.Globals.sDistance <= model['fgrrss:distance']) && (Alloy.Globals.eDistance >= model['fgrrss:distance'])){
+		if ((Alloy.Globals.distance[0] <= model['fgrrss:distance']) && (Alloy.Globals.distance[1] >= model['fgrrss:distance'])){
 			if ((Alloy.Globals.startDateTime <= model['fgrrss:startDateTime']) && (Alloy.Globals.endDateTime >= model['fgrrss:startDateTime'])){
 				if (Alloy.Globals.pace.length == 0){
 					models.push(model);

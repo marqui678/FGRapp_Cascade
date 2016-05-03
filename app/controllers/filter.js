@@ -1,25 +1,14 @@
+var moment = require('alloy/moment');
 var paceView = false;
 var dateView = false;
 var distanceView = false;
-var selfPaced = false;
-var easy = false;
-var brisk = false;
-var leisurely = false;
-var steady = false;
-var vigorous = false;
-var moderate = false;
-var strenuous = false;
-var superStrenuous = false;
+
 var monthNames = ["Jan ", "Feb ", "Mar ", "Apr ", "May ", "Jun ","Jul ", "Aug ", "Sep ", "Oct ", "Nov ", "Dec "];
 (function constructor(args) {
-	$.startDate.value = new Date();
-	$.endDate.value = $.startDate.value;
-	$.startTimeSlider.value = 0;
-	$.endTimeSlider.value = 0;
 	hideVertical($.paceView);
 	hideVertical($.dateView);
 	hideVertical($.distanceView);
-	clearFilter();
+	initiate();
 })(arguments[0] || {});
 $.startDate.addEventListener('change',function(e){
 	$.endDate.minDate = e.value;
@@ -39,8 +28,7 @@ $.startTimeSlider.addEventListener('touchend', function(e){
 $.startTimeSlider.addEventListener('change', function(e) {
     $.startTimeLabel.text = Math.round(e.value);
     $.endTimeSlider.min= e.value;
-    $.endTimeSlider.value = $.endTimeSlider.min;
-    Alloy.Globals.startDateTime.setHours(e.value - 9,0,0);
+    Alloy.Globals.startDateTime.setUTCHours(e.value,0,0,0);
     $.dateLabel.text = monthNames[$.startDate.value.getMonth()] + $.startDate.value.getDate() + " - " + monthNames[$.endDate.value.getMonth()] + $.endDate.value.getDate() + " "
 						+ $.startTimeSlider.value + ":00 - " + $.endTimeSlider.value + ":00"; 
 
@@ -54,38 +42,49 @@ $.endTimeSlider.addEventListener('touchend', function(e){
 
 $.endTimeSlider.addEventListener('change', function(e) {
     $.endTimeLabel.text = Math.round(e.value);
-    Alloy.Globals.endDateTime.setHours(e.value - 9,0,0);
+    Alloy.Globals.endDateTime.setUTCHours($.endTimeSlider.value,0,0,0);
     $.dateLabel.text = monthNames[$.startDate.value.getMonth()] + $.startDate.value.getDate() + " - " + monthNames[$.endDate.value.getMonth()] + $.endDate.value.getDate() + " "
 						+ $.startTimeSlider.value + ":00 - " + $.endTimeSlider.value + ":00"; 
 });
-$.sDistanceSlider.addEventListener('touchend', function(e){
-    this.value = Math.round(e.value);
-    $.sDistanceLabel.text = this.value;
-});
 
-$.sDistanceSlider.addEventListener('change', function(e) {
-    $.sDistanceLabel.text = Math.round(e.value);
-    $.eDistanceSlider.min = e.value;
-    Alloy.Globals.sDistance = e.value;
-});
-
-$.eDistanceSlider.addEventListener('touchend', function(e){
-    this.value = Math.round(e.value);
-    $.eDistanceLabel.text = this.value;
-});
-
-$.eDistanceSlider.addEventListener('change', function(e) {
-    $.eDistanceLabel.text = Math.round(e.value);
-    Alloy.Globals.eDistance = e.value;
-    $.distanceLabel.text = $.sDistanceSlider.value + " - " + e.value + " miles";
-});
 function addPace(pace){
 	Alloy.Globals.pace.push(pace);
-		$.paceLabel.text = $.paceLabel.text + " " + pace;
+	$.paceLabel.text = Alloy.Globals.pace.toString();
 }
 function removePace(pace){
 	Alloy.Globals.pace.splice(Alloy.Globals.pace.indexOf(pace),1);
-	$.paceLabel.text = $.paceLabel.text.replace(" " + pace,"");
+	$.paceLabel.text = Alloy.Globals.pace.toString();
+}
+function addDistance(min,max){
+	Alloy.Globals.distance = [min,max];
+	$.distanceLabel.text = min + " - " + max + " miles";
+}
+function ten(){
+	addDistance(10,20);
+}
+function twenty(){
+	addDistance(20,30);
+}
+function thirty(){
+	addDistance(30,40);
+}
+function fourty(){
+	addDistance(40,50);
+}
+function fifty(){
+	addDistance(50,60);
+}
+function sixty(){
+	addDistance(60,70);
+}
+function seventy(){
+	addDistance(70,80);
+}
+function eighty(){
+	addDistance(80,90);
+}
+function ninety(){
+	addDistance(90,200);
 }
 function selfPaced(){
 	if (!selfPaced){
@@ -163,9 +162,9 @@ function hidePaceView(){
 	hideView($.paceView,paceView);
 	paceView = !paceView;
 	if (paceView){
-		$.paceFold.backgroundImage = "/Filter opened.png";
+		$.paceFold.image = "/Filter opened.png";
 	} else{
-		$.paceFold.backgroundImage = "/Filter open.png";
+		$.paceFold.image = "/Filter open.png";
 	}
 }
 function hideDateView(){
@@ -173,6 +172,12 @@ function hideDateView(){
 	dateView = !dateView;
 	if (dateView){
 		$.dateFold.backgroundImage = "/Filter opened.png";
+		$.startDate.minDate = new Date();
+		$.endDate.minDate = $.startDate.minDate;
+		$.startDate.value = Alloy.Globals.startDateTime;
+		$.endDate.value = Alloy.Globals.endDateTime;
+		$.startTimeSlider.value = Alloy.Globals.startDateTime.getUTCHours();
+		$.endTimeSlider.value = Alloy.Globals.endDateTime.getUTCHours();
 	} else{
 		$.dateFold.backgroundImage = "/Filter open.png";
 	}
@@ -213,15 +218,20 @@ function showVertical(view) {
 	view.height = view.width;
     view.show();
 }
-function clearFilter(){
-$.paceLabel.text = "";
-$.dateLabel.text = "";
-$.distanceLabel.text = "";
+function initiate(){
+	$.paceLabel.text = Alloy.Globals.pace.toString();
+	$.dateLabel.text = monthNames[Alloy.Globals.startDateTime.getMonth()] + Alloy.Globals.startDateTime.getDate() + " - " + monthNames[Alloy.Globals.endDateTime.getMonth()] + Alloy.Globals.endDateTime.getDate() + " "
+						+ Alloy.Globals.startDateTime.getUTCHours() + ":00 - " + Alloy.Globals.endDateTime.getUTCHours() + ":00"; 
+	$.distanceLabel.text = Alloy.Globals.distance[0] + " - " + Alloy.Globals.distance[1] + " miles";
+}
+function resetFilter(){
+Alloy.Globals.startDateTime = new Date();
+Alloy.Globals.endDateTime = new Date();
+Alloy.Globals.startDateTime.setUTCHours(0);
+Alloy.Globals.endDateTime.setMonth(Alloy.Globals.startDateTime.getMonth() + 6);
 Alloy.Globals.pace = [];
-Alloy.Globals.startDateTime = new Date(1980,1,1);
-Alloy.Globals.endDateTime = new Date(2080,1,1);
-Alloy.Globals.sDistance = 0;
-Alloy.Globals.eDistance = 100;
+Alloy.Globals.distance = [0,100];
+initiate();
 }
 function applyFilter(){
 	Alloy.Collections.feed.fetch({

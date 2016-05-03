@@ -10,11 +10,42 @@ function __processArg(obj, key) {
 function Controller() {
     function addPace(pace) {
         Alloy.Globals.pace.push(pace);
-        $.paceLabel.text = $.paceLabel.text + " " + pace;
+        $.paceLabel.text = Alloy.Globals.pace.toString();
     }
     function removePace(pace) {
         Alloy.Globals.pace.splice(Alloy.Globals.pace.indexOf(pace), 1);
-        $.paceLabel.text = $.paceLabel.text.replace(" " + pace, "");
+        $.paceLabel.text = Alloy.Globals.pace.toString();
+    }
+    function addDistance(min, max) {
+        Alloy.Globals.distance = [ min, max ];
+        $.distanceLabel.text = min + " - " + max + " miles";
+    }
+    function ten() {
+        addDistance(10, 20);
+    }
+    function twenty() {
+        addDistance(20, 30);
+    }
+    function thirty() {
+        addDistance(30, 40);
+    }
+    function fourty() {
+        addDistance(40, 50);
+    }
+    function fifty() {
+        addDistance(50, 60);
+    }
+    function sixty() {
+        addDistance(60, 70);
+    }
+    function seventy() {
+        addDistance(70, 80);
+    }
+    function eighty() {
+        addDistance(80, 90);
+    }
+    function ninety() {
+        addDistance(90, 200);
     }
     function selfPaced() {
         selfPaced ? removePace("Self Paced") : addPace("Self Paced");
@@ -55,12 +86,20 @@ function Controller() {
     function hidePaceView() {
         hideView($.paceView, paceView);
         paceView = !paceView;
-        $.paceFold.backgroundImage = paceView ? "/Filter opened.png" : "/Filter open.png";
+        $.paceFold.image = paceView ? "/Filter opened.png" : "/Filter open.png";
     }
     function hideDateView() {
         hideView($.dateView, dateView);
         dateView = !dateView;
-        $.dateFold.backgroundImage = dateView ? "/Filter opened.png" : "/Filter open.png";
+        if (dateView) {
+            $.dateFold.backgroundImage = "/Filter opened.png";
+            $.startDate.minDate = new Date();
+            $.endDate.minDate = $.startDate.minDate;
+            $.startDate.value = Alloy.Globals.startDateTime;
+            $.endDate.value = Alloy.Globals.endDateTime;
+            $.startTimeSlider.value = Alloy.Globals.startDateTime.getUTCHours();
+            $.endTimeSlider.value = Alloy.Globals.endDateTime.getUTCHours();
+        } else $.dateFold.backgroundImage = "/Filter open.png";
     }
     function hideDistanceView() {
         hideView($.distanceView, distanceView);
@@ -87,15 +126,19 @@ function Controller() {
         view.height = view.width;
         view.show();
     }
-    function clearFilter() {
-        $.paceLabel.text = "";
-        $.dateLabel.text = "";
-        $.distanceLabel.text = "";
+    function initiate() {
+        $.paceLabel.text = Alloy.Globals.pace.toString();
+        $.dateLabel.text = monthNames[Alloy.Globals.startDateTime.getMonth()] + Alloy.Globals.startDateTime.getDate() + " - " + monthNames[Alloy.Globals.endDateTime.getMonth()] + Alloy.Globals.endDateTime.getDate() + " " + Alloy.Globals.startDateTime.getUTCHours() + ":00 - " + Alloy.Globals.endDateTime.getUTCHours() + ":00";
+        $.distanceLabel.text = Alloy.Globals.distance[0] + " - " + Alloy.Globals.distance[1] + " miles";
+    }
+    function resetFilter() {
+        Alloy.Globals.startDateTime = new Date();
+        Alloy.Globals.endDateTime = new Date();
+        Alloy.Globals.startDateTime.setUTCHours(0);
+        Alloy.Globals.endDateTime.setMonth(Alloy.Globals.startDateTime.getMonth() + 6);
         Alloy.Globals.pace = [];
-        Alloy.Globals.startDateTime = new Date(1980, 1, 1);
-        Alloy.Globals.endDateTime = new Date(2080, 1, 1);
-        Alloy.Globals.sDistance = 0;
-        Alloy.Globals.eDistance = 100;
+        Alloy.Globals.distance = [ 0, 100 ];
+        initiate();
     }
     function applyFilter() {
         Alloy.Collections.feed.fetch({
@@ -163,15 +206,15 @@ function Controller() {
         top: 0,
         left: 15,
         height: 30,
-        width: 270,
+        width: 280,
         id: "paceLabel"
     });
     $.__views.paceRow.add($.__views.paceLabel);
     hideDateView ? $.addListener($.__views.paceLabel, "click", hideDateView) : __defers["$.__views.paceLabel!click!hideDateView"] = true;
-    $.__views.paceFold = Ti.UI.createButton({
+    $.__views.paceFold = Ti.UI.createImageView({
         id: "paceFold",
-        width: 5,
-        backgroundImage: "Filter open.png"
+        width: 20,
+        image: "Filter open.png"
     });
     $.__views.paceRow.add($.__views.paceFold);
     hidePaceView ? $.addListener($.__views.paceFold, "click", hidePaceView) : __defers["$.__views.paceFold!click!hidePaceView"] = true;
@@ -180,7 +223,6 @@ function Controller() {
         top: 0,
         left: 0,
         right: 0,
-        width: "100%",
         height: "50%",
         layout: "vertical",
         visible: false
@@ -188,28 +230,30 @@ function Controller() {
     $.__views.scrollView.add($.__views.paceView);
     $.__views.firstRow = Ti.UI.createView({
         id: "firstRow",
-        width: "100%",
-        height: 60,
+        height: 30,
         layout: "horizontal"
     });
     $.__views.paceView.add($.__views.firstRow);
     $.__views.__alloyId0 = Ti.UI.createButton({
         title: "Self Paced",
-        left: 15,
+        left: 5,
+        width: 100,
         id: "__alloyId0"
     });
     $.__views.firstRow.add($.__views.__alloyId0);
     selfPaced ? $.addListener($.__views.__alloyId0, "click", selfPaced) : __defers["$.__views.__alloyId0!click!selfPaced"] = true;
     $.__views.__alloyId1 = Ti.UI.createButton({
         title: "Easy",
-        left: 0,
+        left: 5,
+        width: 50,
         id: "__alloyId1"
     });
     $.__views.firstRow.add($.__views.__alloyId1);
     easy ? $.addListener($.__views.__alloyId1, "click", easy) : __defers["$.__views.__alloyId1!click!easy"] = true;
     $.__views.__alloyId2 = Ti.UI.createButton({
         title: "Leisurely",
-        left: 0,
+        left: 5,
+        width: 50,
         id: "__alloyId2"
     });
     $.__views.firstRow.add($.__views.__alloyId2);
@@ -415,109 +459,136 @@ function Controller() {
     $.__views.distanceView = Ti.UI.createView({
         id: "distanceView",
         top: 0,
-        layout: "vertical",
-        visible: false,
+        left: 0,
+        right: 0,
         width: "100%",
-        height: "50%"
+        height: "50%",
+        layout: "vertical",
+        visible: false
     });
     $.__views.scrollView.add($.__views.distanceView);
-    $.__views.sDistance = Ti.UI.createView({
-        id: "sDistance",
-        height: 60,
-        layout: "horizontal"
-    });
-    $.__views.distanceView.add($.__views.sDistance);
-    $.__views.sDistanceLabel = Ti.UI.createLabel({
-        color: "#000",
-        top: 0,
-        left: 0,
-        id: "sDistanceLabel"
-    });
-    $.__views.sDistance.add($.__views.sDistanceLabel);
-    $.__views.sDistanceSlider = Ti.UI.createSlider({
-        id: "sDistanceSlider",
-        min: 0,
-        value: 0,
-        max: 100,
-        top: 0
-    });
-    $.__views.sDistance.add($.__views.sDistanceSlider);
-    $.__views.__alloyId10 = Ti.UI.createLabel({
-        color: "#000",
-        text: "To",
-        top: 0,
-        id: "__alloyId10"
-    });
-    $.__views.distanceView.add($.__views.__alloyId10);
-    $.__views.eDistance = Ti.UI.createView({
-        id: "eDistance",
+    $.__views.firstRow1 = Ti.UI.createView({
+        id: "firstRow1",
         width: "100%",
         height: 60,
         layout: "horizontal"
     });
-    $.__views.distanceView.add($.__views.eDistance);
-    $.__views.eDistanceLabel = Ti.UI.createLabel({
-        color: "#000",
-        top: 0,
+    $.__views.distanceView.add($.__views.firstRow1);
+    $.__views.__alloyId10 = Ti.UI.createButton({
+        title: "10-20",
+        left: 15,
+        id: "__alloyId10"
+    });
+    $.__views.firstRow1.add($.__views.__alloyId10);
+    ten ? $.addListener($.__views.__alloyId10, "click", ten) : __defers["$.__views.__alloyId10!click!ten"] = true;
+    $.__views.__alloyId11 = Ti.UI.createButton({
+        title: "20-30",
         left: 0,
-        id: "eDistanceLabel"
+        id: "__alloyId11"
     });
-    $.__views.eDistance.add($.__views.eDistanceLabel);
-    $.__views.eDistanceSlider = Ti.UI.createSlider({
-        id: "eDistanceSlider",
-        max: 100,
-        value: 100,
-        top: 0
+    $.__views.firstRow1.add($.__views.__alloyId11);
+    twenty ? $.addListener($.__views.__alloyId11, "click", twenty) : __defers["$.__views.__alloyId11!click!twenty"] = true;
+    $.__views.__alloyId12 = Ti.UI.createButton({
+        title: "30-40",
+        left: 0,
+        id: "__alloyId12"
     });
-    $.__views.eDistance.add($.__views.eDistanceSlider);
-    $.__views.__alloyId11 = Ti.UI.createView({
+    $.__views.firstRow1.add($.__views.__alloyId12);
+    thirty ? $.addListener($.__views.__alloyId12, "click", thirty) : __defers["$.__views.__alloyId12!click!thirty"] = true;
+    $.__views.secondRow1 = Ti.UI.createView({
+        id: "secondRow1",
+        top: 20,
+        width: "100%",
+        height: 60,
+        layout: "horizontal"
+    });
+    $.__views.distanceView.add($.__views.secondRow1);
+    $.__views.__alloyId13 = Ti.UI.createButton({
+        title: "40-50",
+        left: 15,
+        id: "__alloyId13"
+    });
+    $.__views.secondRow1.add($.__views.__alloyId13);
+    fourty ? $.addListener($.__views.__alloyId13, "click", fourty) : __defers["$.__views.__alloyId13!click!fourty"] = true;
+    $.__views.__alloyId14 = Ti.UI.createButton({
+        title: "50-60",
+        left: 0,
+        id: "__alloyId14"
+    });
+    $.__views.secondRow1.add($.__views.__alloyId14);
+    fifty ? $.addListener($.__views.__alloyId14, "click", fifty) : __defers["$.__views.__alloyId14!click!fifty"] = true;
+    $.__views.__alloyId15 = Ti.UI.createButton({
+        title: "60-70",
+        left: 0,
+        id: "__alloyId15"
+    });
+    $.__views.secondRow1.add($.__views.__alloyId15);
+    sixty ? $.addListener($.__views.__alloyId15, "click", sixty) : __defers["$.__views.__alloyId15!click!sixty"] = true;
+    $.__views.thirdRow1 = Ti.UI.createView({
+        id: "thirdRow1",
+        top: 20,
+        width: "100%",
+        height: 60,
+        layout: "horizontal"
+    });
+    $.__views.distanceView.add($.__views.thirdRow1);
+    $.__views.__alloyId16 = Ti.UI.createButton({
+        title: "70-80",
+        left: 15,
+        id: "__alloyId16"
+    });
+    $.__views.thirdRow1.add($.__views.__alloyId16);
+    seventy ? $.addListener($.__views.__alloyId16, "click", seventy) : __defers["$.__views.__alloyId16!click!seventy"] = true;
+    $.__views.__alloyId17 = Ti.UI.createButton({
+        title: "80-90",
+        left: 0,
+        id: "__alloyId17"
+    });
+    $.__views.thirdRow1.add($.__views.__alloyId17);
+    eighty ? $.addListener($.__views.__alloyId17, "click", eighty) : __defers["$.__views.__alloyId17!click!eighty"] = true;
+    $.__views.__alloyId18 = Ti.UI.createButton({
+        title: "90+",
+        left: 0,
+        id: "__alloyId18"
+    });
+    $.__views.thirdRow1.add($.__views.__alloyId18);
+    ninety ? $.addListener($.__views.__alloyId18, "click", ninety) : __defers["$.__views.__alloyId18!click!ninety"] = true;
+    $.__views.__alloyId19 = Ti.UI.createView({
         top: 0,
         width: "100%",
         height: 30,
         layout: "horizontal",
-        id: "__alloyId11"
+        id: "__alloyId19"
     });
-    $.__views.scrollView.add($.__views.__alloyId11);
-    $.__views.clear = Ti.UI.createButton({
-        title: "Clear",
+    $.__views.scrollView.add($.__views.__alloyId19);
+    $.__views.reset = Ti.UI.createButton({
+        title: "Reset",
         top: 0,
         left: 100,
-        id: "clear"
+        id: "reset"
     });
-    $.__views.__alloyId11.add($.__views.clear);
-    clearFilter ? $.addListener($.__views.clear, "click", clearFilter) : __defers["$.__views.clear!click!clearFilter"] = true;
+    $.__views.__alloyId19.add($.__views.reset);
+    resetFilter ? $.addListener($.__views.reset, "click", resetFilter) : __defers["$.__views.reset!click!resetFilter"] = true;
     $.__views.apply = Ti.UI.createButton({
         title: "Apply",
         top: 0,
         left: 110,
         id: "apply"
     });
-    $.__views.__alloyId11.add($.__views.apply);
+    $.__views.__alloyId19.add($.__views.apply);
     applyFilter ? $.addListener($.__views.apply, "click", applyFilter) : __defers["$.__views.apply!click!applyFilter"] = true;
     exports.destroy = function() {};
     _.extend($, $.__views);
+    require("alloy/moment");
     var paceView = false;
     var dateView = false;
     var distanceView = false;
-    var selfPaced = false;
-    var easy = false;
-    var brisk = false;
-    var leisurely = false;
-    var steady = false;
-    var vigorous = false;
-    var moderate = false;
-    var strenuous = false;
-    var superStrenuous = false;
     var monthNames = [ "Jan ", "Feb ", "Mar ", "Apr ", "May ", "Jun ", "Jul ", "Aug ", "Sep ", "Oct ", "Nov ", "Dec " ];
     !function() {
-        $.startDate.value = new Date();
-        $.endDate.value = $.startDate.value;
-        $.startTimeSlider.value = 0;
-        $.endTimeSlider.value = 0;
         hideVertical($.paceView);
         hideVertical($.dateView);
         hideVertical($.distanceView);
-        clearFilter();
+        initiate();
     }(arguments[0] || {});
     $.startDate.addEventListener("change", function(e) {
         $.endDate.minDate = e.value;
@@ -535,8 +606,7 @@ function Controller() {
     $.startTimeSlider.addEventListener("change", function(e) {
         $.startTimeLabel.text = Math.round(e.value);
         $.endTimeSlider.min = e.value;
-        $.endTimeSlider.value = $.endTimeSlider.min;
-        Alloy.Globals.startDateTime.setHours(e.value - 9, 0, 0);
+        Alloy.Globals.startDateTime.setUTCHours(e.value, 0, 0, 0);
         $.dateLabel.text = monthNames[$.startDate.value.getMonth()] + $.startDate.value.getDate() + " - " + monthNames[$.endDate.value.getMonth()] + $.endDate.value.getDate() + " " + $.startTimeSlider.value + ":00 - " + $.endTimeSlider.value + ":00";
     });
     $.endTimeSlider.addEventListener("touchend", function(e) {
@@ -545,26 +615,8 @@ function Controller() {
     });
     $.endTimeSlider.addEventListener("change", function(e) {
         $.endTimeLabel.text = Math.round(e.value);
-        Alloy.Globals.endDateTime.setHours(e.value - 9, 0, 0);
+        Alloy.Globals.endDateTime.setUTCHours($.endTimeSlider.value, 0, 0, 0);
         $.dateLabel.text = monthNames[$.startDate.value.getMonth()] + $.startDate.value.getDate() + " - " + monthNames[$.endDate.value.getMonth()] + $.endDate.value.getDate() + " " + $.startTimeSlider.value + ":00 - " + $.endTimeSlider.value + ":00";
-    });
-    $.sDistanceSlider.addEventListener("touchend", function(e) {
-        this.value = Math.round(e.value);
-        $.sDistanceLabel.text = this.value;
-    });
-    $.sDistanceSlider.addEventListener("change", function(e) {
-        $.sDistanceLabel.text = Math.round(e.value);
-        $.eDistanceSlider.min = e.value;
-        Alloy.Globals.sDistance = e.value;
-    });
-    $.eDistanceSlider.addEventListener("touchend", function(e) {
-        this.value = Math.round(e.value);
-        $.eDistanceLabel.text = this.value;
-    });
-    $.eDistanceSlider.addEventListener("change", function(e) {
-        $.eDistanceLabel.text = Math.round(e.value);
-        Alloy.Globals.eDistance = e.value;
-        $.distanceLabel.text = $.sDistanceSlider.value + " - " + e.value + " miles";
     });
     __defers["$.__views.pace!click!hidePaceView"] && $.addListener($.__views.pace, "click", hidePaceView);
     __defers["$.__views.paceLabel!click!hideDateView"] && $.addListener($.__views.paceLabel, "click", hideDateView);
@@ -584,7 +636,16 @@ function Controller() {
     __defers["$.__views.distance!click!hideDistanceView"] && $.addListener($.__views.distance, "click", hideDistanceView);
     __defers["$.__views.distanceLabel!click!hideDistanceView"] && $.addListener($.__views.distanceLabel, "click", hideDistanceView);
     __defers["$.__views.distanceFold!click!hideDistanceView"] && $.addListener($.__views.distanceFold, "click", hideDistanceView);
-    __defers["$.__views.clear!click!clearFilter"] && $.addListener($.__views.clear, "click", clearFilter);
+    __defers["$.__views.__alloyId10!click!ten"] && $.addListener($.__views.__alloyId10, "click", ten);
+    __defers["$.__views.__alloyId11!click!twenty"] && $.addListener($.__views.__alloyId11, "click", twenty);
+    __defers["$.__views.__alloyId12!click!thirty"] && $.addListener($.__views.__alloyId12, "click", thirty);
+    __defers["$.__views.__alloyId13!click!fourty"] && $.addListener($.__views.__alloyId13, "click", fourty);
+    __defers["$.__views.__alloyId14!click!fifty"] && $.addListener($.__views.__alloyId14, "click", fifty);
+    __defers["$.__views.__alloyId15!click!sixty"] && $.addListener($.__views.__alloyId15, "click", sixty);
+    __defers["$.__views.__alloyId16!click!seventy"] && $.addListener($.__views.__alloyId16, "click", seventy);
+    __defers["$.__views.__alloyId17!click!eighty"] && $.addListener($.__views.__alloyId17, "click", eighty);
+    __defers["$.__views.__alloyId18!click!ninety"] && $.addListener($.__views.__alloyId18, "click", ninety);
+    __defers["$.__views.reset!click!resetFilter"] && $.addListener($.__views.reset, "click", resetFilter);
     __defers["$.__views.apply!click!applyFilter"] && $.addListener($.__views.apply, "click", applyFilter);
     _.extend($, exports);
 }
