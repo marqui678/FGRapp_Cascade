@@ -10,5 +10,7 @@
 	"os:ios": {},
 	"os:mobileweb": {},
 	"os:windows": {},
-	"dependencies": {}
+	"dependencies": {
+		"com.alcoapps.drawermenu" : "2.0"
+	}
 }

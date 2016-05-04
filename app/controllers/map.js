@@ -19,6 +19,37 @@ else {
 
 createAnnotationsForMap(rideData);
 
+//Menu
+var thisWin=$.mainWindow;
+var main=$.mainView;
+
+// store drawermenu and main in global variable for easy access from menu
+Alloy.CFG.drawermenu=$.drawermenu;
+Alloy.CFG.main=main;
+
+var menu=Alloy.createController('menu').getView();
+
+$.drawermenu.init({
+    menuview:menu,
+    mainview:main,
+    duration:200,
+    parent: thisWin
+});
+
+thisWin.addEventListener('open',function(e){
+	var actionBarHelper = require('com.alcoapps.actionbarhelper')(thisWin);	
+	var actionBarExtra = require('com.alcoapps.actionbarextras');
+	actionBarHelper.setUpAction(function(e){
+		$.drawermenu.showhidemenu();
+	});
+	
+	actionBarExtra.title = "Map";
+	//actionBarExtra.titleColor = "blue";
+	
+	actionBarHelper.displayHomeAsUp(true);
+	actionBarExtra.setHomeAsUpIcon("/images/menuLight.png");
+});
+
 function centeredByCurrentLocation() {
 	if (Ti.Geolocation.locationServicesEnabled === false) {
 		alert("our device has geo turned off - turn it on.");
@@ -102,7 +133,7 @@ function createAnnotationsWithModels(models) {
 	    	longitude: model.get("longitude"),
 	    	title: model.get("title"),
     		//pincolor:Ti.Map.ANNOTATION_GREEN,
-    		image:'images/pin.png',
+    		image:'ic_place_green_3x.png',
     		myid:model.get("link"),
     		id: "anno_" + i,
 		});
@@ -122,7 +153,17 @@ function report(evt) {
     //Deselect
     if (evt.clicksource === null || (evt.clicksource === "pin" && evt.annotation.myid === lastClickedAnnotationId)) {
     	$.rideInfoCallout.visible = false;
+    	lastClickedAnnotationId = null;
+    	//Resize mapview
+    	//$.mapview.bottom = "0dp";
     } 
+    //Select search location anotation
+    else if (evt.annotation.myid === "anno_search") {
+    	$.rideInfoCallout.visible = false;
+    	lastClickedAnnotationId = null;
+    	//Resize mapview
+    	//$.mapview.bottom = "0dp";
+    }
     //Select
     else {
     	//Need to change pin for selected annotation
@@ -135,9 +176,13 @@ function report(evt) {
     	
     	//Show callout box
     	$.rideInfoCallout.visible = true;
+    	
+    	lastClickedAnnotationId = evt.annotation.myid;
+    	//Resize mapview
+    	//$.mapview.bottom = "70dp";
     }
     //Update lastClickedAnnotationId which is link of selected model
-    lastClickedAnnotationId = evt.clicksource === null ? null: evt.annotation.myid;
+    //lastClickedAnnotationId = evt.clicksource === null ? null: evt.annotation.myid;
 }
 
 /**
@@ -165,7 +210,39 @@ function showDetail(e) {
 	Alloy.Globals.Navigator.open("detail", selectedModel);
 }
 
+var searchLocAnnotation = undefined;
 $.mainWindow.addEventListener('loc_updated', function(e){
+	//If not use current locstion, add annotation for searched location
+	if (!e.isCurrentLoc) {
+		if (searchLocAnnotation === undefined) {
+			//Create annotation and add to map
+			searchLocAnnotation = Alloy.Globals.Map.createAnnotation({
+			latitude: regionCenter.latitude,
+	    	longitude: regionCenter.longitude,
+	    	title: regionCenter.displayAddress,
+    		pincolor:Ti.Map.ANNOTATION_GREEN,
+    		//image:'ic_place_3x.png',
+    		myid: "anno_search",
+    		id: "anno_search",
+		});
+		$.mapview.addAnnotation(searchLocAnnotation);
+		}
+		else {
+			//Update annotation
+			searchLocAnnotation.latitude = regionCenter.latitude;
+			searchLocAnnotation.longitude = regionCenter.longitude;
+			searchLocAnnotation.title = regionCenter.displayAddress;
+			searchLocAnnotation.image = "images/pinSelected.png";
+		}
+	}
+	else {
+		//remove and reset if there is search annotation on map
+		if (searchLocAnnotation !== undefined) {
+			$.mapview.removeAnnotation(searchLocAnnotation);
+			searchLocAnnotation = undefined;
+		}
+	}
+	
 	centeredBySearchLocation();
 });
 

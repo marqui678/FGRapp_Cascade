@@ -1,6 +1,10 @@
 // Arguments passed into this controller can be accessed via the `$.args` object directly or:
 var args = $.args;
 
+$.searchWindow.addEventListener('open',function(evt){
+    evt.source.activity.actionBar.hide();
+});
+
 function searchLocation() {
 	$.searchField.blur();
 	var inputLoc = $.searchField.value;
@@ -10,8 +14,9 @@ function searchLocation() {
 			//Update regionCenter
 			args.regionCenter.latitude = Number(_resp.latitude);
 			args.regionCenter.longitude = Number(_resp.longitude);
+			args.regionCenter.displayAddress = _resp.displayAddress;
 			//TODO Add annotation for search location
-			args.prevWindow.fireEvent('loc_updated');
+			args.prevWindow.fireEvent('loc_updated', {isCurrentLoc: false});
 			$.searchWindow.close();			
 		}
 		else {
@@ -34,7 +39,7 @@ function useCurrentLoc() {
 	    	args.regionCenter.latitude = e.coords.latitude;
 	    	args.regionCenter.longitude = e.coords.longitude;	       
         }
-    	args.prevWindow.fireEvent('loc_updated');
+    	args.prevWindow.fireEvent('loc_updated', {isCurrentLoc: true});
 		$.searchWindow.close();
      });
 }

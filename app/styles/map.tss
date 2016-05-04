@@ -1,7 +1,13 @@
+"#mainView": {
+	backgroundColor: "#FFFFFF",
+	height: Ti.UI.FILL,
+	width: Ti.UI.FILL
+},
 
 "#mapview" : {
     animate : false,
-    userLocation:true
+    userLocation:true,
+    regionFit: false,
     //mapType: Alloy.globals.Map.NORMAL_TYPE
     //top: '70dp'
 },
