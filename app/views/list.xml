@@ -7,30 +7,33 @@
 		<Menu platform="android">
 			<MenuItem icon="images/ic_action_action_autorenew.png" onClick="refresh" showAsAction="Ti.Android.SHOW_AS_ACTION_ALWAYS" />
 		</Menu>
-		<ListView platform="ios,android" defaultItemTemplate="template" onItemclick="select">	
+		<ListView id="listView" platform="ios,android" defaultItemTemplate="template" onItemclick="select">	
 			<!-- iOS RefreshControl -->
 			<RefreshControl platform="ios" id="refreshControl" onRefreshstart="refresh" />
-			
+			<!-- search, shorthand with Ti.UI.SearchBar -->
+	      <SearchBar id="search" platform="ios"/>
+	      <!-- search, shorthand with Ti.UI.Android.SearchView -->
+	      <SearchView id="search" ns="Ti.UI.Android" platform="android"/>
 			<Templates>
 				<ItemTemplate name="template" class="item">
 					<View id="firstLine">
 	                    <Label class="line1" bindId="title" id="title" />
                 	
 						<View id="secondLine">
-		                    <Label class="line2" bindId="pace" id="pace" />
-	                	
+		                    <Label class="line2" bindId="paceNo" id="paceNo" />
+							<Label class="line2" bindId="pace" id="pace" />
 							<View id="thirdLine">
 			                    <Label class="line3" bindId="startDateTime" id="startDateTime" />
 			                    <Label class="line3" bindId="distance" id="distance"/>
 			                </View>
-			           </View>
+			            </View>
                 	</View>
 				</ItemTemplate>
 			</Templates>
 			
 			<!-- Alloy data-binding -->
 
-			<ListSection dataCollection="feed" dataTransform="transform">
+			<ListSection id="listSection" dataCollection="feed" dataTransform="transform">
 				<ListItem itemId="{link}" title:text="{title}" pace:text="{pace}" startDateTime:text="{startDateTime}" distance:text="{distance}" />
 			</ListSection>
 			

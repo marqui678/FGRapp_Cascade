@@ -22,10 +22,25 @@ function parseXML(xml) {
             var distance = model["fgrrss:distance"].match(/\d+./g);
             null !== distance && distance.length >= 0 && (model["fgrrss:distance"] = Number(distance.join("")));
         }
+        if (void 0 !== model["fgrrss:pace"]) {
+            var paceNum = model["fgrrss:pace"].match(/\d+/g);
+            model["lowestPace"] = null == paceNum ? paceNum : Number(paceNum[0]);
+            model["largestPace"] = null == paceNum ? paceNum : Number(paceNum[paceNum.length - 1]);
+            model["paceNo"] = model["lowestPace"] != model["largestPace"] ? model["lowestPace"] + " - " + model["largestPace"] + " mph" : model["lowestPace"] + " mph";
+            model["pace"] = model["fgrrss:pace"].substring(0, model["fgrrss:pace"].indexOf(":"));
+            -1 != model["fgrrss:pace"].indexOf(",") && (model["pace"] = model["pace"] + ",...");
+        }
         model["startDateTime"] = model["fgrrss:startDateTime"];
+        -1 != model["startDateTime"].indexOf("to") && (model["startDateTime"] = model["startDateTime"].substring(0, 25));
+        Alloy.Globals.test.push(model["startDateTime"]);
         var s = model["fgrrss:startDateTime"].substring(0, 19);
         model["fgrrss:startDateTime"] = new Date(s);
-        if (Alloy.Globals.distance[0] <= model["fgrrss:distance"] && Alloy.Globals.distance[1] >= model["fgrrss:distance"] && Alloy.Globals.startDateTime <= model["fgrrss:startDateTime"] && Alloy.Globals.endDateTime >= model["fgrrss:startDateTime"]) if (0 == Alloy.Globals.pace.length) models.push(model); else for (var k = 0; k < Alloy.Globals.pace.length; k++) if (-1 != model["fgrrss:pace"].indexOf(Alloy.Globals.pace[k])) {
+        var distance = false;
+        if (0 == Alloy.Globals.distance.length) distance = true; else for (var x = 0; x < Alloy.Globals.distance.length; x++) if (Alloy.Globals.distance[x][0] <= model["fgrrss:distance"] && Alloy.Globals.distance[x][1] >= model["fgrrss:distance"]) {
+            distance = true;
+            break;
+        }
+        if (distance && (0 == Alloy.Globals.startDateTime.length || Alloy.Globals.startDateTime <= model["fgrrss:startDateTime"] && Alloy.Globals.endDateTime >= model["fgrrss:startDateTime"])) if (0 == Alloy.Globals.pace.length) models.push(model); else for (var k = 0; k < Alloy.Globals.pace.length; k++) if (-1 != model["fgrrss:pace"].indexOf(Alloy.Globals.pace[k])) {
             models.push(model);
             break;
         }

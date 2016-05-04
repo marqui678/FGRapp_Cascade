@@ -257,7 +257,7 @@ function Controller() {
         id: "secondRow",
         top: 20,
         width: "100%",
-        height: 60,
+        height: 30,
         layout: "horizontal"
     });
     $.__views.paceView.add($.__views.secondRow);
@@ -286,7 +286,7 @@ function Controller() {
         id: "thirdRow",
         top: 20,
         width: "100%",
-        height: 60,
+        height: 30,
         layout: "horizontal"
     });
     $.__views.paceView.add($.__views.thirdRow);

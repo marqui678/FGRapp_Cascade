@@ -105,11 +105,40 @@ function parseXML(xml) {
 				model["fgrrss:distance"] = Number(distance.join(""));//.toFixed(2)
 			}
 		}
+		if (model["fgrrss:pace"] !== undefined) {
+			var paceNum = model["fgrrss:pace"].match(/\d+/g);			
+			model["lowestPace"] = paceNum == null ? paceNum: Number(paceNum[0]);
+			model["largestPace"] = paceNum == null ? paceNum: Number(paceNum[paceNum.length-1]);
+			if (model["lowestPace"] != model["largestPace"]){
+				model["paceNo"] = model["lowestPace"] + " - " + model["largestPace"] + " mph";
+			} else{
+				model["paceNo"] = model["lowestPace"] + " mph";
+			}
+			model["pace"] = model["fgrrss:pace"].substring(0,model["fgrrss:pace"].indexOf(":"));
+			if (model["fgrrss:pace"].indexOf(",") != -1){
+				model["pace"] = model["pace"] + ",...";
+			}
+		}
 		model['startDateTime'] = model['fgrrss:startDateTime'];
+		if (model['startDateTime'].indexOf("to") != -1){
+			model['startDateTime'] = model['startDateTime'].substring(0,25);
+		}
+		Alloy.Globals.test.push(model['startDateTime']);
 		var s = model['fgrrss:startDateTime'].substring(0,19);
 		model['fgrrss:startDateTime'] = new Date(s);
-		if ((Alloy.Globals.distance[0] <= model['fgrrss:distance']) && (Alloy.Globals.distance[1] >= model['fgrrss:distance'])){
-			if ((Alloy.Globals.startDateTime <= model['fgrrss:startDateTime']) && (Alloy.Globals.endDateTime >= model['fgrrss:startDateTime'])){
+		var distance = false;
+		if (Alloy.Globals.distance.length == 0) {
+			distance = true;
+		} else{
+			for (var x = 0; x < Alloy.Globals.distance.length; x++){
+				if ((Alloy.Globals.distance[x][0] <= model['fgrrss:distance']) && (Alloy.Globals.distance[x][1] >= model['fgrrss:distance'])){
+					distance = true;
+					break;
+				}
+			}
+		}
+		if (distance){
+			if ((Alloy.Globals.startDateTime.length == 0) || ((Alloy.Globals.startDateTime <= model['fgrrss:startDateTime']) && (Alloy.Globals.endDateTime >= model['fgrrss:startDateTime']))){
 				if (Alloy.Globals.pace.length == 0){
 					models.push(model);
 				} else{
@@ -117,7 +146,7 @@ function parseXML(xml) {
 						if (model['fgrrss:pace'].indexOf(Alloy.Globals.pace[k]) != -1){
 							models.push(model);
 							break;
-						};
+						}
 					}
 					    
 				}

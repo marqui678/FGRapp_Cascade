@@ -1,5 +1,5 @@
 ".item":{
-	left:0, right:0, height: 80
+	left:0, right:0, height: 100
 },
 
 "#firstLine": {
@@ -23,10 +23,13 @@
 ".line2": {
 	left: 0, right: 0, font: { fontSize: 13 }
 },
+"#paceNo": {
+	color: 'red',
+	textAlign: Ti.UI.TEXT_ALIGNMENT_RIGHT
+},
 "#pace": {
 	color: 'red'
 },
-
 '#thirdLine': {
 	left: 0, right: 0,
 	layout: "horizontal"

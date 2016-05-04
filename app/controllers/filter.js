@@ -12,151 +12,226 @@ var monthNames = ["Jan ", "Feb ", "Mar ", "Apr ", "May ", "Jun ","Jul ", "Aug ",
 })(arguments[0] || {});
 $.startDate.addEventListener('change',function(e){
 	$.endDate.minDate = e.value;
-	Alloy.Globals.startDateTime = e.value;
+	Alloy.Globals.startDateTime[0] = e.value;
 	$.dateLabel.text = monthNames[$.startDate.value.getMonth()] + $.startDate.value.getDate() + " - " + monthNames[$.endDate.value.getMonth()] + $.endDate.value.getDate(); 
+	checkApply();
 });
 $.endDate.addEventListener('change',function(e){
-	Alloy.Globals.endDateTime = e.value;
+	Alloy.Globals.startDateTime[1] = e.value;
 	$.dateLabel.text = monthNames[$.startDate.value.getMonth()] + $.startDate.value.getDate() + " - " + monthNames[$.endDate.value.getMonth()] + $.endDate.value.getDate(); 
+	checkApply();
 });
 
 $.startTimeSlider.addEventListener('touchend', function(e){
     this.value = Math.round(e.value);
     $.startTimeLabel.text = this.value;
+	checkApply();
 });
 
 $.startTimeSlider.addEventListener('change', function(e) {
     $.startTimeLabel.text = Math.round(e.value);
     $.endTimeSlider.min= e.value;
-    Alloy.Globals.startDateTime.setUTCHours(e.value,0,0,0);
+    Alloy.Globals.startDateTime[0].setUTCHours(e.value,0,0,0);
     $.dateLabel.text = monthNames[$.startDate.value.getMonth()] + $.startDate.value.getDate() + " - " + monthNames[$.endDate.value.getMonth()] + $.endDate.value.getDate() + " "
 						+ $.startTimeSlider.value + ":00 - " + $.endTimeSlider.value + ":00"; 
-
+	checkApply();
 });
 
 $.endTimeSlider.addEventListener('touchend', function(e){
     this.value = Math.round(e.value);
     $.endTimeLabel.text = this.value;
-   
+    checkApply();
 });
 
 $.endTimeSlider.addEventListener('change', function(e) {
     $.endTimeLabel.text = Math.round(e.value);
-    Alloy.Globals.endDateTime.setUTCHours($.endTimeSlider.value,0,0,0);
+    Alloy.Globals.startDateTime[1].setUTCHours($.endTimeSlider.value,0,0,0);
     $.dateLabel.text = monthNames[$.startDate.value.getMonth()] + $.startDate.value.getDate() + " - " + monthNames[$.endDate.value.getMonth()] + $.endDate.value.getDate() + " "
 						+ $.startTimeSlider.value + ":00 - " + $.endTimeSlider.value + ":00"; 
+	checkApply();
 });
-
+function checkApply(){
+	if (Alloy.Globals.pace.length ==0 && Alloy.Globals.startDateTime.length ==0 && Alloy.Globals.distance.length ==0){
+		$.apply.enabled = false;
+	} else{
+		$.apply.enabled = true;
+	}
+}
 function addPace(pace){
 	Alloy.Globals.pace.push(pace);
 	$.paceLabel.text = Alloy.Globals.pace.toString();
+	checkApply();
 }
 function removePace(pace){
 	Alloy.Globals.pace.splice(Alloy.Globals.pace.indexOf(pace),1);
 	$.paceLabel.text = Alloy.Globals.pace.toString();
+	checkApply();
 }
 function addDistance(min,max){
-	Alloy.Globals.distance = [min,max];
-	$.distanceLabel.text = min + " - " + max + " miles";
+	var distance = [min,max];
+	Alloy.Globals.distance.push(distance);
+	string = min + " - " + max + " miles ";
+	$.distanceLabel.text = $.distanceLabel.text + string;
+	checkApply();
+}
+function removeDistance(min,max){
+	for (var j=0; j<Alloy.Globals.distance.length;j++){
+		if (Alloy.Globals.distance[j][0] == min){
+			Alloy.Globals.distance.splice(j,1);
+		}
+	}
+	$.distanceLabel.text = "";
+	if (Alloy.Globals.distance.length != 0){
+		for (var i=0; i<Alloy.Globals.distance.length; i++){
+			string = Alloy.Globals.distance[i][0] + " - " + Alloy.Globals.distance[i][1] + " miles ";
+			$.distanceLabel.text = $.distanceLabel.text + string;
+		}
+	}
+	checkApply();
 }
 function ten(){
-	addDistance(10,20);
+	if (!Alloy.Globals.ten){
+		addDistance(10,20);
+	} else{
+		removeDistance(10,20);
+	}
+	Alloy.Globals.ten = !Alloy.Globals.ten;
 }
 function twenty(){
-	addDistance(20,30);
+	if (!Alloy.Globals.twenty){
+		addDistance(20,30);
+	} else{
+		removeDistance(20,30);
+	}
+	Alloy.Globals.twenty = !Alloy.Globals.twenty;
 }
 function thirty(){
-	addDistance(30,40);
+	if (!Alloy.Globals.thirty){
+		addDistance(30,40);
+	} else{
+		removeDistance(30,40);
+	}
+	Alloy.Globals.thirty = !Alloy.Globals.thirty;
 }
 function fourty(){
-	addDistance(40,50);
+	if (!Alloy.Globals.fourty){
+		addDistance(40,50);
+	} else{
+		removeDistance(40,50);
+	}
+	Alloy.Globals.fourty = !Alloy.Globals.fourty;
 }
 function fifty(){
-	addDistance(50,60);
+	if (!Alloy.Globals.fifty){
+		addDistance(50,60);
+	} else{
+		removeDistance(50,60);
+	}
+	Alloy.Globals.fifty = !Alloy.Globals.fifty;
 }
 function sixty(){
-	addDistance(60,70);
+	if (!Alloy.Globals.sixty){
+		addDistance(60,70);
+	} else{
+		removeDistance(60,70);
+	}
+	Alloy.Globals.sixty = !Alloy.Globals.sixty;
 }
 function seventy(){
-	addDistance(70,80);
+	if (!Alloy.Globals.seventy){
+		addDistance(70,80);
+	} else{
+		removeDistance(70,80);
+	}
+	Alloy.Globals.seventy = !Alloy.Globals.seventy;
 }
 function eighty(){
-	addDistance(80,90);
+	if (!Alloy.Globals.eighty){
+		addDistance(80,90);
+	} else{
+		removeDistance(80,90);
+	}
+	Alloy.Globals.eighty = !Alloy.Globals.eighty;
 }
 function ninety(){
-	addDistance(90,200);
+	if (!Alloy.Globals.ninety){
+		addDistance(90,200);
+	} else{
+		removeDistance(90,200);
+	}
+	Alloy.Globals.ninety = !Alloy.Globals.ninety;
 }
 function selfPaced(){
-	if (!selfPaced){
+	if (!Alloy.Globals.selfPaced){
 		addPace("Self Paced");
 	} else{
 		removePace("Self Paced");
 	}
-	selfPaced = !selfPaced;
+	Alloy.Globals.selfPaced = !Alloy.Globals.selfPaced;
 }
 function easy(){
-	if (!easy){
+	if (!Alloy.Globals.easy){
 		addPace("Easy");
 	} else{
 		removePace("Easy");
 	}
-	easy = !easy;
+	Alloy.Globals.easy = !Alloy.Globals.easy;
 }
 function brisk(){
-	if (!brisk){
+	if (!Alloy.Globals.brisk){
 		addPace("Brisk");
 	} else{
 		removePace("Brisk");
 	}
-	brisk = !brisk;
+	Alloy.Globals.brisk = !Alloy.Globals.brisk;
 }
 function leisurely(){
-	if (!leisurely){
+	if (!Alloy.Globals.leisurely){
 		addPace("Leisurely");
 	} else{
 		removePace("Leisurely");
 	}
-	leisurely = !leisurely;
+	Alloy.Globals.leisurely = !Alloy.Globals.leisurely;
 }
 function steady(){
-	if (!steady){
+	if (!Alloy.Globals.steady){
 		addPace("Steady");
 	} else{
 		removePace("Steady");
 	}
-	steady = !steady;
+	Alloy.Globals.steady = !Alloy.Globals.steady;
 }
 function moderate(){
-	if (!moderate){
+	if (!Alloy.Globals.moderate){
 		addPace("Moderate");
 	} else{
 		removePace("Moderate");
 	}
-	moderate = !moderate;
+	Alloy.Globals.moderate = !Alloy.Globals.moderate;
 }
 function vigorous(){
-	if (!vigorous){
+	if (!Alloy.Globals.vigorous){
 		addPace("Vigorous");
 	} else{
 		removePace("Vigorous");
 	}
-	vigorous = !vigorous;
+	Alloy.Globals.vigorous = !Alloy.Globals.vigorous;
 }
 function strenuous(){
-	if (!strenuous){
+	if (!Alloy.Globals.strenuous){
 		addPace("Strenuous");
 	} else{
 		removePace("Strenuous");
 	}
-	strenuous = !strenuous;
+	Alloy.Globals.strenuous = !Alloy.Globals.strenuous;
 }
 function superStrenuous(){
-	if (!superStrenuous){
+	if (!Alloy.Globals.superStrenuous){
 		addPace("Super Strenuous");
 	} else{
 		removePace("Super Strenuous");
 	}
-	superStrenuous = !superStrenuous;
+	Alloy.Globals.superStrenuous = !Alloy.Globals.superStrenuous;
 }
 function hidePaceView(){
 	hideView($.paceView,paceView);
@@ -174,10 +249,19 @@ function hideDateView(){
 		$.dateFold.backgroundImage = "/Filter opened.png";
 		$.startDate.minDate = new Date();
 		$.endDate.minDate = $.startDate.minDate;
-		$.startDate.value = Alloy.Globals.startDateTime;
-		$.endDate.value = Alloy.Globals.endDateTime;
-		$.startTimeSlider.value = Alloy.Globals.startDateTime.getUTCHours();
-		$.endTimeSlider.value = Alloy.Globals.endDateTime.getUTCHours();
+		$.startTimeSlider.min = 0;
+		$.startTimeSlider.max = 24;
+		$.endTimeSlider.min = 0;
+		$.endTimeSlider.max = 24;
+		if (Alloy.Globals.startDateTime.length == 0){
+			$.startDate.value = $.startDate.minDate;
+			$.endDate.value = $.endDate.minDate;
+		} else{
+			$.startDate.value = Alloy.Globals.startDateTime[0];
+			$.endDate.value = Alloy.Globals.startDateTime[1];
+			$.startTimeSlider.value = Alloy.Globals.startDateTime[0].getUTCHours();
+			$.endTimeSlider.value = Alloy.Globals.startDateTime[1].getUTCHours();
+		}
 	} else{
 		$.dateFold.backgroundImage = "/Filter open.png";
 	}
@@ -219,23 +303,35 @@ function showVertical(view) {
     view.show();
 }
 function initiate(){
-	$.paceLabel.text = Alloy.Globals.pace.toString();
-	$.dateLabel.text = monthNames[Alloy.Globals.startDateTime.getMonth()] + Alloy.Globals.startDateTime.getDate() + " - " + monthNames[Alloy.Globals.endDateTime.getMonth()] + Alloy.Globals.endDateTime.getDate() + " "
-						+ Alloy.Globals.startDateTime.getUTCHours() + ":00 - " + Alloy.Globals.endDateTime.getUTCHours() + ":00"; 
-	$.distanceLabel.text = Alloy.Globals.distance[0] + " - " + Alloy.Globals.distance[1] + " miles";
+	if (Alloy.Globals.pace.length == 0){
+		$.paceLabel.text = "";
+	} else{
+		$.paceLabel.text = Alloy.Globals.pace.toString();
+	}
+	if (Alloy.Globals.startDateTime.length == 0){
+		$.dateLabel.text = "";
+	} else{
+		$.dateLabel.text = monthNames[Alloy.Globals.startDateTime[0].getMonth()] + Alloy.Globals.startDateTime[0].getDate() + " - " + monthNames[Alloy.Globals.startDateTime[1].getMonth()] + Alloy.Globals.startDateTime[1].getDate() + " "
+						+ Alloy.Globals.startDateTime[0].getUTCHours() + ":00 - " + Alloy.Globals.startDateTime[1].getUTCHours() + ":00"; 
+	}
+	$.distanceLabel.text = "";
+	if (Alloy.Globals.distance.length != 0){
+		for (var i=0; i<Alloy.Globals.distance.length; i++){
+			string = Alloy.Globals.distance[i][0] + " - " + Alloy.Globals.distance[i][1] + " miles ";
+			$.distanceLabel.text = $.distanceLabel.text + string;
+		}
+	}
 }
 function resetFilter(){
-Alloy.Globals.startDateTime = new Date();
-Alloy.Globals.endDateTime = new Date();
-Alloy.Globals.startDateTime.setUTCHours(0);
-Alloy.Globals.endDateTime.setMonth(Alloy.Globals.startDateTime.getMonth() + 6);
-Alloy.Globals.pace = [];
-Alloy.Globals.distance = [0,100];
-initiate();
+	Alloy.Globals.startDateTime = [];
+	Alloy.Globals.pace = [];
+	Alloy.Globals.distance = [];
+	initiate();
 }
 function applyFilter(){
-	Alloy.Collections.feed.fetch({
+		Alloy.Collections.feed.fetch({
 		url: "https://www.cascade.org/DailyRides/rss.xml"
 		});
-	$.fwin.close();
+		$.fwin.close();
+	
 }
