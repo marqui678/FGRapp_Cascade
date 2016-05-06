@@ -99,6 +99,8 @@ function parseXML(xml) {
 			model["longitude"] = parseFloat(location[0]);
 			model["latitude"] = parseFloat(location[1]);
 		}
+<<<<<<< HEAD
+=======
 		
 		//Generate lowestPace element which would be used for pace sorting.
 		//Will be null for Self Paced
@@ -108,21 +110,17 @@ function parseXML(xml) {
 		}
 		
 		//Convert distance to number so that it would be easy for sort and filter by distance
+>>>>>>> master
 		if (model["fgrrss:distance"] !== undefined) {
 			var distance = model["fgrrss:distance"].match(/\d+./g);	
 			if (distance !== null && distance.length >= 0) {
 				model["fgrrss:distance"] = Number(distance.join(""));//.toFixed(2)
 			}
 		}
-		
-		//Convert fgrrss:startDateTime string to date
-		if (model['fgrrss:startDateTime'] !== undefined) {
-			model['startDateTime'] = model['fgrrss:startDateTime'];
-			var s = model['fgrrss:startDateTime'].substring(0,19);
-			model['fgrrss:startDateTime'] = new Date(s);
-		}
-		
-		//Start filter
+<<<<<<< HEAD
+		model['startDateTime'] = model['fgrrss:startDateTime'];
+		var s = model['fgrrss:startDateTime'].substring(0,19);
+		model['fgrrss:startDateTime'] = new Date(s);
 		if ((Alloy.Globals.sDistance <= model['fgrrss:distance']) && (Alloy.Globals.eDistance >= model['fgrrss:distance'])){
 			if ((Alloy.Globals.startDateTime <= model['fgrrss:startDateTime']) && (Alloy.Globals.endDateTime >= model['fgrrss:startDateTime'])){
 				if (Alloy.Globals.pace.length == 0){
@@ -137,6 +135,16 @@ function parseXML(xml) {
 					    
 				}
 			}
+=======
+		
+		//Convert fgrrss:startDateTime string to date
+		if (model['fgrrss:startDateTime'] !== undefined) {
+			model['startDateTime'] = new Date(model['fgrrss:startDateTime'].substring(0,19));
+		}
+		
+		if (Alloy.Globals.pace == "" || model['fgrrss:pace'].indexOf(Alloy.Globals.pace) != -1){
+			models.push(model);
+>>>>>>> master
 		}
 	}
 	return models;

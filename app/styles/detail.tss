@@ -20,8 +20,14 @@
 }
 
 '#textOnMap':{
-	top : '103pt',
-	height : '150pt'
+	top : '197pt',
+	height : '56pt',
+	backgroundGradient: {
+        type: 'linear',
+        startPoint: { x: '50%', y: '0%' },
+        endPoint: { x: '50%', y: '100%' },
+        colors: [ { color: '#70D6EFE5', offset: 0.0}, { color: '#70B9FBE1', offset: 1.0 }],
+    }
 }
 
 '#descriptioinView':{
@@ -54,10 +60,10 @@
 	font: { fontSize:16 },
 	color: '#646464',
 	left:'7pt',
-	bottom: '25pt',
+	bottom: '20pt',
 }
 '#pace':{
-	bottom: '10pt',
+	bottom: '5pt',
 	left:'7pt',
 	font: { fontSize:16 },
 	
@@ -82,14 +88,15 @@
 	left:'7pt',
 	color:'#646464'
 }
+
 '#description':{
 	top:'10pt',
 	font: { fontSize:16 },
 	right:'7pt',
 	color: '#2C2A29',
 	left:'7pt',
-	
 }
+
 '#readMore':{
 	bottom:9,
 	right:'9pt',
@@ -107,12 +114,14 @@
 	left:'7pt',
 	color:'#646464'
 }
+
 '#directions':{
 	top: 2,
 	color:'#006F44',
 	font: { fontSize:12 },
 	left:'110pt'
 }
+
 '#address1':{
 	top: 20,
 	left:'7pt',
@@ -121,6 +130,7 @@
 	color:'#646464',
 	textAlign: 'Titanium.UI.TEXT_ALIGNMENT_LEFT',
 }
+
 '#address2':{
 	top: 40,
 	left:'7pt',
@@ -136,6 +146,7 @@
 	top:'5pt',
 	left:'7pt'
 }
+
 '#leader':{
 	//top:440,
 	height:'20pt',
