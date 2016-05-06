@@ -2,3 +2,6 @@
 ".container" : {
   
 }
+'#win':{
+	barColor: "#43B02A",
+}
