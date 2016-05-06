@@ -3,13 +3,21 @@
  * @param  {Object} args arguments passed to the controller
  */
 var model = arguments[0] || {};
-$.startDateTime.text = model.get('fgrrss:startDateTime').toString();
-$.description.text = model.get('description').replace(/<\/?[^>]+(>|$)/g, "").toString();
-$.address.text = model.get('fgrrss:startAddress').toString();
+// require the built-in MomentJS library
+var moment = require('alloy/moment');
+$.startDateTime.text = moment(model.get('startDateTime'),moment.ISO_8601).format('LLLL').toString();
+$.description.text = '                       '+model.get('description').replace(/<\/?[^>]+(>|$)/g, "").toString();
 $.pace.text = model.get('fgrrss:pace').toString();
 $.leader.text = model.get('fgrrss:rideLeader').toString();
-$.distance.text = model.get('fgrrss:distance').toString();
+$.distance1.text = model.get('fgrrss:distance').toString();
+$.distance2.text = model.get('fgrrss:distance').toFixed(2).toString().substring(getPosition('.')+1)+'mi';
 $.title = model.get('title').toString();
+
+var address = model.get('fgrrss:startAddress').toString();
+//$.address.text = model.get('fgrrss:startAddress').toString();
+$.address1.text = address.split('\n')[0];
+$.address2.text = address.substring(getPosition(address, '\n',1) + 1);
+
 var contact = unescape(model.get('fgrrss:contact'));
 
 function getPosition(str, m, i) {
@@ -23,9 +31,16 @@ var emailEndPosition = getPosition(contact, '<',13);
 var phoneStartPosition = getPosition(contact, '>',18) + 1;
 var phoneEndPosition = getPosition(contact, '<',19);
 
-$.email.text = contact.substring(emailStartPositioin, emailEndPosition);
-$.phone.text = contact.substring(phoneStartPosition, phoneEndPosition);
 
+var string1 = contact.substring(emailStartPositioin, emailEndPosition);
+var string2 = contact.substring(phoneStartPosition, phoneEndPosition);
+if (string1.indexOf('@') >= 0){
+	$.email.text = string1;
+	$.phone.text = string2;
+}else{
+	$.email.text = string2;
+	$.phone.text = string1;
+}
 
 var Map = OS_MOBILEWEB ? Ti.Map : require('ti.map');
 /**
@@ -79,7 +94,7 @@ function close() {
 	'use strict';
 
 	// close the window, showing the master window behind it
-	$.win.close();
+	$.window.close();
 }
 
 var link = 'https://www.cascade.org'+model.get('link');

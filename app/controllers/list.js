@@ -41,7 +41,9 @@ function refresh(e) {
 
 	// MobileWeb can't load the remote file because we don't have access control set-up
 	var url = OS_MOBILEWEB ? Ti.Filesystem.resourcesDirectory + 'feed.xml' : Alloy.CFG.url;
-
+	for (var i = 0; i < 2; i++){
+			console.log(i);
+			}
 	// let the collection fetch data from it's data source
 		Alloy.Collections.feed.fetch({
 		url: url,
@@ -58,12 +60,13 @@ function refresh(e) {
 
 function transform(model) {
 	'use strict';
+		
 	return {
 		title: model.get('title'),
-		startDateTime: moment(model.get('fgrrss:startDateTime'),moment.ISO_8601).format('LLLL'),
+		startDateTime: moment(model.get('startDateTime'),moment.ISO_8601).format('LLLL'),
 		link:model.get('link'),
 		pace:model.get('fgrrss:pace'),
-		distance:model.get('fgrrss:distance')
+		distance:model.get('fgrrss:distance').toFixed(2) + " miles"
 	};
 }
 
@@ -98,4 +101,11 @@ function filter(){
  */
 function openMapview() {
 	Alloy.Globals.Navigator.open('map', {});
+}
+
+/**
+ *Open sort view 
+ */
+function openSortView() {
+	Alloy.Globals.Navigator.open('sort', {});
 }
