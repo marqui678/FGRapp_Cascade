@@ -3,7 +3,10 @@
 		<View>
 			<TextField id="searchField"/>
 			<Button id="btnSearch" onClick="searchLocation" top="0" right="0">Search</Button>
-			<Label onClick="useCurrentLoc" id="curLocLabel">Current location</Label>
+			<View id="curLoc" onClick="useCurrentLoc" layout="horizontal">
+				<ImageView id="curLocImage" image="/images/re-centerNotFilled.png" />				
+				<Label id="curLocLabel">Current location</Label>		
+			</View>			
 		</View>
 	</Window>
 </Alloy>

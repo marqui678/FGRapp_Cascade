@@ -1,20 +1,48 @@
-<Alloy>	
-			<Window class="container">
-				<!-- Android: Set ActionBar 'back button' to show and use close() callback -->
-				<ActionBar platform="android" displayHomeAsUp="true" onHomeIconItemSelected="close" />
-				<Module id="mapview" module="ti.map" method="createView" platform="android,ios,windows" />
-				<View ns="Ti.Map" id="mapview" platform="mobileweb" />
+<Alloy>
+	<Window class="container" id='window' backButtonTitle="back">
+		<!-- Android: Set ActionBar 'back button' to show and use close() callback -->
+		<ActionBar platform="android" displayHomeAsUp="true" onHomeIconItemSelected="close" />
+		
+		
+		<View>
+			<Label backgroundColor = "#80FF0000">hello world</Label>
+		</View>
+		<ScrollView id='scrollview' >
+			<!--Main view of the detail page-->
+			<Module id="mapview" module="ti.map" method="createView" platform="android,ios,windows" />
+			<View ns="Ti.Map" id="mapview" platform="mobileweb"/>
+			<View id = 'textOnMap'>
 				<Label id = 'startDateTime'/>
+				<Label id="distance1"/>
+				<Label id="distance2"/>
 				<Label id="pace"/>
-				<Label id="distance"/>
-				<Label id = 'address'/>
-				<Label id = 'leader'/>
+			</View>
+			
+			<View id = 'descriptioinView'>
+				<Label id = 'descriptionLabel'>Description</Label>
 				<Label id = 'description'/>
-				<Button onClick="select" id = 'readMore'>Read full descriptions on ride registation page</Button>
+				<Button onClick="select" id = 'readMore'>Read more on cascade.org</Button>
+			</View>
+			
+			<View id='addressView'>
+				<Label id='locationLabel'>Start location</Label>
+				<Label id = 'address1' />
+				<Label id = 'address2' />
 				<Label id = 'directions' onClick="openMap">Get directions</Label>
+			</View>
+			
+			
+			<View id='contactView'>
+				<Label id='leaderLabel'>Ride Leader(s)</Label>
+				<Label id = 'leader'/>
 				<Label id = 'email' onClick="emailContact"/>
 				<Label id = 'phone' onClick="callContact"/>
-				<Button onClick="select" bottom="0">Register for free on cascade.org</Button>
-			</Window>
-	
+			</View>
+			
+		</ScrollView>
+		<!--Register botton on bottom-->
+		<View id='registerView' >
+			<Button id = 'register' onClick="select">Register for free on cascade.org</Button>
+		</View>
+	</Window>
 </Alloy>

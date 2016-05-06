@@ -1,8 +1,66 @@
 <Alloy>
-	<Window id="fwin" title='Filter'>
-		<Button id="test" class="testButton" onClick="testFilter">Test</Button>
-		<Picker id="pacePicker" top="50" selectionIndicator="true" useSpinner="true">
-            
-        </Picker>
+	<Window id="fwin" title='Filter' layout="vertical">
+		<ScrollView id="scrollView" layout="vertical" showVerticalScrollIndicator="true" showHorizontalScrollIndicator="true" height="100%" width="100%">
+			<View id="paceRow" top="0" height="30" layout="horizontal">
+				<Button top="0" id="pace" height="30" width="50" onClick="hidePaceView">Pace</Button>
+				<Label top="0" left="15" height="30" width="270" id="paceLabel" onClick="hideDateView"></Label>
+				<Button id="paceFold" width="5" backgroundImage="Filter open.png" onClick="hidePaceView"></Button>
+			</View>
+			<View id="paceView" top="0" left="0" right="0" width="100%" height="50%" layout="vertical" visible="false">
+				<View id="firstRow" width="100%" height="60" layout="horizontal">
+					<Button left="15" onClick="selfPaced">Self Paced</Button>
+					<Button left="0" onClick="easy">Easy</Button>
+					<Button left="0" onClick="leisurely">Leisurely</Button>
+				</View>
+				<View id="secondRow" top="20" width="100%" height="60" layout="horizontal">
+						<Button left="15" onClick="steady">Steady</Button>
+						<Button left="20" onClick="moderate">Moderate</Button>
+						<Button left="25" onClick="brisk">Brisk</Button>
+				</View>
+				<View id="thirdRow" top="20" width="100%" height="60" layout="horizontal">
+							<Button left="15" onClick="vigorous">Vigorous</Button>
+							<Button left="20" onClick="strenuous">Strenuous</Button>
+							<Button left="25" onClick="superStrenuous">Super Strenuous</Button>
+				</View>
+			</View>   
+			<View id="dateRow" top="0" width="100%" layout="horizontal" height="30">
+	        	<Button top="0" id="date" class="testButton" onClick="hideDateView">DateTime</Button>
+	        	<Label top="0" left="15" onClick="hideDateView" id="dateLabel"></Label>
+	        	<Button id="dateFold" left="290" backgroundImage="Filter open.png" onClick="hideDateView"></Button>
+			</View>
+	        <View id="dateView" top="0" layout="vertical" visible="false" width="100%" height="100%">
+		        <Picker top="0" id="startDate" type="Titanium.UI.PICKER_TYPE_DATE"></Picker>
+		        <View id="start" width="100%" height="30" layout="horizontal">
+		        	<Label top="0" id="startTimeLabel"></Label>
+		        	<Slider id="startTimeSlider" top="0" min="0" max="24"/>
+	        	</View>
+		        <Label top="0">To</Label>
+		        <Picker top="0" id="endDate" type="Titanium.UI.PICKER_TYPE_DATE"></Picker>
+		        <View id="end" width="100%" height="30" layout="horizontal">
+		        	<Label top="0" id="endTimeLabel"></Label>
+		        	<Slider id="endTimeSlider" max="24" top="0"/>
+		        </View>
+	        </View>
+	        <View id="distanceRow" top="0" width="100%" height="30" layout="horizontal">
+				<Button top="0" id="distance" onClick="hideDistanceView">Distance</Button>
+				<Label top="0" left="15" id="distanceLabel" onClick="hideDistanceView"></Label>
+				<Button id="distanceFold" left="290" backgroundImage="Filter open.png" onClick="hideDistanceView"></Button>
+			</View>
+			<View id="distanceView" top="0" layout="vertical" visible="false" width="100%" height="50%">
+				<View id="sDistance" height="60" layout="horizontal">
+			        <Label top="0" left="0" id="sDistanceLabel"></Label>
+			        <Slider id="sDistanceSlider" min="0" value="0" max="100" top="0"/>
+			    </View>
+			    <Label top="0">To</Label>
+			    <View id="eDistance" width="100%" height="60" layout="horizontal">
+			        <Label top="0" left="0" id="eDistanceLabel"></Label>
+			        <Slider id="eDistanceSlider" max="100" value="100" top="0" />
+			    </View>
+			</View>
+			<View top="0" width="100%" height="30" layout="horizontal">
+				<Button top="0" left="100" id="clear" onClick="clearFilter">Clear</Button>
+		        <Button top="0" left="110" id="apply" onClick="applyFilter">Apply</Button>
+		    </View>
+        </ScrollView>
 	</Window>
 </Alloy>
