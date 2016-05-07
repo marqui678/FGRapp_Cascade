@@ -1,3 +1,7 @@
+"#mainWindow": {
+	barColor: "#43B02A"
+},
+
 "#mainView": {
 	backgroundColor: "#FFFFFF",
 	height: Ti.UI.FILL,

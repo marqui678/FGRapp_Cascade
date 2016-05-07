@@ -1,13 +1,17 @@
 // Arguments passed into this controller can be accessed via the `$.args` object directly or:
 var args = $.args;
 
-$.searchWindow.addEventListener('open',function(evt){
-    evt.source.activity.actionBar.hide();
+$.searchBar.addEventListener('return', function(e) {
+	searchLocation();
 });
 
+function cancelSearch(e) {
+	$.searchWindow.close();
+}
+
 function searchLocation() {
-	$.searchField.blur();
-	var inputLoc = $.searchField.value;
+	$.searchBar.blur();
+	var inputLoc = $.searchBar.value;
 	// get longitude and latitude by address
 	Ti.Geolocation.forwardGeocoder(inputLoc, function(_resp){
 		if (_resp.success) {
@@ -15,7 +19,7 @@ function searchLocation() {
 			args.regionCenter.latitude = Number(_resp.latitude);
 			args.regionCenter.longitude = Number(_resp.longitude);
 			args.regionCenter.displayAddress = _resp.displayAddress;
-			//TODO Add annotation for search location
+
 			args.prevWindow.fireEvent('loc_updated', {isCurrentLoc: false});
 			$.searchWindow.close();			
 		}
@@ -26,7 +30,7 @@ function searchLocation() {
 }
 
 function useCurrentLoc() {
-	$.searchField.blur();
+	$.searchBar.blur();
 	//Use current location as region center
 	Titanium.Geolocation.getCurrentPosition(function(e) {
 	    Ti.Geolocation.accuracy = Ti.Geolocation.ACCURACY_HIGH;

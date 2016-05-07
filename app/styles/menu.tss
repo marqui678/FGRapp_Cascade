@@ -1,23 +1,24 @@
 "#menu":{
 	height:Ti.UI.FILL, 
 	width:Ti.UI.FILL,
-	backgroundColor: "#4F4F4F"
+	backgroundColor: "#43B02A"
 }
 
 ".menubanner":{
 	top:"0",
 	height:"100",
-	backgroundImage:"/coffee.png"
+	backgroundImage:"/CBCEFHorizontal361_Transparent.png",
+	backgroundColor: "#fff"
 }
 
 ".menuoptions":{
-	backgroundColor:"#343434",
+	//backgroundColor:"#343434",
 	top:"100",
 	height: Ti.UI.SIZE
 }
 
 ".menurow":{
-	backgroundColor:"#414141",
+	//backgroundColor:"#414141",
 	height:"50",
 	layout:"horizontal"
 }

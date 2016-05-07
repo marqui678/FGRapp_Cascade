@@ -47,12 +47,13 @@ thisWin.addEventListener('open',function(e){
 	//actionBarExtra.titleColor = "blue";
 	
 	actionBarHelper.displayHomeAsUp(true);
-	actionBarExtra.setHomeAsUpIcon("/images/menuLight.png");
+	actionBarExtra.setHomeAsUpIcon("/images/ic_menu_light.png");
 });
 
 function centeredByCurrentLocation() {
 	if (Ti.Geolocation.locationServicesEnabled === false) {
-		alert("our device has geo turned off - turn it on.");
+		alert("The device has geo turned off. Use default location.");
+		setRegionCenterAndSortByLoc(Alloy.Globals.defaultLocation);
 	}
 	
 	Titanium.Geolocation.getCurrentPosition(function(e) {
@@ -60,26 +61,29 @@ function centeredByCurrentLocation() {
 	    if (e.error)
 	    {
 	        alert('Current location not found. Use default location');	
-	    	regionCenter.latitude = Alloy.Globals.defaultLocation.latitude;
-	    	regionCenter.longitude = Alloy.Globals.defaultLocation.longitude;	
+	    	setRegionCenterAndSortByLoc(Alloy.Globals.defaultLocation);    
 	    }
 	    else {
-	    	//Set regionCenter with current location
-	    	regionCenter.latitude = e.coords.latitude;
-	    	regionCenter.longitude = e.coords.longitude;	       
+	    	//Set regionCenter with current location and sort	
+	    	setRegionCenterAndSortByLoc(e.coords);       
         }
-        
-        //Set map region by region center
-        setMapRegion(regionCenter);
-        
-        //TODO If have combined view, only set distance when loading combined view or after search
-        //Set distance to region center for each model
-        setDistanceToLocation(rideData, regionCenter);
-        //Sort models by distanceToLoc
-        Alloy.Collections.feed.setSortField("distanceToLocation", "ASC");
-		Alloy.Collections.feed.sort();
 	});
 };
+
+function setRegionCenterAndSortByLoc(centerLoc) {
+	regionCenter.latitude = centerLoc.latitude;
+	regionCenter.longitude = centerLoc.longitude;
+	
+    //Set map region by region center
+    setMapRegion(regionCenter);
+    
+    //TODO If have combined view, only set distance when loading combined view or after search
+    //Set distance to region center for each model
+    setDistanceToLocation(rideData, regionCenter);
+    //Sort models by distanceToLoc
+    Alloy.Collections.feed.setSortField("distanceToLocation", "ASC");
+	Alloy.Collections.feed.sort();
+}
 
 function centeredBySearchLocation() {
 	setMapRegion(regionCenter);
@@ -232,7 +236,7 @@ $.mainWindow.addEventListener('loc_updated', function(e){
 			searchLocAnnotation.latitude = regionCenter.latitude;
 			searchLocAnnotation.longitude = regionCenter.longitude;
 			searchLocAnnotation.title = regionCenter.displayAddress;
-			searchLocAnnotation.image = "images/pinSelected.png";
+			searchLocAnnotation.image = "ic_place_3x.png";
 		}
 	}
 	else {

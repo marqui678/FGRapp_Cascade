@@ -4,24 +4,26 @@
 			<MenuItem onClick="cancel" title="Cancel" id="cancelSortBtn" showAsAction="Ti.Android.SHOW_AS_ACTION_ALWAYS" />
 		</Menu>
 		<View id="sortByInfo">
-			<Label id="sortBy">SORT BY</Label>
-			<Label id="sortByResult">Distance: short to long</Label>		
+			<Label id="sortBy" class="firstLevelFont">SORT BY</Label>
+			<Label id="sortByResult" class="secondLevelFont">Distance: short to long</Label>		
 		</View>
 		<ListView id="sortOptionsList" defaultItemTemplate="elementTemplate" onItemclick="selectSort">
 		    <Templates>
-		        <ItemTemplate name="elementTemplate" height="50">		            
-		            <View id="sortOptions" layout="horizontal">
+		        <ItemTemplate name="elementTemplate" id="listTemplate">
+		            <View id="sortOptionsLeft" layout="horizontal">
 		            	<ImageView bindId="radioBtn" id="radioBtn" />
-		                <Label bindId="title" id="title" />
-		                <Label bindId="direction" id="direction" color="blue" />
+		                <Label bindId="title" id="title" class="firstLevelFont"/>
+	                </View>
+	                <View id="sortOptionsRight" layout="horizontal" onClick="setSortDirection">
+		                <Label bindId="direction" id="direction" class="secondLevelFont"/>
 		                <ImageView bindId="arrowBtn" id="arrowBtn" onClick="setSortDirection"/>
 		            </View>
 		        </ItemTemplate>
 		    </Templates>
-			<ListSection>
+			<ListSection id="listSection">
 			</ListSection>
 		</ListView>
-		<Button onClick="applySort">Apply</Button>
+		<Button id="applyBtn" onClick="applySort">Apply</Button>
 
 	</Window>
 </Alloy>
