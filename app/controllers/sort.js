@@ -1,10 +1,10 @@
 // Arguments passed into this controller can be accessed via the `$.args` object directly or:
 var args = $.args;
 
-var radioBtn = "images/checkbox.png";
-var selectedRadioBtn = "images/checkboxSelected.png";
-var arrowBtn = "images/sortIncrease.png";
-var downArrowBtn = "images/sortDecrease.png";
+var radioBtn = "images/ic_radio_button_off.png";
+var selectedRadioBtn = "images/ic_radio_button_on.png";
+var arrowBtn = "images/ic_arrow_drop_up.png";
+var downArrowBtn = "images/ic_arrow_drop_down.png";
 
 var prevSelectedSortBackup = JSON.stringify(Alloy.Globals.selectedSort);
 

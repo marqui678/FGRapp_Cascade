@@ -43,7 +43,7 @@
     </ios>
     <android xmlns:android="http://schemas.android.com/apk/res/android">
         <manifest>
-            <application>
+            <application android:theme="@style/FGRThemeWithActionBar">
                 <meta-data
                     android:name="com.google.android.maps.v2.API_KEY" android:value="AIzaSyC4oyNE4HnNJ2Hi6vJ1bY9UU76acS1iod4"/>
             </application>
