@@ -1,8 +1,8 @@
+$.fwin.leftNavButton = Ti.UI.createView();
 var moment = require('alloy/moment');
 var paceView = false;
 var dateView = false;
 var distanceView = false;
-
 var monthNames = ["Jan ", "Feb ", "Mar ", "Apr ", "May ", "Jun ","Jul ", "Aug ", "Sep ", "Oct ", "Nov ", "Dec "];
 (function constructor(args) {
 	hideVertical($.paceView);
@@ -10,69 +10,59 @@ var monthNames = ["Jan ", "Feb ", "Mar ", "Apr ", "May ", "Jun ","Jul ", "Aug ",
 	hideVertical($.distanceView);
 	initiate();
 })(arguments[0] || {});
+
 $.startDate.addEventListener('change',function(e){
 	$.endDate.minDate = e.value;
 	Alloy.Globals.startDateTime[0] = e.value;
-	$.dateLabel.text = monthNames[$.startDate.value.getMonth()] + $.startDate.value.getDate() + " - " + monthNames[$.endDate.value.getMonth()] + $.endDate.value.getDate(); 
-	checkApply();
+	Alloy.Globals.startDateTime[0].setUTCHours($.startTimeSlider.value,0,0,0);
+	$.dateLabel.text = monthNames[$.startDate.value.getUTCMonth()] + $.startDate.value.getUTCDate() + " - " + monthNames[$.endDate.value.getUTCMonth()] + $.endDate.value.getUTCDate() + " "
+						+ $.startTimeSlider.value + ":00 - " + $.endTimeSlider.value + ":00"; 
 });
 $.endDate.addEventListener('change',function(e){
 	Alloy.Globals.startDateTime[1] = e.value;
-	$.dateLabel.text = monthNames[$.startDate.value.getMonth()] + $.startDate.value.getDate() + " - " + monthNames[$.endDate.value.getMonth()] + $.endDate.value.getDate(); 
-	checkApply();
+	Alloy.Globals.startDateTime[1].setUTCHours($.endTimeSlider.value,0,0,0);
+	$.dateLabel.text = monthNames[$.startDate.value.getUTCMonth()] + $.startDate.value.getUTCDate() + " - " + monthNames[$.endDate.value.getUTCMonth()] + $.endDate.value.getUTCDate() + " "
+						+ $.startTimeSlider.value + ":00 - " + $.endTimeSlider.value + ":00"; 
 });
 
 $.startTimeSlider.addEventListener('touchend', function(e){
     this.value = Math.round(e.value);
     $.startTimeLabel.text = this.value;
-	checkApply();
 });
 
 $.startTimeSlider.addEventListener('change', function(e) {
     $.startTimeLabel.text = Math.round(e.value);
     $.endTimeSlider.min= e.value;
     Alloy.Globals.startDateTime[0].setUTCHours(e.value,0,0,0);
-    $.dateLabel.text = monthNames[$.startDate.value.getMonth()] + $.startDate.value.getDate() + " - " + monthNames[$.endDate.value.getMonth()] + $.endDate.value.getDate() + " "
+    $.dateLabel.text = monthNames[$.startDate.value.getUTCMonth()] + $.startDate.value.getUTCDate() + " - " + monthNames[$.endDate.value.getUTCMonth()] + $.endDate.value.getUTCDate() + " "
 						+ $.startTimeSlider.value + ":00 - " + $.endTimeSlider.value + ":00"; 
-	checkApply();
 });
 
 $.endTimeSlider.addEventListener('touchend', function(e){
     this.value = Math.round(e.value);
     $.endTimeLabel.text = this.value;
-    checkApply();
 });
 
 $.endTimeSlider.addEventListener('change', function(e) {
     $.endTimeLabel.text = Math.round(e.value);
-    Alloy.Globals.startDateTime[1].setUTCHours($.endTimeSlider.value,0,0,0);
-    $.dateLabel.text = monthNames[$.startDate.value.getMonth()] + $.startDate.value.getDate() + " - " + monthNames[$.endDate.value.getMonth()] + $.endDate.value.getDate() + " "
+    Alloy.Globals.startDateTime[1].setUTCHours(e.value,0,0,0);
+    $.dateLabel.text = monthNames[$.startDate.value.getUTCMonth()] + $.startDate.value.getUTCDate() + " - " + monthNames[$.endDate.value.getUTCMonth()] + $.endDate.value.getUTCDate() + " "
 						+ $.startTimeSlider.value + ":00 - " + $.endTimeSlider.value + ":00"; 
-	checkApply();
 });
-function checkApply(){
-	if (Alloy.Globals.pace.length ==0 && Alloy.Globals.startDateTime.length ==0 && Alloy.Globals.distance.length ==0){
-		$.apply.enabled = false;
-	} else{
-		$.apply.enabled = true;
-	}
-}
+
 function addPace(pace){
 	Alloy.Globals.pace.push(pace);
 	$.paceLabel.text = Alloy.Globals.pace.toString();
-	checkApply();
 }
 function removePace(pace){
 	Alloy.Globals.pace.splice(Alloy.Globals.pace.indexOf(pace),1);
 	$.paceLabel.text = Alloy.Globals.pace.toString();
-	checkApply();
 }
 function addDistance(min,max){
 	var distance = [min,max];
 	Alloy.Globals.distance.push(distance);
 	string = min + " - " + max + " miles ";
 	$.distanceLabel.text = $.distanceLabel.text + string;
-	checkApply();
 }
 function removeDistance(min,max){
 	for (var j=0; j<Alloy.Globals.distance.length;j++){
@@ -87,7 +77,6 @@ function removeDistance(min,max){
 			$.distanceLabel.text = $.distanceLabel.text + string;
 		}
 	}
-	checkApply();
 }
 function ten(){
 	if (!Alloy.Globals.ten){
@@ -256,6 +245,12 @@ function hideDateView(){
 		if (Alloy.Globals.startDateTime.length == 0){
 			$.startDate.value = $.startDate.minDate;
 			$.endDate.value = $.endDate.minDate;
+			Alloy.Globals.startDateTime[0] = $.startDate.value;
+			Alloy.Globals.startDateTime[1] = $.endDate.value;
+			$.startTimeSlider.value = 0;
+			$.endTimeSlider.value = 0;
+			Alloy.Globals.startDateTime[0].setUTCHours(0,0,0,0);
+			Alloy.Globals.startDateTime[1].setUTCHours(0,0,0,0);
 		} else{
 			$.startDate.value = Alloy.Globals.startDateTime[0];
 			$.endDate.value = Alloy.Globals.startDateTime[1];
@@ -311,7 +306,7 @@ function initiate(){
 	if (Alloy.Globals.startDateTime.length == 0){
 		$.dateLabel.text = "";
 	} else{
-		$.dateLabel.text = monthNames[Alloy.Globals.startDateTime[0].getMonth()] + Alloy.Globals.startDateTime[0].getDate() + " - " + monthNames[Alloy.Globals.startDateTime[1].getMonth()] + Alloy.Globals.startDateTime[1].getDate() + " "
+		$.dateLabel.text = monthNames[Alloy.Globals.startDateTime[0].getUTCMonth()] + Alloy.Globals.startDateTime[0].getUTCDate() + " - " + monthNames[Alloy.Globals.startDateTime[1].getUTCMonth()] + Alloy.Globals.startDateTime[1].getUTCDate() + " "
 						+ Alloy.Globals.startDateTime[0].getUTCHours() + ":00 - " + Alloy.Globals.startDateTime[1].getUTCHours() + ":00"; 
 	}
 	$.distanceLabel.text = "";
@@ -328,10 +323,29 @@ function resetFilter(){
 	Alloy.Globals.distance = [];
 	initiate();
 }
+function cancelFilter(){
+	$.fwin.close();
+}
+function afterFetch(col, res) {
+	if (Alloy.Collections.feed.models.length == 0){
+		var dialog = Ti.UI.createAlertDialog({
+		    message: 'No Result',
+		    ok: 'OK',
+  		});
+  		dialog.addEventListener('click', function(e){
+      		Alloy.Globals.Navigator.open("filter",$.fwin);
+      		
+  		});
+  		dialog.show();
+	}	
+}
 function applyFilter(){
 		Alloy.Collections.feed.fetch({
-		url: "https://www.cascade.org/DailyRides/rss.xml"
+		url: "https://www.cascade.org/DailyRides/rss.xml",
+		success: afterFetch,
+		error: afterFetch
 		});
+		
 		$.fwin.close();
-	
+		
 }

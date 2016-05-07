@@ -1,7 +1,7 @@
-
-".testButton":{
-	left:0
+'#fwin':{
+	barColor: "#43B02A",
 }
+
 "Picker":{
 	width:Titanium.UI.FILL,
 	height:Titanium.UI.SIZE,

@@ -91,7 +91,12 @@ function parseXML(xml) {
 			}
 			
 		}
-		
+		for (var y=0;y<model["title"].toString().length;y++){
+			if (model["title"].toString().substring(y,y+1) != " "){
+				model["title"] = model["title"].toString().substring(y,model["title"].length);
+				break;
+			}
+		}
 		//Parse <georss:point> to latitude and longitude
 		if (model["georss:point"] !== undefined) {
 			var pos = model["georss:point"];
@@ -104,20 +109,29 @@ function parseXML(xml) {
 			if (distance !== null && distance.length >= 0) {
 				model["fgrrss:distance"] = Number(distance.join(""));//.toFixed(2)
 			}
+			model["distance1"] = model['fgrrss:distance'].toString().substring(0,2);
+			model["distance2"] = model['fgrrss:distance'].toFixed(2).toString().substring(2,5)+'mi';
 		}
 		if (model["fgrrss:pace"] !== undefined) {
 			var paceNum = model["fgrrss:pace"].match(/\d+/g);			
 			model["lowestPace"] = paceNum == null ? paceNum: Number(paceNum[0]);
 			model["largestPace"] = paceNum == null ? paceNum: Number(paceNum[paceNum.length-1]);
 			if (model["lowestPace"] != model["largestPace"]){
-				model["paceNo"] = model["lowestPace"] + " - " + model["largestPace"] + " mph";
+				model["paceNumber"] = model["lowestPace"] + "-" + model["largestPace"] + " mph";
 			} else{
-				model["paceNo"] = model["lowestPace"] + " mph";
+				model["paceNumber"] = model["lowestPace"] + " mph";
 			}
-			model["pace"] = model["fgrrss:pace"].substring(0,model["fgrrss:pace"].indexOf(":"));
-			if (model["fgrrss:pace"].indexOf(",") != -1){
-				model["pace"] = model["pace"] + ",...";
+			paceTemp = model["fgrrss:pace"].split(":");
+			pace = [];
+			pace[0] = paceTemp[0];
+			if (paceTemp.length > 2){
+				for (var x=1;x<paceTemp.length-1;x++){
+					pace[x] = paceTemp[x].substring(13,paceTemp[x].length);
+				}
 			}
+			model["pace"]=pace.join();
+			
+			
 		}
 		model['startDateTime'] = model['fgrrss:startDateTime'];
 		if (model['startDateTime'].indexOf("to") != -1){
@@ -138,7 +152,7 @@ function parseXML(xml) {
 			}
 		}
 		if (distance){
-			if ((Alloy.Globals.startDateTime.length == 0) || ((Alloy.Globals.startDateTime <= model['fgrrss:startDateTime']) && (Alloy.Globals.endDateTime >= model['fgrrss:startDateTime']))){
+			if ((Alloy.Globals.startDateTime.length == 0) || ((Alloy.Globals.startDateTime[0] <= model['fgrrss:startDateTime']) && (Alloy.Globals.startDateTime[1] >= model['fgrrss:startDateTime']))){
 				if (Alloy.Globals.pace.length == 0){
 					models.push(model);
 				} else{

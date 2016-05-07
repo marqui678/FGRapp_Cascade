@@ -8,19 +8,19 @@
 			</View>
 			<View id="paceView" top="0" left="0" right="0" height="50%" layout="vertical" visible="false">
 				<View id="firstRow" height="30" layout="horizontal">
-					<Button left="5" width = "100" onClick="selfPaced">Self Paced</Button>
-					<Button left="5" width = "50" onClick="easy">Easy</Button>
-					<Button left="5" width = "50" onClick="leisurely">Leisurely</Button>
+					<Button left="5" width = "50" onClick="selfPaced">Self Paced</Button>
+					<Button left="0" width = "50" onClick="easy">Easy</Button>
+					<Button left="0" width = "50" onClick="leisurely">Leisurely</Button>
 				</View>
 				<View id="secondRow" top="20" width="100%" height="30" layout="horizontal">
-						<Button left="15" onClick="steady">Steady</Button>
-						<Button left="20" onClick="moderate">Moderate</Button>
-						<Button left="25" onClick="brisk">Brisk</Button>
+						<Button left="5" onClick="steady">Steady</Button>
+						<Button left="0" onClick="moderate">Moderate</Button>
+						<Button left="0" onClick="brisk">Brisk</Button>
 				</View>
 				<View id="thirdRow" top="20" width="100%" height="30" layout="horizontal">
-							<Button left="15" onClick="vigorous">Vigorous</Button>
-							<Button left="20" onClick="strenuous">Strenuous</Button>
-							<Button left="25" onClick="superStrenuous">Super Strenuous</Button>
+							<Button left="5" onClick="vigorous">Vigorous</Button>
+							<Button left="0" onClick="strenuous">Strenuous</Button>
+							<Button left="0" onClick="superStrenuous">Super Strenuous</Button>
 				</View>
 			</View>   
 			<View id="dateRow" top="0" width="100%" layout="horizontal" height="30">
@@ -64,8 +64,9 @@
 				</View>
 			</View>   
 			<View top="0" width="100%" height="30" layout="horizontal">
-				<Button top="0" left="100" id="reset" onClick="resetFilter">Reset</Button>
-		        <Button top="0" left="110" id="apply" onClick="applyFilter" enabled="false">Apply</Button>
+				<Button top="0" left="70" id="cancel" onClick="cancelFilter">Cancel</Button>
+				<Button top="0" left="70" id="reset" onClick="resetFilter">Reset</Button>
+		        <Button top="0" left="70" id="apply" onClick="applyFilter">Apply</Button>
 		    </View>
         </ScrollView>
 	</Window>

@@ -1,49 +1,59 @@
 ".item":{
-	left:0, right:0, height: 100
+	left:0, right:0, height: 128, layout:"vertical"
 },
 
+'#lwin':{
+	barColor: "#43B02A",
+}
+
+
 "#firstLine": {
-	left: 0, right: 0, top:5,
+	left: 16, right: 0, top:21,
 	layout: "horizontal"
 },
 
 ".line1": {
-	left: 0, right: 0, font: { fontSize: 16 }
+	left: 0, right: 0, font: { fontSize: 20 }
 },
 
 "#title": {
-	color: "black",
+	color: "#006F44", height:20
 },
 
 '#secondLine': {
-	left: 0, right: 0,
+	left: 0, right: 0, top:20,
 	layout: "horizontal"
 },
 
 ".line2": {
-	left: 0, right: 0, font: { fontSize: 13 }
+	left: 0, right:0, font: { fontSize: 13 }
 },
-"#paceNo": {
-	color: 'red',
-	textAlign: Ti.UI.TEXT_ALIGNMENT_RIGHT
+"#paceNumber": {
+	color: 'black', font: { fontSize: 12 }, width:80, height:30
 },
 "#pace": {
-	color: 'red'
+	left: 5, color: 'black',font: { fontSize: 16 }, width: 80
 },
 '#thirdLine': {
-	left: 0, right: 0,
+	left: 0, right: 0, top:5,
 	layout: "horizontal"
 },
 
 ".line3": {
-	left: 0, right: 0, font: { fontSize: 13 }
+	left: 0
 },
 
 "#startDateTime": {
-	color: "blue"
+	color: "black",font: { fontSize: 16 }, left:5
 },
 
-"#distance":{
-	textAlign: Ti.UI.TEXT_ALIGNMENT_RIGHT,
-	color:"green"
+'#distanceOne':{
+	color: '#2C2A29',
+	font: { fontSize:36 },
+	left: 100
+}
+'#distanceTwo':{
+	color: '#646464',
+	font: { fontSize:16 },
+	left: 5
 }

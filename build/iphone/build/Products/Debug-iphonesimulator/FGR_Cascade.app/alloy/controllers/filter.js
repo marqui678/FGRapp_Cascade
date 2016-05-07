@@ -8,25 +8,19 @@ function __processArg(obj, key) {
 }
 
 function Controller() {
-    function checkApply() {
-        $.apply.enabled = 0 == Alloy.Globals.pace.length && 0 == Alloy.Globals.startDateTime.length && 0 == Alloy.Globals.distance.length ? false : true;
-    }
     function addPace(pace) {
         Alloy.Globals.pace.push(pace);
         $.paceLabel.text = Alloy.Globals.pace.toString();
-        checkApply();
     }
     function removePace(pace) {
         Alloy.Globals.pace.splice(Alloy.Globals.pace.indexOf(pace), 1);
         $.paceLabel.text = Alloy.Globals.pace.toString();
-        checkApply();
     }
     function addDistance(min, max) {
         var distance = [ min, max ];
         Alloy.Globals.distance.push(distance);
         string = min + " - " + max + " miles ";
         $.distanceLabel.text = $.distanceLabel.text + string;
-        checkApply();
     }
     function removeDistance(min) {
         for (var j = 0; j < Alloy.Globals.distance.length; j++) Alloy.Globals.distance[j][0] == min && Alloy.Globals.distance.splice(j, 1);
@@ -35,7 +29,6 @@ function Controller() {
             string = Alloy.Globals.distance[i][0] + " - " + Alloy.Globals.distance[i][1] + " miles ";
             $.distanceLabel.text = $.distanceLabel.text + string;
         }
-        checkApply();
     }
     function ten() {
         Alloy.Globals.ten ? removeDistance(10, 20) : addDistance(10, 20);
@@ -128,6 +121,12 @@ function Controller() {
             if (0 == Alloy.Globals.startDateTime.length) {
                 $.startDate.value = $.startDate.minDate;
                 $.endDate.value = $.endDate.minDate;
+                Alloy.Globals.startDateTime[0] = $.startDate.value;
+                Alloy.Globals.startDateTime[1] = $.endDate.value;
+                $.startTimeSlider.value = 0;
+                $.endTimeSlider.value = 0;
+                Alloy.Globals.startDateTime[0].setUTCHours(0, 0, 0, 0);
+                Alloy.Globals.startDateTime[1].setUTCHours(0, 0, 0, 0);
             } else {
                 $.startDate.value = Alloy.Globals.startDateTime[0];
                 $.endDate.value = Alloy.Globals.startDateTime[1];
@@ -163,7 +162,7 @@ function Controller() {
     }
     function initiate() {
         $.paceLabel.text = 0 == Alloy.Globals.pace.length ? "" : Alloy.Globals.pace.toString();
-        $.dateLabel.text = 0 == Alloy.Globals.startDateTime.length ? "" : monthNames[Alloy.Globals.startDateTime[0].getMonth()] + Alloy.Globals.startDateTime[0].getDate() + " - " + monthNames[Alloy.Globals.startDateTime[1].getMonth()] + Alloy.Globals.startDateTime[1].getDate() + " " + Alloy.Globals.startDateTime[0].getUTCHours() + ":00 - " + Alloy.Globals.startDateTime[1].getUTCHours() + ":00";
+        $.dateLabel.text = 0 == Alloy.Globals.startDateTime.length ? "" : monthNames[Alloy.Globals.startDateTime[0].getUTCMonth()] + Alloy.Globals.startDateTime[0].getUTCDate() + " - " + monthNames[Alloy.Globals.startDateTime[1].getUTCMonth()] + Alloy.Globals.startDateTime[1].getUTCDate() + " " + Alloy.Globals.startDateTime[0].getUTCHours() + ":00 - " + Alloy.Globals.startDateTime[1].getUTCHours() + ":00";
         $.distanceLabel.text = "";
         if (0 != Alloy.Globals.distance.length) for (var i = 0; i < Alloy.Globals.distance.length; i++) {
             string = Alloy.Globals.distance[i][0] + " - " + Alloy.Globals.distance[i][1] + " miles ";
@@ -176,9 +175,26 @@ function Controller() {
         Alloy.Globals.distance = [];
         initiate();
     }
+    function cancelFilter() {
+        $.fwin.close();
+    }
+    function afterFetch() {
+        if (0 == Alloy.Collections.feed.models.length) {
+            var dialog = Ti.UI.createAlertDialog({
+                message: "No Result",
+                ok: "OK"
+            });
+            dialog.addEventListener("click", function() {
+                Alloy.Globals.Navigator.open("filter", $.fwin);
+            });
+            dialog.show();
+        }
+    }
     function applyFilter() {
         Alloy.Collections.feed.fetch({
-            url: "https://www.cascade.org/DailyRides/rss.xml"
+            url: "https://www.cascade.org/DailyRides/rss.xml",
+            success: afterFetch,
+            error: afterFetch
         });
         $.fwin.close();
     }
@@ -200,7 +216,7 @@ function Controller() {
     var exports = {};
     var __defers = {};
     $.__views.fwin = Ti.UI.createWindow({
-        barColor: "#CD1625",
+        barColor: "#43B02A",
         backgroundColor: "#FFF",
         navTintColor: "#FFF",
         translucent: false,
@@ -273,14 +289,14 @@ function Controller() {
     $.__views.__alloyId0 = Ti.UI.createButton({
         title: "Self Paced",
         left: 5,
-        width: 100,
+        width: 50,
         id: "__alloyId0"
     });
     $.__views.firstRow.add($.__views.__alloyId0);
     selfPaced ? $.addListener($.__views.__alloyId0, "click", selfPaced) : __defers["$.__views.__alloyId0!click!selfPaced"] = true;
     $.__views.__alloyId1 = Ti.UI.createButton({
         title: "Easy",
-        left: 5,
+        left: 0,
         width: 50,
         id: "__alloyId1"
     });
@@ -288,7 +304,7 @@ function Controller() {
     easy ? $.addListener($.__views.__alloyId1, "click", easy) : __defers["$.__views.__alloyId1!click!easy"] = true;
     $.__views.__alloyId2 = Ti.UI.createButton({
         title: "Leisurely",
-        left: 5,
+        left: 0,
         width: 50,
         id: "__alloyId2"
     });
@@ -304,21 +320,21 @@ function Controller() {
     $.__views.paceView.add($.__views.secondRow);
     $.__views.__alloyId3 = Ti.UI.createButton({
         title: "Steady",
-        left: 15,
+        left: 5,
         id: "__alloyId3"
     });
     $.__views.secondRow.add($.__views.__alloyId3);
     steady ? $.addListener($.__views.__alloyId3, "click", steady) : __defers["$.__views.__alloyId3!click!steady"] = true;
     $.__views.__alloyId4 = Ti.UI.createButton({
         title: "Moderate",
-        left: 20,
+        left: 0,
         id: "__alloyId4"
     });
     $.__views.secondRow.add($.__views.__alloyId4);
     moderate ? $.addListener($.__views.__alloyId4, "click", moderate) : __defers["$.__views.__alloyId4!click!moderate"] = true;
     $.__views.__alloyId5 = Ti.UI.createButton({
         title: "Brisk",
-        left: 25,
+        left: 0,
         id: "__alloyId5"
     });
     $.__views.secondRow.add($.__views.__alloyId5);
@@ -333,21 +349,21 @@ function Controller() {
     $.__views.paceView.add($.__views.thirdRow);
     $.__views.__alloyId6 = Ti.UI.createButton({
         title: "Vigorous",
-        left: 15,
+        left: 5,
         id: "__alloyId6"
     });
     $.__views.thirdRow.add($.__views.__alloyId6);
     vigorous ? $.addListener($.__views.__alloyId6, "click", vigorous) : __defers["$.__views.__alloyId6!click!vigorous"] = true;
     $.__views.__alloyId7 = Ti.UI.createButton({
         title: "Strenuous",
-        left: 20,
+        left: 0,
         id: "__alloyId7"
     });
     $.__views.thirdRow.add($.__views.__alloyId7);
     strenuous ? $.addListener($.__views.__alloyId7, "click", strenuous) : __defers["$.__views.__alloyId7!click!strenuous"] = true;
     $.__views.__alloyId8 = Ti.UI.createButton({
         title: "Super Strenuous",
-        left: 25,
+        left: 0,
         id: "__alloyId8"
     });
     $.__views.thirdRow.add($.__views.__alloyId8);
@@ -361,7 +377,6 @@ function Controller() {
     });
     $.__views.scrollView.add($.__views.dateRow);
     $.__views.date = Ti.UI.createButton({
-        left: 0,
         title: "DateTime",
         top: 0,
         id: "date"
@@ -594,10 +609,18 @@ function Controller() {
         id: "__alloyId19"
     });
     $.__views.scrollView.add($.__views.__alloyId19);
+    $.__views.cancel = Ti.UI.createButton({
+        title: "Cancel",
+        top: 0,
+        left: 70,
+        id: "cancel"
+    });
+    $.__views.__alloyId19.add($.__views.cancel);
+    cancelFilter ? $.addListener($.__views.cancel, "click", cancelFilter) : __defers["$.__views.cancel!click!cancelFilter"] = true;
     $.__views.reset = Ti.UI.createButton({
         title: "Reset",
         top: 0,
-        left: 100,
+        left: 70,
         id: "reset"
     });
     $.__views.__alloyId19.add($.__views.reset);
@@ -605,14 +628,14 @@ function Controller() {
     $.__views.apply = Ti.UI.createButton({
         title: "Apply",
         top: 0,
-        left: 110,
-        id: "apply",
-        enabled: false
+        left: 70,
+        id: "apply"
     });
     $.__views.__alloyId19.add($.__views.apply);
     applyFilter ? $.addListener($.__views.apply, "click", applyFilter) : __defers["$.__views.apply!click!applyFilter"] = true;
     exports.destroy = function() {};
     _.extend($, $.__views);
+    $.fwin.leftNavButton = Ti.UI.createView();
     require("alloy/moment");
     var paceView = false;
     var dateView = false;
@@ -627,36 +650,32 @@ function Controller() {
     $.startDate.addEventListener("change", function(e) {
         $.endDate.minDate = e.value;
         Alloy.Globals.startDateTime[0] = e.value;
-        $.dateLabel.text = monthNames[$.startDate.value.getMonth()] + $.startDate.value.getDate() + " - " + monthNames[$.endDate.value.getMonth()] + $.endDate.value.getDate();
-        checkApply();
+        Alloy.Globals.startDateTime[0].setUTCHours($.startTimeSlider.value, 0, 0, 0);
+        $.dateLabel.text = monthNames[$.startDate.value.getUTCMonth()] + $.startDate.value.getUTCDate() + " - " + monthNames[$.endDate.value.getUTCMonth()] + $.endDate.value.getUTCDate() + " " + $.startTimeSlider.value + ":00 - " + $.endTimeSlider.value + ":00";
     });
     $.endDate.addEventListener("change", function(e) {
         Alloy.Globals.startDateTime[1] = e.value;
-        $.dateLabel.text = monthNames[$.startDate.value.getMonth()] + $.startDate.value.getDate() + " - " + monthNames[$.endDate.value.getMonth()] + $.endDate.value.getDate();
-        checkApply();
+        Alloy.Globals.startDateTime[1].setUTCHours($.endTimeSlider.value, 0, 0, 0);
+        $.dateLabel.text = monthNames[$.startDate.value.getUTCMonth()] + $.startDate.value.getUTCDate() + " - " + monthNames[$.endDate.value.getUTCMonth()] + $.endDate.value.getUTCDate() + " " + $.startTimeSlider.value + ":00 - " + $.endTimeSlider.value + ":00";
     });
     $.startTimeSlider.addEventListener("touchend", function(e) {
         this.value = Math.round(e.value);
         $.startTimeLabel.text = this.value;
-        checkApply();
     });
     $.startTimeSlider.addEventListener("change", function(e) {
         $.startTimeLabel.text = Math.round(e.value);
         $.endTimeSlider.min = e.value;
         Alloy.Globals.startDateTime[0].setUTCHours(e.value, 0, 0, 0);
-        $.dateLabel.text = monthNames[$.startDate.value.getMonth()] + $.startDate.value.getDate() + " - " + monthNames[$.endDate.value.getMonth()] + $.endDate.value.getDate() + " " + $.startTimeSlider.value + ":00 - " + $.endTimeSlider.value + ":00";
-        checkApply();
+        $.dateLabel.text = monthNames[$.startDate.value.getUTCMonth()] + $.startDate.value.getUTCDate() + " - " + monthNames[$.endDate.value.getUTCMonth()] + $.endDate.value.getUTCDate() + " " + $.startTimeSlider.value + ":00 - " + $.endTimeSlider.value + ":00";
     });
     $.endTimeSlider.addEventListener("touchend", function(e) {
         this.value = Math.round(e.value);
         $.endTimeLabel.text = this.value;
-        checkApply();
     });
     $.endTimeSlider.addEventListener("change", function(e) {
         $.endTimeLabel.text = Math.round(e.value);
-        Alloy.Globals.startDateTime[1].setUTCHours($.endTimeSlider.value, 0, 0, 0);
-        $.dateLabel.text = monthNames[$.startDate.value.getMonth()] + $.startDate.value.getDate() + " - " + monthNames[$.endDate.value.getMonth()] + $.endDate.value.getDate() + " " + $.startTimeSlider.value + ":00 - " + $.endTimeSlider.value + ":00";
-        checkApply();
+        Alloy.Globals.startDateTime[1].setUTCHours(e.value, 0, 0, 0);
+        $.dateLabel.text = monthNames[$.startDate.value.getUTCMonth()] + $.startDate.value.getUTCDate() + " - " + monthNames[$.endDate.value.getUTCMonth()] + $.endDate.value.getUTCDate() + " " + $.startTimeSlider.value + ":00 - " + $.endTimeSlider.value + ":00";
     });
     __defers["$.__views.pace!click!hidePaceView"] && $.addListener($.__views.pace, "click", hidePaceView);
     __defers["$.__views.paceLabel!click!hideDateView"] && $.addListener($.__views.paceLabel, "click", hideDateView);
@@ -685,6 +704,7 @@ function Controller() {
     __defers["$.__views.__alloyId16!click!seventy"] && $.addListener($.__views.__alloyId16, "click", seventy);
     __defers["$.__views.__alloyId17!click!eighty"] && $.addListener($.__views.__alloyId17, "click", eighty);
     __defers["$.__views.__alloyId18!click!ninety"] && $.addListener($.__views.__alloyId18, "click", ninety);
+    __defers["$.__views.cancel!click!cancelFilter"] && $.addListener($.__views.cancel, "click", cancelFilter);
     __defers["$.__views.reset!click!resetFilter"] && $.addListener($.__views.reset, "click", resetFilter);
     __defers["$.__views.apply!click!applyFilter"] && $.addListener($.__views.apply, "click", applyFilter);
     _.extend($, exports);

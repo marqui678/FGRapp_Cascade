@@ -58,14 +58,14 @@ function refresh(e) {
 
 function transform(model) {
 	'use strict';
-		
 	return {
 		title: model.get('title'),
 		startDateTime: moment(model.get('startDateTime'),moment.ISO_8601).format('LLLL'),
 		link:model.get('link'),
-		paceNo:model.get('paceNo'),
+		paceNumber:model.get('paceNumber'),
 		pace:model.get('pace'),
-		distance:model.get('fgrrss:distance')
+		distanceOne:model.get('distance1'),
+		distanceTwo:model.get('distance2')
 	};
 }
 
@@ -92,14 +92,7 @@ function select(e) {
 $.search.addEventListener('cancel', function(){
     $.search.blur();
 });
-var data = [];
-for (var i = 0; i < Alloy.Collections.feed.models.length; i++) {
-    data.push({
-        properties: {title: Alloy.Collections.feed.models[i].get('title'), searchableText: Alloy.Collections.feed.models[i].get('title')}
-    });
-}
-$.listSection.setItems(data);
-//$.listView.sections = [$.listSection];
+
 function filter(){
 	a = Alloy.Collections.feed;
 	Alloy.Globals.Navigator.open("filter",a);
