@@ -25,11 +25,11 @@ function Controller() {
     var $ = this;
     var exports = {};
     if (true && !Alloy.isTablet) {
-        $.__views.__alloyId20 = Alloy.createController("list", {
-            id: "__alloyId20"
+        $.__views.__alloyId12 = Alloy.createController("list", {
+            id: "__alloyId12"
         });
         $.__views.navWin = Ti.UI.iOS.createNavigationWindow({
-            window: $.__views.__alloyId20.getViewEx({
+            window: $.__views.__alloyId12.getViewEx({
                 recurse: true
             }),
             id: "navWin"
@@ -39,27 +39,10 @@ function Controller() {
     exports.destroy = function() {};
     _.extend($, $.__views);
     Alloy.Globals.pace = [];
-    Alloy.Globals.test = [];
-    Alloy.Globals.startDateTime = [];
-    Alloy.Globals.distance = [];
-    Alloy.Globals.selfPaced = false;
-    Alloy.Globals.easy = false;
-    Alloy.Globals.brisk = false;
-    Alloy.Globals.leisurely = false;
-    Alloy.Globals.steady = false;
-    Alloy.Globals.vigorous = false;
-    Alloy.Globals.moderate = false;
-    Alloy.Globals.strenuous = false;
-    Alloy.Globals.superStrenuous = false;
-    Alloy.Globals.ten = false;
-    Alloy.Globals.twenty = false;
-    Alloy.Globals.thirty = false;
-    Alloy.Globals.fourty = false;
-    Alloy.Globals.fifty = false;
-    Alloy.Globals.sixty = false;
-    Alloy.Globals.seventy = false;
-    Alloy.Globals.eighty = false;
-    Alloy.Globals.ninety = false;
+    Alloy.Globals.startDateTime = new Date(1980, 1, 1);
+    Alloy.Globals.endDateTime = new Date(2080, 1, 1);
+    Alloy.Globals.sDistance = 0;
+    Alloy.Globals.eDistance = 100;
     Alloy.Globals.Navigator = {
         navGroup: $.nav,
         open: function(controller, payload) {

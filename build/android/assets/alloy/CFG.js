@@ -1,1 +1,1 @@
-/Users/jia/Documents/Appcelerator_Studio_Workspace/FGRapp3/Resources/alloy/CFG.js
+/Users/jia/Documents/Appcelerator_Studio_Workspace/FGRapp1/Resources/alloy/CFG.js

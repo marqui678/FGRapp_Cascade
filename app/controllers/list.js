@@ -104,3 +104,10 @@ function filter(){
 function openMapview() {
 	Alloy.Globals.Navigator.open('map', {});
 }
+
+/**
+ *Open sort view 
+ */
+function openSortView() {
+	Alloy.Globals.Navigator.open('sort', {});
+}

@@ -104,6 +104,15 @@ function parseXML(xml) {
 			model["longitude"] = parseFloat(location[0]);
 			model["latitude"] = parseFloat(location[1]);
 		}
+		
+		//Generate lowestPace element which would be used for pace sorting.
+		//Will be null for Self Paced
+		if (model["fgrrss:pace"] !== undefined) {
+			var paceNum = model["fgrrss:pace"].match(/\d+/g);			
+			model["lowestPace"] = paceNum == null ? paceNum: Number(paceNum[0]);
+		}
+		
+		//Convert distance to number so that it would be easy for sort and filter by distance
 		if (model["fgrrss:distance"] !== undefined) {
 			var distance = model["fgrrss:distance"].match(/\d+./g);	
 			if (distance !== null && distance.length >= 0) {
@@ -133,13 +142,16 @@ function parseXML(xml) {
 			
 			
 		}
-		model['startDateTime'] = model['fgrrss:startDateTime'];
+		
+		//Convert fgrrss:startDateTime string to date
+		if (model['fgrrss:startDateTime'] !== undefined) {
+			model['startDateTime'] = model['fgrrss:startDateTime'];
 		if (model['startDateTime'].indexOf("to") != -1){
 			model['startDateTime'] = model['startDateTime'].substring(0,25);
 		}
 		Alloy.Globals.test.push(model['startDateTime']);
-		var s = model['fgrrss:startDateTime'].substring(0,19);
-		model['fgrrss:startDateTime'] = new Date(s);
+			var s = model['fgrrss:startDateTime'].substring(0,19);
+			model['fgrrss:startDateTime'] = new Date(s);
 		var distance = false;
 		if (Alloy.Globals.distance.length == 0) {
 			distance = true;

@@ -1,1 +1,1 @@
-/Users/jia/Documents/Appcelerator_Studio_Workspace/FGRapp3/Resources/android/alloy/sync/sql.js
+/Users/jia/Documents/Appcelerator_Studio_Workspace/FGRapp1/Resources/android/alloy/sync/sql.js

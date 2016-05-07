@@ -39,6 +39,7 @@
 		</ListView>
 		<Button onClick="openMapview" top="0" right="0">To map</Button>
 		<Button onClick="filter" bottom="0" right="0">Filter</Button>
+		<Button onClick="openSortView" bottom="0" left="0">Sort</Button>
 		
 	</Window>
 	

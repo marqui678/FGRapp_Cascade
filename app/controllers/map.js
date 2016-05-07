@@ -1,29 +1,54 @@
 // Arguments passed into this controller can be accessed via the `$.args` object directly or:
 var args = $.args;
 
-//Keep the following code, might be useful for search
-/*
-var currentUser = args.currentUser;
+//Location input by search
+var searchLoc = args.searchLoc;
 
-var userLocation = currentUser.location.street + " " + currentUser.location.city 
-+ " " + currentUser.location.state + " " + currentUser.location.zip;*/
-
-/* get longitude and latitude by address
-	Ti.Geolocation.forwardGeocoder(userLocation, function(_resp){
-		if (_resp.success) {
-			console.log("coords: " + _resp.latitude + " " + _resp.lontitude);
-			
-			_callback(_resp);
-		}
-		else {
-			console.log("ERROR: " + JSON.stringify(_resp));
-			alert("ERROR");
-			_callback(null);
-		}
-	});*/
-
-var regionCenter = {latitude: 47.6466, longitude: -122.335};
+//Init region center
+var regionCenter = {};
 var rideData = Alloy.Collections.feed.models;
+
+if (searchLoc === undefined) {
+	//Show map with current location pin in the center
+	centeredByCurrentLocation();
+}
+else {
+	//Show map with searchLoc in the center
+	centeredBySearchLocation();
+}
+
+createAnnotationsForMap(rideData);
+
+//Menu
+var thisWin=$.mainWindow;
+var main=$.mainView;
+
+// store drawermenu and main in global variable for easy access from menu
+Alloy.CFG.drawermenu=$.drawermenu;
+Alloy.CFG.main=main;
+
+var menu=Alloy.createController('menu').getView();
+
+$.drawermenu.init({
+    menuview:menu,
+    mainview:main,
+    duration:200,
+    parent: thisWin
+});
+
+thisWin.addEventListener('open',function(e){
+	var actionBarHelper = require('com.alcoapps.actionbarhelper')(thisWin);	
+	var actionBarExtra = require('com.alcoapps.actionbarextras');
+	actionBarHelper.setUpAction(function(e){
+		$.drawermenu.showhidemenu();
+	});
+	
+	actionBarExtra.title = "Map";
+	//actionBarExtra.titleColor = "blue";
+	
+	actionBarHelper.displayHomeAsUp(true);
+	actionBarExtra.setHomeAsUpIcon("/images/menuLight.png");
+});
 
 function centeredByCurrentLocation() {
 	if (Ti.Geolocation.locationServicesEnabled === false) {
@@ -34,38 +59,61 @@ function centeredByCurrentLocation() {
 	    Ti.Geolocation.accuracy = Ti.Geolocation.ACCURACY_HIGH;
 	    if (e.error)
 	    {
-	        alert('Current location not found. Use default location');	       
+	        alert('Current location not found. Use default location');	
+	    	regionCenter.latitude = Alloy.Globals.defaultLocation.latitude;
+	    	regionCenter.longitude = Alloy.Globals.defaultLocation.longitude;	
 	    }
 	    else {
-	    	//Set current location as center
-	        regionCenter.latitude = e.coords.latitude;
-	        regionCenter.longitude = e.coords.longitude;
+	    	//Set regionCenter with current location
+	    	regionCenter.latitude = e.coords.latitude;
+	    	regionCenter.longitude = e.coords.longitude;	       
         }
-        createAnnotationsForMap(rideData);
+        
+        //Set map region by region center
+        setMapRegion(regionCenter);
+        
+        //TODO If have combined view, only set distance when loading combined view or after search
+        //Set distance to region center for each model
+        setDistanceToLocation(rideData, regionCenter);
+        //Sort models by distanceToLoc
+        Alloy.Collections.feed.setSortField("distanceToLocation", "ASC");
+		Alloy.Collections.feed.sort();
 	});
 };
 
-//Show map with current location pin in the center
-centeredByCurrentLocation();
+function centeredBySearchLocation() {
+	setMapRegion(regionCenter);
+	setDistanceToLocation(rideData, regionCenter);
+	Alloy.Collections.feed.setSortField("distanceToLocation", "ASC");
+	Alloy.Collections.feed.sort();
+}
 
-function createAnnotationsForMap(models){
-	if (models == null || models.length < 1) {
-		return;
+/**
+ *For each model, set value for field distanceToLoc based on given target location
+ */
+function setDistanceToLocation(models, targetLoc) {
+	for (var i = 0; i < models.length; i++) {
+		var model = models[i];
+		model.setDistanceToLoc(targetLoc);
 	}
-	//Make annotation
-	var annotations = createAnnotationsWithModels(models);
-	
-	//Set map region to zoom into point
+}
 
+function setMapRegion(regionCenter) {
+	//Set map region to zoom into point
 	$.mapview.setRegion({
 		latitude: regionCenter.latitude,
 		longitude: regionCenter.longitude,
 		latitudeDelta: 0.040,
 		longitudeDelta: 0.040
 	});
-
-	
-	$.mapview.setUserLocation = true;
+}
+		
+function createAnnotationsForMap(models){
+	if (models == null || models.length < 1) {
+		return;
+	}
+	//Make annotation
+	var annotations = createAnnotationsWithModels(models);
 	
 	//Add annotation
 	$.mapview.setAnnotations(annotations);
@@ -85,8 +133,9 @@ function createAnnotationsWithModels(models) {
 	    	longitude: model.get("longitude"),
 	    	title: model.get("title"),
     		//pincolor:Ti.Map.ANNOTATION_GREEN,
-    		 // image:'pin.png',
-    		myid:model.get("link")
+    		image:'ic_place_green_3x.png',
+    		myid:model.get("link"),
+    		id: "anno_" + i,
 		});
 		annotations.push(annotation);
 	}
@@ -104,7 +153,17 @@ function report(evt) {
     //Deselect
     if (evt.clicksource === null || (evt.clicksource === "pin" && evt.annotation.myid === lastClickedAnnotationId)) {
     	$.rideInfoCallout.visible = false;
+    	lastClickedAnnotationId = null;
+    	//Resize mapview
+    	//$.mapview.bottom = "0dp";
     } 
+    //Select search location anotation
+    else if (evt.annotation.myid === "anno_search") {
+    	$.rideInfoCallout.visible = false;
+    	lastClickedAnnotationId = null;
+    	//Resize mapview
+    	//$.mapview.bottom = "0dp";
+    }
     //Select
     else {
     	//Need to change pin for selected annotation
@@ -117,9 +176,13 @@ function report(evt) {
     	
     	//Show callout box
     	$.rideInfoCallout.visible = true;
+    	
+    	lastClickedAnnotationId = evt.annotation.myid;
+    	//Resize mapview
+    	//$.mapview.bottom = "70dp";
     }
     //Update lastClickedAnnotationId which is link of selected model
-    lastClickedAnnotationId = evt.clicksource === null ? null: evt.annotation.myid;
+    //lastClickedAnnotationId = evt.clicksource === null ? null: evt.annotation.myid;
 }
 
 /**
@@ -136,11 +199,50 @@ function setCalloutInfo(link) {
 	$.rideDistance.text = data.distance;
 }
 
-function searchLocation(e) {
-	alert("Search button clicked.");
+function toSearch(e) {
+	//Pass $.mainWindow as SearchView will fire event for it.
+	//Pass regionCenter so it can be updated by search
+	Alloy.Globals.Navigator.open("search", {prevWindow: $.mainWindow, regionCenter: regionCenter});
 }
 
 function showDetail(e) {
 	var selectedModel = Alloy.Collections.feed.get(lastClickedAnnotationId);
 	Alloy.Globals.Navigator.open("detail", selectedModel);
 }
+
+var searchLocAnnotation = undefined;
+$.mainWindow.addEventListener('loc_updated', function(e){
+	//If not use current locstion, add annotation for searched location
+	if (!e.isCurrentLoc) {
+		if (searchLocAnnotation === undefined) {
+			//Create annotation and add to map
+			searchLocAnnotation = Alloy.Globals.Map.createAnnotation({
+			latitude: regionCenter.latitude,
+	    	longitude: regionCenter.longitude,
+	    	title: regionCenter.displayAddress,
+    		pincolor:Ti.Map.ANNOTATION_GREEN,
+    		//image:'ic_place_3x.png',
+    		myid: "anno_search",
+    		id: "anno_search",
+		});
+		$.mapview.addAnnotation(searchLocAnnotation);
+		}
+		else {
+			//Update annotation
+			searchLocAnnotation.latitude = regionCenter.latitude;
+			searchLocAnnotation.longitude = regionCenter.longitude;
+			searchLocAnnotation.title = regionCenter.displayAddress;
+			searchLocAnnotation.image = "images/pinSelected.png";
+		}
+	}
+	else {
+		//remove and reset if there is search annotation on map
+		if (searchLocAnnotation !== undefined) {
+			$.mapview.removeAnnotation(searchLocAnnotation);
+			searchLocAnnotation = undefined;
+		}
+	}
+	
+	centeredBySearchLocation();
+});
+
