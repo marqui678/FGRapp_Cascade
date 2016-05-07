@@ -137,7 +137,7 @@ function createAnnotationsWithModels(models) {
 	    	longitude: model.get("longitude"),
 	    	title: model.get("title"),
     		//pincolor:Ti.Map.ANNOTATION_GREEN,
-    		image:'ic_place_green_3x.png',
+    		image:'/images/ic_place_green.png',
     		myid:model.get("link"),
     		id: "anno_" + i,
 		});
@@ -225,7 +225,6 @@ $.mainWindow.addEventListener('loc_updated', function(e){
 	    	longitude: regionCenter.longitude,
 	    	title: regionCenter.displayAddress,
     		pincolor:Ti.Map.ANNOTATION_GREEN,
-    		//image:'ic_place_3x.png',
     		myid: "anno_search",
     		id: "anno_search",
 		});

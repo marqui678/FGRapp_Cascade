@@ -3,11 +3,8 @@
     <Window id="mainWindow" title="map">
     	<Require type="widget" src="com.alcoapps.drawermenu" id="drawermenu"/>
     	<Menu platform="android">
-			<MenuItem title="Search" icon="images/searchLight.png" onClick="toSearch" showAsAction="Ti.Android.SHOW_AS_ACTION_ALWAYS" />
+			<MenuItem title="Search" icon="images/ic_search_light.png" onClick="toSearch" showAsAction="Ti.Android.SHOW_AS_ACTION_ALWAYS" />
 		</Menu>		
-		<!--
-		<ActionBar platform="android" displayHomeAsUp="false" onHomeIconItemSelected="toggleMenu" />
-		-->
 		<View id="mainView">
 	        <View ns="Alloy.Globals.Map" id="mapview" module="ti.map" onClick="report">
 	        </View>
