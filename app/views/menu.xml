@@ -10,7 +10,7 @@
 					<Label class="menucaption">Pace classification</Label>
 				</View>
 			</TableViewRow>
-			<TableViewRow class="menurowcontainer" rowId="2">
+			<TableViewRow class="menurowcontainer" rowId="2" selectedBackgroundColor="white">
 				<View class="menurow">
 					<View class="iconcontainer">
 						<ImageView class="icon" image="/ic_action_not_important.png"/>
