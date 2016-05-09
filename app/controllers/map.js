@@ -45,13 +45,18 @@ thisWin.addEventListener('open',function(e){
 	actionBarHelper.setUpAction(function(e){
 		$.drawermenu.showhidemenu();
 	});
-	actionBarHelper.displayHomeAsUp(true);
+	
+	if (OS_IOS) {
+		actionBarHelper.setIcon('/images/ic_menu_light.png');
+		actionBarHelper.setTitle('Map');
+		actionBarHelper.displayHomeAsUp(false);
+	}
 	
 	if (OS_ANDROID) {
 		var actionBarExtra = require('com.alcoapps.actionbarextras');
 		actionBarExtra.title = "Map";
-		//actionBarExtra.titleColor = "blue";
 		actionBarExtra.setHomeAsUpIcon("/images/ic_menu_light.png");
+		actionBarHelper.displayHomeAsUp(true);
 	}
 });
 
