@@ -8,13 +8,33 @@
 		<View id="mainView">
 	        <View ns="Alloy.Globals.Map" id="mapview" module="ti.map" onClick="report">
 	        </View>
+<!--
 	        <View id="rideInfoCallout" class="rideInfoCallout" visible="false" onClick="showDetail">
 	        	<Label id="rideTitle" class="rideTitle"></Label>
 	        	<Label id="rideDate" class="rideDate"></Label>
 	        	<Label id="ridePace" class="ridePace"></Label>
 	        	<Label id="rideDistance" class="rideDistance"></Label>
-	        </View>
+	        </View>-->
+
         </View>
+        
+        <Toolbar platform="ios" bottom="0" borderTop="true" borderBottom="false">
+            <Items>              
+                <FlexSpace/>
+                <Button id="filter" onClick="toFilter">Filter</Button>/>
+            </Items>
+        </Toolbar>
+        <View id="toolBarAndroid" platform="android" bottom="0" borderTop="true" borderBottom="false">
+        	<Button id="filter" onClick="toFilter">Filter</Button>
+        </View>
+        
+        <View id="rideInfoCallout" class="rideInfoCallout" visible="false" onClick="showDetail">
+        	<Label id="rideTitle" class="rideTitle"></Label>
+        	<Label id="rideDate" class="rideDate"></Label>
+        	<Label id="ridePace" class="ridePace"></Label>
+        	<Label id="rideDistance" class="rideDistance"></Label>
+        </View>
+        
     </Window>
 </Alloy>
 
