@@ -1,4 +1,4 @@
 build
-Resources/android
+Resources/*
 Resources/alloy/moment.js
 build/*
