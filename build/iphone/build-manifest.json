@@ -3097,47 +3097,67 @@
 		},
 		"DefaultIcon.png": {
 			"hash": "da3034516d8912bb020bea497577f0d7",
-			"mtime": "2016-04-26T18:57:51.000Z",
+			"mtime": "2016-05-09T22:09:04.000Z",
 			"size": 175297
+		},
+		"Date.png": {
+			"hash": "25596325c416f97ae69b72a6b610db96",
+			"mtime": "2016-05-09T22:09:05.000Z",
+			"size": 585
 		},
 		"Filter open.png": {
 			"hash": "a132d41ac2ba4bcd01744c3c003faaa1",
-			"mtime": "2016-04-26T21:05:47.000Z",
+			"mtime": "2016-05-09T22:14:10.000Z",
 			"size": 232
 		},
 		"Filter opened.png": {
 			"hash": "f7915858cc1543d2f062b67482f29f8a",
-			"mtime": "2016-04-26T21:05:47.000Z",
+			"mtime": "2016-05-09T22:14:10.000Z",
 			"size": 212
+		},
+		"alloy/sync/rss.js.orig": {
+			"hash": "492db8be8990515b5f723e1fcdce93eb",
+			"mtime": "2016-05-09T22:21:43.000Z",
+			"size": 5833
+		},
+		"ic_action_not_important.png": {
+			"hash": "0bd8f91a4ad8aa66c32541151b72290a",
+			"mtime": "2016-05-09T22:14:08.000Z",
+			"size": 1452
+		},
+		"pace.png": {
+			"hash": "77d197874f0e8ed1d22ff6285038d18b",
+			"mtime": "2016-05-09T22:09:05.000Z",
+			"size": 1666
 		},
 		"alloy_generated": {
 			"hash": "b9b62e3e10ab98f03010e1fe8362c390",
-			"mtime": "2016-04-27T22:37:33.000Z",
+			"mtime": "2016-05-09T22:21:43.000Z",
 			"size": 279
 		},
 		"Default-568h@2x.png": {
 			"hash": "7c162b498ea9255488db3baf191d55fc",
-			"mtime": "2016-04-26T19:00:31.000Z",
+			"mtime": "2016-05-09T22:14:08.000Z",
 			"size": 502634
 		},
 		"Default-667h@2x.png": {
 			"hash": "cdba9c1dc1d00bb40c107970ab1ed5f1",
-			"mtime": "2016-04-26T19:00:31.000Z",
+			"mtime": "2016-05-09T22:14:09.000Z",
 			"size": 773314
 		},
 		"Default-Landscape-736h@3x.png": {
 			"hash": "d98f5e158810775461d402c54baf1c94",
-			"mtime": "2016-04-26T19:00:31.000Z",
+			"mtime": "2016-05-09T22:14:09.000Z",
 			"size": 1863539
 		},
 		"Default-Portrait-736h@3x.png": {
 			"hash": "8f37e1fb95f588d3e81cdfb244730b84",
-			"mtime": "2016-04-26T19:00:31.000Z",
+			"mtime": "2016-05-09T22:14:10.000Z",
 			"size": 1734238
 		},
 		"Default@2x.png": {
 			"hash": "a9de39ae235125f5d00fe33052767898",
-			"mtime": "2016-04-26T19:00:31.000Z",
+			"mtime": "2016-05-09T22:14:10.000Z",
 			"size": 343708
 		},
 		"Classes/ApplicationRouting.m": {
@@ -3168,7 +3188,7 @@
 	"deviceFamily": "iphone",
 	"iosSdkPath": "/Users/jia/Library/Application Support/Titanium/mobilesdk/osx/5.2.2.GA/iphone",
 	"tiCoreHash": "5710cda7b179a3c8391cc94011e308de",
-	"modulesHash": "72219161f931aadf39b2f1901bb02175",
+	"modulesHash": "690b9b92b0d2c383165c8b9f6c2ea2bb",
 	"modulesNativeHash": "f13aa59be94fbd6b82f705bc3a793fa6",
 	"gitHash": "b685ddb",
 	"forceCopy": false,
