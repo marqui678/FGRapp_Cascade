@@ -31,11 +31,9 @@ function Controller() {
     exports.destroy = function() {};
     _.extend($, $.__views);
     Alloy.Globals.pace = [];
-    Alloy.Globals.startDateTime = new Date();
-    Alloy.Globals.endDateTime = new Date();
-    Alloy.Globals.startDateTime.setUTCHours(0);
-    Alloy.Globals.endDateTime.setMonth(Alloy.Globals.startDateTime.getMonth() + 6);
-    Alloy.Globals.distance = [ 0, 100 ];
+    Alloy.Globals.test = [];
+    Alloy.Globals.startDateTime = [];
+    Alloy.Globals.distance = [];
     Alloy.Globals.selfPaced = false;
     Alloy.Globals.easy = false;
     Alloy.Globals.brisk = false;
@@ -45,6 +43,15 @@ function Controller() {
     Alloy.Globals.moderate = false;
     Alloy.Globals.strenuous = false;
     Alloy.Globals.superStrenuous = false;
+    Alloy.Globals.ten = false;
+    Alloy.Globals.twenty = false;
+    Alloy.Globals.thirty = false;
+    Alloy.Globals.fourty = false;
+    Alloy.Globals.fifty = false;
+    Alloy.Globals.sixty = false;
+    Alloy.Globals.seventy = false;
+    Alloy.Globals.eighty = false;
+    Alloy.Globals.ninety = false;
     Alloy.Globals.Navigator = {
         navGroup: $.nav,
         open: function(controller, payload) {

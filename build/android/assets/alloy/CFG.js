@@ -1,1 +1,1 @@
-/Users/jia/Documents/Appcelerator_Studio_Workspace/FGRapp1/Resources/alloy/CFG.js
+module.exports={"dependencies":{"com.alcoapps.drawermenu":"2.0"},"url":"https://www.cascade.org/DailyRides/rss.xml"};

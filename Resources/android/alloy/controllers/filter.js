@@ -17,71 +17,90 @@ function Controller() {
         $.paceLabel.text = Alloy.Globals.pace.toString();
     }
     function addDistance(min, max) {
-        Alloy.Globals.distance = [ min, max ];
-        $.distanceLabel.text = min + " - " + max + " miles";
+        var distance = [ min, max ];
+        Alloy.Globals.distance.push(distance);
+        string = min + " - " + max + " miles ";
+        $.distanceLabel.text = $.distanceLabel.text + string;
+    }
+    function removeDistance(min) {
+        for (var j = 0; j < Alloy.Globals.distance.length; j++) Alloy.Globals.distance[j][0] == min && Alloy.Globals.distance.splice(j, 1);
+        $.distanceLabel.text = "";
+        if (0 != Alloy.Globals.distance.length) for (var i = 0; i < Alloy.Globals.distance.length; i++) {
+            string = Alloy.Globals.distance[i][0] + " - " + Alloy.Globals.distance[i][1] + " miles ";
+            $.distanceLabel.text = $.distanceLabel.text + string;
+        }
     }
     function ten() {
-        addDistance(10, 20);
+        Alloy.Globals.ten ? removeDistance(10, 20) : addDistance(10, 20);
+        Alloy.Globals.ten = !Alloy.Globals.ten;
     }
     function twenty() {
-        addDistance(20, 30);
+        Alloy.Globals.twenty ? removeDistance(20, 30) : addDistance(20, 30);
+        Alloy.Globals.twenty = !Alloy.Globals.twenty;
     }
     function thirty() {
-        addDistance(30, 40);
+        Alloy.Globals.thirty ? removeDistance(30, 40) : addDistance(30, 40);
+        Alloy.Globals.thirty = !Alloy.Globals.thirty;
     }
     function fourty() {
-        addDistance(40, 50);
+        Alloy.Globals.fourty ? removeDistance(40, 50) : addDistance(40, 50);
+        Alloy.Globals.fourty = !Alloy.Globals.fourty;
     }
     function fifty() {
-        addDistance(50, 60);
+        Alloy.Globals.fifty ? removeDistance(50, 60) : addDistance(50, 60);
+        Alloy.Globals.fifty = !Alloy.Globals.fifty;
     }
     function sixty() {
-        addDistance(60, 70);
+        Alloy.Globals.sixty ? removeDistance(60, 70) : addDistance(60, 70);
+        Alloy.Globals.sixty = !Alloy.Globals.sixty;
     }
     function seventy() {
-        addDistance(70, 80);
+        Alloy.Globals.seventy ? removeDistance(70, 80) : addDistance(70, 80);
+        Alloy.Globals.seventy = !Alloy.Globals.seventy;
     }
     function eighty() {
-        addDistance(80, 90);
+        Alloy.Globals.eighty ? removeDistance(80, 90) : addDistance(80, 90);
+        Alloy.Globals.eighty = !Alloy.Globals.eighty;
     }
     function ninety() {
-        addDistance(90, 200);
+        Alloy.Globals.ninety ? removeDistance(90, 200) : addDistance(90, 200);
+        Alloy.Globals.ninety = !Alloy.Globals.ninety;
     }
     function selfPaced() {
-        selfPaced ? removePace("Self Paced") : addPace("Self Paced");
-        selfPaced = !selfPaced;
+        Alloy.Globals.selfPaced ? removePace("Self Paced") : addPace("Self Paced");
+        Alloy.Globals.selfPaced = !Alloy.Globals.selfPaced;
     }
     function easy() {
-        easy ? removePace("Easy") : addPace("Easy");
-        easy = !easy;
+        Alloy.Globals.easy ? removePace("Easy") : addPace("Easy");
+        Alloy.Globals.easy = !Alloy.Globals.easy;
     }
     function brisk() {
-        brisk ? removePace("Brisk") : addPace("Brisk");
-        brisk = !brisk;
+        Alloy.Globals.brisk ? removePace("Brisk") : addPace("Brisk");
+        Alloy.Globals.brisk = !Alloy.Globals.brisk;
     }
     function leisurely() {
-        leisurely ? removePace("Leisurely") : addPace("Leisurely");
-        leisurely = !leisurely;
+        Alloy.Globals.leisurely ? removePace("Leisurely") : addPace("Leisurely");
+        Alloy.Globals.leisurely = !Alloy.Globals.leisurely;
     }
     function steady() {
-        steady ? removePace("Steady") : addPace("Steady");
-        steady = !steady;
+        Alloy.Globals.steady ? removePace("Steady") : addPace("Steady");
+        Alloy.Globals.steady = !Alloy.Globals.steady;
     }
     function moderate() {
-        moderate ? removePace("Moderate") : addPace("Moderate");
-        moderate = !moderate;
+        Alloy.Globals.moderate ? removePace("Moderate") : addPace("Moderate");
+        Alloy.Globals.moderate = !Alloy.Globals.moderate;
     }
     function vigorous() {
-        vigorous ? removePace("Vigorous") : addPace("Vigorous");
-        vigorous = !vigorous;
+        Alloy.Globals.vigorous ? removePace("Vigorous") : addPace("Vigorous");
+        Alloy.Globals.vigorous = !Alloy.Globals.vigorous;
     }
     function strenuous() {
-        strenuous ? removePace("Strenuous") : addPace("Strenuous");
-        strenuous = !strenuous;
+        Alloy.Globals.strenuous ? removePace("Strenuous") : addPace("Strenuous");
+        Alloy.Globals.strenuous = !Alloy.Globals.strenuous;
     }
     function superStrenuous() {
-        superStrenuous ? removePace("Super Strenuous") : addPace("Super Strenuous");
-        superStrenuous = !superStrenuous;
+        Alloy.Globals.superStrenuous ? removePace("Super Strenuous") : addPace("Super Strenuous");
+        Alloy.Globals.superStrenuous = !Alloy.Globals.superStrenuous;
     }
     function hidePaceView() {
         hideView($.paceView, paceView);
@@ -95,10 +114,25 @@ function Controller() {
             $.dateFold.backgroundImage = "/Filter opened.png";
             $.startDate.minDate = new Date();
             $.endDate.minDate = $.startDate.minDate;
-            $.startDate.value = Alloy.Globals.startDateTime;
-            $.endDate.value = Alloy.Globals.endDateTime;
-            $.startTimeSlider.value = Alloy.Globals.startDateTime.getUTCHours();
-            $.endTimeSlider.value = Alloy.Globals.endDateTime.getUTCHours();
+            $.startTimeSlider.min = 0;
+            $.startTimeSlider.max = 24;
+            $.endTimeSlider.min = 0;
+            $.endTimeSlider.max = 24;
+            if (0 == Alloy.Globals.startDateTime.length) {
+                $.startDate.value = $.startDate.minDate;
+                $.endDate.value = $.endDate.minDate;
+                Alloy.Globals.startDateTime[0] = $.startDate.value;
+                Alloy.Globals.startDateTime[1] = $.endDate.value;
+                $.startTimeSlider.value = 0;
+                $.endTimeSlider.value = 0;
+                Alloy.Globals.startDateTime[0].setUTCHours(0, 0, 0, 0);
+                Alloy.Globals.startDateTime[1].setUTCHours(0, 0, 0, 0);
+            } else {
+                $.startDate.value = Alloy.Globals.startDateTime[0];
+                $.endDate.value = Alloy.Globals.startDateTime[1];
+                $.startTimeSlider.value = Alloy.Globals.startDateTime[0].getUTCHours();
+                $.endTimeSlider.value = Alloy.Globals.startDateTime[1].getUTCHours();
+            }
         } else $.dateFold.backgroundImage = "/Filter open.png";
     }
     function hideDistanceView() {
@@ -127,22 +161,40 @@ function Controller() {
         view.show();
     }
     function initiate() {
-        $.paceLabel.text = Alloy.Globals.pace.toString();
-        $.dateLabel.text = monthNames[Alloy.Globals.startDateTime.getMonth()] + Alloy.Globals.startDateTime.getDate() + " - " + monthNames[Alloy.Globals.endDateTime.getMonth()] + Alloy.Globals.endDateTime.getDate() + " " + Alloy.Globals.startDateTime.getUTCHours() + ":00 - " + Alloy.Globals.endDateTime.getUTCHours() + ":00";
-        $.distanceLabel.text = Alloy.Globals.distance[0] + " - " + Alloy.Globals.distance[1] + " miles";
+        $.paceLabel.text = 0 == Alloy.Globals.pace.length ? "" : Alloy.Globals.pace.toString();
+        $.dateLabel.text = 0 == Alloy.Globals.startDateTime.length ? "" : monthNames[Alloy.Globals.startDateTime[0].getUTCMonth()] + Alloy.Globals.startDateTime[0].getUTCDate() + " - " + monthNames[Alloy.Globals.startDateTime[1].getUTCMonth()] + Alloy.Globals.startDateTime[1].getUTCDate() + " " + Alloy.Globals.startDateTime[0].getUTCHours() + ":00 - " + Alloy.Globals.startDateTime[1].getUTCHours() + ":00";
+        $.distanceLabel.text = "";
+        if (0 != Alloy.Globals.distance.length) for (var i = 0; i < Alloy.Globals.distance.length; i++) {
+            string = Alloy.Globals.distance[i][0] + " - " + Alloy.Globals.distance[i][1] + " miles ";
+            $.distanceLabel.text = $.distanceLabel.text + string;
+        }
     }
     function resetFilter() {
-        Alloy.Globals.startDateTime = new Date();
-        Alloy.Globals.endDateTime = new Date();
-        Alloy.Globals.startDateTime.setUTCHours(0);
-        Alloy.Globals.endDateTime.setMonth(Alloy.Globals.startDateTime.getMonth() + 6);
+        Alloy.Globals.startDateTime = [];
         Alloy.Globals.pace = [];
-        Alloy.Globals.distance = [ 0, 100 ];
+        Alloy.Globals.distance = [];
         initiate();
+    }
+    function cancelFilter() {
+        $.fwin.close();
+    }
+    function afterFetch() {
+        if (0 == Alloy.Collections.feed.models.length) {
+            var dialog = Ti.UI.createAlertDialog({
+                message: "No Result",
+                ok: "OK"
+            });
+            dialog.addEventListener("click", function() {
+                Alloy.Globals.Navigator.open("filter", $.fwin);
+            });
+            dialog.show();
+        }
     }
     function applyFilter() {
         Alloy.Collections.feed.fetch({
-            url: "https://www.cascade.org/DailyRides/rss.xml"
+            url: "https://www.cascade.org/DailyRides/rss.xml",
+            success: afterFetch,
+            error: afterFetch
         });
         $.fwin.close();
     }
@@ -164,7 +216,7 @@ function Controller() {
     var exports = {};
     var __defers = {};
     $.__views.fwin = Ti.UI.createWindow({
-        barColor: "#CD1625",
+        barColor: "#43B02A",
         backgroundColor: "#FFF",
         id: "fwin",
         title: "Filter",
@@ -229,30 +281,30 @@ function Controller() {
         layout: "horizontal"
     });
     $.__views.paceView.add($.__views.firstRow);
-    $.__views.__alloyId2 = Ti.UI.createButton({
-        title: "Self Paced",
-        left: 5,
-        width: 100,
-        id: "__alloyId2"
-    });
-    $.__views.firstRow.add($.__views.__alloyId2);
-    selfPaced ? $.addListener($.__views.__alloyId2, "click", selfPaced) : __defers["$.__views.__alloyId2!click!selfPaced"] = true;
-    $.__views.__alloyId3 = Ti.UI.createButton({
-        title: "Easy",
-        left: 5,
-        width: 50,
-        id: "__alloyId3"
-    });
-    $.__views.firstRow.add($.__views.__alloyId3);
-    easy ? $.addListener($.__views.__alloyId3, "click", easy) : __defers["$.__views.__alloyId3!click!easy"] = true;
     $.__views.__alloyId4 = Ti.UI.createButton({
-        title: "Leisurely",
+        title: "Self Paced",
         left: 5,
         width: 50,
         id: "__alloyId4"
     });
     $.__views.firstRow.add($.__views.__alloyId4);
-    leisurely ? $.addListener($.__views.__alloyId4, "click", leisurely) : __defers["$.__views.__alloyId4!click!leisurely"] = true;
+    selfPaced ? $.addListener($.__views.__alloyId4, "click", selfPaced) : __defers["$.__views.__alloyId4!click!selfPaced"] = true;
+    $.__views.__alloyId5 = Ti.UI.createButton({
+        title: "Easy",
+        left: 0,
+        width: 50,
+        id: "__alloyId5"
+    });
+    $.__views.firstRow.add($.__views.__alloyId5);
+    easy ? $.addListener($.__views.__alloyId5, "click", easy) : __defers["$.__views.__alloyId5!click!easy"] = true;
+    $.__views.__alloyId6 = Ti.UI.createButton({
+        title: "Leisurely",
+        left: 0,
+        width: 50,
+        id: "__alloyId6"
+    });
+    $.__views.firstRow.add($.__views.__alloyId6);
+    leisurely ? $.addListener($.__views.__alloyId6, "click", leisurely) : __defers["$.__views.__alloyId6!click!leisurely"] = true;
     $.__views.secondRow = Ti.UI.createView({
         id: "secondRow",
         top: 20,
@@ -261,27 +313,27 @@ function Controller() {
         layout: "horizontal"
     });
     $.__views.paceView.add($.__views.secondRow);
-    $.__views.__alloyId5 = Ti.UI.createButton({
-        title: "Steady",
-        left: 15,
-        id: "__alloyId5"
-    });
-    $.__views.secondRow.add($.__views.__alloyId5);
-    steady ? $.addListener($.__views.__alloyId5, "click", steady) : __defers["$.__views.__alloyId5!click!steady"] = true;
-    $.__views.__alloyId6 = Ti.UI.createButton({
-        title: "Moderate",
-        left: 20,
-        id: "__alloyId6"
-    });
-    $.__views.secondRow.add($.__views.__alloyId6);
-    moderate ? $.addListener($.__views.__alloyId6, "click", moderate) : __defers["$.__views.__alloyId6!click!moderate"] = true;
     $.__views.__alloyId7 = Ti.UI.createButton({
-        title: "Brisk",
-        left: 25,
+        title: "Steady",
+        left: 5,
         id: "__alloyId7"
     });
     $.__views.secondRow.add($.__views.__alloyId7);
-    brisk ? $.addListener($.__views.__alloyId7, "click", brisk) : __defers["$.__views.__alloyId7!click!brisk"] = true;
+    steady ? $.addListener($.__views.__alloyId7, "click", steady) : __defers["$.__views.__alloyId7!click!steady"] = true;
+    $.__views.__alloyId8 = Ti.UI.createButton({
+        title: "Moderate",
+        left: 0,
+        id: "__alloyId8"
+    });
+    $.__views.secondRow.add($.__views.__alloyId8);
+    moderate ? $.addListener($.__views.__alloyId8, "click", moderate) : __defers["$.__views.__alloyId8!click!moderate"] = true;
+    $.__views.__alloyId9 = Ti.UI.createButton({
+        title: "Brisk",
+        left: 0,
+        id: "__alloyId9"
+    });
+    $.__views.secondRow.add($.__views.__alloyId9);
+    brisk ? $.addListener($.__views.__alloyId9, "click", brisk) : __defers["$.__views.__alloyId9!click!brisk"] = true;
     $.__views.thirdRow = Ti.UI.createView({
         id: "thirdRow",
         top: 20,
@@ -290,27 +342,27 @@ function Controller() {
         layout: "horizontal"
     });
     $.__views.paceView.add($.__views.thirdRow);
-    $.__views.__alloyId8 = Ti.UI.createButton({
-        title: "Vigorous",
-        left: 15,
-        id: "__alloyId8"
-    });
-    $.__views.thirdRow.add($.__views.__alloyId8);
-    vigorous ? $.addListener($.__views.__alloyId8, "click", vigorous) : __defers["$.__views.__alloyId8!click!vigorous"] = true;
-    $.__views.__alloyId9 = Ti.UI.createButton({
-        title: "Strenuous",
-        left: 20,
-        id: "__alloyId9"
-    });
-    $.__views.thirdRow.add($.__views.__alloyId9);
-    strenuous ? $.addListener($.__views.__alloyId9, "click", strenuous) : __defers["$.__views.__alloyId9!click!strenuous"] = true;
     $.__views.__alloyId10 = Ti.UI.createButton({
-        title: "Super Strenuous",
-        left: 25,
+        title: "Vigorous",
+        left: 5,
         id: "__alloyId10"
     });
     $.__views.thirdRow.add($.__views.__alloyId10);
-    superStrenuous ? $.addListener($.__views.__alloyId10, "click", superStrenuous) : __defers["$.__views.__alloyId10!click!superStrenuous"] = true;
+    vigorous ? $.addListener($.__views.__alloyId10, "click", vigorous) : __defers["$.__views.__alloyId10!click!vigorous"] = true;
+    $.__views.__alloyId11 = Ti.UI.createButton({
+        title: "Strenuous",
+        left: 0,
+        id: "__alloyId11"
+    });
+    $.__views.thirdRow.add($.__views.__alloyId11);
+    strenuous ? $.addListener($.__views.__alloyId11, "click", strenuous) : __defers["$.__views.__alloyId11!click!strenuous"] = true;
+    $.__views.__alloyId12 = Ti.UI.createButton({
+        title: "Super Strenuous",
+        left: 0,
+        id: "__alloyId12"
+    });
+    $.__views.thirdRow.add($.__views.__alloyId12);
+    superStrenuous ? $.addListener($.__views.__alloyId12, "click", superStrenuous) : __defers["$.__views.__alloyId12!click!superStrenuous"] = true;
     $.__views.dateRow = Ti.UI.createView({
         id: "dateRow",
         top: 0,
@@ -320,7 +372,6 @@ function Controller() {
     });
     $.__views.scrollView.add($.__views.dateRow);
     $.__views.date = Ti.UI.createButton({
-        left: 0,
         title: "DateTime",
         top: 0,
         id: "date"
@@ -378,18 +429,16 @@ function Controller() {
     $.__views.start.add($.__views.startTimeLabel);
     $.__views.startTimeSlider = Ti.UI.createSlider({
         id: "startTimeSlider",
-        top: 0,
-        min: 0,
-        max: 24
+        top: 0
     });
     $.__views.start.add($.__views.startTimeSlider);
-    $.__views.__alloyId11 = Ti.UI.createLabel({
+    $.__views.__alloyId13 = Ti.UI.createLabel({
         color: "#000",
         text: "To",
         top: 0,
-        id: "__alloyId11"
+        id: "__alloyId13"
     });
-    $.__views.dateView.add($.__views.__alloyId11);
+    $.__views.dateView.add($.__views.__alloyId13);
     $.__views.endDate = Ti.UI.createPicker({
         width: Titanium.UI.FILL,
         height: Titanium.UI.SIZE,
@@ -417,7 +466,6 @@ function Controller() {
     $.__views.end.add($.__views.endTimeLabel);
     $.__views.endTimeSlider = Ti.UI.createSlider({
         id: "endTimeSlider",
-        max: 24,
         top: 0
     });
     $.__views.end.add($.__views.endTimeSlider);
@@ -469,27 +517,27 @@ function Controller() {
         layout: "horizontal"
     });
     $.__views.distanceView.add($.__views.firstRow1);
-    $.__views.__alloyId12 = Ti.UI.createButton({
+    $.__views.__alloyId14 = Ti.UI.createButton({
         title: "10-20",
         left: 15,
-        id: "__alloyId12"
-    });
-    $.__views.firstRow1.add($.__views.__alloyId12);
-    ten ? $.addListener($.__views.__alloyId12, "click", ten) : __defers["$.__views.__alloyId12!click!ten"] = true;
-    $.__views.__alloyId13 = Ti.UI.createButton({
-        title: "20-30",
-        left: 0,
-        id: "__alloyId13"
-    });
-    $.__views.firstRow1.add($.__views.__alloyId13);
-    twenty ? $.addListener($.__views.__alloyId13, "click", twenty) : __defers["$.__views.__alloyId13!click!twenty"] = true;
-    $.__views.__alloyId14 = Ti.UI.createButton({
-        title: "30-40",
-        left: 0,
         id: "__alloyId14"
     });
     $.__views.firstRow1.add($.__views.__alloyId14);
-    thirty ? $.addListener($.__views.__alloyId14, "click", thirty) : __defers["$.__views.__alloyId14!click!thirty"] = true;
+    ten ? $.addListener($.__views.__alloyId14, "click", ten) : __defers["$.__views.__alloyId14!click!ten"] = true;
+    $.__views.__alloyId15 = Ti.UI.createButton({
+        title: "20-30",
+        left: 0,
+        id: "__alloyId15"
+    });
+    $.__views.firstRow1.add($.__views.__alloyId15);
+    twenty ? $.addListener($.__views.__alloyId15, "click", twenty) : __defers["$.__views.__alloyId15!click!twenty"] = true;
+    $.__views.__alloyId16 = Ti.UI.createButton({
+        title: "30-40",
+        left: 0,
+        id: "__alloyId16"
+    });
+    $.__views.firstRow1.add($.__views.__alloyId16);
+    thirty ? $.addListener($.__views.__alloyId16, "click", thirty) : __defers["$.__views.__alloyId16!click!thirty"] = true;
     $.__views.secondRow1 = Ti.UI.createView({
         id: "secondRow1",
         top: 20,
@@ -498,27 +546,27 @@ function Controller() {
         layout: "horizontal"
     });
     $.__views.distanceView.add($.__views.secondRow1);
-    $.__views.__alloyId15 = Ti.UI.createButton({
+    $.__views.__alloyId17 = Ti.UI.createButton({
         title: "40-50",
         left: 15,
-        id: "__alloyId15"
-    });
-    $.__views.secondRow1.add($.__views.__alloyId15);
-    fourty ? $.addListener($.__views.__alloyId15, "click", fourty) : __defers["$.__views.__alloyId15!click!fourty"] = true;
-    $.__views.__alloyId16 = Ti.UI.createButton({
-        title: "50-60",
-        left: 0,
-        id: "__alloyId16"
-    });
-    $.__views.secondRow1.add($.__views.__alloyId16);
-    fifty ? $.addListener($.__views.__alloyId16, "click", fifty) : __defers["$.__views.__alloyId16!click!fifty"] = true;
-    $.__views.__alloyId17 = Ti.UI.createButton({
-        title: "60-70",
-        left: 0,
         id: "__alloyId17"
     });
     $.__views.secondRow1.add($.__views.__alloyId17);
-    sixty ? $.addListener($.__views.__alloyId17, "click", sixty) : __defers["$.__views.__alloyId17!click!sixty"] = true;
+    fourty ? $.addListener($.__views.__alloyId17, "click", fourty) : __defers["$.__views.__alloyId17!click!fourty"] = true;
+    $.__views.__alloyId18 = Ti.UI.createButton({
+        title: "50-60",
+        left: 0,
+        id: "__alloyId18"
+    });
+    $.__views.secondRow1.add($.__views.__alloyId18);
+    fifty ? $.addListener($.__views.__alloyId18, "click", fifty) : __defers["$.__views.__alloyId18!click!fifty"] = true;
+    $.__views.__alloyId19 = Ti.UI.createButton({
+        title: "60-70",
+        left: 0,
+        id: "__alloyId19"
+    });
+    $.__views.secondRow1.add($.__views.__alloyId19);
+    sixty ? $.addListener($.__views.__alloyId19, "click", sixty) : __defers["$.__views.__alloyId19!click!sixty"] = true;
     $.__views.thirdRow1 = Ti.UI.createView({
         id: "thirdRow1",
         top: 20,
@@ -527,53 +575,62 @@ function Controller() {
         layout: "horizontal"
     });
     $.__views.distanceView.add($.__views.thirdRow1);
-    $.__views.__alloyId18 = Ti.UI.createButton({
+    $.__views.__alloyId20 = Ti.UI.createButton({
         title: "70-80",
         left: 15,
-        id: "__alloyId18"
-    });
-    $.__views.thirdRow1.add($.__views.__alloyId18);
-    seventy ? $.addListener($.__views.__alloyId18, "click", seventy) : __defers["$.__views.__alloyId18!click!seventy"] = true;
-    $.__views.__alloyId19 = Ti.UI.createButton({
-        title: "80-90",
-        left: 0,
-        id: "__alloyId19"
-    });
-    $.__views.thirdRow1.add($.__views.__alloyId19);
-    eighty ? $.addListener($.__views.__alloyId19, "click", eighty) : __defers["$.__views.__alloyId19!click!eighty"] = true;
-    $.__views.__alloyId20 = Ti.UI.createButton({
-        title: "90+",
-        left: 0,
         id: "__alloyId20"
     });
     $.__views.thirdRow1.add($.__views.__alloyId20);
-    ninety ? $.addListener($.__views.__alloyId20, "click", ninety) : __defers["$.__views.__alloyId20!click!ninety"] = true;
-    $.__views.__alloyId21 = Ti.UI.createView({
+    seventy ? $.addListener($.__views.__alloyId20, "click", seventy) : __defers["$.__views.__alloyId20!click!seventy"] = true;
+    $.__views.__alloyId21 = Ti.UI.createButton({
+        title: "80-90",
+        left: 0,
+        id: "__alloyId21"
+    });
+    $.__views.thirdRow1.add($.__views.__alloyId21);
+    eighty ? $.addListener($.__views.__alloyId21, "click", eighty) : __defers["$.__views.__alloyId21!click!eighty"] = true;
+    $.__views.__alloyId22 = Ti.UI.createButton({
+        title: "90+",
+        left: 0,
+        id: "__alloyId22"
+    });
+    $.__views.thirdRow1.add($.__views.__alloyId22);
+    ninety ? $.addListener($.__views.__alloyId22, "click", ninety) : __defers["$.__views.__alloyId22!click!ninety"] = true;
+    $.__views.__alloyId23 = Ti.UI.createView({
         top: 0,
         width: "100%",
         height: 30,
         layout: "horizontal",
-        id: "__alloyId21"
+        id: "__alloyId23"
     });
-    $.__views.scrollView.add($.__views.__alloyId21);
+    $.__views.scrollView.add($.__views.__alloyId23);
+    $.__views.cancel = Ti.UI.createButton({
+        title: "Cancel",
+        top: 0,
+        left: 70,
+        id: "cancel"
+    });
+    $.__views.__alloyId23.add($.__views.cancel);
+    cancelFilter ? $.addListener($.__views.cancel, "click", cancelFilter) : __defers["$.__views.cancel!click!cancelFilter"] = true;
     $.__views.reset = Ti.UI.createButton({
         title: "Reset",
         top: 0,
-        left: 100,
+        left: 70,
         id: "reset"
     });
-    $.__views.__alloyId21.add($.__views.reset);
+    $.__views.__alloyId23.add($.__views.reset);
     resetFilter ? $.addListener($.__views.reset, "click", resetFilter) : __defers["$.__views.reset!click!resetFilter"] = true;
     $.__views.apply = Ti.UI.createButton({
         title: "Apply",
         top: 0,
-        left: 110,
+        left: 70,
         id: "apply"
     });
-    $.__views.__alloyId21.add($.__views.apply);
+    $.__views.__alloyId23.add($.__views.apply);
     applyFilter ? $.addListener($.__views.apply, "click", applyFilter) : __defers["$.__views.apply!click!applyFilter"] = true;
     exports.destroy = function() {};
     _.extend($, $.__views);
+    $.fwin.leftNavButton = Ti.UI.createView();
     require("alloy/moment");
     var paceView = false;
     var dateView = false;
@@ -587,12 +644,14 @@ function Controller() {
     }(arguments[0] || {});
     $.startDate.addEventListener("change", function(e) {
         $.endDate.minDate = e.value;
-        Alloy.Globals.startDateTime = e.value;
-        $.dateLabel.text = monthNames[$.startDate.value.getMonth()] + $.startDate.value.getDate() + " - " + monthNames[$.endDate.value.getMonth()] + $.endDate.value.getDate();
+        Alloy.Globals.startDateTime[0] = e.value;
+        Alloy.Globals.startDateTime[0].setUTCHours($.startTimeSlider.value, 0, 0, 0);
+        $.dateLabel.text = monthNames[$.startDate.value.getUTCMonth()] + $.startDate.value.getUTCDate() + " - " + monthNames[$.endDate.value.getUTCMonth()] + $.endDate.value.getUTCDate() + " " + $.startTimeSlider.value + ":00 - " + $.endTimeSlider.value + ":00";
     });
     $.endDate.addEventListener("change", function(e) {
-        Alloy.Globals.endDateTime = e.value;
-        $.dateLabel.text = monthNames[$.startDate.value.getMonth()] + $.startDate.value.getDate() + " - " + monthNames[$.endDate.value.getMonth()] + $.endDate.value.getDate();
+        Alloy.Globals.startDateTime[1] = e.value;
+        Alloy.Globals.startDateTime[1].setUTCHours($.endTimeSlider.value, 0, 0, 0);
+        $.dateLabel.text = monthNames[$.startDate.value.getUTCMonth()] + $.startDate.value.getUTCDate() + " - " + monthNames[$.endDate.value.getUTCMonth()] + $.endDate.value.getUTCDate() + " " + $.startTimeSlider.value + ":00 - " + $.endTimeSlider.value + ":00";
     });
     $.startTimeSlider.addEventListener("touchend", function(e) {
         this.value = Math.round(e.value);
@@ -601,8 +660,8 @@ function Controller() {
     $.startTimeSlider.addEventListener("change", function(e) {
         $.startTimeLabel.text = Math.round(e.value);
         $.endTimeSlider.min = e.value;
-        Alloy.Globals.startDateTime.setUTCHours(e.value, 0, 0, 0);
-        $.dateLabel.text = monthNames[$.startDate.value.getMonth()] + $.startDate.value.getDate() + " - " + monthNames[$.endDate.value.getMonth()] + $.endDate.value.getDate() + " " + $.startTimeSlider.value + ":00 - " + $.endTimeSlider.value + ":00";
+        Alloy.Globals.startDateTime[0].setUTCHours(e.value, 0, 0, 0);
+        $.dateLabel.text = monthNames[$.startDate.value.getUTCMonth()] + $.startDate.value.getUTCDate() + " - " + monthNames[$.endDate.value.getUTCMonth()] + $.endDate.value.getUTCDate() + " " + $.startTimeSlider.value + ":00 - " + $.endTimeSlider.value + ":00";
     });
     $.endTimeSlider.addEventListener("touchend", function(e) {
         this.value = Math.round(e.value);
@@ -610,36 +669,37 @@ function Controller() {
     });
     $.endTimeSlider.addEventListener("change", function(e) {
         $.endTimeLabel.text = Math.round(e.value);
-        Alloy.Globals.endDateTime.setUTCHours($.endTimeSlider.value, 0, 0, 0);
-        $.dateLabel.text = monthNames[$.startDate.value.getMonth()] + $.startDate.value.getDate() + " - " + monthNames[$.endDate.value.getMonth()] + $.endDate.value.getDate() + " " + $.startTimeSlider.value + ":00 - " + $.endTimeSlider.value + ":00";
+        Alloy.Globals.startDateTime[1].setUTCHours(e.value, 0, 0, 0);
+        $.dateLabel.text = monthNames[$.startDate.value.getUTCMonth()] + $.startDate.value.getUTCDate() + " - " + monthNames[$.endDate.value.getUTCMonth()] + $.endDate.value.getUTCDate() + " " + $.startTimeSlider.value + ":00 - " + $.endTimeSlider.value + ":00";
     });
     __defers["$.__views.pace!click!hidePaceView"] && $.addListener($.__views.pace, "click", hidePaceView);
     __defers["$.__views.paceLabel!click!hideDateView"] && $.addListener($.__views.paceLabel, "click", hideDateView);
     __defers["$.__views.paceFold!click!hidePaceView"] && $.addListener($.__views.paceFold, "click", hidePaceView);
-    __defers["$.__views.__alloyId2!click!selfPaced"] && $.addListener($.__views.__alloyId2, "click", selfPaced);
-    __defers["$.__views.__alloyId3!click!easy"] && $.addListener($.__views.__alloyId3, "click", easy);
-    __defers["$.__views.__alloyId4!click!leisurely"] && $.addListener($.__views.__alloyId4, "click", leisurely);
-    __defers["$.__views.__alloyId5!click!steady"] && $.addListener($.__views.__alloyId5, "click", steady);
-    __defers["$.__views.__alloyId6!click!moderate"] && $.addListener($.__views.__alloyId6, "click", moderate);
-    __defers["$.__views.__alloyId7!click!brisk"] && $.addListener($.__views.__alloyId7, "click", brisk);
-    __defers["$.__views.__alloyId8!click!vigorous"] && $.addListener($.__views.__alloyId8, "click", vigorous);
-    __defers["$.__views.__alloyId9!click!strenuous"] && $.addListener($.__views.__alloyId9, "click", strenuous);
-    __defers["$.__views.__alloyId10!click!superStrenuous"] && $.addListener($.__views.__alloyId10, "click", superStrenuous);
+    __defers["$.__views.__alloyId4!click!selfPaced"] && $.addListener($.__views.__alloyId4, "click", selfPaced);
+    __defers["$.__views.__alloyId5!click!easy"] && $.addListener($.__views.__alloyId5, "click", easy);
+    __defers["$.__views.__alloyId6!click!leisurely"] && $.addListener($.__views.__alloyId6, "click", leisurely);
+    __defers["$.__views.__alloyId7!click!steady"] && $.addListener($.__views.__alloyId7, "click", steady);
+    __defers["$.__views.__alloyId8!click!moderate"] && $.addListener($.__views.__alloyId8, "click", moderate);
+    __defers["$.__views.__alloyId9!click!brisk"] && $.addListener($.__views.__alloyId9, "click", brisk);
+    __defers["$.__views.__alloyId10!click!vigorous"] && $.addListener($.__views.__alloyId10, "click", vigorous);
+    __defers["$.__views.__alloyId11!click!strenuous"] && $.addListener($.__views.__alloyId11, "click", strenuous);
+    __defers["$.__views.__alloyId12!click!superStrenuous"] && $.addListener($.__views.__alloyId12, "click", superStrenuous);
     __defers["$.__views.date!click!hideDateView"] && $.addListener($.__views.date, "click", hideDateView);
     __defers["$.__views.dateLabel!click!hideDateView"] && $.addListener($.__views.dateLabel, "click", hideDateView);
     __defers["$.__views.dateFold!click!hideDateView"] && $.addListener($.__views.dateFold, "click", hideDateView);
     __defers["$.__views.distance!click!hideDistanceView"] && $.addListener($.__views.distance, "click", hideDistanceView);
     __defers["$.__views.distanceLabel!click!hideDistanceView"] && $.addListener($.__views.distanceLabel, "click", hideDistanceView);
     __defers["$.__views.distanceFold!click!hideDistanceView"] && $.addListener($.__views.distanceFold, "click", hideDistanceView);
-    __defers["$.__views.__alloyId12!click!ten"] && $.addListener($.__views.__alloyId12, "click", ten);
-    __defers["$.__views.__alloyId13!click!twenty"] && $.addListener($.__views.__alloyId13, "click", twenty);
-    __defers["$.__views.__alloyId14!click!thirty"] && $.addListener($.__views.__alloyId14, "click", thirty);
-    __defers["$.__views.__alloyId15!click!fourty"] && $.addListener($.__views.__alloyId15, "click", fourty);
-    __defers["$.__views.__alloyId16!click!fifty"] && $.addListener($.__views.__alloyId16, "click", fifty);
-    __defers["$.__views.__alloyId17!click!sixty"] && $.addListener($.__views.__alloyId17, "click", sixty);
-    __defers["$.__views.__alloyId18!click!seventy"] && $.addListener($.__views.__alloyId18, "click", seventy);
-    __defers["$.__views.__alloyId19!click!eighty"] && $.addListener($.__views.__alloyId19, "click", eighty);
-    __defers["$.__views.__alloyId20!click!ninety"] && $.addListener($.__views.__alloyId20, "click", ninety);
+    __defers["$.__views.__alloyId14!click!ten"] && $.addListener($.__views.__alloyId14, "click", ten);
+    __defers["$.__views.__alloyId15!click!twenty"] && $.addListener($.__views.__alloyId15, "click", twenty);
+    __defers["$.__views.__alloyId16!click!thirty"] && $.addListener($.__views.__alloyId16, "click", thirty);
+    __defers["$.__views.__alloyId17!click!fourty"] && $.addListener($.__views.__alloyId17, "click", fourty);
+    __defers["$.__views.__alloyId18!click!fifty"] && $.addListener($.__views.__alloyId18, "click", fifty);
+    __defers["$.__views.__alloyId19!click!sixty"] && $.addListener($.__views.__alloyId19, "click", sixty);
+    __defers["$.__views.__alloyId20!click!seventy"] && $.addListener($.__views.__alloyId20, "click", seventy);
+    __defers["$.__views.__alloyId21!click!eighty"] && $.addListener($.__views.__alloyId21, "click", eighty);
+    __defers["$.__views.__alloyId22!click!ninety"] && $.addListener($.__views.__alloyId22, "click", ninety);
+    __defers["$.__views.cancel!click!cancelFilter"] && $.addListener($.__views.cancel, "click", cancelFilter);
     __defers["$.__views.reset!click!resetFilter"] && $.addListener($.__views.reset, "click", resetFilter);
     __defers["$.__views.apply!click!applyFilter"] && $.addListener($.__views.apply, "click", applyFilter);
     _.extend($, exports);
