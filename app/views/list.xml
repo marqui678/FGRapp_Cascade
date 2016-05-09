@@ -4,9 +4,6 @@
 	<Collection src="feed"/>
 	<Window id="lwin" title="Free Group Rides">
 		<!-- Android: Add MenuItem for refresh -->		
-		<Menu platform="android">
-			<MenuItem icon="images/ic_action_action_autorenew.png" onClick="refresh" showAsAction="Ti.Android.SHOW_AS_ACTION_ALWAYS" />
-		</Menu>
 		<ListView id="listView" platform="ios,android" defaultItemTemplate="template" onItemclick="select">	
 			<!-- iOS RefreshControl -->
 			<RefreshControl platform="ios" id="refreshControl" onRefreshstart="refresh" />

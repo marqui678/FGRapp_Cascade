@@ -171,7 +171,7 @@ function Controller() {
                     font: {
                         fontSize: 20
                     },
-                    height: 20,
+                    height: 23,
                     bindId: "title"
                 }
             };
@@ -215,13 +215,13 @@ function Controller() {
                                 type: "Ti.UI.Label",
                                 bindId: "paceNumber",
                                 properties: {
-                                    color: "black",
+                                    color: "white",
                                     left: 0,
                                     font: {
                                         fontSize: 12
                                     },
                                     width: 80,
-                                    height: 30,
+                                    height: 25,
                                     bindId: "paceNumber",
                                     backgroundImage: "pace.png"
                                 }
@@ -236,7 +236,8 @@ function Controller() {
                                     font: {
                                         fontSize: 16
                                     },
-                                    width: 80,
+                                    width: 150,
+                                    height: 30,
                                     bindId: "pace"
                                 }
                             };
@@ -246,7 +247,7 @@ function Controller() {
                                 bindId: "distanceOne",
                                 properties: {
                                     color: "#2C2A29",
-                                    left: 100,
+                                    left: 30,
                                     font: {
                                         fontSize: 36
                                     },
@@ -272,7 +273,7 @@ function Controller() {
                         properties: {
                             left: 0,
                             right: 0,
-                            top: 5,
+                            top: 0,
                             layout: "horizontal"
                         }
                     };

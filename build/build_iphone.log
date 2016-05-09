@@ -1,5 +1,5 @@
 
-5/9/2016, 3:21:39 PM
+5/9/2016, 3:49:32 PM
 
 Operating System
   Name                        = Mac OS X
@@ -21,7 +21,7 @@ Titanium SDK
   Target Platform             = iphone
 
 Command
-  /usr/local/bin/node /Users/jia/.appcelerator/install/5.2.2/package/node_modules/titanium/lib/titanium.js build run --platform ios --log-level trace --sdk 5.2.2.GA --project-dir /Users/jia/Documents/Appcelerator_Studio_Workspace/FGRapp5 --target simulator --ios-version 8.4 --device-family iphone --deploy-type development --sim-type iphone --sim-version 8.4 --device-id A70756FB-C2DE-4452-BF1F-01778F726A5C --skip-js-minify --no-colors --no-progress-bars --no-prompt --prompt-type socket-bundle --prompt-port 49183 --config-file /var/folders/85/rj0yf4g145g8qzpp_9mgwkwr0000gq/T/build-1462832492125.json --no-banner --project-dir /Users/jia/Documents/Appcelerator_Studio_Workspace/FGRapp5
+  /usr/local/bin/node /Users/jia/.appcelerator/install/5.2.2/package/node_modules/titanium/lib/titanium.js build run --platform ios --log-level trace --sdk 5.2.2.GA --project-dir /Users/jia/Documents/Appcelerator_Studio_Workspace/FGRapp5 --target simulator --ios-version 8.4 --device-family iphone --deploy-type development --sim-type iphone --sim-version 8.4 --device-id A70756FB-C2DE-4452-BF1F-01778F726A5C --skip-js-minify --no-colors --no-progress-bars --no-prompt --prompt-type socket-bundle --prompt-port 49183 --config-file /var/folders/85/rj0yf4g145g8qzpp_9mgwkwr0000gq/T/build-1462834165366.json --no-banner --project-dir /Users/jia/Documents/Appcelerator_Studio_Workspace/FGRapp5
 
 [TRACE]  [ioslib] Validating iOS Simulator UDID A70756FB-C2DE-4452-BF1F-01778F726A5C
 [TRACE]  [ioslib] Found iOS Simulator UDID A70756FB-C2DE-4452-BF1F-01778F726A5C
@@ -300,13 +300,13 @@ Command
 [TRACE]  
 [TRACE]  Benchmarking
 [TRACE]  ------------
-[TRACE]  [5.84292s] TOTAL
+[TRACE]  [6.16848s] TOTAL
 [INFO]   
-[INFO]   Alloy compiled in 5.84292s
+[INFO]   Alloy compiled in 6.16848s
 [INFO]   Alloy compiler completed successfully
 [TRACE]  offline build file /var/folders/85/rj0yf4g145g8qzpp_9mgwkwr0000gq/T/build-ae2c3721582a1733f572ab6815afc9023d0bfa6d.json
 [TRACE]  online 1
-[TRACE]  optimizing build, last build was 1761.015 sec ago
+[TRACE]  optimizing build, last build was 3434.466 sec ago
 [INFO]   Creating Xcode project
 [INFO]   LaunchScreen.storyboard is not supported with Xcode 6.4, removing from Xcode project
 [TRACE]  Removing pre-compile phase
@@ -436,17 +436,15 @@ Command
 [TRACE]  No change, skipping /Users/jia/Documents/Appcelerator_Studio_Workspace/FGRapp5/build/iphone/build/Products/Debug-iphonesimulator/FGR_Cascade.app/modules/ui/images/photoDefault.png
 [TRACE]  No change, skipping /Users/jia/Documents/Appcelerator_Studio_Workspace/FGRapp5/build/iphone/Classes/defines.h
 [INFO]   Removing files
-[DEBUG]  Removing /Users/jia/Documents/Appcelerator_Studio_Workspace/FGRapp5/build/iphone/Logs/Build/Cache.db
-[DEBUG]  Removing /Users/jia/Documents/Appcelerator_Studio_Workspace/FGRapp5/build/iphone/Logs/Build/F94AD143-BEC2-495F-898C-6B81DFAC4493.xcactivitylog
 [DEBUG]  Removing empty directories
 [INFO]   Skipping xcodebuild
-[INFO]   Finished building the application in 17s 27ms
+[INFO]   Finished building the application in 15s 536ms
 [INFO]   Launching iOS Simulator
 [TRACE]  [ioslib] Selected iOS Simulator: iPhone 6
 [TRACE]  [ioslib]   UDID    = A70756FB-C2DE-4452-BF1F-01778F726A5C
 [TRACE]  [ioslib]   iOS     = 8.4
 [TRACE]  [ioslib] Autoselected Xcode: 6.4
-[TRACE]  [ioslib] Removing old log file: /Users/jia/Library/Developer/CoreSimulator/Devices/A70756FB-C2DE-4452-BF1F-01778F726A5C/data/Containers/Data/Application/9C3B49D8-C47D-4F59-A58E-2298043340E5/Documents/0b49a6c2-1ae9-421b-9555-00cc7177e83c.log
+[TRACE]  [ioslib] Removing old log file: /Users/jia/Library/Developer/CoreSimulator/Devices/A70756FB-C2DE-4452-BF1F-01778F726A5C/data/Containers/Data/Application/7F8DDF8E-FABA-4F3F-93F6-CC0C68853F9C/Documents/0b49a6c2-1ae9-421b-9555-00cc7177e83c.log
 [TRACE]  [ioslib] iPhone 6 Simulator already running with the correct udid
 [TRACE]  [ioslib] Tailing iPhone 6 Simulator system log: /Users/jia/Library/Logs/CoreSimulator/A70756FB-C2DE-4452-BF1F-01778F726A5C/system.log
 [TRACE]  [ioslib] Running: osascript "/Users/jia/Library/Application Support/Titanium/mobilesdk/osx/5.2.2.GA/node_modules/ioslib/lib/sim_focus.scpt" "iOS Simulator" "Disabled"
@@ -455,5 +453,5 @@ Command
 [TRACE]  [ioslib] App installed
 [TRACE]  [ioslib] Running: /Applications/Xcode.app/Contents/Developer/usr/bin/simctl launch A70756FB-C2DE-4452-BF1F-01778F726A5C edu.uw.titaniumpanda.FGRCascade
 [TRACE]  [ioslib] App launched
-[TRACE]  [ioslib] Found application log file: /Users/jia/Library/Developer/CoreSimulator/Devices/A70756FB-C2DE-4452-BF1F-01778F726A5C/data/Containers/Data/Application/40187728-E936-4783-B382-20AE20B89CFF/Documents/0b49a6c2-1ae9-421b-9555-00cc7177e83c.log
+[TRACE]  [ioslib] Found application log file: /Users/jia/Library/Developer/CoreSimulator/Devices/A70756FB-C2DE-4452-BF1F-01778F726A5C/data/Containers/Data/Application/5BE56552-D179-4109-B96C-9E6628B150FE/Documents/0b49a6c2-1ae9-421b-9555-00cc7177e83c.log
 [TRACE]  [FGR_Cascade] assertion failed: 14F1713 12H141: libxpc.dylib + 59338 [AF8FA08F-353B-303B-A08E-AEBB3C60A640]: 0x7d
