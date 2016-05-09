@@ -64,7 +64,11 @@ function Controller() {
     var exports = {};
     var __defers = {};
     $.__views.sortWindow = Ti.UI.createWindow({
+<<<<<<< HEAD
         barColor: "#43B02A",
+=======
+        barColor: "#CD1625",
+>>>>>>> Jia1
         backgroundColor: "#FFF",
         navTintColor: "#FFF",
         translucent: false,
@@ -76,34 +80,52 @@ function Controller() {
     });
     $.__views.sortWindow && $.addTopLevelView($.__views.sortWindow);
     $.__views.sortByInfo = Ti.UI.createView({
+<<<<<<< HEAD
         top: "15",
         height: "50",
         backgroundColor: "#F7F7F7",
+=======
+        top: "0",
+        left: "15",
+        right: "15",
+        height: "50",
+>>>>>>> Jia1
         id: "sortByInfo"
     });
     $.__views.sortWindow.add($.__views.sortByInfo);
     $.__views.sortBy = Ti.UI.createLabel({
+<<<<<<< HEAD
         color: "#2C2A29",
         font: {
             fontSize: 16
         },
         height: "50",
         left: "16",
+=======
+        color: "#000",
+        left: "0",
+>>>>>>> Jia1
         text: "SORT BY",
         id: "sortBy"
     });
     $.__views.sortByInfo.add($.__views.sortBy);
     $.__views.sortByResult = Ti.UI.createLabel({
+<<<<<<< HEAD
         color: "#646464",
         font: {
             fontSize: 12
         },
         height: "50",
         right: "16",
+=======
+        color: "#000",
+        right: "0",
+>>>>>>> Jia1
         text: "Distance: short to long",
         id: "sortByResult"
     });
     $.__views.sortByInfo.add($.__views.sortByResult);
+<<<<<<< HEAD
     var __alloyId68 = {};
     var __alloyId70 = [];
     var __alloyId71 = {
@@ -111,12 +133,22 @@ function Controller() {
         childTemplates: function() {
             var __alloyId72 = [];
             var __alloyId73 = {
+=======
+    var __alloyId69 = {};
+    var __alloyId72 = [];
+    var __alloyId73 = {
+        type: "Ti.UI.View",
+        childTemplates: function() {
+            var __alloyId74 = [];
+            var __alloyId75 = {
+>>>>>>> Jia1
                 type: "Ti.UI.ImageView",
                 bindId: "radioBtn",
                 properties: {
                     bindId: "radioBtn"
                 }
             };
+<<<<<<< HEAD
             __alloyId72.push(__alloyId73);
             var __alloyId74 = {
                 type: "Ti.UI.Label",
@@ -146,10 +178,23 @@ function Controller() {
         type: "Ti.UI.View",
         childTemplates: function() {
             var __alloyId76 = [];
+=======
+            __alloyId74.push(__alloyId75);
+            var __alloyId76 = {
+                type: "Ti.UI.Label",
+                bindId: "title",
+                properties: {
+                    color: "#000",
+                    bindId: "title"
+                }
+            };
+            __alloyId74.push(__alloyId76);
+>>>>>>> Jia1
             var __alloyId77 = {
                 type: "Ti.UI.Label",
                 bindId: "direction",
                 properties: {
+<<<<<<< HEAD
                     color: "#646464",
                     font: {
                         fontSize: 12
@@ -160,11 +205,23 @@ function Controller() {
                 }
             };
             __alloyId76.push(__alloyId77);
+=======
+                    color: "blue",
+                    right: "15",
+                    bindId: "direction"
+                }
+            };
+            __alloyId74.push(__alloyId77);
+>>>>>>> Jia1
             var __alloyId78 = {
                 type: "Ti.UI.ImageView",
                 bindId: "arrowBtn",
                 properties: {
+<<<<<<< HEAD
                     left: "5",
+=======
+                    right: "0",
+>>>>>>> Jia1
                     width: "15",
                     bindId: "arrowBtn"
                 },
@@ -172,6 +229,7 @@ function Controller() {
                     click: setSortDirection
                 }
             };
+<<<<<<< HEAD
             __alloyId76.push(__alloyId78);
             return __alloyId76;
         }(),
@@ -204,11 +262,43 @@ function Controller() {
         top: "65",
         sections: __alloyId80,
         templates: __alloyId68,
+=======
+            __alloyId74.push(__alloyId78);
+            return __alloyId74;
+        }(),
+        properties: {
+            left: "0",
+            right: "0",
+            layout: "horizontal"
+        }
+    };
+    __alloyId72.push(__alloyId73);
+    var __alloyId71 = {
+        properties: {
+            name: "elementTemplate",
+            height: 50
+        },
+        childTemplates: __alloyId72
+    };
+    __alloyId69["elementTemplate"] = __alloyId71;
+    $.__views.__alloyId79 = Ti.UI.createListSection({
+        id: "__alloyId79"
+    });
+    var __alloyId81 = [];
+    __alloyId81.push($.__views.__alloyId79);
+    $.__views.sortOptionsList = Ti.UI.createListView({
+        top: "50",
+        left: "15",
+        right: "15",
+        sections: __alloyId81,
+        templates: __alloyId69,
+>>>>>>> Jia1
         id: "sortOptionsList",
         defaultItemTemplate: "elementTemplate"
     });
     $.__views.sortWindow.add($.__views.sortOptionsList);
     selectSort ? $.addListener($.__views.sortOptionsList, "itemclick", selectSort) : __defers["$.__views.sortOptionsList!itemclick!selectSort"] = true;
+<<<<<<< HEAD
     $.__views.applyBtn = Ti.UI.createButton({
         bottom: "0",
         width: Ti.UI.FILL,
@@ -228,6 +318,21 @@ function Controller() {
     var selectedRadioBtn = "images/ic_radio_button_on.png";
     var arrowBtn = "images/ic_arrow_drop_up.png";
     var downArrowBtn = "images/ic_arrow_drop_down.png";
+=======
+    $.__views.__alloyId82 = Ti.UI.createButton({
+        title: "Apply",
+        id: "__alloyId82"
+    });
+    $.__views.sortWindow.add($.__views.__alloyId82);
+    applySort ? $.addListener($.__views.__alloyId82, "click", applySort) : __defers["$.__views.__alloyId82!click!applySort"] = true;
+    exports.destroy = function() {};
+    _.extend($, $.__views);
+    $.args;
+    var radioBtn = "images/checkbox.png";
+    var selectedRadioBtn = "images/checkboxSelected.png";
+    var arrowBtn = "images/sortIncrease.png";
+    var downArrowBtn = "images/sortDecrease.png";
+>>>>>>> Jia1
     JSON.stringify(Alloy.Globals.selectedSort);
     var selectedSort = Alloy.Globals.selectedSort;
     var sortOptions = [ {
@@ -333,7 +438,11 @@ function Controller() {
     }
     $.sortOptionsList.sections[0].setItems(sortOptions);
     __defers["$.__views.sortOptionsList!itemclick!selectSort"] && $.addListener($.__views.sortOptionsList, "itemclick", selectSort);
+<<<<<<< HEAD
     __defers["$.__views.applyBtn!click!applySort"] && $.addListener($.__views.applyBtn, "click", applySort);
+=======
+    __defers["$.__views.__alloyId82!click!applySort"] && $.addListener($.__views.__alloyId82, "click", applySort);
+>>>>>>> Jia1
     _.extend($, exports);
 }
 

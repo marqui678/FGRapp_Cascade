@@ -122,9 +122,9 @@ function parseXML(xml) {
 			model["lowestPace"] = paceNum == null ? paceNum: Number(paceNum[0]);
 			model["largestPace"] = paceNum == null ? paceNum: Number(paceNum[paceNum.length-1]);
 			if (model["lowestPace"] != model["largestPace"]){
-				model["paceNumber"] = model["lowestPace"] + "-" + model["largestPace"] + " mph";
+				model["paceNumber"] = "   " + model["lowestPace"] + "-" + model["largestPace"] + " mph";
 			} else{
-				model["paceNumber"] = model["lowestPace"] + " mph";
+				model["paceNumber"] = "   " + model["lowestPace"] + " mph";
 			}
 			var paceTemp = model["fgrrss:pace"].split(":");
 			var pace = [];

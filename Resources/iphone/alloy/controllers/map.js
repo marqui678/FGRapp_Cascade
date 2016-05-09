@@ -9,14 +9,19 @@ function __processArg(obj, key) {
 
 function Controller() {
     function centeredByCurrentLocation() {
+<<<<<<< HEAD
         if (false === Ti.Geolocation.locationServicesEnabled) {
             alert("The device has geo turned off. Use default location.");
             setRegionCenterAndSortByLoc(Alloy.Globals.defaultLocation);
         }
+=======
+        false === Ti.Geolocation.locationServicesEnabled && alert("our device has geo turned off - turn it on.");
+>>>>>>> Jia1
         Titanium.Geolocation.getCurrentPosition(function(e) {
             Ti.Geolocation.accuracy = Ti.Geolocation.ACCURACY_HIGH;
             if (e.error) {
                 alert("Current location not found. Use default location");
+<<<<<<< HEAD
                 setRegionCenterAndSortByLoc(Alloy.Globals.defaultLocation);
             } else setRegionCenterAndSortByLoc(e.coords);
         });
@@ -29,6 +34,20 @@ function Controller() {
         Alloy.Collections.feed.setSortField("distanceToLocation", "ASC");
         Alloy.Collections.feed.sort();
     }
+=======
+                regionCenter.latitude = Alloy.Globals.defaultLocation.latitude;
+                regionCenter.longitude = Alloy.Globals.defaultLocation.longitude;
+            } else {
+                regionCenter.latitude = e.coords.latitude;
+                regionCenter.longitude = e.coords.longitude;
+            }
+            setMapRegion(regionCenter);
+            setDistanceToLocation(rideData, regionCenter);
+            Alloy.Collections.feed.setSortField("distanceToLocation", "ASC");
+            Alloy.Collections.feed.sort();
+        });
+    }
+>>>>>>> Jia1
     function centeredBySearchLocation() {
         setMapRegion(regionCenter);
         setDistanceToLocation(rideData, regionCenter);
@@ -62,7 +81,11 @@ function Controller() {
                 latitude: model.get("latitude"),
                 longitude: model.get("longitude"),
                 title: model.get("title"),
+<<<<<<< HEAD
                 image: "/images/ic_place_green.png",
+=======
+                image: "ic_place_green_3x.png",
+>>>>>>> Jia1
                 myid: model.get("link"),
                 id: "anno_" + i
             });
@@ -116,7 +139,11 @@ function Controller() {
     var exports = {};
     var __defers = {};
     $.__views.mainWindow = Ti.UI.createWindow({
+<<<<<<< HEAD
         barColor: "#43B02A",
+=======
+        barColor: "#CD1625",
+>>>>>>> Jia1
         backgroundColor: "#FFF",
         navTintColor: "#FFF",
         translucent: false,
@@ -210,7 +237,11 @@ function Controller() {
         });
         actionBarExtra.title = "Map";
         actionBarHelper.displayHomeAsUp(true);
+<<<<<<< HEAD
         actionBarExtra.setHomeAsUpIcon("/images/ic_menu_light.png");
+=======
+        actionBarExtra.setHomeAsUpIcon("/images/menuLight.png");
+>>>>>>> Jia1
     });
     var lastClickedAnnotationId = null;
     var searchLocAnnotation = void 0;
@@ -234,7 +265,11 @@ function Controller() {
             searchLocAnnotation.latitude = regionCenter.latitude;
             searchLocAnnotation.longitude = regionCenter.longitude;
             searchLocAnnotation.title = regionCenter.displayAddress;
+<<<<<<< HEAD
             searchLocAnnotation.image = "ic_place_3x.png";
+=======
+            searchLocAnnotation.image = "images/pinSelected.png";
+>>>>>>> Jia1
         }
         centeredBySearchLocation();
     });

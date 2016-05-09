@@ -1,4 +1,3 @@
-$.fwin.leftNavButton = Ti.UI.createView();
 var moment = require('alloy/moment');
 var paceView = false;
 var dateView = false;

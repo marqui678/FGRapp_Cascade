@@ -1,0 +1,457 @@
+
+5/9/2016, 3:49:32 PM
+
+Operating System
+  Name                        = Mac OS X
+  Version                     = 10.10.5
+  Architecture                = 64bit
+  # CPUs                      = 2
+  Memory                      = 4294967296
+
+Node.js
+  Node.js Version             = 0.12.7
+  npm Version                 = 2.11.3
+
+Titanium CLI
+  CLI Version                 = 5.0.6
+
+Titanium SDK
+  SDK Version                 = 5.2.2.GA
+  SDK Path                    = /Users/jia/Library/Application Support/Titanium/mobilesdk/osx/5.2.2.GA
+  Target Platform             = iphone
+
+Command
+  /usr/local/bin/node /Users/jia/.appcelerator/install/5.2.2/package/node_modules/titanium/lib/titanium.js build run --platform ios --log-level trace --sdk 5.2.2.GA --project-dir /Users/jia/Documents/Appcelerator_Studio_Workspace/FGRapp5 --target simulator --ios-version 8.4 --device-family iphone --deploy-type development --sim-type iphone --sim-version 8.4 --device-id A70756FB-C2DE-4452-BF1F-01778F726A5C --skip-js-minify --no-colors --no-progress-bars --no-prompt --prompt-type socket-bundle --prompt-port 49183 --config-file /var/folders/85/rj0yf4g145g8qzpp_9mgwkwr0000gq/T/build-1462834165366.json --no-banner --project-dir /Users/jia/Documents/Appcelerator_Studio_Workspace/FGRapp5
+
+[TRACE]  [ioslib] Validating iOS Simulator UDID A70756FB-C2DE-4452-BF1F-01778F726A5C
+[TRACE]  [ioslib] Found iOS Simulator UDID A70756FB-C2DE-4452-BF1F-01778F726A5C
+[TRACE]  [ioslib] Selected iOS Simulator: iPhone 6
+[TRACE]  [ioslib]   UDID    = A70756FB-C2DE-4452-BF1F-01778F726A5C
+[TRACE]  [ioslib]   iOS     = 8.4
+[TRACE]  [ioslib] Autoselected Xcode: 6.4
+[DEBUG]  Detecting modules in /Users/jia/Documents/Appcelerator_Studio_Workspace/FGRapp5/modules
+[DEBUG]  Detected android module: com.alcoapps.actionbarextras 1.6.9 @ /Users/jia/Documents/Appcelerator_Studio_Workspace/FGRapp5/modules/android/com.alcoapps.actionbarextras/1.6.9
+[DEBUG]  Detected commonjs module: com.alcoapps.actionbarhelper 1.0.0 @ /Users/jia/Documents/Appcelerator_Studio_Workspace/FGRapp5/modules/commonjs/com.alcoapps.actionbarhelper/1.0.0
+[DEBUG]  Detecting modules in /Users/jia/Library/Application Support/Titanium/modules
+[DEBUG]  Detected android module: facebook 5.0.0 @ /Users/jia/Library/Application Support/Titanium/modules/android/facebook/5.0.0
+[DEBUG]  Detected android module: ti.cloudpush 3.4.1 @ /Users/jia/Library/Application Support/Titanium/modules/android/ti.cloudpush/3.4.1
+[DEBUG]  Detected android module: ti.map 2.3.6 @ /Users/jia/Library/Application Support/Titanium/modules/android/ti.map/2.3.6
+[DEBUG]  Detected commonjs module: ti.cloud 3.2.10 @ /Users/jia/Library/Application Support/Titanium/modules/commonjs/ti.cloud/3.2.10
+[DEBUG]  Detected iphone module: com.appcelerator.urlSession 2.0.0 @ /Users/jia/Library/Application Support/Titanium/modules/iphone/com.appcelerator.urlSession/2.0.0
+[DEBUG]  Detected iphone module: facebook 5.0.1 @ /Users/jia/Library/Application Support/Titanium/modules/iphone/facebook/5.0.1
+[DEBUG]  Detected iphone module: ti.coremotion 2.0.0 @ /Users/jia/Library/Application Support/Titanium/modules/iphone/ti.coremotion/2.0.0
+[DEBUG]  Detected iphone module: ti.map 2.5.2 @ /Users/jia/Library/Application Support/Titanium/modules/iphone/ti.map/2.5.2
+[DEBUG]  Detected iphone module: ti.safaridialog 1.0.5 @ /Users/jia/Library/Application Support/Titanium/modules/iphone/ti.safaridialog/1.0.5
+[DEBUG]  Detected iphone module: ti.touchid 1.2.0 @ /Users/jia/Library/Application Support/Titanium/modules/iphone/ti.touchid/1.2.0
+[DEBUG]  Looking for Titanium module id=ti.cloud version=latest platform=commonjs deploy-type=development
+[INFO]   Found Titanium module id=ti.cloud version=3.2.10 platform=commonjs deploy-type=development path=/Users/jia/Library/Application Support/Titanium/modules/commonjs/ti.cloud/3.2.10
+[DEBUG]  Looking for Titanium module id=ti.map version=latest platform=iphone deploy-type=development
+[INFO]   Found Titanium module id=ti.map version=2.5.2 platform=iphone deploy-type=development path=/Users/jia/Library/Application Support/Titanium/modules/iphone/ti.map/2.5.2
+[DEBUG]  Looking for Titanium module id=com.alcoapps.actionbarhelper version=1.0.0 platform=commonjs deploy-type=development
+[INFO]   Found Titanium module id=com.alcoapps.actionbarhelper version=1.0.0 platform=commonjs deploy-type=development path=/Users/jia/Documents/Appcelerator_Studio_Workspace/FGRapp5/modules/commonjs/com.alcoapps.actionbarhelper/1.0.0
+[DEBUG]  Detecting plugins in /Users/jia/Documents/Appcelerator_Studio_Workspace/FGRapp5/plugins
+[DEBUG]  Detected plugin: ti.alloy @ /Users/jia/Documents/Appcelerator_Studio_Workspace/FGRapp5/plugins/ti.alloy
+[DEBUG]  Looking for Titanium plugin id=ti.alloy version=1.8.5
+[INFO]   Found Titanium plugin id=ti.alloy version=1.8.5 
+[TRACE]  Snapshotting build directory
+[DEBUG]  Titanium SDK iOS directory: /Users/jia/Library/Application Support/Titanium/mobilesdk/osx/5.2.2.GA/iphone
+[INFO]   Deploy type: development
+[INFO]   Building for target: simulator
+[INFO]   Building using iOS SDK: 8.4
+[INFO]   Building for iOS Simulator: iPhone 6
+[DEBUG]  UDID: A70756FB-C2DE-4452-BF1F-01778F726A5C
+[DEBUG]  Simulator type: iphone
+[DEBUG]  Simulator version: 8.4
+[INFO]   Building for device family: iphone
+[DEBUG]  Setting Xcode target to Debug
+[DEBUG]  Setting Xcode build OS to iphonesimulator
+[DEBUG]  Xcode installation: /Applications/Xcode.app/Contents/Developer
+[DEBUG]  iOS WWDR certificate: not found
+[INFO]   Minimum iOS version: 7.1
+[INFO]   Debugging disabled
+[INFO]   Profiler disabled
+[INFO]   Set to copy files instead of symlinking
+[INFO]   Initializing the build directory
+[INFO]   Found Alloy app in /Users/jia/Documents/Appcelerator_Studio_Workspace/FGRapp5/app
+[INFO]   Executing Alloy compile: /usr/local/bin/node /Users/jia/.appcelerator/install/5.2.2/package/node_modules/alloy/bin/alloy compile /Users/jia/Documents/Appcelerator_Studio_Workspace/FGRapp5/app --config platform=ios,version=0,simtype=none,devicefamily=iphone,deploytype=development,target=simulator --no-colors
+[DEBUG]         .__  .__                
+[DEBUG]  _____  |  | |  |   ____ ___.__.
+[DEBUG]  \__  \ |  | |  |  /  _ <   |  |
+[DEBUG]   / __ \|  |_|  |_(  <_> )___  |
+[DEBUG]  (____  /____/____/\____// ____|
+[DEBUG]       \/                 \/
+[DEBUG]  Alloy 1.8.5 by Appcelerator. The MVC app framework for Titanium.
+[DEBUG]  ----- CONFIGURATION -----
+[DEBUG]  raw config = "platform=ios,version=0,simtype=none,devicefamily=iphone,deploytype=development,target=simulator"
+[DEBUG]  platform = ios
+[DEBUG]  version = 0
+[DEBUG]  simtype = none
+[DEBUG]  devicefamily = iphone
+[DEBUG]  deploytype = development
+[DEBUG]  target = simulator
+[DEBUG]  project path = /Users/jia/Documents/Appcelerator_Studio_Workspace/FGRapp5
+[DEBUG]  app path = /Users/jia/Documents/Appcelerator_Studio_Workspace/FGRapp5/app
+[DEBUG]  
+[DEBUG]  
+[DEBUG]  ----- CONFIG.JSON -----
+[WARN]   Generated "/i18n" directory is not ignored by Git, please add it to your .gitignore
+[WARN]   Generated "/platform" directory is not ignored by Git, please add it to your .gitignore
+[DEBUG]  dependencies = {"com.alcoapps.drawermenu":"2.0"}
+[INFO]   [config.json] config.json unchanged, using cached config.json...
+[DEBUG]  {
+[DEBUG]  "dependencies": {
+[DEBUG]  "com.alcoapps.drawermenu": "2.0"
+[DEBUG]  },
+[DEBUG]  "url": "https://www.cascade.org/DailyRides/rss.xml",
+[DEBUG]  "sourcemap": true,
+[DEBUG]  "autoStyle": false,
+[DEBUG]  "adapters": [
+[DEBUG]  "localStorage",
+[DEBUG]  "properties",
+[DEBUG]  "sql"
+[DEBUG]  ]
+[DEBUG]  }
+[DEBUG]  
+[DEBUG]  ----- CLEANING RESOURCES -----
+[DEBUG]  Removing orphaned controllers ...
+[DEBUG]  Removing orphaned models ...
+[DEBUG]  Removing orphaned styles ...
+[DEBUG]  Removing orphaned sync adapters...
+[TRACE]  * iphone/alloy/sync/rss.js
+[TRACE]  * iphone/alloy/sync/rss.js.orig
+[DEBUG]  Removing orphaned assets and libs...
+[DEBUG]  
+[DEBUG]  ----- BASE RUNTIME FILES -----
+[TRACE]  SRC_DIR=/Users/jia/.appcelerator/install/5.2.2/package/node_modules/alloy/Alloy/lib
+[TRACE]  Copying SRC_DIR/alloy/sync/sql.js --> Resources/iphone/alloy/sync/sql.js
+[TRACE]  Copying SRC_DIR/alloy/sync/properties.js --> Resources/iphone/alloy/sync/properties.js
+[TRACE]  Copying SRC_DIR/alloy/sync/localStorage.js --> Resources/iphone/alloy/sync/localStorage.js
+[TRACE]  Copying SRC_DIR/alloy/controllers/BaseController.js --> Resources/iphone/alloy/controllers/BaseController.js
+[TRACE]  Copying SRC_DIR/alloy/widget.js --> Resources/iphone/alloy/widget.js
+[TRACE]  Copying SRC_DIR/alloy/underscore.js --> Resources/iphone/alloy/underscore.js
+[TRACE]  
+[TRACE]  Generating ../../../../../../Users/jia/Documents/Appcelerator_Studio_Workspace/FGRapp5/Resources/iphone/alloy.js
+[TRACE]  SRC_DIR=/Users/jia/.appcelerator/install/5.2.2/package/node_modules/alloy/Alloy/common
+[TRACE]  Copying SRC_DIR/constants.js --> Resources/iphone/alloy/constants.js
+[TRACE]  
+[TRACE]  SRC_DIR=/Users/jia/Documents/Appcelerator_Studio_Workspace/FGRapp5/app/assets
+[TRACE]  
+[TRACE]  SRC_DIR=/Users/jia/Documents/Appcelerator_Studio_Workspace/FGRapp5/app/lib
+[TRACE]  Copying SRC_DIR/alloy/sync/rss.js.orig --> Resources/iphone/alloy/sync/rss.js.orig
+[TRACE]  Copying SRC_DIR/alloy/sync/rss.js --> Resources/iphone/alloy/sync/rss.js
+[TRACE]  
+[DEBUG]  Resetting /Users/jia/Documents/Appcelerator_Studio_Workspace/FGRapp5/platform/ios
+[DEBUG]  
+[DEBUG]  Resetting /Users/jia/Documents/Appcelerator_Studio_Workspace/FGRapp5/i18n
+[DEBUG]  
+[INFO]   ----- MVC GENERATION -----
+[INFO]   [global style] loading from cache...
+[INFO]   [models/feed.js] model processing...
+[INFO]   [widget.xml] com.alcoapps.drawermenu view processing...
+[INFO]   style:      "widget.tss"
+[INFO]   view:       "widget.xml"
+[INFO]   controller: "widget.js"
+[TRACE]  - Processing "builtins" module...
+[TRACE]  - Processing "optimizer" module...
+[TRACE]  - Processing "compress" module...
+[INFO]   created:    "Resources/iphone/alloy/widgets/com.alcoapps.drawermenu/controllers/widget.js"
+[DEBUG]  map:        "build/map/Resources/iphone/alloy/widgets/com.alcoapps.drawermenu/controllers/widget.js.map"
+[INFO]   created:     "Resources/iphone/alloy/widgets/com.alcoapps.drawermenu/styles/widget.js"
+[INFO]   [about.xml] view processing...
+[INFO]   style:      "about.tss"
+[INFO]   view:       "about.xml"
+[INFO]   controller: "about.js"
+[TRACE]  - Processing "builtins" module...
+[TRACE]  - Processing "optimizer" module...
+[TRACE]  - Processing "compress" module...
+[INFO]   created:    "Resources/iphone/alloy/controllers/about.js"
+[DEBUG]  map:        "build/map/Resources/iphone/alloy/controllers/about.js.map"
+[INFO]   created:     "Resources/iphone/alloy/styles/about.js"
+[INFO]   [detail.xml] view processing...
+[INFO]   style:      "detail.tss"
+[INFO]   view:       "detail.xml"
+[INFO]   controller: "detail.js"
+[TRACE]  - Processing "builtins" module...
+[TRACE]  - Processing "optimizer" module...
+[TRACE]  - Processing "compress" module...
+[INFO]   created:    "Resources/iphone/alloy/controllers/detail.js"
+[DEBUG]  map:        "build/map/Resources/iphone/alloy/controllers/detail.js.map"
+[INFO]   created:     "Resources/iphone/alloy/styles/detail.js"
+[INFO]   [filter.xml] view processing...
+[INFO]   style:      "filter.tss"
+[INFO]   view:       "filter.xml"
+[INFO]   controller: "filter.js"
+[TRACE]  - Processing "builtins" module...
+[TRACE]  - Processing "optimizer" module...
+[TRACE]  - Processing "compress" module...
+[INFO]   created:    "Resources/iphone/alloy/controllers/filter.js"
+[DEBUG]  map:        "build/map/Resources/iphone/alloy/controllers/filter.js.map"
+[INFO]   created:     "Resources/iphone/alloy/styles/filter.js"
+[INFO]   [index.xml] view processing...
+[INFO]   style:      "index.tss"
+[INFO]   view:       "index.xml"
+[INFO]   controller: "index.js"
+[TRACE]  - Processing "builtins" module...
+[TRACE]  - Processing "optimizer" module...
+[TRACE]  - Processing "compress" module...
+[INFO]   created:    "Resources/iphone/alloy/controllers/index.js"
+[DEBUG]  map:        "build/map/Resources/iphone/alloy/controllers/index.js.map"
+[INFO]   created:     "Resources/iphone/alloy/styles/index.js"
+[INFO]   [list.xml] view processing...
+[INFO]   style:      "list.tss"
+[INFO]   view:       "list.xml"
+[INFO]   controller: "list.js"
+[TRACE]  - Processing "builtins" module...
+[TRACE]  - Processing "optimizer" module...
+[TRACE]  - Processing "compress" module...
+[INFO]   created:    "Resources/iphone/alloy/controllers/list.js"
+[DEBUG]  map:        "build/map/Resources/iphone/alloy/controllers/list.js.map"
+[INFO]   created:     "Resources/iphone/alloy/styles/list.js"
+[INFO]   [map.xml] view processing...
+[INFO]   style:      "map.tss"
+[INFO]   view:       "map.xml"
+[INFO]   controller: "map.js"
+[TRACE]  - Processing "builtins" module...
+[TRACE]  - Processing "optimizer" module...
+[TRACE]  - Processing "compress" module...
+[INFO]   created:    "Resources/iphone/alloy/controllers/map.js"
+[DEBUG]  map:        "build/map/Resources/iphone/alloy/controllers/map.js.map"
+[INFO]   created:     "Resources/iphone/alloy/styles/map.js"
+[INFO]   [menu.xml] view processing...
+[INFO]   style:      "menu.tss"
+[INFO]   view:       "menu.xml"
+[INFO]   controller: "menu.js"
+[TRACE]  - Processing "builtins" module...
+[TRACE]  - Processing "optimizer" module...
+[TRACE]  - Processing "compress" module...
+[INFO]   created:    "Resources/iphone/alloy/controllers/menu.js"
+[DEBUG]  map:        "build/map/Resources/iphone/alloy/controllers/menu.js.map"
+[INFO]   created:     "Resources/iphone/alloy/styles/menu.js"
+[INFO]   [rideRegister.xml] view processing...
+[INFO]   style:      "rideRegister.tss"
+[INFO]   view:       "rideRegister.xml"
+[INFO]   controller: "rideRegister.js"
+[TRACE]  - Processing "builtins" module...
+[TRACE]  - Processing "optimizer" module...
+[TRACE]  - Processing "compress" module...
+[INFO]   created:    "Resources/iphone/alloy/controllers/rideRegister.js"
+[DEBUG]  map:        "build/map/Resources/iphone/alloy/controllers/rideRegister.js.map"
+[INFO]   created:     "Resources/iphone/alloy/styles/rideRegister.js"
+[INFO]   [search.xml] view processing...
+[INFO]   style:      "search.tss"
+[INFO]   view:       "search.xml"
+[INFO]   controller: "search.js"
+[TRACE]  - Processing "builtins" module...
+[TRACE]  - Processing "optimizer" module...
+[TRACE]  - Processing "compress" module...
+[INFO]   created:    "Resources/iphone/alloy/controllers/search.js"
+[DEBUG]  map:        "build/map/Resources/iphone/alloy/controllers/search.js.map"
+[INFO]   created:     "Resources/iphone/alloy/styles/search.js"
+[INFO]   [sort.xml] view processing...
+[INFO]   style:      "sort.tss"
+[INFO]   view:       "sort.xml"
+[INFO]   controller: "sort.js"
+[TRACE]  - Processing "builtins" module...
+[TRACE]  - Processing "optimizer" module...
+[TRACE]  - Processing "compress" module...
+[INFO]   created:    "Resources/iphone/alloy/controllers/sort.js"
+[DEBUG]  map:        "build/map/Resources/iphone/alloy/controllers/sort.js.map"
+[INFO]   created:     "Resources/iphone/alloy/styles/sort.js"
+[INFO]   
+[INFO]   [app.js] using cached app.js...
+[INFO]   
+[INFO]   ----- OPTIMIZING -----
+[INFO]   - alloy/moment.js
+[TRACE]  processing "builtins" module...
+[TRACE]  processing "optimizer" module...
+[TRACE]  processing "compress" module...
+[INFO]   - iphone/alloy.js
+[TRACE]  processing "builtins" module...
+[TRACE]  processing "optimizer" module...
+[TRACE]  processing "compress" module...
+[INFO]   - iphone/alloy/models/Feed.js
+[TRACE]  processing "builtins" module...
+[TRACE]  processing "optimizer" module...
+[TRACE]  processing "compress" module...
+[INFO]   - iphone/alloy/sync/localStorage.js
+[TRACE]  processing "builtins" module...
+[TRACE]  processing "optimizer" module...
+[TRACE]  processing "compress" module...
+[INFO]   - iphone/alloy/sync/properties.js
+[TRACE]  processing "builtins" module...
+[TRACE]  processing "optimizer" module...
+[TRACE]  processing "compress" module...
+[INFO]   - iphone/alloy/sync/rss.js
+[TRACE]  processing "builtins" module...
+[TRACE]  processing "optimizer" module...
+[TRACE]  processing "compress" module...
+[INFO]   - iphone/alloy/sync/sql.js
+[TRACE]  processing "builtins" module...
+[TRACE]  processing "optimizer" module...
+[TRACE]  processing "compress" module...
+[INFO]   - iphone/alloy/widgets/com.alcoapps.drawermenu/controllers/widget.js
+[TRACE]  processing "builtins" module...
+[TRACE]  processing "optimizer" module...
+[TRACE]  processing "compress" module...
+[INFO]   - iphone/alloy/widgets/com.alcoapps.drawermenu/styles/widget.js
+[TRACE]  processing "builtins" module...
+[TRACE]  processing "optimizer" module...
+[TRACE]  processing "compress" module...
+[TRACE]  
+[TRACE]  Benchmarking
+[TRACE]  ------------
+[TRACE]  [6.16848s] TOTAL
+[INFO]   
+[INFO]   Alloy compiled in 6.16848s
+[INFO]   Alloy compiler completed successfully
+[TRACE]  offline build file /var/folders/85/rj0yf4g145g8qzpp_9mgwkwr0000gq/T/build-ae2c3721582a1733f572ab6815afc9023d0bfa6d.json
+[TRACE]  online 1
+[TRACE]  optimizing build, last build was 3434.466 sec ago
+[INFO]   Creating Xcode project
+[INFO]   LaunchScreen.storyboard is not supported with Xcode 6.4, removing from Xcode project
+[TRACE]  Removing pre-compile phase
+[TRACE]  Adding 1 native module library
+[TRACE]  No extensions to add
+[TRACE]  No change, skipping /Users/jia/Documents/Appcelerator_Studio_Workspace/FGRapp5/build/iphone/FGR_Cascade.xcodeproj/project.pbxproj
+[INFO]   Creating Entitlements.plist
+[TRACE]  No change, skipping /Users/jia/Documents/Appcelerator_Studio_Workspace/FGRapp5/build/iphone/FGR_Cascade.entitlements
+[INFO]   Creating Info.plist
+[DEBUG]  Checking for Splash Screen localization
+[INFO]   Disabling ATS
+[TRACE]  No change, skipping /Users/jia/Documents/Appcelerator_Studio_Workspace/FGRapp5/build/iphone/Info.plist
+[INFO]   Creating main.m
+[TRACE]  No change, skipping /Users/jia/Documents/Appcelerator_Studio_Workspace/FGRapp5/build/iphone/main.m
+[INFO]   Creating Xcode config files
+[TRACE]  No change, skipping /Users/jia/Documents/Appcelerator_Studio_Workspace/FGRapp5/build/iphone/project.xcconfig
+[TRACE]  No change, skipping /Users/jia/Documents/Appcelerator_Studio_Workspace/FGRapp5/build/iphone/module.xcconfig
+[INFO]   Copying Titanium libraries
+[TRACE]  No change, skipping /Users/jia/Documents/Appcelerator_Studio_Workspace/FGRapp5/build/iphone/lib/libTiCore.a
+[TRACE]  No change, skipping /Users/jia/Documents/Appcelerator_Studio_Workspace/FGRapp5/build/iphone/lib/libtiverify.a
+[TRACE]  No change, skipping /Users/jia/Documents/Appcelerator_Studio_Workspace/FGRapp5/build/iphone/lib/libti_ios_debugger.a
+[TRACE]  No change, skipping /Users/jia/Documents/Appcelerator_Studio_Workspace/FGRapp5/build/iphone/lib/libti_ios_profiler.a
+[INFO]   Copying Titanium iOS files
+[TRACE]  Skipping Classes/ApplicationRouting.m, it'll be processed later
+[TRACE]  No change, skipping /Users/jia/Documents/Appcelerator_Studio_Workspace/FGRapp5/build/iphone/FGR_Cascade_Prefix.pch
+[TRACE]  No change, skipping /Users/jia/Documents/Appcelerator_Studio_Workspace/FGRapp5/build/iphone/FGR_Cascade.xcodeproj/xcshareddata/xcschemes/FGR_Cascade.xcscheme
+[INFO]   Creating debugger and profiler plists
+[DEBUG]  Skipping /Users/jia/Documents/Appcelerator_Studio_Workspace/FGRapp5/build/iphone/build/Products/Debug-iphonesimulator/FGR_Cascade.app/debugger.plist
+[DEBUG]  Skipping /Users/jia/Documents/Appcelerator_Studio_Workspace/FGRapp5/build/iphone/build/Products/Debug-iphonesimulator/FGR_Cascade.app/profiler.plist
+[INFO]   Analyzing Resources directory
+[INFO]   Analyzing platform files
+[INFO]   Analyzing module files
+[INFO]   Analyzing localized launch images
+[INFO]   Analyzing CommonJS modules
+[INFO]   Creating asset catalog
+[TRACE]  No change, skipping /Users/jia/Documents/Appcelerator_Studio_Workspace/FGRapp5/build/iphone/Assets.xcassets/Contents.json
+[INFO]   Creating app icon set
+[TRACE]  Found generated 58x58 app icon: /Users/jia/Documents/Appcelerator_Studio_Workspace/FGRapp5/build/iphone/Assets.xcassets/AppIcon.appiconset/appicon-Small@2x.png
+[TRACE]  Found generated 87x87 app icon: /Users/jia/Documents/Appcelerator_Studio_Workspace/FGRapp5/build/iphone/Assets.xcassets/AppIcon.appiconset/appicon-Small@3x.png
+[TRACE]  Found generated 80x80 app icon: /Users/jia/Documents/Appcelerator_Studio_Workspace/FGRapp5/build/iphone/Assets.xcassets/AppIcon.appiconset/appicon-Small-40@2x.png
+[TRACE]  Found generated 120x120 app icon: /Users/jia/Documents/Appcelerator_Studio_Workspace/FGRapp5/build/iphone/Assets.xcassets/AppIcon.appiconset/appicon-Small-40@3x.png
+[TRACE]  Found generated 120x120 app icon: /Users/jia/Documents/Appcelerator_Studio_Workspace/FGRapp5/build/iphone/Assets.xcassets/AppIcon.appiconset/appicon-60@2x.png
+[TRACE]  Found generated 180x180 app icon: /Users/jia/Documents/Appcelerator_Studio_Workspace/FGRapp5/build/iphone/Assets.xcassets/AppIcon.appiconset/appicon-60@3x.png
+[TRACE]  No change, skipping /Users/jia/Documents/Appcelerator_Studio_Workspace/FGRapp5/build/iphone/Assets.xcassets/AppIcon.appiconset/Contents.json
+[INFO]   Creating launch image set
+[DEBUG]  Skipping iPad launch image: Resources/iphone/Default-Landscape.png
+[DEBUG]  Skipping iPad launch image: Resources/iphone/Default-Landscape@2x.png
+[DEBUG]  Skipping iPad launch image: Resources/iphone/Default-Portrait.png
+[DEBUG]  Skipping iPad launch image: Resources/iphone/Default-Portrait@2x.png
+[DEBUG]  Unsupported launch image Resources/iphone/Default.png, skipping
+[TRACE]  No change, skipping /Users/jia/Documents/Appcelerator_Studio_Workspace/FGRapp5/build/iphone/Assets.xcassets/LaunchImage.launchimage/Contents.json
+[INFO]   App thinning disabled, skipping asset image sets
+[DEBUG]  Copying resources
+[TRACE]  No change, skipping /Users/jia/Documents/Appcelerator_Studio_Workspace/FGRapp5/build/iphone/build/Products/Debug-iphonesimulator/FGR_Cascade.app/Date.png
+[DEBUG]  Overwriting /Users/jia/Documents/Appcelerator_Studio_Workspace/FGRapp5/Resources/iphone/Date.png => /Users/jia/Documents/Appcelerator_Studio_Workspace/FGRapp5/build/iphone/build/Products/Debug-iphonesimulator/FGR_Cascade.app/Date.png
+[TRACE]  No change, skipping /Users/jia/Documents/Appcelerator_Studio_Workspace/FGRapp5/build/iphone/build/Products/Debug-iphonesimulator/FGR_Cascade.app/Filter open.png
+[DEBUG]  Overwriting /Users/jia/Documents/Appcelerator_Studio_Workspace/FGRapp5/Resources/iphone/Filter open.png => /Users/jia/Documents/Appcelerator_Studio_Workspace/FGRapp5/build/iphone/build/Products/Debug-iphonesimulator/FGR_Cascade.app/Filter open.png
+[TRACE]  No change, skipping /Users/jia/Documents/Appcelerator_Studio_Workspace/FGRapp5/build/iphone/build/Products/Debug-iphonesimulator/FGR_Cascade.app/Filter opened.png
+[DEBUG]  Overwriting /Users/jia/Documents/Appcelerator_Studio_Workspace/FGRapp5/Resources/iphone/Filter opened.png => /Users/jia/Documents/Appcelerator_Studio_Workspace/FGRapp5/build/iphone/build/Products/Debug-iphonesimulator/FGR_Cascade.app/Filter opened.png
+[DEBUG]  Overwriting /Users/jia/Documents/Appcelerator_Studio_Workspace/FGRapp5/Resources/iphone/alloy/sync/rss.js.orig => /Users/jia/Documents/Appcelerator_Studio_Workspace/FGRapp5/build/iphone/build/Products/Debug-iphonesimulator/FGR_Cascade.app/alloy/sync/rss.js.orig
+[TRACE]  No change, skipping /Users/jia/Documents/Appcelerator_Studio_Workspace/FGRapp5/build/iphone/build/Products/Debug-iphonesimulator/FGR_Cascade.app/ic_action_not_important.png
+[DEBUG]  Overwriting /Users/jia/Documents/Appcelerator_Studio_Workspace/FGRapp5/Resources/iphone/ic_action_not_important.png => /Users/jia/Documents/Appcelerator_Studio_Workspace/FGRapp5/build/iphone/build/Products/Debug-iphonesimulator/FGR_Cascade.app/ic_action_not_important.png
+[TRACE]  No change, skipping /Users/jia/Documents/Appcelerator_Studio_Workspace/FGRapp5/build/iphone/build/Products/Debug-iphonesimulator/FGR_Cascade.app/pace.png
+[DEBUG]  Overwriting /Users/jia/Documents/Appcelerator_Studio_Workspace/FGRapp5/Resources/iphone/pace.png => /Users/jia/Documents/Appcelerator_Studio_Workspace/FGRapp5/build/iphone/build/Products/Debug-iphonesimulator/FGR_Cascade.app/pace.png
+[DEBUG]  Overwriting /Users/jia/Documents/Appcelerator_Studio_Workspace/FGRapp5/platform/ios/alloy_generated => /Users/jia/Documents/Appcelerator_Studio_Workspace/FGRapp5/build/iphone/alloy_generated
+[TRACE]  No change, skipping /Users/jia/Documents/Appcelerator_Studio_Workspace/FGRapp5/build/iphone/Assets.xcassets/LaunchImage.launchimage/Default-568h@2x.png
+[DEBUG]  Overwriting /Users/jia/Documents/Appcelerator_Studio_Workspace/FGRapp5/Resources/iphone/Default-568h@2x.png => /Users/jia/Documents/Appcelerator_Studio_Workspace/FGRapp5/build/iphone/Assets.xcassets/LaunchImage.launchimage/Default-568h@2x.png
+[TRACE]  No change, skipping /Users/jia/Documents/Appcelerator_Studio_Workspace/FGRapp5/build/iphone/Assets.xcassets/LaunchImage.launchimage/Default-667h@2x.png
+[DEBUG]  Overwriting /Users/jia/Documents/Appcelerator_Studio_Workspace/FGRapp5/Resources/iphone/Default-667h@2x.png => /Users/jia/Documents/Appcelerator_Studio_Workspace/FGRapp5/build/iphone/Assets.xcassets/LaunchImage.launchimage/Default-667h@2x.png
+[TRACE]  No change, skipping /Users/jia/Documents/Appcelerator_Studio_Workspace/FGRapp5/build/iphone/Assets.xcassets/LaunchImage.launchimage/Default-Landscape-736h@3x.png
+[DEBUG]  Overwriting /Users/jia/Documents/Appcelerator_Studio_Workspace/FGRapp5/Resources/iphone/Default-Landscape-736h@3x.png => /Users/jia/Documents/Appcelerator_Studio_Workspace/FGRapp5/build/iphone/Assets.xcassets/LaunchImage.launchimage/Default-Landscape-736h@3x.png
+[TRACE]  No change, skipping /Users/jia/Documents/Appcelerator_Studio_Workspace/FGRapp5/build/iphone/Assets.xcassets/LaunchImage.launchimage/Default-Portrait-736h@3x.png
+[DEBUG]  Overwriting /Users/jia/Documents/Appcelerator_Studio_Workspace/FGRapp5/Resources/iphone/Default-Portrait-736h@3x.png => /Users/jia/Documents/Appcelerator_Studio_Workspace/FGRapp5/build/iphone/Assets.xcassets/LaunchImage.launchimage/Default-Portrait-736h@3x.png
+[TRACE]  No change, skipping /Users/jia/Documents/Appcelerator_Studio_Workspace/FGRapp5/build/iphone/Assets.xcassets/LaunchImage.launchimage/Default@2x.png
+[DEBUG]  Overwriting /Users/jia/Documents/Appcelerator_Studio_Workspace/FGRapp5/Resources/iphone/Default@2x.png => /Users/jia/Documents/Appcelerator_Studio_Workspace/FGRapp5/build/iphone/Assets.xcassets/LaunchImage.launchimage/Default@2x.png
+[DEBUG]  Copying CSS files
+[INFO]   Processing JavaScript files
+[DEBUG]  Overwriting /Users/jia/Documents/Appcelerator_Studio_Workspace/FGRapp5/Resources/alloy/CFG.js => /Users/jia/Documents/Appcelerator_Studio_Workspace/FGRapp5/build/iphone/build/Products/Debug-iphonesimulator/FGR_Cascade.app/alloy/CFG.js
+[DEBUG]  Overwriting /Users/jia/Documents/Appcelerator_Studio_Workspace/FGRapp5/Resources/alloy/moment.js => /Users/jia/Documents/Appcelerator_Studio_Workspace/FGRapp5/build/iphone/build/Products/Debug-iphonesimulator/FGR_Cascade.app/alloy/moment.js
+[DEBUG]  Overwriting /Users/jia/Documents/Appcelerator_Studio_Workspace/FGRapp5/Resources/iphone/app.js => /Users/jia/Documents/Appcelerator_Studio_Workspace/FGRapp5/build/iphone/build/Products/Debug-iphonesimulator/FGR_Cascade.app/app.js
+[DEBUG]  Overwriting /Users/jia/Documents/Appcelerator_Studio_Workspace/FGRapp5/Resources/iphone/alloy/backbone.js => /Users/jia/Documents/Appcelerator_Studio_Workspace/FGRapp5/build/iphone/build/Products/Debug-iphonesimulator/FGR_Cascade.app/alloy/backbone.js
+[DEBUG]  Overwriting /Users/jia/Documents/Appcelerator_Studio_Workspace/FGRapp5/Resources/iphone/alloy/constants.js => /Users/jia/Documents/Appcelerator_Studio_Workspace/FGRapp5/build/iphone/build/Products/Debug-iphonesimulator/FGR_Cascade.app/alloy/constants.js
+[DEBUG]  Overwriting /Users/jia/Documents/Appcelerator_Studio_Workspace/FGRapp5/Resources/iphone/alloy/controllers/BaseController.js => /Users/jia/Documents/Appcelerator_Studio_Workspace/FGRapp5/build/iphone/build/Products/Debug-iphonesimulator/FGR_Cascade.app/alloy/controllers/BaseController.js
+[DEBUG]  Overwriting /Users/jia/Documents/Appcelerator_Studio_Workspace/FGRapp5/Resources/iphone/alloy/controllers/about.js => /Users/jia/Documents/Appcelerator_Studio_Workspace/FGRapp5/build/iphone/build/Products/Debug-iphonesimulator/FGR_Cascade.app/alloy/controllers/about.js
+[DEBUG]  Overwriting /Users/jia/Documents/Appcelerator_Studio_Workspace/FGRapp5/Resources/iphone/alloy/controllers/detail.js => /Users/jia/Documents/Appcelerator_Studio_Workspace/FGRapp5/build/iphone/build/Products/Debug-iphonesimulator/FGR_Cascade.app/alloy/controllers/detail.js
+[DEBUG]  Overwriting /Users/jia/Documents/Appcelerator_Studio_Workspace/FGRapp5/Resources/iphone/alloy/controllers/filter.js => /Users/jia/Documents/Appcelerator_Studio_Workspace/FGRapp5/build/iphone/build/Products/Debug-iphonesimulator/FGR_Cascade.app/alloy/controllers/filter.js
+[DEBUG]  Overwriting /Users/jia/Documents/Appcelerator_Studio_Workspace/FGRapp5/Resources/iphone/alloy/controllers/index.js => /Users/jia/Documents/Appcelerator_Studio_Workspace/FGRapp5/build/iphone/build/Products/Debug-iphonesimulator/FGR_Cascade.app/alloy/controllers/index.js
+[DEBUG]  Overwriting /Users/jia/Documents/Appcelerator_Studio_Workspace/FGRapp5/Resources/iphone/alloy/controllers/list.js => /Users/jia/Documents/Appcelerator_Studio_Workspace/FGRapp5/build/iphone/build/Products/Debug-iphonesimulator/FGR_Cascade.app/alloy/controllers/list.js
+[DEBUG]  Overwriting /Users/jia/Documents/Appcelerator_Studio_Workspace/FGRapp5/Resources/iphone/alloy/controllers/map.js => /Users/jia/Documents/Appcelerator_Studio_Workspace/FGRapp5/build/iphone/build/Products/Debug-iphonesimulator/FGR_Cascade.app/alloy/controllers/map.js
+[DEBUG]  Overwriting /Users/jia/Documents/Appcelerator_Studio_Workspace/FGRapp5/Resources/iphone/alloy/controllers/menu.js => /Users/jia/Documents/Appcelerator_Studio_Workspace/FGRapp5/build/iphone/build/Products/Debug-iphonesimulator/FGR_Cascade.app/alloy/controllers/menu.js
+[DEBUG]  Overwriting /Users/jia/Documents/Appcelerator_Studio_Workspace/FGRapp5/Resources/iphone/alloy/controllers/rideRegister.js => /Users/jia/Documents/Appcelerator_Studio_Workspace/FGRapp5/build/iphone/build/Products/Debug-iphonesimulator/FGR_Cascade.app/alloy/controllers/rideRegister.js
+[DEBUG]  Overwriting /Users/jia/Documents/Appcelerator_Studio_Workspace/FGRapp5/Resources/iphone/alloy/controllers/search.js => /Users/jia/Documents/Appcelerator_Studio_Workspace/FGRapp5/build/iphone/build/Products/Debug-iphonesimulator/FGR_Cascade.app/alloy/controllers/search.js
+[DEBUG]  Overwriting /Users/jia/Documents/Appcelerator_Studio_Workspace/FGRapp5/Resources/iphone/alloy/controllers/sort.js => /Users/jia/Documents/Appcelerator_Studio_Workspace/FGRapp5/build/iphone/build/Products/Debug-iphonesimulator/FGR_Cascade.app/alloy/controllers/sort.js
+[DEBUG]  Overwriting /Users/jia/Documents/Appcelerator_Studio_Workspace/FGRapp5/Resources/iphone/alloy/models/Feed.js => /Users/jia/Documents/Appcelerator_Studio_Workspace/FGRapp5/build/iphone/build/Products/Debug-iphonesimulator/FGR_Cascade.app/alloy/models/Feed.js
+[DEBUG]  Overwriting /Users/jia/Documents/Appcelerator_Studio_Workspace/FGRapp5/Resources/iphone/alloy/styles/about.js => /Users/jia/Documents/Appcelerator_Studio_Workspace/FGRapp5/build/iphone/build/Products/Debug-iphonesimulator/FGR_Cascade.app/alloy/styles/about.js
+[DEBUG]  Overwriting /Users/jia/Documents/Appcelerator_Studio_Workspace/FGRapp5/Resources/iphone/alloy/styles/detail.js => /Users/jia/Documents/Appcelerator_Studio_Workspace/FGRapp5/build/iphone/build/Products/Debug-iphonesimulator/FGR_Cascade.app/alloy/styles/detail.js
+[DEBUG]  Overwriting /Users/jia/Documents/Appcelerator_Studio_Workspace/FGRapp5/Resources/iphone/alloy/styles/filter.js => /Users/jia/Documents/Appcelerator_Studio_Workspace/FGRapp5/build/iphone/build/Products/Debug-iphonesimulator/FGR_Cascade.app/alloy/styles/filter.js
+[DEBUG]  Overwriting /Users/jia/Documents/Appcelerator_Studio_Workspace/FGRapp5/Resources/iphone/alloy/styles/index.js => /Users/jia/Documents/Appcelerator_Studio_Workspace/FGRapp5/build/iphone/build/Products/Debug-iphonesimulator/FGR_Cascade.app/alloy/styles/index.js
+[DEBUG]  Overwriting /Users/jia/Documents/Appcelerator_Studio_Workspace/FGRapp5/Resources/iphone/alloy/styles/list.js => /Users/jia/Documents/Appcelerator_Studio_Workspace/FGRapp5/build/iphone/build/Products/Debug-iphonesimulator/FGR_Cascade.app/alloy/styles/list.js
+[DEBUG]  Overwriting /Users/jia/Documents/Appcelerator_Studio_Workspace/FGRapp5/Resources/iphone/alloy/styles/map.js => /Users/jia/Documents/Appcelerator_Studio_Workspace/FGRapp5/build/iphone/build/Products/Debug-iphonesimulator/FGR_Cascade.app/alloy/styles/map.js
+[DEBUG]  Overwriting /Users/jia/Documents/Appcelerator_Studio_Workspace/FGRapp5/Resources/iphone/alloy/styles/menu.js => /Users/jia/Documents/Appcelerator_Studio_Workspace/FGRapp5/build/iphone/build/Products/Debug-iphonesimulator/FGR_Cascade.app/alloy/styles/menu.js
+[DEBUG]  Overwriting /Users/jia/Documents/Appcelerator_Studio_Workspace/FGRapp5/Resources/iphone/alloy/styles/rideRegister.js => /Users/jia/Documents/Appcelerator_Studio_Workspace/FGRapp5/build/iphone/build/Products/Debug-iphonesimulator/FGR_Cascade.app/alloy/styles/rideRegister.js
+[DEBUG]  Overwriting /Users/jia/Documents/Appcelerator_Studio_Workspace/FGRapp5/Resources/iphone/alloy/styles/search.js => /Users/jia/Documents/Appcelerator_Studio_Workspace/FGRapp5/build/iphone/build/Products/Debug-iphonesimulator/FGR_Cascade.app/alloy/styles/search.js
+[DEBUG]  Overwriting /Users/jia/Documents/Appcelerator_Studio_Workspace/FGRapp5/Resources/iphone/alloy/styles/sort.js => /Users/jia/Documents/Appcelerator_Studio_Workspace/FGRapp5/build/iphone/build/Products/Debug-iphonesimulator/FGR_Cascade.app/alloy/styles/sort.js
+[DEBUG]  Overwriting /Users/jia/Documents/Appcelerator_Studio_Workspace/FGRapp5/Resources/iphone/alloy/sync/localStorage.js => /Users/jia/Documents/Appcelerator_Studio_Workspace/FGRapp5/build/iphone/build/Products/Debug-iphonesimulator/FGR_Cascade.app/alloy/sync/localStorage.js
+[DEBUG]  Overwriting /Users/jia/Documents/Appcelerator_Studio_Workspace/FGRapp5/Resources/iphone/alloy/sync/properties.js => /Users/jia/Documents/Appcelerator_Studio_Workspace/FGRapp5/build/iphone/build/Products/Debug-iphonesimulator/FGR_Cascade.app/alloy/sync/properties.js
+[DEBUG]  Overwriting /Users/jia/Documents/Appcelerator_Studio_Workspace/FGRapp5/Resources/iphone/alloy/sync/rss.js => /Users/jia/Documents/Appcelerator_Studio_Workspace/FGRapp5/build/iphone/build/Products/Debug-iphonesimulator/FGR_Cascade.app/alloy/sync/rss.js
+[DEBUG]  Overwriting /Users/jia/Documents/Appcelerator_Studio_Workspace/FGRapp5/Resources/iphone/alloy/sync/sql.js => /Users/jia/Documents/Appcelerator_Studio_Workspace/FGRapp5/build/iphone/build/Products/Debug-iphonesimulator/FGR_Cascade.app/alloy/sync/sql.js
+[DEBUG]  Overwriting /Users/jia/Documents/Appcelerator_Studio_Workspace/FGRapp5/Resources/iphone/alloy/underscore.js => /Users/jia/Documents/Appcelerator_Studio_Workspace/FGRapp5/build/iphone/build/Products/Debug-iphonesimulator/FGR_Cascade.app/alloy/underscore.js
+[DEBUG]  Overwriting /Users/jia/Documents/Appcelerator_Studio_Workspace/FGRapp5/Resources/iphone/alloy/widget.js => /Users/jia/Documents/Appcelerator_Studio_Workspace/FGRapp5/build/iphone/build/Products/Debug-iphonesimulator/FGR_Cascade.app/alloy/widget.js
+[DEBUG]  Overwriting /Users/jia/Documents/Appcelerator_Studio_Workspace/FGRapp5/Resources/iphone/alloy/widgets/com.alcoapps.drawermenu/controllers/widget.js => /Users/jia/Documents/Appcelerator_Studio_Workspace/FGRapp5/build/iphone/build/Products/Debug-iphonesimulator/FGR_Cascade.app/alloy/widgets/com.alcoapps.drawermenu/controllers/widget.js
+[DEBUG]  Overwriting /Users/jia/Documents/Appcelerator_Studio_Workspace/FGRapp5/Resources/iphone/alloy/widgets/com.alcoapps.drawermenu/styles/widget.js => /Users/jia/Documents/Appcelerator_Studio_Workspace/FGRapp5/build/iphone/build/Products/Debug-iphonesimulator/FGR_Cascade.app/alloy/widgets/com.alcoapps.drawermenu/styles/widget.js
+[DEBUG]  Overwriting /Users/jia/Documents/Appcelerator_Studio_Workspace/FGRapp5/Resources/iphone/alloy.js => /Users/jia/Documents/Appcelerator_Studio_Workspace/FGRapp5/build/iphone/build/Products/Debug-iphonesimulator/FGR_Cascade.app/alloy.js
+[DEBUG]  Overwriting /Users/jia/Library/Application Support/Titanium/modules/commonjs/ti.cloud/3.2.10/ti.cloud.js => /Users/jia/Documents/Appcelerator_Studio_Workspace/FGRapp5/build/iphone/build/Products/Debug-iphonesimulator/FGR_Cascade.app/ti.cloud.js
+[DEBUG]  Overwriting /Users/jia/Documents/Appcelerator_Studio_Workspace/FGRapp5/modules/commonjs/com.alcoapps.actionbarhelper/1.0.0/com.alcoapps.actionbarhelper.js => /Users/jia/Documents/Appcelerator_Studio_Workspace/FGRapp5/build/iphone/build/Products/Debug-iphonesimulator/FGR_Cascade.app/com.alcoapps.actionbarhelper.js
+[INFO]   Writing app properties
+[TRACE]  No change, skipping /Users/jia/Documents/Appcelerator_Studio_Workspace/FGRapp5/build/iphone/build/Products/Debug-iphonesimulator/FGR_Cascade.app/_app_props_.json
+[DEBUG]  Using default application routing
+[TRACE]  No change, skipping /Users/jia/Documents/Appcelerator_Studio_Workspace/FGRapp5/build/iphone/Classes/ApplicationRouting.m
+[INFO]   Writing i18n files
+[DEBUG]  Compiling localization files
+[DEBUG]  No i18n files to process
+[INFO]   Processing Titanium symbols
+[DEBUG]  Processing Titanium namespace resources
+[TRACE]  No change, skipping /Users/jia/Documents/Appcelerator_Studio_Workspace/FGRapp5/build/iphone/build/Products/Debug-iphonesimulator/FGR_Cascade.app/modules/ui/images/badge.png
+[TRACE]  No change, skipping /Users/jia/Documents/Appcelerator_Studio_Workspace/FGRapp5/build/iphone/build/Products/Debug-iphonesimulator/FGR_Cascade.app/modules/ui/images/closeButton.png
+[TRACE]  No change, skipping /Users/jia/Documents/Appcelerator_Studio_Workspace/FGRapp5/build/iphone/build/Products/Debug-iphonesimulator/FGR_Cascade.app/modules/ui/images/photoDefault.png
+[TRACE]  No change, skipping /Users/jia/Documents/Appcelerator_Studio_Workspace/FGRapp5/build/iphone/Classes/defines.h
+[INFO]   Removing files
+[DEBUG]  Removing empty directories
+[INFO]   Skipping xcodebuild
+[INFO]   Finished building the application in 15s 536ms
+[INFO]   Launching iOS Simulator
+[TRACE]  [ioslib] Selected iOS Simulator: iPhone 6
+[TRACE]  [ioslib]   UDID    = A70756FB-C2DE-4452-BF1F-01778F726A5C
+[TRACE]  [ioslib]   iOS     = 8.4
+[TRACE]  [ioslib] Autoselected Xcode: 6.4
+[TRACE]  [ioslib] Removing old log file: /Users/jia/Library/Developer/CoreSimulator/Devices/A70756FB-C2DE-4452-BF1F-01778F726A5C/data/Containers/Data/Application/7F8DDF8E-FABA-4F3F-93F6-CC0C68853F9C/Documents/0b49a6c2-1ae9-421b-9555-00cc7177e83c.log
+[TRACE]  [ioslib] iPhone 6 Simulator already running with the correct udid
+[TRACE]  [ioslib] Tailing iPhone 6 Simulator system log: /Users/jia/Library/Logs/CoreSimulator/A70756FB-C2DE-4452-BF1F-01778F726A5C/system.log
+[TRACE]  [ioslib] Running: osascript "/Users/jia/Library/Application Support/Titanium/mobilesdk/osx/5.2.2.GA/node_modules/ioslib/lib/sim_focus.scpt" "iOS Simulator" "Disabled"
+[TRACE]  [ioslib] iPhone 6 Simulator successfully focused
+[TRACE]  [ioslib] Running: /Applications/Xcode.app/Contents/Developer/usr/bin/simctl install A70756FB-C2DE-4452-BF1F-01778F726A5C /Users/jia/Documents/Appcelerator_Studio_Workspace/FGRapp5/build/iphone/build/Products/Debug-iphonesimulator/FGR_Cascade.app
+[TRACE]  [ioslib] App installed
+[TRACE]  [ioslib] Running: /Applications/Xcode.app/Contents/Developer/usr/bin/simctl launch A70756FB-C2DE-4452-BF1F-01778F726A5C edu.uw.titaniumpanda.FGRCascade
+[TRACE]  [ioslib] App launched
+[TRACE]  [ioslib] Found application log file: /Users/jia/Library/Developer/CoreSimulator/Devices/A70756FB-C2DE-4452-BF1F-01778F726A5C/data/Containers/Data/Application/5BE56552-D179-4109-B96C-9E6628B150FE/Documents/0b49a6c2-1ae9-421b-9555-00cc7177e83c.log
+[TRACE]  [FGR_Cascade] assertion failed: 14F1713 12H141: libxpc.dylib + 59338 [AF8FA08F-353B-303B-A08E-AEBB3C60A640]: 0x7d

@@ -17,7 +17,7 @@
 },
 
 "#title": {
-	color: "#006F44", height:20
+	color: "#006F44", height:23
 },
 
 '#secondLine': {
@@ -29,13 +29,13 @@
 	left: 0, right:0, font: { fontSize: 13 }
 },
 "#paceNumber": {
-	color: 'black', font: { fontSize: 12 }, width:80, height:30
+	color: 'white', font: { fontSize: 12 }, width:80, height:25
 },
 "#pace": {
-	left: 5, color: 'black',font: { fontSize: 16 }, width: 80
+	left: 5, color: 'black',font: { fontSize: 16 }, width: 150, height:30
 },
 '#thirdLine': {
-	left: 0, right: 0, top:5,
+	left: 0, right: 0, top:0,
 	layout: "horizontal"
 },
 
@@ -50,7 +50,7 @@
 '#distanceOne':{
 	color: '#2C2A29',
 	font: { fontSize:36 },
-	left: 100
+	left: 30
 }
 '#distanceTwo':{
 	color: '#646464',
