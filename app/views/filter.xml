@@ -1,7 +1,11 @@
 <Alloy>
 	<Window id="fwin" title='Filter' layout="vertical">
-		<LeftNavButton><Button id="cancel" onClick="cancelFilter">Cancel</Button></LeftNavButton>
-		<RightNavButton><Button id="apply" onClick="applyFilter">Apply</Button></RightNavButton>
+		<LeftNavButton platform="ios"><Button id="cancel" onClick="cancelFilter">Cancel</Button></LeftNavButton>
+		<RightNavButton platform="ios"><Button id="reset" onClick="resetFilter">Clear All</Button></RightNavButton>
+		<ActionBar platform="android" id="actionbar" title="Filter" onHomeIconItemSelected="cancelFilter" displayHomeAsUp="true" />
+		<Menu platform="android">
+			<MenuItem title="Clear All" onClick="resetFilter" showAsAction="Ti.Android.SHOW_AS_ACTION_ALWAYS" />
+		</Menu>	
 		<ScrollView id="scrollView" layout="vertical" showVerticalScrollIndicator="true" showHorizontalScrollIndicator="true" height="100%" width="100%">
 			<View id="paceRow" top="0" height="30" layout="horizontal">
 				<Button top="0" id="pace" height="30" width="50" onClick="hidePaceView">Pace</Button>
@@ -65,7 +69,7 @@
 							<Button left="0" onClick="ninety">90+</Button>
 				</View>
 			</View>   
-				<Button top="0" left="70" id="reset" onClick="resetFilter">Reset</Button>
+				<Button top="0" id="reset" onClick="applyFilter">Apply</Button>
         </ScrollView>
 	</Window>
 </Alloy>

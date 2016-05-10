@@ -32,7 +32,7 @@
 	color: 'white', font: { fontSize: 12 }, width:80, height:25
 },
 "#pace": {
-	left: 5, color: 'black',font: { fontSize: 16 }, width: 150, height:30
+	left: 5, color: 'black',font: { fontSize: 16 }, width: 150, height:25
 },
 '#thirdLine': {
 	left: 0, right: 0, top:0,

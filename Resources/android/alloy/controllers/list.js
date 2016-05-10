@@ -8,24 +8,6 @@ function __processArg(obj, key) {
 }
 
 function Controller() {
-    function __alloyId29() {
-        $.__views.lwin.removeEventListener("open", __alloyId29);
-        if ($.__views.lwin.activity) $.__views.lwin.activity.onCreateOptionsMenu = function(e) {
-            var __alloyId28 = {
-                icon: "images/ic_action_action_autorenew.png",
-                showAsAction: Ti.Android.SHOW_AS_ACTION_ALWAYS,
-                id: "__alloyId27"
-            };
-            $.__views.__alloyId27 = e.menu.add(_.pick(__alloyId28, Alloy.Android.menuItemCreateArgs));
-            $.__views.__alloyId27.applyProperties(_.omit(__alloyId28, Alloy.Android.menuItemCreateArgs));
-            $.__alloyId27 = $.__views.__alloyId27;
-            refresh ? $.addListener($.__views.__alloyId27, "click", refresh) : __defers["$.__views.__alloyId27!click!refresh"] = true;
-        }; else {
-            Ti.API.warn("You attempted to attach an Android Menu to a lightweight Window");
-            Ti.API.warn("or other UI component which does not have an Android activity.");
-            Ti.API.warn("Android Menus can only be opened on TabGroups and heavyweight Windows.");
-        }
-    }
     function __alloyId53(e) {
         if (e && e.fromAdapter) return;
         var opts = __alloyId53.opts || {};
@@ -158,7 +140,6 @@ function Controller() {
         title: "Free Group Rides"
     });
     $.__views.lwin && $.addTopLevelView($.__views.lwin);
-    $.__views.lwin.addEventListener("open", __alloyId29);
     $.__views.search = Ti.UI.createSearchBar({
         id: "search"
     });
@@ -178,7 +159,7 @@ function Controller() {
                     font: {
                         fontSize: 20
                     },
-                    height: 20,
+                    height: 23,
                     bindId: "title"
                 }
             };
@@ -196,7 +177,7 @@ function Controller() {
                                 fontSize: 13
                             },
                             width: 20,
-                            image: "Date.png"
+                            image: "images/Date.png"
                         }
                     };
                     __alloyId38.push(__alloyId40);
@@ -222,15 +203,15 @@ function Controller() {
                                 type: "Ti.UI.Label",
                                 bindId: "paceNumber",
                                 properties: {
-                                    color: "black",
+                                    color: "white",
                                     left: 0,
                                     font: {
                                         fontSize: 12
                                     },
                                     width: 80,
-                                    height: 30,
+                                    height: 25,
                                     bindId: "paceNumber",
-                                    backgroundImage: "pace.png"
+                                    backgroundImage: "images/pace.png"
                                 }
                             };
                             __alloyId43.push(__alloyId44);
@@ -243,7 +224,8 @@ function Controller() {
                                     font: {
                                         fontSize: 16
                                     },
-                                    width: 80,
+                                    width: 150,
+                                    height: 25,
                                     bindId: "pace"
                                 }
                             };
@@ -253,7 +235,7 @@ function Controller() {
                                 bindId: "distanceOne",
                                 properties: {
                                     color: "#2C2A29",
-                                    left: 100,
+                                    left: 30,
                                     font: {
                                         fontSize: 36
                                     },
@@ -279,7 +261,7 @@ function Controller() {
                         properties: {
                             left: 0,
                             right: 0,
-                            top: 5,
+                            top: 0,
                             layout: "horizontal"
                         }
                     };
@@ -368,7 +350,6 @@ function Controller() {
     $.search.addEventListener("cancel", function() {
         $.search.blur();
     });
-    __defers["$.__views.__alloyId27!click!refresh"] && $.addListener($.__views.__alloyId27, "click", refresh);
     __defers["$.__views.listView!itemclick!select"] && $.addListener($.__views.listView, "itemclick", select);
     __defers["$.__views.__alloyId55!click!openMapview"] && $.addListener($.__views.__alloyId55, "click", openMapview);
     __defers["$.__views.__alloyId56!click!filter"] && $.addListener($.__views.__alloyId56, "click", filter);
