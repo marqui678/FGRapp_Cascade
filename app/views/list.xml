@@ -37,8 +37,10 @@
 			
 		</ListView>
 		<Button onClick="openMapview" top="0" right="0">To map</Button>
-		<Button onClick="filter" bottom="0" right="0">Filter</Button>
-		<Button onClick="openSortView" bottom="0" left="0">Sort</Button>
+		<View id='bottomBar' backgroundColor = '#F7F7F7'>
+			<Button onClick="filter" color= "#43B02A" right="5">Filter</Button>
+			<Button onClick="openSortView" color= "#43B02A" left="5">Sort</Button>
+		</View>
 		
 	</Window>
 	
