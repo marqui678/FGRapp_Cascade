@@ -4,7 +4,9 @@
 
 "#mainView": {
 	backgroundColor: "#FFFFFF",
-	height: Ti.UI.FILL,
+	//height: Ti.UI.FILL,
+	top: "0dp",
+	bottom: "48dp",
 	width: Ti.UI.FILL
 },
 
@@ -37,5 +39,18 @@
 
 ".rideDistance": {
 	top: "45"
+},
+
+"#toolBarAndroid": {
+	width: Titanium.UI.FILL,
+	height: "48dp",
+	backgroundColor: "#F7F7F7"
+},
+
+"#filter": {
+	right: "0dp",
+	color: "#43B02A",
+	backgroundColor: "transparent",
+	font: { fontSize: 16}
 }
 

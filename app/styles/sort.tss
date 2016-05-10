@@ -62,6 +62,10 @@
 	right: "16",
 },
 
+"#radioBtn": {
+	width: "24dp"
+}
+
 "#arrowBtn": {
 	left: "5",
 	width: "15"
