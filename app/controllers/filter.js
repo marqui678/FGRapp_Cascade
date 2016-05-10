@@ -10,6 +10,8 @@ var monthNames = ["Jan ", "Feb ", "Mar ", "Apr ", "May ", "Jun ","Jul ", "Aug ",
 	initiate();
 })(arguments[0] || {});
 
+var args = $.args;
+
 $.startDate.addEventListener('change',function(e){
 	$.endDate.minDate = e.value;
 	Alloy.Globals.startDateTime[0] = e.value;
@@ -336,8 +338,28 @@ function afterFetch(col, res) {
       		
   		});
   		dialog.show();
+	}
+	else {
+		//If filer is opened by map, notice map to update
+		if(args.prevMapWindow !== undefined) {
+			args.prevMapWindow.fireEvent('filter_updated');
+		}
+		
+		//Need to Calc distance to location as it would be used in sort.
+		setDistanceToLocation(Alloy.Collections.feed.models, Alloy.Globals.regionCenter);
 	}	
 }
+
+/**
+ *For each model, set value for field distanceToLoc based on given target location
+ */
+function setDistanceToLocation(models, targetLoc) {
+	for (var i = 0; i < models.length; i++) {
+		var model = models[i];
+		model.setDistanceToLoc(targetLoc);
+	}
+}
+
 function applyFilter(){
 		Alloy.Collections.feed.fetch({
 		url: "https://www.cascade.org/DailyRides/rss.xml",

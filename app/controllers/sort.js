@@ -56,6 +56,10 @@ var sortOptions = [
 //Check if there is selectedSort item
 if (selectedSort.id !== undefined) {
 	sortOptions[selectedSort.id].radioBtn.image = selectedRadioBtn;
+	sortOptions[selectedSort.id].direction = selectedSort.item.direction;
+	if(selectedSort.item.direction.dir === "DES") {
+		sortOptions[selectedSort.id].arrowBtn.image = downArrowBtn;
+	}
 	$.sortByResult.text = selectedSort.item.title.text + ": " + selectedSort.item.direction.text;
 }
 	

@@ -4,18 +4,15 @@
     	<Require type="widget" src="com.alcoapps.drawermenu" id="drawermenu"/>
     	<Menu platform="android">
 			<MenuItem title="Search" icon="images/ic_search_light.png" onClick="toSearch" showAsAction="Ti.Android.SHOW_AS_ACTION_ALWAYS" />
-		</Menu>		
+			<MenuItem title="List" onClick="toList" showAsAction="Ti.Android.SHOW_AS_ACTION_ALWAYS" />
+		</Menu>
+		<RightNavButtons platform="ios">
+			<Button title="Search" onClick="toSearch" />
+			<Button title="List" onClick="toList" />
+		</RightNavButtons>		
 		<View id="mainView">
 	        <View ns="Alloy.Globals.Map" id="mapview" module="ti.map" onClick="report">
 	        </View>
-<!--
-	        <View id="rideInfoCallout" class="rideInfoCallout" visible="false" onClick="showDetail">
-	        	<Label id="rideTitle" class="rideTitle"></Label>
-	        	<Label id="rideDate" class="rideDate"></Label>
-	        	<Label id="ridePace" class="ridePace"></Label>
-	        	<Label id="rideDistance" class="rideDistance"></Label>
-	        </View>-->
-
         </View>
         
         <Toolbar platform="ios" bottom="0" borderTop="true" borderBottom="false">
@@ -37,16 +34,3 @@
         
     </Window>
 </Alloy>
-
-
-
-
-
-<!--
-<Alloy>
-	<Window id="mainWindow" title="map" class='container'>
-		<Module id="map" module="ti.map" method="createView" platform="ios,android">
-			<Annotation title="Palo Alto" latitude="37.47" longitude="-122.12"/>
-		</Module>
-	</Window>
-</Alloy>-->

@@ -15,6 +15,7 @@
 Alloy.Globals.Map = require('ti.map');
 
 Alloy.Globals.defaultLocation = {latitude: 47.6466, longitude: -122.335}; 
+Alloy.Globals.regionCenter = {latitude: 47.6466, longitude: -122.335}; 
 
 //Use distanceToLocation as default sorting
 Alloy.Globals.selectedSort = {id: 2, item: {	    

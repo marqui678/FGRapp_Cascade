@@ -6,6 +6,9 @@ var searchLoc = args.searchLoc;
 
 //Init region center
 var regionCenter = {};
+//Make regionCenter global so it could be access by filter from either map or list view
+Alloy.Globals.regionCenter = regionCenter;
+
 var rideData = Alloy.Collections.feed.models;
 
 var lastClickedAnnotationId = null;
@@ -95,6 +98,11 @@ $.mainWindow.addEventListener('loc_updated', function(e){
 
 $.mainWindow.addEventListener('filter_updated', function(e){
 	//Update annotations with filtered data
+	createAnnotationsForMap(Alloy.Collections.feed.models);
+	//Add search anno to map if exist
+	if(searchLocAnnotation !== undefined) {
+		$.mapview.addAnnotation(searchLocAnnotation);
+	}
 });
 
 function centeredByCurrentLocation() {
@@ -243,7 +251,11 @@ function toSearch(e) {
 }
 
 function toFilter(e) {
-	alert("Filter clicked");
+	Alloy.Globals.Navigator.open("filter", {prevMapWindow: $.mainWindow});
+}
+
+function toList(e) {
+	Alloy.Globals.Navigator.open("list", {});
 }
 
 function showDetail(e) {
