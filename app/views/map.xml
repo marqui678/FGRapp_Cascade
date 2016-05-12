@@ -13,24 +13,26 @@
 		<View id="mainView">
 	        <View ns="Alloy.Globals.Map" id="mapview" module="ti.map" onClick="report">
 	        </View>
-        </View>
-        
-        <Toolbar platform="ios" bottom="0" borderTop="true" borderBottom="false">
-            <Items>              
-                <FlexSpace/>
-                <Button id="filter" onClick="toFilter">Filter</Button>/>
-            </Items>
-        </Toolbar>
-        <View id="toolBarAndroid" platform="android" bottom="0" borderTop="true" borderBottom="false">
-        	<Button id="filter" onClick="toFilter">Filter</Button>
-        </View>
-        
-        <View id="rideInfoCallout" class="rideInfoCallout" visible="false" onClick="showDetail">
-        	<Label id="rideTitle" class="rideTitle"></Label>
-        	<Label id="rideDate" class="rideDate"></Label>
-        	<Label id="ridePace" class="ridePace"></Label>
-        	<Label id="rideDistance" class="rideDistance"></Label>
-        </View>
-        
+            <View id="toolBar" bottom="0" borderTop="true" borderBottom="false">
+	        	<Button id="filter" onClick="toFilter">Filter</Button>
+	        </View>   
+	        <View id="rideInfoCalloutWrapper" class="calloutWrapper" visible="false">    
+		        <View id="rideInfoCallout" class="rideInfoCallout" onClick="showDetail">		        	
+		        	<Label id="rideTitle" class="rideTitle"></Label>
+		        	<View class="rideDateTime">
+		        		<ImageView class="alignLeft" class="calloutImage" width="20" image="/images/Date.png"></ImageView>
+		        		<Label class="alignLeft lightText" id="startDateTime" />
+		        	</View>
+		        	<View class="ridePace">
+		        		<Label class="alignLeft" id="paceNumber" backgroundImage="/images/pace.png"/>
+		        		<Label class="alignLeft baseText" id="pace" />
+		        	</View>
+		        </View>
+	        	<View class="rideDistance">
+	        		<Label class="alignLeft baseText" id="distanceOne"/>
+		            <Label class="alignLeft lightText" id="distanceTwo"/>
+	        	</View>
+	        </View>	       
+        </View>             
     </Window>
 </Alloy>

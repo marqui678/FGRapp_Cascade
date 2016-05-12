@@ -346,19 +346,21 @@ function afterFetch(col, res) {
 		}
 		
 		//Need to Calc distance to location as it would be used in sort.
-		setDistanceToLocation(Alloy.Collections.feed.models, Alloy.Globals.regionCenter);
+		Alloy.Globals.setDistanceToLocation(Alloy.Collections.feed.models, Alloy.Globals.regionCenter);
 	}	
 }
 
 /**
  *For each model, set value for field distanceToLoc based on given target location
  */
+/*
 function setDistanceToLocation(models, targetLoc) {
 	for (var i = 0; i < models.length; i++) {
 		var model = models[i];
 		model.setDistanceToLoc(targetLoc);
 	}
-}
+}*/
+
 
 function applyFilter(){
 		Alloy.Collections.feed.fetch({
