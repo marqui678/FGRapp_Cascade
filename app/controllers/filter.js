@@ -431,8 +431,30 @@ function afterFetch(col, res) {
       		
   		});
   		dialog.show();
+	}
+	else {
+		//If filer is opened by map, notice map to update
+		if(args.prevMapWindow !== undefined) {
+			args.prevMapWindow.fireEvent('filter_updated');
+		}
+		
+		//Need to Calc distance to location as it would be used in sort.
+		Alloy.Globals.setDistanceToLocation(Alloy.Collections.feed.models, Alloy.Globals.regionCenter);
 	}	
 }
+
+/**
+ *For each model, set value for field distanceToLoc based on given target location
+ */
+/*
+function setDistanceToLocation(models, targetLoc) {
+	for (var i = 0; i < models.length; i++) {
+		var model = models[i];
+		model.setDistanceToLoc(targetLoc);
+	}
+}*/
+
+
 function applyFilter(){
 	if(Titanium.Network.networkType == Titanium.Network.NETWORK_NONE){
 	     alert("Your device is not online. Please check your network and try again.");

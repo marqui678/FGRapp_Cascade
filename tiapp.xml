@@ -46,6 +46,7 @@
             <application android:theme="@style/FGRThemeWithActionBar">
                 <meta-data
                     android:name="com.google.android.maps.v2.API_KEY" android:value="AIzaSyC4oyNE4HnNJ2Hi6vJ1bY9UU76acS1iod4"/>
+                <meta-data android:name="com.google.android.gms.version" android:value="@integer/google_play_services_version"/>
             </application>
         </manifest>
     </android>

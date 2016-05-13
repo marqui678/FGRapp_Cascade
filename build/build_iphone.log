@@ -1,5 +1,5 @@
 
-5/12/2016, 8:19:11 PM
+5/9/2016, 3:49:32 PM
 
 Operating System
   Name                        = Mac OS X
@@ -21,7 +21,7 @@ Titanium SDK
   Target Platform             = iphone
 
 Command
-  /usr/local/bin/node /Users/jia/.appcelerator/install/5.2.2/package/node_modules/titanium/lib/titanium.js build run --platform ios --log-level trace --sdk 5.2.2.GA --project-dir /Users/jia/Documents/Appcelerator_Studio_Workspace/FGRapp5 --target simulator --ios-version 8.4 --device-family iphone --deploy-type development --sim-type iphone --sim-version 8.4 --device-id A70756FB-C2DE-4452-BF1F-01778F726A5C --skip-js-minify --no-colors --no-progress-bars --no-prompt --prompt-type socket-bundle --prompt-port 50845 --config-file /var/folders/85/rj0yf4g145g8qzpp_9mgwkwr0000gq/T/build-1463109544302.json --no-banner --project-dir /Users/jia/Documents/Appcelerator_Studio_Workspace/FGRapp5
+  /usr/local/bin/node /Users/jia/.appcelerator/install/5.2.2/package/node_modules/titanium/lib/titanium.js build run --platform ios --log-level trace --sdk 5.2.2.GA --project-dir /Users/jia/Documents/Appcelerator_Studio_Workspace/FGRapp5 --target simulator --ios-version 8.4 --device-family iphone --deploy-type development --sim-type iphone --sim-version 8.4 --device-id A70756FB-C2DE-4452-BF1F-01778F726A5C --skip-js-minify --no-colors --no-progress-bars --no-prompt --prompt-type socket-bundle --prompt-port 49183 --config-file /var/folders/85/rj0yf4g145g8qzpp_9mgwkwr0000gq/T/build-1462834165366.json --no-banner --project-dir /Users/jia/Documents/Appcelerator_Studio_Workspace/FGRapp5
 
 [TRACE]  [ioslib] Validating iOS Simulator UDID A70756FB-C2DE-4452-BF1F-01778F726A5C
 [TRACE]  [ioslib] Found iOS Simulator UDID A70756FB-C2DE-4452-BF1F-01778F726A5C
@@ -92,10 +92,10 @@ Command
 [DEBUG]  project path = /Users/jia/Documents/Appcelerator_Studio_Workspace/FGRapp5
 [DEBUG]  app path = /Users/jia/Documents/Appcelerator_Studio_Workspace/FGRapp5/app
 [DEBUG]  
-[WARN]   Generated "/i18n" directory is not ignored by Git, please add it to your .gitignore
-[WARN]   Generated "/platform" directory is not ignored by Git, please add it to your .gitignore
 [DEBUG]  
 [DEBUG]  ----- CONFIG.JSON -----
+[WARN]   Generated "/i18n" directory is not ignored by Git, please add it to your .gitignore
+[WARN]   Generated "/platform" directory is not ignored by Git, please add it to your .gitignore
 [DEBUG]  dependencies = {"com.alcoapps.drawermenu":"2.0"}
 [INFO]   [config.json] config.json unchanged, using cached config.json...
 [DEBUG]  {
@@ -300,13 +300,13 @@ Command
 [TRACE]  
 [TRACE]  Benchmarking
 [TRACE]  ------------
-[TRACE]  [7.81138s] TOTAL
+[TRACE]  [6.16848s] TOTAL
 [INFO]   
-[INFO]   Alloy compiled in 7.81138s
+[INFO]   Alloy compiled in 6.16848s
 [INFO]   Alloy compiler completed successfully
-[TRACE]  offline build file /var/folders/85/rj0yf4g145g8qzpp_9mgwkwr0000gq/T/build-641f1b0f1c97a73c5284f90468f4c96d7ab664da.json
+[TRACE]  offline build file /var/folders/85/rj0yf4g145g8qzpp_9mgwkwr0000gq/T/build-ae2c3721582a1733f572ab6815afc9023d0bfa6d.json
 [TRACE]  online 1
-[TRACE]  optimizing build, last build was 20975.564 sec ago
+[TRACE]  optimizing build, last build was 3434.466 sec ago
 [INFO]   Creating Xcode project
 [INFO]   LaunchScreen.storyboard is not supported with Xcode 6.4, removing from Xcode project
 [TRACE]  Removing pre-compile phase
@@ -360,45 +360,17 @@ Command
 [TRACE]  No change, skipping /Users/jia/Documents/Appcelerator_Studio_Workspace/FGRapp5/build/iphone/Assets.xcassets/LaunchImage.launchimage/Contents.json
 [INFO]   App thinning disabled, skipping asset image sets
 [DEBUG]  Copying resources
-[TRACE]  No change, skipping /Users/jia/Documents/Appcelerator_Studio_Workspace/FGRapp5/build/iphone/build/Products/Debug-iphonesimulator/FGR_Cascade.app/CBCEFHorizontal361_Transparent.png
-[DEBUG]  Overwriting /Users/jia/Documents/Appcelerator_Studio_Workspace/FGRapp5/Resources/iphone/CBCEFHorizontal361_Transparent.png => /Users/jia/Documents/Appcelerator_Studio_Workspace/FGRapp5/build/iphone/build/Products/Debug-iphonesimulator/FGR_Cascade.app/CBCEFHorizontal361_Transparent.png
+[TRACE]  No change, skipping /Users/jia/Documents/Appcelerator_Studio_Workspace/FGRapp5/build/iphone/build/Products/Debug-iphonesimulator/FGR_Cascade.app/Date.png
+[DEBUG]  Overwriting /Users/jia/Documents/Appcelerator_Studio_Workspace/FGRapp5/Resources/iphone/Date.png => /Users/jia/Documents/Appcelerator_Studio_Workspace/FGRapp5/build/iphone/build/Products/Debug-iphonesimulator/FGR_Cascade.app/Date.png
+[TRACE]  No change, skipping /Users/jia/Documents/Appcelerator_Studio_Workspace/FGRapp5/build/iphone/build/Products/Debug-iphonesimulator/FGR_Cascade.app/Filter open.png
+[DEBUG]  Overwriting /Users/jia/Documents/Appcelerator_Studio_Workspace/FGRapp5/Resources/iphone/Filter open.png => /Users/jia/Documents/Appcelerator_Studio_Workspace/FGRapp5/build/iphone/build/Products/Debug-iphonesimulator/FGR_Cascade.app/Filter open.png
+[TRACE]  No change, skipping /Users/jia/Documents/Appcelerator_Studio_Workspace/FGRapp5/build/iphone/build/Products/Debug-iphonesimulator/FGR_Cascade.app/Filter opened.png
+[DEBUG]  Overwriting /Users/jia/Documents/Appcelerator_Studio_Workspace/FGRapp5/Resources/iphone/Filter opened.png => /Users/jia/Documents/Appcelerator_Studio_Workspace/FGRapp5/build/iphone/build/Products/Debug-iphonesimulator/FGR_Cascade.app/Filter opened.png
 [DEBUG]  Overwriting /Users/jia/Documents/Appcelerator_Studio_Workspace/FGRapp5/Resources/iphone/alloy/sync/rss.js.orig => /Users/jia/Documents/Appcelerator_Studio_Workspace/FGRapp5/build/iphone/build/Products/Debug-iphonesimulator/FGR_Cascade.app/alloy/sync/rss.js.orig
 [TRACE]  No change, skipping /Users/jia/Documents/Appcelerator_Studio_Workspace/FGRapp5/build/iphone/build/Products/Debug-iphonesimulator/FGR_Cascade.app/ic_action_not_important.png
 [DEBUG]  Overwriting /Users/jia/Documents/Appcelerator_Studio_Workspace/FGRapp5/Resources/iphone/ic_action_not_important.png => /Users/jia/Documents/Appcelerator_Studio_Workspace/FGRapp5/build/iphone/build/Products/Debug-iphonesimulator/FGR_Cascade.app/ic_action_not_important.png
-[TRACE]  No change, skipping /Users/jia/Documents/Appcelerator_Studio_Workspace/FGRapp5/build/iphone/build/Products/Debug-iphonesimulator/FGR_Cascade.app/images/Date.png
-[DEBUG]  Overwriting /Users/jia/Documents/Appcelerator_Studio_Workspace/FGRapp5/Resources/iphone/images/Date.png => /Users/jia/Documents/Appcelerator_Studio_Workspace/FGRapp5/build/iphone/build/Products/Debug-iphonesimulator/FGR_Cascade.app/images/Date.png
-[TRACE]  No change, skipping /Users/jia/Documents/Appcelerator_Studio_Workspace/FGRapp5/build/iphone/build/Products/Debug-iphonesimulator/FGR_Cascade.app/images/Filter open.png
-[DEBUG]  Overwriting /Users/jia/Documents/Appcelerator_Studio_Workspace/FGRapp5/Resources/iphone/images/Filter open.png => /Users/jia/Documents/Appcelerator_Studio_Workspace/FGRapp5/build/iphone/build/Products/Debug-iphonesimulator/FGR_Cascade.app/images/Filter open.png
-[TRACE]  No change, skipping /Users/jia/Documents/Appcelerator_Studio_Workspace/FGRapp5/build/iphone/build/Products/Debug-iphonesimulator/FGR_Cascade.app/images/Filter opened.png
-[DEBUG]  Overwriting /Users/jia/Documents/Appcelerator_Studio_Workspace/FGRapp5/Resources/iphone/images/Filter opened.png => /Users/jia/Documents/Appcelerator_Studio_Workspace/FGRapp5/build/iphone/build/Products/Debug-iphonesimulator/FGR_Cascade.app/images/Filter opened.png
-[TRACE]  No change, skipping /Users/jia/Documents/Appcelerator_Studio_Workspace/FGRapp5/build/iphone/build/Products/Debug-iphonesimulator/FGR_Cascade.app/images/back_dark.png
-[DEBUG]  Overwriting /Users/jia/Documents/Appcelerator_Studio_Workspace/FGRapp5/Resources/iphone/images/back_dark.png => /Users/jia/Documents/Appcelerator_Studio_Workspace/FGRapp5/build/iphone/build/Products/Debug-iphonesimulator/FGR_Cascade.app/images/back_dark.png
-[TRACE]  No change, skipping /Users/jia/Documents/Appcelerator_Studio_Workspace/FGRapp5/build/iphone/build/Products/Debug-iphonesimulator/FGR_Cascade.app/images/checked.png
-[DEBUG]  Overwriting /Users/jia/Documents/Appcelerator_Studio_Workspace/FGRapp5/Resources/iphone/images/checked.png => /Users/jia/Documents/Appcelerator_Studio_Workspace/FGRapp5/build/iphone/build/Products/Debug-iphonesimulator/FGR_Cascade.app/images/checked.png
-[TRACE]  No change, skipping /Users/jia/Documents/Appcelerator_Studio_Workspace/FGRapp5/build/iphone/build/Products/Debug-iphonesimulator/FGR_Cascade.app/images/grey.png
-[DEBUG]  Overwriting /Users/jia/Documents/Appcelerator_Studio_Workspace/FGRapp5/Resources/iphone/images/grey.png => /Users/jia/Documents/Appcelerator_Studio_Workspace/FGRapp5/build/iphone/build/Products/Debug-iphonesimulator/FGR_Cascade.app/images/grey.png
-[TRACE]  No change, skipping /Users/jia/Documents/Appcelerator_Studio_Workspace/FGRapp5/build/iphone/build/Products/Debug-iphonesimulator/FGR_Cascade.app/images/ic_arrow_drop_down.png
-[DEBUG]  Overwriting /Users/jia/Documents/Appcelerator_Studio_Workspace/FGRapp5/Resources/iphone/images/ic_arrow_drop_down.png => /Users/jia/Documents/Appcelerator_Studio_Workspace/FGRapp5/build/iphone/build/Products/Debug-iphonesimulator/FGR_Cascade.app/images/ic_arrow_drop_down.png
-[TRACE]  No change, skipping /Users/jia/Documents/Appcelerator_Studio_Workspace/FGRapp5/build/iphone/build/Products/Debug-iphonesimulator/FGR_Cascade.app/images/ic_arrow_drop_up.png
-[DEBUG]  Overwriting /Users/jia/Documents/Appcelerator_Studio_Workspace/FGRapp5/Resources/iphone/images/ic_arrow_drop_up.png => /Users/jia/Documents/Appcelerator_Studio_Workspace/FGRapp5/build/iphone/build/Products/Debug-iphonesimulator/FGR_Cascade.app/images/ic_arrow_drop_up.png
-[TRACE]  No change, skipping /Users/jia/Documents/Appcelerator_Studio_Workspace/FGRapp5/build/iphone/build/Products/Debug-iphonesimulator/FGR_Cascade.app/images/ic_menu_light.png
-[DEBUG]  Overwriting /Users/jia/Documents/Appcelerator_Studio_Workspace/FGRapp5/Resources/iphone/images/ic_menu_light.png => /Users/jia/Documents/Appcelerator_Studio_Workspace/FGRapp5/build/iphone/build/Products/Debug-iphonesimulator/FGR_Cascade.app/images/ic_menu_light.png
-[TRACE]  No change, skipping /Users/jia/Documents/Appcelerator_Studio_Workspace/FGRapp5/build/iphone/build/Products/Debug-iphonesimulator/FGR_Cascade.app/images/ic_navigation.png
-[DEBUG]  Overwriting /Users/jia/Documents/Appcelerator_Studio_Workspace/FGRapp5/Resources/iphone/images/ic_navigation.png => /Users/jia/Documents/Appcelerator_Studio_Workspace/FGRapp5/build/iphone/build/Products/Debug-iphonesimulator/FGR_Cascade.app/images/ic_navigation.png
-[TRACE]  No change, skipping /Users/jia/Documents/Appcelerator_Studio_Workspace/FGRapp5/build/iphone/build/Products/Debug-iphonesimulator/FGR_Cascade.app/images/ic_place_green.png
-[DEBUG]  Overwriting /Users/jia/Documents/Appcelerator_Studio_Workspace/FGRapp5/Resources/iphone/images/ic_place_green.png => /Users/jia/Documents/Appcelerator_Studio_Workspace/FGRapp5/build/iphone/build/Products/Debug-iphonesimulator/FGR_Cascade.app/images/ic_place_green.png
-[TRACE]  No change, skipping /Users/jia/Documents/Appcelerator_Studio_Workspace/FGRapp5/build/iphone/build/Products/Debug-iphonesimulator/FGR_Cascade.app/images/ic_place_red.png
-[DEBUG]  Overwriting /Users/jia/Documents/Appcelerator_Studio_Workspace/FGRapp5/Resources/iphone/images/ic_place_red.png => /Users/jia/Documents/Appcelerator_Studio_Workspace/FGRapp5/build/iphone/build/Products/Debug-iphonesimulator/FGR_Cascade.app/images/ic_place_red.png
-[TRACE]  No change, skipping /Users/jia/Documents/Appcelerator_Studio_Workspace/FGRapp5/build/iphone/build/Products/Debug-iphonesimulator/FGR_Cascade.app/images/ic_radio_button_off.png
-[DEBUG]  Overwriting /Users/jia/Documents/Appcelerator_Studio_Workspace/FGRapp5/Resources/iphone/images/ic_radio_button_off.png => /Users/jia/Documents/Appcelerator_Studio_Workspace/FGRapp5/build/iphone/build/Products/Debug-iphonesimulator/FGR_Cascade.app/images/ic_radio_button_off.png
-[TRACE]  No change, skipping /Users/jia/Documents/Appcelerator_Studio_Workspace/FGRapp5/build/iphone/build/Products/Debug-iphonesimulator/FGR_Cascade.app/images/ic_radio_button_on.png
-[DEBUG]  Overwriting /Users/jia/Documents/Appcelerator_Studio_Workspace/FGRapp5/Resources/iphone/images/ic_radio_button_on.png => /Users/jia/Documents/Appcelerator_Studio_Workspace/FGRapp5/build/iphone/build/Products/Debug-iphonesimulator/FGR_Cascade.app/images/ic_radio_button_on.png
-[TRACE]  No change, skipping /Users/jia/Documents/Appcelerator_Studio_Workspace/FGRapp5/build/iphone/build/Products/Debug-iphonesimulator/FGR_Cascade.app/images/ic_search_light.png
-[DEBUG]  Overwriting /Users/jia/Documents/Appcelerator_Studio_Workspace/FGRapp5/Resources/iphone/images/ic_search_light.png => /Users/jia/Documents/Appcelerator_Studio_Workspace/FGRapp5/build/iphone/build/Products/Debug-iphonesimulator/FGR_Cascade.app/images/ic_search_light.png
-[TRACE]  No change, skipping /Users/jia/Documents/Appcelerator_Studio_Workspace/FGRapp5/build/iphone/build/Products/Debug-iphonesimulator/FGR_Cascade.app/images/pace.png
-[DEBUG]  Overwriting /Users/jia/Documents/Appcelerator_Studio_Workspace/FGRapp5/Resources/iphone/images/pace.png => /Users/jia/Documents/Appcelerator_Studio_Workspace/FGRapp5/build/iphone/build/Products/Debug-iphonesimulator/FGR_Cascade.app/images/pace.png
-[TRACE]  No change, skipping /Users/jia/Documents/Appcelerator_Studio_Workspace/FGRapp5/build/iphone/build/Products/Debug-iphonesimulator/FGR_Cascade.app/images/unchecked.png
-[DEBUG]  Overwriting /Users/jia/Documents/Appcelerator_Studio_Workspace/FGRapp5/Resources/iphone/images/unchecked.png => /Users/jia/Documents/Appcelerator_Studio_Workspace/FGRapp5/build/iphone/build/Products/Debug-iphonesimulator/FGR_Cascade.app/images/unchecked.png
+[TRACE]  No change, skipping /Users/jia/Documents/Appcelerator_Studio_Workspace/FGRapp5/build/iphone/build/Products/Debug-iphonesimulator/FGR_Cascade.app/pace.png
+[DEBUG]  Overwriting /Users/jia/Documents/Appcelerator_Studio_Workspace/FGRapp5/Resources/iphone/pace.png => /Users/jia/Documents/Appcelerator_Studio_Workspace/FGRapp5/build/iphone/build/Products/Debug-iphonesimulator/FGR_Cascade.app/pace.png
 [DEBUG]  Overwriting /Users/jia/Documents/Appcelerator_Studio_Workspace/FGRapp5/platform/ios/alloy_generated => /Users/jia/Documents/Appcelerator_Studio_Workspace/FGRapp5/build/iphone/alloy_generated
 [TRACE]  No change, skipping /Users/jia/Documents/Appcelerator_Studio_Workspace/FGRapp5/build/iphone/Assets.xcassets/LaunchImage.launchimage/Default-568h@2x.png
 [DEBUG]  Overwriting /Users/jia/Documents/Appcelerator_Studio_Workspace/FGRapp5/Resources/iphone/Default-568h@2x.png => /Users/jia/Documents/Appcelerator_Studio_Workspace/FGRapp5/build/iphone/Assets.xcassets/LaunchImage.launchimage/Default-568h@2x.png
@@ -466,24 +438,20 @@ Command
 [INFO]   Removing files
 [DEBUG]  Removing empty directories
 [INFO]   Skipping xcodebuild
-[INFO]   Finished building the application in 35s 391ms
+[INFO]   Finished building the application in 15s 536ms
 [INFO]   Launching iOS Simulator
 [TRACE]  [ioslib] Selected iOS Simulator: iPhone 6
 [TRACE]  [ioslib]   UDID    = A70756FB-C2DE-4452-BF1F-01778F726A5C
 [TRACE]  [ioslib]   iOS     = 8.4
 [TRACE]  [ioslib] Autoselected Xcode: 6.4
-[TRACE]  [ioslib] Removing old log file: /Users/jia/Library/Developer/CoreSimulator/Devices/A70756FB-C2DE-4452-BF1F-01778F726A5C/data/Containers/Data/Application/9C27C8BE-64AB-4976-AA84-67EF99630B02/Documents/0b49a6c2-1ae9-421b-9555-00cc7177e83c.log
-[TRACE]  [ioslib] iPhone 6 Simulator is running, but not in a booted state, stopping simulator
+[TRACE]  [ioslib] Removing old log file: /Users/jia/Library/Developer/CoreSimulator/Devices/A70756FB-C2DE-4452-BF1F-01778F726A5C/data/Containers/Data/Application/7F8DDF8E-FABA-4F3F-93F6-CC0C68853F9C/Documents/0b49a6c2-1ae9-421b-9555-00cc7177e83c.log
+[TRACE]  [ioslib] iPhone 6 Simulator already running with the correct udid
 [TRACE]  [ioslib] Tailing iPhone 6 Simulator system log: /Users/jia/Library/Logs/CoreSimulator/A70756FB-C2DE-4452-BF1F-01778F726A5C/system.log
-[TRACE]  [ioslib] Running: /Applications/Xcode.app/Contents/Developer/usr/bin/simctl shutdown A70756FB-C2DE-4452-BF1F-01778F726A5C
-[TRACE]  [ioslib] iPhone 6 Simulator was already shutdown
-[TRACE]  [ioslib] Running: /Applications/Xcode.app/Contents/Developer/Applications/iOS Simulator.app/Contents/MacOS/iOS Simulator -CurrentDeviceUDID A70756FB-C2DE-4452-BF1F-01778F726A5C
-[TRACE]  [ioslib] iPhone 6 Simulator started
 [TRACE]  [ioslib] Running: osascript "/Users/jia/Library/Application Support/Titanium/mobilesdk/osx/5.2.2.GA/node_modules/ioslib/lib/sim_focus.scpt" "iOS Simulator" "Disabled"
 [TRACE]  [ioslib] iPhone 6 Simulator successfully focused
 [TRACE]  [ioslib] Running: /Applications/Xcode.app/Contents/Developer/usr/bin/simctl install A70756FB-C2DE-4452-BF1F-01778F726A5C /Users/jia/Documents/Appcelerator_Studio_Workspace/FGRapp5/build/iphone/build/Products/Debug-iphonesimulator/FGR_Cascade.app
 [TRACE]  [ioslib] App installed
 [TRACE]  [ioslib] Running: /Applications/Xcode.app/Contents/Developer/usr/bin/simctl launch A70756FB-C2DE-4452-BF1F-01778F726A5C edu.uw.titaniumpanda.FGRCascade
 [TRACE]  [ioslib] App launched
-[TRACE]  [ioslib] Found application log file: /Users/jia/Library/Developer/CoreSimulator/Devices/A70756FB-C2DE-4452-BF1F-01778F726A5C/data/Containers/Data/Application/B563786C-CA43-49B4-8945-2BAD533DEA52/Documents/0b49a6c2-1ae9-421b-9555-00cc7177e83c.log
+[TRACE]  [ioslib] Found application log file: /Users/jia/Library/Developer/CoreSimulator/Devices/A70756FB-C2DE-4452-BF1F-01778F726A5C/data/Containers/Data/Application/5BE56552-D179-4109-B96C-9E6628B150FE/Documents/0b49a6c2-1ae9-421b-9555-00cc7177e83c.log
 [TRACE]  [FGR_Cascade] assertion failed: 14F1713 12H141: libxpc.dylib + 59338 [AF8FA08F-353B-303B-A08E-AEBB3C60A640]: 0x7d

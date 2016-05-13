@@ -62,3 +62,9 @@
 	width:"11%",
 	textAlign:"right"
 }
+
+'#bottomBar':{
+	height:'48',
+	backgroundColor : '#F7F7F7',
+	bottom:0,
+}

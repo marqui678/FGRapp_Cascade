@@ -111,9 +111,11 @@ function parseXML(xml) {
 			var distance = model["fgrrss:distance"].match(/\d+./g);	
 			if (distance !== null && distance.length >= 0) {
 				model["fgrrss:distance"] = Number(distance.join(""));//.toFixed(2)
+				//Round downward to nearest integer
+				model["distance1"] = Math.floor(model['fgrrss:distance']);
+				var distanceStr = model['fgrrss:distance'].toFixed(2);
+				model["distance2"] = distanceStr.substring(distanceStr.length - 3) + 'mi';
 			}
-			model["distance1"] = model['fgrrss:distance'].toString().substring(0,2);
-			model["distance2"] = model['fgrrss:distance'].toFixed(2).toString().substring(2,5)+'mi';
 		}
 		//Generate lowestPace element which would be used for pace sorting.
 		//Will be null for Self Paced

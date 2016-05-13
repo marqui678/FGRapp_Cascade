@@ -1,0 +1,59 @@
+//classes
+".container" : {
+  	font: { fontSize:16 },
+}
+'#win':{
+	barColor: "#43B02A",
+	backgroundColor:'#F7F7F7',
+}
+".label":{
+	color:"#006F44",
+	font: { fontSize:16 },
+	left:10,
+}
+".notecontent":{
+	font: { fontSize:16 },
+	left:10,
+	right:10,
+	color:"#646464"
+}
+".separator":{
+	height:1,
+	backgroundColor:"#30006F44"
+}
+
+".paceTitle":{
+  	font: { fontSize:16 },
+	left:10,
+	color:"#646464"
+}
+".paceSpeed":{
+  	font: { fontSize:16 },
+	left: 180,
+	color:"#646464"
+}
+//views
+"#separator1":{
+	top:220,
+	left:10,
+	right:10
+}
+"#paceView":{
+	top:240,
+	backgroundColor:'#F7F7F7',
+}
+//labls
+"#notesLabel":{
+	top:10
+}
+"paceLabel":{
+	 top:230,
+	 
+}
+"#notesContent1":{
+	top:35,
+}
+
+"#notesContent2":{
+	top:130,
+}

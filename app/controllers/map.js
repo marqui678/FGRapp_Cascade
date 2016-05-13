@@ -1,26 +1,23 @@
 // Arguments passed into this controller can be accessed via the `$.args` object directly or:
 var args = $.args;
 
-//Location input by search
-var searchLoc = args.searchLoc;
-
-//Init region center
-var regionCenter = {};
+var regionCenter = Alloy.Globals.regionCenter;
 var rideData = Alloy.Collections.feed.models;
 
 var lastClickedAnnotationId = null;
 var searchLocAnnotation = undefined;
 
-if (searchLoc === undefined) {
-	//Show map with current location pin in the center
-	centeredByCurrentLocation();
-}
-else {
-	//Show map with searchLoc in the center
-	centeredBySearchLocation();
-}
+//Set map region by region center
+setMapRegion(regionCenter);
 
-createAnnotationsForMap(rideData);
+//To fix pin image (with image property in annotation) not show in Android 6, create view with pin as background image
+var customAnnotationView = Ti.UI.createView({
+    backgroundImage: '/images/ic_place_green.png',
+    height: "40dp",
+    width: "28dp"
+});
+
+createAnnotationsForMap(rideData, customAnnotationView);
 
 //Menu
 var thisWin=$.mainWindow;
@@ -95,58 +92,24 @@ $.mainWindow.addEventListener('loc_updated', function(e){
 
 $.mainWindow.addEventListener('filter_updated', function(e){
 	//Update annotations with filtered data
+	createAnnotationsForMap(Alloy.Collections.feed.models);
+	//Add search anno to map if exist
+	if(searchLocAnnotation !== undefined) {
+		$.mapview.addAnnotation(searchLocAnnotation);
+	}
 });
 
-function centeredByCurrentLocation() {
-	if (Ti.Geolocation.locationServicesEnabled === false) {
-		alert("The device has geo turned off. Use default location.");
-		setRegionCenterAndSortByLoc(Alloy.Globals.defaultLocation);
-	}
-	
-	Titanium.Geolocation.getCurrentPosition(function(e) {
-	    Ti.Geolocation.accuracy = Ti.Geolocation.ACCURACY_HIGH;
-	    if (e.error)
-	    {
-	        alert('Current location not found. Use default location');	
-	    	setRegionCenterAndSortByLoc(Alloy.Globals.defaultLocation);    
-	    }
-	    else {
-	    	//Set regionCenter with current location and sort	
-	    	setRegionCenterAndSortByLoc(e.coords);       
-        }
-	});
-};
-
-function setRegionCenterAndSortByLoc(centerLoc) {
-	regionCenter.latitude = centerLoc.latitude;
-	regionCenter.longitude = centerLoc.longitude;
+function centeredBySearchLocation() {
+	//Re-calc distanceToLocation as regionCenter is changed
+	Alloy.Globals.setDistanceToLocation(rideData, regionCenter);
 	
     //Set map region by region center
     setMapRegion(regionCenter);
     
-    //TODO If have combined view, only set distance when loading combined view or after search
-    //Set distance to region center for each model
-    setDistanceToLocation(rideData, regionCenter);
-    //Sort models by distanceToLoc
-    Alloy.Collections.feed.setSortField("distanceToLocation", "ASC");
-	Alloy.Collections.feed.sort();
-}
-
-function centeredBySearchLocation() {
-	setMapRegion(regionCenter);
-	setDistanceToLocation(rideData, regionCenter);
-	Alloy.Collections.feed.setSortField("distanceToLocation", "ASC");
-	Alloy.Collections.feed.sort();
-}
-
-/**
- *For each model, set value for field distanceToLoc based on given target location
- */
-function setDistanceToLocation(models, targetLoc) {
-	for (var i = 0; i < models.length; i++) {
-		var model = models[i];
-		model.setDistanceToLoc(targetLoc);
-	}
+    //If current sortItem is location, re-sort with new location
+    if (Alloy.Globals.selectedSort.id === 2) {
+    	Alloy.Collections.feed.sort();
+    }
 }
 
 function setMapRegion(regionCenter) {
@@ -159,12 +122,12 @@ function setMapRegion(regionCenter) {
 	});
 }
 		
-function createAnnotationsForMap(models){
+function createAnnotationsForMap(models, customAnnotationView){
 	if (models == null || models.length < 1) {
 		return;
 	}
 	//Make annotation
-	var annotations = createAnnotationsWithModels(models);
+	var annotations = createAnnotationsWithModels(models, customAnnotationView);
 	
 	//Add annotation
 	$.mapview.setAnnotations(annotations);
@@ -174,7 +137,7 @@ function createAnnotationsForMap(models){
  *Param: models [model]
  *Return an array of annotation
  */
-function createAnnotationsWithModels(models) {
+function createAnnotationsWithModels(models, customAnnotationView) {
 	//For each model, make annotation
 	var annotations = [];
 	for (var i = 0; i < models.length; i++) {
@@ -183,7 +146,8 @@ function createAnnotationsWithModels(models) {
 			latitude: model.get("latitude"),
 	    	longitude: model.get("longitude"),
 	    	title: model.get("title"),
-    		image:'/images/ic_place_green.png',
+    		//image:'/images/ic_place_green.png',
+    		customView: customAnnotationView,
     		myid:model.get("link"),
     		id: "anno_" + i,
 		});
@@ -204,21 +168,17 @@ function report(evt) {
     	(evt.clicksource === "pin" && 
     		(evt.annotation.myid === lastClickedAnnotationId) || (evt.annotation.myid === "anno_search")
     	)) {
-    	$.rideInfoCallout.visible = false;
+    	$.rideInfoCalloutWrapper.visible = false;
     	lastClickedAnnotationId = null;
-    	//Resize mapview
-    	//$.mapview.bottom = "0dp";
     } 
     //Select
     else {
     	//Set info in callout box and show it 	
     	setCalloutInfo(evt.annotation.myid);    	
-    	$.rideInfoCallout.visible = true;
+    	$.rideInfoCalloutWrapper.visible = true;
     	
     	//Update lastClickedAnnotationId
     	lastClickedAnnotationId = evt.annotation.myid;
-    	//Resize mapview
-    	//$.mapview.bottom = "70dp";
     }
 }
 
@@ -231,9 +191,11 @@ function setCalloutInfo(link) {
 	var data = Alloy.Globals.transform(model);
 	$.selectedModel = data;
 	$.rideTitle.text = data.title;
-	$.rideDate.text = data.startDateTime;
-	$.ridePace.text = data.pace;
-	$.rideDistance.text = data.distance;
+	$.startDateTime.text = data.startDateTime;
+	$.paceNumber.text = data.paceNumber;
+	$.pace.text = data.pace;
+	$.distanceOne.text = data.distanceOne;
+	$.distanceTwo.text = data.distanceTwo;
 }
 
 function toSearch(e) {
@@ -243,11 +205,18 @@ function toSearch(e) {
 }
 
 function toFilter(e) {
-	alert("Filter clicked");
+	Alloy.Globals.Navigator.open("filter", {prevMapWindow: $.mainWindow});
+}
+
+function toList(e) {
+	$.mainWindow.close();
 }
 
 function showDetail(e) {
 	var selectedModel = Alloy.Collections.feed.get(lastClickedAnnotationId);
 	Alloy.Globals.Navigator.open("detail", selectedModel);
+}
+function openMenu(e){
+	$.drawermenu.showhidemenu();
 }
 

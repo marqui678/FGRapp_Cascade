@@ -1,5 +1,5 @@
 
-2016-05-12 22:19:52
+2016-05-09 12:46:52
 
 Operating System
   Name                        = Microsoft Windows 10 Home China
@@ -21,7 +21,7 @@ Titanium SDK
   Target Platform             = android
 
 Command
-  C:\Program Files (x86)\nodejs\node.exe C:\Users\Nancy\.appcelerator\install\5.2.2\package\node_modules\titanium\lib\titanium.js build run --platform android --log-level trace --sdk 5.2.2.GA --project-dir D:\Titanium2\FGRapp1 --target emulator --android-sdk C:\android-sdk-win --device-id Custom Phone - 6.0.0 - API 23 - 768x1280 --debug-host /127.0.0.1:52719 --skip-js-minify --no-colors --no-progress-bars --no-prompt --prompt-type socket-bundle --prompt-port 63309 --username yujia151992@gmail.com --password Woshifuzhu1 --config-file C:\Users\Nancy\AppData\Local\Temp\build-1463116782731.json --no-banner --project-dir D:\Titanium2\FGRapp1
+  C:\Program Files (x86)\nodejs\node.exe C:\Users\Nancy\.appcelerator\install\5.2.2\package\node_modules\titanium\lib\titanium.js build run --platform android --log-level trace --sdk 5.2.2.GA --project-dir D:\Titanium2\FGRapp1 --target emulator --android-sdk C:\android-sdk-win --device-id Custom Phone - 6.0.0 - API 23 - 768x1280 --debug-host /127.0.0.1:56981 --skip-js-minify --no-colors --no-progress-bars --no-prompt --prompt-type socket-bundle --prompt-port 53719 --config-file C:\Users\Nancy\AppData\Local\Temp\build-1462823201260.json --no-banner --project-dir D:\Titanium2\FGRapp1
 
 [DEBUG]  Detecting modules in D:\Titanium2\FGRapp1\modules
 [DEBUG]  Detected android module: com.alcoapps.actionbarextras 1.6.9 @ D:\Titanium2\FGRapp1\modules\android\com.alcoapps.actionbarextras\1.6.9
@@ -67,7 +67,7 @@ Command
 [INFO]   Signing with keystore: C:\ProgramData\Titanium\mobilesdk\win32\5.2.2.GA\android\dev_keystore (tidev)
 [DEBUG]  App ID: edu.uw.titaniumpanda.FGRCascade
 [DEBUG]  Classname: Fgr_cascade
-[INFO]   Debugging enabled via debug port: 52719
+[INFO]   Debugging enabled via debug port: 56981
 [INFO]   Profiler disabled
 [INFO]   Forcing rebuild: JavaScript encryption flag changed
 [INFO]     Was: true
@@ -93,9 +93,9 @@ Command
 [DEBUG]  app path = D:\Titanium2\FGRapp1\app
 [DEBUG]  
 [WARN]   Generated "/i18n" directory is not ignored by Git, please add it to your .gitignore
+[WARN]   Generated "/platform" directory is not ignored by Git, please add it to your .gitignore
 [DEBUG]  
 [DEBUG]  ----- CONFIG.JSON -----
-[WARN]   Generated "/platform" directory is not ignored by Git, please add it to your .gitignore
 [DEBUG]  dependencies = {"com.alcoapps.drawermenu":"2.0"}
 [INFO]   [config.json] config.json unchanged, using cached config.json...
 [DEBUG]  {
@@ -141,7 +141,6 @@ Command
 [TRACE]  Copying SRC_DIR\alloy\sync\rss.js --> Resources\android\alloy\sync\rss.js
 [TRACE]  
 [DEBUG]  Resetting D:\Titanium2\FGRapp1\platform\android
-[DEBUG]  Copying D:\Titanium2\FGRapp1\app\platform\android --> D:\Titanium2\FGRapp1\platform\android
 [DEBUG]  
 [DEBUG]  Resetting D:\Titanium2\FGRapp1\i18n
 [DEBUG]  
@@ -305,9 +304,9 @@ Command
 [TRACE]  
 [TRACE]  Benchmarking
 [TRACE]  ------------
-[TRACE]  [3.99732s] TOTAL
+[TRACE]  [3.77026s] TOTAL
 [INFO]   
-[INFO]   Alloy compiled in 3.99732s
+[INFO]   Alloy compiled in 3.77026s
 [INFO]   Alloy compiler completed successfully
 [INFO]   Launching emulator: Custom Phone - 6.0.0 - API 23 - 768x1280
 [TRACE]  Starting emulator: Custom Phone - 6.0.0 - API 23 - 768x1280
@@ -322,52 +321,49 @@ Command
 [TRACE]  Checking the boot state for the next 240000 ms
 [TRACE]  Waiting for emulator to register with ADB
 [TRACE]  Emulator process started
-[TRACE]  offline build file C:\Users\Nancy\AppData\Local\Temp\build-98dd55baf60595522d3390067384d6884b0ef22f.json
+[TRACE]  offline build file C:\Users\Nancy\AppData\Local\Temp\build-b358d2b6cee5e42eded9c0d211dfc9d4d82a8908.json
 [TRACE]  online 1
-[TRACE]  optimizing build, last build was 2258.124 sec ago
+[TRACE]  optimizing build, last build was 1710.019 sec ago
 [DEBUG]  Copying D:\Titanium2\FGRapp1\Resources
 [DEBUG]  Ignoring D:\Titanium2\FGRapp1\Resources\android
-[DEBUG]  Copying D:\Titanium2\FGRapp1\Resources\android
-[WARN]   Overwriting file D:\Titanium2\FGRapp1\build\android\bin\assets\Resources\alloy\sync\rss.js.orig
-[DEBUG]  Copying D:\Titanium2\FGRapp1\Resources\android\alloy\sync\rss.js.orig => D:\Titanium2\FGRapp1\build\android\bin\assets\Resources\alloy\sync\rss.js.orig
+[WARN]   Overwriting file D:\Titanium2\FGRapp1\build\android\bin\assets\Resources\iphone\Date.png
+[DEBUG]  Copying D:\Titanium2\FGRapp1\Resources\iphone\Date.png => D:\Titanium2\FGRapp1\build\android\bin\assets\Resources\iphone\Date.png
+[WARN]   Overwriting file D:\Titanium2\FGRapp1\build\android\bin\assets\Resources\iphone\pace.png
+[DEBUG]  Copying D:\Titanium2\FGRapp1\Resources\iphone\pace.png => D:\Titanium2\FGRapp1\build\android\bin\assets\Resources\iphone\pace.png
 [TRACE]  Found 1 devices, checking if any of them are the emulator...
 [TRACE]  Emulator is running!
 [TRACE]  Checking if boot animation has finished...
-[WARN]   Overwriting file D:\Titanium2\FGRapp1\build\android\bin\assets\Resources\appicon.png
-[DEBUG]  Copying D:\Titanium2\FGRapp1\Resources\android\appicon.png => D:\Titanium2\FGRapp1\build\android\bin\assets\Resources\appicon.png
-[WARN]   Overwriting file D:\Titanium2\FGRapp1\build\android\bin\assets\Resources\CBCEFHorizontal361_Transparent.png
-[DEBUG]  Copying D:\Titanium2\FGRapp1\Resources\android\CBCEFHorizontal361_Transparent.png => D:\Titanium2\FGRapp1\build\android\bin\assets\Resources\CBCEFHorizontal361_Transparent.png
-[DEBUG]  Copying D:\Titanium2\FGRapp1\Resources\android\default.png => D:\Titanium2\FGRapp1\build\android\res\drawable\background.png
-[WARN]   Overwriting file D:\Titanium2\FGRapp1\build\android\bin\assets\Resources\ic_action_not_important.png
-[DEBUG]  Copying D:\Titanium2\FGRapp1\Resources\android\ic_action_not_important.png => D:\Titanium2\FGRapp1\build\android\bin\assets\Resources\ic_action_not_important.png
-[WARN]   Overwriting file D:\Titanium2\FGRapp1\build\android\bin\assets\Resources\images\checked.png
-[DEBUG]  Copying D:\Titanium2\FGRapp1\Resources\android\images\checked.png => D:\Titanium2\FGRapp1\build\android\bin\assets\Resources\images\checked.png
-[WARN]   Overwriting file D:\Titanium2\FGRapp1\build\android\bin\assets\Resources\images\Date.png
-[DEBUG]  Copying D:\Titanium2\FGRapp1\Resources\android\images\Date.png => D:\Titanium2\FGRapp1\build\android\bin\assets\Resources\images\Date.png
+[DEBUG]  Copying D:\Titanium2\FGRapp1\Resources\android
+[WARN]   Overwriting file D:\Titanium2\FGRapp1\build\android\bin\assets\Resources\alloy\sync\rss.js.orig
+[DEBUG]  Copying D:\Titanium2\FGRapp1\Resources\android\alloy\sync\rss.js.orig => D:\Titanium2\FGRapp1\build\android\bin\assets\Resources\alloy\sync\rss.js.orig
 [TRACE]  Emulator is booted, emitting booted event
 [INFO]   Emulator is booted
 [INFO]   SD card not required, skipping mount check
 [INFO]   Emulator ready!
-[WARN]   Overwriting file D:\Titanium2\FGRapp1\build\android\bin\assets\Resources\images\Filter open.png
-[DEBUG]  Copying D:\Titanium2\FGRapp1\Resources\android\images\Filter open.png => D:\Titanium2\FGRapp1\build\android\bin\assets\Resources\images\Filter open.png
-[WARN]   Overwriting file D:\Titanium2\FGRapp1\build\android\bin\assets\Resources\images\Filter opened.png
-[DEBUG]  Copying D:\Titanium2\FGRapp1\Resources\android\images\Filter opened.png => D:\Titanium2\FGRapp1\build\android\bin\assets\Resources\images\Filter opened.png
-[WARN]   Overwriting file D:\Titanium2\FGRapp1\build\android\bin\assets\Resources\images\grey.png
-[DEBUG]  Copying D:\Titanium2\FGRapp1\Resources\android\images\grey.png => D:\Titanium2\FGRapp1\build\android\bin\assets\Resources\images\grey.png
-[WARN]   Overwriting file D:\Titanium2\FGRapp1\build\android\bin\assets\Resources\images\pace.png
-[DEBUG]  Copying D:\Titanium2\FGRapp1\Resources\android\images\pace.png => D:\Titanium2\FGRapp1\build\android\bin\assets\Resources\images\pace.png
-[DEBUG]  Copying D:\Titanium2\FGRapp1\Resources\android\images\res-long-land-hdpi\back_dark.png => D:\Titanium2\FGRapp1\build\android\res\drawable-long-land-hdpi\back_dark_6e5c3feb3e.png
+[WARN]   Overwriting file D:\Titanium2\FGRapp1\build\android\bin\assets\Resources\appicon.png
+[DEBUG]  Copying D:\Titanium2\FGRapp1\Resources\android\appicon.png => D:\Titanium2\FGRapp1\build\android\bin\assets\Resources\appicon.png
+[DEBUG]  Copying D:\Titanium2\FGRapp1\Resources\android\default.png => D:\Titanium2\FGRapp1\build\android\res\drawable\background.png
+[WARN]   Overwriting file D:\Titanium2\FGRapp1\build\android\bin\assets\Resources\ic_action_not_important.png
+[DEBUG]  Copying D:\Titanium2\FGRapp1\Resources\android\ic_action_not_important.png => D:\Titanium2\FGRapp1\build\android\bin\assets\Resources\ic_action_not_important.png
+[WARN]   Overwriting file D:\Titanium2\FGRapp1\build\android\bin\assets\Resources\ic_place_2x.png
+[DEBUG]  Copying D:\Titanium2\FGRapp1\Resources\android\ic_place_2x.png => D:\Titanium2\FGRapp1\build\android\bin\assets\Resources\ic_place_2x.png
+[WARN]   Overwriting file D:\Titanium2\FGRapp1\build\android\bin\assets\Resources\ic_place_3x.png
+[DEBUG]  Copying D:\Titanium2\FGRapp1\Resources\android\ic_place_3x.png => D:\Titanium2\FGRapp1\build\android\bin\assets\Resources\ic_place_3x.png
+[WARN]   Overwriting file D:\Titanium2\FGRapp1\build\android\bin\assets\Resources\ic_place_green_3x.png
+[DEBUG]  Copying D:\Titanium2\FGRapp1\Resources\android\ic_place_green_3x.png => D:\Titanium2\FGRapp1\build\android\bin\assets\Resources\ic_place_green_3x.png
+[DEBUG]  Copying D:\Titanium2\FGRapp1\Resources\android\images\res-long-land-hdpi\checkbox.png => D:\Titanium2\FGRapp1\build\android\res\drawable-long-land-hdpi\checkbox_8d1d1a3789.png
+[DEBUG]  Copying D:\Titanium2\FGRapp1\Resources\android\images\res-long-land-hdpi\checkboxSelected.png => D:\Titanium2\FGRapp1\build\android\res\drawable-long-land-hdpi\checkboxselected_cd43975a03.png
 [DEBUG]  Copying D:\Titanium2\FGRapp1\Resources\android\images\res-long-land-hdpi\default.png => D:\Titanium2\FGRapp1\build\android\res\drawable-long-land-hdpi\background.png
-[DEBUG]  Copying D:\Titanium2\FGRapp1\Resources\android\images\res-long-land-hdpi\ic_arrow_drop_down.png => D:\Titanium2\FGRapp1\build\android\res\drawable-long-land-hdpi\ic_arrow_drop_down_51ba0fa2f6.png
-[DEBUG]  Copying D:\Titanium2\FGRapp1\Resources\android\images\res-long-land-hdpi\ic_arrow_drop_up.png => D:\Titanium2\FGRapp1\build\android\res\drawable-long-land-hdpi\ic_arrow_drop_up_612b2bcfc0.png
-[DEBUG]  Copying D:\Titanium2\FGRapp1\Resources\android\images\res-long-land-hdpi\ic_menu_light.png => D:\Titanium2\FGRapp1\build\android\res\drawable-long-land-hdpi\ic_menu_light_987d42552b.png
-[DEBUG]  Copying D:\Titanium2\FGRapp1\Resources\android\images\res-long-land-hdpi\ic_navigation.png => D:\Titanium2\FGRapp1\build\android\res\drawable-long-land-hdpi\ic_navigation_3c776797b2.png
-[DEBUG]  Copying D:\Titanium2\FGRapp1\Resources\android\images\res-long-land-hdpi\ic_place_green.png => D:\Titanium2\FGRapp1\build\android\res\drawable-long-land-hdpi\ic_place_green_38739645c0.png
-[DEBUG]  Copying D:\Titanium2\FGRapp1\Resources\android\images\res-long-land-hdpi\ic_place_red.png => D:\Titanium2\FGRapp1\build\android\res\drawable-long-land-hdpi\ic_place_red_bc01c73666.png
-[DEBUG]  Copying D:\Titanium2\FGRapp1\Resources\android\images\res-long-land-hdpi\ic_radio_button_off.png => D:\Titanium2\FGRapp1\build\android\res\drawable-long-land-hdpi\ic_radio_button_off_fa6cb8331d.png
-[DEBUG]  Copying D:\Titanium2\FGRapp1\Resources\android\images\res-long-land-hdpi\ic_radio_button_on.png => D:\Titanium2\FGRapp1\build\android\res\drawable-long-land-hdpi\ic_radio_button_on_ab8c71cdac.png
-[DEBUG]  Copying D:\Titanium2\FGRapp1\Resources\android\images\res-long-land-hdpi\ic_search_light.png => D:\Titanium2\FGRapp1\build\android\res\drawable-long-land-hdpi\ic_search_light_dd38b667b8.png
-[DEBUG]  Copying D:\Titanium2\FGRapp1\Resources\android\images\res-long-land-ldpi\back_dark.png => D:\Titanium2\FGRapp1\build\android\res\drawable-long-land-ldpi\back_dark_6e5c3feb3e.png
+[DEBUG]  Copying D:\Titanium2\FGRapp1\Resources\android\images\res-long-land-hdpi\menuDark.png => D:\Titanium2\FGRapp1\build\android\res\drawable-long-land-hdpi\menudark_7ecc46bfdb.png
+[DEBUG]  Copying D:\Titanium2\FGRapp1\Resources\android\images\res-long-land-hdpi\menuLight.png => D:\Titanium2\FGRapp1\build\android\res\drawable-long-land-hdpi\menulight_c94457f894.png
+[DEBUG]  Copying D:\Titanium2\FGRapp1\Resources\android\images\res-long-land-hdpi\pin.png => D:\Titanium2\FGRapp1\build\android\res\drawable-long-land-hdpi\pin_42b535480f.png
+[DEBUG]  Copying D:\Titanium2\FGRapp1\Resources\android\images\res-long-land-hdpi\pinSelected.png => D:\Titanium2\FGRapp1\build\android\res\drawable-long-land-hdpi\pinselected_50a1d362a7.png
+[DEBUG]  Copying D:\Titanium2\FGRapp1\Resources\android\images\res-long-land-hdpi\re-centerFilled.png => D:\Titanium2\FGRapp1\build\android\res\drawable-long-land-hdpi\re_centerfilled_e7a01d9dc7.png
+[DEBUG]  Copying D:\Titanium2\FGRapp1\Resources\android\images\res-long-land-hdpi\re-centerNotFilled.png => D:\Titanium2\FGRapp1\build\android\res\drawable-long-land-hdpi\re_centernotfilled_8f13d06ab4.png
+[DEBUG]  Copying D:\Titanium2\FGRapp1\Resources\android\images\res-long-land-hdpi\searchDark.png => D:\Titanium2\FGRapp1\build\android\res\drawable-long-land-hdpi\searchdark_ff3b10f5bc.png
+[DEBUG]  Copying D:\Titanium2\FGRapp1\Resources\android\images\res-long-land-hdpi\searchLight.png => D:\Titanium2\FGRapp1\build\android\res\drawable-long-land-hdpi\searchlight_6d54c08e7a.png
+[DEBUG]  Copying D:\Titanium2\FGRapp1\Resources\android\images\res-long-land-hdpi\sortDecrease.png => D:\Titanium2\FGRapp1\build\android\res\drawable-long-land-hdpi\sortdecrease_08dbfc446e.png
+[DEBUG]  Copying D:\Titanium2\FGRapp1\Resources\android\images\res-long-land-hdpi\sortIncrease.png => D:\Titanium2\FGRapp1\build\android\res\drawable-long-land-hdpi\sortincrease_b2150f40e4.png
 [DEBUG]  Copying D:\Titanium2\FGRapp1\Resources\android\images\res-long-land-ldpi\checkbox.png => D:\Titanium2\FGRapp1\build\android\res\drawable-long-land-ldpi\checkbox_8d1d1a3789.png
 [DEBUG]  Copying D:\Titanium2\FGRapp1\Resources\android\images\res-long-land-ldpi\checkboxSelected.png => D:\Titanium2\FGRapp1\build\android\res\drawable-long-land-ldpi\checkboxselected_cd43975a03.png
 [DEBUG]  Copying D:\Titanium2\FGRapp1\Resources\android\images\res-long-land-ldpi\default.png => D:\Titanium2\FGRapp1\build\android\res\drawable-long-land-ldpi\background.png
@@ -394,17 +390,19 @@ Command
 [DEBUG]  Copying D:\Titanium2\FGRapp1\Resources\android\images\res-long-land-mdpi\searchLight.png => D:\Titanium2\FGRapp1\build\android\res\drawable-long-land-mdpi\searchlight_6d54c08e7a.png
 [DEBUG]  Copying D:\Titanium2\FGRapp1\Resources\android\images\res-long-land-mdpi\sortDecrease.png => D:\Titanium2\FGRapp1\build\android\res\drawable-long-land-mdpi\sortdecrease_08dbfc446e.png
 [DEBUG]  Copying D:\Titanium2\FGRapp1\Resources\android\images\res-long-land-mdpi\sortIncrease.png => D:\Titanium2\FGRapp1\build\android\res\drawable-long-land-mdpi\sortincrease_b2150f40e4.png
-[DEBUG]  Copying D:\Titanium2\FGRapp1\Resources\android\images\res-long-port-hdpi\back_dark.png => D:\Titanium2\FGRapp1\build\android\res\drawable-long-port-hdpi\back_dark_6e5c3feb3e.png
+[DEBUG]  Copying D:\Titanium2\FGRapp1\Resources\android\images\res-long-port-hdpi\checkbox.png => D:\Titanium2\FGRapp1\build\android\res\drawable-long-port-hdpi\checkbox_8d1d1a3789.png
+[DEBUG]  Copying D:\Titanium2\FGRapp1\Resources\android\images\res-long-port-hdpi\checkboxSelected.png => D:\Titanium2\FGRapp1\build\android\res\drawable-long-port-hdpi\checkboxselected_cd43975a03.png
 [DEBUG]  Copying D:\Titanium2\FGRapp1\Resources\android\images\res-long-port-hdpi\default.png => D:\Titanium2\FGRapp1\build\android\res\drawable-long-port-hdpi\background.png
-[DEBUG]  Copying D:\Titanium2\FGRapp1\Resources\android\images\res-long-port-hdpi\ic_arrow_drop_down.png => D:\Titanium2\FGRapp1\build\android\res\drawable-long-port-hdpi\ic_arrow_drop_down_51ba0fa2f6.png
-[DEBUG]  Copying D:\Titanium2\FGRapp1\Resources\android\images\res-long-port-hdpi\ic_arrow_drop_up.png => D:\Titanium2\FGRapp1\build\android\res\drawable-long-port-hdpi\ic_arrow_drop_up_612b2bcfc0.png
-[DEBUG]  Copying D:\Titanium2\FGRapp1\Resources\android\images\res-long-port-hdpi\ic_menu_light.png => D:\Titanium2\FGRapp1\build\android\res\drawable-long-port-hdpi\ic_menu_light_987d42552b.png
-[DEBUG]  Copying D:\Titanium2\FGRapp1\Resources\android\images\res-long-port-hdpi\ic_navigation.png => D:\Titanium2\FGRapp1\build\android\res\drawable-long-port-hdpi\ic_navigation_3c776797b2.png
-[DEBUG]  Copying D:\Titanium2\FGRapp1\Resources\android\images\res-long-port-hdpi\ic_place_green.png => D:\Titanium2\FGRapp1\build\android\res\drawable-long-port-hdpi\ic_place_green_38739645c0.png
-[DEBUG]  Copying D:\Titanium2\FGRapp1\Resources\android\images\res-long-port-hdpi\ic_place_red.png => D:\Titanium2\FGRapp1\build\android\res\drawable-long-port-hdpi\ic_place_red_bc01c73666.png
-[DEBUG]  Copying D:\Titanium2\FGRapp1\Resources\android\images\res-long-port-hdpi\ic_radio_button_off.png => D:\Titanium2\FGRapp1\build\android\res\drawable-long-port-hdpi\ic_radio_button_off_fa6cb8331d.png
-[DEBUG]  Copying D:\Titanium2\FGRapp1\Resources\android\images\res-long-port-hdpi\ic_radio_button_on.png => D:\Titanium2\FGRapp1\build\android\res\drawable-long-port-hdpi\ic_radio_button_on_ab8c71cdac.png
-[DEBUG]  Copying D:\Titanium2\FGRapp1\Resources\android\images\res-long-port-hdpi\ic_search_light.png => D:\Titanium2\FGRapp1\build\android\res\drawable-long-port-hdpi\ic_search_light_dd38b667b8.png
+[DEBUG]  Copying D:\Titanium2\FGRapp1\Resources\android\images\res-long-port-hdpi\menuDark.png => D:\Titanium2\FGRapp1\build\android\res\drawable-long-port-hdpi\menudark_7ecc46bfdb.png
+[DEBUG]  Copying D:\Titanium2\FGRapp1\Resources\android\images\res-long-port-hdpi\menuLight.png => D:\Titanium2\FGRapp1\build\android\res\drawable-long-port-hdpi\menulight_c94457f894.png
+[DEBUG]  Copying D:\Titanium2\FGRapp1\Resources\android\images\res-long-port-hdpi\pin.png => D:\Titanium2\FGRapp1\build\android\res\drawable-long-port-hdpi\pin_42b535480f.png
+[DEBUG]  Copying D:\Titanium2\FGRapp1\Resources\android\images\res-long-port-hdpi\pinSelected.png => D:\Titanium2\FGRapp1\build\android\res\drawable-long-port-hdpi\pinselected_50a1d362a7.png
+[DEBUG]  Copying D:\Titanium2\FGRapp1\Resources\android\images\res-long-port-hdpi\re-centerFilled.png => D:\Titanium2\FGRapp1\build\android\res\drawable-long-port-hdpi\re_centerfilled_e7a01d9dc7.png
+[DEBUG]  Copying D:\Titanium2\FGRapp1\Resources\android\images\res-long-port-hdpi\re-centerNotFilled.png => D:\Titanium2\FGRapp1\build\android\res\drawable-long-port-hdpi\re_centernotfilled_8f13d06ab4.png
+[DEBUG]  Copying D:\Titanium2\FGRapp1\Resources\android\images\res-long-port-hdpi\searchDark.png => D:\Titanium2\FGRapp1\build\android\res\drawable-long-port-hdpi\searchdark_ff3b10f5bc.png
+[DEBUG]  Copying D:\Titanium2\FGRapp1\Resources\android\images\res-long-port-hdpi\searchLight.png => D:\Titanium2\FGRapp1\build\android\res\drawable-long-port-hdpi\searchlight_6d54c08e7a.png
+[DEBUG]  Copying D:\Titanium2\FGRapp1\Resources\android\images\res-long-port-hdpi\sortDecrease.png => D:\Titanium2\FGRapp1\build\android\res\drawable-long-port-hdpi\sortdecrease_08dbfc446e.png
+[DEBUG]  Copying D:\Titanium2\FGRapp1\Resources\android\images\res-long-port-hdpi\sortIncrease.png => D:\Titanium2\FGRapp1\build\android\res\drawable-long-port-hdpi\sortincrease_b2150f40e4.png
 [DEBUG]  Copying D:\Titanium2\FGRapp1\Resources\android\images\res-long-port-ldpi\checkbox.png => D:\Titanium2\FGRapp1\build\android\res\drawable-long-port-ldpi\checkbox_8d1d1a3789.png
 [DEBUG]  Copying D:\Titanium2\FGRapp1\Resources\android\images\res-long-port-ldpi\checkboxSelected.png => D:\Titanium2\FGRapp1\build\android\res\drawable-long-port-ldpi\checkboxselected_cd43975a03.png
 [DEBUG]  Copying D:\Titanium2\FGRapp1\Resources\android\images\res-long-port-ldpi\default.png => D:\Titanium2\FGRapp1\build\android\res\drawable-long-port-ldpi\background.png
@@ -418,17 +416,19 @@ Command
 [DEBUG]  Copying D:\Titanium2\FGRapp1\Resources\android\images\res-long-port-ldpi\searchLight.png => D:\Titanium2\FGRapp1\build\android\res\drawable-long-port-ldpi\searchlight_6d54c08e7a.png
 [DEBUG]  Copying D:\Titanium2\FGRapp1\Resources\android\images\res-long-port-ldpi\sortDecrease.png => D:\Titanium2\FGRapp1\build\android\res\drawable-long-port-ldpi\sortdecrease_08dbfc446e.png
 [DEBUG]  Copying D:\Titanium2\FGRapp1\Resources\android\images\res-long-port-ldpi\sortIncrease.png => D:\Titanium2\FGRapp1\build\android\res\drawable-long-port-ldpi\sortincrease_b2150f40e4.png
-[DEBUG]  Copying D:\Titanium2\FGRapp1\Resources\android\images\res-notlong-land-hdpi\back_dark.png => D:\Titanium2\FGRapp1\build\android\res\drawable-notlong-land-hdpi\back_dark_6e5c3feb3e.png
+[DEBUG]  Copying D:\Titanium2\FGRapp1\Resources\android\images\res-notlong-land-hdpi\checkbox.png => D:\Titanium2\FGRapp1\build\android\res\drawable-notlong-land-hdpi\checkbox_8d1d1a3789.png
+[DEBUG]  Copying D:\Titanium2\FGRapp1\Resources\android\images\res-notlong-land-hdpi\checkboxSelected.png => D:\Titanium2\FGRapp1\build\android\res\drawable-notlong-land-hdpi\checkboxselected_cd43975a03.png
 [DEBUG]  Copying D:\Titanium2\FGRapp1\Resources\android\images\res-notlong-land-hdpi\default.png => D:\Titanium2\FGRapp1\build\android\res\drawable-notlong-land-hdpi\background.png
-[DEBUG]  Copying D:\Titanium2\FGRapp1\Resources\android\images\res-notlong-land-hdpi\ic_arrow_drop_down.png => D:\Titanium2\FGRapp1\build\android\res\drawable-notlong-land-hdpi\ic_arrow_drop_down_51ba0fa2f6.png
-[DEBUG]  Copying D:\Titanium2\FGRapp1\Resources\android\images\res-notlong-land-hdpi\ic_arrow_drop_up.png => D:\Titanium2\FGRapp1\build\android\res\drawable-notlong-land-hdpi\ic_arrow_drop_up_612b2bcfc0.png
-[DEBUG]  Copying D:\Titanium2\FGRapp1\Resources\android\images\res-notlong-land-hdpi\ic_menu_light.png => D:\Titanium2\FGRapp1\build\android\res\drawable-notlong-land-hdpi\ic_menu_light_987d42552b.png
-[DEBUG]  Copying D:\Titanium2\FGRapp1\Resources\android\images\res-notlong-land-hdpi\ic_navigation.png => D:\Titanium2\FGRapp1\build\android\res\drawable-notlong-land-hdpi\ic_navigation_3c776797b2.png
-[DEBUG]  Copying D:\Titanium2\FGRapp1\Resources\android\images\res-notlong-land-hdpi\ic_place_green.png => D:\Titanium2\FGRapp1\build\android\res\drawable-notlong-land-hdpi\ic_place_green_38739645c0.png
-[DEBUG]  Copying D:\Titanium2\FGRapp1\Resources\android\images\res-notlong-land-hdpi\ic_place_red.png => D:\Titanium2\FGRapp1\build\android\res\drawable-notlong-land-hdpi\ic_place_red_bc01c73666.png
-[DEBUG]  Copying D:\Titanium2\FGRapp1\Resources\android\images\res-notlong-land-hdpi\ic_radio_button_off.png => D:\Titanium2\FGRapp1\build\android\res\drawable-notlong-land-hdpi\ic_radio_button_off_fa6cb8331d.png
-[DEBUG]  Copying D:\Titanium2\FGRapp1\Resources\android\images\res-notlong-land-hdpi\ic_radio_button_on.png => D:\Titanium2\FGRapp1\build\android\res\drawable-notlong-land-hdpi\ic_radio_button_on_ab8c71cdac.png
-[DEBUG]  Copying D:\Titanium2\FGRapp1\Resources\android\images\res-notlong-land-hdpi\ic_search_light.png => D:\Titanium2\FGRapp1\build\android\res\drawable-notlong-land-hdpi\ic_search_light_dd38b667b8.png
+[DEBUG]  Copying D:\Titanium2\FGRapp1\Resources\android\images\res-notlong-land-hdpi\menuDark.png => D:\Titanium2\FGRapp1\build\android\res\drawable-notlong-land-hdpi\menudark_7ecc46bfdb.png
+[DEBUG]  Copying D:\Titanium2\FGRapp1\Resources\android\images\res-notlong-land-hdpi\menuLight.png => D:\Titanium2\FGRapp1\build\android\res\drawable-notlong-land-hdpi\menulight_c94457f894.png
+[DEBUG]  Copying D:\Titanium2\FGRapp1\Resources\android\images\res-notlong-land-hdpi\pin.png => D:\Titanium2\FGRapp1\build\android\res\drawable-notlong-land-hdpi\pin_42b535480f.png
+[DEBUG]  Copying D:\Titanium2\FGRapp1\Resources\android\images\res-notlong-land-hdpi\pinSelected.png => D:\Titanium2\FGRapp1\build\android\res\drawable-notlong-land-hdpi\pinselected_50a1d362a7.png
+[DEBUG]  Copying D:\Titanium2\FGRapp1\Resources\android\images\res-notlong-land-hdpi\re-centerFilled.png => D:\Titanium2\FGRapp1\build\android\res\drawable-notlong-land-hdpi\re_centerfilled_e7a01d9dc7.png
+[DEBUG]  Copying D:\Titanium2\FGRapp1\Resources\android\images\res-notlong-land-hdpi\re-centerNotFilled.png => D:\Titanium2\FGRapp1\build\android\res\drawable-notlong-land-hdpi\re_centernotfilled_8f13d06ab4.png
+[DEBUG]  Copying D:\Titanium2\FGRapp1\Resources\android\images\res-notlong-land-hdpi\searchDark.png => D:\Titanium2\FGRapp1\build\android\res\drawable-notlong-land-hdpi\searchdark_ff3b10f5bc.png
+[DEBUG]  Copying D:\Titanium2\FGRapp1\Resources\android\images\res-notlong-land-hdpi\searchLight.png => D:\Titanium2\FGRapp1\build\android\res\drawable-notlong-land-hdpi\searchlight_6d54c08e7a.png
+[DEBUG]  Copying D:\Titanium2\FGRapp1\Resources\android\images\res-notlong-land-hdpi\sortDecrease.png => D:\Titanium2\FGRapp1\build\android\res\drawable-notlong-land-hdpi\sortdecrease_08dbfc446e.png
+[DEBUG]  Copying D:\Titanium2\FGRapp1\Resources\android\images\res-notlong-land-hdpi\sortIncrease.png => D:\Titanium2\FGRapp1\build\android\res\drawable-notlong-land-hdpi\sortincrease_b2150f40e4.png
 [DEBUG]  Copying D:\Titanium2\FGRapp1\Resources\android\images\res-notlong-land-ldpi\checkbox.png => D:\Titanium2\FGRapp1\build\android\res\drawable-notlong-land-ldpi\checkbox_8d1d1a3789.png
 [DEBUG]  Copying D:\Titanium2\FGRapp1\Resources\android\images\res-notlong-land-ldpi\checkboxSelected.png => D:\Titanium2\FGRapp1\build\android\res\drawable-notlong-land-ldpi\checkboxselected_cd43975a03.png
 [DEBUG]  Copying D:\Titanium2\FGRapp1\Resources\android\images\res-notlong-land-ldpi\default.png => D:\Titanium2\FGRapp1\build\android\res\drawable-notlong-land-ldpi\background.png
@@ -455,17 +455,19 @@ Command
 [DEBUG]  Copying D:\Titanium2\FGRapp1\Resources\android\images\res-notlong-land-mdpi\searchLight.png => D:\Titanium2\FGRapp1\build\android\res\drawable-notlong-land-mdpi\searchlight_6d54c08e7a.png
 [DEBUG]  Copying D:\Titanium2\FGRapp1\Resources\android\images\res-notlong-land-mdpi\sortDecrease.png => D:\Titanium2\FGRapp1\build\android\res\drawable-notlong-land-mdpi\sortdecrease_08dbfc446e.png
 [DEBUG]  Copying D:\Titanium2\FGRapp1\Resources\android\images\res-notlong-land-mdpi\sortIncrease.png => D:\Titanium2\FGRapp1\build\android\res\drawable-notlong-land-mdpi\sortincrease_b2150f40e4.png
-[DEBUG]  Copying D:\Titanium2\FGRapp1\Resources\android\images\res-notlong-port-hdpi\back_dark.png => D:\Titanium2\FGRapp1\build\android\res\drawable-notlong-port-hdpi\back_dark_6e5c3feb3e.png
+[DEBUG]  Copying D:\Titanium2\FGRapp1\Resources\android\images\res-notlong-port-hdpi\checkbox.png => D:\Titanium2\FGRapp1\build\android\res\drawable-notlong-port-hdpi\checkbox_8d1d1a3789.png
+[DEBUG]  Copying D:\Titanium2\FGRapp1\Resources\android\images\res-notlong-port-hdpi\checkboxSelected.png => D:\Titanium2\FGRapp1\build\android\res\drawable-notlong-port-hdpi\checkboxselected_cd43975a03.png
 [DEBUG]  Copying D:\Titanium2\FGRapp1\Resources\android\images\res-notlong-port-hdpi\default.png => D:\Titanium2\FGRapp1\build\android\res\drawable-notlong-port-hdpi\background.png
-[DEBUG]  Copying D:\Titanium2\FGRapp1\Resources\android\images\res-notlong-port-hdpi\ic_arrow_drop_down.png => D:\Titanium2\FGRapp1\build\android\res\drawable-notlong-port-hdpi\ic_arrow_drop_down_51ba0fa2f6.png
-[DEBUG]  Copying D:\Titanium2\FGRapp1\Resources\android\images\res-notlong-port-hdpi\ic_arrow_drop_up.png => D:\Titanium2\FGRapp1\build\android\res\drawable-notlong-port-hdpi\ic_arrow_drop_up_612b2bcfc0.png
-[DEBUG]  Copying D:\Titanium2\FGRapp1\Resources\android\images\res-notlong-port-hdpi\ic_menu_light.png => D:\Titanium2\FGRapp1\build\android\res\drawable-notlong-port-hdpi\ic_menu_light_987d42552b.png
-[DEBUG]  Copying D:\Titanium2\FGRapp1\Resources\android\images\res-notlong-port-hdpi\ic_navigation.png => D:\Titanium2\FGRapp1\build\android\res\drawable-notlong-port-hdpi\ic_navigation_3c776797b2.png
-[DEBUG]  Copying D:\Titanium2\FGRapp1\Resources\android\images\res-notlong-port-hdpi\ic_place_green.png => D:\Titanium2\FGRapp1\build\android\res\drawable-notlong-port-hdpi\ic_place_green_38739645c0.png
-[DEBUG]  Copying D:\Titanium2\FGRapp1\Resources\android\images\res-notlong-port-hdpi\ic_place_red.png => D:\Titanium2\FGRapp1\build\android\res\drawable-notlong-port-hdpi\ic_place_red_bc01c73666.png
-[DEBUG]  Copying D:\Titanium2\FGRapp1\Resources\android\images\res-notlong-port-hdpi\ic_radio_button_off.png => D:\Titanium2\FGRapp1\build\android\res\drawable-notlong-port-hdpi\ic_radio_button_off_fa6cb8331d.png
-[DEBUG]  Copying D:\Titanium2\FGRapp1\Resources\android\images\res-notlong-port-hdpi\ic_radio_button_on.png => D:\Titanium2\FGRapp1\build\android\res\drawable-notlong-port-hdpi\ic_radio_button_on_ab8c71cdac.png
-[DEBUG]  Copying D:\Titanium2\FGRapp1\Resources\android\images\res-notlong-port-hdpi\ic_search_light.png => D:\Titanium2\FGRapp1\build\android\res\drawable-notlong-port-hdpi\ic_search_light_dd38b667b8.png
+[DEBUG]  Copying D:\Titanium2\FGRapp1\Resources\android\images\res-notlong-port-hdpi\menuDark.png => D:\Titanium2\FGRapp1\build\android\res\drawable-notlong-port-hdpi\menudark_7ecc46bfdb.png
+[DEBUG]  Copying D:\Titanium2\FGRapp1\Resources\android\images\res-notlong-port-hdpi\menuLight.png => D:\Titanium2\FGRapp1\build\android\res\drawable-notlong-port-hdpi\menulight_c94457f894.png
+[DEBUG]  Copying D:\Titanium2\FGRapp1\Resources\android\images\res-notlong-port-hdpi\pin.png => D:\Titanium2\FGRapp1\build\android\res\drawable-notlong-port-hdpi\pin_42b535480f.png
+[DEBUG]  Copying D:\Titanium2\FGRapp1\Resources\android\images\res-notlong-port-hdpi\pinSelected.png => D:\Titanium2\FGRapp1\build\android\res\drawable-notlong-port-hdpi\pinselected_50a1d362a7.png
+[DEBUG]  Copying D:\Titanium2\FGRapp1\Resources\android\images\res-notlong-port-hdpi\re-centerFilled.png => D:\Titanium2\FGRapp1\build\android\res\drawable-notlong-port-hdpi\re_centerfilled_e7a01d9dc7.png
+[DEBUG]  Copying D:\Titanium2\FGRapp1\Resources\android\images\res-notlong-port-hdpi\re-centerNotFilled.png => D:\Titanium2\FGRapp1\build\android\res\drawable-notlong-port-hdpi\re_centernotfilled_8f13d06ab4.png
+[DEBUG]  Copying D:\Titanium2\FGRapp1\Resources\android\images\res-notlong-port-hdpi\searchDark.png => D:\Titanium2\FGRapp1\build\android\res\drawable-notlong-port-hdpi\searchdark_ff3b10f5bc.png
+[DEBUG]  Copying D:\Titanium2\FGRapp1\Resources\android\images\res-notlong-port-hdpi\searchLight.png => D:\Titanium2\FGRapp1\build\android\res\drawable-notlong-port-hdpi\searchlight_6d54c08e7a.png
+[DEBUG]  Copying D:\Titanium2\FGRapp1\Resources\android\images\res-notlong-port-hdpi\sortDecrease.png => D:\Titanium2\FGRapp1\build\android\res\drawable-notlong-port-hdpi\sortdecrease_08dbfc446e.png
+[DEBUG]  Copying D:\Titanium2\FGRapp1\Resources\android\images\res-notlong-port-hdpi\sortIncrease.png => D:\Titanium2\FGRapp1\build\android\res\drawable-notlong-port-hdpi\sortincrease_b2150f40e4.png
 [DEBUG]  Copying D:\Titanium2\FGRapp1\Resources\android\images\res-notlong-port-ldpi\checkbox.png => D:\Titanium2\FGRapp1\build\android\res\drawable-notlong-port-ldpi\checkbox_8d1d1a3789.png
 [DEBUG]  Copying D:\Titanium2\FGRapp1\Resources\android\images\res-notlong-port-ldpi\checkboxSelected.png => D:\Titanium2\FGRapp1\build\android\res\drawable-notlong-port-ldpi\checkboxselected_cd43975a03.png
 [DEBUG]  Copying D:\Titanium2\FGRapp1\Resources\android\images\res-notlong-port-ldpi\default.png => D:\Titanium2\FGRapp1\build\android\res\drawable-notlong-port-ldpi\background.png
@@ -492,8 +494,6 @@ Command
 [DEBUG]  Copying D:\Titanium2\FGRapp1\Resources\android\images\res-notlong-port-mdpi\searchLight.png => D:\Titanium2\FGRapp1\build\android\res\drawable-notlong-port-mdpi\searchlight_6d54c08e7a.png
 [DEBUG]  Copying D:\Titanium2\FGRapp1\Resources\android\images\res-notlong-port-mdpi\sortDecrease.png => D:\Titanium2\FGRapp1\build\android\res\drawable-notlong-port-mdpi\sortdecrease_08dbfc446e.png
 [DEBUG]  Copying D:\Titanium2\FGRapp1\Resources\android\images\res-notlong-port-mdpi\sortIncrease.png => D:\Titanium2\FGRapp1\build\android\res\drawable-notlong-port-mdpi\sortincrease_b2150f40e4.png
-[WARN]   Overwriting file D:\Titanium2\FGRapp1\build\android\bin\assets\Resources\images\unchecked.png
-[DEBUG]  Copying D:\Titanium2\FGRapp1\Resources\android\images\unchecked.png => D:\Titanium2\FGRapp1\build\android\bin\assets\Resources\images\unchecked.png
 [WARN]   Overwriting file D:\Titanium2\FGRapp1\build\android\bin\assets\Resources\pin.png
 [DEBUG]  Copying D:\Titanium2\FGRapp1\Resources\android\pin.png => D:\Titanium2\FGRapp1\build\android\bin\assets\Resources\pin.png
 [DEBUG]  Copying C:\ProgramData\Application Data\Titanium\modules\commonjs\ti.cloud\3.2.10\ti.cloud.js
@@ -730,14 +730,20 @@ Command
 [DEBUG]  Copying C:\ProgramData\Application Data\Titanium\modules\android\ti.map\2.3.6\platform\android\res\values-zh-rHK\common_strings.xml => D:\Titanium2\FGRapp1\build\android\res\values-zh-rHK\common_strings.xml
 [DEBUG]  Copying C:\ProgramData\Application Data\Titanium\modules\android\ti.map\2.3.6\platform\android\res\values-zh-rTW\common_strings.xml => D:\Titanium2\FGRapp1\build\android\res\values-zh-rTW\common_strings.xml
 [DEBUG]  Copying C:\ProgramData\Application Data\Titanium\modules\android\ti.map\2.3.6\platform\android\res\values-zu\common_strings.xml => D:\Titanium2\FGRapp1\build\android\res\values-zu\common_strings.xml
-[WARN]   Overwriting file D:\Titanium2\FGRapp1\build\android\alloy_generated
 [DEBUG]  Copying D:\Titanium2\FGRapp1\platform\android\alloy_generated => D:\Titanium2\FGRapp1\build\android\alloy_generated
-[DEBUG]  Copying D:\Titanium2\FGRapp1\platform\android\res\values\custom_theme.xml => D:\Titanium2\FGRapp1\build\android\res\values\custom_theme.xml
 [DEBUG]  Copying D:\Titanium2\FGRapp1\build\android\bin\assets\Resources\appicon.png => D:\Titanium2\FGRapp1\build\android\res\drawable\appicon.png
 [INFO]   Processing JavaScript files
 [DEBUG]  Copying D:\Titanium2\FGRapp1\Resources\android\alloy\CFG.js => D:\Titanium2\FGRapp1\build\android\assets\alloy\CFG.js
 [DEBUG]  Copying D:\Titanium2\FGRapp1\Resources\alloy\moment.js => D:\Titanium2\FGRapp1\build\android\assets\alloy\moment.js
 [DEBUG]  Copying D:\Titanium2\FGRapp1\Resources\android\app.js => D:\Titanium2\FGRapp1\build\android\assets\app.js
+[DEBUG]  Copying D:\Titanium2\FGRapp1\Resources\iphone\alloy\controllers\filter.js => D:\Titanium2\FGRapp1\build\android\assets\iphone\alloy\controllers\filter.js
+[DEBUG]  Copying D:\Titanium2\FGRapp1\Resources\iphone\alloy\controllers\index.js => D:\Titanium2\FGRapp1\build\android\assets\iphone\alloy\controllers\index.js
+[DEBUG]  Copying D:\Titanium2\FGRapp1\Resources\iphone\alloy\controllers\list.js => D:\Titanium2\FGRapp1\build\android\assets\iphone\alloy\controllers\list.js
+[DEBUG]  Copying D:\Titanium2\FGRapp1\Resources\iphone\alloy\styles\filter.js => D:\Titanium2\FGRapp1\build\android\assets\iphone\alloy\styles\filter.js
+[DEBUG]  Copying D:\Titanium2\FGRapp1\Resources\iphone\alloy\styles\list.js => D:\Titanium2\FGRapp1\build\android\assets\iphone\alloy\styles\list.js
+[DEBUG]  Copying D:\Titanium2\FGRapp1\Resources\iphone\alloy\styles\map.js => D:\Titanium2\FGRapp1\build\android\assets\iphone\alloy\styles\map.js
+[DEBUG]  Copying D:\Titanium2\FGRapp1\Resources\iphone\alloy\styles\sort.js => D:\Titanium2\FGRapp1\build\android\assets\iphone\alloy\styles\sort.js
+[DEBUG]  Copying D:\Titanium2\FGRapp1\Resources\iphone\alloy\sync\rss.js => D:\Titanium2\FGRapp1\build\android\assets\iphone\alloy\sync\rss.js
 [DEBUG]  Copying D:\Titanium2\FGRapp1\Resources\android\alloy\backbone.js => D:\Titanium2\FGRapp1\build\android\assets\alloy\backbone.js
 [DEBUG]  Copying D:\Titanium2\FGRapp1\Resources\android\alloy\constants.js => D:\Titanium2\FGRapp1\build\android\assets\alloy\constants.js
 [DEBUG]  Copying D:\Titanium2\FGRapp1\Resources\android\alloy\controllers\about.js => D:\Titanium2\FGRapp1\build\android\assets\alloy\controllers\about.js
@@ -773,7 +779,7 @@ Command
 [DEBUG]  Copying D:\Titanium2\FGRapp1\Resources\android\alloy.js => D:\Titanium2\FGRapp1\build\android\assets\alloy.js
 [DEBUG]  Copying C:\ProgramData\Application Data\Titanium\modules\commonjs\ti.cloud\3.2.10\ti.cloud.js => D:\Titanium2\FGRapp1\build\android\assets\ti.cloud.js
 [DEBUG]  Copying D:\Titanium2\FGRapp1\modules\commonjs\com.alcoapps.actionbarhelper\1.0.0\com.alcoapps.actionbarhelper.js => D:\Titanium2\FGRapp1\build\android\assets\com.alcoapps.actionbarhelper.js
-[INFO]   Encrypting JavaScript files: C:\ProgramData\Titanium\mobilesdk\win32\5.2.2.GA\android\titanium_prep.win32.exe "edu.uw.titaniumpanda.FGRCascade" "D:\Titanium2\FGRapp1\build\android\assets" "alloy/CFG.js" "alloy/moment.js" "app.js" "alloy/backbone.js" "alloy/constants.js" "alloy/controllers/about.js" "alloy/controllers/BaseController.js" "alloy/controllers/detail.js" "alloy/controllers/filter.js" "alloy/controllers/index.js" "alloy/controllers/list.js" "alloy/controllers/map.js" "alloy/controllers/menu.js" "alloy/controllers/rideRegister.js" "alloy/controllers/search.js" "alloy/controllers/sort.js" "alloy/models/Feed.js" "alloy/styles/about.js" "alloy/styles/detail.js" "alloy/styles/filter.js" "alloy/styles/index.js" "alloy/styles/list.js" "alloy/styles/map.js" "alloy/styles/menu.js" "alloy/styles/rideRegister.js" "alloy/styles/search.js" "alloy/styles/sort.js" "alloy/sync/localStorage.js" "alloy/sync/properties.js" "alloy/sync/rss.js" "alloy/sync/sql.js" "alloy/underscore.js" "alloy/widget.js" "alloy/widgets/com.alcoapps.drawermenu/controllers/widget.js" "alloy/widgets/com.alcoapps.drawermenu/styles/widget.js" "alloy.js" "ti.cloud.js" "com.alcoapps.actionbarhelper.js" "_app_props_.json"
+[INFO]   Encrypting JavaScript files: C:\ProgramData\Titanium\mobilesdk\win32\5.2.2.GA\android\titanium_prep.win32.exe "edu.uw.titaniumpanda.FGRCascade" "D:\Titanium2\FGRapp1\build\android\assets" "alloy/CFG.js" "alloy/moment.js" "app.js" "iphone/alloy/controllers/filter.js" "iphone/alloy/controllers/index.js" "iphone/alloy/controllers/list.js" "iphone/alloy/styles/filter.js" "iphone/alloy/styles/list.js" "iphone/alloy/styles/map.js" "iphone/alloy/styles/sort.js" "iphone/alloy/sync/rss.js" "alloy/backbone.js" "alloy/constants.js" "alloy/controllers/about.js" "alloy/controllers/BaseController.js" "alloy/controllers/detail.js" "alloy/controllers/filter.js" "alloy/controllers/index.js" "alloy/controllers/list.js" "alloy/controllers/map.js" "alloy/controllers/menu.js" "alloy/controllers/rideRegister.js" "alloy/controllers/search.js" "alloy/controllers/sort.js" "alloy/models/Feed.js" "alloy/styles/about.js" "alloy/styles/detail.js" "alloy/styles/filter.js" "alloy/styles/index.js" "alloy/styles/list.js" "alloy/styles/map.js" "alloy/styles/menu.js" "alloy/styles/rideRegister.js" "alloy/styles/search.js" "alloy/styles/sort.js" "alloy/sync/localStorage.js" "alloy/sync/properties.js" "alloy/sync/rss.js" "alloy/sync/sql.js" "alloy/underscore.js" "alloy/widget.js" "alloy/widgets/com.alcoapps.drawermenu/controllers/widget.js" "alloy/widgets/com.alcoapps.drawermenu/styles/widget.js" "alloy.js" "ti.cloud.js" "com.alcoapps.actionbarhelper.js" "_app_props_.json"
 [DEBUG]  Adding library C:\ProgramData\Titanium\mobilesdk\win32\5.2.2.GA\android\kroll-v8.jar
 [DEBUG]  Adding library C:\ProgramData\Titanium\mobilesdk\win32\5.2.2.GA\android\modules\titanium-analytics.jar
 [DEBUG]  Adding dependency library C:\ProgramData\Titanium\mobilesdk\win32\5.2.2.GA\android\aps-analytics.jar
@@ -806,51 +812,49 @@ Command
 [DEBUG]  Adding library C:\ProgramData\Titanium\mobilesdk\win32\5.2.2.GA\android\modules\titanium-database.jar
 [DEBUG]  Unknown namespace app.deploytype, skipping
 [DEBUG]  Unknown namespace api, skipping
-[DEBUG]  Unknown namespace platform.displaycaps, skipping
 [DEBUG]  Unknown namespace ui.ios, skipping
+[DEBUG]  Unknown namespace platform.displaycaps, skipping
 [INFO]   Writing D:\Titanium2\FGRapp1\build\android\bin\assets\app.json
 [INFO]   Extracting module resources: C:\ProgramData\Titanium\mobilesdk\win32\5.2.2.GA\android\modules\titanium-analytics.res.zip
-[DEBUG]  Copying C:\Users\Nancy\AppData\Local\Temp\116412-228-6xoeyf\res\values\strings.xml => D:\Titanium2\FGRapp1\build\android\res\values\strings.xml
+[DEBUG]  Copying C:\Users\Nancy\AppData\Local\Temp\11649-7408-1ru3f0a\res\values\strings.xml => D:\Titanium2\FGRapp1\build\android\res\values\strings.xml
 [INFO]   Extracting module resources: C:\ProgramData\Titanium\mobilesdk\win32\5.2.2.GA\android\modules\titanium-android.res.zip
-[DEBUG]  Merging C:\Users\Nancy\AppData\Local\Temp\116412-228-3vgz6z\res\values\strings.xml => D:\Titanium2\FGRapp1\build\android\res\values\strings.xml
+[DEBUG]  Merging C:\Users\Nancy\AppData\Local\Temp\11649-7408-1urybhz\res\values\strings.xml => D:\Titanium2\FGRapp1\build\android\res\values\strings.xml
 [INFO]   Extracting module resources: C:\ProgramData\Titanium\mobilesdk\win32\5.2.2.GA\android\modules\titanium-app.res.zip
-[DEBUG]  Merging C:\Users\Nancy\AppData\Local\Temp\116412-228-12m8e5k\res\values\strings.xml => D:\Titanium2\FGRapp1\build\android\res\values\strings.xml
+[DEBUG]  Merging C:\Users\Nancy\AppData\Local\Temp\11649-7408-15rwus4\res\values\strings.xml => D:\Titanium2\FGRapp1\build\android\res\values\strings.xml
 [INFO]   Extracting module resources: C:\ProgramData\Titanium\mobilesdk\win32\5.2.2.GA\android\modules\titanium-filesystem.res.zip
-[DEBUG]  Merging C:\Users\Nancy\AppData\Local\Temp\116412-228-105r2vx\res\values\strings.xml => D:\Titanium2\FGRapp1\build\android\res\values\strings.xml
+[DEBUG]  Merging C:\Users\Nancy\AppData\Local\Temp\11649-7408-1ww31zf\res\values\strings.xml => D:\Titanium2\FGRapp1\build\android\res\values\strings.xml
 [INFO]   Extracting module resources: C:\ProgramData\Titanium\mobilesdk\win32\5.2.2.GA\android\modules\titanium-media.res.zip
-[DEBUG]  Merging C:\Users\Nancy\AppData\Local\Temp\116412-228-jdztaz\res\values\strings.xml => D:\Titanium2\FGRapp1\build\android\res\values\strings.xml
+[DEBUG]  Merging C:\Users\Nancy\AppData\Local\Temp\11649-7408-ykzdf8\res\values\strings.xml => D:\Titanium2\FGRapp1\build\android\res\values\strings.xml
 [INFO]   Extracting module resources: C:\ProgramData\Titanium\mobilesdk\win32\5.2.2.GA\android\modules\titanium-locale.res.zip
-[DEBUG]  Merging C:\Users\Nancy\AppData\Local\Temp\116412-228-1grzgep\res\values\strings.xml => D:\Titanium2\FGRapp1\build\android\res\values\strings.xml
+[DEBUG]  Merging C:\Users\Nancy\AppData\Local\Temp\11649-7408-1dxusc8\res\values\strings.xml => D:\Titanium2\FGRapp1\build\android\res\values\strings.xml
 [INFO]   Extracting module resources: C:\ProgramData\Titanium\mobilesdk\win32\5.2.2.GA\android\modules\titanium-network.res.zip
-[DEBUG]  Merging C:\Users\Nancy\AppData\Local\Temp\116412-228-8v2rlk\res\values\strings.xml => D:\Titanium2\FGRapp1\build\android\res\values\strings.xml
+[DEBUG]  Merging C:\Users\Nancy\AppData\Local\Temp\11649-7408-zopo5q\res\values\strings.xml => D:\Titanium2\FGRapp1\build\android\res\values\strings.xml
 [INFO]   Extracting module resources: C:\ProgramData\Titanium\mobilesdk\win32\5.2.2.GA\android\modules\titanium-xml.res.zip
-[DEBUG]  Merging C:\Users\Nancy\AppData\Local\Temp\116412-228-an3cu5\res\values\strings.xml => D:\Titanium2\FGRapp1\build\android\res\values\strings.xml
+[DEBUG]  Merging C:\Users\Nancy\AppData\Local\Temp\11649-7408-xhdh3r\res\values\strings.xml => D:\Titanium2\FGRapp1\build\android\res\values\strings.xml
 [INFO]   Extracting module resources: C:\ProgramData\Titanium\mobilesdk\win32\5.2.2.GA\android\modules\titanium-utils.res.zip
-[DEBUG]  Merging C:\Users\Nancy\AppData\Local\Temp\116412-228-11gkmsq\res\values\strings.xml => D:\Titanium2\FGRapp1\build\android\res\values\strings.xml
+[DEBUG]  Merging C:\Users\Nancy\AppData\Local\Temp\11649-7408-148p0cp\res\values\strings.xml => D:\Titanium2\FGRapp1\build\android\res\values\strings.xml
 [INFO]   Extracting module resources: C:\ProgramData\Titanium\mobilesdk\win32\5.2.2.GA\android\modules\titanium-geolocation.res.zip
-[DEBUG]  Merging C:\Users\Nancy\AppData\Local\Temp\116412-228-1hecx4n\res\values\strings.xml => D:\Titanium2\FGRapp1\build\android\res\values\strings.xml
+[DEBUG]  Merging C:\Users\Nancy\AppData\Local\Temp\11649-7408-ljvycu\res\values\strings.xml => D:\Titanium2\FGRapp1\build\android\res\values\strings.xml
 [INFO]   Extracting module resources: C:\ProgramData\Titanium\mobilesdk\win32\5.2.2.GA\android\modules\titanium-accelerometer.res.zip
-[DEBUG]  Merging C:\Users\Nancy\AppData\Local\Temp\116412-228-1wbddg1\res\values\strings.xml => D:\Titanium2\FGRapp1\build\android\res\values\strings.xml
+[DEBUG]  Merging C:\Users\Nancy\AppData\Local\Temp\11649-7408-14i947f\res\values\strings.xml => D:\Titanium2\FGRapp1\build\android\res\values\strings.xml
 [INFO]   Extracting module resources: C:\ProgramData\Titanium\mobilesdk\win32\5.2.2.GA\android\modules\titanium-contacts.res.zip
-[DEBUG]  Merging C:\Users\Nancy\AppData\Local\Temp\116412-228-1hosyqk\res\values\strings.xml => D:\Titanium2\FGRapp1\build\android\res\values\strings.xml
+[DEBUG]  Merging C:\Users\Nancy\AppData\Local\Temp\11649-7408-14dkl7w\res\values\strings.xml => D:\Titanium2\FGRapp1\build\android\res\values\strings.xml
 [INFO]   Extracting module resources: C:\ProgramData\Titanium\mobilesdk\win32\5.2.2.GA\android\modules\titanium-map.res.zip
-[DEBUG]  Merging C:\Users\Nancy\AppData\Local\Temp\116412-228-1lddg5d\res\values\strings.xml => D:\Titanium2\FGRapp1\build\android\res\values\strings.xml
+[DEBUG]  Merging C:\Users\Nancy\AppData\Local\Temp\11649-7408-d2gv67\res\values\strings.xml => D:\Titanium2\FGRapp1\build\android\res\values\strings.xml
 [INFO]   Extracting module resources: C:\ProgramData\Titanium\mobilesdk\win32\5.2.2.GA\android\modules\titanium-gesture.res.zip
-[DEBUG]  Merging C:\Users\Nancy\AppData\Local\Temp\116412-228-drdzky\res\values\strings.xml => D:\Titanium2\FGRapp1\build\android\res\values\strings.xml
+[DEBUG]  Merging C:\Users\Nancy\AppData\Local\Temp\11649-7408-1ulryrf\res\values\strings.xml => D:\Titanium2\FGRapp1\build\android\res\values\strings.xml
 [INFO]   Extracting module resources: C:\ProgramData\Titanium\mobilesdk\win32\5.2.2.GA\android\modules\titanium-calendar.res.zip
-[DEBUG]  Merging C:\Users\Nancy\AppData\Local\Temp\116412-228-c9zoyu\res\values\strings.xml => D:\Titanium2\FGRapp1\build\android\res\values\strings.xml
+[DEBUG]  Merging C:\Users\Nancy\AppData\Local\Temp\11649-7408-nrtgbx\res\values\strings.xml => D:\Titanium2\FGRapp1\build\android\res\values\strings.xml
 [INFO]   Extracting module resources: C:\ProgramData\Titanium\mobilesdk\win32\5.2.2.GA\android\modules\titanium-platform.res.zip
-[DEBUG]  Merging C:\Users\Nancy\AppData\Local\Temp\116412-228-kq67y8\res\values\strings.xml => D:\Titanium2\FGRapp1\build\android\res\values\strings.xml
+[DEBUG]  Merging C:\Users\Nancy\AppData\Local\Temp\11649-7408-1e2sp4f\res\values\strings.xml => D:\Titanium2\FGRapp1\build\android\res\values\strings.xml
 [INFO]   Extracting module resources: C:\ProgramData\Titanium\mobilesdk\win32\5.2.2.GA\android\modules\titanium-database.res.zip
-[DEBUG]  Merging C:\Users\Nancy\AppData\Local\Temp\116412-228-1ysq76k\res\values\strings.xml => D:\Titanium2\FGRapp1\build\android\res\values\strings.xml
+[DEBUG]  Merging C:\Users\Nancy\AppData\Local\Temp\11649-7408-1618sy3\res\values\strings.xml => D:\Titanium2\FGRapp1\build\android\res\values\strings.xml
 [DEBUG]  Removing old file: D:\Titanium2\FGRapp1\build\android\.classpath
 [DEBUG]  Removing old file: D:\Titanium2\FGRapp1\build\android\.gitignore
 [DEBUG]  Removing old file: D:\Titanium2\FGRapp1\build\android\.project
-[DEBUG]  Removing old file: D:\Titanium2\FGRapp1\build\android\alloy_generated
 [DEBUG]  Removing old file: D:\Titanium2\FGRapp1\build\android\AndroidManifest.xml
 [DEBUG]  Removing old file: D:\Titanium2\FGRapp1\build\android\default.properties
 [DEBUG]  Removing old file: D:\Titanium2\FGRapp1\build\android\java-sources.txt
-[DEBUG]  Removing old file: D:\Titanium2\FGRapp1\build\android\res\raw\gtm_analytics
 [DEBUG]  Copying template C:\ProgramData\Titanium\mobilesdk\win32\5.2.2.GA\android\templates\build\AppInfo.java => D:\Titanium2\FGRapp1\build\android\gen\edu\uw\titaniumpanda\FGRCascade\Fgr_cascadeAppInfo.java
 [DEBUG]  Copying template C:\ProgramData\Titanium\mobilesdk\win32\5.2.2.GA\android\templates\build\App.java => D:\Titanium2\FGRapp1\build\android\gen\edu\uw\titaniumpanda\FGRCascade\Fgr_cascadeApplication.java
 [DEBUG]  Copying template C:\ProgramData\Titanium\mobilesdk\win32\5.2.2.GA\android\templates\build\Activity.java => D:\Titanium2\FGRapp1\build\android\gen\edu\uw\titaniumpanda\FGRCascade\Fgr_cascadeActivity.java
@@ -863,23 +867,20 @@ Command
 [DEBUG]  Compiling localization files
 [DEBUG]  Merging en strings => D:\Titanium2\FGRapp1\build\android\res\values\strings.xml
 [INFO]   Generating D:\Titanium2\FGRapp1\build\android\res\values\theme.xml
-[INFO]   Packaging application: C:\android-sdk-win\build-tools\23.0.1\aapt.exe "package" "-f" "-m" "-J" "D:\Titanium2\FGRapp1\build\android\gen" "-M" "D:\Titanium2\FGRapp1\build\android\AndroidManifest.xml" "-A" "D:\Titanium2\FGRapp1\build\android\bin\assets" "-S" "D:\Titanium2\FGRapp1\build\android\res" "-I" "C:\android-sdk-win\platforms\android-23\android.jar" "-F" "D:\Titanium2\FGRapp1\build\android\bin\app.ap_" "--auto-add-overlay" "--extra-packages" "ti.modules.titanium.ui:android.support.v7.appcompat:android.support.v7.cardview:com.google.android.gms" "-S" "C:\Users\Nancy\AppData\Local\Temp\116412-228-9j86em/res" "-S" "C:\Users\Nancy\AppData\Local\Temp\116412-228-1lppzh8/res" "-S" "C:\Users\Nancy\AppData\Local\Temp\116412-228-958hg9/res"
+[INFO]   Packaging application: C:\android-sdk-win\build-tools\23.0.1\aapt.exe "package" "-f" "-m" "-J" "D:\Titanium2\FGRapp1\build\android\gen" "-M" "D:\Titanium2\FGRapp1\build\android\AndroidManifest.xml" "-A" "D:\Titanium2\FGRapp1\build\android\bin\assets" "-S" "D:\Titanium2\FGRapp1\build\android\res" "-I" "C:\android-sdk-win\platforms\android-23\android.jar" "-F" "D:\Titanium2\FGRapp1\build\android\bin\app.ap_" "--auto-add-overlay" "--extra-packages" "ti.modules.titanium.ui:android.support.v7.appcompat:android.support.v7.cardview:com.google.android.gms" "-S" "C:\Users\Nancy\AppData\Local\Temp\11649-7408-12l2i68/res" "-S" "C:\Users\Nancy\AppData\Local\Temp\11649-7408-kw71u2/res" "-S" "C:\Users\Nancy\AppData\Local\Temp\11649-7408-2reqjw/res"
 [INFO]   Building Java source files: C:\Program Files (x86)\Java\jdk1.7.0_80\bin\javac.exe "-J-Xmx1024M" "-encoding" "utf8" "-bootclasspath" "C:\android-sdk-win\platforms\android-23\android.jar;C:\ProgramData\Titanium\mobilesdk\win32\5.2.2.GA\android\kroll-v8.jar;C:\ProgramData\Titanium\mobilesdk\win32\5.2.2.GA\android\modules\titanium-analytics.jar;C:\ProgramData\Titanium\mobilesdk\win32\5.2.2.GA\android\aps-analytics.jar;C:\ProgramData\Titanium\mobilesdk\win32\5.2.2.GA\android\modules\titanium-android.jar;C:\ProgramData\Titanium\mobilesdk\win32\5.2.2.GA\android\jaxen-1.1.1.jar;C:\ProgramData\Titanium\mobilesdk\win32\5.2.2.GA\android\ti-commons-codec-1.3.jar;C:\ProgramData\Titanium\mobilesdk\win32\5.2.2.GA\android\kroll-common.jar;C:\ProgramData\Titanium\mobilesdk\win32\5.2.2.GA\android\titanium.jar;C:\ProgramData\Titanium\mobilesdk\win32\5.2.2.GA\android\modules\titanium-app.jar;C:\ProgramData\Titanium\mobilesdk\win32\5.2.2.GA\android\modules\titanium-ui.jar;C:\ProgramData\Titanium\mobilesdk\win32\5.2.2.GA\android\nineoldandroids-appc-2.4.0.jar;C:\ProgramData\Titanium\mobilesdk\win32\5.2.2.GA\android\modules\titanium-filesystem.jar;C:\ProgramData\Titanium\mobilesdk\win32\5.2.2.GA\android\modules\titanium-media.jar;C:\ProgramData\Titanium\mobilesdk\win32\5.2.2.GA\android\modules\titanium-appcompat.jar;C:\ProgramData\Titanium\mobilesdk\win32\5.2.2.GA\android\android-support-v4.jar;C:\ProgramData\Titanium\mobilesdk\win32\5.2.2.GA\android\android-support-v7-appcompat.jar;C:\ProgramData\Titanium\mobilesdk\win32\5.2.2.GA\android\modules\titanium-cardview.jar;C:\ProgramData\Titanium\mobilesdk\win32\5.2.2.GA\android\cardview-v7-23.0.1.jar;C:\ProgramData\Titanium\mobilesdk\win32\5.2.2.GA\android\modules\titanium-locale.jar;C:\ProgramData\Titanium\mobilesdk\win32\5.2.2.GA\android\modules\titanium-network.jar;C:\ProgramData\Titanium\mobilesdk\win32\5.2.2.GA\android\modules\titanium-xml.jar;C:\ProgramData\Titanium\mobilesdk\win32\5.2.2.GA\android\modules\titanium-utils.jar;C:\ProgramData\Titanium\mobilesdk\win32\5.2.2.GA\android\modules\titanium-geolocation.jar;C:\ProgramData\Titanium\mobilesdk\win32\5.2.2.GA\android\modules\titanium-accelerometer.jar;C:\ProgramData\Titanium\mobilesdk\win32\5.2.2.GA\android\modules\titanium-contacts.jar;C:\ProgramData\Titanium\mobilesdk\win32\5.2.2.GA\android\modules\titanium-map.jar;C:\ProgramData\Titanium\mobilesdk\win32\5.2.2.GA\android\modules\titanium-gesture.jar;C:\ProgramData\Titanium\mobilesdk\win32\5.2.2.GA\android\modules\titanium-calendar.jar;C:\ProgramData\Titanium\mobilesdk\win32\5.2.2.GA\android\modules\titanium-platform.jar;C:\ProgramData\Titanium\mobilesdk\win32\5.2.2.GA\android\modules\titanium-database.jar;C:\ProgramData\Application Data\Titanium\modules\android\ti.map\2.3.6\map.jar;C:\ProgramData\Application Data\Titanium\modules\android\ti.map\2.3.6\lib\google-play-services-base.jar;C:\ProgramData\Application Data\Titanium\modules\android\ti.map\2.3.6\lib\google-play-services-map.jar;D:\Titanium2\FGRapp1\modules\android\com.alcoapps.actionbarextras\1.6.9\actionbarextras.jar;C:\ProgramData\Titanium\mobilesdk\win32\5.2.2.GA\android\kroll-apt.jar;C:\ProgramData\Titanium\mobilesdk\win32\5.2.2.GA\android\lib\titanium-verify.jar;C:\ProgramData\Titanium\mobilesdk\win32\5.2.2.GA\android\lib\titanium-debug.jar;Manifest.class;R.class;AssetCryptImpl.class;Fgr_cascadeActivity.class;Fgr_cascadeAppInfo.class;Fgr_cascadeApplication.class" "-d" "D:\Titanium2\FGRapp1\build\android\bin\classes" "-proc:none" "-target" "1.6" "-source" "1.6" "@D:\Titanium2\FGRapp1\build\android\java-sources.txt"
 [INFO]   Running dexer: C:\Program Files (x86)\Java\jdk1.7.0_80\bin\java.exe "-Xmx1024M" "-XX:-UseGCOverheadLimit" "-Djava.ext.dirs=C:\android-sdk-win\platform-tools" "-jar" "C:\android-sdk-win\build-tools\23.0.1\lib\dx.jar" "--dex" "--output=D:\Titanium2\FGRapp1\build\android\bin\classes.dex" "D:\Titanium2\FGRapp1\build\android\bin\classes" "C:\ProgramData\Titanium\mobilesdk\win32\5.2.2.GA\android\lib\titanium-verify.jar" "C:\ProgramData\Application Data\Titanium\modules\android\ti.map\2.3.6\map.jar" "C:\ProgramData\Application Data\Titanium\modules\android\ti.map\2.3.6\lib\google-play-services-base.jar" "C:\ProgramData\Application Data\Titanium\modules\android\ti.map\2.3.6\lib\google-play-services-map.jar" "D:\Titanium2\FGRapp1\modules\android\com.alcoapps.actionbarextras\1.6.9\actionbarextras.jar" "C:\ProgramData\Titanium\mobilesdk\win32\5.2.2.GA\android\kroll-v8.jar" "C:\ProgramData\Titanium\mobilesdk\win32\5.2.2.GA\android\modules\titanium-analytics.jar" "C:\ProgramData\Titanium\mobilesdk\win32\5.2.2.GA\android\aps-analytics.jar" "C:\ProgramData\Titanium\mobilesdk\win32\5.2.2.GA\android\modules\titanium-android.jar" "C:\ProgramData\Titanium\mobilesdk\win32\5.2.2.GA\android\jaxen-1.1.1.jar" "C:\ProgramData\Titanium\mobilesdk\win32\5.2.2.GA\android\ti-commons-codec-1.3.jar" "C:\ProgramData\Titanium\mobilesdk\win32\5.2.2.GA\android\kroll-common.jar" "C:\ProgramData\Titanium\mobilesdk\win32\5.2.2.GA\android\titanium.jar" "C:\ProgramData\Titanium\mobilesdk\win32\5.2.2.GA\android\modules\titanium-app.jar" "C:\ProgramData\Titanium\mobilesdk\win32\5.2.2.GA\android\modules\titanium-ui.jar" "C:\ProgramData\Titanium\mobilesdk\win32\5.2.2.GA\android\nineoldandroids-appc-2.4.0.jar" "C:\ProgramData\Titanium\mobilesdk\win32\5.2.2.GA\android\modules\titanium-filesystem.jar" "C:\ProgramData\Titanium\mobilesdk\win32\5.2.2.GA\android\modules\titanium-media.jar" "C:\ProgramData\Titanium\mobilesdk\win32\5.2.2.GA\android\modules\titanium-appcompat.jar" "C:\ProgramData\Titanium\mobilesdk\win32\5.2.2.GA\android\android-support-v4.jar" "C:\ProgramData\Titanium\mobilesdk\win32\5.2.2.GA\android\android-support-v7-appcompat.jar" "C:\ProgramData\Titanium\mobilesdk\win32\5.2.2.GA\android\modules\titanium-cardview.jar" "C:\ProgramData\Titanium\mobilesdk\win32\5.2.2.GA\android\cardview-v7-23.0.1.jar" "C:\ProgramData\Titanium\mobilesdk\win32\5.2.2.GA\android\modules\titanium-locale.jar" "C:\ProgramData\Titanium\mobilesdk\win32\5.2.2.GA\android\modules\titanium-network.jar" "C:\ProgramData\Titanium\mobilesdk\win32\5.2.2.GA\android\modules\titanium-xml.jar" "C:\ProgramData\Titanium\mobilesdk\win32\5.2.2.GA\android\modules\titanium-utils.jar" "C:\ProgramData\Titanium\mobilesdk\win32\5.2.2.GA\android\modules\titanium-geolocation.jar" "C:\ProgramData\Titanium\mobilesdk\win32\5.2.2.GA\android\modules\titanium-accelerometer.jar" "C:\ProgramData\Titanium\mobilesdk\win32\5.2.2.GA\android\modules\titanium-contacts.jar" "C:\ProgramData\Titanium\mobilesdk\win32\5.2.2.GA\android\modules\titanium-map.jar" "C:\ProgramData\Titanium\mobilesdk\win32\5.2.2.GA\android\modules\titanium-gesture.jar" "C:\ProgramData\Titanium\mobilesdk\win32\5.2.2.GA\android\modules\titanium-calendar.jar" "C:\ProgramData\Titanium\mobilesdk\win32\5.2.2.GA\android\modules\titanium-platform.jar" "C:\ProgramData\Titanium\mobilesdk\win32\5.2.2.GA\android\modules\titanium-database.jar" "C:\ProgramData\Titanium\mobilesdk\win32\5.2.2.GA\android\lib\titanium-debug.jar"
 [INFO]   Creating unsigned apk
 [DEBUG]  Processing D:\Titanium2\FGRapp1\build\android\bin\app.ap_
 [DEBUG]  Deflating AndroidManifest.xml
-[DEBUG]  Adding assets/Resources/CBCEFHorizontal361_Transparent.png
 [DEBUG]  Deflating assets/Resources/alloy/sync/rss.js.orig
 [DEBUG]  Adding assets/Resources/appicon.png
 [DEBUG]  Adding assets/Resources/ic_action_not_important.png
-[DEBUG]  Adding assets/Resources/images/Date.png
-[DEBUG]  Adding assets/Resources/images/Filter open.png
-[DEBUG]  Adding assets/Resources/images/Filter opened.png
-[DEBUG]  Adding assets/Resources/images/checked.png
-[DEBUG]  Adding assets/Resources/images/grey.png
-[DEBUG]  Adding assets/Resources/images/pace.png
-[DEBUG]  Adding assets/Resources/images/unchecked.png
+[DEBUG]  Adding assets/Resources/ic_place_2x.png
+[DEBUG]  Adding assets/Resources/ic_place_3x.png
+[DEBUG]  Adding assets/Resources/ic_place_green_3x.png
+[DEBUG]  Adding assets/Resources/iphone/Date.png
+[DEBUG]  Adding assets/Resources/iphone/pace.png
 [DEBUG]  Adding assets/Resources/pin.png
 [DEBUG]  Deflating assets/app.json
 [DEBUG]  Deflating assets/deploy.json
@@ -1002,18 +1003,19 @@ Command
 [DEBUG]  Adding res/drawable-ldrtl-xxxhdpi-v4/abc_ic_menu_copy_mtrl_am_alpha.png
 [DEBUG]  Adding res/drawable-ldrtl-xxxhdpi-v4/abc_ic_menu_cut_mtrl_alpha.png
 [DEBUG]  Adding res/drawable-ldrtl-xxxhdpi-v4/abc_spinner_mtrl_am_alpha.9.png
-[DEBUG]  Adding res/drawable-long-land-hdpi-v4/back_dark_6e5c3feb3e.png
 [DEBUG]  Adding res/drawable-long-land-hdpi-v4/background.png
-[DEBUG]  Adding res/drawable-long-land-hdpi-v4/ic_arrow_drop_down_51ba0fa2f6.png
-[DEBUG]  Adding res/drawable-long-land-hdpi-v4/ic_arrow_drop_up_612b2bcfc0.png
-[DEBUG]  Adding res/drawable-long-land-hdpi-v4/ic_menu_light_987d42552b.png
-[DEBUG]  Adding res/drawable-long-land-hdpi-v4/ic_navigation_3c776797b2.png
-[DEBUG]  Adding res/drawable-long-land-hdpi-v4/ic_place_green_38739645c0.png
-[DEBUG]  Adding res/drawable-long-land-hdpi-v4/ic_place_red_bc01c73666.png
-[DEBUG]  Adding res/drawable-long-land-hdpi-v4/ic_radio_button_off_fa6cb8331d.png
-[DEBUG]  Adding res/drawable-long-land-hdpi-v4/ic_radio_button_on_ab8c71cdac.png
-[DEBUG]  Adding res/drawable-long-land-hdpi-v4/ic_search_light_dd38b667b8.png
-[DEBUG]  Adding res/drawable-long-land-ldpi-v4/back_dark_6e5c3feb3e.png
+[DEBUG]  Adding res/drawable-long-land-hdpi-v4/checkbox_8d1d1a3789.png
+[DEBUG]  Adding res/drawable-long-land-hdpi-v4/checkboxselected_cd43975a03.png
+[DEBUG]  Adding res/drawable-long-land-hdpi-v4/menudark_7ecc46bfdb.png
+[DEBUG]  Adding res/drawable-long-land-hdpi-v4/menulight_c94457f894.png
+[DEBUG]  Adding res/drawable-long-land-hdpi-v4/pin_42b535480f.png
+[DEBUG]  Adding res/drawable-long-land-hdpi-v4/pinselected_50a1d362a7.png
+[DEBUG]  Adding res/drawable-long-land-hdpi-v4/re_centerfilled_e7a01d9dc7.png
+[DEBUG]  Adding res/drawable-long-land-hdpi-v4/re_centernotfilled_8f13d06ab4.png
+[DEBUG]  Adding res/drawable-long-land-hdpi-v4/searchdark_ff3b10f5bc.png
+[DEBUG]  Adding res/drawable-long-land-hdpi-v4/searchlight_6d54c08e7a.png
+[DEBUG]  Adding res/drawable-long-land-hdpi-v4/sortdecrease_08dbfc446e.png
+[DEBUG]  Adding res/drawable-long-land-hdpi-v4/sortincrease_b2150f40e4.png
 [DEBUG]  Adding res/drawable-long-land-ldpi-v4/background.png
 [DEBUG]  Adding res/drawable-long-land-ldpi-v4/checkbox_8d1d1a3789.png
 [DEBUG]  Adding res/drawable-long-land-ldpi-v4/checkboxselected_cd43975a03.png
@@ -1040,17 +1042,19 @@ Command
 [DEBUG]  Adding res/drawable-long-land-mdpi-v4/searchlight_6d54c08e7a.png
 [DEBUG]  Adding res/drawable-long-land-mdpi-v4/sortdecrease_08dbfc446e.png
 [DEBUG]  Adding res/drawable-long-land-mdpi-v4/sortincrease_b2150f40e4.png
-[DEBUG]  Adding res/drawable-long-port-hdpi-v4/back_dark_6e5c3feb3e.png
 [DEBUG]  Adding res/drawable-long-port-hdpi-v4/background.png
-[DEBUG]  Adding res/drawable-long-port-hdpi-v4/ic_arrow_drop_down_51ba0fa2f6.png
-[DEBUG]  Adding res/drawable-long-port-hdpi-v4/ic_arrow_drop_up_612b2bcfc0.png
-[DEBUG]  Adding res/drawable-long-port-hdpi-v4/ic_menu_light_987d42552b.png
-[DEBUG]  Adding res/drawable-long-port-hdpi-v4/ic_navigation_3c776797b2.png
-[DEBUG]  Adding res/drawable-long-port-hdpi-v4/ic_place_green_38739645c0.png
-[DEBUG]  Adding res/drawable-long-port-hdpi-v4/ic_place_red_bc01c73666.png
-[DEBUG]  Adding res/drawable-long-port-hdpi-v4/ic_radio_button_off_fa6cb8331d.png
-[DEBUG]  Adding res/drawable-long-port-hdpi-v4/ic_radio_button_on_ab8c71cdac.png
-[DEBUG]  Adding res/drawable-long-port-hdpi-v4/ic_search_light_dd38b667b8.png
+[DEBUG]  Adding res/drawable-long-port-hdpi-v4/checkbox_8d1d1a3789.png
+[DEBUG]  Adding res/drawable-long-port-hdpi-v4/checkboxselected_cd43975a03.png
+[DEBUG]  Adding res/drawable-long-port-hdpi-v4/menudark_7ecc46bfdb.png
+[DEBUG]  Adding res/drawable-long-port-hdpi-v4/menulight_c94457f894.png
+[DEBUG]  Adding res/drawable-long-port-hdpi-v4/pin_42b535480f.png
+[DEBUG]  Adding res/drawable-long-port-hdpi-v4/pinselected_50a1d362a7.png
+[DEBUG]  Adding res/drawable-long-port-hdpi-v4/re_centerfilled_e7a01d9dc7.png
+[DEBUG]  Adding res/drawable-long-port-hdpi-v4/re_centernotfilled_8f13d06ab4.png
+[DEBUG]  Adding res/drawable-long-port-hdpi-v4/searchdark_ff3b10f5bc.png
+[DEBUG]  Adding res/drawable-long-port-hdpi-v4/searchlight_6d54c08e7a.png
+[DEBUG]  Adding res/drawable-long-port-hdpi-v4/sortdecrease_08dbfc446e.png
+[DEBUG]  Adding res/drawable-long-port-hdpi-v4/sortincrease_b2150f40e4.png
 [DEBUG]  Adding res/drawable-long-port-ldpi-v4/background.png
 [DEBUG]  Adding res/drawable-long-port-ldpi-v4/checkbox_8d1d1a3789.png
 [DEBUG]  Adding res/drawable-long-port-ldpi-v4/checkboxselected_cd43975a03.png
@@ -1133,17 +1137,19 @@ Command
 [DEBUG]  Adding res/drawable-mdpi-v4/ic_plusone_tall_off_client.png
 [DEBUG]  Adding res/drawable-mdpi-v4/powered_by_google_dark.png
 [DEBUG]  Adding res/drawable-mdpi-v4/powered_by_google_light.png
-[DEBUG]  Adding res/drawable-notlong-land-hdpi-v4/back_dark_6e5c3feb3e.png
 [DEBUG]  Adding res/drawable-notlong-land-hdpi-v4/background.png
-[DEBUG]  Adding res/drawable-notlong-land-hdpi-v4/ic_arrow_drop_down_51ba0fa2f6.png
-[DEBUG]  Adding res/drawable-notlong-land-hdpi-v4/ic_arrow_drop_up_612b2bcfc0.png
-[DEBUG]  Adding res/drawable-notlong-land-hdpi-v4/ic_menu_light_987d42552b.png
-[DEBUG]  Adding res/drawable-notlong-land-hdpi-v4/ic_navigation_3c776797b2.png
-[DEBUG]  Adding res/drawable-notlong-land-hdpi-v4/ic_place_green_38739645c0.png
-[DEBUG]  Adding res/drawable-notlong-land-hdpi-v4/ic_place_red_bc01c73666.png
-[DEBUG]  Adding res/drawable-notlong-land-hdpi-v4/ic_radio_button_off_fa6cb8331d.png
-[DEBUG]  Adding res/drawable-notlong-land-hdpi-v4/ic_radio_button_on_ab8c71cdac.png
-[DEBUG]  Adding res/drawable-notlong-land-hdpi-v4/ic_search_light_dd38b667b8.png
+[DEBUG]  Adding res/drawable-notlong-land-hdpi-v4/checkbox_8d1d1a3789.png
+[DEBUG]  Adding res/drawable-notlong-land-hdpi-v4/checkboxselected_cd43975a03.png
+[DEBUG]  Adding res/drawable-notlong-land-hdpi-v4/menudark_7ecc46bfdb.png
+[DEBUG]  Adding res/drawable-notlong-land-hdpi-v4/menulight_c94457f894.png
+[DEBUG]  Adding res/drawable-notlong-land-hdpi-v4/pin_42b535480f.png
+[DEBUG]  Adding res/drawable-notlong-land-hdpi-v4/pinselected_50a1d362a7.png
+[DEBUG]  Adding res/drawable-notlong-land-hdpi-v4/re_centerfilled_e7a01d9dc7.png
+[DEBUG]  Adding res/drawable-notlong-land-hdpi-v4/re_centernotfilled_8f13d06ab4.png
+[DEBUG]  Adding res/drawable-notlong-land-hdpi-v4/searchdark_ff3b10f5bc.png
+[DEBUG]  Adding res/drawable-notlong-land-hdpi-v4/searchlight_6d54c08e7a.png
+[DEBUG]  Adding res/drawable-notlong-land-hdpi-v4/sortdecrease_08dbfc446e.png
+[DEBUG]  Adding res/drawable-notlong-land-hdpi-v4/sortincrease_b2150f40e4.png
 [DEBUG]  Adding res/drawable-notlong-land-ldpi-v4/background.png
 [DEBUG]  Adding res/drawable-notlong-land-ldpi-v4/checkbox_8d1d1a3789.png
 [DEBUG]  Adding res/drawable-notlong-land-ldpi-v4/checkboxselected_cd43975a03.png
@@ -1170,17 +1176,19 @@ Command
 [DEBUG]  Adding res/drawable-notlong-land-mdpi-v4/searchlight_6d54c08e7a.png
 [DEBUG]  Adding res/drawable-notlong-land-mdpi-v4/sortdecrease_08dbfc446e.png
 [DEBUG]  Adding res/drawable-notlong-land-mdpi-v4/sortincrease_b2150f40e4.png
-[DEBUG]  Adding res/drawable-notlong-port-hdpi-v4/back_dark_6e5c3feb3e.png
 [DEBUG]  Adding res/drawable-notlong-port-hdpi-v4/background.png
-[DEBUG]  Adding res/drawable-notlong-port-hdpi-v4/ic_arrow_drop_down_51ba0fa2f6.png
-[DEBUG]  Adding res/drawable-notlong-port-hdpi-v4/ic_arrow_drop_up_612b2bcfc0.png
-[DEBUG]  Adding res/drawable-notlong-port-hdpi-v4/ic_menu_light_987d42552b.png
-[DEBUG]  Adding res/drawable-notlong-port-hdpi-v4/ic_navigation_3c776797b2.png
-[DEBUG]  Adding res/drawable-notlong-port-hdpi-v4/ic_place_green_38739645c0.png
-[DEBUG]  Adding res/drawable-notlong-port-hdpi-v4/ic_place_red_bc01c73666.png
-[DEBUG]  Adding res/drawable-notlong-port-hdpi-v4/ic_radio_button_off_fa6cb8331d.png
-[DEBUG]  Adding res/drawable-notlong-port-hdpi-v4/ic_radio_button_on_ab8c71cdac.png
-[DEBUG]  Adding res/drawable-notlong-port-hdpi-v4/ic_search_light_dd38b667b8.png
+[DEBUG]  Adding res/drawable-notlong-port-hdpi-v4/checkbox_8d1d1a3789.png
+[DEBUG]  Adding res/drawable-notlong-port-hdpi-v4/checkboxselected_cd43975a03.png
+[DEBUG]  Adding res/drawable-notlong-port-hdpi-v4/menudark_7ecc46bfdb.png
+[DEBUG]  Adding res/drawable-notlong-port-hdpi-v4/menulight_c94457f894.png
+[DEBUG]  Adding res/drawable-notlong-port-hdpi-v4/pin_42b535480f.png
+[DEBUG]  Adding res/drawable-notlong-port-hdpi-v4/pinselected_50a1d362a7.png
+[DEBUG]  Adding res/drawable-notlong-port-hdpi-v4/re_centerfilled_e7a01d9dc7.png
+[DEBUG]  Adding res/drawable-notlong-port-hdpi-v4/re_centernotfilled_8f13d06ab4.png
+[DEBUG]  Adding res/drawable-notlong-port-hdpi-v4/searchdark_ff3b10f5bc.png
+[DEBUG]  Adding res/drawable-notlong-port-hdpi-v4/searchlight_6d54c08e7a.png
+[DEBUG]  Adding res/drawable-notlong-port-hdpi-v4/sortdecrease_08dbfc446e.png
+[DEBUG]  Adding res/drawable-notlong-port-hdpi-v4/sortincrease_b2150f40e4.png
 [DEBUG]  Adding res/drawable-notlong-port-ldpi-v4/background.png
 [DEBUG]  Adding res/drawable-notlong-port-ldpi-v4/checkbox_8d1d1a3789.png
 [DEBUG]  Adding res/drawable-notlong-port-ldpi-v4/checkboxselected_cd43975a03.png
@@ -1461,6 +1469,7 @@ Command
 [DEBUG]  Deflating res/layout/titanium_ui_spinner.xml
 [DEBUG]  Deflating res/layout/titanium_ui_switchcompat.xml
 [DEBUG]  Deflating res/layout/titanium_ui_time_picker_spinner.xml
+[DEBUG]  Deflating res/raw/gtm_analytics
 [DEBUG]  Deflating resources.arsc
 [DEBUG]  Processing C:\ProgramData\Application Data\Titanium\modules\android\ti.map\2.3.6\map.jar
 [DEBUG]  Processing C:\ProgramData\Application Data\Titanium\modules\android\ti.map\2.3.6\lib\google-play-services-base.jar
@@ -1548,13 +1557,6 @@ Command
 [INFO]   App successfully installed
 [INFO]   Starting app: edu.uw.titaniumpanda.FGRCascade/.Fgr_cascadeActivity
 [DEBUG]  Trying to start the app...
-[INFO]   Application pid: 2392
-[INFO]   Forwarding host port 52719 to device for debugging
--- Start application log -----------------------------------------------------
-[INFO]   TiApplication: (main) [0,0] checkpoint, app created.
-[INFO]   TiApplication: (main) [111,111] Titanium 5.2.2 (2016/03/28 14:12 b685ddb)
-[INFO]   TiApplication: (main) [56,167] Titanium Javascript runtime: v8
-[INFO]   TiRootActivity: (main) [0,0] checkpoint, on root activity create, savedInstanceState: null
-[WARN]   TiTempFileHelper: (main) [18,18] The external temp directory doesn't exist, skipping cleanup
-[WARN]   V8Object: (KrollRuntimeThread) [24,42] Runtime disposed, cannot set property 'userAgent'
-[INFO]   Project built successfully in 58s 53ms
+[INFO]   Application pid: 19050
+[INFO]   Forwarding host port 56981 to device for debugging
+[INFO]   Project built successfully in 52s 600ms

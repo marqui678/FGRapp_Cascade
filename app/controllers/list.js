@@ -25,6 +25,9 @@ var moment = require('alloy/moment');
 function refresh(e) {
 	'use strict';
 
+	//Init map region center by current location, use default location if currentLocation not available
+	initRegionCenter();
+	
 	// if we were called from the constructor programmatically show the refresh animation
 	if (OS_IOS && !e) {
 		$.refreshControl.beginRefreshing();
@@ -41,6 +44,12 @@ function refresh(e) {
 			$.refreshControl.endRefreshing();
 		}
 		$.search.blur();
+		//Need to Calc distance to location as it would be used in sort.
+		Alloy.Globals.setDistanceToLocation(Alloy.Collections.feed.models, Alloy.Globals.regionCenter);
+		
+		//Sort by date
+		Alloy.Collections.feed.setSortField("startDateTime", "ASC");
+		Alloy.Collections.feed.sort();
 	}
 
 	// MobileWeb can't load the remote file because we don't have access control set-up
@@ -53,6 +62,50 @@ function refresh(e) {
 		error: afterFetch
 		});
 	}
+	
+//Set Alloy.Globals.regionCenter
+function initRegionCenter() {
+	if(!Titanium.Geolocation.hasLocationPermissions(Titanium.Geolocation.AUTHORIZATION_ALWAYS)) {
+		Titanium.Geolocation.requestLocationPermissions(Titanium.Geolocation.AUTHORIZATION_ALWAYS, function(result){
+			if(!result.success) {
+				//no location permissions flow triggers
+				alert("Do not have Geolocation permission. Use default location");
+				setRegionCenter(Alloy.Globals.defaultLocation);
+			} 
+			else {
+				setGeoLoc();
+			}
+		});
+	}
+	else {
+		setGeoLoc();
+	}
+};
+
+function setGeoLoc() {
+	if (Ti.Geolocation.locationServicesEnabled === false) {
+		alert("The device has geo turned off. Use default location.");
+		setRegionCenter(Alloy.Globals.defaultLocation);
+	}
+	
+	Titanium.Geolocation.getCurrentPosition(function(e) {
+	    Ti.Geolocation.accuracy = Ti.Geolocation.ACCURACY_HIGH;
+	    if (e.error)
+	    {
+	        alert('Current location not found. Use default location');	
+	    	setRegionCenter(Alloy.Globals.defaultLocation);    
+	    }
+	    else {
+	    	//Set regionCenter with current location and sort	
+	    	setRegionCenter(e.coords);       
+        }
+	});
+}
+
+function setRegionCenter(centerLoc) {
+	Alloy.Globals.regionCenter.latitude = centerLoc.latitude;
+	Alloy.Globals.regionCenter.longitude = centerLoc.longitude;
+}
 
 /**
  * set via view to be applied on each model before it renders

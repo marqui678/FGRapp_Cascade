@@ -15,13 +15,14 @@
 Alloy.Globals.Map = require('ti.map');
 
 Alloy.Globals.defaultLocation = {latitude: 47.6466, longitude: -122.335}; 
+Alloy.Globals.regionCenter = {latitude: 47.6466, longitude: -122.335}; 
 
 //Use distanceToLocation as default sorting
-Alloy.Globals.selectedSort = {id: 2, item: {	    
-    title : {text: "Location"},
+Alloy.Globals.selectedSort = {id: 1, item: {	    
+    title : {text: "Date"},
     isAscDir: true,
-    direction : {text: "near to far", dir: "ASC"},
-    field: "distanceToLocation"    
+    direction : {text: "sooner to later", dir: "ASC"},
+    field: "fgrrss:startDateTime"    
 }};
 
 Number.prototype.toDeg = function() {
@@ -30,6 +31,16 @@ Number.prototype.toDeg = function() {
 
 Number.prototype.toRad = function() {
     return this * Math.PI / 180;
+};
+
+/**
+ *For each model, set value for field distanceToLoc based on given target location
+ */
+Alloy.Globals.setDistanceToLocation = function(models, targetLoc) {
+	for (var i = 0; i < models.length; i++) {
+		var model = models[i];
+		model.setDistanceToLoc(targetLoc);
+	}
 };
 
 // added during app creation. this will automatically login to

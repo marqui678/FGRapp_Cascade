@@ -3,6 +3,10 @@
 		<Menu platform="android">
 			<MenuItem onClick="cancel" title="Cancel" id="cancelSortBtn" showAsAction="Ti.Android.SHOW_AS_ACTION_ALWAYS" />
 		</Menu>
+		<RightNavButton platform="ios">
+			<Button title="Cancel" onClick="cancel" id="cancelSortBtn"/>
+		</RightNavButton>	
+		
 		<View id="sortByInfo">
 			<Label id="sortBy" class="firstLevelFont">SORT BY</Label>
 			<Label id="sortByResult" class="secondLevelFont">Distance: short to long</Label>		

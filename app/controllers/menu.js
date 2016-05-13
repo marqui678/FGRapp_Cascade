@@ -4,11 +4,16 @@ function menuClick(e){
 	var rowId=e.rowData.rowId;
 	
 	switch (rowId){
+		
 		case 1:
-			alert("Pace classification clicked");
+			
+			Alloy.Globals.Navigator.open("paceClassification",{});
+			
 			break;
 		case 2:
-			alert("About clicked");
+			
+			Alloy.Globals.Navigator.open("about",{});
+			
 			break;
 	}
 	

@@ -2,3 +2,5 @@ build
 Resources/*
 Resources/alloy/moment.js
 build/*
+platform/android/alloy_generated
+build/alloy/build.json
