@@ -1,0 +1,50 @@
+<Alloy>
+	<Window title="Pace Classification" id='win'>
+		<View class="container">
+			
+			<View id='noteView'>
+				<Label class='label' id='notesLabel'>Notes</Label>
+				<Label class='notecontent' id='notesContent1'> Pace classification indicates the intended range of speeds on level ground without breaks. This means downhill sections of the ride may be faster, and uphill sections slower.</Label>
+				<Label class='notecontent' id='notesContent2'>For rides with a "hilly" terrain classification, consider choosing a pace one step down from your usual comfort level.</Label>	
+			</View>
+			<View class='separator' id='separator1'></View>
+			<Label class='label' id='paceLabel'  top=230>Pace</Label>
+			<TableView id='paceView' scrollable="false" touchEnabled="false" top=260>
+				<TableViewRow>
+					<Label class='paceTitle'>Easy</Label>
+					<Label class='paceSpeed'>Under 10 mph</Label>
+				</TableViewRow>
+				<TableViewRow>
+					<Label class='paceTitle'>Leisurely</Label>
+					<Label class='paceSpeed'>10 - 12 mph</Label>
+				</TableViewRow>
+				<TableViewRow>
+					<Label class='paceTitle'>Steady</Label>
+					<Label class='paceSpeed'>12 - 14 mph</Label>
+				</TableViewRow>
+				<TableViewRow>
+					<Label class='paceTitle'>Moderate</Label>
+					<Label class='paceSpeed'>14 - 16 mph</Label>
+				</TableViewRow>
+				<TableViewRow>
+					<Label class='paceTitle'>Brisk</Label>
+					<Label class='paceSpeed'>16 - 18 mph</Label>
+				</TableViewRow>
+				<TableViewRow>
+					<Label class='paceTitle'>Vigorous</Label>
+					<Label class='paceSpeed'>18 - 20 mph</Label>
+				</TableViewRow>
+				<TableViewRow>
+					<Label class='paceTitle'>Strenuous</Label>
+					<Label class='paceSpeed'>20 - 22 mph</Label>
+				</TableViewRow>
+				<TableViewRow>
+					<Label class='paceTitle'>Super Strenuous</Label>
+					<Label class='paceSpeed'>22+ mph</Label>
+				</TableViewRow>
+			</TableView>
+		</View>
+		
+	</Window>
+
+</Alloy>

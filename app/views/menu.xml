@@ -2,7 +2,7 @@
 	<View id="menu">
 		<View class="menubanner"></View>
 		<TableView class="menuoptions" onClick="menuClick">
-			<TableViewRow class="menurowcontainer" rowId="1">
+			<TableViewRow class="menurowcontainer" rowId="1"  backgroundColor="#43B02A">
 				<View class="menurow">
 					<View class="iconcontainer">
 						<ImageView class="icon" image="/ic_action_not_important.png"/>
@@ -10,7 +10,7 @@
 					<Label class="menucaption">Pace classification</Label>
 				</View>
 			</TableViewRow>
-			<TableViewRow class="menurowcontainer" rowId="2" selectedBackgroundColor="white">
+			<TableViewRow class="menurowcontainer" rowId="2" backgroundColor="#43B02A">
 				<View class="menurow">
 					<View class="iconcontainer">
 						<ImageView class="icon" image="/ic_action_not_important.png"/>
