@@ -1,54 +1,193 @@
 
+//Containers, windows and views
 ".container" : {
   
 }
 
+'#window':{
+	barColor: "#43B02A",
+}
+
+'#scrollview':{
+	backgroundColor:'#F7F7F7',
+	layout: 'composite',
+	bottom : 48,
+}
+
+'#registerView':{
+	height:'48',
+	backgroundColor : '#43B02A',
+	bottom:0,
+}
+
+'#textOnMap':{
+	top : '197pt',
+	height : '56pt',
+	backgroundGradient: {
+        type: 'linear',
+        startPoint: { x: '50%', y: '0%' },
+        endPoint: { x: '50%', y: '100%' },
+        colors: [ { color: '#99D6EFE5', offset: 0.0}, { color: '#99B9FBE1', offset: 1.0 }],
+    }
+}
+
+'#descriptioinView':{
+	top:255,
+	height:140,
+}
+
+'#addressView':{
+	top:395,
+	height:90
+}
+
+'#contactView':{
+	top:483,
+	height:60
+}
+
+//Map
 "#mapview":{
 	top:0,
 	enableZoomControls: false,
 	compassEnabled: false,
-	height: "30%",
-},
+	height: '253pt',
+}
+
+
+//Labels
+//text on map
+'#dateImage':{
+	left:'7pt',
+	bottom: '28pt',
+	width:20
+}
+
 '#startDateTime':{
-	top:180,
-	height:50,
-	color: 'red'
+	font: { fontSize:16 },
+	color: '#2C2A29',
+	left:'30pt',
+	bottom: '28pt',
+}
+'#paceNum':{
+	bottom: '0pt',
+	left:'7pt',
+	font: { fontSize:12 },
+	width:80, height:25,
+	color: 'white'
 }
 '#pace':{
-	top:200,
-	height:50
+	bottom: '2pt',
+	left:'85pt',
+	height:'15',
+	width:'200',
+	font: { fontSize:16 },
+	color:'#2C2A29',
+	
 }
-'#distance':{
-	top:220,
-	height:50,
-	color: 'red'
+'#distance1':{
+	color: '#2C2A29',
+	font: { fontSize:35 },
+	right:'48pt',
+	bottom: '0pt'
 }
-'#address':{
-	top:250,
+'#distance2':{
+	color: '#646464',
+	right:'7pt',
+	font: { fontSize:16 },
+	bottom: '5pt'
 }
-'#directions':{
-	top:320,
-	color:'green'
+
+//description
+'#descriptionLabel':{
+	top:'17pt',
+	font: { fontSize:16 },
+	left:'7pt',
+	color:'#646464'
 }
-'#leader':{
-	top:330,,
-	color: 'red'
-}
+
 '#description':{
-	top:340,
-	height:100
+	top:'10pt',
+	font: { fontSize:16 },
+	right:'7pt',
+	color: '#2C2A29',
+	left:'7pt',
 }
+
 '#readMore':{
-	top:420,
+	bottom:9,
+	right:'9pt',
+	color:'#006F44',
+	backgroundColor:'#F7F7F7',
+	font: { fontSize:12 },
+	width:190,
+	textAlign: Titanium.UI.TEXT_ALIGNMENT_RIGHT,
+}
+
+//address and direction
+'#locationLabel':{
+	top:0,
+	font: { fontSize:16 },
+	left:'7pt',
+	color:'#646464'
+}
+
+'#directions':{
+	top: 2,
+	color:'#006F44',
+	font: { fontSize:12 },
+	left:'110pt'
+}
+
+'#address1':{
+	top: 20,
+	left:'7pt',
+	height: '15pt',
+	font: { fontSize:16 },
+	color:'#646464',
+	textAlign: 'Titanium.UI.TEXT_ALIGNMENT_LEFT',
+}
+
+'#address2':{
+	top: 40,
+	left:'7pt',
+	font: { fontSize:16 },
+	color:'#2C2A29',
+	textAlign: Ti.UI.TEXT_ALIGNMENT_LEFT,
+}
+
+//contact
+'#leaderLabel':{
+	font: { fontSize:16 },
+	color:'#646464',
+	top:'5pt',
+	left:'7pt'
+}
+
+'#leader':{
+	//top:440,
+	height:'20pt',
+	font: { fontSize:16 },
+	color: '#2C2A29',
+	top:'5pt',
+	left:'120pt'
 }
 '#phone':{
-	top:440,
-	color: 'red'
+	top:40,
+	color: '#006F44',
+	font: { fontSize:16 },
+	left:'7pt',
+
 }
 '#email':{
-	top:460,
-	color: 'red'
+	top:20,
+	color: '#006F44',
+	font: { fontSize:16 },
+	left:'7pt',
+
 }
-'tab':{
-	top:0
+
+//register button
+'#register':{
+	color:'white'
 }

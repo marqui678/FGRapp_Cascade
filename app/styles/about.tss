@@ -2,3 +2,44 @@
 ".container" : {
   
 }
+'#win':{
+	barColor: "#43B02A",
+	backgroundColor:'#F7F7F7',
+}
+
+".separator":{
+	height:1,
+	backgroundColor:"#30006F44"
+}
+".title":{
+	font: { fontSize:16 },
+	color: "#006F44",
+	left:10,
+	right:10,
+}
+".content":{
+	color:"#646464",
+	font: { fontSize:16 },
+	left:10,
+	right:10,
+}
+".role":{
+	color:"#646464",
+	font: { fontSize:16 },
+	left:10,
+}
+".name":{
+	color:"#646464",
+	font: { fontSize:16 },
+	left:130,
+}
+".lineSap":{
+	height:7
+}
+
+//views
+"#separator1":{
+	top:150,
+	left:10,
+	right:10
+}
