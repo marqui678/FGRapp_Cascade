@@ -33,7 +33,7 @@
 		        </View>
 	        	<View class="rideDistance">
 	        		<Label class="alignLeft baseText" id="distanceOne"/>
-		            <Label class="alignLeft lightText" id="distanceTwo"/>
+		            <Label id="distanceTwo"/>
 	        	</View>
 	        </View>	       
         </View>             
