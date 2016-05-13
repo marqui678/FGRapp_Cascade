@@ -2,10 +2,15 @@
  * self-executing function to organize otherwise inline constructor code
  * @param  {Object} args arguments passed to the controller
  */
-Alloy.Globals.pace = [];
 Alloy.Globals.test = [];
-Alloy.Globals.startDateTime = [];
+Alloy.Globals.pace = [];
+Alloy.Globals.paceID = [];
+Alloy.Globals.day = [];
+Alloy.Globals.dayID = [];
+Alloy.Globals.time = [];
 Alloy.Globals.distance = [];
+Alloy.Globals.distanceID = [];
+
 Alloy.Globals.selfPaced = false;
 Alloy.Globals.easy = false;
 Alloy.Globals.brisk = false;
@@ -15,6 +20,15 @@ Alloy.Globals.vigorous = false;
 Alloy.Globals.moderate = false;
 Alloy.Globals.strenuous = false;
 Alloy.Globals.superStrenuous = false;
+
+Alloy.Globals.sunday = false;
+Alloy.Globals.monday = false;
+Alloy.Globals.tuesday = false;
+Alloy.Globals.wednesday = false;
+Alloy.Globals.thursday = false;
+Alloy.Globals.friday = false;
+Alloy.Globals.saturday = false;
+
 Alloy.Globals.ten = false;
 Alloy.Globals.twenty = false;
 Alloy.Globals.thirty = false;

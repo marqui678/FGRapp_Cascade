@@ -50,9 +50,19 @@ function parseXML(xml) {
             distance = true;
             break;
         }
-        if (distance && (0 == Alloy.Globals.startDateTime.length || Alloy.Globals.startDateTime[0] <= model["fgrrss:startDateTime"] && Alloy.Globals.startDateTime[1] >= model["fgrrss:startDateTime"])) if (0 == Alloy.Globals.pace.length) models.push(model); else for (var k = 0; k < Alloy.Globals.pace.length; k++) if (-1 != model["fgrrss:pace"].indexOf(Alloy.Globals.pace[k])) {
-            models.push(model);
+        var day = false;
+        if (0 == Alloy.Globals.day.length) day = true; else for (var x = 0; x < Alloy.Globals.dayID.length; x++) if (Alloy.Globals.dayID[x] == model["fgrrss:startDateTime"].getDay()) {
+            day = true;
             break;
+        }
+        var time = false;
+        (0 == Alloy.Globals.time.length || model["fgrrss:startDateTime"].getUTCHours() >= Alloy.Globals.time[0] && model["fgrrss:startDateTime"].getUTCHours() <= Alloy.Globals.time[1]) && (time = true);
+        if (distance && day && time) if (0 == Alloy.Globals.pace.length) models.push(model); else for (var k = 0; k < Alloy.Globals.pace.length; k++) if (-1 != model["fgrrss:pace"].indexOf(Alloy.Globals.pace[k])) {
+            if ("Strenuous" != Alloy.Globals.pace[k]) {
+                models.push(model);
+                break;
+            }
+            "Super" != model["fgrrss:pace"].substring(model["fgrrss:pace"].indexOf(Alloy.Globals.pace[k]) - 6, model["fgrrss:pace"].indexOf(Alloy.Globals.pace[k]) - 1) && models.push(model);
         }
     }
     return models;

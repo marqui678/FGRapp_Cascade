@@ -158,18 +158,40 @@ function parseXML(xml) {
 				}
 			}
 		}
+		var day = false;
+		if (Alloy.Globals.day.length == 0) {
+			day = true;
+		} else{
+			for (var x = 0; x < Alloy.Globals.dayID.length; x++){
+				if (Alloy.Globals.dayID[x] == model['fgrrss:startDateTime'].getDay()){
+					day = true;
+					break;
+				}
+			}
+		}
+		var time = false;
+		if ((Alloy.Globals.time.length == 0) || ((model['fgrrss:startDateTime'].getUTCHours() >= Alloy.Globals.time[0]) && (model['fgrrss:startDateTime'].getUTCHours() <= Alloy.Globals.time[1]))){
+			time = true;
+		}
 		if (distance){
-			if ((Alloy.Globals.startDateTime.length == 0) || ((Alloy.Globals.startDateTime[0] <= model['fgrrss:startDateTime']) && (Alloy.Globals.startDateTime[1] >= model['fgrrss:startDateTime']))){
-				if (Alloy.Globals.pace.length == 0){
-					models.push(model);
-				} else{
-					for (var k = 0; k < Alloy.Globals.pace.length; k++){
-						if (model['fgrrss:pace'].indexOf(Alloy.Globals.pace[k]) != -1){
-							models.push(model);
-							break;
-						}
+			if(day){
+				if(time){
+					if (Alloy.Globals.pace.length == 0){
+						models.push(model);
+					} else{
+						for (var k = 0; k < Alloy.Globals.pace.length; k++){
+							if (model['fgrrss:pace'].indexOf(Alloy.Globals.pace[k]) != -1){
+								if (Alloy.Globals.pace[k] == "Strenuous"){
+									if (model['fgrrss:pace'].substring(model['fgrrss:pace'].indexOf(Alloy.Globals.pace[k]) - 6, model['fgrrss:pace'].indexOf(Alloy.Globals.pace[k]) - 1) != "Super"){
+										models.push(model);
+									}
+								} else{
+									models.push(model);
+									break;
+								}
+							}
+						}	    
 					}
-					    
 				}
 			}
 		}

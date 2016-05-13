@@ -1,75 +1,123 @@
 <Alloy>
-	<Window id="fwin" title='Filter' layout="vertical">
+	<Window id="fwin" title='Filter' width="100%" left="0">
 		<LeftNavButton platform="ios"><Button id="cancel" onClick="cancelFilter">Cancel</Button></LeftNavButton>
 		<RightNavButton platform="ios"><Button id="reset" onClick="resetFilter">Clear All</Button></RightNavButton>
 		<ActionBar platform="android" id="actionbar" title="Filter" onHomeIconItemSelected="cancelFilter" displayHomeAsUp="true" />
 		<Menu platform="android">
 			<MenuItem title="Clear All" onClick="resetFilter" showAsAction="Ti.Android.SHOW_AS_ACTION_ALWAYS" />
 		</Menu>	
-		<ScrollView id="scrollView" layout="vertical" showVerticalScrollIndicator="true" showHorizontalScrollIndicator="true" height="100%" width="100%">
-			<View id="paceRow" top="0" height="30" layout="horizontal">
-				<Button top="0" id="pace" height="30" width="50" onClick="hidePaceView">Pace</Button>
-				<Label top="0" left="15" height="30" width="280" id="paceLabel" onClick="hideDateView"></Label>
-				<ImageView id="paceFold" width="20" image="Filter open.png" onClick="hidePaceView"/>
+		<ScrollView id="scrollView" left="0" layout="vertical" scrollType="vertical" disableBounce="true" scrollingEnabled="false" showVerticalScrollIndicator="true" bottom="50dp" width="100%">
+			<View id="paceRow" class="filterRow" onClick="hidePaceView">
+				<Label class="filterOpt" id="pace" >PACE</Label>
+				<Label class="filterChosen" id="paceLabel"/>
+				<ImageView class="arrow" id="paceFold" image="images/Filter open.png"/>
 			</View>
-			<View id="paceView" top="0" left="0" right="0" height="50%" layout="vertical" visible="false">
-				<View id="firstRow" height="30" layout="horizontal">
-					<Button left="5" width = "50" onClick="selfPaced">Self Paced</Button>
-					<Button left="0" width = "50" onClick="easy">Easy</Button>
-					<Button left="0" width = "50" onClick="leisurely">Leisurely</Button>
+			<View class="separator"/>
+			<View class="filterView" id="paceView">
+				<View class="Row">
+					<Label class="Label1" id="easy" onClick="easy">Easy \n Under 10 mph</Label>
+					<Label class="Label2" id="leisurely" onClick="leisurely">Leisurely \n 10 - 12 mph</Label>
 				</View>
-				<View id="secondRow" top="20" width="100%" height="30" layout="horizontal">
-						<Button left="5" onClick="steady">Steady</Button>
-						<Button left="0" onClick="moderate">Moderate</Button>
-						<Button left="0" onClick="brisk">Brisk</Button>
+				<View class="Row" >
+					<Label class="Label3" id="steady" onClick="steady">Steady \n 12 - 14 mph</Label>
+					<Label class="Label4" id="moderate" onClick="moderate">Moderate \n 14 - 16 mph</Label>	
 				</View>
-				<View id="thirdRow" top="20" width="100%" height="30" layout="horizontal">
-							<Button left="5" onClick="vigorous">Vigorous</Button>
-							<Button left="0" onClick="strenuous">Strenuous</Button>
-							<Button left="0" onClick="superStrenuous">Super Strenuous</Button>
+				<View class="Row">
+					<Label class="Label5" id="brisk" onClick="brisk">Brisk \n 16 - 18 mph</Label>
+					<Label class="Label6" id="vigorous" onClick="vigorous">Vigorous \n 18 - 20 mph</Label>
+				</View>
+				<View class="Row">
+					<Label class="Label7" id="strenuous" onClick="strenuous">Strenuous \n 20 - 22 mph</Label>
+					<Label class="Label8" id="superStrenuous" onClick="superStrenuous">Super Strenuous \n 22+ mph</Label>
+				</View>
+				<View class="Row">
+					<Label class="Label9" id="selfPaced" onClick="selfPaced">Self Paced</Label>
 				</View>
 			</View>   
-			<View id="dateRow" top="0" width="100%" layout="horizontal" height="30">
-	        	<Button top="0" id="date" class="testButton" onClick="hideDateView">DateTime</Button>
-	        	<Label top="0" left="15" onClick="hideDateView" id="dateLabel"></Label>
-	        	<Button id="dateFold" left="290" backgroundImage="Filter open.png" onClick="hideDateView"></Button>
+			<View id="dayRow" class="filterRow" onClick="hideDayView">
+	        	<Label id="day" class="filterOpt" >DAY</Label>
+	        	<Label class="filterChosen" id="dayLabel"/>
+	        	<ImageView class="arrow" id="dayFold" image="images/Filter open.png"/>
 			</View>
-	        <View id="dateView" top="0" layout="vertical" visible="false" width="100%" height="100%">
-		        <Picker top="0" id="startDate" type="Titanium.UI.PICKER_TYPE_DATE"></Picker>
-		        <View id="start" width="100%" height="30" layout="horizontal">
-		        	<Label top="0" id="startTimeLabel"></Label>
-		        	<Slider id="startTimeSlider" top="0" />
-	        	</View>
-		        <Label top="0">To</Label>
-		        <Picker top="0" id="endDate" type="Titanium.UI.PICKER_TYPE_DATE"></Picker>
-		        <View id="end" width="100%" height="30" layout="horizontal">
-		        	<Label top="0" id="endTimeLabel"></Label>
-		        	<Slider id="endTimeSlider" top="0"/>
+			<View class="separator"/>
+	        <View id="dayView" class="filterView">
+	        	<View onClick="sunday" class="days">
+	        		<ImageView class="checkbox" id="checkSunday" image="images/unchecked.png"/>
+		        	<Label id="sunday" class="dayLabel">Sunday</Label>
+		        </View>
+		        <View onClick="monday" class="days">
+	        		<ImageView class="checkbox" id="checkMonday" image="images/unchecked.png"/>
+		        	<Label id="monday" class="dayLabel">Monday</Label>
+		        </View>
+		        <View onClick="tuesday" class="days">
+	        		<ImageView class="checkbox" id="checkTuesday" image="images/unchecked.png"/>
+		        	<Label id="tuesday" class="dayLabel" >Tuesday</Label>
+		        </View>
+		        <View onClick="wednesday" class="days">
+	        		<ImageView class="checkbox" id="checkWednesday" image="images/unchecked.png"/>
+		        	<Label id="wednesday" class="dayLabel" >Wednesday</Label>
+		        </View>
+		        <View onClick="thursday" class="days">
+	        		<ImageView class="checkbox" id="checkThursday" image="images/unchecked.png"/>
+		        	<Label id="thursday" class="dayLabel" >Thursday</Label>
+		        </View>
+		        <View onClick="friday" class="days">
+	        		<ImageView class="checkbox" id="checkFriday" image="images/unchecked.png"/>
+		        	<Label id="friday" class="dayLabel" >Friday</Label>
+		        </View>
+		        <View onClick="saturday" class="days">
+	        		<ImageView class="checkbox" id="checkSaturday" image="images/unchecked.png"/>
+		        	<Label id="saturday" class="dayLabel" >Saturday</Label>
 		        </View>
 	        </View>
-	        <View id="distanceRow" top="0" width="100%" height="30" layout="horizontal">
-				<Button top="0" id="distance" onClick="hideDistanceView">Distance</Button>
-				<Label top="0" left="15" id="distanceLabel" onClick="hideDistanceView"></Label>
-				<Button id="distanceFold" left="290" backgroundImage="Filter open.png" onClick="hideDistanceView"></Button>
+	        <View id="timeRow" class="filterRow" onClick="hideTimeView">
+	        	<Label id="time" class="filterOpt" >TIME</Label>
+	        	<Label class="filterChosen" id="timeLabel"/>
+	        	<ImageView class="arrow" id="timeFold" image="images/Filter open.png"/>
 			</View>
-			<View id="distanceView" top="0" left="0" right="0" width="100%" height="50%" layout="vertical" visible="false">
-				<View id="firstRow1" width="100%" height="60" layout="horizontal">
-					<Button left="15" onClick="ten">10-20</Button>
-					<Button left="0" onClick="twenty">20-30</Button>
-					<Button left="0" onClick="thirty">30-40</Button>
+			<View class="separator"/>
+	        <View id="timeView" class="filterView">
+	        	<View layout="horizontal" height="30dp" top="10dp">
+	        		<Label left="16dp">Earliest Start Time:</Label>
+					<Label id="startTimeLabel" left="5dp"/>
 				</View>
-				<View id="secondRow1" top="20" width="100%" height="60" layout="horizontal">
-						<Button left="15" onClick="fourty">40-50</Button>
-						<Button left="0" onClick="fifty">50-60</Button>
-						<Button left="0" onClick="sixty">60-70</Button>
+		        <Slider id="startTimeSlider" top="0" left="16dp" width="85%" min="0" max="24" leftTrackImage="images/grey.png"/>
+	        	
+		        <Label top="0" height="80dp">To</Label>
+		        <View layout="horizontal" height="30dp" top="10dp">
+	        		<Label left="16dp">Latest Start Time:</Label>
+					<Label id="endTimeLabel" left="5dp" />
 				</View>
-				<View id="thirdRow1" top="20" width="100%" height="60" layout="horizontal">
-							<Button left="15" onClick="seventy">70-80</Button>
-							<Button left="0" onClick="eighty">80-90</Button>
-							<Button left="0" onClick="ninety">90+</Button>
+		        <Slider id="endTimeSlider" top="0" left="16dp" width="85%"  max="24" leftTrackImage="images/grey.png"/>
+	        </View>
+	        <View id="distanceRow" class="filterRow" onClick="hideDistanceView">
+				<Label class="filterOpt" id="distance">DISTANCE</Label>
+				<Label class="filterChosen" id="distanceLabel"/>
+				<ImageView class="arrow" id="distanceFold" image="images/Filter open.png"/>
+			</View>
+			<View class="separator"/>
+			<View id="distanceView" class="filterView" >
+				<View class="Row">
+					<Label class="Label1" id="ten" onClick="ten">10-20 miles</Label>
+					<Label class="Label2" id="twenty" onClick="twenty">20-30 miles</Label>
+				</View>
+				<View class="Row">
+					<Label class="Label3" id="thirty" onClick="thirty">30-40 miles</Label>
+					<Label class="Label4" id="fourty" onClick="fourty">40-50 miles</Label>
+				</View>
+				<View class="Row">
+					<Label class="Label5" id="fifty" onClick="fifty">50-60 miles</Label>
+					<Label class="Label6" id="sixty" onClick="sixty">60-70 miles</Label>
+				</View>
+				<View class="Row">
+					<Label class="Label7" id="seventy" onClick="seventy">70-80 miles</Label>
+					<Label class="Label8" id="eighty" onClick="eighty">80-90 miles</Label>
+				</View>
+				<View class="Row">
+					<Label class="Label9" id="ninety" onClick="ninety">90+ miles</Label>
 				</View>
 			</View>   
-				<Button top="0" id="reset" onClick="applyFilter">Apply</Button>
         </ScrollView>
+        <Button id="apply" onClick="applyFilter">Apply</Button>
 	</Window>
 </Alloy>

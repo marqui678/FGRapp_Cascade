@@ -14,15 +14,13 @@
 					<View id="firstLine">
 	                    <Label class="line1" bindId="title" id="title" />
 						<View id="secondLine">
-							<ImageView platform="ios" class="line2" width="20" image="Date.png"></ImageView>
-							<ImageView platform="android" class="line2" width="20" image="images/Date.png"></ImageView>
+							<ImageView class="line2" width="20" image="images/Date.png"></ImageView>
 							<Label class="line2" bindId="startDateTime" id="startDateTime" />
 							<View id="thirdLine">
-								<Label platform="ios" class="line3" bindId="paceNumber" id="paceNumber" backgroundImage="pace.png"/>
-								<Label platform="android" class="line3" bindId="paceNumber" id="paceNumber" backgroundImage="images/pace.png"/>
-					            <Label class="line3" bindId="pace" id="pace" />
-					            <Label class="line3" bindId="distanceOne" id="distanceOne"/>
-					            <Label class="line3" bindId="distanceTwo" id="distanceTwo"/>
+									<Label class="line3" bindId="paceNumber" id="paceNumber" backgroundImage="images/pace.png"/>
+						            <Label class="line3" bindId="pace" id="pace" />
+						            <Label class="line3" bindId="distanceOne" id="distanceOne"/>
+						            <Label class="line3" bindId="distanceTwo" id="distanceTwo"/>
 					        </View>
 					    </View>
                 	</View>

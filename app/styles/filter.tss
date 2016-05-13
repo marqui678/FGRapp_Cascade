@@ -1,10 +1,73 @@
 '#fwin':{
-	barColor: "#43B02A",
+	barColor: "#43B02A"
 }
 
-"Picker":{
-	width:Titanium.UI.FILL,
-	height:Titanium.UI.SIZE,
-	selectionIndicator:"true",
-	useSpinner:"true",
+".separator":{
+	width:"100%",
+	height:"1dp",
+	left:0,
+	borderWidth:"1dp",
+	borderColor:"#1A006F44"
+}
+".filterRow":{
+	 top:0, height:"50dp",left:0, layout:"horizontal",backgroundColor: "#F7F7F7", width:"100%"
+}
+
+".filterOpt":{
+	top:0,  left:"16dp", height:"50dp", width:"25%",color: "#2C2A29",font: { fontSize: 16 },
+}
+
+".filterChosen":{
+	top:"18dp", left:"5dp", height:"20dp", width:"60%", font: { fontSize: 12 }, color: "#646464", textAlign:"right"
+}
+
+".arrow":{
+	width:"5%", height:"20dp"
+}
+
+".filterView":{
+	top:0, width:"100%", left:0, height:"400dp", layout:"vertical", visible:false
+}
+".checkbox":{
+	left:"16dp"
+}
+".dayLabel":{
+	left:"10dp", height:"48dp"
+}
+".days":{
+	height:"48dp", width:"100%", layout:"horizontal"
+}
+".Row":{
+	height:"60dp", top:10, width:"100%",left:0
+}
+
+".Label1":{
+	 left:"4%", width:"41%", height:"60dp", backgroundColor:"#1A43B02A", textAlign:"center",font: {fontSize:14}
+}
+".Label2":{
+	 right:"10%", width:"41%", height:"60dp", backgroundColor:"#2643B02A", textAlign:"center",font: {fontSize:14}
+}
+".Label3":{
+	 left:"15dp", width:"166dp", height:"60dp", backgroundColor:"#3343B02A", textAlign:"center",font: {fontSize:14}
+}
+".Label4":{
+	 right:"40dp", width:"166dp", height:"60dp", backgroundColor:"#4043B02A", textAlign:"center",font: {fontSize:14}
+}
+".Label5":{
+	 left:"15dp", width:"166dp", height:"60dp", backgroundColor:"#4D43B02A", textAlign:"center",font: {fontSize:14}
+}
+".Label6":{
+	 right:"40dp", width:"166dp", height:"60dp", backgroundColor:"#5943B02A", textAlign:"center",font: {fontSize:14}
+}
+".Label7":{
+	left:"15dp", width:"166dp", height:"60dp", backgroundColor:"#6643B02A", textAlign:"center",font: {fontSize:14}
+}
+".Label8":{
+	 right:"40dp", width:"166dp", height:"60dp", backgroundColor:"#7343B02A", textAlign:"center",font: {fontSize:14}
+}
+".Label9":{
+	left:"15dp", right:"40dp", height:"60dp", backgroundColor:"#8043B02A", textAlign:"center",font: {fontSize:14}
+}
+'#apply':{
+	left:"0dp", bottom:"0dp", height:"50dp", width:"100%",backgroundColor:"#006F44", color:"white"
 }

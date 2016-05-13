@@ -1,39 +1,40 @@
 ".item":{
-	left:0, right:0, height: 128, layout:"vertical"
-},
+	left:0, right:0, height: "120dp", layout:"vertical"
+}
 
 '#lwin':{
-	barColor: "#43B02A",
+	barColor: "#43B02A"
 }
 
 
 "#firstLine": {
-	left: 16, right: 0, top:21,
+	left: "16dp", right: 0, 
 	layout: "horizontal"
 },
 
 ".line1": {
-	left: 0, right: 0, font: { fontSize: 20 }
+	left: 0, right: 0, height:"30dp", top:"12dp"
 },
 
 "#title": {
-	color: "#006F44", height:23
+	color: "#006F44", font: { fontSize: 20 }
 },
 
 '#secondLine': {
-	left: 0, right: 0, top:20,
+	left: 0, right: 0, 
 	layout: "horizontal"
 },
 
 ".line2": {
-	left: 0, right:0, font: { fontSize: 13 }
+	left: 0, right:0, font: { fontSize: 13 }, height:"25dp", top:"3dp"
 },
 "#paceNumber": {
-	color: 'white', font: { fontSize: 12 }, width:80, height:25
+	color: 'white', font: { fontSize: 12 }, left:0, width:"25%", height:"24dp"
 },
 "#pace": {
-	left: 5, color: 'black',font: { fontSize: 16 }, width: 150, height:25
+	left:"5dp", color: 'black',font: { fontSize: 16 }, width: "35%", height:"25dp"
 },
+
 '#thirdLine': {
 	left: 0, right: 0, top:0,
 	layout: "horizontal"
@@ -44,16 +45,20 @@
 },
 
 "#startDateTime": {
-	color: "black",font: { fontSize: 16 }, left:5
+	color: "black",font: { fontSize: 16 }, left:"5dp"
 },
 
 '#distanceOne':{
 	color: '#2C2A29',
 	font: { fontSize:36 },
-	left: 30
+	left: "5dp",
+	width:"19%",
+	textAlign:"right"
 }
 '#distanceTwo':{
 	color: '#646464',
 	font: { fontSize:16 },
-	left: 5
+	left:"5dp",
+	width:"12%",
+	textAlign:"right"
 }
