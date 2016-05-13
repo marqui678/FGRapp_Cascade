@@ -24,15 +24,18 @@ function parseXML(xml) {
         }
         if (void 0 !== model["fgrrss:distance"]) {
             var distance = model["fgrrss:distance"].match(/\d+./g);
-            null !== distance && distance.length >= 0 && (model["fgrrss:distance"] = Number(distance.join("")));
-            model["distance1"] = model["fgrrss:distance"].toString().substring(0, 2);
-            model["distance2"] = model["fgrrss:distance"].toFixed(2).toString().substring(2, 5) + "mi";
+            if (null !== distance && distance.length >= 0) {
+                model["fgrrss:distance"] = Number(distance.join(""));
+                model["distance1"] = Math.floor(model["fgrrss:distance"]);
+                var distanceStr = model["fgrrss:distance"].toFixed(2);
+                model["distance2"] = distanceStr.substring(distanceStr.length - 3) + "mi";
+            }
         }
         if (void 0 !== model["fgrrss:pace"]) {
             var paceNum = model["fgrrss:pace"].match(/\d+/g);
             model["lowestPace"] = null == paceNum ? paceNum : Number(paceNum[0]);
             model["largestPace"] = null == paceNum ? paceNum : Number(paceNum[paceNum.length - 1]);
-            model["paceNumber"] = model["lowestPace"] != model["largestPace"] ? model["lowestPace"] + "-" + model["largestPace"] + " mph" : model["lowestPace"] + " mph";
+            model["paceNumber"] = model["lowestPace"] != model["largestPace"] ? "   " + model["lowestPace"] + "-" + model["largestPace"] + " mph" : "   " + model["lowestPace"] + " mph";
             var paceTemp = model["fgrrss:pace"].split(":");
             var pace = [];
             pace[0] = paceTemp[0];
@@ -50,9 +53,19 @@ function parseXML(xml) {
             distance = true;
             break;
         }
-        if (distance && (0 == Alloy.Globals.startDateTime.length || Alloy.Globals.startDateTime[0] <= model["fgrrss:startDateTime"] && Alloy.Globals.startDateTime[1] >= model["fgrrss:startDateTime"])) if (0 == Alloy.Globals.pace.length) models.push(model); else for (var k = 0; k < Alloy.Globals.pace.length; k++) if (-1 != model["fgrrss:pace"].indexOf(Alloy.Globals.pace[k])) {
-            models.push(model);
+        var day = false;
+        if (0 == Alloy.Globals.day.length) day = true; else for (var x = 0; x < Alloy.Globals.dayID.length; x++) if (Alloy.Globals.dayID[x] == model["fgrrss:startDateTime"].getDay()) {
+            day = true;
             break;
+        }
+        var time = false;
+        (0 == Alloy.Globals.time.length || model["fgrrss:startDateTime"].getUTCHours() >= Alloy.Globals.time[0] && model["fgrrss:startDateTime"].getUTCHours() <= Alloy.Globals.time[1]) && (time = true);
+        if (distance && day && time) if (0 == Alloy.Globals.pace.length) models.push(model); else for (var k = 0; k < Alloy.Globals.pace.length; k++) if (-1 != model["fgrrss:pace"].indexOf(Alloy.Globals.pace[k])) {
+            if ("Strenuous" != Alloy.Globals.pace[k]) {
+                models.push(model);
+                break;
+            }
+            "Super" != model["fgrrss:pace"].substring(model["fgrrss:pace"].indexOf(Alloy.Globals.pace[k]) - 6, model["fgrrss:pace"].indexOf(Alloy.Globals.pace[k]) - 1) && models.push(model);
         }
     }
     return models;

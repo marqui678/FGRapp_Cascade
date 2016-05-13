@@ -4,6 +4,8 @@ var dayView = false;
 var timeView = false;
 var distanceView = false;
 $.endTimeLabel.text = "";
+
+var args = $.args;
 (function constructor(args) {
 	hideVertical($.paceView);
 	hideVertical($.dayView);
