@@ -37,13 +37,13 @@ function addDay(day,id){
 	Alloy.Globals.day.push(day);
 	Alloy.Globals.dayID.push(id);
 	$.dayLabel.text = Alloy.Globals.day.toString();
-	$["check"+day].image = "images/checked.png";
+	$["check"+day].image = "/images/checked.png";
 }
 function removeDay(day,id){
 	Alloy.Globals.day.splice(Alloy.Globals.day.indexOf(day),1);
 	Alloy.Globals.dayID.splice(Alloy.Globals.dayID.indexOf(id),1);
 	$.dayLabel.text = Alloy.Globals.day.toString();
-	$["check"+day].image = "images/unchecked.png";
+	$["check"+day].image = "/images/unchecked.png";
 }
 function addDistance(min,max,id){
 	var distance = [min,max];
@@ -278,8 +278,8 @@ function superStrenuous(){
 }
 
 $.startTimeSlider.addEventListener('touchend', function(e){
-    this.value = Math.round(e.value);
-    $.startTimeLabel.text = this.value + ":00";
+   // this.value = Math.round(e.value);
+    $.startTimeLabel.text = e.value + ":00";
     $.endTimeSlider.min= this.value;
     if ($.endTimeSlider.value < $.endTimeSlider.min){
     	$.endTimeSlider.value = $.endTimeSlider.min;
@@ -289,13 +289,13 @@ $.startTimeSlider.addEventListener('touchend', function(e){
 });
 
 $.startTimeSlider.addEventListener('change', function(e) {
-    $.startTimeLabel.text = Math.round(e.value) + ":00";
+   // $.startTimeLabel.text = Math.round(e.value) + ":00";
     
 });
 
 $.endTimeSlider.addEventListener('touchend', function(e){
-    this.value = Math.round(e.value);
-    $.endTimeLabel.text = this.value + ":00";
+   // this.value = Math.round(e.value);
+    $.endTimeLabel.text = e.value + ":00";
     Alloy.Globals.time[1] = this.value;
     $.timeLabel.text = $.startTimeLabel.text + " to " + $.endTimeLabel.text;
 });
@@ -307,36 +307,36 @@ function hidePaceView(){
 	hideView($.paceView,paceView);
 	paceView = !paceView;
 	if (paceView){
-		$.paceFold.image = "images/Filter opened.png";
+		$.paceFold.image = "/images/Filter opened.png";
 	} else{
-		$.paceFold.image = "images/Filter open.png";
+		$.paceFold.image = "/images/Filter open.png";
 	}
 }
 function hideDayView(){
 	hideView($.dayView,dayView);
 	dayView = !dayView;
 	if (dayView){
-		$.dayFold.image = "images/Filter opened.png";
+		$.dayFold.image = "/images/Filter opened.png";
 	} else{
-		$.dayFold.image = "images/Filter open.png";
+		$.dayFold.image = "/images/Filter open.png";
 	}
 }
 function hideTimeView(){
 	hideView($.timeView,timeView);
 	timeView = !timeView;
 	if (timeView){
-		$.timeFold.image = "images/Filter opened.png";
+		$.timeFold.image = "/images/Filter opened.png";
 	} else{
-		$.timeFold.image = "images/Filter open.png";
+		$.timeFold.image = "/images/Filter open.png";
 	}
 }
 function hideDistanceView(){
 	hideView($.distanceView,distanceView);
 	distanceView = !distanceView;
 	if (distanceView){
-		$.distanceFold.image = "images/Filter opened.png";
+		$.distanceFold.image = "/images/Filter opened.png";
 	} else{
-		$.distanceFold.image = "images/Filter open.png";
+		$.distanceFold.image = "/images/Filter open.png";
 	}
 }
 function hideView(View,flag){
@@ -380,7 +380,7 @@ function initiate(){
 	} else{
 		$.dayLabel.text = Alloy.Globals.day.toString();
 		for (var i=0; i<Alloy.Globals.day.length; i++){
-			$["check"+Alloy.Globals.day[i]].image = "images/checked.png";
+			$["check"+Alloy.Globals.day[i]].image = "/images/checked.png";
 		}
 	}
 	$.distanceLabel.text = "";

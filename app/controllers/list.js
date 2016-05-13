@@ -8,7 +8,6 @@ var moment = require('alloy/moment');
 
 	// use strict mode for this function scope
 	'use strict';
-	
 	// check for network	
 	if(Titanium.Network.networkType == Titanium.Network.NETWORK_NONE){
 	     alert('Your device is not online. Please check your network and try again.');
@@ -41,6 +40,7 @@ function refresh(e) {
 		if (OS_IOS) {
 			$.refreshControl.endRefreshing();
 		}
+		$.search.blur();
 	}
 
 	// MobileWeb can't load the remote file because we don't have access control set-up
