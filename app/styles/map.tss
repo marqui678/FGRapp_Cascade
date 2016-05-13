@@ -91,24 +91,24 @@
 },
 
 ".rideDistance": {
-	bottom: "16dp",
-	right: "16dp",
+	bottom: "10dp",
+	right: "6dp",
 	width: Ti.UI.SIZE,
 	height: "42dp",
-	layout: "horizontal",
 },
 
 "#distanceOne": {
 	font: { fontSize: 36 },
 	textAlign: Ti.UI.TEXT_ALIGNMENT_RIGHT,
-	right: "0dp",
+	right: "50dp",
 	bottom: "0dp"
 },
 
 "#distanceTwo": {
 	right: "0dp",
 	height: "18dp",
-	bottom: "0dp",
+	bottom: "4dp",
+	width:'50'
 },
 
 "#toolBar": {
