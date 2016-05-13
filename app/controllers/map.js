@@ -146,8 +146,8 @@ function createAnnotationsWithModels(models, customAnnotationView) {
 			latitude: model.get("latitude"),
 	    	longitude: model.get("longitude"),
 	    	title: model.get("title"),
-    		//image:'/images/ic_place_green.png',
-    		customView: customAnnotationView,
+    		image:'/images/ic_place_green.png',
+    		//customView: customAnnotationView,
     		myid:model.get("link"),
     		id: "anno_" + i,
 		});
