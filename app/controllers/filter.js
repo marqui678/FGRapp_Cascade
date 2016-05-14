@@ -418,6 +418,21 @@ function initiate(){
 function resetFilter(){
 	$.startTimeSlider.value = 0;
 	$.endTimeSlider.value = 0;
+	if (Alloy.Globals.paceID.length != 0){
+		for (var i=0; i<Alloy.Globals.paceID.length;i++){
+			remove($[Alloy.Globals.paceID[i]]);
+		}
+	}
+	if (Alloy.Globals.distanceID.length != 0){
+		for (var i=0; i<Alloy.Globals.distanceID.length;i++){
+			remove($[Alloy.Globals.distanceID[i]]);
+		}
+	}
+	if (Alloy.Globals.day.length != 0){
+		for (var i=0; i<Alloy.Globals.day.length; i++){
+			$["check"+Alloy.Globals.day[i]].image = "/images/unchecked.png";
+		}
+	}
 	Alloy.Globals.day = [];
 	Alloy.Globals.dayID = [];
 	Alloy.Globals.time = [];
