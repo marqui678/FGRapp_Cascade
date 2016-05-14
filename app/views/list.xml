@@ -3,6 +3,11 @@
 	<!-- create global instance of collection we'll bind -->	
 	<Collection src="feed"/>
 	<Window id="lwin" title="Free Group Rides">
+		<!--menu button-->
+		<LeftNavButton platform=ios>
+        	<Button onClick="openMenu" image="images/ic_menu_light.png"/>
+        </LeftNavButton>
+    	<Require type="widget" src="com.alcoapps.drawermenu" id="drawermenu"/>
 		<!-- Android: Add MenuItem for refresh -->		
 		<ListView id="listView" platform="ios,android" defaultItemTemplate="template" onItemclick="select">	
 			<!-- iOS RefreshControl -->

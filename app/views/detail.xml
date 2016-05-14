@@ -7,35 +7,54 @@
 			<Module id="mapview" module="ti.map" method="createView" platform="android,ios,windows" />
 			<View ns="Ti.Map" id="mapview" platform="mobileweb"/>
 			<View id = 'textOnMap'>
-				<ImageView platform="ios" id='dateImage' image="Date.png"></ImageView>
-				<Label id = 'startDateTime'/>
-				<Label id="distance1"/>
-				<Label id="distance2"/>
-				<View><Label platform="ios" id="paceNum" backgroundImage="pace.png"/></View>
-				<Label platform="android" id="paceNum" backgroundImage="images/pace.png"/>
-				<Label id="paceNum"/>
-				<Label id="pace"/>
-			</View>
-			
-			<View id = 'descriptioinView'>
-				<Label id = 'descriptionLabel'>Description</Label>
-				<Label id = 'description'/>
-				<Button onClick="select" id = 'readMore'>Read more on cascade.org</Button>
-			</View>
-			
-			<View id='addressView'>
-				<Label id='locationLabel'>Start location</Label>
-				<Label id = 'address1' />
-				<Label id = 'address2' />
-				<Label id = 'directions' onClick="openMap">Get directions</Label>
+				<View  layout="vertical">
+					<View id='dateView' layout="horizontal" height= "25dp">
+						<ImageView id='dateImage' image="/images/Date.png" width="20"></ImageView>
+						<Label id = 'startDateTime' class="alignLeft lightText"/>
+					</View>
+					
+					
+					<View id='paceView' layout="horizontal">
+						<Label id="paceNum" backgroundImage="/images/pace.png"/>
+						<Label id="pace"/>
+					</View>
+				</View>
+				<View id='distanceView'>
+					<Label id="distance1"/>
+					<Label id="distance2"/>
+				</View>
 			</View>
 			
 			
-			<View id='contactView'>
-				<Label id='leaderLabel'>Ride Leader(s)</Label>
-				<Label id = 'leader'/>
-				<Label id = 'email' onClick="emailContact"/>
-				<Label id = 'phone' onClick="callContact"/>
+			<View id = 'underMap' layout="vertical">
+				<View id = 'descriptioinView' >
+					<Label id = 'descriptionLabel' >Description</Label>
+					<Label id = 'description'/>
+					<Label onClick="select" id = 'readMore'>Read more</Label>
+				</View>
+				
+				<TableView  id='addressAndContact' scrollable="false" touchEnabled="false" backgroundColor='#F7F7F7'>
+					<TableViewRow>
+							<Label id='locationLabel'>Start location</Label>
+							<Label id = 'directions' onClick="openMap">Get directions</Label>							
+					</TableViewRow>
+					<TableViewRow>
+						<Label id = 'address1' height="18dp"/>
+					</TableViewRow>
+					<TableViewRow>
+						<Label id = 'address2' height="40dp"/>
+					</TableViewRow>
+					<TableViewRow>
+						<Label id='leaderLabel'>Ride Leader(s)</Label>
+						<Label id = 'leader'/>
+					</TableViewRow>
+					<TableViewRow>
+						<Label id = 'email' onClick="emailContact"/>
+					</TableViewRow>
+					<TableViewRow>
+						<Label id = 'phone' onClick="callContact"/>
+					</TableViewRow>
+				</TableView>
 			</View>
 			
 		</ScrollView>

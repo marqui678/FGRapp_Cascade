@@ -5,17 +5,15 @@
 			<TableViewRow class="menurowcontainer" rowId="1"  backgroundColor="#43B02A">
 				<View class="menurow">
 					<View class="iconcontainer">
-						<ImageView class="icon" image="/ic_action_not_important.png"/>
 					</View>
-					<Label class="menucaption">Pace classification</Label>
+					<Label class="menucaption" color='#F7F7F7'>Pace classification</Label>
 				</View>
 			</TableViewRow>
 			<TableViewRow class="menurowcontainer" rowId="2" backgroundColor="#43B02A">
 				<View class="menurow">
 					<View class="iconcontainer">
-						<ImageView class="icon" image="/ic_action_not_important.png"/>
 					</View>
-					<Label class="menucaption">About</Label>
+					<Label class="menucaption" color='#F7F7F7'>About</Label>
 				</View>
 			</TableViewRow>
 		</TableView>
