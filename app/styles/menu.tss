@@ -1,7 +1,8 @@
 "#menu":{
 	height:Ti.UI.FILL, 
 	width:Ti.UI.FILL,
-	backgroundColor: "#43B02A"
+	backgroundColor: "#43B02A",
+	font: {fontSize: 20}
 }
 
 ".menubanner":{
@@ -45,5 +46,6 @@
 ".menucaption":{
 	 width:Ti.UI.FILL,
 	 height:Ti.UI.FILL,
-	 left:"10"
+	 left:"10",
+	 font: {fontSize: 20}
 }

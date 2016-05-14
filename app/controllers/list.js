@@ -152,7 +152,7 @@ $.search.addEventListener('cancel', function(){
 
 //Menu
 var thisWin=$.lwin;
-var main=$.listView;
+var main=$.mainView;
 
 // store drawermenu and main in global variable for easy access from menu
 Alloy.CFG.drawermenu=$.drawermenu;
@@ -175,15 +175,13 @@ thisWin.addEventListener('open',function(e){
 	});
 	
 	if (OS_IOS) {
-		actionBarHelper.setIcon('/images/ic_menu_light.png');
-		actionBarHelper.setTitle('Map');
+		actionBarHelper.setIcon('/images/menu_light.png');
 		actionBarHelper.displayHomeAsUp(false);
 	}
 	
 	if (OS_ANDROID) {
 		var actionBarExtra = require('com.alcoapps.actionbarextras');
-		actionBarExtra.title = "Map";
-		actionBarExtra.setHomeAsUpIcon("/images/ic_menu_light.png");
+		actionBarExtra.setHomeAsUpIcon("/images/menu_light.png");
 		actionBarHelper.displayHomeAsUp(true);
 	}
 });

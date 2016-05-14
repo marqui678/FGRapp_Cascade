@@ -1,13 +1,18 @@
 ".item":{
 	left:0, right:0, height: "120dp", layout:"vertical"
-}
+},
 
 '#lwin':{
 	barColor: "#43B02A",
 	height: Ti.UI.FILL,
 	windowSoftInputMode: Titanium.UI.Android.SOFT_INPUT_ADJUST_PAN
-}
+},
 
+"#mainView": {
+	height: Ti.UI.FILL,
+	width: Ti.UI.FILL,
+	backgroundColor: "#FFFFFF"
+}
 
 "#firstLine": {
 	left: "16dp", right: 0, 
