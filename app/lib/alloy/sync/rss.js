@@ -123,11 +123,16 @@ function parseXML(xml) {
 			var paceNum = model["fgrrss:pace"].match(/\d+/g);			
 			model["lowestPace"] = paceNum == null ? paceNum: Number(paceNum[0]);
 			model["largestPace"] = paceNum == null ? paceNum: Number(paceNum[paceNum.length-1]);
-			if (model["lowestPace"] != model["largestPace"]){
-				model["paceNumber"] = "   " + model["lowestPace"] + "-" + model["largestPace"] + " mph";
+			if (model["lowestPace"] == null){
+				model["paceNumber"] = "   flexible";
 			} else{
-				model["paceNumber"] = "   " + model["lowestPace"] + " mph";
+				if (model["lowestPace"] != model["largestPace"]){
+					model["paceNumber"] = "   " + model["lowestPace"] + "-" + model["largestPace"] + " mph";
+				} else{
+					model["paceNumber"] = "   " + model["lowestPace"] + " mph";
+				}
 			}
+			
 			var paceTemp = model["fgrrss:pace"].split(":");
 			var pace = [];
 			pace[0] = paceTemp[0];

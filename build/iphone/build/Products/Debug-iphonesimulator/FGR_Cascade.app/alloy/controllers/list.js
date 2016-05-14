@@ -8,80 +8,85 @@ function __processArg(obj, key) {
 }
 
 function Controller() {
-    function __alloyId50(e) {
+    function __alloyId93(e) {
         if (e && e.fromAdapter) return;
-        var opts = __alloyId50.opts || {};
-        var models = __alloyId49.models;
+        var opts = __alloyId93.opts || {};
+        var models = __alloyId92.models;
         var len = models.length;
-        var __alloyId45 = [];
+        var __alloyId88 = [];
         for (var i = 0; len > i; i++) {
-            var __alloyId46 = models[i];
-            __alloyId46.__transform = transform(__alloyId46);
-            var __alloyId48 = {
+            var __alloyId89 = models[i];
+            __alloyId89.__transform = transform(__alloyId89);
+            var __alloyId91 = {
                 properties: {
                     itemId: _.template("{m.link}", {
-                        m: __alloyId46.__transform
+                        m: __alloyId89.__transform
                     }, {
                         interpolate: /\{([\s\S]+?)\}/g
                     }),
                     searchableText: _.template("{m.title}", {
-                        m: __alloyId46.__transform
+                        m: __alloyId89.__transform
                     }, {
                         interpolate: /\{([\s\S]+?)\}/g
                     })
                 },
                 distanceTwo: {
                     text: _.template("{m.distanceTwo}", {
-                        m: __alloyId46.__transform
+                        m: __alloyId89.__transform
                     }, {
                         interpolate: /\{([\s\S]+?)\}/g
                     })
                 },
                 title: {
                     text: _.template("{m.title}", {
-                        m: __alloyId46.__transform
+                        m: __alloyId89.__transform
                     }, {
                         interpolate: /\{([\s\S]+?)\}/g
                     })
                 },
                 pace: {
                     text: _.template("{m.pace}", {
-                        m: __alloyId46.__transform
+                        m: __alloyId89.__transform
                     }, {
                         interpolate: /\{([\s\S]+?)\}/g
                     })
                 },
                 paceNumber: {
                     text: _.template("{m.paceNumber}", {
-                        m: __alloyId46.__transform
+                        m: __alloyId89.__transform
                     }, {
                         interpolate: /\{([\s\S]+?)\}/g
                     })
                 },
                 startDateTime: {
                     text: _.template("{m.startDateTime}", {
-                        m: __alloyId46.__transform
+                        m: __alloyId89.__transform
                     }, {
                         interpolate: /\{([\s\S]+?)\}/g
                     })
                 },
                 distanceOne: {
                     text: _.template("{m.distanceOne}", {
-                        m: __alloyId46.__transform
+                        m: __alloyId89.__transform
                     }, {
                         interpolate: /\{([\s\S]+?)\}/g
                     })
                 }
             };
-            __alloyId45.push(__alloyId48);
+            __alloyId88.push(__alloyId91);
         }
-        opts.animation ? $.__views.listSection.setItems(__alloyId45, opts.animation) : $.__views.listSection.setItems(__alloyId45);
+        opts.animation ? $.__views.listSection.setItems(__alloyId88, opts.animation) : $.__views.listSection.setItems(__alloyId88);
     }
     function refresh(e) {
         "use strict";
         function afterFetch() {
             $.refreshControl.endRefreshing();
+            $.search.blur();
+            Alloy.Globals.setDistanceToLocation(Alloy.Collections.feed.models, Alloy.Globals.regionCenter);
+            Alloy.Collections.feed.setSortField("startDateTime", "ASC");
+            Alloy.Collections.feed.sort();
         }
+        initRegionCenter();
         true && !e && $.refreshControl.beginRefreshing();
         var url = Alloy.CFG.url;
         Alloy.Collections.feed.fetch({
@@ -89,6 +94,31 @@ function Controller() {
             success: afterFetch,
             error: afterFetch
         });
+    }
+    function initRegionCenter() {
+        Titanium.Geolocation.hasLocationPermissions(Titanium.Geolocation.AUTHORIZATION_ALWAYS) ? setGeoLoc() : Titanium.Geolocation.requestLocationPermissions(Titanium.Geolocation.AUTHORIZATION_ALWAYS, function(result) {
+            if (result.success) setGeoLoc(); else {
+                alert("Do not have Geolocation permission. Use default location");
+                setRegionCenter(Alloy.Globals.defaultLocation);
+            }
+        });
+    }
+    function setGeoLoc() {
+        if (false === Ti.Geolocation.locationServicesEnabled) {
+            alert("The device has geo turned off. Use default location.");
+            setRegionCenter(Alloy.Globals.defaultLocation);
+        }
+        Titanium.Geolocation.getCurrentPosition(function(e) {
+            Ti.Geolocation.accuracy = Ti.Geolocation.ACCURACY_HIGH;
+            if (e.error) {
+                alert("Current location not found. Use default location");
+                setRegionCenter(Alloy.Globals.defaultLocation);
+            } else setRegionCenter(e.coords);
+        });
+    }
+    function setRegionCenter(centerLoc) {
+        Alloy.Globals.regionCenter.latitude = centerLoc.latitude;
+        Alloy.Globals.regionCenter.longitude = centerLoc.longitude;
     }
     function transform(model) {
         "use strict";
@@ -155,32 +185,33 @@ function Controller() {
     $.__views.search = Ti.UI.createSearchBar({
         id: "search"
     });
-    var __alloyId27 = {};
-    var __alloyId30 = [];
-    var __alloyId31 = {
+    var __alloyId70 = {};
+    var __alloyId73 = [];
+    var __alloyId74 = {
         type: "Ti.UI.View",
         childTemplates: function() {
-            var __alloyId32 = [];
-            var __alloyId33 = {
+            var __alloyId75 = [];
+            var __alloyId76 = {
                 type: "Ti.UI.Label",
                 bindId: "title",
                 properties: {
                     color: "#006F44",
                     left: 0,
                     right: 0,
+                    height: "30dp",
+                    top: "12dp",
                     font: {
                         fontSize: 20
                     },
-                    height: 23,
                     bindId: "title"
                 }
             };
-            __alloyId32.push(__alloyId33);
-            var __alloyId34 = {
+            __alloyId75.push(__alloyId76);
+            var __alloyId77 = {
                 type: "Ti.UI.View",
                 childTemplates: function() {
-                    var __alloyId35 = [];
-                    var __alloyId37 = {
+                    var __alloyId78 = [];
+                    var __alloyId80 = {
                         type: "Ti.UI.ImageView",
                         properties: {
                             left: 0,
@@ -188,30 +219,32 @@ function Controller() {
                             font: {
                                 fontSize: 13
                             },
-                            width: 20,
-                            image: "Date.png"
+                            top: "12dp",
+                            width: "20dp",
+                            image: "/images/Date.png"
                         }
                     };
-                    __alloyId35.push(__alloyId37);
-                    var __alloyId38 = {
+                    __alloyId78.push(__alloyId80);
+                    var __alloyId81 = {
                         type: "Ti.UI.Label",
                         bindId: "startDateTime",
                         properties: {
                             color: "black",
-                            left: 5,
+                            left: "5dp",
                             right: 0,
                             font: {
                                 fontSize: 16
                             },
+                            top: "12dp",
                             bindId: "startDateTime"
                         }
                     };
-                    __alloyId35.push(__alloyId38);
-                    var __alloyId39 = {
+                    __alloyId78.push(__alloyId81);
+                    var __alloyId82 = {
                         type: "Ti.UI.View",
                         childTemplates: function() {
-                            var __alloyId40 = [];
-                            var __alloyId41 = {
+                            var __alloyId83 = [];
+                            var __alloyId84 = {
                                 type: "Ti.UI.Label",
                                 bindId: "paceNumber",
                                 properties: {
@@ -220,55 +253,65 @@ function Controller() {
                                     font: {
                                         fontSize: 12
                                     },
-                                    width: 80,
-                                    height: 25,
+                                    width: "25%",
+                                    height: "20dp",
+                                    bottom: 0,
                                     bindId: "paceNumber",
-                                    backgroundImage: "pace.png"
+                                    backgroundImage: "/images/pace.png"
                                 }
                             };
-                            __alloyId40.push(__alloyId41);
-                            var __alloyId42 = {
+                            __alloyId83.push(__alloyId84);
+                            var __alloyId85 = {
                                 type: "Ti.UI.Label",
                                 bindId: "pace",
                                 properties: {
                                     color: "black",
-                                    left: 5,
+                                    left: "5dp",
                                     font: {
                                         fontSize: 16
                                     },
-                                    width: 150,
-                                    height: 30,
+                                    width: "35%",
+                                    height: "20dp",
+                                    bottom: 0,
                                     bindId: "pace"
                                 }
                             };
-                            __alloyId40.push(__alloyId42);
-                            var __alloyId43 = {
+                            __alloyId83.push(__alloyId85);
+                            var __alloyId86 = {
                                 type: "Ti.UI.Label",
                                 bindId: "distanceOne",
                                 properties: {
                                     color: "#2C2A29",
-                                    left: 30,
+                                    left: "5dp",
                                     font: {
                                         fontSize: 36
                                     },
+                                    width: "21%",
+                                    height: "20dp",
+                                    textAlign: "right",
+                                    padding: 0,
+                                    bottom: 0,
                                     bindId: "distanceOne"
                                 }
                             };
-                            __alloyId40.push(__alloyId43);
-                            var __alloyId44 = {
+                            __alloyId83.push(__alloyId86);
+                            var __alloyId87 = {
                                 type: "Ti.UI.Label",
                                 bindId: "distanceTwo",
                                 properties: {
                                     color: "#646464",
-                                    left: 5,
+                                    left: "5dp",
                                     font: {
                                         fontSize: 16
                                     },
+                                    width: "11%",
+                                    textAlign: "right",
+                                    bottom: 0,
                                     bindId: "distanceTwo"
                                 }
                             };
-                            __alloyId40.push(__alloyId44);
-                            return __alloyId40;
+                            __alloyId83.push(__alloyId87);
+                            return __alloyId83;
                         }(),
                         properties: {
                             left: 0,
@@ -277,48 +320,46 @@ function Controller() {
                             layout: "horizontal"
                         }
                     };
-                    __alloyId35.push(__alloyId39);
-                    return __alloyId35;
+                    __alloyId78.push(__alloyId82);
+                    return __alloyId78;
                 }(),
                 properties: {
                     left: 0,
                     right: 0,
-                    top: 20,
                     layout: "horizontal"
                 }
             };
-            __alloyId32.push(__alloyId34);
-            return __alloyId32;
+            __alloyId75.push(__alloyId77);
+            return __alloyId75;
         }(),
         properties: {
-            left: 16,
+            left: "16dp",
             right: 0,
-            top: 21,
             layout: "horizontal"
         }
     };
-    __alloyId30.push(__alloyId31);
-    var __alloyId29 = {
+    __alloyId73.push(__alloyId74);
+    var __alloyId72 = {
         properties: {
             left: 0,
             right: 0,
-            height: 128,
+            height: "120dp",
             layout: "vertical",
             name: "template"
         },
-        childTemplates: __alloyId30
+        childTemplates: __alloyId73
     };
-    __alloyId27["template"] = __alloyId29;
+    __alloyId70["template"] = __alloyId72;
     $.__views.listSection = Ti.UI.createListSection({
         id: "listSection"
     });
-    var __alloyId49 = Alloy.Collections["feed"] || feed;
-    __alloyId49.on("fetch destroy change add remove reset", __alloyId50);
-    var __alloyId51 = [];
-    __alloyId51.push($.__views.listSection);
+    var __alloyId92 = Alloy.Collections["feed"] || feed;
+    __alloyId92.on("fetch destroy change add remove reset", __alloyId93);
+    var __alloyId94 = [];
+    __alloyId94.push($.__views.listSection);
     $.__views.listView = Ti.UI.createListView({
-        sections: __alloyId51,
-        templates: __alloyId27,
+        sections: __alloyId94,
+        templates: __alloyId70,
         refreshControl: $.__views.refreshControl,
         searchView: $.__views.search,
         id: "listView",
@@ -326,38 +367,47 @@ function Controller() {
     });
     $.__views.lwin.add($.__views.listView);
     select ? $.addListener($.__views.listView, "itemclick", select) : __defers["$.__views.listView!itemclick!select"] = true;
-    $.__views.__alloyId52 = Ti.UI.createButton({
+    $.__views.__alloyId95 = Ti.UI.createButton({
         title: "To map",
         top: 0,
         right: 0,
-        id: "__alloyId52"
+        id: "__alloyId95"
     });
-    $.__views.lwin.add($.__views.__alloyId52);
-    openMapview ? $.addListener($.__views.__alloyId52, "click", openMapview) : __defers["$.__views.__alloyId52!click!openMapview"] = true;
-    $.__views.__alloyId53 = Ti.UI.createButton({
+    $.__views.lwin.add($.__views.__alloyId95);
+    openMapview ? $.addListener($.__views.__alloyId95, "click", openMapview) : __defers["$.__views.__alloyId95!click!openMapview"] = true;
+    $.__views.bottomBar = Ti.UI.createView({
+        height: "48",
+        backgroundColor: "#F7F7F7",
+        bottom: 0,
+        id: "bottomBar"
+    });
+    $.__views.lwin.add($.__views.bottomBar);
+    $.__views.__alloyId96 = Ti.UI.createButton({
         title: "Filter",
-        bottom: 0,
-        right: 0,
-        id: "__alloyId53"
+        color: "#43B02A",
+        right: 5,
+        backgroundColor: "#F7F7F7",
+        id: "__alloyId96"
     });
-    $.__views.lwin.add($.__views.__alloyId53);
-    filter ? $.addListener($.__views.__alloyId53, "click", filter) : __defers["$.__views.__alloyId53!click!filter"] = true;
-    $.__views.__alloyId54 = Ti.UI.createButton({
+    $.__views.bottomBar.add($.__views.__alloyId96);
+    filter ? $.addListener($.__views.__alloyId96, "click", filter) : __defers["$.__views.__alloyId96!click!filter"] = true;
+    $.__views.__alloyId97 = Ti.UI.createButton({
         title: "Sort",
-        bottom: 0,
-        left: 0,
-        id: "__alloyId54"
+        color: "#43B02A",
+        left: 5,
+        backgroundColor: "#F7F7F7",
+        id: "__alloyId97"
     });
-    $.__views.lwin.add($.__views.__alloyId54);
-    openSortView ? $.addListener($.__views.__alloyId54, "click", openSortView) : __defers["$.__views.__alloyId54!click!openSortView"] = true;
+    $.__views.bottomBar.add($.__views.__alloyId97);
+    openSortView ? $.addListener($.__views.__alloyId97, "click", openSortView) : __defers["$.__views.__alloyId97!click!openSortView"] = true;
     exports.destroy = function() {
-        __alloyId49 && __alloyId49.off("fetch destroy change add remove reset", __alloyId50);
+        __alloyId92 && __alloyId92.off("fetch destroy change add remove reset", __alloyId93);
     };
     _.extend($, $.__views);
     var moment = require("alloy/moment");
     !function() {
         "use strict";
-        refresh();
+        Titanium.Network.networkType == Titanium.Network.NETWORK_NONE ? alert("Your device is not online. Please check your network and try again.") : refresh();
     }(arguments[0] || {});
     Alloy.Globals.transform = transform;
     $.search.addEventListener("cancel", function() {
@@ -365,9 +415,9 @@ function Controller() {
     });
     __defers["$.__views.refreshControl!refreshstart!refresh"] && $.addListener($.__views.refreshControl, "refreshstart", refresh);
     __defers["$.__views.listView!itemclick!select"] && $.addListener($.__views.listView, "itemclick", select);
-    __defers["$.__views.__alloyId52!click!openMapview"] && $.addListener($.__views.__alloyId52, "click", openMapview);
-    __defers["$.__views.__alloyId53!click!filter"] && $.addListener($.__views.__alloyId53, "click", filter);
-    __defers["$.__views.__alloyId54!click!openSortView"] && $.addListener($.__views.__alloyId54, "click", openSortView);
+    __defers["$.__views.__alloyId95!click!openMapview"] && $.addListener($.__views.__alloyId95, "click", openMapview);
+    __defers["$.__views.__alloyId96!click!filter"] && $.addListener($.__views.__alloyId96, "click", filter);
+    __defers["$.__views.__alloyId97!click!openSortView"] && $.addListener($.__views.__alloyId97, "click", openSortView);
     _.extend($, exports);
 }
 

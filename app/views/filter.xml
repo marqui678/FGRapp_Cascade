@@ -14,24 +14,24 @@
 			</View>
 			<View class="separator"/>
 			<View class="filterView" id="paceView">
-				<View class="Row">
-					<Label class="Label1" id="easy" onClick="easy">Easy \n Under 10 mph</Label>
-					<Label class="Label2" id="leisurely" onClick="leisurely">Leisurely \n 10 - 12 mph</Label>
+				<View class="paceRow">
+					<Label class="Label1 LabelSize1" id="easy" onClick="easy">Easy \n Under 10 mph</Label>
+					<Label class="Label2 LabelSize2" id="leisurely" onClick="leisurely">Leisurely \n 10 - 12 mph</Label>
 				</View>
-				<View class="Row" >
-					<Label class="Label3" id="steady" onClick="steady">Steady \n 12 - 14 mph</Label>
-					<Label class="Label4" id="moderate" onClick="moderate">Moderate \n 14 - 16 mph</Label>	
+				<View class="paceRow" >
+					<Label class="Label3 LabelSize1" id="steady" onClick="steady">Steady \n 12 - 14 mph</Label>
+					<Label class="Label4 LabelSize2" id="moderate" onClick="moderate">Moderate \n 14 - 16 mph</Label>	
 				</View>
-				<View class="Row">
-					<Label class="Label5" id="brisk" onClick="brisk">Brisk \n 16 - 18 mph</Label>
-					<Label class="Label6" id="vigorous" onClick="vigorous">Vigorous \n 18 - 20 mph</Label>
+				<View class="paceRow">
+					<Label class="Label5 LabelSize1" id="brisk" onClick="brisk">Brisk \n 16 - 18 mph</Label>
+					<Label class="Label6 LabelSize2" id="vigorous" onClick="vigorous">Vigorous \n 18 - 20 mph</Label>
 				</View>
-				<View class="Row">
-					<Label class="Label7" id="strenuous" onClick="strenuous">Strenuous \n 20 - 22 mph</Label>
-					<Label class="Label8" id="superStrenuous" onClick="superStrenuous">Super Strenuous \n 22+ mph</Label>
+				<View class="paceRow">
+					<Label class="Label7 LabelSize1" id="strenuous" onClick="strenuous">Strenuous \n 20 - 22 mph</Label>
+					<Label class="Label8 LabelSize2" id="superStrenuous" onClick="superStrenuous">Super Strenuous \n 22+ mph</Label>
 				</View>
-				<View class="Row">
-					<Label class="Label9" id="selfPaced" onClick="selfPaced">Self Paced</Label>
+				<View class="paceRow">
+					<Label class="Label9 LabelSize5" id="selfPaced" onClick="selfPaced">Self Paced</Label>
 				</View>
 			</View>   
 			<View id="dayRow" class="filterRow" onClick="hideDayView">
@@ -97,24 +97,28 @@
 			</View>
 			<View class="separator"/>
 			<View id="distanceView" class="filterView" >
-				<View class="Row">
-					<Label class="Label1" id="ten" onClick="ten">10-20 miles</Label>
-					<Label class="Label2" id="twenty" onClick="twenty">20-30 miles</Label>
+				<View class="distanceRow">
+					<Label class="Label1 LabelSize3" id="zero" onClick="zero">Under 10 miles</Label>
+					<Label class="Label2 LabelSize4" id="ten" onClick="ten">10-20 miles</Label>
 				</View>
-				<View class="Row">
-					<Label class="Label3" id="thirty" onClick="thirty">30-40 miles</Label>
-					<Label class="Label4" id="fourty" onClick="fourty">40-50 miles</Label>
+				<View class="distanceRow">
+					<Label class="Label3 LabelSize3" id="twenty" onClick="twenty">20-30 miles</Label>
+					<Label class="Label4 LabelSize4" id="thirty" onClick="thirty">30-40 miles</Label>
+
 				</View>
-				<View class="Row">
-					<Label class="Label5" id="fifty" onClick="fifty">50-60 miles</Label>
-					<Label class="Label6" id="sixty" onClick="sixty">60-70 miles</Label>
+				<View class="distanceRow">
+					<Label class="Label5 LabelSize3" id="fourty" onClick="fourty">40-50 miles</Label>
+					<Label class="Label6 LabelSize4" id="fifty" onClick="fifty">50-60 miles</Label>
+					
 				</View>
-				<View class="Row">
-					<Label class="Label7" id="seventy" onClick="seventy">70-80 miles</Label>
-					<Label class="Label8" id="eighty" onClick="eighty">80-90 miles</Label>
+				<View class="distanceRow">
+					<Label class="Label7 LabelSize3" id="sixty" onClick="sixty">60-70 miles</Label>
+					<Label class="Label8 LabelSize4" id="seventy" onClick="seventy">70-80 miles</Label>
+					
 				</View>
-				<View class="Row">
-					<Label class="Label9" id="ninety" onClick="ninety">90+ miles</Label>
+				<View class="distanceRow">
+					<Label class="Label9 LabelSize3" id="eighty" onClick="eighty">80-90 miles</Label>
+					<Label class="Label10 LabelSize4" id="ninety" onClick="ninety">90+ miles</Label>
 				</View>
 			</View>   
         </ScrollView>

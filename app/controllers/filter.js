@@ -134,6 +134,14 @@ function saturday(){
 	}
 	Alloy.Globals.saturday = !Alloy.Globals.saturday;
 }
+function zero(){
+	if (!Alloy.Globals.zero){
+		addDistance(0,10,"zero");
+	} else{
+		removeDistance(0,10,"zero");
+	}
+	Alloy.Globals.zero = !Alloy.Globals.zero;
+}
 function ten(){
 	if (!Alloy.Globals.ten){
 		addDistance(10,20,"ten");
@@ -280,8 +288,8 @@ function superStrenuous(){
 }
 
 $.startTimeSlider.addEventListener('touchend', function(e){
-   // this.value = Math.round(e.value);
-    $.startTimeLabel.text = e.value + ":00";
+    this.value = Math.round(e.value);
+    $.startTimeLabel.text = this.value + ":00";
     $.endTimeSlider.min= this.value;
     if ($.endTimeSlider.value < $.endTimeSlider.min){
     	$.endTimeSlider.value = $.endTimeSlider.min;
@@ -291,13 +299,13 @@ $.startTimeSlider.addEventListener('touchend', function(e){
 });
 
 $.startTimeSlider.addEventListener('change', function(e) {
-   // $.startTimeLabel.text = Math.round(e.value) + ":00";
+    $.startTimeLabel.text = Math.round(e.value) + ":00";
     
 });
 
 $.endTimeSlider.addEventListener('touchend', function(e){
-   // this.value = Math.round(e.value);
-    $.endTimeLabel.text = e.value + ":00";
+    this.value = Math.round(e.value);
+    $.endTimeLabel.text = this.value + ":00";
     Alloy.Globals.time[1] = this.value;
     $.timeLabel.text = $.startTimeLabel.text + " to " + $.endTimeLabel.text;
 });

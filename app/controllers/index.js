@@ -29,6 +29,7 @@ Alloy.Globals.thursday = false;
 Alloy.Globals.friday = false;
 Alloy.Globals.saturday = false;
 
+Alloy.Globals.zero = false;
 Alloy.Globals.ten = false;
 Alloy.Globals.twenty = false;
 Alloy.Globals.thirty = false;
