@@ -64,7 +64,24 @@
 }
 
 '#bottomBar':{
-	height:'48',
+	height: '48dp',
 	backgroundColor : '#F7F7F7',
-	bottom:0,
-}
+	bottom: "0dp"
+},
+
+".tabBarBtn": {
+	color: "#43B02A",
+	backgroundColor: "transparent",
+	font: { fontSize: 16},
+	width: Titanium.UI.SIZE
+},
+
+"#filter": {
+	right: "16dp",
+	textAlign: "right"
+},
+
+"#sort": {
+	left: "16dp",
+	textAlign: "left"
+},

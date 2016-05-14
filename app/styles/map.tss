@@ -92,35 +92,48 @@
 
 ".rideDistance": {
 	bottom: "10dp",
-	right: "6dp",
+	right: "10dp",
 	width: Ti.UI.SIZE,
 	height: "42dp",
+	layout: "horizontal"
 },
 
 "#distanceOne": {
 	font: { fontSize: 36 },
-	textAlign: Ti.UI.TEXT_ALIGNMENT_RIGHT,
-	right: "50dp",
-	bottom: "0dp"
+	left: "0",
+	bottom: "0dp",
 },
 
 "#distanceTwo": {
-	right: "0dp",
+	left: "0dp",
 	height: "18dp",
-	bottom: "4dp",
-	width:'50'
+	bottom: "0",
+	verticalAlign: "bottom"
 },
 
 "#toolBar": {
 	width: Titanium.UI.FILL,
 	height: "48dp",
-	backgroundColor: "#F7F7F7"
+	backgroundColor: "#F7F7F7",
+	bottom: "0dp",
+	borderTop: "true",
+	borderBottom: "false"
+},
+
+".tabBarBtn": {
+	color: "#43B02A",
+	backgroundColor: "transparent",
+	font: { fontSize: 16},
+	width: Titanium.UI.SIZE
 },
 
 "#filter": {
-	right: "0dp",
-	color: "#43B02A",
-	backgroundColor: "transparent",
-	font: { fontSize: 16}
-}
+	right: "16dp",
+	textAlign: "right"
+},
+
+"#list": {
+	left: "16dp",
+	textAlign: "left"
+},
 
