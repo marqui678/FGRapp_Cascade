@@ -242,6 +242,7 @@ function Controller() {
                                     },
                                     width: "25%",
                                     height: "24dp",
+                                    bottom: 0,
                                     bindId: "paceNumber",
                                     backgroundImage: "/images/pace.png"
                                 }
@@ -258,6 +259,7 @@ function Controller() {
                                     },
                                     width: "35%",
                                     height: "25dp",
+                                    bottom: 0,
                                     bindId: "pace"
                                 }
                             };
@@ -273,6 +275,8 @@ function Controller() {
                                     },
                                     width: "21%",
                                     textAlign: "right",
+                                    bottom: 0,
+                                    height: "40dp",
                                     bindId: "distanceOne"
                                 }
                             };
@@ -288,6 +292,7 @@ function Controller() {
                                     },
                                     width: "11%",
                                     textAlign: "right",
+                                    bottom: 0,
                                     bindId: "distanceTwo"
                                 }
                             };

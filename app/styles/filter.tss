@@ -42,10 +42,10 @@
 }
 
 ".Label1":{
-	 left:"4%", width:"41%", height:"60dp", backgroundColor:"#1A43B02A", textAlign:"center",font: {fontSize:14}
+	 left:"10dp", width:"44%", height:"60dp", backgroundColor:"#1A43B02A", textAlign:"center",font: {fontSize:14}
 }
 ".Label2":{
-	 right:"10%", width:"41%", height:"60dp", backgroundColor:"#2643B02A", textAlign:"center",font: {fontSize:14}
+	 right:"25dp", width:"44%", height:"60dp", backgroundColor:"#2643B02A", textAlign:"center",font: {fontSize:14}
 }
 ".Label3":{
 	 left:"15dp", width:"166dp", height:"60dp", backgroundColor:"#3343B02A", textAlign:"center",font: {fontSize:14}

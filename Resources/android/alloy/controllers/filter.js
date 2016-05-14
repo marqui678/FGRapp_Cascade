@@ -330,7 +330,6 @@ function Controller() {
         layout: "vertical",
         scrollType: "vertical",
         disableBounce: true,
-        scrollingEnabled: false,
         showVerticalScrollIndicator: true,
         bottom: "50dp",
         width: "100%"
@@ -409,8 +408,8 @@ function Controller() {
     $.__views.paceView.add($.__views.__alloyId46);
     $.__views.easy = Ti.UI.createLabel({
         color: "#000",
-        left: "4%",
-        width: "41%",
+        left: "10dp",
+        width: "44%",
         height: "60dp",
         backgroundColor: "#1A43B02A",
         textAlign: "center",
@@ -424,8 +423,8 @@ function Controller() {
     easy ? $.addListener($.__views.easy, "click", easy) : __defers["$.__views.easy!click!easy"] = true;
     $.__views.leisurely = Ti.UI.createLabel({
         color: "#000",
-        right: "10%",
-        width: "41%",
+        right: "25dp",
+        width: "44%",
         height: "60dp",
         backgroundColor: "#2643B02A",
         textAlign: "center",
@@ -961,8 +960,7 @@ function Controller() {
     $.__views.distanceFold = Ti.UI.createImageView({
         width: "5%",
         height: "20dp",
-        id: "distanceFold",
-        image: "/images/Filter open.png"
+        id: "distanceFold"
     });
     $.__views.distanceRow.add($.__views.distanceFold);
     $.__views.__alloyId65 = Ti.UI.createView({
@@ -994,8 +992,8 @@ function Controller() {
     $.__views.distanceView.add($.__views.__alloyId66);
     $.__views.ten = Ti.UI.createLabel({
         color: "#000",
-        left: "4%",
-        width: "41%",
+        left: "10dp",
+        width: "44%",
         height: "60dp",
         backgroundColor: "#1A43B02A",
         textAlign: "center",
@@ -1009,8 +1007,8 @@ function Controller() {
     ten ? $.addListener($.__views.ten, "click", ten) : __defers["$.__views.ten!click!ten"] = true;
     $.__views.twenty = Ti.UI.createLabel({
         color: "#000",
-        right: "10%",
-        width: "41%",
+        right: "25dp",
+        width: "44%",
         height: "60dp",
         backgroundColor: "#2643B02A",
         textAlign: "center",
@@ -1187,21 +1185,26 @@ function Controller() {
         hideVertical($.distanceView);
         initiate();
     }(arguments[0] || {});
-    $.startTimeSlider.addEventListener("touchend", function(e) {
-        $.startTimeLabel.text = e.value + ":00";
+    $.startTimeSlider.addEventListener("touchend", function() {
+        this.value = Math.round($.startTimeSlider.value);
+        $.startTimeLabel.text = this.value + ":00";
+        var temp = $.endTimeSlider.value;
         $.endTimeSlider.min = this.value;
-        $.endTimeSlider.value < $.endTimeSlider.min && ($.endTimeSlider.value = $.endTimeSlider.min);
+        $.endTimeSlider.value = temp < $.endTimeSlider.min ? $.endTimeSlider.min : temp;
         Alloy.Globals.time[0] = this.value;
         $.timeLabel.text = $.startTimeLabel.text + " to " + $.endTimeLabel.text;
     });
-    $.startTimeSlider.addEventListener("change", function() {});
-    $.endTimeSlider.addEventListener("touchend", function(e) {
-        $.endTimeLabel.text = e.value + ":00";
+    $.startTimeSlider.addEventListener("change", function() {
+        $.startTimeLabel.text = Math.round($.startTimeSlider.value) + ":00";
+    });
+    $.endTimeSlider.addEventListener("touchend", function() {
+        this.value = Math.round($.endTimeSlider.value);
+        $.endTimeLabel.text = this.value + ":00";
         Alloy.Globals.time[1] = this.value;
         $.timeLabel.text = $.startTimeLabel.text + " to " + $.endTimeLabel.text;
     });
-    $.endTimeSlider.addEventListener("change", function(e) {
-        $.endTimeLabel.text = Math.round(e.value) + ":00";
+    $.endTimeSlider.addEventListener("change", function() {
+        $.endTimeLabel.text = Math.round($.endTimeSlider.value) + ":00";
     });
     __defers["$.__views.__alloyId42!click!resetFilter"] && $.addListener($.__views.__alloyId42, "click", resetFilter);
     __defers["$.__views.paceRow!click!hidePaceView"] && $.addListener($.__views.paceRow, "click", hidePaceView);

@@ -6,7 +6,7 @@
 		<Menu platform="android">
 			<MenuItem title="Clear All" onClick="resetFilter" showAsAction="Ti.Android.SHOW_AS_ACTION_ALWAYS" />
 		</Menu>	
-		<ScrollView id="scrollView" left="0" layout="vertical" scrollType="vertical" disableBounce="true" scrollingEnabled="false" showVerticalScrollIndicator="true" bottom="50dp" width="100%">
+		<ScrollView id="scrollView" left="0" layout="vertical" scrollType="vertical" disableBounce="true" showVerticalScrollIndicator="true" bottom="50dp" width="100%">
 			<View id="paceRow" class="filterRow" onClick="hidePaceView">
 				<Label class="filterOpt" id="pace" >PACE</Label>
 				<Label class="filterChosen" id="paceLabel"/>
@@ -93,7 +93,7 @@
 	        <View id="distanceRow" class="filterRow" onClick="hideDistanceView">
 				<Label class="filterOpt" id="distance">DISTANCE</Label>
 				<Label class="filterChosen" id="distanceLabel"/>
-				<ImageView class="arrow" id="distanceFold" image="/images/Filter open.png"/>
+				<ImageView class="arrow" id="distanceFold"/>
 			</View>
 			<View class="separator"/>
 			<View id="distanceView" class="filterView" >

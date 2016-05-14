@@ -280,30 +280,33 @@ function superStrenuous(){
 }
 
 $.startTimeSlider.addEventListener('touchend', function(e){
-   // this.value = Math.round(e.value);
-    $.startTimeLabel.text = e.value + ":00";
+    this.value = Math.round($.startTimeSlider.value);
+    $.startTimeLabel.text = this.value + ":00";
+    var temp = $.endTimeSlider.value;
     $.endTimeSlider.min= this.value;
-    if ($.endTimeSlider.value < $.endTimeSlider.min){
+    if (temp < $.endTimeSlider.min){
     	$.endTimeSlider.value = $.endTimeSlider.min;
+    } else{
+    	$.endTimeSlider.value = temp;
     }
     Alloy.Globals.time[0] = this.value;
     $.timeLabel.text = $.startTimeLabel.text + " to " + $.endTimeLabel.text;
 });
 
 $.startTimeSlider.addEventListener('change', function(e) {
-   // $.startTimeLabel.text = Math.round(e.value) + ":00";
+    $.startTimeLabel.text = Math.round($.startTimeSlider.value) + ":00";
     
 });
 
 $.endTimeSlider.addEventListener('touchend', function(e){
-   // this.value = Math.round(e.value);
-    $.endTimeLabel.text = e.value + ":00";
+    this.value = Math.round($.endTimeSlider.value);
+    $.endTimeLabel.text = this.value + ":00";
     Alloy.Globals.time[1] = this.value;
     $.timeLabel.text = $.startTimeLabel.text + " to " + $.endTimeLabel.text;
 });
 
 $.endTimeSlider.addEventListener('change', function(e) {
-    $.endTimeLabel.text = Math.round(e.value) + ":00";
+    $.endTimeLabel.text = Math.round($.endTimeSlider.value) + ":00";
 });
 function hidePaceView(){
 	hideView($.paceView,paceView);
