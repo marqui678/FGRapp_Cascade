@@ -5,6 +5,10 @@ var timeView = false;
 var distanceView = false;
 $.endTimeLabel.text = "";
 
+var percent40 = '20%';
+
+
+
 var args = $.args;
 (function constructor(args) {
 	hideVertical($.paceView);
