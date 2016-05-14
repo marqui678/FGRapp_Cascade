@@ -101,6 +101,7 @@
 "#distanceOne": {
 	font: { fontSize: 36 },
 	left: "0",
+	verticalAlign: "top",
 	bottom: "0dp",
 },
 

@@ -103,7 +103,6 @@ function createSearchAnnotation(regionCenter) {
 			latitude: regionCenter.latitude,
 	    	longitude: regionCenter.longitude,
 	    	title: regionCenter.displayAddress,
-    		pincolor:Ti.Map.ANNOTATION_GREEN,
     		myid: "anno_search",
     		id: "anno_search",
 		});

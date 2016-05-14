@@ -3,7 +3,9 @@
 }
 
 '#lwin':{
-	barColor: "#43B02A"
+	barColor: "#43B02A",
+	height: Ti.UI.FILL,
+	windowSoftInputMode: Titanium.UI.Android.SOFT_INPUT_ADJUST_PAN
 }
 
 

@@ -8,7 +8,12 @@
         	<Button onClick="openMenu" image="images/ic_menu_light.png"/>
         </LeftNavButton>
     	<Require type="widget" src="com.alcoapps.drawermenu" id="drawermenu"/>
-		<!-- Android: Add MenuItem for refresh -->		
+    	<Menu platform="android">
+			<MenuItem title="Map" onClick="openMapview" showAsAction="Ti.Android.SHOW_AS_ACTION_ALWAYS" />
+		</Menu>
+		<RightNavButtons platform="ios">
+			<Button title="Map" onClick="openMapview" />
+		</RightNavButtons>		
 		<ListView id="listView" platform="ios,android" defaultItemTemplate="template" onItemclick="select">	
 			<!-- iOS RefreshControl -->
 			<RefreshControl platform="ios" id="refreshControl" onRefreshstart="refresh" />
@@ -39,7 +44,6 @@
 			</ListSection>
 			
 		</ListView>
-		<Button onClick="openMapview" top="0" right="0">To map</Button>
 		<View id='bottomBar'>
 			<Button class="tabBarBtn" id="filter" onClick="filter">Filter</Button>
 			<Button class="tabBarBtn" id="sort" onClick="openSortView">Sort</Button>
