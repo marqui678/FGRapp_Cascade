@@ -2,11 +2,11 @@
 <Alloy>
     <Window id="mainWindow" title="map">
     	<LeftNavButton platform=ios>
-        	<Button onClick="openMenu" image="images/ic_menu_light.png"/>
+        	<Button onClick="openMenu" image="images/menu_light.png"/>
         </LeftNavButton>
     	<Require type="widget" src="com.alcoapps.drawermenu" id="drawermenu"/>
     	<Menu platform="android">
-			<MenuItem title="Search" width="24dp" icon="images/ic_search_light.png" onClick="toSearch" showAsAction="Ti.Android.SHOW_AS_ACTION_ALWAYS" />
+			<MenuItem title="Search" icon="images/ic_search_light.png" onClick="toSearch" showAsAction="Ti.Android.SHOW_AS_ACTION_ALWAYS" />
 		</Menu>
 		<RightNavButtons platform="ios">
 			<Button title="Search" onClick="toSearch" image="images/ic_search_light.png"/>
