@@ -18,7 +18,9 @@
 }
 
 ".filterChosen":{
-	top:"18dp", left:"5dp", height:"20dp", width:"60%", font: { fontSize: 12 }, color: "#646464", textAlign:"right"
+	top:"18dp", left:"5dp", height:"20dp", width:"60%", font: { fontSize: 12 }, color: "#646464", textAlign:"right",
+	ellipsize: true,
+	wordWrap: false,
 }
 
 ".arrow":{
