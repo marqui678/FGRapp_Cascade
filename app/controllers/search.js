@@ -11,6 +11,7 @@ function cancelSearch(e) {
 
 function searchLocation() {
 	$.searchBar.blur();
+	Alloy.Globals.isSearchLoc = true;
 	var inputLoc = $.searchBar.value;
 	// get longitude and latitude by address
 	Ti.Geolocation.forwardGeocoder(inputLoc, function(_resp){
@@ -31,6 +32,7 @@ function searchLocation() {
 
 function useCurrentLoc() {
 	$.searchBar.blur();
+	Alloy.Globals.isSearchLoc = false;
 	//Use current location as region center
 	Titanium.Geolocation.getCurrentPosition(function(e) {
 	    Ti.Geolocation.accuracy = Ti.Geolocation.ACCURACY_HIGH;

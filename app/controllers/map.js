@@ -19,6 +19,12 @@ var customAnnotationView = Ti.UI.createView({
 
 createAnnotationsForMap(rideData, customAnnotationView);
 
+//Add the search annotation back if user searched address on last visit of mapview
+if (Alloy.Globals.isSearchLoc) {
+	searchLocAnnotation = createSearchAnnotation(regionCenter);
+	$.mapview.addAnnotation(searchLocAnnotation);
+}
+
 //Menu
 var thisWin=$.mainWindow;
 var main=$.mainView;
@@ -44,7 +50,7 @@ thisWin.addEventListener('open',function(e){
 	});
 	
 	if (OS_IOS) {
-		actionBarHelper.setIcon('/images/ic_menu_light.png');
+		actionBarHelper.setIcon('/images/menu_light.png');
 		actionBarHelper.setTitle('Map');
 		actionBarHelper.displayHomeAsUp(false);
 	}
@@ -52,7 +58,7 @@ thisWin.addEventListener('open',function(e){
 	if (OS_ANDROID) {
 		var actionBarExtra = require('com.alcoapps.actionbarextras');
 		actionBarExtra.title = "Map";
-		actionBarExtra.setHomeAsUpIcon("/images/ic_menu_light.png");
+		actionBarExtra.setHomeAsUpIcon("/images/menu_light.png");
 		actionBarHelper.displayHomeAsUp(true);
 	}
 });
@@ -62,14 +68,7 @@ $.mainWindow.addEventListener('loc_updated', function(e){
 	if (!e.isCurrentLoc) {
 		if (searchLocAnnotation === undefined) {
 			//Create annotation and add to map
-			searchLocAnnotation = Alloy.Globals.Map.createAnnotation({
-			latitude: regionCenter.latitude,
-	    	longitude: regionCenter.longitude,
-	    	title: regionCenter.displayAddress,
-    		pincolor:Ti.Map.ANNOTATION_GREEN,
-    		myid: "anno_search",
-    		id: "anno_search",
-		});
+			searchLocAnnotation = createSearchAnnotation(regionCenter);
 		$.mapview.addAnnotation(searchLocAnnotation);
 		}
 		else {
@@ -92,12 +91,22 @@ $.mainWindow.addEventListener('loc_updated', function(e){
 
 $.mainWindow.addEventListener('filter_updated', function(e){
 	//Update annotations with filtered data
-	createAnnotationsForMap(Alloy.Collections.feed.models);
+	createAnnotationsForMap(Alloy.Collections.feed.models, customAnnotationView);
 	//Add search anno to map if exist
 	if(searchLocAnnotation !== undefined) {
 		$.mapview.addAnnotation(searchLocAnnotation);
 	}
 });
+
+function createSearchAnnotation(regionCenter) {
+	return Alloy.Globals.Map.createAnnotation({
+			latitude: regionCenter.latitude,
+	    	longitude: regionCenter.longitude,
+	    	title: regionCenter.displayAddress,
+    		myid: "anno_search",
+    		id: "anno_search",
+		});
+}
 
 function centeredBySearchLocation() {
 	//Re-calc distanceToLocation as regionCenter is changed
@@ -146,11 +155,17 @@ function createAnnotationsWithModels(models, customAnnotationView) {
 			latitude: model.get("latitude"),
 	    	longitude: model.get("longitude"),
 	    	title: model.get("title"),
-    		//image:'/images/ic_place_green.png',
-    		customView: customAnnotationView,
+    		image:'/images/ic_place_green.png',
+    		//customView: customAnnotationView,
     		myid:model.get("link"),
     		id: "anno_" + i,
 		});
+		
+		//Use customView instead of image as pin for android
+		if (OS_ANDROID) {
+			annotation.customView = customAnnotationView;
+		}
+		
 		annotations.push(annotation);
 	}
 

@@ -150,6 +150,42 @@ $.search.addEventListener('cancel', function(){
     $.search.blur();
 });
 
+//Menu
+var thisWin=$.lwin;
+var main=$.mainView;
+
+// store drawermenu and main in global variable for easy access from menu
+Alloy.CFG.drawermenu=$.drawermenu;
+Alloy.CFG.main=main;
+
+var menu=Alloy.createController('menu').getView();
+
+$.drawermenu.init({
+    menuview:menu,
+    mainview:main,
+    duration:200,
+    parent: thisWin
+});
+
+thisWin.addEventListener('open',function(e){
+	var actionBarHelper = require('com.alcoapps.actionbarhelper')(thisWin);	
+	
+	actionBarHelper.setUpAction(function(e){
+		$.drawermenu.showhidemenu();
+	});
+	
+	if (OS_IOS) {
+		actionBarHelper.setIcon('/images/menu_light.png');
+		actionBarHelper.displayHomeAsUp(false);
+	}
+	
+	if (OS_ANDROID) {
+		var actionBarExtra = require('com.alcoapps.actionbarextras');
+		actionBarExtra.setHomeAsUpIcon("/images/menu_light.png");
+		actionBarHelper.displayHomeAsUp(true);
+	}
+});
+
 function filter(){
 	a = Alloy.Collections.feed;
 	Alloy.Globals.Navigator.open("filter",a);
@@ -167,4 +203,8 @@ function openMapview() {
  */
 function openSortView() {
 	Alloy.Globals.Navigator.open('sort', {});
+}
+
+function openMenu(e){
+	$.drawermenu.showhidemenu();
 }

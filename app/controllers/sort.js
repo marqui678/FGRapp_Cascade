@@ -100,7 +100,7 @@ function selectSort(e) {
 }
 
 function setSortDirection(e) {
-	e.cancelBubble = true;
+	//e.cancelBubble = true;
 	var currentSortOption = e.section.getItemAt(e.itemIndex);
 	currentSortOption.isAscDir = !currentSortOption.isAscDir;
 	//Update direction and arrowBtn

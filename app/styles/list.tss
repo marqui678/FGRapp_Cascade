@@ -1,11 +1,18 @@
 ".item":{
 	left:0, right:0, height: "120dp", layout:"vertical"
-}
+},
 
 '#lwin':{
-	barColor: "#43B02A"
-}
+	barColor: "#43B02A",
+	height: Ti.UI.FILL,
+	windowSoftInputMode: Titanium.UI.Android.SOFT_INPUT_ADJUST_PAN
+},
 
+"#mainView": {
+	height: Ti.UI.FILL,
+	width: Ti.UI.FILL,
+	backgroundColor: "#FFFFFF"
+}
 
 "#firstLine": {
 	left: "16dp", right: 0, 
@@ -67,7 +74,24 @@
 }
 
 '#bottomBar':{
-	height:'48',
+	height: '48dp',
 	backgroundColor : '#F7F7F7',
-	bottom:0,
-}
+	bottom: "0dp"
+},
+
+".tabBarBtn": {
+	color: "#43B02A",
+	backgroundColor: "transparent",
+	font: { fontSize: 16},
+	width: Titanium.UI.SIZE
+},
+
+"#filter": {
+	right: "16dp",
+	textAlign: "right"
+},
+
+"#sort": {
+	left: "16dp",
+	textAlign: "left"
+},

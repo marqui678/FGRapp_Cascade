@@ -2,22 +2,21 @@
 <Alloy>
     <Window id="mainWindow" title="map">
     	<LeftNavButton platform=ios>
-        	<Button onClick="openMenu" image="images/ic_menu_light.png"/>
+        	<Button onClick="openMenu" image="images/menu_light.png"/>
         </LeftNavButton>
     	<Require type="widget" src="com.alcoapps.drawermenu" id="drawermenu"/>
     	<Menu platform="android">
 			<MenuItem title="Search" icon="images/ic_search_light.png" onClick="toSearch" showAsAction="Ti.Android.SHOW_AS_ACTION_ALWAYS" />
-			<MenuItem title="List" onClick="toList" showAsAction="Ti.Android.SHOW_AS_ACTION_ALWAYS" />
 		</Menu>
 		<RightNavButtons platform="ios">
-			<Button title="Search" onClick="toSearch" />
-			<Button title="List" onClick="toList" />
+			<Button title="Search" onClick="toSearch" image="images/ic_search_light.png"/>
 		</RightNavButtons>		
 		<View id="mainView">
 	        <View ns="Alloy.Globals.Map" id="mapview" module="ti.map" onClick="report">
 	        </View>
-            <View id="toolBar" bottom="0" borderTop="true" borderBottom="false">
-	        	<Button id="filter" onClick="toFilter">Filter</Button>
+            <View id="toolBar">
+            	<Button id="list" class="tabBarBtn" onClick="toList">List</Button>
+	        	<Button id="filter" class="tabBarBtn" onClick="toFilter">Filter</Button>
 	        </View>   
 	        <View id="rideInfoCalloutWrapper" class="calloutWrapper" visible="false">    
 		        <View id="rideInfoCallout" class="rideInfoCallout" onClick="showDetail">		        	
@@ -33,7 +32,7 @@
 		        </View>
 	        	<View class="rideDistance">
 	        		<Label class="alignLeft baseText" id="distanceOne"/>
-		            <Label class="alignLeft lightText" id="distanceTwo"/>
+		            <Label class="lightText" id="distanceTwo"/>
 	        	</View>
 	        </View>	       
         </View>             
