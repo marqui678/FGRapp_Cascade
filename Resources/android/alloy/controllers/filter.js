@@ -369,7 +369,6 @@ function Controller() {
         layout: "vertical",
         scrollType: "vertical",
         disableBounce: true,
-        scrollingEnabled: false,
         showVerticalScrollIndicator: true,
         bottom: "50dp",
         width: "100%"
@@ -1000,8 +999,7 @@ function Controller() {
     $.__views.distanceFold = Ti.UI.createImageView({
         width: "5%",
         height: "20dp",
-        id: "distanceFold",
-        image: "/images/Filter open.png"
+        id: "distanceFold"
     });
     $.__views.distanceRow.add($.__views.distanceFold);
     $.__views.__alloyId65 = Ti.UI.createView({

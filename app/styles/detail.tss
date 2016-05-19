@@ -14,15 +14,17 @@
 	bottom : 48,
 }
 
-'#registerView':{
-	height:'48',
-	backgroundColor : '#43B02A',
-	bottom:0,
+//Map
+"#mapview":{
+	top:0,
+	enableZoomControls: false,
+	compassEnabled: false,
+	height: '200dp',
 }
 
 '#textOnMap':{
-	top : '197pt',
-	height : '56pt',
+	top : '140dp',
+	height : '60dp',
 	backgroundGradient: {
         type: 'linear',
         startPoint: { x: '50%', y: '0%' },
@@ -31,163 +33,209 @@
     }
 }
 
+'#distanceView':{
+	bottom: "0dp",
+	right: "7dp",
+	width: Ti.UI.SIZE,
+	height: "42dp",
+}
+"#underMap":{
+	top:'210dp'
+}
 '#descriptioinView':{
-	top:255,
-	height:140,
+	height:'140dp',
 }
 
+"#addressAndContact[platform=ios]":{
+	height:"60%",
+	 top:'5%',
+}
+
+"#addressAndContact[platform=android]":{
+	height:"70%",
+	 top:'5%',
+}
 '#addressView':{
-	top:395,
-	height:90
+	top:'10dp',
+	//height:90
 }
 
 '#contactView':{
-	top:483,
-	height:60
+	//top:228,
+	height:'20%'
 }
 
-//Map
-"#mapview":{
-	top:0,
-	enableZoomControls: false,
-	compassEnabled: false,
-	height: '253pt',
+'#registerView':{
+	height:'48',
+	backgroundColor : '#43B02A',
+	bottom:0,
 }
 
 
 //Labels
 //text on map
 '#dateImage':{
-	left:'7pt',
-	bottom: '28pt',
+	left:'7dp',
+	top: '5dp',
 	width:20
 }
 
 '#startDateTime':{
 	font: { fontSize:16 },
 	color: '#2C2A29',
-	left:'30pt',
-	bottom: '28pt',
+//	left:'30dp',
+	top: '3dp',
 }
+
 '#paceNum':{
-	bottom: '0pt',
-	left:'7pt',
+	height: "24dp",
+	//left:'7dp',
 	font: { fontSize:12 },
 	width:80, height:25,
 	color: 'white'
 }
+
 '#pace':{
-	bottom: '2pt',
-	left:'85pt',
-	height:'15',
-	width:'200',
+	height: "24dp",
+	//left:'85dp',
+	width:'200dp',
 	font: { fontSize:16 },
 	color:'#2C2A29',
-	
+	ellipsize: true,
 }
+
 '#distance1':{
 	color: '#2C2A29',
 	font: { fontSize:35 },
-	right:'48pt',
-	bottom: '0pt'
-}
-'#distance2':{
-	color: '#646464',
-	right:'7pt',
-	font: { fontSize:16 },
-	bottom: '5pt'
+	right:'40dp',
+	bottom: '0dp'
 }
 
-//description
-'#descriptionLabel':{
-	top:'17pt',
+'#distance2':{
+	color: '#646464',
+	right:'0',
 	font: { fontSize:16 },
-	left:'7pt',
-	color:'#646464'
+	bottom: '5dp'
+}
+
+//descritpion
+'#descriptionLabel[platform=ios]':{
+	top:'5dp',
+	font: { fontSize:16 },
+	left:'7dp',
+	color:'#646464',
+	height:'24dp',
+	
+}
+
+'#descriptionLabel[platform=android]':{
+	top:'2dp',
+	font: { fontSize:16 },
+	left:'7dp',
+	color:'#646464',
+	height:'24dp',
 }
 
 '#description':{
-	top:'10pt',
 	font: { fontSize:16 },
-	right:'7pt',
+	top:'3dp',
+	right:'7dp',
 	color: '#2C2A29',
-	left:'7pt',
+	left:'7dp',
+	height:'100%'
+	
 }
 
-'#readMore':{
-	bottom:9,
-	right:'9pt',
+'#readMore[platform=ios]':{
+	bottom:'0dp',
+	right:'9dp',
+	height:'14dp',
 	color:'#006F44',
 	backgroundColor:'#F7F7F7',
 	font: { fontSize:12 },
-	width:190,
+	width:"80dp",
 	textAlign: Titanium.UI.TEXT_ALIGNMENT_RIGHT,
+	
 }
 
+'#readMore[platform=android]':{
+	bottom:'3dp',
+	right:'9dp',
+	height:'16dp',
+	color:'#006F44',
+	backgroundColor:'#F7F7F7',
+	font: { fontSize:12 },
+	width:"80dp",
+	textAlign: Titanium.UI.TEXT_ALIGNMENT_RIGHT,
+	borderColor:'red'
+	
+}
 //address and direction
 '#locationLabel':{
-	top:0,
 	font: { fontSize:16 },
-	left:'7pt',
+	left:'7dp',
 	color:'#646464'
 }
 
 '#directions':{
-	top: 2,
 	color:'#006F44',
 	font: { fontSize:12 },
-	left:'110pt'
+	left:'120dp'
 }
 
 '#address1':{
-	top: 20,
-	left:'7pt',
-	height: '15pt',
+	//top: '3dp',
+	left:'7dp',
+	height: 'Titanium.UI.SIZE',
 	font: { fontSize:16 },
 	color:'#646464',
 	textAlign: 'Titanium.UI.TEXT_ALIGNMENT_LEFT',
 }
 
 '#address2':{
-	top: 40,
-	left:'7pt',
+	//top: '3dp',
+	left:'7dp',
 	font: { fontSize:16 },
 	color:'#2C2A29',
-	textAlign: Ti.UI.TEXT_ALIGNMENT_LEFT,
+	textAlign: 'Ti.UI.TEXT_ALIGNMENT_LEFT',
 }
 
 //contact
 '#leaderLabel':{
 	font: { fontSize:16 },
 	color:'#646464',
-	top:'5pt',
-	left:'7pt'
+	top:'5dp',
+	left:'7dp'
 }
 
 '#leader':{
 	//top:440,
-	height:'20pt',
+	height:'20dp',
 	font: { fontSize:16 },
 	color: '#2C2A29',
-	top:'5pt',
-	left:'120pt'
+	top:'5dp',
+	left:'120dp'
 }
+
 '#phone':{
-	top:40,
+	//top:45,
 	color: '#006F44',
 	font: { fontSize:16 },
-	left:'7pt',
+	left:'7dp',
 
 }
+
 '#email':{
-	top:20,
+	//top:20,
 	color: '#006F44',
 	font: { fontSize:16 },
-	left:'7pt',
+	left:'7dp',
 
 }
 
 //register button
 '#register':{
-	color:'white'
+	color:'white',
+	backgroundColor : '#43B02A',
+	borderColor:'#43B02A'
 }

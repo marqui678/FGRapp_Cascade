@@ -30,7 +30,7 @@ var showhidemenu=function(){
 		moveTo="0";
 		menuOpen=false;
 	}else{
-		moveTo="250dp";
+		moveTo="303dp";
 		menuOpen=true;
 	}
 

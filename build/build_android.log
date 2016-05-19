@@ -1,5 +1,5 @@
 
-2016-05-19 15:23:42
+2016-05-13 14:50:39
 
 Operating System
   Name                        = Microsoft Windows 10 Home China
@@ -21,7 +21,7 @@ Titanium SDK
   Target Platform             = android
 
 Command
-  C:\Program Files (x86)\nodejs\node.exe C:\Users\Nancy\.appcelerator\install\5.2.2\package\node_modules\titanium\lib\titanium.js build run --platform android --log-level trace --sdk 5.2.2.GA --project-dir D:\Titanium2\FGRapp1 --target emulator --android-sdk C:\android-sdk-win --device-id Custom Phone - 6.0.0 - API 23 - 768x1280 --debug-host /127.0.0.1:54221 --skip-js-minify --no-colors --no-progress-bars --no-prompt --prompt-type socket-bundle --prompt-port 50280 --username yujia151992@gmail.com --password Woshifuzhu1 --config-file C:\Users\Nancy\AppData\Local\Temp\build-1463696611621.json --no-banner --project-dir D:\Titanium2\FGRapp1
+  C:\Program Files (x86)\nodejs\node.exe C:\Users\Nancy\.appcelerator\install\5.2.2\package\node_modules\titanium\lib\titanium.js build run --platform android --log-level trace --sdk 5.2.2.GA --project-dir D:\Titanium2\FGRapp1 --target emulator --android-sdk C:\android-sdk-win --device-id Google Nexus 6 - 6.0.0 - API 23 - 1440x2560 --debug-host /127.0.0.1:60397 --skip-js-minify --no-colors --no-progress-bars --no-prompt --prompt-type socket-bundle --prompt-port 51153 --config-file C:\Users\Nancy\AppData\Local\Temp\build-1463176231246.json --no-banner --project-dir D:\Titanium2\FGRapp1
 
 [DEBUG]  Detecting modules in D:\Titanium2\FGRapp1\modules
 [DEBUG]  Detected android module: com.alcoapps.actionbarextras 1.6.9 @ D:\Titanium2\FGRapp1\modules\android\com.alcoapps.actionbarextras\1.6.9
@@ -61,13 +61,13 @@ Command
 [DEBUG]  Titanium SDK Android directory: C:\ProgramData\Titanium\mobilesdk\win32\5.2.2.GA\android
 [INFO]   Deploy type: development
 [INFO]   Building for target: emulator
-[INFO]   Building for emulator: Custom Phone - 6.0.0 - API 23 - 768x1280
+[INFO]   Building for emulator: Google Nexus 6 - 6.0.0 - API 23 - 1440x2560
 [INFO]   Targeting Android SDK API: 23
 [INFO]   Building for the following architectures: armeabi, armeabi-v7a, x86
 [INFO]   Signing with keystore: C:\ProgramData\Titanium\mobilesdk\win32\5.2.2.GA\android\dev_keystore (tidev)
 [DEBUG]  App ID: edu.uw.titaniumpanda.FGRCascade
 [DEBUG]  Classname: Fgr_cascade
-[INFO]   Debugging enabled via debug port: 54221
+[INFO]   Debugging enabled via debug port: 60397
 [INFO]   Profiler disabled
 [INFO]   Forcing rebuild: JavaScript encryption flag changed
 [INFO]     Was: true
@@ -332,20 +332,22 @@ Command
 [TRACE]  
 [TRACE]  Benchmarking
 [TRACE]  ------------
-[TRACE]  [5.05997s] TOTAL
+[TRACE]  [3.68726s] TOTAL
 [INFO]   
-[INFO]   Alloy compiled in 5.05997s
+[INFO]   Alloy compiled in 3.68726s
 [INFO]   Alloy compiler completed successfully
-[INFO]   Launching emulator: Custom Phone - 6.0.0 - API 23 - 768x1280
-[TRACE]  Starting emulator: Custom Phone - 6.0.0 - API 23 - 768x1280
-[TRACE]  Checking if emulator Custom Phone - 6.0.0 - API 23 - 768x1280 is running...
-[TRACE]  Detecting if Custom Phone - 6.0.0 - API 23 - 768x1280 exists...
+[INFO]   Launching emulator: Google Nexus 6 - 6.0.0 - API 23 - 1440x2560
+[TRACE]  Starting emulator: Google Nexus 6 - 6.0.0 - API 23 - 1440x2560
+[TRACE]  Checking if emulator Google Nexus 6 - 6.0.0 - API 23 - 1440x2560 is running...
+[TRACE]  Detecting if Google Nexus 6 - 6.0.0 - API 23 - 1440x2560 exists...
 [TRACE]  Found 6 emulators
 [TRACE]  Emulator exists, detecting all running emulators and connected devices...
 [TRACE]  Detected 1 running emulators and connected devices
 [TRACE]  Checking 1 devices to see if it's the emulator we want
-[TRACE]  The emulator is running
+[TRACE]  The emulator is NOT running
 [INFO]   Emulator already running
+[TRACE]  Found 6 emulators
+[INFO]   Running: D:\Program Files\Genymobile\Genymotion\player.exe --vm-name "Google Nexus 6 - 6.0.0 - API 23 - 1440x2560"
 [TRACE]  Checking the boot state for the next 240000 ms
 [TRACE]  Waiting for emulator to register with ADB
 [TRACE]  Emulator process started
@@ -358,7 +360,7 @@ Command
 [INFO]   SD card not required, skipping mount check
 [INFO]   Emulator ready!
 [TRACE]  online 1
-[TRACE]  optimizing build, last build was 9261.56 sec ago
+[TRACE]  optimizing build, last build was 61705.213 sec ago
 [DEBUG]  Copying D:\Titanium2\FGRapp1\Resources
 [DEBUG]  Ignoring D:\Titanium2\FGRapp1\Resources\android
 [DEBUG]  Copying D:\Titanium2\FGRapp1\Resources\android
@@ -397,6 +399,7 @@ Command
 [DEBUG]  Copying D:\Titanium2\FGRapp1\Resources\android\images\res-long-land-ldpi\checkboxSelected.png => D:\Titanium2\FGRapp1\build\android\res\drawable-long-land-ldpi\checkboxselected_cd43975a03.png
 [DEBUG]  Copying D:\Titanium2\FGRapp1\Resources\android\images\res-long-land-ldpi\default.png => D:\Titanium2\FGRapp1\build\android\res\drawable-long-land-ldpi\background.png
 [DEBUG]  Copying D:\Titanium2\FGRapp1\Resources\android\images\res-long-land-ldpi\menuDark.png => D:\Titanium2\FGRapp1\build\android\res\drawable-long-land-ldpi\menudark_7ecc46bfdb.png
+[TRACE]  Found 1 devices, checking if any of them are the emulator...
 [DEBUG]  Copying D:\Titanium2\FGRapp1\Resources\android\images\res-long-land-ldpi\menuLight.png => D:\Titanium2\FGRapp1\build\android\res\drawable-long-land-ldpi\menulight_c94457f894.png
 [DEBUG]  Copying D:\Titanium2\FGRapp1\Resources\android\images\res-long-land-ldpi\pin.png => D:\Titanium2\FGRapp1\build\android\res\drawable-long-land-ldpi\pin_42b535480f.png
 [DEBUG]  Copying D:\Titanium2\FGRapp1\Resources\android\images\res-long-land-ldpi\pinSelected.png => D:\Titanium2\FGRapp1\build\android\res\drawable-long-land-ldpi\pinselected_50a1d362a7.png
@@ -458,6 +461,7 @@ Command
 [DEBUG]  Copying D:\Titanium2\FGRapp1\Resources\android\images\res-notlong-land-ldpi\checkboxSelected.png => D:\Titanium2\FGRapp1\build\android\res\drawable-notlong-land-ldpi\checkboxselected_cd43975a03.png
 [DEBUG]  Copying D:\Titanium2\FGRapp1\Resources\android\images\res-notlong-land-ldpi\default.png => D:\Titanium2\FGRapp1\build\android\res\drawable-notlong-land-ldpi\background.png
 [DEBUG]  Copying D:\Titanium2\FGRapp1\Resources\android\images\res-notlong-land-ldpi\menuDark.png => D:\Titanium2\FGRapp1\build\android\res\drawable-notlong-land-ldpi\menudark_7ecc46bfdb.png
+[TRACE]  Emulator not running yet, continuing to wait
 [DEBUG]  Copying D:\Titanium2\FGRapp1\Resources\android\images\res-notlong-land-ldpi\menuLight.png => D:\Titanium2\FGRapp1\build\android\res\drawable-notlong-land-ldpi\menulight_c94457f894.png
 [DEBUG]  Copying D:\Titanium2\FGRapp1\Resources\android\images\res-notlong-land-ldpi\pin.png => D:\Titanium2\FGRapp1\build\android\res\drawable-notlong-land-ldpi\pin_42b535480f.png
 [DEBUG]  Copying D:\Titanium2\FGRapp1\Resources\android\images\res-notlong-land-ldpi\pinSelected.png => D:\Titanium2\FGRapp1\build\android\res\drawable-notlong-land-ldpi\pinselected_50a1d362a7.png
@@ -755,7 +759,6 @@ Command
 [DEBUG]  Copying C:\ProgramData\Application Data\Titanium\modules\android\ti.map\2.3.6\platform\android\res\values-zh-rHK\common_strings.xml => D:\Titanium2\FGRapp1\build\android\res\values-zh-rHK\common_strings.xml
 [DEBUG]  Copying C:\ProgramData\Application Data\Titanium\modules\android\ti.map\2.3.6\platform\android\res\values-zh-rTW\common_strings.xml => D:\Titanium2\FGRapp1\build\android\res\values-zh-rTW\common_strings.xml
 [DEBUG]  Copying C:\ProgramData\Application Data\Titanium\modules\android\ti.map\2.3.6\platform\android\res\values-zu\common_strings.xml => D:\Titanium2\FGRapp1\build\android\res\values-zu\common_strings.xml
-[WARN]   Overwriting file D:\Titanium2\FGRapp1\build\android\alloy_generated
 [DEBUG]  Copying D:\Titanium2\FGRapp1\platform\android\alloy_generated => D:\Titanium2\FGRapp1\build\android\alloy_generated
 [DEBUG]  Copying D:\Titanium2\FGRapp1\platform\android\res\values\custom_theme.xml => D:\Titanium2\FGRapp1\build\android\res\values\custom_theme.xml
 [DEBUG]  Copying D:\Titanium2\FGRapp1\build\android\bin\assets\Resources\appicon.png => D:\Titanium2\FGRapp1\build\android\res\drawable\appicon.png
@@ -837,47 +840,45 @@ Command
 [DEBUG]  Unknown namespace ui.ios, skipping
 [INFO]   Writing D:\Titanium2\FGRapp1\build\android\bin\assets\app.json
 [INFO]   Extracting module resources: C:\ProgramData\Titanium\mobilesdk\win32\5.2.2.GA\android\modules\titanium-analytics.res.zip
-[DEBUG]  Copying C:\Users\Nancy\AppData\Local\Temp\116419-8440-17wcnrq\res\values\strings.xml => D:\Titanium2\FGRapp1\build\android\res\values\strings.xml
+[DEBUG]  Copying C:\Users\Nancy\AppData\Local\Temp\116413-11788-grqacg\res\values\strings.xml => D:\Titanium2\FGRapp1\build\android\res\values\strings.xml
 [INFO]   Extracting module resources: C:\ProgramData\Titanium\mobilesdk\win32\5.2.2.GA\android\modules\titanium-android.res.zip
-[DEBUG]  Merging C:\Users\Nancy\AppData\Local\Temp\116419-8440-1xx5l8p\res\values\strings.xml => D:\Titanium2\FGRapp1\build\android\res\values\strings.xml
+[DEBUG]  Merging C:\Users\Nancy\AppData\Local\Temp\116413-11788-4746t0\res\values\strings.xml => D:\Titanium2\FGRapp1\build\android\res\values\strings.xml
 [INFO]   Extracting module resources: C:\ProgramData\Titanium\mobilesdk\win32\5.2.2.GA\android\modules\titanium-app.res.zip
-[DEBUG]  Merging C:\Users\Nancy\AppData\Local\Temp\116419-8440-qu80s0\res\values\strings.xml => D:\Titanium2\FGRapp1\build\android\res\values\strings.xml
+[DEBUG]  Merging C:\Users\Nancy\AppData\Local\Temp\116413-11788-1bpunx8\res\values\strings.xml => D:\Titanium2\FGRapp1\build\android\res\values\strings.xml
 [INFO]   Extracting module resources: C:\ProgramData\Titanium\mobilesdk\win32\5.2.2.GA\android\modules\titanium-filesystem.res.zip
-[DEBUG]  Merging C:\Users\Nancy\AppData\Local\Temp\116419-8440-1k2ww23\res\values\strings.xml => D:\Titanium2\FGRapp1\build\android\res\values\strings.xml
+[DEBUG]  Merging C:\Users\Nancy\AppData\Local\Temp\116413-11788-10lxqhk\res\values\strings.xml => D:\Titanium2\FGRapp1\build\android\res\values\strings.xml
 [INFO]   Extracting module resources: C:\ProgramData\Titanium\mobilesdk\win32\5.2.2.GA\android\modules\titanium-media.res.zip
-[DEBUG]  Merging C:\Users\Nancy\AppData\Local\Temp\116419-8440-ncene\res\values\strings.xml => D:\Titanium2\FGRapp1\build\android\res\values\strings.xml
+[DEBUG]  Merging C:\Users\Nancy\AppData\Local\Temp\116413-11788-1gm1ct\res\values\strings.xml => D:\Titanium2\FGRapp1\build\android\res\values\strings.xml
 [INFO]   Extracting module resources: C:\ProgramData\Titanium\mobilesdk\win32\5.2.2.GA\android\modules\titanium-locale.res.zip
-[DEBUG]  Merging C:\Users\Nancy\AppData\Local\Temp\116419-8440-1vyob1x\res\values\strings.xml => D:\Titanium2\FGRapp1\build\android\res\values\strings.xml
+[DEBUG]  Merging C:\Users\Nancy\AppData\Local\Temp\116413-11788-1ywo10c\res\values\strings.xml => D:\Titanium2\FGRapp1\build\android\res\values\strings.xml
 [INFO]   Extracting module resources: C:\ProgramData\Titanium\mobilesdk\win32\5.2.2.GA\android\modules\titanium-network.res.zip
-[DEBUG]  Merging C:\Users\Nancy\AppData\Local\Temp\116419-8440-1abs363\res\values\strings.xml => D:\Titanium2\FGRapp1\build\android\res\values\strings.xml
+[DEBUG]  Merging C:\Users\Nancy\AppData\Local\Temp\116413-11788-fm2j01\res\values\strings.xml => D:\Titanium2\FGRapp1\build\android\res\values\strings.xml
 [INFO]   Extracting module resources: C:\ProgramData\Titanium\mobilesdk\win32\5.2.2.GA\android\modules\titanium-xml.res.zip
-[DEBUG]  Merging C:\Users\Nancy\AppData\Local\Temp\116419-8440-2gqgic\res\values\strings.xml => D:\Titanium2\FGRapp1\build\android\res\values\strings.xml
+[DEBUG]  Merging C:\Users\Nancy\AppData\Local\Temp\116413-11788-1g9vzzs\res\values\strings.xml => D:\Titanium2\FGRapp1\build\android\res\values\strings.xml
 [INFO]   Extracting module resources: C:\ProgramData\Titanium\mobilesdk\win32\5.2.2.GA\android\modules\titanium-utils.res.zip
-[DEBUG]  Merging C:\Users\Nancy\AppData\Local\Temp\116419-8440-g58zyy\res\values\strings.xml => D:\Titanium2\FGRapp1\build\android\res\values\strings.xml
+[DEBUG]  Merging C:\Users\Nancy\AppData\Local\Temp\116413-11788-1g98rzg\res\values\strings.xml => D:\Titanium2\FGRapp1\build\android\res\values\strings.xml
 [INFO]   Extracting module resources: C:\ProgramData\Titanium\mobilesdk\win32\5.2.2.GA\android\modules\titanium-geolocation.res.zip
-[DEBUG]  Merging C:\Users\Nancy\AppData\Local\Temp\116419-8440-q9l0zj\res\values\strings.xml => D:\Titanium2\FGRapp1\build\android\res\values\strings.xml
+[DEBUG]  Merging C:\Users\Nancy\AppData\Local\Temp\116413-11788-tpyhoe\res\values\strings.xml => D:\Titanium2\FGRapp1\build\android\res\values\strings.xml
 [INFO]   Extracting module resources: C:\ProgramData\Titanium\mobilesdk\win32\5.2.2.GA\android\modules\titanium-accelerometer.res.zip
-[DEBUG]  Merging C:\Users\Nancy\AppData\Local\Temp\116419-8440-5q5ctd\res\values\strings.xml => D:\Titanium2\FGRapp1\build\android\res\values\strings.xml
+[DEBUG]  Merging C:\Users\Nancy\AppData\Local\Temp\116413-11788-1n8lo71\res\values\strings.xml => D:\Titanium2\FGRapp1\build\android\res\values\strings.xml
 [INFO]   Extracting module resources: C:\ProgramData\Titanium\mobilesdk\win32\5.2.2.GA\android\modules\titanium-contacts.res.zip
-[DEBUG]  Merging C:\Users\Nancy\AppData\Local\Temp\116419-8440-977v5e\res\values\strings.xml => D:\Titanium2\FGRapp1\build\android\res\values\strings.xml
+[DEBUG]  Merging C:\Users\Nancy\AppData\Local\Temp\116413-11788-10g5pr9\res\values\strings.xml => D:\Titanium2\FGRapp1\build\android\res\values\strings.xml
 [INFO]   Extracting module resources: C:\ProgramData\Titanium\mobilesdk\win32\5.2.2.GA\android\modules\titanium-map.res.zip
-[DEBUG]  Merging C:\Users\Nancy\AppData\Local\Temp\116419-8440-1c95isy\res\values\strings.xml => D:\Titanium2\FGRapp1\build\android\res\values\strings.xml
+[DEBUG]  Merging C:\Users\Nancy\AppData\Local\Temp\116413-11788-1ktdjkq\res\values\strings.xml => D:\Titanium2\FGRapp1\build\android\res\values\strings.xml
 [INFO]   Extracting module resources: C:\ProgramData\Titanium\mobilesdk\win32\5.2.2.GA\android\modules\titanium-gesture.res.zip
-[DEBUG]  Merging C:\Users\Nancy\AppData\Local\Temp\116419-8440-139pl4a\res\values\strings.xml => D:\Titanium2\FGRapp1\build\android\res\values\strings.xml
+[DEBUG]  Merging C:\Users\Nancy\AppData\Local\Temp\116413-11788-6cnzwi\res\values\strings.xml => D:\Titanium2\FGRapp1\build\android\res\values\strings.xml
 [INFO]   Extracting module resources: C:\ProgramData\Titanium\mobilesdk\win32\5.2.2.GA\android\modules\titanium-calendar.res.zip
-[DEBUG]  Merging C:\Users\Nancy\AppData\Local\Temp\116419-8440-i7or39\res\values\strings.xml => D:\Titanium2\FGRapp1\build\android\res\values\strings.xml
+[DEBUG]  Merging C:\Users\Nancy\AppData\Local\Temp\116413-11788-9ahxq3\res\values\strings.xml => D:\Titanium2\FGRapp1\build\android\res\values\strings.xml
 [INFO]   Extracting module resources: C:\ProgramData\Titanium\mobilesdk\win32\5.2.2.GA\android\modules\titanium-platform.res.zip
-[DEBUG]  Merging C:\Users\Nancy\AppData\Local\Temp\116419-8440-108jkza\res\values\strings.xml => D:\Titanium2\FGRapp1\build\android\res\values\strings.xml
+[DEBUG]  Merging C:\Users\Nancy\AppData\Local\Temp\116413-11788-7be2vp\res\values\strings.xml => D:\Titanium2\FGRapp1\build\android\res\values\strings.xml
 [INFO]   Extracting module resources: C:\ProgramData\Titanium\mobilesdk\win32\5.2.2.GA\android\modules\titanium-database.res.zip
-[DEBUG]  Merging C:\Users\Nancy\AppData\Local\Temp\116419-8440-j1s3al\res\values\strings.xml => D:\Titanium2\FGRapp1\build\android\res\values\strings.xml
+[DEBUG]  Merging C:\Users\Nancy\AppData\Local\Temp\116413-11788-6x9mpk\res\values\strings.xml => D:\Titanium2\FGRapp1\build\android\res\values\strings.xml
 [DEBUG]  Removing old file: D:\Titanium2\FGRapp1\build\android\.classpath
 [DEBUG]  Removing old file: D:\Titanium2\FGRapp1\build\android\.gitignore
 [DEBUG]  Removing old file: D:\Titanium2\FGRapp1\build\android\.project
-[DEBUG]  Removing old file: D:\Titanium2\FGRapp1\build\android\alloy_generated
 [DEBUG]  Removing old file: D:\Titanium2\FGRapp1\build\android\AndroidManifest.xml
 [DEBUG]  Removing old file: D:\Titanium2\FGRapp1\build\android\default.properties
 [DEBUG]  Removing old file: D:\Titanium2\FGRapp1\build\android\java-sources.txt
-[DEBUG]  Removing old file: D:\Titanium2\FGRapp1\build\android\res\raw\gtm_analytics
 [DEBUG]  Copying template C:\ProgramData\Titanium\mobilesdk\win32\5.2.2.GA\android\templates\build\AppInfo.java => D:\Titanium2\FGRapp1\build\android\gen\edu\uw\titaniumpanda\FGRCascade\Fgr_cascadeAppInfo.java
 [DEBUG]  Copying template C:\ProgramData\Titanium\mobilesdk\win32\5.2.2.GA\android\templates\build\App.java => D:\Titanium2\FGRapp1\build\android\gen\edu\uw\titaniumpanda\FGRCascade\Fgr_cascadeApplication.java
 [DEBUG]  Copying template C:\ProgramData\Titanium\mobilesdk\win32\5.2.2.GA\android\templates\build\Activity.java => D:\Titanium2\FGRapp1\build\android\gen\edu\uw\titaniumpanda\FGRCascade\Fgr_cascadeActivity.java
@@ -890,9 +891,18 @@ Command
 [DEBUG]  Compiling localization files
 [DEBUG]  Merging en strings => D:\Titanium2\FGRapp1\build\android\res\values\strings.xml
 [INFO]   Generating D:\Titanium2\FGRapp1\build\android\res\values\theme.xml
-[INFO]   Packaging application: C:\android-sdk-win\build-tools\23.0.1\aapt.exe "package" "-f" "-m" "-J" "D:\Titanium2\FGRapp1\build\android\gen" "-M" "D:\Titanium2\FGRapp1\build\android\AndroidManifest.xml" "-A" "D:\Titanium2\FGRapp1\build\android\bin\assets" "-S" "D:\Titanium2\FGRapp1\build\android\res" "-I" "C:\android-sdk-win\platforms\android-23\android.jar" "-F" "D:\Titanium2\FGRapp1\build\android\bin\app.ap_" "--auto-add-overlay" "--extra-packages" "ti.modules.titanium.ui:android.support.v7.appcompat:android.support.v7.cardview:com.google.android.gms" "-S" "C:\Users\Nancy\AppData\Local\Temp\116419-8440-xhkwpm/res" "-S" "C:\Users\Nancy\AppData\Local\Temp\116419-8440-1rlim2e/res" "-S" "C:\Users\Nancy\AppData\Local\Temp\116419-8440-1c7cgnj/res"
+[INFO]   Packaging application: C:\android-sdk-win\build-tools\23.0.1\aapt.exe "package" "-f" "-m" "-J" "D:\Titanium2\FGRapp1\build\android\gen" "-M" "D:\Titanium2\FGRapp1\build\android\AndroidManifest.xml" "-A" "D:\Titanium2\FGRapp1\build\android\bin\assets" "-S" "D:\Titanium2\FGRapp1\build\android\res" "-I" "C:\android-sdk-win\platforms\android-23\android.jar" "-F" "D:\Titanium2\FGRapp1\build\android\bin\app.ap_" "--auto-add-overlay" "--extra-packages" "ti.modules.titanium.ui:android.support.v7.appcompat:android.support.v7.cardview:com.google.android.gms" "-S" "C:\Users\Nancy\AppData\Local\Temp\116413-11788-b1mplk/res" "-S" "C:\Users\Nancy\AppData\Local\Temp\116413-11788-h7g73y/res" "-S" "C:\Users\Nancy\AppData\Local\Temp\116413-11788-qfa5yj/res"
 [INFO]   Building Java source files: C:\Program Files (x86)\Java\jdk1.7.0_80\bin\javac.exe "-J-Xmx1024M" "-encoding" "utf8" "-bootclasspath" "C:\android-sdk-win\platforms\android-23\android.jar;C:\ProgramData\Titanium\mobilesdk\win32\5.2.2.GA\android\kroll-v8.jar;C:\ProgramData\Titanium\mobilesdk\win32\5.2.2.GA\android\modules\titanium-analytics.jar;C:\ProgramData\Titanium\mobilesdk\win32\5.2.2.GA\android\aps-analytics.jar;C:\ProgramData\Titanium\mobilesdk\win32\5.2.2.GA\android\modules\titanium-android.jar;C:\ProgramData\Titanium\mobilesdk\win32\5.2.2.GA\android\jaxen-1.1.1.jar;C:\ProgramData\Titanium\mobilesdk\win32\5.2.2.GA\android\ti-commons-codec-1.3.jar;C:\ProgramData\Titanium\mobilesdk\win32\5.2.2.GA\android\kroll-common.jar;C:\ProgramData\Titanium\mobilesdk\win32\5.2.2.GA\android\titanium.jar;C:\ProgramData\Titanium\mobilesdk\win32\5.2.2.GA\android\modules\titanium-app.jar;C:\ProgramData\Titanium\mobilesdk\win32\5.2.2.GA\android\modules\titanium-ui.jar;C:\ProgramData\Titanium\mobilesdk\win32\5.2.2.GA\android\nineoldandroids-appc-2.4.0.jar;C:\ProgramData\Titanium\mobilesdk\win32\5.2.2.GA\android\modules\titanium-filesystem.jar;C:\ProgramData\Titanium\mobilesdk\win32\5.2.2.GA\android\modules\titanium-media.jar;C:\ProgramData\Titanium\mobilesdk\win32\5.2.2.GA\android\modules\titanium-appcompat.jar;C:\ProgramData\Titanium\mobilesdk\win32\5.2.2.GA\android\android-support-v4.jar;C:\ProgramData\Titanium\mobilesdk\win32\5.2.2.GA\android\android-support-v7-appcompat.jar;C:\ProgramData\Titanium\mobilesdk\win32\5.2.2.GA\android\modules\titanium-cardview.jar;C:\ProgramData\Titanium\mobilesdk\win32\5.2.2.GA\android\cardview-v7-23.0.1.jar;C:\ProgramData\Titanium\mobilesdk\win32\5.2.2.GA\android\modules\titanium-locale.jar;C:\ProgramData\Titanium\mobilesdk\win32\5.2.2.GA\android\modules\titanium-network.jar;C:\ProgramData\Titanium\mobilesdk\win32\5.2.2.GA\android\modules\titanium-xml.jar;C:\ProgramData\Titanium\mobilesdk\win32\5.2.2.GA\android\modules\titanium-utils.jar;C:\ProgramData\Titanium\mobilesdk\win32\5.2.2.GA\android\modules\titanium-geolocation.jar;C:\ProgramData\Titanium\mobilesdk\win32\5.2.2.GA\android\modules\titanium-accelerometer.jar;C:\ProgramData\Titanium\mobilesdk\win32\5.2.2.GA\android\modules\titanium-contacts.jar;C:\ProgramData\Titanium\mobilesdk\win32\5.2.2.GA\android\modules\titanium-map.jar;C:\ProgramData\Titanium\mobilesdk\win32\5.2.2.GA\android\modules\titanium-gesture.jar;C:\ProgramData\Titanium\mobilesdk\win32\5.2.2.GA\android\modules\titanium-calendar.jar;C:\ProgramData\Titanium\mobilesdk\win32\5.2.2.GA\android\modules\titanium-platform.jar;C:\ProgramData\Titanium\mobilesdk\win32\5.2.2.GA\android\modules\titanium-database.jar;C:\ProgramData\Application Data\Titanium\modules\android\ti.map\2.3.6\map.jar;C:\ProgramData\Application Data\Titanium\modules\android\ti.map\2.3.6\lib\google-play-services-base.jar;C:\ProgramData\Application Data\Titanium\modules\android\ti.map\2.3.6\lib\google-play-services-map.jar;D:\Titanium2\FGRapp1\modules\android\com.alcoapps.actionbarextras\1.6.9\actionbarextras.jar;C:\ProgramData\Titanium\mobilesdk\win32\5.2.2.GA\android\kroll-apt.jar;C:\ProgramData\Titanium\mobilesdk\win32\5.2.2.GA\android\lib\titanium-verify.jar;C:\ProgramData\Titanium\mobilesdk\win32\5.2.2.GA\android\lib\titanium-debug.jar;Manifest.class;R.class;AssetCryptImpl.class;Fgr_cascadeActivity.class;Fgr_cascadeAppInfo.class;Fgr_cascadeApplication.class" "-d" "D:\Titanium2\FGRapp1\build\android\bin\classes" "-proc:none" "-target" "1.6" "-source" "1.6" "@D:\Titanium2\FGRapp1\build\android\java-sources.txt"
 [INFO]   Running dexer: C:\Program Files (x86)\Java\jdk1.7.0_80\bin\java.exe "-Xmx1024M" "-XX:-UseGCOverheadLimit" "-Djava.ext.dirs=C:\android-sdk-win\platform-tools" "-jar" "C:\android-sdk-win\build-tools\23.0.1\lib\dx.jar" "--dex" "--output=D:\Titanium2\FGRapp1\build\android\bin\classes.dex" "D:\Titanium2\FGRapp1\build\android\bin\classes" "C:\ProgramData\Titanium\mobilesdk\win32\5.2.2.GA\android\lib\titanium-verify.jar" "C:\ProgramData\Application Data\Titanium\modules\android\ti.map\2.3.6\map.jar" "C:\ProgramData\Application Data\Titanium\modules\android\ti.map\2.3.6\lib\google-play-services-base.jar" "C:\ProgramData\Application Data\Titanium\modules\android\ti.map\2.3.6\lib\google-play-services-map.jar" "D:\Titanium2\FGRapp1\modules\android\com.alcoapps.actionbarextras\1.6.9\actionbarextras.jar" "C:\ProgramData\Titanium\mobilesdk\win32\5.2.2.GA\android\kroll-v8.jar" "C:\ProgramData\Titanium\mobilesdk\win32\5.2.2.GA\android\modules\titanium-analytics.jar" "C:\ProgramData\Titanium\mobilesdk\win32\5.2.2.GA\android\aps-analytics.jar" "C:\ProgramData\Titanium\mobilesdk\win32\5.2.2.GA\android\modules\titanium-android.jar" "C:\ProgramData\Titanium\mobilesdk\win32\5.2.2.GA\android\jaxen-1.1.1.jar" "C:\ProgramData\Titanium\mobilesdk\win32\5.2.2.GA\android\ti-commons-codec-1.3.jar" "C:\ProgramData\Titanium\mobilesdk\win32\5.2.2.GA\android\kroll-common.jar" "C:\ProgramData\Titanium\mobilesdk\win32\5.2.2.GA\android\titanium.jar" "C:\ProgramData\Titanium\mobilesdk\win32\5.2.2.GA\android\modules\titanium-app.jar" "C:\ProgramData\Titanium\mobilesdk\win32\5.2.2.GA\android\modules\titanium-ui.jar" "C:\ProgramData\Titanium\mobilesdk\win32\5.2.2.GA\android\nineoldandroids-appc-2.4.0.jar" "C:\ProgramData\Titanium\mobilesdk\win32\5.2.2.GA\android\modules\titanium-filesystem.jar" "C:\ProgramData\Titanium\mobilesdk\win32\5.2.2.GA\android\modules\titanium-media.jar" "C:\ProgramData\Titanium\mobilesdk\win32\5.2.2.GA\android\modules\titanium-appcompat.jar" "C:\ProgramData\Titanium\mobilesdk\win32\5.2.2.GA\android\android-support-v4.jar" "C:\ProgramData\Titanium\mobilesdk\win32\5.2.2.GA\android\android-support-v7-appcompat.jar" "C:\ProgramData\Titanium\mobilesdk\win32\5.2.2.GA\android\modules\titanium-cardview.jar" "C:\ProgramData\Titanium\mobilesdk\win32\5.2.2.GA\android\cardview-v7-23.0.1.jar" "C:\ProgramData\Titanium\mobilesdk\win32\5.2.2.GA\android\modules\titanium-locale.jar" "C:\ProgramData\Titanium\mobilesdk\win32\5.2.2.GA\android\modules\titanium-network.jar" "C:\ProgramData\Titanium\mobilesdk\win32\5.2.2.GA\android\modules\titanium-xml.jar" "C:\ProgramData\Titanium\mobilesdk\win32\5.2.2.GA\android\modules\titanium-utils.jar" "C:\ProgramData\Titanium\mobilesdk\win32\5.2.2.GA\android\modules\titanium-geolocation.jar" "C:\ProgramData\Titanium\mobilesdk\win32\5.2.2.GA\android\modules\titanium-accelerometer.jar" "C:\ProgramData\Titanium\mobilesdk\win32\5.2.2.GA\android\modules\titanium-contacts.jar" "C:\ProgramData\Titanium\mobilesdk\win32\5.2.2.GA\android\modules\titanium-map.jar" "C:\ProgramData\Titanium\mobilesdk\win32\5.2.2.GA\android\modules\titanium-gesture.jar" "C:\ProgramData\Titanium\mobilesdk\win32\5.2.2.GA\android\modules\titanium-calendar.jar" "C:\ProgramData\Titanium\mobilesdk\win32\5.2.2.GA\android\modules\titanium-platform.jar" "C:\ProgramData\Titanium\mobilesdk\win32\5.2.2.GA\android\modules\titanium-database.jar" "C:\ProgramData\Titanium\mobilesdk\win32\5.2.2.GA\android\lib\titanium-debug.jar"
+[TRACE]  Found 2 devices, checking if any of them are the emulator...
+[TRACE]  Emulator is running!
+[TRACE]  Checking if boot animation has finished...
+[TRACE]  Emulator is not booted yet; checking again in 2000 ms
+[TRACE]  Emulator is not booted yet; checking again in 2000 ms
+[TRACE]  Emulator is not booted yet; checking again in 2000 ms
+[TRACE]  Emulator is not booted yet; checking again in 2000 ms
+[TRACE]  Emulator is not booted yet; checking again in 2000 ms
+[TRACE]  Emulator is not booted yet; checking again in 2000 ms
 [INFO]   Creating unsigned apk
 [DEBUG]  Processing D:\Titanium2\FGRapp1\build\android\bin\app.ap_
 [DEBUG]  Deflating AndroidManifest.xml
@@ -1487,6 +1497,7 @@ Command
 [DEBUG]  Deflating res/layout/titanium_ui_spinner.xml
 [DEBUG]  Deflating res/layout/titanium_ui_switchcompat.xml
 [DEBUG]  Deflating res/layout/titanium_ui_time_picker_spinner.xml
+[DEBUG]  Deflating res/raw/gtm_analytics
 [DEBUG]  Deflating resources.arsc
 [DEBUG]  Processing C:\ProgramData\Application Data\Titanium\modules\android\ti.map\2.3.6\map.jar
 [DEBUG]  Processing C:\ProgramData\Application Data\Titanium\modules\android\ti.map\2.3.6\lib\google-play-services-base.jar
@@ -1562,18 +1573,25 @@ Command
 [DEBUG]  Adding lib/armeabi-v7a/libcom.alcoapps.actionbarextras.so
 [DEBUG]  Adding lib/x86/libcom.alcoapps.actionbarextras.so
 [INFO]   Writing unsigned apk: D:\Titanium2\FGRapp1\build\android\bin\app-unsigned-dev-debug.apk
+[TRACE]  Emulator is not booted yet; checking again in 2000 ms
+[TRACE]  Emulator is not booted yet; checking again in 2000 ms
+[TRACE]  Emulator is not booted yet; checking again in 2000 ms
+[TRACE]  Emulator is not booted yet; checking again in 2000 ms
 [INFO]   Using MD5withRSA signature algorithm
 [INFO]   Signing apk: C:\Program Files (x86)\Java\jdk1.7.0_80\bin\jarsigner.exe "-sigalg" "MD5withRSA" "-digestalg" "SHA1" "-keystore" "C:\ProgramData\Titanium\mobilesdk\win32\5.2.2.GA\android\dev_keystore" "-storepass" "*******" "-signedjar" "D:\Titanium2\FGRapp1\build\android\bin\FGR_Cascade-dev-debug.apk" "D:\Titanium2\FGRapp1\build\android\bin\app-unsigned-dev-debug.apk" "tidev"
+[TRACE]  Emulator is not booted yet; checking again in 2000 ms
+[TRACE]  Emulator is not booted yet; checking again in 2000 ms
 [INFO]   Aligning zip file: C:\android-sdk-win\build-tools\23.0.1\zipalign.exe "-v" "4" "D:\Titanium2\FGRapp1\build\android\bin\FGR_Cascade-dev-debug.apk" "D:\Titanium2\FGRapp1\build\android\bin\FGR_Cascade-dev-debug.apkz"
+[TRACE]  Emulator is not booted yet; checking again in 2000 ms
 [INFO]   Writing build manifest: D:\Titanium2\FGRapp1\build\android\build-manifest.json
 [INFO]   Making sure the adb server is running
+[INFO]   Waiting for emulator to become ready...
+[TRACE]  Emulator is not booted yet; checking again in 2000 ms
+[TRACE]  Emulator is booted, emitting booted event
+[INFO]   Emulator is booted
+[INFO]   SD card not required, skipping mount check
+[INFO]   Emulator ready!
 [INFO]   Installing apk: D:\Titanium2\FGRapp1\build\android\bin\FGR_Cascade-dev-debug.apk
 [TRACE]  Checking if package manager service is started
 [TRACE]  Package manager has started
-[TRACE]  Executing: C:\android-sdk-win\platform-tools\adb.exe -s 192.168.56.101:5555 install -r D:\Titanium2\FGRapp1\build\android\bin\FGR_Cascade-dev-debug.apk
-[INFO]   App successfully installed
-[INFO]   Starting app: edu.uw.titaniumpanda.FGRCascade/.Fgr_cascadeActivity
-[DEBUG]  Trying to start the app...
-[INFO]   Application pid: 5032
-[INFO]   Forwarding host port 54221 to device for debugging
-[INFO]   Project built successfully in 56s 196ms
+[ERROR]  Failed to install apk on "192.168.56.101:5555"
