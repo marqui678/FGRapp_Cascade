@@ -8,7 +8,7 @@
 			<!-- iOS RefreshControl -->
 			<RefreshControl platform="ios" id="refreshControl" onRefreshstart="refresh" />
 			<!-- search, shorthand with Ti.UI.SearchBar -->
-	      <SearchBar id="search"/>
+	      <SearchBar id="search" color="black"/>
 			<Templates>
 				<ItemTemplate name="template" class="item">
 					<View id="firstLine">

@@ -179,6 +179,7 @@ function parseXML(xml) {
 		var time = false;
 		if ((Alloy.Globals.time.length == 0) || ((model['fgrrss:startDateTime'].getUTCHours() >= Alloy.Globals.time[0]) && (model['fgrrss:startDateTime'].getUTCHours() <= Alloy.Globals.time[1]))){
 			time = true;
+			//Alloy.Globals.test.push(model['fgrrss:startDateTime'].getUTCHours());
 		}
 		if (distance){
 			if(day){

@@ -172,7 +172,8 @@ function Controller() {
     });
     $.__views.lwin && $.addTopLevelView($.__views.lwin);
     $.__views.search = Ti.UI.createSearchBar({
-        id: "search"
+        id: "search",
+        color: "black"
     });
     var __alloyId73 = {};
     var __alloyId76 = [];
@@ -192,6 +193,8 @@ function Controller() {
                     font: {
                         fontSize: 20
                     },
+                    ellipsize: true,
+                    wordWrap: false,
                     bindId: "title"
                 }
             };
@@ -208,6 +211,7 @@ function Controller() {
                             font: {
                                 fontSize: 13
                             },
+                            top: "12dp",
                             width: "20dp",
                             image: "/images/Date.png"
                         }
@@ -223,6 +227,7 @@ function Controller() {
                             font: {
                                 fontSize: 16
                             },
+                            top: "12dp",
                             bindId: "startDateTime"
                         }
                     };
@@ -241,7 +246,8 @@ function Controller() {
                                         fontSize: 12
                                     },
                                     width: "25%",
-                                    height: "24dp",
+                                    height: "20dp",
+                                    bottom: 0,
                                     bindId: "paceNumber",
                                     backgroundImage: "/images/pace.png"
                                 }
@@ -257,7 +263,10 @@ function Controller() {
                                         fontSize: 16
                                     },
                                     width: "35%",
-                                    height: "25dp",
+                                    height: "20dp",
+                                    bottom: 0,
+                                    ellipsize: true,
+                                    wordWrap: false,
                                     bindId: "pace"
                                 }
                             };
@@ -272,7 +281,10 @@ function Controller() {
                                         fontSize: 36
                                     },
                                     width: "21%",
+                                    height: "40dp",
                                     textAlign: "right",
+                                    padding: 0,
+                                    bottom: 0,
                                     bindId: "distanceOne"
                                 }
                             };
@@ -288,6 +300,7 @@ function Controller() {
                                     },
                                     width: "11%",
                                     textAlign: "right",
+                                    bottom: 0,
                                     bindId: "distanceTwo"
                                 }
                             };

@@ -120,6 +120,10 @@ function Controller() {
         Alloy.Globals.saturday ? removeDay("Saturday", 6) : addDay("Saturday", 6);
         Alloy.Globals.saturday = !Alloy.Globals.saturday;
     }
+    function zero() {
+        Alloy.Globals.zero ? removeDistance(0, 10, "zero") : addDistance(0, 10, "zero");
+        Alloy.Globals.zero = !Alloy.Globals.zero;
+    }
     function ten() {
         Alloy.Globals.ten ? removeDistance(10, 20, "ten") : addDistance(10, 20, "ten");
         Alloy.Globals.ten = !Alloy.Globals.ten;
@@ -259,14 +263,49 @@ function Controller() {
     function resetFilter() {
         $.startTimeSlider.value = 0;
         $.endTimeSlider.value = 0;
+        if (0 != Alloy.Globals.paceID.length) for (var i = 0; i < Alloy.Globals.paceID.length; i++) remove($[Alloy.Globals.paceID[i]]);
+        if (0 != Alloy.Globals.distanceID.length) for (var i = 0; i < Alloy.Globals.distanceID.length; i++) remove($[Alloy.Globals.distanceID[i]]);
+        if (0 != Alloy.Globals.day.length) for (var i = 0; i < Alloy.Globals.day.length; i++) $["check" + Alloy.Globals.day[i]].image = "/images/unchecked.png";
+        clear();
+    }
+    function clear() {
+        $.paceLabel.text = "";
+        $.dayLabel.text = "";
+        $.timeLabel.text = "";
+        $.distanceLabel.text = "";
+        Alloy.Globals.pace = [];
+        Alloy.Globals.paceID = [];
         Alloy.Globals.day = [];
         Alloy.Globals.dayID = [];
         Alloy.Globals.time = [];
-        Alloy.Globals.pace = [];
-        Alloy.Globals.paceID = [];
         Alloy.Globals.distance = [];
         Alloy.Globals.distanceID = [];
-        initiate();
+        Alloy.Globals.selfPaced = false;
+        Alloy.Globals.easy = false;
+        Alloy.Globals.brisk = false;
+        Alloy.Globals.leisurely = false;
+        Alloy.Globals.steady = false;
+        Alloy.Globals.vigorous = false;
+        Alloy.Globals.moderate = false;
+        Alloy.Globals.strenuous = false;
+        Alloy.Globals.superStrenuous = false;
+        Alloy.Globals.sunday = false;
+        Alloy.Globals.monday = false;
+        Alloy.Globals.tuesday = false;
+        Alloy.Globals.wednesday = false;
+        Alloy.Globals.thursday = false;
+        Alloy.Globals.friday = false;
+        Alloy.Globals.saturday = false;
+        Alloy.Globals.zero = false;
+        Alloy.Globals.ten = false;
+        Alloy.Globals.twenty = false;
+        Alloy.Globals.thirty = false;
+        Alloy.Globals.fourty = false;
+        Alloy.Globals.fifty = false;
+        Alloy.Globals.sixty = false;
+        Alloy.Globals.seventy = false;
+        Alloy.Globals.eighty = false;
+        Alloy.Globals.ninety = false;
     }
     function cancelFilter() {
         $.fwin.close();
@@ -409,14 +448,14 @@ function Controller() {
     $.__views.paceView.add($.__views.__alloyId46);
     $.__views.easy = Ti.UI.createLabel({
         color: "#000",
-        left: "4%",
-        width: "41%",
+        left: "15dp",
+        width: "166dp",
         height: "60dp",
-        backgroundColor: "#1A43B02A",
         textAlign: "center",
         font: {
             fontSize: 14
         },
+        backgroundColor: "#1A43B02A",
         text: "Easy \n Under 10 mph",
         id: "easy"
     });
@@ -424,14 +463,14 @@ function Controller() {
     easy ? $.addListener($.__views.easy, "click", easy) : __defers["$.__views.easy!click!easy"] = true;
     $.__views.leisurely = Ti.UI.createLabel({
         color: "#000",
-        right: "10%",
-        width: "41%",
+        right: "40dp",
+        width: "166dp",
         height: "60dp",
-        backgroundColor: "#2643B02A",
         textAlign: "center",
         font: {
             fontSize: 14
         },
+        backgroundColor: "#2643B02A",
         text: "Leisurely \n 10 - 12 mph",
         id: "leisurely"
     });
@@ -450,11 +489,11 @@ function Controller() {
         left: "15dp",
         width: "166dp",
         height: "60dp",
-        backgroundColor: "#3343B02A",
         textAlign: "center",
         font: {
             fontSize: 14
         },
+        backgroundColor: "#3343B02A",
         text: "Steady \n 12 - 14 mph",
         id: "steady"
     });
@@ -465,11 +504,11 @@ function Controller() {
         right: "40dp",
         width: "166dp",
         height: "60dp",
-        backgroundColor: "#4043B02A",
         textAlign: "center",
         font: {
             fontSize: 14
         },
+        backgroundColor: "#4043B02A",
         text: "Moderate \n 14 - 16 mph",
         id: "moderate"
     });
@@ -488,11 +527,11 @@ function Controller() {
         left: "15dp",
         width: "166dp",
         height: "60dp",
-        backgroundColor: "#4D43B02A",
         textAlign: "center",
         font: {
             fontSize: 14
         },
+        backgroundColor: "#4D43B02A",
         text: "Brisk \n 16 - 18 mph",
         id: "brisk"
     });
@@ -503,11 +542,11 @@ function Controller() {
         right: "40dp",
         width: "166dp",
         height: "60dp",
-        backgroundColor: "#5943B02A",
         textAlign: "center",
         font: {
             fontSize: 14
         },
+        backgroundColor: "#5943B02A",
         text: "Vigorous \n 18 - 20 mph",
         id: "vigorous"
     });
@@ -526,11 +565,11 @@ function Controller() {
         left: "15dp",
         width: "166dp",
         height: "60dp",
-        backgroundColor: "#6643B02A",
         textAlign: "center",
         font: {
             fontSize: 14
         },
+        backgroundColor: "#6643B02A",
         text: "Strenuous \n 20 - 22 mph",
         id: "strenuous"
     });
@@ -541,11 +580,11 @@ function Controller() {
         right: "40dp",
         width: "166dp",
         height: "60dp",
-        backgroundColor: "#7343B02A",
         textAlign: "center",
         font: {
             fontSize: 14
         },
+        backgroundColor: "#7343B02A",
         text: "Super Strenuous \n 22+ mph",
         id: "superStrenuous"
     });
@@ -561,14 +600,14 @@ function Controller() {
     $.__views.paceView.add($.__views.__alloyId50);
     $.__views.selfPaced = Ti.UI.createLabel({
         color: "#000",
-        left: "15dp",
         right: "40dp",
+        left: "15dp",
         height: "60dp",
-        backgroundColor: "#8043B02A",
         textAlign: "center",
         font: {
             fontSize: 14
         },
+        backgroundColor: "#8043B02A",
         text: "Self Paced",
         id: "selfPaced"
     });
@@ -985,175 +1024,190 @@ function Controller() {
     });
     $.__views.scrollView.add($.__views.distanceView);
     $.__views.__alloyId66 = Ti.UI.createView({
-        height: "60dp",
+        height: "40dp",
         top: 10,
         width: "100%",
         left: 0,
         id: "__alloyId66"
     });
     $.__views.distanceView.add($.__views.__alloyId66);
-    $.__views.ten = Ti.UI.createLabel({
+    $.__views.zero = Ti.UI.createLabel({
         color: "#000",
-        left: "4%",
-        width: "41%",
-        height: "60dp",
-        backgroundColor: "#1A43B02A",
+        left: "15dp",
+        width: "166dp",
+        height: "40dp",
         textAlign: "center",
         font: {
             fontSize: 14
         },
+        backgroundColor: "#1A43B02A",
+        text: "Under 10 miles",
+        id: "zero"
+    });
+    $.__views.__alloyId66.add($.__views.zero);
+    zero ? $.addListener($.__views.zero, "click", zero) : __defers["$.__views.zero!click!zero"] = true;
+    $.__views.ten = Ti.UI.createLabel({
+        color: "#000",
+        right: "40dp",
+        width: "166dp",
+        height: "40dp",
+        textAlign: "center",
+        font: {
+            fontSize: 14
+        },
+        backgroundColor: "#2643B02A",
         text: "10-20 miles",
         id: "ten"
     });
     $.__views.__alloyId66.add($.__views.ten);
     ten ? $.addListener($.__views.ten, "click", ten) : __defers["$.__views.ten!click!ten"] = true;
-    $.__views.twenty = Ti.UI.createLabel({
-        color: "#000",
-        right: "10%",
-        width: "41%",
-        height: "60dp",
-        backgroundColor: "#2643B02A",
-        textAlign: "center",
-        font: {
-            fontSize: 14
-        },
-        text: "20-30 miles",
-        id: "twenty"
-    });
-    $.__views.__alloyId66.add($.__views.twenty);
-    twenty ? $.addListener($.__views.twenty, "click", twenty) : __defers["$.__views.twenty!click!twenty"] = true;
     $.__views.__alloyId67 = Ti.UI.createView({
-        height: "60dp",
+        height: "40dp",
         top: 10,
         width: "100%",
         left: 0,
         id: "__alloyId67"
     });
     $.__views.distanceView.add($.__views.__alloyId67);
-    $.__views.thirty = Ti.UI.createLabel({
+    $.__views.twenty = Ti.UI.createLabel({
         color: "#000",
         left: "15dp",
         width: "166dp",
-        height: "60dp",
-        backgroundColor: "#3343B02A",
+        height: "40dp",
         textAlign: "center",
         font: {
             fontSize: 14
         },
+        backgroundColor: "#3343B02A",
+        text: "20-30 miles",
+        id: "twenty"
+    });
+    $.__views.__alloyId67.add($.__views.twenty);
+    twenty ? $.addListener($.__views.twenty, "click", twenty) : __defers["$.__views.twenty!click!twenty"] = true;
+    $.__views.thirty = Ti.UI.createLabel({
+        color: "#000",
+        right: "40dp",
+        width: "166dp",
+        height: "40dp",
+        textAlign: "center",
+        font: {
+            fontSize: 14
+        },
+        backgroundColor: "#4043B02A",
         text: "30-40 miles",
         id: "thirty"
     });
     $.__views.__alloyId67.add($.__views.thirty);
     thirty ? $.addListener($.__views.thirty, "click", thirty) : __defers["$.__views.thirty!click!thirty"] = true;
-    $.__views.fourty = Ti.UI.createLabel({
-        color: "#000",
-        right: "40dp",
-        width: "166dp",
-        height: "60dp",
-        backgroundColor: "#4043B02A",
-        textAlign: "center",
-        font: {
-            fontSize: 14
-        },
-        text: "40-50 miles",
-        id: "fourty"
-    });
-    $.__views.__alloyId67.add($.__views.fourty);
-    fourty ? $.addListener($.__views.fourty, "click", fourty) : __defers["$.__views.fourty!click!fourty"] = true;
     $.__views.__alloyId68 = Ti.UI.createView({
-        height: "60dp",
+        height: "40dp",
         top: 10,
         width: "100%",
         left: 0,
         id: "__alloyId68"
     });
     $.__views.distanceView.add($.__views.__alloyId68);
-    $.__views.fifty = Ti.UI.createLabel({
+    $.__views.fourty = Ti.UI.createLabel({
         color: "#000",
         left: "15dp",
         width: "166dp",
-        height: "60dp",
-        backgroundColor: "#4D43B02A",
+        height: "40dp",
         textAlign: "center",
         font: {
             fontSize: 14
         },
+        backgroundColor: "#4D43B02A",
+        text: "40-50 miles",
+        id: "fourty"
+    });
+    $.__views.__alloyId68.add($.__views.fourty);
+    fourty ? $.addListener($.__views.fourty, "click", fourty) : __defers["$.__views.fourty!click!fourty"] = true;
+    $.__views.fifty = Ti.UI.createLabel({
+        color: "#000",
+        right: "40dp",
+        width: "166dp",
+        height: "40dp",
+        textAlign: "center",
+        font: {
+            fontSize: 14
+        },
+        backgroundColor: "#5943B02A",
         text: "50-60 miles",
         id: "fifty"
     });
     $.__views.__alloyId68.add($.__views.fifty);
     fifty ? $.addListener($.__views.fifty, "click", fifty) : __defers["$.__views.fifty!click!fifty"] = true;
-    $.__views.sixty = Ti.UI.createLabel({
-        color: "#000",
-        right: "40dp",
-        width: "166dp",
-        height: "60dp",
-        backgroundColor: "#5943B02A",
-        textAlign: "center",
-        font: {
-            fontSize: 14
-        },
-        text: "60-70 miles",
-        id: "sixty"
-    });
-    $.__views.__alloyId68.add($.__views.sixty);
-    sixty ? $.addListener($.__views.sixty, "click", sixty) : __defers["$.__views.sixty!click!sixty"] = true;
     $.__views.__alloyId69 = Ti.UI.createView({
-        height: "60dp",
+        height: "40dp",
         top: 10,
         width: "100%",
         left: 0,
         id: "__alloyId69"
     });
     $.__views.distanceView.add($.__views.__alloyId69);
-    $.__views.seventy = Ti.UI.createLabel({
+    $.__views.sixty = Ti.UI.createLabel({
         color: "#000",
         left: "15dp",
         width: "166dp",
-        height: "60dp",
-        backgroundColor: "#6643B02A",
+        height: "40dp",
         textAlign: "center",
         font: {
             fontSize: 14
         },
+        backgroundColor: "#6643B02A",
+        text: "60-70 miles",
+        id: "sixty"
+    });
+    $.__views.__alloyId69.add($.__views.sixty);
+    sixty ? $.addListener($.__views.sixty, "click", sixty) : __defers["$.__views.sixty!click!sixty"] = true;
+    $.__views.seventy = Ti.UI.createLabel({
+        color: "#000",
+        right: "40dp",
+        width: "166dp",
+        height: "40dp",
+        textAlign: "center",
+        font: {
+            fontSize: 14
+        },
+        backgroundColor: "#7343B02A",
         text: "70-80 miles",
         id: "seventy"
     });
     $.__views.__alloyId69.add($.__views.seventy);
     seventy ? $.addListener($.__views.seventy, "click", seventy) : __defers["$.__views.seventy!click!seventy"] = true;
-    $.__views.eighty = Ti.UI.createLabel({
-        color: "#000",
-        right: "40dp",
-        width: "166dp",
-        height: "60dp",
-        backgroundColor: "#7343B02A",
-        textAlign: "center",
-        font: {
-            fontSize: 14
-        },
-        text: "80-90 miles",
-        id: "eighty"
-    });
-    $.__views.__alloyId69.add($.__views.eighty);
-    eighty ? $.addListener($.__views.eighty, "click", eighty) : __defers["$.__views.eighty!click!eighty"] = true;
     $.__views.__alloyId70 = Ti.UI.createView({
-        height: "60dp",
+        height: "40dp",
         top: 10,
         width: "100%",
         left: 0,
         id: "__alloyId70"
     });
     $.__views.distanceView.add($.__views.__alloyId70);
-    $.__views.ninety = Ti.UI.createLabel({
+    $.__views.eighty = Ti.UI.createLabel({
         color: "#000",
         left: "15dp",
-        right: "40dp",
-        height: "60dp",
-        backgroundColor: "#8043B02A",
+        width: "166dp",
+        height: "40dp",
         textAlign: "center",
         font: {
             fontSize: 14
         },
+        backgroundColor: "#8043B02A",
+        text: "80-90 miles",
+        id: "eighty"
+    });
+    $.__views.__alloyId70.add($.__views.eighty);
+    eighty ? $.addListener($.__views.eighty, "click", eighty) : __defers["$.__views.eighty!click!eighty"] = true;
+    $.__views.ninety = Ti.UI.createLabel({
+        color: "#000",
+        right: "40dp",
+        width: "166dp",
+        height: "40dp",
+        textAlign: "center",
+        font: {
+            fontSize: 14
+        },
+        backgroundColor: "#8C43B02A",
         text: "90+ miles",
         id: "ninety"
     });
@@ -1187,21 +1241,32 @@ function Controller() {
         hideVertical($.distanceView);
         initiate();
     }(arguments[0] || {});
-    $.startTimeSlider.addEventListener("touchend", function(e) {
-        $.startTimeLabel.text = e.value + ":00";
+    $.startTimeSlider.addEventListener("touchend", function() {
+        this.value = Math.round($.startTimeSlider.value);
+        $.startTimeLabel.text = this.value + ":00";
+        var temp = $.endTimeSlider.value;
         $.endTimeSlider.min = this.value;
-        $.endTimeSlider.value < $.endTimeSlider.min && ($.endTimeSlider.value = $.endTimeSlider.min);
+        if (temp < $.endTimeSlider.min) {
+            $.endTimeSlider.value = $.endTimeSlider.min;
+            $.timeLabel.text = $.startTimeLabel.text + " to " + Math.round($.endTimeSlider.value) + ":00";
+            Alloy.Globals.time[1] = Math.round($.endTimeSlider.value);
+        } else {
+            $.endTimeSlider.value = temp;
+            $.timeLabel.text = $.startTimeLabel.text + " to " + $.endTimeLabel.text;
+        }
         Alloy.Globals.time[0] = this.value;
-        $.timeLabel.text = $.startTimeLabel.text + " to " + $.endTimeLabel.text;
     });
-    $.startTimeSlider.addEventListener("change", function() {});
-    $.endTimeSlider.addEventListener("touchend", function(e) {
-        $.endTimeLabel.text = e.value + ":00";
+    $.startTimeSlider.addEventListener("change", function() {
+        $.startTimeLabel.text = Math.round($.startTimeSlider.value) + ":00";
+    });
+    $.endTimeSlider.addEventListener("touchend", function() {
+        this.value = Math.round($.endTimeSlider.value);
+        $.endTimeLabel.text = this.value + ":00";
         Alloy.Globals.time[1] = this.value;
         $.timeLabel.text = $.startTimeLabel.text + " to " + $.endTimeLabel.text;
     });
-    $.endTimeSlider.addEventListener("change", function(e) {
-        $.endTimeLabel.text = Math.round(e.value) + ":00";
+    $.endTimeSlider.addEventListener("change", function() {
+        $.endTimeLabel.text = Math.round($.endTimeSlider.value) + ":00";
     });
     __defers["$.__views.__alloyId42!click!resetFilter"] && $.addListener($.__views.__alloyId42, "click", resetFilter);
     __defers["$.__views.paceRow!click!hidePaceView"] && $.addListener($.__views.paceRow, "click", hidePaceView);
@@ -1224,6 +1289,7 @@ function Controller() {
     __defers["$.__views.__alloyId58!click!saturday"] && $.addListener($.__views.__alloyId58, "click", saturday);
     __defers["$.__views.timeRow!click!hideTimeView"] && $.addListener($.__views.timeRow, "click", hideTimeView);
     __defers["$.__views.distanceRow!click!hideDistanceView"] && $.addListener($.__views.distanceRow, "click", hideDistanceView);
+    __defers["$.__views.zero!click!zero"] && $.addListener($.__views.zero, "click", zero);
     __defers["$.__views.ten!click!ten"] && $.addListener($.__views.ten, "click", ten);
     __defers["$.__views.twenty!click!twenty"] && $.addListener($.__views.twenty, "click", twenty);
     __defers["$.__views.thirty!click!thirty"] && $.addListener($.__views.thirty, "click", thirty);

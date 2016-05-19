@@ -288,30 +288,36 @@ function superStrenuous(){
 }
 
 $.startTimeSlider.addEventListener('touchend', function(e){
-    this.value = Math.round(e.value);
+    this.value = Math.round($.startTimeSlider.value);
     $.startTimeLabel.text = this.value + ":00";
+    var temp = $.endTimeSlider.value;
     $.endTimeSlider.min= this.value;
-    if ($.endTimeSlider.value < $.endTimeSlider.min){
+    if (temp < $.endTimeSlider.min){
     	$.endTimeSlider.value = $.endTimeSlider.min;
+   		$.timeLabel.text = $.startTimeLabel.text + " to " + Math.round($.endTimeSlider.value) + ":00";
+   		 Alloy.Globals.time[1] = Math.round($.endTimeSlider.value);
+    } else{
+    	$.endTimeSlider.value = temp;
+    	$.timeLabel.text = $.startTimeLabel.text + " to " + $.endTimeLabel.text;
     }
+    
     Alloy.Globals.time[0] = this.value;
-    $.timeLabel.text = $.startTimeLabel.text + " to " + $.endTimeLabel.text;
 });
 
 $.startTimeSlider.addEventListener('change', function(e) {
-    $.startTimeLabel.text = Math.round(e.value) + ":00";
+    $.startTimeLabel.text = Math.round($.startTimeSlider.value) + ":00";
     
 });
 
 $.endTimeSlider.addEventListener('touchend', function(e){
-    this.value = Math.round(e.value);
+    this.value = Math.round($.endTimeSlider.value);
     $.endTimeLabel.text = this.value + ":00";
     Alloy.Globals.time[1] = this.value;
     $.timeLabel.text = $.startTimeLabel.text + " to " + $.endTimeLabel.text;
 });
 
 $.endTimeSlider.addEventListener('change', function(e) {
-    $.endTimeLabel.text = Math.round(e.value) + ":00";
+    $.endTimeLabel.text = Math.round($.endTimeSlider.value) + ":00";
 });
 function hidePaceView(){
 	hideView($.paceView,paceView);
@@ -413,6 +419,7 @@ function initiate(){
 		$.startTimeSlider.value = Alloy.Globals.time[0];
 		$.endTimeSlider.value = Alloy.Globals.time[1];
 		$.timeLabel.text = Alloy.Globals.time[0] + ":00" + " to " + Alloy.Globals.time[1] + ":00";
+		//$.timeLabel.text = Alloy.Globals.test.toString();
 	}
 }
 function resetFilter(){
@@ -433,14 +440,50 @@ function resetFilter(){
 			$["check"+Alloy.Globals.day[i]].image = "/images/unchecked.png";
 		}
 	}
+	clear();
+}
+function clear(){
+	$.paceLabel.text = "";
+	$.dayLabel.text = "";
+	$.timeLabel.text = "";
+	$.distanceLabel.text = "";
+	
+	Alloy.Globals.pace = [];
+	Alloy.Globals.paceID = [];
 	Alloy.Globals.day = [];
 	Alloy.Globals.dayID = [];
 	Alloy.Globals.time = [];
-	Alloy.Globals.pace = [];
-	Alloy.Globals.paceID = [];
 	Alloy.Globals.distance = [];
 	Alloy.Globals.distanceID = [];
-	initiate();
+	
+	Alloy.Globals.selfPaced = false;
+	Alloy.Globals.easy = false;
+	Alloy.Globals.brisk = false;
+	Alloy.Globals.leisurely = false;
+	Alloy.Globals.steady = false;
+	Alloy.Globals.vigorous = false;
+	Alloy.Globals.moderate = false;
+	Alloy.Globals.strenuous = false;
+	Alloy.Globals.superStrenuous = false;
+	
+	Alloy.Globals.sunday = false;
+	Alloy.Globals.monday = false;
+	Alloy.Globals.tuesday = false;
+	Alloy.Globals.wednesday = false;
+	Alloy.Globals.thursday = false;
+	Alloy.Globals.friday = false;
+	Alloy.Globals.saturday = false;
+	
+	Alloy.Globals.zero = false;
+	Alloy.Globals.ten = false;
+	Alloy.Globals.twenty = false;
+	Alloy.Globals.thirty = false;
+	Alloy.Globals.fourty = false;
+	Alloy.Globals.fifty = false;
+	Alloy.Globals.sixty = false;
+	Alloy.Globals.seventy = false;
+	Alloy.Globals.eighty = false;
+	Alloy.Globals.ninety = false;
 }
 function cancelFilter(){
 	$.fwin.close();

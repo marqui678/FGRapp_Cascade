@@ -35,7 +35,7 @@ function parseXML(xml) {
             var paceNum = model["fgrrss:pace"].match(/\d+/g);
             model["lowestPace"] = null == paceNum ? paceNum : Number(paceNum[0]);
             model["largestPace"] = null == paceNum ? paceNum : Number(paceNum[paceNum.length - 1]);
-            model["paceNumber"] = model["lowestPace"] != model["largestPace"] ? "   " + model["lowestPace"] + "-" + model["largestPace"] + " mph" : "   " + model["lowestPace"] + " mph";
+            model["paceNumber"] = null == model["lowestPace"] ? "   flexible" : model["lowestPace"] != model["largestPace"] ? "   " + model["lowestPace"] + "-" + model["largestPace"] + " mph" : "   " + model["lowestPace"] + " mph";
             var paceTemp = model["fgrrss:pace"].split(":");
             var pace = [];
             pace[0] = paceTemp[0];
