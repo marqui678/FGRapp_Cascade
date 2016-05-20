@@ -22,6 +22,7 @@
 	      <SearchBar id="search" color="black"/>
 				<Templates>
 					<ItemTemplate name="template" class="item">
+<!--
 						<View id="firstLine">
 		                    <Label class="line1" bindId="title" id="title" />
 							<View id="secondLine">
@@ -34,7 +35,25 @@
 							            <Label class="line3" bindId="distanceTwo" id="distanceTwo"/>
 						        </View>
 						    </View>
-	                	</View>
+	                	</View>-->
+
+        		        <View id="rideInfoCalloutWrapper" class="calloutWrapper">    
+					        <View id="rideInfoCallout" class="rideInfoCallout">		        	
+					        	<Label id="rideTitle" bindId="title" class="rideTitle"></Label>
+					        	<View class="rideDateTime">
+					        		<ImageView class="alignLeft" class="calloutImage" width="20" image="/images/Date.png"></ImageView>
+					        		<Label class="alignLeft lightText" bindId="startDateTime" id="startDateTime" />
+					        	</View>
+					        	<View class="ridePace">
+					        		<Label class="alignLeft" bindId="paceNumber" id="paceNumber" backgroundImage="/images/pace.png"/>
+					        		<Label class="alignLeft baseText" bindId="pace" id="pace" />
+					        	</View>
+					        </View>
+				        	<View class="rideDistance">
+				        		<Label class="alignLeft baseText" bindId="distanceOne" id="distanceOne"/>
+					            <Label class="lightText" bindId="distanceTwo" id="distanceTwo"/>
+				        	</View>
+				        </View>
 					</ItemTemplate>
 				</Templates>
 				
