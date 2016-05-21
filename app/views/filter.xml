@@ -1,12 +1,13 @@
 <Alloy>
-	<Window id="fwin" title='Filter' width="100%" left="0">
+	<Window id="fwin" title='Filter' right="0" left="0">
 		<LeftNavButton platform="ios"><Button id="cancel" onClick="cancelFilter">Cancel</Button></LeftNavButton>
 		<RightNavButton platform="ios"><Button id="reset" onClick="resetFilter">Clear All</Button></RightNavButton>
 		<ActionBar platform="android" id="actionbar" title="Filter" onHomeIconItemSelected="cancelFilter" displayHomeAsUp="true" />
 		<Menu platform="android">
 			<MenuItem title="Clear All" onClick="resetFilter" showAsAction="Ti.Android.SHOW_AS_ACTION_ALWAYS" />
 		</Menu>	
-		<ScrollView id="scrollView" left="0" layout="vertical" scrollType="vertical" disableBounce="true" showVerticalScrollIndicator="true" bottom="50dp" width="100%">
+		<!--<ScrollView id="scrollView" left="0" layout="vertical" scrollType="vertical" disableBounce="true" showVerticalScrollIndicator="true" bottom="50dp" width="100%">-->
+		<View layout="vertical" left="0" right="0" bottom="50dp">
 			<View id="paceRow" class="filterRow" onClick="hidePaceView">
 				<Label class="filterOpt" id="pace" >PACE</Label>
 				<Label class="filterChosen" id="paceLabel"/>
@@ -15,8 +16,10 @@
 			<View class="separator"/>
 			<View class="filterView" id="paceView">
 				<View class="paceRow">
-					<Label class="Label1 LabelSize1" id="easy" onClick="easy">Easy \n Under 10 mph</Label>
-					<Label class="Label2 LabelSize2" id="leisurely" onClick="leisurely">Leisurely \n 10 - 12 mph</Label>
+					<View borderColor="black" left="5%" right="5%">
+						<Label class="Label1 LabelSize1" id="easy" onClick="easy">Easy \n Under 10 mph</Label>
+						<Label class="Label2 LabelSize2" id="leisurely" onClick="leisurely">Leisurely \n 10 - 12 mph</Label>
+					</View>
 				</View>
 				<View class="paceRow" >
 					<Label class="Label3 LabelSize1" id="steady" onClick="steady">Steady \n 12 - 14 mph</Label>
@@ -88,12 +91,12 @@
 	        		<Label left="16dp">Latest Start Time:</Label>
 					<Label id="endTimeLabel" left="5dp" />
 				</View>
-		        <Slider id="endTimeSlider" top="0" left="16dp" width="85%"  max="24" leftTrackImage="/images/grey.png"/>
+		        <Slider id="endTimeSlider" top="0" left="16dp" width="85%" min="0" max="24" leftTrackImage="/images/grey.png"/>
 	        </View>
 	        <View id="distanceRow" class="filterRow" onClick="hideDistanceView">
 				<Label class="filterOpt" id="distance">DISTANCE</Label>
 				<Label class="filterChosen" id="distanceLabel"/>
-				<ImageView class="arrow" id="distanceFold"/>
+				<ImageView class="arrow" id="distanceFold" image="/images/Filter open.png"/>
 			</View>
 			<View class="separator"/>
 			<View id="distanceView" class="filterView" >
@@ -121,7 +124,7 @@
 					<Label class="Label10 LabelSize4" id="ninety" onClick="ninety">90+ miles</Label>
 				</View>
 			</View>   
-        </ScrollView>
+        </View>
         <Button id="apply" onClick="applyFilter">Apply</Button>
 	</Window>
 </Alloy>

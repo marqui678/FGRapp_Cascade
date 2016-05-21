@@ -21,22 +21,7 @@
 				<!-- search, shorthand with Ti.UI.SearchBar -->
 	      <SearchBar id="search" color="black"/>
 				<Templates>
-					<ItemTemplate name="template" class="item">
-<!--
-						<View id="firstLine">
-		                    <Label class="line1" bindId="title" id="title" />
-							<View id="secondLine">
-								<ImageView class="line2" width="20dp" image="/images/Date.png"></ImageView>
-								<Label class="line2" bindId="startDateTime" id="startDateTime" />
-								<View id="thirdLine">
-										<Label class="line3" bindId="paceNumber" id="paceNumber" backgroundImage="/images/pace.png"/>
-							            <Label class="line3" bindId="pace" id="pace" />
-							            <Label class="line3" bindId="distanceOne" id="distanceOne"/>
-							            <Label class="line3" bindId="distanceTwo" id="distanceTwo"/>
-						        </View>
-						    </View>
-	                	</View>-->
-
+					<ItemTemplate name="template">
         		        <View id="rideInfoCalloutWrapper" class="calloutWrapper">    
 					        <View id="rideInfoCallout" class="rideInfoCallout">		        	
 					        	<Label id="rideTitle" bindId="title" class="rideTitle"></Label>
