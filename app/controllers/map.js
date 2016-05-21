@@ -178,22 +178,29 @@ function createAnnotationsWithModels(models, customAnnotationView) {
  */
 function report(evt) {
     Ti.API.info("Annotation " + evt.title + " clicked, id: " + evt.annotation.myid);
-    //Deselect (including select search location anotation)
-    if (evt.clicksource === null || 
-    	(evt.clicksource === "pin" && 
-    		(evt.annotation.myid === lastClickedAnnotationId) || (evt.annotation.myid === "anno_search")
-    	)) {
-    	$.rideInfoCalloutWrapper.visible = false;
-    	lastClickedAnnotationId = null;
-    } 
-    //Select
-    else {
-    	//Set info in callout box and show it 	
-    	setCalloutInfo(evt.annotation.myid);    	
-    	$.rideInfoCalloutWrapper.visible = true;
-    	
-    	//Update lastClickedAnnotationId
-    	lastClickedAnnotationId = evt.annotation.myid;
+    
+    if (OS_IOS) {
+	    if (evt.clicksource === "pin") {
+		    //Select
+		    if (!(evt.annotation.myid === lastClickedAnnotationId) || (evt.annotation.myid === "anno_search")) {
+		    	//Set info in callout box and show it 	
+		    	setCalloutInfo(evt.annotation.myid);    	
+		    	$.rideInfoCalloutWrapper.show();
+		    	
+		    	//Update lastClickedAnnotationId
+		    	lastClickedAnnotationId = evt.annotation.myid;
+		    }
+		    //Deselect: select search location anotation
+		    else if (evt.annotation.myid === "anno_search") {
+		    	$.rideInfoCalloutWrapper.hide();
+	    		lastClickedAnnotationId = null;
+		    }
+	    }
+	    //Deselect
+	    else if (evt.clicksource === "map") {
+	    	$.rideInfoCalloutWrapper.hide();
+	    	lastClickedAnnotationId = null;
+	    }
     }
 }
 
