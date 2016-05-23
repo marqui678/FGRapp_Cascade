@@ -16,10 +16,8 @@
 			<View class="separator"/>
 			<View class="filterView" id="paceView">
 				<View class="paceRow">
-					<View borderColor="black" left="5%" right="5%">
-						<Label class="Label1 LabelSize1" id="easy" onClick="easy">Easy \n Under 10 mph</Label>
-						<Label class="Label2 LabelSize2" id="leisurely" onClick="leisurely">Leisurely \n 10 - 12 mph</Label>
-					</View>
+					<Label class="Label1 LabelSize1" id="easy" onClick="easy">Easy \n Under 10 mph</Label>
+					<Label class="Label2 LabelSize2" id="leisurely" onClick="leisurely">Leisurely \n 10 - 12 mph</Label>
 				</View>
 				<View class="paceRow" >
 					<Label class="Label3 LabelSize1" id="steady" onClick="steady">Steady \n 12 - 14 mph</Label>

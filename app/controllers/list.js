@@ -147,6 +147,7 @@ function select(e) {
 	Alloy.Globals.Navigator.open("detail",model);
 }
 $.search.addEventListener('cancel', function(){
+	$.search.value = "";
     $.search.blur();
 });
 
