@@ -1,10 +1,11 @@
 <Alloy>
 	<Window id="searchWindow" theme="FGRThemeWithoutActionBar">
-		<View>
+		<View id="mainView">
 			<View id="searchView">
 				<Button id="backBtn" onClick="cancelSearch"  />
-				<SearchBar id="searchBar"  showCancel="false" />
+				<SearchBar id="searchBar"  class="searchBar" showCancel="false" />
 			</View>
+			<!-- <SearchBar platform="ios" id="searchBar" top="0" showCancel="true"/> -->
 			<View id="curLoc" onClick="useCurrentLoc" layout="horizontal">
 				<ImageView id="curLocImage" image="/images/ic_navigation.png" />				
 				<Label id="curLocLabel">Current location</Label>		

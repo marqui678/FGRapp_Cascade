@@ -1,4 +1,8 @@
 
+	width: Ti.UI.FILL,
+	height: Ti.UI.SIZE
+},
+
 '#lwin[platfrom=android]':{
 	barColor: "#43B02A",
 	height: Ti.UI.FILL,
@@ -7,6 +11,11 @@
 '#lwin':{
 	barColor: "#43B02A",
 	height: Ti.UI.FILL,
+},
+
+'#lwin[platform=ios]':{
+	barColor: "#43B02A",
+	height: Ti.UI.FILL
 },
 
 "#mainView": {
@@ -29,7 +38,8 @@
 	color: "#43B02A",
 	backgroundColor: "transparent",
 	font: { fontSize: 16},
-	width: Titanium.UI.SIZE
+	width: "80",
+	height: Ti.UI.FILL
 },
 
 "#filter": {
@@ -131,6 +141,10 @@
 	left: "0",
 	verticalAlign: "top",
 	bottom: "0dp",
+},
+
+"#distanceOne[platform=ios]": {
+	bottom: "-4dp",
 },
 
 "#distanceTwo": {

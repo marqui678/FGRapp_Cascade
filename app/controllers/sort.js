@@ -1,6 +1,9 @@
 // Arguments passed into this controller can be accessed via the `$.args` object directly or:
 var args = $.args;
 
+//Hide back button on iOS
+//$.sortWindow.leftNavButton = null;
+
 var radioBtn = "images/ic_radio_button_off.png";
 var selectedRadioBtn = "images/ic_radio_button_on.png";
 var arrowBtn = "images/ic_arrow_drop_up.png";
