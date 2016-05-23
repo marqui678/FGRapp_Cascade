@@ -28,8 +28,14 @@
 	right: "16"
 },
 
+"#separator": {
+	height:	"1dp",
+	top: "65dp",
+	backgroundColor: "#1A006F44"
+},
+
 "#sortOptionsList": {
-	top: "65",
+	top: "66",
 },
 
 "#listTemplate": {
@@ -77,5 +83,6 @@
 	width: Ti.UI.FILL,
 	height: "50dp",
 	backgroundColor: "#006F44",
+	color: "#FFFFFF",
 	font: { fontSize: 16 },
 }

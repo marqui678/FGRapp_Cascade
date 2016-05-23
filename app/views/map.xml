@@ -1,6 +1,6 @@
 
 <Alloy>
-    <Window id="mainWindow" title="map">
+    <Window id="mainWindow" title="Map">
     	<LeftNavButton platform=ios>
         	<Button onClick="openMenu" image="images/menu_light.png"/>
         </LeftNavButton>

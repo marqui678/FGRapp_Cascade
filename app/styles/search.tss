@@ -1,6 +1,17 @@
 "#searchWindow" : {
-    backgroundColor: "#F7F7F7",
+    backgroundColor: "#43B02A",
+    barColor: "#43B02A",
     navBarHidden: true,
+},
+
+"#searchWindow[platform=ios]": {
+	top: "20dp"
+},
+
+"#mainView": {
+	width: Ti.UI.FILL,
+	height: Ti.UI.FILL,
+	backgroundColor: "#F7F7F7"
 },
 
 "#searchView": {
@@ -20,7 +31,7 @@
 	backgroundImage: "/images/back_dark.png"
 },
 
-"#searchBar": {
+".searchBar": {
 	color: "#646464",
 	barColor: "#FFFFFF",
 	left: "45",
@@ -29,6 +40,7 @@
 	hintText: "Enter address or location",
 	hintTextColor:'#646464',
 	borderStyle: "Ti.UI.INPUT_BORDERSTYLE_ROUNDED",
+	borderColor: "#FFFFFF",
 	clearButtonMode: "Ti.UI.INPUT_BUTTONMODE_ALWAYS",
 	keyboardType: "Ti.UI.KEYBOARD_DEFAULT"
 }

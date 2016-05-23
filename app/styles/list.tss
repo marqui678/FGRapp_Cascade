@@ -100,7 +100,8 @@
 	color: "#43B02A",
 	backgroundColor: "transparent",
 	font: { fontSize: 16},
-	width: Titanium.UI.SIZE
+	width: "80",
+	height: Ti.UI.FILL
 },
 
 "#filter": {
@@ -202,6 +203,10 @@
 	left: "0",
 	verticalAlign: "top",
 	bottom: "0dp",
+},
+
+"#distanceOne[platform=ios]": {
+	bottom: "-4dp",
 },
 
 "#distanceTwo": {

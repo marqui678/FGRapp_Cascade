@@ -5,7 +5,7 @@
 	<Window id="lwin" title="Free Group Rides">
 		<!--menu button-->
 		<LeftNavButton platform=ios>
-        	<Button onClick="openMenu" image="images/ic_menu_light.png"/>
+        	<Button onClick="openMenu" image="images/menu_light.png"/>
         </LeftNavButton>
     	<Require type="widget" src="com.alcoapps.drawermenu" id="drawermenu"/>
     	<Menu platform="android">

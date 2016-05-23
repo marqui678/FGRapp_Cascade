@@ -1,5 +1,6 @@
 // Arguments passed into this controller can be accessed via the `$.args` object directly or:
 var args = $.args;
+Ti.UI.setBackgroundColor('#43B02A');
 
 $.searchBar.addEventListener('return', function(e) {
 	searchLocation();
