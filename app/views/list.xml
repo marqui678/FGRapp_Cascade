@@ -21,7 +21,7 @@
 				<!-- search, shorthand with Ti.UI.SearchBar -->
 	      <SearchBar id="search" color="black"/>
 				<Templates>
-					<ItemTemplate name="template">
+					<ItemTemplate name="template" class="item">
         		        <View id="rideInfoCalloutWrapper" class="calloutWrapper">    
 					        <View id="rideInfoCallout" class="rideInfoCallout">		        	
 					        	<Label id="rideTitle" bindId="title" class="rideTitle"></Label>
