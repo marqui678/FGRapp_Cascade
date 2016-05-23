@@ -202,6 +202,25 @@ function report(evt) {
 	    	lastClickedAnnotationId = null;
 	    }
     }
+    else if (OS_ANDROID) {
+	    //Deselect (including select search location anotation)
+	    if (evt.clicksource === null || 
+	    	(evt.clicksource === "pin" && 
+	    		(evt.annotation.myid === lastClickedAnnotationId) || (evt.annotation.myid === "anno_search")
+	    	)) {
+	    	$.rideInfoCalloutWrapper.visible = false;
+	    	lastClickedAnnotationId = null;
+	    } 
+	    //Select
+	    else {
+	    	//Set info in callout box and show it 	
+	    	setCalloutInfo(evt.annotation.myid);    	
+	    	$.rideInfoCalloutWrapper.visible = true;
+	    	
+	    	//Update lastClickedAnnotationId
+	    	lastClickedAnnotationId = evt.annotation.myid;
+	    }
+    }
 }
 
 /**
