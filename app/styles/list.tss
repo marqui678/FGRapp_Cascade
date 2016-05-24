@@ -3,14 +3,10 @@
 	height: Ti.UI.SIZE
 },
 
-'#lwin[platfrom=android]':{
+'#lwin[platform=android]':{
 	barColor: "#43B02A",
 	height: Ti.UI.FILL,
 	windowSoftInputMode: Titanium.UI.Android.SOFT_INPUT_ADJUST_PAN
-},
-'#lwin':{
-	barColor: "#43B02A",
-	height: Ti.UI.FILL,
 },
 
 '#lwin[platform=ios]':{
@@ -57,7 +53,6 @@
 	height: "107dp",
 	width: Titanium.UI.FILL,
 	bottom: "0dp",
-	backgroundColor: "#F7F7F7"
 },
 
 ".baseText": {
