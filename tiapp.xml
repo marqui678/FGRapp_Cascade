@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ti:app xmlns:ti="http://ti.appcelerator.org">
     <id>edu.uw.titaniumpanda.FGRCascade</id>
-    <name>FGR_Cascade</name>
+    <name>Ride Finder</name>
     <version>1.0</version>
     <publisher>Kai</publisher>
     <description>undefined</description>
