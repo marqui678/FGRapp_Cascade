@@ -4,11 +4,8 @@
 			<MenuItem onClick="cancel" title="Cancel" id="cancelSortBtn" showAsAction="Ti.Android.SHOW_AS_ACTION_ALWAYS" />
 		</Menu>
 		<LeftNavButton platform="ios">
-			<Button title=""/>
-	</LeftNavButton>
-		<RightNavButton platform="ios">
 			<Button title="Cancel" onClick="cancel" id="cancelSortBtn"/>
-		</RightNavButton>	
+		</LeftNavButton>	
 		
 		<View id="sortByInfo">
 			<Label id="sortBy" class="firstLevelFont">SORT BY</Label>
