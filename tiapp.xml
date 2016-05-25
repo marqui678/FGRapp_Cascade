@@ -13,7 +13,7 @@
     <guid>0b49a6c2-1ae9-421b-9555-00cc7177e83c</guid>
     <property name="ti.ui.defaultunit" type="string">dp</property>
     <ios>
-        <enable-launch-screen-storyboard>true</enable-launch-screen-storyboard>
+        <enable-launch-screen-storyboard>false</enable-launch-screen-storyboard>
         <plist>
             <dict>
                 <key>UISupportedInterfaceOrientations~iphone</key>
