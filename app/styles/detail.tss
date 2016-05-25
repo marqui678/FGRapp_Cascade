@@ -238,5 +238,5 @@
 '#register':{
 	color:'white',
 	backgroundColor : '#006F44',
-	borderColor:'#43B02A'
+	borderColor:'#006F44'
 }
