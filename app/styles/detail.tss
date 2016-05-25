@@ -142,7 +142,9 @@
 	right:'7dp',
 	color: '#2C2A29',
 	left:'7dp',
-	height:'100%'
+	height:'100%',
+	ellipsize: true,
+	//wordWrap: false
 	
 }
 
