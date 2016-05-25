@@ -159,15 +159,14 @@
 }
 
 '#readMore[platform=android]':{
-	bottom:'3dp',
+	bottom:'2dp',
 	right:'9dp',
 	height:'16dp',
 	color:'#006F44',
 	backgroundColor:'#F7F7F7',
 	font: { fontSize:12 },
 	width:"80dp",
-	textAlign: Titanium.UI.TEXT_ALIGNMENT_RIGHT,
-	borderColor:'red'
+	textAlign: Titanium.UI.TEXT_ALIGNMENT_RIGHT
 	
 }
 //address and direction
