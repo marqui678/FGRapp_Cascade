@@ -2,7 +2,7 @@
 	
 	<!-- create global instance of collection we'll bind -->	
 	<Collection src="feed"/>
-	<Window id="lwin" title="Free Group Rides">
+	<Window id="lwin" title="Ride Finder">
 		<!--menu button-->
 		<LeftNavButton platform=ios>
         	<Button onClick="openMenu" image="images/menu_light.png"/>
