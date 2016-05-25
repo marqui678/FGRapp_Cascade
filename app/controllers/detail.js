@@ -71,6 +71,15 @@ var mapAnnotation = Map.createAnnotation({
     image:'/images/ic_place_green.png'
 });
 
+var customAnnotationView = Ti.UI.createView({
+    backgroundImage: '/images/ic_place_green.png',
+    height: "40dp",
+    width: "28dp"
+});
+
+if (OS_ANDROID) {
+			mapAnnotation.customView = customAnnotationView;
+}
 /**
  * Add the Map Annotation to the MapView
  */
@@ -198,5 +207,8 @@ function callContact(){
 };
 var address = '4535 12th ave ne seattle';
 function openMap(){
+	if(OS_ANDROID){
+		Ti.Platform.openURL('http://maps.google.com/maps?&q='+latitude+ ',' +longitude);
+	}
 	Ti.Platform.openURL('Maps://?&q='+latitude+ ',' +longitude);
 }

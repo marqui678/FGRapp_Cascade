@@ -289,19 +289,13 @@ function superStrenuous(){
 
 $.startTimeSlider.addEventListener('touchend', function(e){
     this.value = Math.round($.startTimeSlider.value);
-    $.startTimeLabel.text = this.value + ":00";
-    var temp = $.endTimeSlider.value;
-    $.endTimeSlider.min= this.value;
-    if (temp < $.endTimeSlider.min){
-    	$.endTimeSlider.value = $.endTimeSlider.min;
-   		$.timeLabel.text = $.startTimeLabel.text + " to " + Math.round($.endTimeSlider.value) + ":00";
-   		 Alloy.Globals.time[1] = Math.round($.endTimeSlider.value);
-    } else{
-    	$.endTimeSlider.value = temp;
-    	$.timeLabel.text = $.startTimeLabel.text + " to " + $.endTimeLabel.text;
+    $.startTimeLabel.text = this.value + ":00";    
+    if ($.endTimeSlider.value < this.value){
+    	$.endTimeSlider.value = this.value;
+    	$.timeLabel.text = $.startTimeLabel.text + " to " + Math.round($.endTimeSlider.value) + ":00";
     }
-    
     Alloy.Globals.time[0] = this.value;
+    $.timeLabel.text = $.startTimeLabel.text + " to " + Math.round($.endTimeSlider.value) + ":00";
 });
 
 $.startTimeSlider.addEventListener('change', function(e) {
@@ -311,6 +305,10 @@ $.startTimeSlider.addEventListener('change', function(e) {
 
 $.endTimeSlider.addEventListener('touchend', function(e){
     this.value = Math.round($.endTimeSlider.value);
+    if (this.value < $.startTimeSlider.value){
+    	alert("Latest start time cannot be earlier than earliest start time.");
+    	this.value = $.startTimeSlider.value;
+    }
     $.endTimeLabel.text = this.value + ":00";
     Alloy.Globals.time[1] = this.value;
     $.timeLabel.text = $.startTimeLabel.text + " to " + $.endTimeLabel.text;
@@ -415,6 +413,8 @@ function initiate(){
 	}
 	if (Alloy.Globals.time.length == 0){
 		$.timeLabel.text = "";
+		$.startTimeSlider.value = 0;
+		$.endTimeSlider.value = 0;
 	} else {
 		$.startTimeSlider.value = Alloy.Globals.time[0];
 		$.endTimeSlider.value = Alloy.Globals.time[1];

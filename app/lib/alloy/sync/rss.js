@@ -147,11 +147,11 @@ function parseXML(xml) {
 		
 		//Convert fgrrss:startDateTime string to date
 		if (model['fgrrss:startDateTime'] !== undefined) {
-			model['startDateTime'] = model['fgrrss:startDateTime'];
-			if (model['startDateTime'].indexOf("to") != -1){
-				model['startDateTime'] = model['startDateTime'].substring(0,25);
+			if (model['fgrrss:startDateTime'].indexOf("to") != -1){
+				model['fgrrss:startDateTime'] = model['fgrrss:startDateTime'].substring(0,25);
 			}
 			var s = model['fgrrss:startDateTime'].substring(0,19);
+			model['startDateTime'] = s;
 			model['fgrrss:startDateTime'] = new Date(s);
 		}
 		var distance = false;
@@ -176,10 +176,11 @@ function parseXML(xml) {
 				}
 			}
 		}
+
 		var time = false;
-		if ((Alloy.Globals.time.length == 0) || ((model['fgrrss:startDateTime'].getUTCHours() >= Alloy.Globals.time[0]) && (model['fgrrss:startDateTime'].getUTCHours() <= Alloy.Globals.time[1]))){
+		if ((Alloy.Globals.time.length == 0) || ((model['fgrrss:startDateTime'].getUTCHours() >= Alloy.Globals.time[0]) && ((model['fgrrss:startDateTime'].getUTCHours() < Alloy.Globals.time[1]) 
+		|| ((model['fgrrss:startDateTime'].getUTCHours() == Alloy.Globals.time[1]) && (model['fgrrss:startDateTime'].getUTCMinutes() == 0))))){
 			time = true;
-			//Alloy.Globals.test.push(model['fgrrss:startDateTime'].getUTCHours());
 		}
 		if (distance){
 			if(day){
