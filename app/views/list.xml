@@ -19,7 +19,7 @@
 				<!-- iOS RefreshControl -->
 				<RefreshControl platform="ios" id="refreshControl" onRefreshstart="refresh" />
 				<!-- search, shorthand with Ti.UI.SearchBar -->
-	      <SearchBar id="search" color="black"/>
+	      <SearchBar id="search" color="#646464" hintText="Search for ride names" hintTextColor="#A6A6A6" backgroundColor="#F7F7F7"/>
 				<Templates>
 					<ItemTemplate name="template" class="item">
         		        <View id="rideInfoCalloutWrapper" class="calloutWrapper">    

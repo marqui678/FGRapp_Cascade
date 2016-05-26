@@ -2,11 +2,10 @@
 	<Window id="fwin" title='Filter' right="0" left="0">
 		<LeftNavButton platform="ios"><Button id="cancel" onClick="cancelFilter">Cancel</Button></LeftNavButton>
 		<RightNavButton platform="ios"><Button id="reset" onClick="resetFilter">Clear All</Button></RightNavButton>
-		<ActionBar platform="android" id="actionbar" title="Filter" onHomeIconItemSelected="cancelFilter" displayHomeAsUp="true" />
+		<ActionBar platform="android" id="actionbar" title="Filter" onHomeIconItemSelected="cancelFilter" displayHomeAsUp="true"/>
 		<Menu platform="android">
 			<MenuItem title="Clear All" onClick="resetFilter" showAsAction="Ti.Android.SHOW_AS_ACTION_ALWAYS" />
 		</Menu>	
-		<!--<ScrollView id="scrollView" left="0" layout="vertical" scrollType="vertical" disableBounce="true" showVerticalScrollIndicator="true" bottom="50dp" width="100%">-->
 		<View layout="vertical" left="0" right="0" bottom="50dp">
 			<View id="paceRow" class="filterRow" onClick="hidePaceView">
 				<Label class="filterOpt" id="pace" >PACE</Label>
@@ -36,7 +35,7 @@
 				</View>
 			</View>   
 			<View id="dayRow" class="filterRow" onClick="hideDayView">
-	        	<Label id="day" class="filterOpt" >DAY</Label>
+	        	<Label id="day" class="filterOpt" >DAYS</Label>
 	        	<Label class="filterChosen" id="dayLabel"/>
 	        	<ImageView class="arrow" id="dayFold" image="/images/Filter open.png"/>
 			</View>
@@ -72,21 +71,21 @@
 		        </View>
 	        </View>
 	        <View id="timeRow" class="filterRow" onClick="hideTimeView">
-	        	<Label id="time" class="filterOpt" >TIME</Label>
+	        	<Label id="time" class="filterOpt">START TIME</Label>
 	        	<Label class="filterChosen" id="timeLabel"/>
 	        	<ImageView class="arrow" id="timeFold" image="/images/Filter open.png"/>
 			</View>
 			<View class="separator"/>
 	        <View id="timeView" class="filterView">
 	        	<View layout="horizontal" height="30dp" top="10dp">
-	        		<Label left="16dp">Earliest Start Time:</Label>
+	        		<Label left="16dp">No earlier than:</Label>
 					<Label id="startTimeLabel" left="5dp"/>
 				</View>
 		        <Slider id="startTimeSlider" top="0" left="16dp" width="85%" min="0" max="24" leftTrackImage="/images/grey.png"/>
 	        	
 		        <Label top="0" height="80dp">To</Label>
 		        <View layout="horizontal" height="30dp" top="10dp">
-	        		<Label left="16dp">Latest Start Time:</Label>
+	        		<Label left="16dp">No later than:</Label>
 					<Label id="endTimeLabel" left="5dp" />
 				</View>
 		        <Slider id="endTimeSlider" top="0" left="16dp" width="85%" min="0" max="24" leftTrackImage="/images/grey.png"/>
