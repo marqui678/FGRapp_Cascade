@@ -306,7 +306,6 @@ $.startTimeSlider.addEventListener('change', function(e) {
 $.endTimeSlider.addEventListener('touchend', function(e){
     this.value = Math.round($.endTimeSlider.value);
     if (this.value < $.startTimeSlider.value){
-    	alert("Latest start time cannot be earlier than earliest start time.");
     	this.value = $.startTimeSlider.value;
     }
     $.endTimeLabel.text = this.value + ":00";
@@ -419,7 +418,6 @@ function initiate(){
 		$.startTimeSlider.value = Alloy.Globals.time[0];
 		$.endTimeSlider.value = Alloy.Globals.time[1];
 		$.timeLabel.text = Alloy.Globals.time[0] + ":00" + " to " + Alloy.Globals.time[1] + ":00";
-		//$.timeLabel.text = Alloy.Globals.test.toString();
 	}
 }
 function resetFilter(){

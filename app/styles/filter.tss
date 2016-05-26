@@ -13,17 +13,17 @@
 }
 
 ".filterOpt":{
-	top:0,  left:"16dp", height:"50dp", width:"25%",color: "#2C2A29",font: { fontSize: 16 },
+	top:0,  left:"3%", height:"50dp", width:"25%",color: "#2C2A29",font: { fontSize: 16 },
 }
 
 ".filterChosen":{
-	top:"18dp", left:"5dp", height:"20dp", width:"60%", font: { fontSize: 12 }, color: "#646464", textAlign:"right",
+	top:"18dp", left:"3%", height:"20dp", width:"57%", font: { fontSize: 12 }, color: "#646464", textAlign:"right",
 	ellipsize: true,
 	wordWrap: false,
 }
 
 ".arrow":{
-	width:"5%", height:"20dp"
+	left:"4%",width:"20dp", height:"20dp"
 }
 
 ".filterView":{

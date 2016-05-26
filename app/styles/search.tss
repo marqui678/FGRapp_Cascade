@@ -38,7 +38,7 @@
 	right: "0",
 	font: { fontSize: 16 },
 	hintText: "Enter address or location",
-	hintTextColor:'#646464',
+	hintTextColor:'#A6A6A6',
 	borderStyle: "Ti.UI.INPUT_BORDERSTYLE_ROUNDED",
 	borderColor: "#FFFFFF",
 	clearButtonMode: "Ti.UI.INPUT_BUTTONMODE_ALWAYS",
