@@ -91,7 +91,12 @@ function parseXML(xml) {
 			}
 			
 		}
-		
+		for (var y=0;y<model["title"].toString().length;y++){
+			if (model["title"].toString().substring(y,y+1) != " "){
+				model["title"] = model["title"].toString().substring(y,model["title"].length);
+				break;
+			}
+		}
 		//Parse <georss:point> to latitude and longitude
 		if (model["georss:point"] !== undefined) {
 			var pos = model["georss:point"];
@@ -100,41 +105,102 @@ function parseXML(xml) {
 			model["latitude"] = parseFloat(location[1]);
 		}
 		
-		//Generate lowestPace element which would be used for pace sorting.
-		//Will be null for Self Paced
-		if (model["fgrrss:pace"] !== undefined) {
-			var paceNum = model["fgrrss:pace"].match(/\d+/g);			
-			model["lowestPace"] = paceNum == null ? paceNum: Number(paceNum[0]);
-		}
 		
 		//Convert distance to number so that it would be easy for sort and filter by distance
 		if (model["fgrrss:distance"] !== undefined) {
 			var distance = model["fgrrss:distance"].match(/\d+./g);	
 			if (distance !== null && distance.length >= 0) {
 				model["fgrrss:distance"] = Number(distance.join(""));//.toFixed(2)
+				//Round downward to nearest integer
+				model["distance1"] = Math.floor(model['fgrrss:distance']);
+				var distanceStr = model['fgrrss:distance'].toFixed(2);
+				model["distance2"] = distanceStr.substring(distanceStr.length - 3) + 'mi';
 			}
+		}
+		//Generate lowestPace element which would be used for pace sorting.
+		//Will be null for Self Paced
+		if (model["fgrrss:pace"] !== undefined) {
+			var paceNum = model["fgrrss:pace"].match(/\d+/g);			
+			model["lowestPace"] = paceNum == null ? paceNum: Number(paceNum[0]);
+			model["largestPace"] = paceNum == null ? paceNum: Number(paceNum[paceNum.length-1]);
+			if (model["lowestPace"] == null){
+				model["paceNumber"] = "   flexible";
+			} else{
+				if (model["lowestPace"] != model["largestPace"]){
+					model["paceNumber"] = "   " + model["lowestPace"] + "-" + model["largestPace"] + " mph";
+				} else{
+					model["paceNumber"] = "   " + model["lowestPace"] + " mph";
+				}
+			}
+			
+			var paceTemp = model["fgrrss:pace"].split(":");
+			var pace = [];
+			pace[0] = paceTemp[0];
+			if (paceTemp.length > 2){
+				for (var x=1;x<paceTemp.length-1;x++){
+					pace[x] = paceTemp[x].substring(13,paceTemp[x].length);
+				}
+			}
+			model["pace"]=pace.join();
+			
 		}
 		
 		//Convert fgrrss:startDateTime string to date
 		if (model['fgrrss:startDateTime'] !== undefined) {
-			model['startDateTime'] = model['fgrrss:startDateTime'];
+			if (model['fgrrss:startDateTime'].indexOf("to") != -1){
+				model['fgrrss:startDateTime'] = model['fgrrss:startDateTime'].substring(0,25);
+			}
 			var s = model['fgrrss:startDateTime'].substring(0,19);
+			model['startDateTime'] = s;
 			model['fgrrss:startDateTime'] = new Date(s);
 		}
-		
-		//Start filter
-		if ((Alloy.Globals.sDistance <= model['fgrrss:distance']) && (Alloy.Globals.eDistance >= model['fgrrss:distance'])){
-			if ((Alloy.Globals.startDateTime <= model['fgrrss:startDateTime']) && (Alloy.Globals.endDateTime >= model['fgrrss:startDateTime'])){
-				if (Alloy.Globals.pace.length == 0){
-					models.push(model);
-				} else{
-					for (var k = 0; k < Alloy.Globals.pace.length; k++){
-						if (model['fgrrss:pace'].indexOf(Alloy.Globals.pace[k]) != -1){
-							models.push(model);
-							break;
-						};
+		var distance = false;
+		if (Alloy.Globals.distance.length == 0) {
+			distance = true;
+		} else{
+			for (var x = 0; x < Alloy.Globals.distance.length; x++){
+				if ((Alloy.Globals.distance[x][0] <= model['fgrrss:distance']) && (Alloy.Globals.distance[x][1] >= model['fgrrss:distance'])){
+					distance = true;
+					break;
+				}
+			}
+		}
+		var day = false;
+		if (Alloy.Globals.day.length == 0) {
+			day = true;
+		} else{
+			for (var x = 0; x < Alloy.Globals.dayID.length; x++){
+				if (Alloy.Globals.dayID[x] == model['fgrrss:startDateTime'].getDay()){
+					day = true;
+					break;
+				}
+			}
+		}
+
+		var time = false;
+		if ((Alloy.Globals.time.length == 0) || ((model['fgrrss:startDateTime'].getUTCHours() >= Alloy.Globals.time[0]) && ((model['fgrrss:startDateTime'].getUTCHours() < Alloy.Globals.time[1]) 
+		|| ((model['fgrrss:startDateTime'].getUTCHours() == Alloy.Globals.time[1]) && (model['fgrrss:startDateTime'].getUTCMinutes() == 0))))){
+			time = true;
+		}
+		if (distance){
+			if(day){
+				if(time){
+					if (Alloy.Globals.pace.length == 0){
+						models.push(model);
+					} else{
+						for (var k = 0; k < Alloy.Globals.pace.length; k++){
+							if (model['fgrrss:pace'].indexOf(Alloy.Globals.pace[k]) != -1){
+								if (Alloy.Globals.pace[k] == "Strenuous"){
+									if (model['fgrrss:pace'].substring(model['fgrrss:pace'].indexOf(Alloy.Globals.pace[k]) - 6, model['fgrrss:pace'].indexOf(Alloy.Globals.pace[k]) - 1) != "Super"){
+										models.push(model);
+									}
+								} else{
+									models.push(model);
+									break;
+								}
+							}
+						}	    
 					}
-					    
 				}
 			}
 		}

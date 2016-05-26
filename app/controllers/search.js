@@ -1,17 +1,28 @@
 // Arguments passed into this controller can be accessed via the `$.args` object directly or:
 var args = $.args;
+Ti.UI.setBackgroundColor('#43B02A');
+
+$.searchBar.addEventListener('return', function(e) {
+	searchLocation();
+});
+
+function cancelSearch(e) {
+	$.searchWindow.close();
+}
 
 function searchLocation() {
-	$.searchField.blur();
-	var inputLoc = $.searchField.value;
+	$.searchBar.blur();
+	Alloy.Globals.isSearchLoc = true;
+	var inputLoc = $.searchBar.value;
 	// get longitude and latitude by address
 	Ti.Geolocation.forwardGeocoder(inputLoc, function(_resp){
 		if (_resp.success) {
 			//Update regionCenter
 			args.regionCenter.latitude = Number(_resp.latitude);
 			args.regionCenter.longitude = Number(_resp.longitude);
-			//TODO Add annotation for search location
-			args.prevWindow.fireEvent('loc_updated');
+			args.regionCenter.displayAddress = _resp.displayAddress;
+
+			args.prevWindow.fireEvent('loc_updated', {isCurrentLoc: false});
 			$.searchWindow.close();			
 		}
 		else {
@@ -21,7 +32,8 @@ function searchLocation() {
 }
 
 function useCurrentLoc() {
-	$.searchField.blur();
+	$.searchBar.blur();
+	Alloy.Globals.isSearchLoc = false;
 	//Use current location as region center
 	Titanium.Geolocation.getCurrentPosition(function(e) {
 	    Ti.Geolocation.accuracy = Ti.Geolocation.ACCURACY_HIGH;
@@ -34,7 +46,7 @@ function useCurrentLoc() {
 	    	args.regionCenter.latitude = e.coords.latitude;
 	    	args.regionCenter.longitude = e.coords.longitude;	       
         }
-    	args.prevWindow.fireEvent('loc_updated');
+    	args.prevWindow.fireEvent('loc_updated', {isCurrentLoc: true});
 		$.searchWindow.close();
      });
 }

@@ -1,38 +1,88 @@
-"#sortByInfo": {
-	top: "0",
-	left: "15",
-	right: "15",
+"#sortWindow": {
+	barColor: "#43B02A"
+},
+
+".firstLevelFont": {
+	font: { fontSize: 16 },
+	color: "#2C2A29",
 	height: "50"
+}
+
+".secondLevelFont": {
+	font: { fontSize: 12 },
+	color: "#646464",
+	height: "50"
+}
+
+"#sortByInfo": {
+	top: "15",
+	height: "50",
+	backgroundColor: "#F7F7F7"
 },
 
 "#sortBy": {
-	left: "0"
+	left: "16"
 }
 
 "#sortByResult": {
-	right: "0"
+	right: "16"
+},
+
+"#separator": {
+	height:	"1dp",
+	top: "65dp",
+	backgroundColor: "#1A006F44"
 },
 
 "#sortOptionsList": {
-	top: "50",
-	left: "15",
-	right: "15"
+	top: "66",
 },
 
-"#sortOptions": {
-	left: "0",
-	right: "0"
+"#listTemplate": {
+	height: "50",
+	backgroundColor: "#F7F7F7"
+}
+
+"#sortOptionsLeft": {
+	width: Ti.UI.SIZE,
+	height: Ti.UI.FILL,
+	left: "16",
 },
+
+"#title": {
+	left: "5"
+}
+
+"#sortOptionsRight": {
+	width: Ti.UI.SIZE,
+	height: Ti.UI.FILL,
+	
+	right: "16",
+},
+
+"#radioBtn": {
+	width: "24dp"
+}
 
 "#arrowBtn": {
-	right: "0",
+	left: "5",
 	width: "15"
 },
 
 "#direction": {
-	right: "15"
+	left: "0",
+	height: "50"
 },
 
 "#cancelSortBtn": {
 	color: "#FFFFFF"
+}
+
+"#applyBtn": {
+	bottom: "0",
+	width: Ti.UI.FILL,
+	height: "50dp",
+	backgroundColor: "#006F44",
+	color: "#FFFFFF",
+	font: { fontSize: 16 },
 }

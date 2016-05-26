@@ -1,31 +1,40 @@
 
 <Alloy>
-    <Window id="mainWindow" title="map">
+    <Window id="mainWindow" title="Map">
+    	<LeftNavButton platform=ios>
+        	<Button onClick="openMenu" image="images/menu_light.png"/>
+        </LeftNavButton>
+    	<Require type="widget" src="com.alcoapps.drawermenu" id="drawermenu"/>
     	<Menu platform="android">
-			<MenuItem title="Search" icon="images/searchLight.png" onClick="toSearch" showAsAction="Ti.Android.SHOW_AS_ACTION_ALWAYS" />
-		</Menu>		
-        <View ns="Alloy.Globals.Map" id="mapview" module="ti.map" onClick="report">
-            <!-- Starting with Alloy 1.4.0, use the Annotation tag to define an annotation -->
-            <!-- <Annotation id='appcHQ' myid='1' /> -->
-        </View>
-        <View id="rideInfoCallout" class="rideInfoCallout" visible="false" onClick="showDetail" backgroundColor = "#80FF0000">
-        	<Label id="rideTitle" class="rideTitle"></Label>
-        	<Label id="rideDate" class="rideDate"></Label>
-        	<Label id="ridePace" class="ridePace"></Label>
-        	<Label id="rideDistance" class="rideDistance"></Label>
-        </View>
+			<MenuItem title="Search" icon="images/ic_search_light.png" onClick="toSearch" showAsAction="Ti.Android.SHOW_AS_ACTION_ALWAYS" />
+		</Menu>
+		<RightNavButtons platform="ios">
+			<Button title="Search" onClick="toSearch" image="images/ic_search_light.png"/>
+		</RightNavButtons>		
+		<View id="mainView">
+	        <View ns="Alloy.Globals.Map" id="mapview" module="ti.map" onClick="report">
+	        </View>
+            <View id="toolBar">
+            	<Button id="list" class="tabBarBtn" onClick="toList">List</Button>
+	        	<Button id="filter" class="tabBarBtn" onClick="toFilter">Filter</Button>
+	        </View>   
+	        <View id="rideInfoCalloutWrapper" class="calloutWrapper" visible="false">    
+		        <View id="rideInfoCallout" class="rideInfoCallout" onClick="showDetail">		        	
+		        	<Label id="rideTitle" class="rideTitle"></Label>
+		        	<View class="rideDateTime">
+		        		<ImageView class="alignLeft" class="calloutImage" width="20" image="/images/Date.png"></ImageView>
+		        		<Label class="alignLeft lightText" id="startDateTime" />
+		        	</View>
+		        	<View class="ridePace">
+		        		<Label class="alignLeft" id="paceNumber" backgroundImage="/images/pace.png"/>
+		        		<Label class="alignLeft baseText" id="pace" />
+		        	</View>
+		        </View>
+	        	<View class="rideDistance">
+	        		<Label class="alignLeft baseText" id="distanceOne"/>
+		            <Label class="lightText" id="distanceTwo"/>
+	        	</View>
+	        </View>	       
+        </View>             
     </Window>
 </Alloy>
-
-
-
-
-
-<!--
-<Alloy>
-	<Window id="mainWindow" title="map" class='container'>
-		<Module id="map" module="ti.map" method="createView" platform="ios,android">
-			<Annotation title="Palo Alto" latitude="37.47" longitude="-122.12"/>
-		</Module>
-	</Window>
-</Alloy>-->

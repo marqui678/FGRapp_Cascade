@@ -1,31 +1,146 @@
+"#mainWindow": {
+	barColor: "#43B02A"
+},
+
+"#mainView": {
+	backgroundColor: "#FFFFFF",
+	height: Ti.UI.FILL,
+	width: Ti.UI.FILL
+},
 
 "#mapview" : {
     animate : false,
-    userLocation:true
-    //mapType: Alloy.globals.Map.NORMAL_TYPE
-    //top: '70dp'
+    userLocation:true,
+    regionFit: false,
+    bottom: "48dp"
 },
+
+".calloutWrapper": {
+	height: "107dp",
+	width: Titanium.UI.FILL,
+	bottom: "0dp",
+	backgroundColor: "#F7F7F7"
+},
+
+".baseText": {
+	color: "#2C2A29"
+},
+
+".lightText": {
+	color: "#646464"
+}
 
 ".rideInfoCallout": {
-	height: "70",
-	bottom: "0",
-	font: { fontSize: 13 },
-	backgroundColor: "#FFFFFF"
+	height: "107dp",
+	left: "16dp",
+	right: "16dp",
+	bottom: "0dp",
+	font: { fontSize: 16 },
+	layout: "vertical"
 },
+
+".calloutImage": {
+	left: "0dp",
+	width: "20dp"
+}
 
 ".rideTitle": {
-	top: "0"
+	top: "12dp",
+	height: "30dp",
+	width: Titanium.UI.FILL,
+	font: { fontSize: 20 },
+	color: "#006F44",
+	textAlign: "left",
+	ellipsize: true,
+	wordWrap: false,
 },
 
-".rideDate": {
-	top: "15"
+".rideDateTime": {
+	height: "25dp",
+	top: "3dp",
+	layout: "horizontal",
+},
+
+"#startDateTime": {
+	left: "5dp"
+}
+
+".alignLeft": {
+	left: "0dp"
 },
 
 ".ridePace": {
-	top: "30"
+	height: "25dp",
+	layout: "horizontal",
+	
+},
+
+"#paceNumber": {
+	font: { fontSize: 12 },
+	width: "80dp", 
+	height: "24dp",
+	color: "white"
+},
+
+"#pace": {
+	width: "150dp",
+	height: "25dp",
+	textAlign: 'left',
+	ellipsize: true,
+	wordWrap: false,
 },
 
 ".rideDistance": {
-	top: "45"
-}
+	bottom: "10dp",
+	right: "10dp",
+	width: Ti.UI.SIZE,
+	height: "42dp",
+	layout: "horizontal"
+},
+
+"#distanceOne": {
+	font: { fontSize: 36 },
+	left: "0",
+	verticalAlign: "top",
+	bottom: "0dp",
+	height: Ti.UI.SIZE,
+},
+
+"#distanceOne[platform=ios]": {
+	bottom: "-4dp",
+},
+
+"#distanceTwo": {
+	left: "0dp",
+	height: "18dp",
+	bottom: "0",
+	verticalAlign: "bottom"
+},
+
+"#toolBar": {
+	width: Titanium.UI.FILL,
+	height: "48dp",
+	backgroundColor: "#F7F7F7",
+	bottom: "0dp",
+	borderTop: "true",
+	borderBottom: "false"
+},
+
+".tabBarBtn": {
+	color: "#43B02A",
+	backgroundColor: "transparent",
+	font: { fontSize: 16},
+	width: "80dp",
+	height: Ti.UI.FILL
+},
+
+"#filter": {
+	right: "16dp",
+	textAlign: "right",
+},
+
+"#list": {
+	left: "16dp",
+	textAlign: "left"
+},
 

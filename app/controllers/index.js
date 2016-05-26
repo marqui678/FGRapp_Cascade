@@ -3,10 +3,41 @@
  * @param  {Object} args arguments passed to the controller
  */
 Alloy.Globals.pace = [];
-Alloy.Globals.startDateTime = new Date(1980,1,1);
-Alloy.Globals.endDateTime = new Date(2080,1,1);
-Alloy.Globals.sDistance = 0;
-Alloy.Globals.eDistance = 100;
+Alloy.Globals.paceID = [];
+Alloy.Globals.day = [];
+Alloy.Globals.dayID = [];
+Alloy.Globals.time = [];
+Alloy.Globals.distance = [];
+Alloy.Globals.distanceID = [];
+
+Alloy.Globals.selfPaced = false;
+Alloy.Globals.easy = false;
+Alloy.Globals.brisk = false;
+Alloy.Globals.leisurely = false;
+Alloy.Globals.steady = false;
+Alloy.Globals.vigorous = false;
+Alloy.Globals.moderate = false;
+Alloy.Globals.strenuous = false;
+Alloy.Globals.superStrenuous = false;
+
+Alloy.Globals.sunday = false;
+Alloy.Globals.monday = false;
+Alloy.Globals.tuesday = false;
+Alloy.Globals.wednesday = false;
+Alloy.Globals.thursday = false;
+Alloy.Globals.friday = false;
+Alloy.Globals.saturday = false;
+
+Alloy.Globals.zero = false;
+Alloy.Globals.ten = false;
+Alloy.Globals.twenty = false;
+Alloy.Globals.thirty = false;
+Alloy.Globals.fourty = false;
+Alloy.Globals.fifty = false;
+Alloy.Globals.sixty = false;
+Alloy.Globals.seventy = false;
+Alloy.Globals.eighty = false;
+Alloy.Globals.ninety = false;
 /**
  * Global Navigation Handler
  */

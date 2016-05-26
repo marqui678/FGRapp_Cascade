@@ -1,10 +1,94 @@
-
-".testButton":{
-	left:0
+'#fwin':{
+	barColor: "#43B02A"
 }
-"Picker":{
-	width:Titanium.UI.FILL,
-	height:Titanium.UI.SIZE,
-	selectionIndicator:"true",
-	useSpinner:"true",
+
+".separator":{
+	right:0,
+	height:"1dp",
+	left:0,
+	backgroundColor:"#1A006F44"
+}
+".filterRow":{
+	 top:0, height:"50dp",left:0, layout:"horizontal",backgroundColor: "#F7F7F7", right:0,
+}
+
+".filterOpt":{
+	top:0,  left:"3%", height:"50dp", width:"25%",color: "#2C2A29",font: { fontSize: 16 },
+}
+
+".filterChosen":{
+	top:"18dp", left:"3%", height:"20dp", width:"57%", font: { fontSize: 12 }, color: "#646464", textAlign:"right",
+	ellipsize: true,
+	wordWrap: false,
+}
+
+".arrow":{
+	left:"4%",width:"20dp", height:"20dp"
+}
+
+".filterView":{
+	top:0, right:0, left:0, visible:false, layout:"vertical"
+}
+".checkbox":{
+	left:"16dp"
+}
+".dayLabel":{
+	left:"10dp", height:"48dp"
+}
+".days":{
+	height:"48dp", width:"100%", layout:"horizontal"
+}
+".paceRow":{
+	height:"60dp", top:10, right:0,left:0
+}
+".distanceRow":{
+	height:"40dp", top:10, width:"100%",left:0
+}
+".LabelSize3":{
+	left:"5%", width:"43%", height:"40dp", textAlign:"center",font: {fontSize:14}
+}
+".LabelSize4":{
+	right:"5%", width:"43%", height:"40dp", textAlign:"center",font: {fontSize:14}
+}
+".LabelSize5":{
+	right:"5%", left:"5%", height:"60dp", textAlign:"center",font: {fontSize:14}
+}
+".LabelSize1":{
+	left:"5%", width:"43%", height:"60dp", textAlign:"center",font: {fontSize:14}
+}
+".LabelSize2":{
+	right:"5%", width:"43%", height:"60dp", textAlign:"center",font: {fontSize:14}
+}
+".Label1":{
+	  backgroundColor:"#1A43B02A"
+}
+".Label2":{
+	 backgroundColor:"#2643B02A"
+}
+".Label3":{
+	  backgroundColor:"#3343B02A"
+}
+".Label4":{
+	 backgroundColor:"#4043B02A"
+}
+".Label5":{
+	 backgroundColor:"#4D43B02A"
+}
+".Label6":{
+	 backgroundColor:"#5943B02A"
+}
+".Label7":{
+	backgroundColor:"#6643B02A"
+}
+".Label8":{
+	 backgroundColor:"#7343B02A"
+}
+".Label9":{
+	backgroundColor:"#8043B02A"
+}
+".Label10":{
+	backgroundColor:"#8C43B02A"
+}
+'#apply':{
+	left:"0dp", bottom:"0dp", height:"50dp", right:0,backgroundColor:"#006F44", color:"white"
 }

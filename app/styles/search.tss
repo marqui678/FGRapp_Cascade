@@ -1,20 +1,56 @@
-"#searchField": {
-	color: "#336699",
-	top: "10",
-	left: "10",
-	right: "50",
-	paddingLeft: "5",
-	height: "60",
-	hintText: "Enter address or location",
-	borderStyle: "Ti.UI.INPUT_BORDERSTYLE_ROUNDED",
-	clearButtonMode: "Ti.UI.INPUT_BUTTONMODE_ALWAYS",
-	keyboardType: "Ti.UI.KEYBOARD_DEFAULT"
+"#searchWindow" : {
+    backgroundColor: "#43B02A",
+    barColor: "#43B02A",
+    navBarHidden: true,
 },
 
+"#searchWindow[platform=ios]": {
+	top: "20dp"
+},
+
+"#mainView": {
+	width: Ti.UI.FILL,
+	height: Ti.UI.FILL,
+	backgroundColor: "#F7F7F7"
+},
+
+"#searchView": {
+	backgroundColor: "#fff",
+	top: "5",
+	height: "45",
+	left: "16",
+	right: "16"
+},
+
+"#backBtn": {
+	left: "5",
+	width: "30",
+	height: "30",
+	borderColor: "#FFF",
+	backgroundColor: "#FFF",
+	backgroundImage: "/images/back_dark.png"
+},
+
+".searchBar": {
+	color: "#646464",
+	barColor: "#FFFFFF",
+	left: "45",
+	right: "0",
+	font: { fontSize: 16 },
+	hintText: "Enter address or location",
+	hintTextColor:'#A6A6A6',
+	borderStyle: "Ti.UI.INPUT_BORDERSTYLE_ROUNDED",
+	borderColor: "#FFFFFF",
+	clearButtonMode: "Ti.UI.INPUT_BUTTONMODE_ALWAYS",
+	keyboardType: "Ti.UI.KEYBOARD_DEFAULT"
+}
+
 "#curLoc": {
-	top: "70",
-	height: "60",
-	backgroundColor: "#cccccc"
+	top: "55",
+	height: "45",
+	left: "16",
+	right: "16",
+	backgroundColor: "#FFFFFF"
 },
 
 "#curLocImage": {
@@ -24,7 +60,8 @@
 },
 
 "#curLocLabel": {
-	//top: "70",
 	left: "10",
-	height: "60"
+	height: "45",
+	color: "#43B02A",
+	font: { fontSize: 16 }
 }

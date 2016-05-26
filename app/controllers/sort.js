@@ -1,10 +1,13 @@
 // Arguments passed into this controller can be accessed via the `$.args` object directly or:
 var args = $.args;
 
-var radioBtn = "images/checkbox.png";
-var selectedRadioBtn = "images/checkboxSelected.png";
-var arrowBtn = "images/sortIncrease.png";
-var downArrowBtn = "images/sortDecrease.png";
+//Hide back button on iOS
+//$.sortWindow.leftNavButton = null;
+
+var radioBtn = "images/ic_radio_button_off.png";
+var selectedRadioBtn = "images/ic_radio_button_on.png";
+var arrowBtn = "images/ic_arrow_drop_up.png";
+var downArrowBtn = "images/ic_arrow_drop_down.png";
 
 var prevSelectedSortBackup = JSON.stringify(Alloy.Globals.selectedSort);
 
@@ -29,7 +32,7 @@ var sortOptions = [
 	        ascDir: {text: "sooner to later", dir: "ASC"},
 	        desDir: {text: "later to sooner", dir: "DES"},
 	        arrowBtn : {image: arrowBtn},
-	        field: "startDateTime"
+	        field: "fgrrss:startDateTime"
 	    },
 	    {
 	        radioBtn : {image: radioBtn}, 
@@ -56,6 +59,10 @@ var sortOptions = [
 //Check if there is selectedSort item
 if (selectedSort.id !== undefined) {
 	sortOptions[selectedSort.id].radioBtn.image = selectedRadioBtn;
+	sortOptions[selectedSort.id].direction = selectedSort.item.direction;
+	if(selectedSort.item.direction.dir === "DES") {
+		sortOptions[selectedSort.id].arrowBtn.image = downArrowBtn;
+	}
 	$.sortByResult.text = selectedSort.item.title.text + ": " + selectedSort.item.direction.text;
 }
 	
@@ -96,7 +103,7 @@ function selectSort(e) {
 }
 
 function setSortDirection(e) {
-	e.cancelBubble = true;
+	//e.cancelBubble = true;
 	var currentSortOption = e.section.getItemAt(e.itemIndex);
 	currentSortOption.isAscDir = !currentSortOption.isAscDir;
 	//Update direction and arrowBtn
@@ -122,7 +129,6 @@ function setSortDirection(e) {
 function applySort() {
 	Alloy.Collections.feed.setSortField(selectedSort.item.field, selectedSort.item.direction.dir);
 	Alloy.Collections.feed.sort();
-	//TODO show sort item as text in sort btn
 	$.sortWindow.close();
 }
 

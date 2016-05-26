@@ -1,10 +1,13 @@
 <Alloy>
-	<Window id="searchWindow" backgroundColor="white">
-		<View>
-			<TextField id="searchField"/>
-			<Button id="btnSearch" onClick="searchLocation" top="0" right="0">Search</Button>
+	<Window id="searchWindow" theme="FGRThemeWithoutActionBar">
+		<View id="mainView">
+			<View id="searchView">
+				<Button id="backBtn" onClick="cancelSearch"  />
+				<SearchBar id="searchBar"  class="searchBar" showCancel="false" />
+			</View>
+			<!-- <SearchBar platform="ios" id="searchBar" top="0" showCancel="true"/> -->
 			<View id="curLoc" onClick="useCurrentLoc" layout="horizontal">
-				<ImageView id="curLocImage" image="/images/re-centerNotFilled.png" />				
+				<ImageView id="curLocImage" image="/images/ic_navigation.png" />				
 				<Label id="curLocLabel">Current location</Label>		
 			</View>			
 		</View>

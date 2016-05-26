@@ -2,42 +2,58 @@
 	
 	<!-- create global instance of collection we'll bind -->	
 	<Collection src="feed"/>
-	<Window title="Free Group Rides">
-		<!-- Android: Add MenuItem for refresh -->		
-		<Menu platform="android">
-			<MenuItem icon="images/ic_action_action_autorenew.png" onClick="refresh" showAsAction="Ti.Android.SHOW_AS_ACTION_ALWAYS" />
+	<Window id="lwin" title="Ride Finder">
+		<!--menu button-->
+		<LeftNavButton platform=ios>
+        	<Button onClick="openMenu" image="images/menu_light.png"/>
+        </LeftNavButton>
+    	<Require type="widget" src="com.alcoapps.drawermenu" id="drawermenu"/>
+    	<Menu platform="android">
+			<MenuItem title="Map" onClick="openMapview" showAsAction="Ti.Android.SHOW_AS_ACTION_ALWAYS" />
 		</Menu>
-		<ListView platform="ios,android" defaultItemTemplate="template" onItemclick="select">	
-			<!-- iOS RefreshControl -->
-			<RefreshControl platform="ios" id="refreshControl" onRefreshstart="refresh" />
-			
-			<Templates>
-				<ItemTemplate name="template" class="item">
-					<View id="firstLine">
-	                    <Label class="line1" bindId="title" id="title" />
-                	
-						<View id="secondLine">
-		                    <Label class="line2" bindId="pace" id="pace" />
-	                	
-							<View id="thirdLine">
-			                    <Label class="line3" bindId="startDateTime" id="startDateTime" />
-			                    <Label class="line3" bindId="distance" id="distance"/>
-			                </View>
-			           </View>
-                	</View>
-				</ItemTemplate>
-			</Templates>
-			
-			<!-- Alloy data-binding -->
-
-			<ListSection dataCollection="feed" dataTransform="transform">
-				<ListItem itemId="{link}" title:text="{title}" pace:text="{pace}" startDateTime:text="{startDateTime}" distance:text="{distance}" />
-			</ListSection>
-			
-		</ListView>
-		<Button onClick="openMapview" top="0" right="0">To map</Button>
-		<Button onClick="filter" bottom="0" right="0">Filter</Button>
-		<Button onClick="openSortView" bottom="0" left="0">Sort</Button>
+		<RightNavButtons platform="ios">
+			<Button title="Map" onClick="openMapview" />
+		</RightNavButtons>		
+		<View id="mainView">
+			<ListView id="listView" platform="ios,android" defaultItemTemplate="template" onItemclick="select">	
+				<!-- iOS RefreshControl -->
+				<RefreshControl platform="ios" id="refreshControl" onRefreshstart="refresh" />
+				<!-- search, shorthand with Ti.UI.SearchBar -->
+	      <SearchBar id="search" color="#646464" hintText="Search for ride names" hintTextColor="#A6A6A6" backgroundColor="#F7F7F7"/>
+				<Templates>
+					<ItemTemplate name="template" class="item">
+        		        <View id="rideInfoCalloutWrapper" class="calloutWrapper">    
+					        <View id="rideInfoCallout" class="rideInfoCallout">		        	
+					        	<Label id="rideTitle" bindId="title" class="rideTitle"></Label>
+					        	<View class="rideDateTime">
+					        		<ImageView class="alignLeft" class="calloutImage" width="20" image="/images/Date.png"></ImageView>
+					        		<Label class="alignLeft lightText" bindId="startDateTime" id="startDateTime" />
+					        	</View>
+					        	<View class="ridePace">
+					        		<Label class="alignLeft" bindId="paceNumber" id="paceNumber" backgroundImage="/images/pace.png"/>
+					        		<Label class="alignLeft baseText" bindId="pace" id="pace" />
+					        	</View>
+					        </View>
+				        	<View class="rideDistance">
+				        		<Label class="alignLeft baseText" bindId="distanceOne" id="distanceOne"/>
+					            <Label class="lightText" bindId="distanceTwo" id="distanceTwo"/>
+				        	</View>
+				        </View>
+					</ItemTemplate>
+				</Templates>
+				
+				<!-- Alloy data-binding -->
+	
+				<ListSection id="listSection" dataCollection="feed" dataTransform="transform">
+					<ListItem itemId="{link}" distanceTwo:text="{distanceTwo}" searchableText="{title}" title:text="{title}" pace:text="{pace}" paceNumber:text="{paceNumber}" startDateTime:text="{startDateTime}" distanceOne:text="{distanceOne}"  />
+				</ListSection>
+				
+			</ListView>
+			<View id='bottomBar'>
+				<Button class="tabBarBtn" id="filter" onClick="filter">Filter</Button>
+				<Button class="tabBarBtn" id="sort" onClick="openSortView">Sort</Button>
+			</View>
+		</View>
 		
 	</Window>
 	

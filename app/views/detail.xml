@@ -2,41 +2,59 @@
 	<Window class="container" id='window' backButtonTitle="back">
 		<!-- Android: Set ActionBar 'back button' to show and use close() callback -->
 		<ActionBar platform="android" displayHomeAsUp="true" onHomeIconItemSelected="close" />
-		
-		
-		<View>
-			<Label backgroundColor = "#80FF0000">hello world</Label>
-		</View>
 		<ScrollView id='scrollview' >
 			<!--Main view of the detail page-->
 			<Module id="mapview" module="ti.map" method="createView" platform="android,ios,windows" />
 			<View ns="Ti.Map" id="mapview" platform="mobileweb"/>
 			<View id = 'textOnMap'>
-				<Label id = 'startDateTime'/>
-				<Label id="distance1"/>
-				<Label id="distance2"/>
-				<Label id="pace"/>
+				<View  layout="vertical">
+					<View id='dateView' layout="horizontal" height= "25dp">
+						<ImageView id='dateImage' image="/images/Date.png" width="20"></ImageView>
+						<Label id = 'startDateTime' class="alignLeft lightText"/>
+					</View>
+					
+					
+					<View id='paceView' layout="horizontal">
+						<Label id="paceNum" backgroundImage="/images/pace.png"/>
+						<Label id="pace"/>
+					</View>
+				</View>
+				<View id='distanceView'>
+					<Label id="distance1"/>
+					<Label id="distance2"/>
+				</View>
 			</View>
 			
-			<View id = 'descriptioinView'>
-				<Label id = 'descriptionLabel'>Description</Label>
-				<Label id = 'description'/>
-				<Button onClick="select" id = 'readMore'>Read more on cascade.org</Button>
-			</View>
 			
-			<View id='addressView'>
-				<Label id='locationLabel'>Start location</Label>
-				<Label id = 'address1' />
-				<Label id = 'address2' />
-				<Label id = 'directions' onClick="openMap">Get directions</Label>
-			</View>
-			
-			
-			<View id='contactView'>
-				<Label id='leaderLabel'>Ride Leader(s)</Label>
-				<Label id = 'leader'/>
-				<Label id = 'email' onClick="emailContact"/>
-				<Label id = 'phone' onClick="callContact"/>
+			<View id = 'underMap' layout="vertical">
+				<View id = 'descriptioinView' >
+					<Label id = 'descriptionLabel' >Description</Label>
+					<Label id = 'description'/>
+					<Label onClick="select" id = 'readMore'>Read more</Label>
+				</View>
+				
+				<TableView  id='addressAndContact' scrollable="false" backgroundColor='#F7F7F7'>
+					<TableViewRow>
+							<Label id='locationLabel'>Start location</Label>
+							<Label id = 'directions' onClick="openMap">Get directions</Label>							
+					</TableViewRow>
+					<TableViewRow touchEnabled="false">
+						<Label id = 'address1' height="18dp"/>
+					</TableViewRow>
+					<TableViewRow touchEnabled="false">
+						<Label id = 'address2' height="40dp"/>
+					</TableViewRow>
+					<TableViewRow touchEnabled="false">
+						<Label id='leaderLabel' >Ride Leader(s)</Label>
+						<Label id = 'leader' touchEnabled="false"/>
+					</TableViewRow>
+					<TableViewRow>
+						<Label id = 'email' onClick="emailContact"/>
+					</TableViewRow>
+					<TableViewRow>
+						<Label id = 'phone' onClick="callContact"/>
+					</TableViewRow>
+				</TableView>
 			</View>
 			
 		</ScrollView>

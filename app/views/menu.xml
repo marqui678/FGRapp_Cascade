@@ -1,0 +1,22 @@
+<Alloy>	
+	<View id="menu">
+		<View class="menubanner"></View>
+		<TableView class="menuoptions" onClick="menuClick">
+			<TableViewRow class="menurowcontainer" rowId="1"  backgroundColor="#43B02A">
+				<View class="menurow">
+					<View class="iconcontainer">
+					</View>
+					<Label class="menucaption" color='#F7F7F7'>Pace classification</Label>
+				</View>
+			</TableViewRow>
+			<TableViewRow class="menurowcontainer" rowId="2" backgroundColor="#43B02A">
+				<View class="menurow">
+					<View class="iconcontainer">
+					</View>
+					<Label class="menucaption" color='#F7F7F7'>About</Label>
+				</View>
+			</TableViewRow>
+		</TableView>
+	</View>
+	
+</Alloy>

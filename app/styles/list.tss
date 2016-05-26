@@ -1,46 +1,150 @@
 ".item":{
-	left:0, right:0, height: 80
+	width: Ti.UI.FILL,
+	height: Ti.UI.SIZE
 },
 
-"#firstLine": {
-	left: 0, right: 0, top:5,
-	layout: "horizontal"
+'#lwin[platform=android]':{
+	barColor: "#43B02A",
+	height: Ti.UI.FILL,
+	windowSoftInputMode: Titanium.UI.Android.SOFT_INPUT_ADJUST_PAN
 },
 
-".line1": {
-	left: 0, right: 0, font: { fontSize: 16 }
+'#lwin[platform=ios]':{
+	barColor: "#43B02A",
+	height: Ti.UI.FILL
 },
 
-"#title": {
-	color: "black",
+"#mainView": {
+	height: Ti.UI.FILL,
+	width: Ti.UI.FILL,
+	backgroundColor: "#FFFFFF"
 },
 
-'#secondLine': {
-	left: 0, right: 0,
-	layout: "horizontal"
+"#listView": {
+	bottom: "48dp"
+}
+
+'#bottomBar':{
+	height: '48dp',
+	backgroundColor : '#F7F7F7',
+	bottom: "0dp"
 },
 
-".line2": {
-	left: 0, right: 0, font: { fontSize: 13 }
-},
-"#pace": {
-	color: 'red'
-},
-
-'#thirdLine': {
-	left: 0, right: 0,
-	layout: "horizontal"
+".tabBarBtn": {
+	color: "#43B02A",
+	backgroundColor: "transparent",
+	font: { fontSize: 16},
+	width: "80",
+	height: Ti.UI.FILL
 },
 
-".line3": {
-	left: 0, right: 0, font: { fontSize: 13 }
+"#filter": {
+	right: "16dp",
+	textAlign: "right"
+},
+
+"#sort": {
+	left: "16dp",
+	textAlign: "left"
+},
+
+//Style for list cell
+".calloutWrapper": {
+	height: "107dp",
+	width: Titanium.UI.FILL,
+	bottom: "0dp",
+},
+
+".baseText": {
+	color: "#2C2A29"
+},
+
+".lightText": {
+	color: "#646464"
+}
+
+".rideInfoCallout": {
+	height: "107dp",
+	left: "16dp",
+	right: "16dp",
+	bottom: "0dp",
+	font: { fontSize: 16 },
+	layout: "vertical"
+},
+
+".calloutImage": {
+	left: "0dp",
+	width: "20dp"
+}
+
+".rideTitle": {
+	top: "12dp",
+	height: "30dp",
+	width: Titanium.UI.FILL,
+	font: { fontSize: 20 },
+	color: "#006F44",
+	textAlign: "left",
+	ellipsize: true,
+	wordWrap: false,
+},
+
+".rideDateTime": {
+	height: "25dp",
+	top: "3dp",
+	layout: "horizontal",
 },
 
 "#startDateTime": {
-	color: "blue"
+	left: "5dp"
+}
+
+".alignLeft": {
+	left: "0dp"
 },
 
-"#distance":{
-	textAlign: Ti.UI.TEXT_ALIGNMENT_RIGHT,
-	color:"green"
-}
+".ridePace": {
+	height: "25dp",
+	layout: "horizontal",
+	
+},
+
+"#paceNumber": {
+	font: { fontSize: 12 },
+	width: "80dp", 
+	height: "24dp",
+	color: "white"
+},
+
+"#pace": {
+	width: "150dp",
+	height: "25dp",
+	textAlign: 'left',
+	ellipsize: true,
+	wordWrap: false,
+},
+
+".rideDistance": {
+	bottom: "10dp",
+	right: "10dp",
+	width: Ti.UI.SIZE,
+	height: "42dp",
+	layout: "horizontal"
+},
+
+"#distanceOne": {
+	font: { fontSize: 36 },
+	left: "0",
+	verticalAlign: "top",
+	bottom: "0dp",
+},
+
+"#distanceOne[platform=ios]": {
+	bottom: "-4dp",
+},
+
+"#distanceTwo": {
+	left: "0dp",
+	height: "18dp",
+	bottom: "0",
+	verticalAlign: "bottom"
+},

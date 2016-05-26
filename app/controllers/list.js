@@ -8,10 +8,13 @@ var moment = require('alloy/moment');
 
 	// use strict mode for this function scope
 	'use strict';
-
-	// use the refresh callback for the initial load
-	refresh();
-
+	// check for network	
+	if(Titanium.Network.networkType == Titanium.Network.NETWORK_NONE){
+	     alert('Your device is not online. Please check your network and try again.');
+	} else{
+		// use the refresh callback for the initial load
+		refresh();
+	}
 	// execute constructor with optional arguments passed to controller
 })(arguments[0] || {});
 
@@ -22,6 +25,9 @@ var moment = require('alloy/moment');
 function refresh(e) {
 	'use strict';
 
+	//Init map region center by current location, use default location if currentLocation not available
+	initRegionCenter();
+	
 	// if we were called from the constructor programmatically show the refresh animation
 	if (OS_IOS && !e) {
 		$.refreshControl.beginRefreshing();
@@ -37,13 +43,18 @@ function refresh(e) {
 		if (OS_IOS) {
 			$.refreshControl.endRefreshing();
 		}
+		$.search.blur();
+		//Need to Calc distance to location as it would be used in sort.
+		Alloy.Globals.setDistanceToLocation(Alloy.Collections.feed.models, Alloy.Globals.regionCenter);
+		
+		//Sort by date
+		Alloy.Collections.feed.setSortField("startDateTime", "ASC");
+		Alloy.Collections.feed.sort();
 	}
 
 	// MobileWeb can't load the remote file because we don't have access control set-up
 	var url = OS_MOBILEWEB ? Ti.Filesystem.resourcesDirectory + 'feed.xml' : Alloy.CFG.url;
-	for (var i = 0; i < 2; i++){
-			console.log(i);
-			}
+
 	// let the collection fetch data from it's data source
 		Alloy.Collections.feed.fetch({
 		url: url,
@@ -51,6 +62,50 @@ function refresh(e) {
 		error: afterFetch
 		});
 	}
+	
+//Set Alloy.Globals.regionCenter
+function initRegionCenter() {
+	if(!Titanium.Geolocation.hasLocationPermissions(Titanium.Geolocation.AUTHORIZATION_ALWAYS)) {
+		Titanium.Geolocation.requestLocationPermissions(Titanium.Geolocation.AUTHORIZATION_ALWAYS, function(result){
+			if(!result.success) {
+				//no location permissions flow triggers
+				alert("Do not have Geolocation permission. Use default location");
+				setRegionCenter(Alloy.Globals.defaultLocation);
+			} 
+			else {
+				setGeoLoc();
+			}
+		});
+	}
+	else {
+		setGeoLoc();
+	}
+};
+
+function setGeoLoc() {
+	if (Ti.Geolocation.locationServicesEnabled === false) {
+		alert("The device has geo turned off. Use default location.");
+		setRegionCenter(Alloy.Globals.defaultLocation);
+	}
+	
+	Titanium.Geolocation.getCurrentPosition(function(e) {
+	    Ti.Geolocation.accuracy = Ti.Geolocation.ACCURACY_HIGH;
+	    if (e.error)
+	    {
+	        alert('Current location not found. Use default location');	
+	    	setRegionCenter(Alloy.Globals.defaultLocation);    
+	    }
+	    else {
+	    	//Set regionCenter with current location and sort	
+	    	setRegionCenter(e.coords);       
+        }
+	});
+}
+
+function setRegionCenter(centerLoc) {
+	Alloy.Globals.regionCenter.latitude = centerLoc.latitude;
+	Alloy.Globals.regionCenter.longitude = centerLoc.longitude;
+}
 
 /**
  * set via view to be applied on each model before it renders
@@ -60,13 +115,14 @@ function refresh(e) {
 
 function transform(model) {
 	'use strict';
-		
 	return {
 		title: model.get('title'),
 		startDateTime: moment(model.get('startDateTime'),moment.ISO_8601).format('LLLL'),
 		link:model.get('link'),
-		pace:model.get('fgrrss:pace'),
-		distance:model.get('fgrrss:distance').toFixed(2) + " miles"
+		paceNumber:model.get('paceNumber'),
+		pace:model.get('pace'),
+		distanceOne:model.get('distance1'),
+		distanceTwo:model.get('distance2')
 	};
 }
 
@@ -90,6 +146,46 @@ function select(e) {
 	// the index controller has an event listener for this event
 	Alloy.Globals.Navigator.open("detail",model);
 }
+$.search.addEventListener('cancel', function(){
+	$.search.value = "";
+    $.search.blur();
+});
+
+//Menu
+var thisWin=$.lwin;
+var main=$.mainView;
+
+// store drawermenu and main in global variable for easy access from menu
+Alloy.CFG.drawermenu=$.drawermenu;
+Alloy.CFG.main=main;
+
+var menu=Alloy.createController('menu').getView();
+
+$.drawermenu.init({
+    menuview:menu,
+    mainview:main,
+    duration:200,
+    parent: thisWin
+});
+
+thisWin.addEventListener('open',function(e){
+	var actionBarHelper = require('com.alcoapps.actionbarhelper')(thisWin);	
+	
+	actionBarHelper.setUpAction(function(e){
+		$.drawermenu.showhidemenu();
+	});
+	
+	if (OS_IOS) {
+		actionBarHelper.setIcon('/images/menu_light.png');
+		actionBarHelper.displayHomeAsUp(false);
+	}
+	
+	if (OS_ANDROID) {
+		var actionBarExtra = require('com.alcoapps.actionbarextras');
+		actionBarExtra.setHomeAsUpIcon("/images/menu_light.png");
+		actionBarHelper.displayHomeAsUp(true);
+	}
+});
 
 function filter(){
 	a = Alloy.Collections.feed;
@@ -108,4 +204,8 @@ function openMapview() {
  */
 function openSortView() {
 	Alloy.Globals.Navigator.open('sort', {});
+}
+
+function openMenu(e){
+	$.drawermenu.showhidemenu();
 }

@@ -7,11 +7,13 @@ var model = arguments[0] || {};
 var moment = require('alloy/moment');
 $.startDateTime.text = moment(model.get('startDateTime'),moment.ISO_8601).format('LLLL').toString();
 $.description.text = '                       '+model.get('description').replace(/<\/?[^>]+(>|$)/g, "").toString();
-$.pace.text = model.get('fgrrss:pace').toString();
+
 $.leader.text = model.get('fgrrss:rideLeader').toString();
-$.distance1.text = model.get('fgrrss:distance').toString();
-$.distance2.text = model.get('fgrrss:distance').toFixed(2).toString().substring(getPosition('.')+1)+'mi';
+$.distance1.text = model.get('distance1');
+$.distance2.text = model.get('distance2');
 $.title = model.get('title').toString();
+$.paceNum.text = model.get('paceNumber');
+$.pace.text = model.get('pace');
 
 var address = model.get('fgrrss:startAddress').toString();
 //$.address.text = model.get('fgrrss:startAddress').toString();
@@ -55,7 +57,7 @@ var longitude = model.get('longitude');
 		latitudeDelta:0.1,
 		longitudeDelta:0.1,
 		zoom:1,
-		tilt:45
+		tilt:10
 	});
 
 /**
@@ -65,9 +67,19 @@ var longitude = model.get('longitude');
 var mapAnnotation = Map.createAnnotation({
     latitude: latitude,
     longitude: longitude,
-    animate:true
+    animate:true,
+    image:'/images/ic_place_green.png'
 });
 
+var customAnnotationView = Ti.UI.createView({
+    backgroundImage: '/images/ic_place_green.png',
+    height: "40dp",
+    width: "28dp"
+});
+
+if (OS_ANDROID) {
+			mapAnnotation.customView = customAnnotationView;
+}
 /**
  * Add the Map Annotation to the MapView
  */
@@ -166,7 +178,7 @@ function callContact(){
 	var dialog = Ti.UI.createAlertDialog({
 	    cancel: 0,
 	    buttonNames: ['Cancel', 'Ok'],
-	    message: "Are you sure you want to call the contact person " + contactName +" at " + contactPhone +"?"
+	    message: "Are you sure you want to call the contact person " + contactName + "?"
 	});
 	
 	/**
@@ -195,5 +207,8 @@ function callContact(){
 };
 var address = '4535 12th ave ne seattle';
 function openMap(){
+	if(OS_ANDROID){
+		Ti.Platform.openURL('http://maps.google.com/maps?&q='+latitude+ ',' +longitude);
+	}
 	Ti.Platform.openURL('Maps://?&q='+latitude+ ',' +longitude);
 }

@@ -1,4 +1,61 @@
 <Alloy>
-	<View class="container">
-	</View>
+	<Window title="About this app" id='win'>
+		<ScrollView class="container">
+			<View>
+				<Label color='#006F44' top='80'>Ride Finder</Label>
+				<Label top=110>Version 1.0</Label>
+			</View>
+			
+			<View class='separator' id='separator1'></View>
+			
+			<TableView id='paceView' scrollable="false" touchEnabled="false" top=180 backgroundColor='#F7F7F7'>
+				<TableViewRow>
+					<Label class='title' >Community Support from University of Washington</Label>
+				</TableViewRow>
+				<TableViewRow>
+					<Label class='lineSap' height=7></Label>
+				</TableViewRow>
+				<TableViewRow>
+					<Label class='content'>The Ride Finder App is designed and developed by a team of four ambitious graduate students from Information Schoolat University of Washington.</Label>
+				</TableViewRow>
+				<TableViewRow>
+					<Label class='lineSap' height=7></Label>
+				</TableViewRow>
+				<TableViewRow>
+					<Label class='title'>Team</Label>
+				</TableViewRow>
+				<TableViewRow>
+					<Label class='lineSap' height=7></Label>
+				</TableViewRow>
+				<TableViewRow>
+					<Label class='role'>Designer</Label>
+					<Label class='name'>Rui Hua</Label>
+				</TableViewRow>
+				<TableViewRow>
+					<Label class='lineSap' height=7></Label>
+				</TableViewRow>
+				<TableViewRow>
+					<Label class='role'>Developer</Label>
+					<Label class='name'>Jia Yu</Label>
+				</TableViewRow>
+				<TableViewRow>
+					<Label class='name'>Lijuan Zhang</Label>
+				</TableViewRow>
+				<TableViewRow>
+					<Label class='name'>Zixuan Wang</Label>
+				</TableViewRow>
+				<TableViewRow>
+					<Label class='lineSap' height=7></Label>
+				</TableViewRow>
+				<TableViewRow>
+					<Label class='role'>Stakeholders</Label>
+					<Label class='name'>Tim O'Conner</Label>
+				</TableViewRow>
+				<TableViewRow>
+					<Label class='name'>Kevin Pittman</Label>
+				</TableViewRow>
+			</TableView>
+		</ScrollView>
+	</Window>
+
 </Alloy>

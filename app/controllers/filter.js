@@ -1,189 +1,355 @@
+var moment = require('alloy/moment');
 var paceView = false;
-var dateView = false;
+var dayView = false;
+var timeView = false;
 var distanceView = false;
-var selfPaced = false;
-var easy = false;
-var brisk = false;
-var leisurely = false;
-var steady = false;
-var vigorous = false;
-var moderate = false;
-var strenuous = false;
-var superStrenuous = false;
-var monthNames = ["Jan ", "Feb ", "Mar ", "Apr ", "May ", "Jun ","Jul ", "Aug ", "Sep ", "Oct ", "Nov ", "Dec "];
+$.endTimeLabel.text = "";
+
+var args = $.args;
 (function constructor(args) {
-	$.startDate.value = new Date();
-	$.endDate.value = $.startDate.value;
-	$.startTimeSlider.value = 0;
-	$.endTimeSlider.value = 0;
 	hideVertical($.paceView);
-	hideVertical($.dateView);
+	hideVertical($.dayView);
+	hideVertical($.timeView);
 	hideVertical($.distanceView);
-	clearFilter();
+	initiate();
 })(arguments[0] || {});
-$.startDate.addEventListener('change',function(e){
-	$.endDate.minDate = e.value;
-	Alloy.Globals.startDateTime = e.value;
-	$.dateLabel.text = monthNames[$.startDate.value.getMonth()] + $.startDate.value.getDate() + " - " + monthNames[$.endDate.value.getMonth()] + $.endDate.value.getDate(); 
-});
-$.endDate.addEventListener('change',function(e){
-	Alloy.Globals.endDateTime = e.value;
-	$.dateLabel.text = monthNames[$.startDate.value.getMonth()] + $.startDate.value.getDate() + " - " + monthNames[$.endDate.value.getMonth()] + $.endDate.value.getDate(); 
-});
+
+function add(id){
+	id.colorTemp = id.getBackgroundColor();
+	id.setBackgroundColor("#006F44");
+	id.setColor("white");
+}
+function remove(id){
+	id.setBackgroundColor(id.colorTemp);
+	id.setColor("black");
+}
+function addPace(pace, id){
+	Alloy.Globals.pace.push(pace);
+	Alloy.Globals.paceID.push(id);
+	$.paceLabel.text = Alloy.Globals.pace.toString();
+	add($[id]);
+}
+function removePace(pace, id){
+	Alloy.Globals.pace.splice(Alloy.Globals.pace.indexOf(pace),1);
+	Alloy.Globals.paceID.splice(Alloy.Globals.paceID.indexOf(id),1);
+	$.paceLabel.text = Alloy.Globals.pace.toString();
+	remove($[id]);
+}
+function addDay(day,id){
+	Alloy.Globals.day.push(day);
+	Alloy.Globals.dayID.push(id);
+	$.dayLabel.text = Alloy.Globals.day.toString();
+	$["check"+day].image = "/images/checked.png";
+}
+function removeDay(day,id){
+	Alloy.Globals.day.splice(Alloy.Globals.day.indexOf(day),1);
+	Alloy.Globals.dayID.splice(Alloy.Globals.dayID.indexOf(id),1);
+	$.dayLabel.text = Alloy.Globals.day.toString();
+	$["check"+day].image = "/images/unchecked.png";
+}
+function addDistance(min,max,id){
+	var distance = [min,max];
+	Alloy.Globals.distance.push(distance);
+	Alloy.Globals.distanceID.push(id);
+	string = min + "-" + max + " miles ";
+	if ($.distanceLabel.text == ""){
+		$.distanceLabel.text = string;
+	} else{
+		$.distanceLabel.text = $.distanceLabel.text + ", " + string;
+	}
+	add($[id]);
+}
+function removeDistance(min,max,id){
+	for (var j=0; j<Alloy.Globals.distance.length;j++){
+		if (Alloy.Globals.distance[j][0] == min){
+			Alloy.Globals.distance.splice(j,1);
+		}
+	}
+	Alloy.Globals.distanceID.splice(Alloy.Globals.distanceID.indexOf(id,1));
+	$.distanceLabel.text = "";
+	if (Alloy.Globals.distance.length != 0){
+		$.distanceLabel.text = Alloy.Globals.distance[0][0] + "-" + Alloy.Globals.distance[0][1] + " miles ";
+		if (Alloy.Globals.distance.length > 1){
+			for (var i=1; i<Alloy.Globals.distance.length; i++){
+				string = ", " + Alloy.Globals.distance[i][0] + "-" + Alloy.Globals.distance[i][1] + " miles ";
+				$.distanceLabel.text = $.distanceLabel.text + string;
+			}
+		}
+	}
+	remove($[id]);
+}
+function sunday(){
+	if (!Alloy.Globals.sunday){
+		addDay("Sunday",0);
+	} else{
+		removeDay("Sunday",0);
+	}
+	Alloy.Globals.sunday = !Alloy.Globals.sunday;
+}
+function monday(){
+	if (!Alloy.Globals.monday){
+		addDay("Monday",1);
+	} else{
+		removeDay("Monday",1);
+	}
+	Alloy.Globals.monday = !Alloy.Globals.monday;
+}
+function tuesday(){
+	if (!Alloy.Globals.tuesday){
+		addDay("Tuesday",2);
+	} else{
+		removeDay("Tuesday",2);
+	}
+	Alloy.Globals.tuesday = !Alloy.Globals.tuesday;
+}
+function wednesday(){
+	if (!Alloy.Globals.wednesday){
+		addDay("Wednesday",3);
+	} else{
+		removeDay("Wednesday",3);
+	}
+	Alloy.Globals.wednesday = !Alloy.Globals.wednesday;
+}
+function thursday(){
+	if (!Alloy.Globals.thursday){
+		addDay("Thursday",4);
+	} else{
+		removeDay("Thursday",4);
+	}
+	Alloy.Globals.thursday = !Alloy.Globals.thursday;
+}
+function friday(){
+	if (!Alloy.Globals.friday){
+		addDay("Friday",5);
+	} else{
+		removeDay("Friday",5);
+	}
+	Alloy.Globals.friday = !Alloy.Globals.friday;
+}
+function saturday(){
+	if (!Alloy.Globals.saturday){
+		addDay("Saturday",6);
+	} else{
+		removeDay("Saturday",6);
+	}
+	Alloy.Globals.saturday = !Alloy.Globals.saturday;
+}
+function zero(){
+	if (!Alloy.Globals.zero){
+		addDistance(0,10,"zero");
+	} else{
+		removeDistance(0,10,"zero");
+	}
+	Alloy.Globals.zero = !Alloy.Globals.zero;
+}
+function ten(){
+	if (!Alloy.Globals.ten){
+		addDistance(10,20,"ten");
+	} else{
+		removeDistance(10,20,"ten");
+	}
+	Alloy.Globals.ten = !Alloy.Globals.ten;
+}
+function twenty(){
+	if (!Alloy.Globals.twenty){
+		addDistance(20,30,"twenty");
+	} else{
+		removeDistance(20,30,"twenty");
+	}
+	Alloy.Globals.twenty = !Alloy.Globals.twenty;
+}
+function thirty(){
+	if (!Alloy.Globals.thirty){
+		addDistance(30,40,"thirty");
+	} else{
+		removeDistance(30,40,"thirty");
+	}
+	Alloy.Globals.thirty = !Alloy.Globals.thirty;
+}
+function fourty(){
+	if (!Alloy.Globals.fourty){
+		addDistance(40,50,"fourty");
+	} else{
+		removeDistance(40,50,"fourty");
+	}
+	Alloy.Globals.fourty = !Alloy.Globals.fourty;
+}
+function fifty(){
+	if (!Alloy.Globals.fifty){
+		addDistance(50,60,"fifty");
+	} else{
+		removeDistance(50,60,"fifty");
+	}
+	Alloy.Globals.fifty = !Alloy.Globals.fifty;
+}
+function sixty(){
+	if (!Alloy.Globals.sixty){
+		addDistance(60,70,"sixty");
+	} else{
+		removeDistance(60,70,"sixty");
+	}
+	Alloy.Globals.sixty = !Alloy.Globals.sixty;
+}
+function seventy(){
+	if (!Alloy.Globals.seventy){
+		addDistance(70,80,"seventy");
+	} else{
+		removeDistance(70,80,"seventy");
+	}
+	Alloy.Globals.seventy = !Alloy.Globals.seventy;
+}
+function eighty(){
+	if (!Alloy.Globals.eighty){
+		addDistance(80,90,"eighty");
+	} else{
+		removeDistance(80,90,"eighty");
+	}
+	Alloy.Globals.eighty = !Alloy.Globals.eighty;
+}
+function ninety(){
+	if (!Alloy.Globals.ninety){
+		addDistance(90,200,"ninety");
+	} else{
+		removeDistance(90,200,"ninety");
+	}
+	Alloy.Globals.ninety = !Alloy.Globals.ninety;
+}
+function selfPaced(){
+	if (!Alloy.Globals.selfPaced){
+		addPace("Self Paced", "selfPaced");
+	} else{
+		removePace("Self Paced","selfPaced");
+	}
+	Alloy.Globals.selfPaced = !Alloy.Globals.selfPaced;
+}
+function easy(){
+	if (!Alloy.Globals.easy){
+		addPace("Easy","easy");
+	} else{
+		removePace("Easy","easy");
+	}
+	Alloy.Globals.easy = !Alloy.Globals.easy;
+}
+function brisk(){
+	if (!Alloy.Globals.brisk){
+		addPace("Brisk","brisk");
+	} else{
+		removePace("Brisk","brisk");
+	}
+	Alloy.Globals.brisk = !Alloy.Globals.brisk;
+}
+function leisurely(){
+	if (!Alloy.Globals.leisurely){
+		addPace("Leisurely","leisurely");
+	} else{
+		removePace("Leisurely","leisurely");
+	}
+	Alloy.Globals.leisurely = !Alloy.Globals.leisurely;
+}
+function steady(){
+	if (!Alloy.Globals.steady){
+		addPace("Steady","steady");
+	} else{
+		removePace("Steady","steady");
+	}
+	Alloy.Globals.steady = !Alloy.Globals.steady;
+}
+function moderate(){
+	if (!Alloy.Globals.moderate){
+		addPace("Moderate","moderate");
+	} else{
+		removePace("Moderate","moderate");
+	}
+	Alloy.Globals.moderate = !Alloy.Globals.moderate;
+}
+function vigorous(){
+	if (!Alloy.Globals.vigorous){
+		addPace("Vigorous","vigorous");
+	} else{
+		removePace("Vigorous","vigorous");
+	}
+	Alloy.Globals.vigorous = !Alloy.Globals.vigorous;
+}
+function strenuous(){
+	if (!Alloy.Globals.strenuous){
+		addPace("Strenuous","strenuous");
+	} else{
+		removePace("Strenuous","strenuous");
+	}
+	Alloy.Globals.strenuous = !Alloy.Globals.strenuous;
+}
+function superStrenuous(){
+	if (!Alloy.Globals.superStrenuous){
+		addPace("Super Strenuous","superStrenuous");
+	} else{
+		removePace("Super Strenuous","superStrenuous");
+	}
+	Alloy.Globals.superStrenuous = !Alloy.Globals.superStrenuous;
+}
 
 $.startTimeSlider.addEventListener('touchend', function(e){
-    this.value = Math.round(e.value);
-    $.startTimeLabel.text = this.value;
+    this.value = Math.round($.startTimeSlider.value);
+    $.startTimeLabel.text = this.value + ":00";    
+    if ($.endTimeSlider.value < this.value){
+    	$.endTimeSlider.value = this.value;
+    	$.timeLabel.text = $.startTimeLabel.text + " to " + Math.round($.endTimeSlider.value) + ":00";
+    }
+    Alloy.Globals.time[0] = this.value;
+    $.timeLabel.text = $.startTimeLabel.text + " to " + Math.round($.endTimeSlider.value) + ":00";
 });
 
 $.startTimeSlider.addEventListener('change', function(e) {
-    $.startTimeLabel.text = Math.round(e.value);
-    $.endTimeSlider.min= e.value;
-    $.endTimeSlider.value = $.endTimeSlider.min;
-    Alloy.Globals.startDateTime.setHours(e.value - 9,0,0);
-    $.dateLabel.text = monthNames[$.startDate.value.getMonth()] + $.startDate.value.getDate() + " - " + monthNames[$.endDate.value.getMonth()] + $.endDate.value.getDate() + " "
-						+ $.startTimeSlider.value + ":00 - " + $.endTimeSlider.value + ":00"; 
-
+    $.startTimeLabel.text = Math.round($.startTimeSlider.value) + ":00";
+    
 });
 
 $.endTimeSlider.addEventListener('touchend', function(e){
-    this.value = Math.round(e.value);
-    $.endTimeLabel.text = this.value;
-   
+    this.value = Math.round($.endTimeSlider.value);
+    if (this.value < $.startTimeSlider.value){
+    	this.value = $.startTimeSlider.value;
+    }
+    $.endTimeLabel.text = this.value + ":00";
+    Alloy.Globals.time[1] = this.value;
+    $.timeLabel.text = $.startTimeLabel.text + " to " + $.endTimeLabel.text;
 });
 
 $.endTimeSlider.addEventListener('change', function(e) {
-    $.endTimeLabel.text = Math.round(e.value);
-    Alloy.Globals.endDateTime.setHours(e.value - 9,0,0);
-    $.dateLabel.text = monthNames[$.startDate.value.getMonth()] + $.startDate.value.getDate() + " - " + monthNames[$.endDate.value.getMonth()] + $.endDate.value.getDate() + " "
-						+ $.startTimeSlider.value + ":00 - " + $.endTimeSlider.value + ":00"; 
+    $.endTimeLabel.text = Math.round($.endTimeSlider.value) + ":00";
 });
-$.sDistanceSlider.addEventListener('touchend', function(e){
-    this.value = Math.round(e.value);
-    $.sDistanceLabel.text = this.value;
-});
-
-$.sDistanceSlider.addEventListener('change', function(e) {
-    $.sDistanceLabel.text = Math.round(e.value);
-    $.eDistanceSlider.min = e.value;
-    Alloy.Globals.sDistance = e.value;
-});
-
-$.eDistanceSlider.addEventListener('touchend', function(e){
-    this.value = Math.round(e.value);
-    $.eDistanceLabel.text = this.value;
-});
-
-$.eDistanceSlider.addEventListener('change', function(e) {
-    $.eDistanceLabel.text = Math.round(e.value);
-    Alloy.Globals.eDistance = e.value;
-    $.distanceLabel.text = $.sDistanceSlider.value + " - " + e.value + " miles";
-});
-function addPace(pace){
-	Alloy.Globals.pace.push(pace);
-		$.paceLabel.text = $.paceLabel.text + " " + pace;
-}
-function removePace(pace){
-	Alloy.Globals.pace.splice(Alloy.Globals.pace.indexOf(pace),1);
-	$.paceLabel.text = $.paceLabel.text.replace(" " + pace,"");
-}
-function selfPaced(){
-	if (!selfPaced){
-		addPace("Self Paced");
-	} else{
-		removePace("Self Paced");
-	}
-	selfPaced = !selfPaced;
-}
-function easy(){
-	if (!easy){
-		addPace("Easy");
-	} else{
-		removePace("Easy");
-	}
-	easy = !easy;
-}
-function brisk(){
-	if (!brisk){
-		addPace("Brisk");
-	} else{
-		removePace("Brisk");
-	}
-	brisk = !brisk;
-}
-function leisurely(){
-	if (!leisurely){
-		addPace("Leisurely");
-	} else{
-		removePace("Leisurely");
-	}
-	leisurely = !leisurely;
-}
-function steady(){
-	if (!steady){
-		addPace("Steady");
-	} else{
-		removePace("Steady");
-	}
-	steady = !steady;
-}
-function moderate(){
-	if (!moderate){
-		addPace("Moderate");
-	} else{
-		removePace("Moderate");
-	}
-	moderate = !moderate;
-}
-function vigorous(){
-	if (!vigorous){
-		addPace("Vigorous");
-	} else{
-		removePace("Vigorous");
-	}
-	vigorous = !vigorous;
-}
-function strenuous(){
-	if (!strenuous){
-		addPace("Strenuous");
-	} else{
-		removePace("Strenuous");
-	}
-	strenuous = !strenuous;
-}
-function superStrenuous(){
-	if (!superStrenuous){
-		addPace("Super Strenuous");
-	} else{
-		removePace("Super Strenuous");
-	}
-	superStrenuous = !superStrenuous;
-}
 function hidePaceView(){
 	hideView($.paceView,paceView);
 	paceView = !paceView;
 	if (paceView){
-		$.paceFold.backgroundImage = "/Filter opened.png";
+		$.paceFold.image = "/images/Filter opened.png";
 	} else{
-		$.paceFold.backgroundImage = "/Filter open.png";
+		$.paceFold.image = "/images/Filter open.png";
 	}
 }
-function hideDateView(){
-	hideView($.dateView,dateView);
-	dateView = !dateView;
-	if (dateView){
-		$.dateFold.backgroundImage = "/Filter opened.png";
+function hideDayView(){
+	hideView($.dayView,dayView);
+	dayView = !dayView;
+	if (dayView){
+		$.dayFold.image = "/images/Filter opened.png";
 	} else{
-		$.dateFold.backgroundImage = "/Filter open.png";
+		$.dayFold.image = "/images/Filter open.png";
+	}
+}
+function hideTimeView(){
+	hideView($.timeView,timeView);
+	timeView = !timeView;
+	if (timeView){
+		$.timeFold.image = "/images/Filter opened.png";
+	} else{
+		$.timeFold.image = "/images/Filter open.png";
 	}
 }
 function hideDistanceView(){
 	hideView($.distanceView,distanceView);
 	distanceView = !distanceView;
 	if (distanceView){
-		$.distanceFold.backgroundImage = "/Filter opened.png";
+		$.distanceFold.image = "/images/Filter opened.png";
 	} else{
-		$.distanceFold.backgroundImage = "/Filter open.png";
+		$.distanceFold.image = "/images/Filter open.png";
 	}
 }
 function hideView(View,flag){
@@ -213,19 +379,159 @@ function showVertical(view) {
 	view.height = view.width;
     view.show();
 }
-function clearFilter(){
-$.paceLabel.text = "";
-$.dateLabel.text = "";
-$.distanceLabel.text = "";
-Alloy.Globals.pace = [];
-Alloy.Globals.startDateTime = new Date(1980,1,1);
-Alloy.Globals.endDateTime = new Date(2080,1,1);
-Alloy.Globals.sDistance = 0;
-Alloy.Globals.eDistance = 100;
+function initiate(){
+	if (Alloy.Globals.pace.length == 0){
+		$.paceLabel.text = "";
+	} else{
+		$.paceLabel.text = Alloy.Globals.pace.toString();
+		for (var i=0; i<Alloy.Globals.paceID.length;i++){
+			add($[Alloy.Globals.paceID[i]]);
+		}
+	}
+	if (Alloy.Globals.day.length == 0){
+		$.dayLabel.text = "";
+	} else{
+		$.dayLabel.text = Alloy.Globals.day.toString();
+		for (var i=0; i<Alloy.Globals.day.length; i++){
+			$["check"+Alloy.Globals.day[i]].image = "/images/checked.png";
+		}
+	}
+	$.distanceLabel.text = "";
+	if (Alloy.Globals.distance.length != 0){
+		$.distanceLabel.text = Alloy.Globals.distance[0][0] + "-" + Alloy.Globals.distance[0][1] + " miles ";
+		if (Alloy.Globals.distance.length > 1){
+			for (var i=1; i<Alloy.Globals.distance.length; i++){
+				string = ", " + Alloy.Globals.distance[i][0] + "-" + Alloy.Globals.distance[i][1] + " miles ";
+				$.distanceLabel.text = $.distanceLabel.text + string;
+			}
+		}
+		
+		for (var i=0; i<Alloy.Globals.distanceID.length;i++){
+			add($[Alloy.Globals.distanceID[i]]);
+		}
+	}
+	if (Alloy.Globals.time.length == 0){
+		$.timeLabel.text = "";
+		$.startTimeSlider.value = 0;
+		$.endTimeSlider.value = 0;
+	} else {
+		$.startTimeSlider.value = Alloy.Globals.time[0];
+		$.endTimeSlider.value = Alloy.Globals.time[1];
+		$.timeLabel.text = Alloy.Globals.time[0] + ":00" + " to " + Alloy.Globals.time[1] + ":00";
+	}
 }
-function applyFilter(){
-	Alloy.Collections.feed.fetch({
-		url: "https://www.cascade.org/DailyRides/rss.xml"
-		});
+function resetFilter(){
+	$.startTimeSlider.value = 0;
+	$.endTimeSlider.value = 0;
+	if (Alloy.Globals.paceID.length != 0){
+		for (var i=0; i<Alloy.Globals.paceID.length;i++){
+			remove($[Alloy.Globals.paceID[i]]);
+		}
+	}
+	if (Alloy.Globals.distanceID.length != 0){
+		for (var i=0; i<Alloy.Globals.distanceID.length;i++){
+			remove($[Alloy.Globals.distanceID[i]]);
+		}
+	}
+	if (Alloy.Globals.day.length != 0){
+		for (var i=0; i<Alloy.Globals.day.length; i++){
+			$["check"+Alloy.Globals.day[i]].image = "/images/unchecked.png";
+		}
+	}
+	clear();
+}
+function clear(){
+	$.paceLabel.text = "";
+	$.dayLabel.text = "";
+	$.timeLabel.text = "";
+	$.distanceLabel.text = "";
+	
+	Alloy.Globals.pace = [];
+	Alloy.Globals.paceID = [];
+	Alloy.Globals.day = [];
+	Alloy.Globals.dayID = [];
+	Alloy.Globals.time = [];
+	Alloy.Globals.distance = [];
+	Alloy.Globals.distanceID = [];
+	
+	Alloy.Globals.selfPaced = false;
+	Alloy.Globals.easy = false;
+	Alloy.Globals.brisk = false;
+	Alloy.Globals.leisurely = false;
+	Alloy.Globals.steady = false;
+	Alloy.Globals.vigorous = false;
+	Alloy.Globals.moderate = false;
+	Alloy.Globals.strenuous = false;
+	Alloy.Globals.superStrenuous = false;
+	
+	Alloy.Globals.sunday = false;
+	Alloy.Globals.monday = false;
+	Alloy.Globals.tuesday = false;
+	Alloy.Globals.wednesday = false;
+	Alloy.Globals.thursday = false;
+	Alloy.Globals.friday = false;
+	Alloy.Globals.saturday = false;
+	
+	Alloy.Globals.zero = false;
+	Alloy.Globals.ten = false;
+	Alloy.Globals.twenty = false;
+	Alloy.Globals.thirty = false;
+	Alloy.Globals.fourty = false;
+	Alloy.Globals.fifty = false;
+	Alloy.Globals.sixty = false;
+	Alloy.Globals.seventy = false;
+	Alloy.Globals.eighty = false;
+	Alloy.Globals.ninety = false;
+}
+function cancelFilter(){
 	$.fwin.close();
+}
+function afterFetch(col, res) {
+	if (Alloy.Collections.feed.models.length == 0){
+		var dialog = Ti.UI.createAlertDialog({
+		    message: 'No Result',
+		    ok: 'OK',
+  		});
+  		dialog.addEventListener('click', function(e){
+      		Alloy.Globals.Navigator.open("filter",$.fwin);
+      		
+  		});
+  		dialog.show();
+	}
+	else {
+		//If filer is opened by map, notice map to update
+		if(args.prevMapWindow !== undefined) {
+			args.prevMapWindow.fireEvent('filter_updated');
+		}
+		
+		//Need to Calc distance to location as it would be used in sort.
+		Alloy.Globals.setDistanceToLocation(Alloy.Collections.feed.models, Alloy.Globals.regionCenter);
+	}	
+}
+
+/**
+ *For each model, set value for field distanceToLoc based on given target location
+ */
+/*
+function setDistanceToLocation(models, targetLoc) {
+	for (var i = 0; i < models.length; i++) {
+		var model = models[i];
+		model.setDistanceToLoc(targetLoc);
+	}
+}*/
+
+
+function applyFilter(){
+	if(Titanium.Network.networkType == Titanium.Network.NETWORK_NONE){
+	     alert("Your device is not online. Please check your network and try again.");
+	} else{
+		Alloy.Collections.feed.fetch({
+		url: "https://www.cascade.org/DailyRides/rss.xml",
+		success: afterFetch,
+		error: afterFetch
+		});
+		
+		$.fwin.close();
+	}
+		
 }
