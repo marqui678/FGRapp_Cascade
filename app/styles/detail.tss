@@ -49,15 +49,18 @@
 "#addressAndContact[platform=ios]":{
 	height:"60%",
 	 top:'5%',
+	 separatorColor:'#F7F7F7',
 }
 
 "#addressAndContact[platform=android]":{
 	height:"70%",
 	 top:'5%',
+	 separatorColor:'#F7F7F7',
 }
 '#addressView':{
 	top:'10dp',
-	//height:90
+	//height:90,
+	
 }
 
 '#contactView':{
